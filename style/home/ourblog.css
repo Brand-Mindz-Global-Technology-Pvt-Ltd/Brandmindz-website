@@ -1,0 +1,341 @@
+.bm-blog-section {
+    padding: 60px 20px;
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header Area */
+.bm-blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+    padding-left:30px;
+}
+
+.bm-blog-title {
+  font-weight: 600; /* Medium */
+  font-style: normal; /* Medium is font-weight, not font-style */
+  font-size: 38px;
+  line-height: 50px; /* leading-trim: NONE equivalent */
+  letter-spacing: 3%;
+    color: #111111;
+  margin: 0 0 15px 0;
+  text-align: left; /* Adjust based on your design */
+}
+
+
+.bm-blog-all-btn {
+  font-weight:500;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  
+  background-color: #3F3F3F;
+  color: white;
+  border: none;
+  padding: 16px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bm-blog-all-btn:hover {
+    background-color: #000;
+}
+
+/* Main Layout Grid */
+.bm-blog-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+/* Featured Card (Left) */
+.bm-featured-card {
+    position: relative;
+    height:690px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bm-featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bm-featured-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: start;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+}
+
+
+.bm-post-meta {
+    font-size: 14px;
+    opacity: 0.8;
+    display: block;
+    font-weight:600;
+    margin-bottom: 10px;
+    text-align: start;
+}
+
+.bm-featured-overlay h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.bm-featured-overlay p {
+    font-size: 19px;
+    opacity: 0.9;
+    font-weight:200;
+    line-height: 1;
+}
+
+/* Right Column */
+.bm-blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.bm-blog-list-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.bm-blog-list-item img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.bm-list-item-content h4  {
+  font-weight:600; /* SemiBold */
+  font-style: normal; /* SemiBold is font-weight, not font-style */
+  font-size: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  width: 80%;
+  margin: 0;
+  color: #757575; /* Default color, adjust as needed */
+  text-align: left; /* Adjust as per your design */
+}
+
+/* New Blogs Section (Bottom Right) */
+.bm-new-blogs-section {
+    background: #E0E0E0;
+    padding: 0px 15px 15px 15px;
+    border-radius: 20px;
+    text-align: start;
+}
+
+.bm-new-blogs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+}
+.bm-new-blogs-header h3 {
+  font-weight:600; /* Medium */
+  font-style: normal; /* Medium is font-weight, not font-style */
+  font-size: 26px;
+  letter-spacing: 4%;
+
+
+  color: #393939; 
+  text-align: left; /* Adjust based on your design */
+  text-transform: none; /* Default, adjust if needed */
+}
+
+
+.bm-slider-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.bm-control-btn {
+    background: #333;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bm-new-blogs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.bm-mini-card {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 230px;
+}
+
+.bm-mini-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bm-mini-card-overlay {
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 100%;
+}
+
+.bm-mini-card-overlay h5 {
+    font-size: 17px;
+    font-weight:500;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .bm-blog-container {
+        grid-template-columns: 1fr;
+    }
+    .bm-featured-card {
+        height: 400px;
+    }
+}
+
+/* ... Keep all your existing desktop styles above ... */
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Tablet & Large Mobile (under 992px) */
+@media (max-width: 992px) {
+    .bm-blog-container {
+        grid-template-columns: 1fr; /* Stack left and right side */
+        gap: 40px;
+    }
+
+    .bm-featured-card {
+        height: 500px; /* Reduced height for tablets */
+    }
+
+    .bm-blog-title {
+        font-size: 28px;
+    }
+}
+
+/* Mobile Phones (under 600px) */
+@media (max-width: 600px) {
+    .bm-blog-section {
+        padding: 40px 15px;
+    }
+
+    /* Header Area */
+    .bm-blog-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .bm-blog-title {
+        font-size: 24px;
+    }
+
+    .bm-blog-all-btn {
+        width: 100%; /* Full width button on mobile */
+        text-align: center;
+    }
+
+    /* Featured Card (The Big One) */
+    .bm-featured-card {
+        height: 400px; /* Shorter for mobile screens */
+    }
+
+    .bm-featured-overlay {
+        padding: 20px;
+    }
+
+    .bm-featured-overlay h3 {
+        font-size: 18px; /* Smaller text */
+        margin-bottom: 10px;
+    }
+
+    .bm-featured-overlay p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit description to 2 lines on mobile */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 13px;
+    }
+
+    /* Right Column - Horizontal list items */
+    .bm-blog-list-item {
+        gap: 12px;
+    }
+
+    .bm-blog-list-item img {
+        width: 80px;
+        height: 70px;
+    }
+
+    .bm-list-item-content h4 {
+        font-size: 14px;
+    }
+
+    /* New Blogs Bottom Grid */
+    .bm-new-blogs-grid {
+        grid-template-columns: 1fr; /* Stack mini cards vertically */
+        gap: 15px;
+    }
+
+    .bm-mini-card {
+        height: 180px;
+    }
+
+    .bm-new-blogs-section {
+        padding: 20px 15px;
+    }
+}
+
+/* Small Mobile (under 400px) */
+@media (max-width: 400px) {
+    .bm-featured-card {
+        height: 350px;
+    }
+    
+    .bm-blog-title {
+        font-size: 20px;
+    }
+}

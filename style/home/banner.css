@@ -1,0 +1,169 @@
+* {
+  font-family: 'Afacad', sans-serif !important
+}
+.bm-hero-section {
+  padding: 50px 20px;
+  padding-bottom: 0px;
+  text-align: center;
+  background-color: #ffffff;
+  background-image: url('../../assets/HomeSection/banner/Group\ \(1\).png');
+  background-position: 1% center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+}
+.bm-hero-btn-trusted {
+  padding-top: 110px;
+}
+
+/* Top Badge Style */
+.bm-hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.bm-hero-badge__icon {
+  background: #ffdb00;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(170deg);
+}
+
+.bm-hero-badge__text {
+  font-family: 'Afacad', sans-serif;
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: 600;
+  /* Medium */
+  font-style: normal;
+  color: #000;
+  text-align: center;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+
+/* Heading Typography */
+.bm-hero-title {
+  font-size: 75px;
+  line-height: 1.2;
+  max-width: 1200px;
+  ;
+  margin: 0 auto 24px auto;
+  font-weight: 700;
+}
+
+.text-black {
+  color: #000000;
+}
+.text-grey {
+  color: #888888;
+}
+.text-yellow {
+  color: #ffcc00;
+}
+
+/* Subtext Style */
+.bm-hero-description {
+
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: 0%;
+  text-align: center;
+
+  /* Layout Specs */
+  color: black;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+  /* Centered with bottom margin */
+  display: flex;
+  align-items: center;
+  /* vertical-align: middle logic */
+  justify-content: center;
+}
+/* The Unique Black Button */
+.bm-hero-btn {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bm-hero-btn:hover {
+  transform: translateY(-2px);
+  background-color: #000;
+}
+
+.bm-hero-btn__icon {
+  background-color: black;
+  padding: 5px;
+  border: 2.5px solid #fff;
+
+  border-radius: 50%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+.bm-hero-badge__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container for the text inside the button */
+.bm-hero-btn__text {
+  /* Figma Design Specs (Regular) */
+  font-family: 'Afacad', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 10px;
+  /* Note: This will make the button very tall */
+  letter-spacing: 0%;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  color: inherit;
+}
+
+/* Bold/Strong text inside the button */
+.bm-hero-btn__text strong {
+  padding-left: 5px;
+  font-family: 'Afacad', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 23px;
+  line-height: 45px;
+  letter-spacing: 0%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .bm-hero-title {
+    font-size: 32px;
+  }
+  .bm-hero-description {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,125 @@
+import Image from "next/image";
+import styles from "../../style/home/ProvenGrowthSection.module.css";
+import { TrendingUp, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Layers } from 'lucide-react';
+export default function ProvenGrowthSection() {
+  return (
+    <section className={styles.section}>
+      <div className={styles.headingWrapper}>
+        <h2 className={styles.heading}>
+          Proven Growth Frameworks<br />
+          <span>Backed by Real Results</span>
+        </h2>
+        <p className={styles.headingDesc}>
+          Ready for exciting, instantaneous,<br />
+          all-accessible insights in real time?
+        </p>
+      </div>
+      <div style={{ background: "#F0F0F0", paddingTop: "50px" }}>
+
+        <div className={styles.cardsWrapper}>
+          <div
+            className={styles.leftCenterContainer}
+          >
+
+            <div className={` ${styles.leftCard}`}>
+
+              <span className={styles.pillBadge}>Setting up reports</span>
+              <div style={{ marginLeft: "-20px" }}>
+                <h3 className={styles.leftTitle}>
+                
+
+                  <span className={styles.italicText}>   Supply Chain &</span>
+  <br />Delivery Services
+                </h3>
+              </div>
+
+              <p className={styles.cardDesc}>
+                Brand Mindz Global enables scalable truck taxi driver acquisition in 15 days using data-driven marketing, hyper-local targeting, and performance optimization to deliver qualified driver leads.
+              </p>
+              <button className={styles.viewButton}>View our case study</button>
+            </div>
+
+            <div className={styles.centerCard}>
+              <h4 className={styles.mainTitle}>Sales statistic</h4>
+              
+              <div className={styles.leadsRow}>
+                <div className={styles.iconCircle}><Layers size={25} color="#fff" /></div>
+                <div>
+                  <p className={styles.statLabel}>Generated Leads</p>
+                  <p className={styles.bigNumberGreen}>587+ Leads Generated</p>
+                </div>
+              </div>
+
+              <div className={styles.chartBox}>
+                <div className={styles.chartLeftPane}>
+                  <p className={styles.statLabel}>Visit statistics</p>
+                  <div className={styles.graphWrapper}>
+                    <svg viewBox="0 0 400 150" className={styles.graphSvg}>
+                      <path d="M10 130 L 80 100 L 150 120 L 220 70 L 300 40" fill="none" stroke="#FFD600" strokeWidth="4" />
+                      {[ [10,130], [80,100], [150,120], [220,70], [300,40] ].map(([x,y], i) => (
+                        <circle key={i} cx={x} cy={y} r="5" fill="#1b5e20" />
+                      ))}
+                    </svg>
+                  </div>
+                  <div className={styles.timeline}>
+                    <span>2022</span><span>2023</span><span>2024</span>
+                  </div>
+                </div>
+
+                <div className={styles.chartRightPane}>
+                  <div className={styles.conversionBadge}>
+                    <p className={styles.badgeLabel}>Conversion Rate</p>
+                    <div className={styles.badgeData}>
+                      <span className={styles.badgeValue}>30K</span>
+                      <span className={styles.upArrow}>▲</span>
+                      <div className={styles.costDetails}>
+                        <strong>₹2.72</strong>
+                        <small>Cost Per Lead</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.metaInfo}>
+                    <p>Service: <span>Meta Lead Generation Ads</span></p>
+                    <p>Campaign Duration: <span>June 2025</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* RIGHT CARD: Problem & Solution */}
+          <div className={` ${styles.rightCard}`}>
+            <div className={styles.darkBlock}>
+              <div className={styles.blockTitle}><AlertCircle size={20} color="#FFD600" /> Problem</div>
+              <p className={styles.problemBold}>Driver Acquisition at Scale Is Not Easy</p>
+              <p className={styles.redSub}>Truck Taxi faced key challenges:</p>
+              <p className={styles.italicQuote}>We were unable to reach active commercial drivers, costs kept rising due to heavy competition, leads lacked intent, and traditional digital ads proved expensive, inefficient, and unscalable.”</p>
+            </div>
+
+            <div className={`${styles.darkBlock} ${styles.solutionBlock}`}>
+              <div className={styles.blockTitle}><CheckCircle2 size={20} color="#22C55E" /> Solution</div>
+              <ul className={styles.solutionList}>
+                <li><CheckCircle2 size={14} /> Hyper-targeted Meta Ads</li>
+                <li><CheckCircle2 size={14} /> Optimized lead forms</li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+        <p className={styles.footerQuote}><span>“We didn't just generate leads. </span> <br />we built a sustainable driver onboarding engine for Truck Taxi.”</p>
+
+        <div className={styles.growthRow}>
+          <div className={styles.grewBy}>
+            <span className={styles.grewLabel}>Grew by</span>
+            <span className={styles.massiveText}>130%</span>
+          </div>
+          <p className={styles.footerPara}>
+            One platform is a comprehensive system of solutions that will be the first step towards digitalization of your business! One platform is a comprehensive system of solutions that will be the first step towards digitalization of your business!            </p>
+        </div>
+      </div>
+    </section>
+  );
+}

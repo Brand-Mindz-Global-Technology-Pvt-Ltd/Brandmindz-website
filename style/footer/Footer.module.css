@@ -1,0 +1,182 @@
+/* Footer.module.css */
+.footerContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  color: black;
+  padding: 60px 0 30px 0;
+background-color: #F3F3F3;
+  background-image: url("../../assets/HomeSection/banner/Group\ \(1\).png"); /* public folder */
+  background-size:100%;
+ background-position: center 0px;
+  background-repeat: no-repeat;
+  margin-top: 80px;
+
+}
+
+
+.backgroundOverlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.logoContainer img {
+  object-fit: contain;
+  margin-left: -5px;
+  margin-bottom:20px;
+}
+
+.brandDescription {
+  font-size: 17px;
+  line-height: 1.2;
+  color: #666;
+  font-weight:500;
+  max-width: 330px;
+  margin-top:10px;
+}
+
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.socialIcon {
+  color: #6B7280;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: #000;
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid black;
+  border-radius:10px;
+  padding: 9px 50px;
+  width: fit-content;
+  background:white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.statusText {
+  font-size: 18px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.sectionTitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 15px;
+  text-transform: none;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkItem {
+  margin-bottom: 8px;
+}
+
+.navLink {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #000;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contactGroup h4 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.phoneNumber {
+  font-size: 15px;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+}
+
+.emailLink {
+  font-size: 20px;
+  color: #6B7280;
+  text-decoration: none;
+}
+
+.emailLink:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.bottomBar {
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 2px solid #626568;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 400;
+  color: #6B7280;
+}
+
+.semibold{
+  font-weight: 600;
+  font-size:13px;
+  color: #000;
+}
+.widest{
+    font-weight: 600;
+  font-size:22px;
+  color: #000;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bottomBar {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
