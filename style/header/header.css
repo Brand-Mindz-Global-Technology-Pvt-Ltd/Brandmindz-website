@@ -33,7 +33,6 @@
   border-radius: 0 0 20px 20px;
   transform: perspective(300px) rotateX(-30deg);
   transform-origin: top;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Text Layer (No Rotate) */

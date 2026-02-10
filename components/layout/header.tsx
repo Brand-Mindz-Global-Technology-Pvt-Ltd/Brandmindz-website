@@ -6,11 +6,14 @@ import Image from 'next/image';
 import logo from '../../assets/logo/logo.png';
 import { FiMenu, FiX, FiChevronDown, FiChevronUp, FiPhone } from "react-icons/fi";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
+  console.log(pathname, "activeDropdown------------")
+
 
   // Check if mobile
   useEffect(() => {
@@ -108,6 +111,11 @@ const Header = () => {
     }
   };
 
+  const isActive = (path) => {
+    if (path === "/") return pathname === "/";
+    return pathname.startsWith(path);
+  };
+
   return (
     <div className="header-top">
 
@@ -152,7 +160,7 @@ const Header = () => {
                 {menuItems.map((item, index) => (
                   <li
                     key={index}
-                    className={`${item.hasDropdown ? 'has-dropdown' : ''} ${activeDropdown === item.name ? 'active' : ''}`}
+                    className={`${item.hasDropdown ? 'has-dropdown' : ''} ${isActive(item.path) ? 'active' : ''}`}
                     onClick={(e) => {
                       if (!item.hasDropdown) {
                         handleMenuItemClick(item.name);
