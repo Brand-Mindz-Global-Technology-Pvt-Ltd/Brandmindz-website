@@ -298,3 +298,32 @@
 }
 }
 
+.animatetext{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .bm-hero-title {
+    font-size: 28px !important;
+  }
+  .bm-hero-description {
+    font-size: 16px;
+  }
+}
+@media (max-width:768px) {
+  .bm-hero-badge__text {
+
+  font-size:30px;
+ 
+}
+/* Top Badge Style */
+.bm-hero-badge {
+
+  gap: 0px !important;
+
+}
+
+  
+}

@@ -1,0 +1,1051 @@
+/* Contact Cards Section */
+.bm-contact-cards-section {
+  /* padding: 5rem 0; */
+  width: 100%;
+}
+
+.bm-contact-cards-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.bm-contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.bm-contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.bm-contact-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* Cards Grid - 4 Cards in One Row */
+.bm-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  align-items: stretch; /* Makes all cards same height */
+}
+
+/* Contact Card - Default White BG - SAME HEIGHT */
+.bm-contact-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  height: 100%; /* Forces all cards to take full height of grid cell */
+}
+
+/* Hover Effect - Gray BG #BEBEBE */
+.bm-contact-card:hover,
+.bm-card-hovered {
+  background-color: #BEBEBE !important;
+  border-color: #BEBEBE;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Careers Card - Special handling */
+.bm-careers-card {
+  background-color: #ffffff;
+}
+
+/* Hover text color - Black text on gray bg */
+.bm-contact-card:hover .bm-card-label,
+.bm-contact-card:hover .bm-card-value,
+.bm-card-hovered .bm-card-label,
+.bm-card-hovered .bm-card-value {
+  color: #000000;
+}
+
+/* Card Icon */
+.bm-card-icon {
+  margin-bottom: 1.25rem;
+}
+
+.bm-icon-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Card Content */
+.bm-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1; /* Takes remaining space without adding extra */
+}
+
+.bm-card-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Location card specific - no extra space */
+.bm-contact-card:nth-child(3) .bm-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Slightly smaller gap for location card */
+}
+
+.bm-card-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #000000;
+  /* text-transform: uppercase; */
+  letter-spacing: 0.05em;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.bm-card-value {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color:#2B2B2B;
+  font-weight: 500;
+   text-align: left;
+  transition: color 0.3s ease;
+  word-break: break-word;
+}
+
+/* Location card specific - smaller text for address */
+.bm-contact-card:nth-child(3) .bm-card-value {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+.bm-contact-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.bm-stats-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.bm-tagline {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .bm-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .bm-contact-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .bm-contact-cards-section {
+    padding: 1.5rem 0;
+  }
+  
+  .bm-contact-cards-container {
+    padding: 0 1.5rem;
+  }
+  
+  .bm-contact-title {
+    font-size: 2rem;
+  }
+  
+  .bm-contact-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .bm-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .bm-contact-card {
+    padding: 1.5rem;
+    height: auto; /* Auto height on mobile */
+  }
+  
+  /* Remove flex:1 on mobile */
+  .bm-card-content {
+    flex: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .bm-contact-cards-section {
+    padding: 0rem 0;
+  }
+  
+  .bm-contact-cards-container {
+    padding: 0 1rem;
+  }
+  
+  .bm-contact-title {
+    font-size: 1.75rem;
+  }
+  
+  .bm-contact-subtitle {
+    font-size: 1rem;
+  }
+  
+  .bm-icon-image {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .bm-card-label {
+    font-size: 0.8rem;
+  }
+  
+  .bm-card-value {
+    font-size: 0.9rem;
+  }
+  
+  .bm-contact-card:nth-child(3) .bm-card-value {
+    font-size: 0.8rem;
+  }
+}/* Get Started Section - Accurate Design */
+/* Get Started Section - Fixed */
+.bm-getstarted-section {
+  position: relative;
+  width: 100%;
+  padding: 3rem 0;
+  overflow: hidden;
+}
+
+/* Background Pattern - Fluid Full Width */
+.bm-getstarted-bg-fluid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 1;
+}
+
+.bm-bg-pattern {
+  object-fit: cover;
+  opacity:1;
+}
+
+.bm-bg-overlay {
+    z-index: 2;
+    background-color: #fbfbfbeb;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Content Container - Fixed Width */
+.bm-getstarted-container-fluid {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2rem;
+}
+
+.bm-getstarted-content-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Grid - col-6 & col-6 */
+.bm-getstarted-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+    align-items: stretch;
+}
+
+/* LEFT COLUMN */
+.bm-left-column {
+  position: relative;
+}
+
+.bm-left-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bm-main-image {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bm-left-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background: gray;
+}
+
+/* Google Rating Card */
+.bm-google-rating-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: fit-content;
+}
+
+.bm-rating-stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.bm-star {
+  color: #ffc107;
+  font-size: 1.25rem;
+}
+
+.bm-rating-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2B2B2B;
+}
+
+/* RIGHT COLUMN */
+.bm-right-column {
+  position: relative;
+}
+
+.bm-right-content {
+  background: white;
+  border-radius: 5px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Progress Steps - 1,2,3 with Green Circles */
+.bm-progress-steps {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    display: flex;
+    width: 53%;
+    justify-content: center;
+    margin: auto;
+}
+
+.bm-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bm-step-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.bm-step-active .bm-step-circle,
+.bm-step-completed .bm-step-circle {
+  background-color: #009C0A;
+  color: white;
+}
+
+.bm-step-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.bm-step-active .bm-step-label {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.bm-step-line {
+  flex: 1;
+  height: 2px;
+  background-color: #e5e7eb;
+
+  
+}
+
+/* REMOVED Progress Bar - Completely Removed */
+
+/* Clients Row */
+.bm-clients-row {
+ flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.4rem;
+    margin-bottom: .768rem;
+    justify-content: center;
+    display: flex;
+}
+
+
+.bm-client-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bm-client-logo {
+     /* background-color: #f0f0f0; */
+    /* border-radius: 50%; */
+    justify-content: center;
+    align-items: center;
+    /* width: 40px; */
+    /* height: 40px; */
+    display: flex;
+    overflow: hidden;
+}
+
+.bm-client-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bm-clients-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  /* color: #000000; */
+}
+
+/* Trusted Agency Heading */
+.bm-trusted-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Form Fields */
+.bm-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bm-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.bm-form-group {
+  width: 100%;
+}
+
+.bm-form-input {
+      color: #000;
+    background-color: #f9fafb;
+    /* border: 1px solid #e5e7eb; */
+    border-radius: 8px;
+    width: 100%;
+    padding: .567rem 1rem;
+    font-size: 1rem;
+    transition: all .3s;
+
+}
+
+.bm-form-input:focus {
+  outline: none;
+  border-color: #000000;
+  background-color: #ffffff;
+}
+
+/* Phone Group with India Flag */
+.bm-phone-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f9fafb;
+
+  border-radius: 12px;
+  padding: 0 1rem;
+}
+
+.bm-country-code {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-right: 1px solid #e5e7eb;
+  padding-right: 1rem;
+}
+
+.bm-flag-container {
+  display: flex;
+  align-items: center;
+}
+
+.bm-flag-icon {
+    object-fit: cover;
+    border-radius: 2px;
+    width: 40px;
+    height: 16px;
+}
+
+.bm-code-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.bm-phone-input {
+  border: none;
+  background: transparent;
+  padding-left: 0;
+}
+
+.bm-phone-input:focus {
+  background: transparent;
+}
+
+.bm-services-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.756rem;
+}
+
+.bm-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+.bm-service-item-rounded {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent; /* No background */
+}
+
+.bm-service-checkbox-rounded {
+  width: 20px;
+  height: 20px;
+  border-radius: 11px; /* Rounded checkbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1.5px solid #d1d5db;
+  transition: all 0.2s ease;
+}
+
+.bm-service-selected-rounded .bm-service-checkbox-rounded {
+  background-color: #009C0A; /* Green background for checkbox */
+  border-color: #009C0A;
+}
+
+.bm-service-label-rounded {
+  font-size: 0.95rem;
+  color: #2B2B2B;
+  font-weight: 500;
+}
+
+.bm-service-selected-rounded .bm-service-label-rounded {
+  color: #000000; /* Black text when selected */
+}
+
+/* Privacy Text - Centered */
+.bm-privacy-text-center {
+  font-size: 0.85rem;
+  color: #6b7280;
+  /* margin: 1.5rem 0; */
+  font-style: italic;
+  text-align: center;
+}
+
+/* Buttons Row - Center, Not Full Width */
+.bm-buttons-row-center {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Check Later Button - Secondary Style */
+.bm-btn-secondary {
+  
+      color: #4b5563;
+    cursor: pointer;
+    background-color: #e7dbdb00;
+    border: 1px solid #d1d5db;
+    border-radius: 11px;
+    padding: 0.576rem 1.75rem;
+    font-size: .95rem;
+    font-weight: 500;
+    transition: all .3s ease;
+
+}
+
+.bm-btn-secondary:hover {
+  background-color: #f9fafb;
+}
+
+/* Disabled Button - #DCDCDC bg, white text */
+.bm-btn-disabled {
+  padding: 0.875rem 1.75rem;
+  background-color: #DCDCDC;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* Get Started Button - Active #3F3F3F with Icon */
+.bm-get-started-btn {
+    padding: 0.576rem 1.75rem;
+  background-color: #3F3F3F;
+  color: white;
+  border: none;
+  border-radius: 11px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.bm-get-started-btn:hover {
+  background-color: #2B2B2B;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.bm-btn-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bm-getstarted-grid {
+    gap: 2rem;
+  }
+  
+  .bm-trusted-heading {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bm-getstarted-section {
+    padding: 2rem 0;
+  }
+  
+  .bm-getstarted-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .bm-google-rating-card-inside {
+
+
+  }
+  .bm-left-column {
+    order: 1;
+  }
+  
+  .bm-right-column {
+    order: 2;
+  }
+  
+  .bm-right-content {
+    padding: 1.5rem;
+  }
+  
+  .bm-progress-steps {
+    flex-wrap: wrap;
+  }
+  
+  .bm-form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .bm-buttons-row-center {
+    flex-direction: column;
+  }
+  
+  .bm-btn-secondary,
+  .bm-btn-disabled,
+  .bm-get-started-btn {
+    width: 100%;
+  }
+  
+  .bm-clients-row {
+    /* flex-direction: column; */
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .bm-getstarted-container-fluid {
+    padding: 0 1rem;
+  }
+  
+  .bm-right-content {
+    padding: 1.5rem;
+  }
+  
+  .bm-trusted-heading {
+    font-size: 1.25rem;
+  }
+  
+  .bm-step-circle {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .bm-step-label {
+    font-size: 0.7rem;
+  }
+  
+  .bm-client-logo {
+
+    height: 32px;
+  }
+  
+  .bm-clients-text {
+    font-size: 0.85rem;
+  }
+  
+  .bm-services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FIX 1: Brighter background - Updated overlay */
+.bm-bg-overlay-fixed {
+    z-index: 2;
+    background-color: rgba(251, 251, 251, 0.85); /* More transparent - brighter */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* FIX 2: Image container with relative positioning for absolute rating */
+.bm-main-image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Google Rating Card - Inside image at bottom center */
+.bm-google-rating-card-inside {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  width: fit-content;
+  z-index: 20;
+}
+
+/* Keep your existing .bm-rating-stars, .bm-star, .bm-rating-text styles *//* LEFT COLUMN - Full image cover */
+.bm-left-column {
+  position: relative !important;
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+    border-radius: 5px !important;
+}
+
+.bm-left-content {
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.bm-main-image-container {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;  /* MUST - full height */
+  background-color: #E5E7EB !important;
+
+  overflow: hidden !important;
+  display: block !important;
+  flex: 1 !important;
+}
+
+/* Remove gap */
+.bm-left-content {
+  gap: 0 !important;  /* Remove gap between container and rating */
+}
+
+/* Rating card - inside image bottom */
+.bm-google-rating-card-inside {
+  position: absolute !important;
+  bottom: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  background: white !important;
+  padding: 0.75rem 1.25rem !important;
+  border-radius: 50px !important;
+  z-index: 9999 !important;
+}
+
+/* Map Section */
+.bm-map-section {
+  padding: 5rem 0;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.bm-map-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Map Header */
+.bm-map-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.bm-map-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.2;
+}
+
+/* Map Grid - col-6 col-6 */
+.bm-map-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Map Item */
+.bm-map-item {
+  width: 100%;
+}
+
+/* Map Card */
+.bm-map-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Map Subtitle */
+.bm-map-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.25rem;
+}
+
+/* Map Image Container */
+.bm-map-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+/* Map Wrapper */
+.bm-map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Map Frame */
+.bm-map-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* LIGHT GRAY OVERLAY - Apply to both maps */
+.bm-map-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 42, 42, 0.3); /* Light gray, very subtle */
+  pointer-events: none;
+  z-index: 15;
+  border-radius: 10px;
+}
+
+/* Circle Background - Center of map */
+.bm-circle-bg-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.bm-circle-image-center {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* Location Marker - Exact address location */
+.bm-location-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.bm-marker-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .bm-map-grid {
+    gap: 1.5rem;
+  }
+  
+  .bm-circle-bg-center {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .bm-marker-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .bm-map-wrapper::after {
+    background-color: rgba(220, 220, 220, 0.18);
+  }
+}
+
+@media (max-width: 768px) {
+  .bm-map-section {
+    padding: 3rem 0;
+  }
+  
+  .bm-map-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .bm-map-title {
+    font-size: 2rem;
+  }
+  
+  .bm-circle-bg-center {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .bm-map-wrapper::after {
+    background-color: rgba(220, 220, 220, 0.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .bm-map-container {
+    padding: 0 1rem;
+  }
+  
+  .bm-map-title {
+    font-size: 1.75rem;
+  }
+  
+  .bm-circle-bg-center {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .bm-marker-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .bm-map-wrapper::after {
+    background-color: rgba(220, 220, 220, 0.12);
+  }
+}
