@@ -180,4 +180,19 @@ background-color: #F3F3F3;
     gap: 20px;
     text-align: center;
   }
+  .statusBadge {
+  
+  padding: 9px 20px;
+  
 }
+}
+
+@media (max-width: 500px) {
+ .statusBadge {
+  
+  padding: 9px 20px;
+  
+}
+}
+
+

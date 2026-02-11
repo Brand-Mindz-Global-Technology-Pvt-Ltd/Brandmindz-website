@@ -174,6 +174,8 @@ const Aboutus = () => {
             "Digital literacy and financial awareness programs",
             "Inclusive hiring practices that promote women participation in the workforce"
           ],
+          subtitle:"Quality Education",
+
           footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
         },
         {
@@ -187,6 +189,7 @@ const Aboutus = () => {
             "Digital literacy and financial awareness programs",
             "Inclusive hiring practices that promote women participation in the workforce"
           ],
+          subtitle:"Gender Equality",
           footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
         },
         {
@@ -229,7 +232,9 @@ const Aboutus = () => {
           image: Growth8,
           description: "Economic growth initiatives...",
           contributions: ["Job training"],
-          footerNote: "Supported by CSR Focus Area..."
+          footerNote: "Supported by CSR Focus Area...",
+          subtitle:"Decent Work  Economic Growth",
+
         },
 
         {
@@ -249,7 +254,9 @@ const Aboutus = () => {
           image: Reduced10,
           description: "Inclusive programs...",
           contributions: ["Equality initiatives"],
-          footerNote: "Supported by CSR Focus Area..."
+          footerNote: "Supported by CSR Focus Area...",
+          subtitle:"Reduced Inequalities",
+
         },
 
         {
@@ -279,7 +286,9 @@ const Aboutus = () => {
           image: Action13,
           description: "Climate initiatives...",
           contributions: ["Carbon reduction"],
-          footerNote: "Supported by CSR Focus Area..."
+          footerNote: "Supported by CSR Focus Area...",
+          subtitle:"Climate Action",
+
         },
 
         {
@@ -418,7 +427,7 @@ const Aboutus = () => {
                 style={{ cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}
               >
                 <ArrowLeft size={20} color={"black"} />
-                Sustainability &gt; {openImg?.id ? `SDG ${openImg.id}` : "Preview"}
+                Sustainability &gt; {openImg?.subtitle ? ` ${openImg.subtitle}` : "Preview"}
               </div>
 
 
@@ -461,7 +470,7 @@ const Aboutus = () => {
               {current.sdgs.map((sdg, i) => (
                 <div
                   key={i}
-                  className="sdg-box"
+                  className={`sdg-box sdg-${sdg.id}`}
                   onClick={() => setOpenImg(sdg)} // Set the whole object, not just URL
                 >
                   <Image src={sdg.image} alt={`SDG ${sdg.id}`} />

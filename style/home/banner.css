@@ -1,6 +1,21 @@
-* {
+/* * {
   font-family: 'Afacad', sans-serif !important
 }
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.bm-hero-title {
+    display: block;
+    line-height: 1.2;
+}
+
+.inline-flex.translate-y-4 {
+    vertical-align: baseline;
+    height: 70px;
+}
+
 .bm-hero-section {
   padding: 50px 20px;
   padding-bottom: 0px;
@@ -21,6 +36,7 @@
 }
 
 /* Top Badge Style */
+
 .bm-hero-badge {
   display: flex;
   align-items: center;
@@ -44,7 +60,6 @@
   font-size: 40px;
   line-height: 30px;
   font-weight: 600;
-  /* Medium */
   font-style: normal;
   color: #000;
   text-align: center;
@@ -52,8 +67,6 @@
   margin: 0;
 }
 
-
-/* Heading Typography */
 .bm-hero-title {
   font-size: 75px;
   line-height: 1.2;
@@ -73,9 +86,7 @@
   color: #ffcc00;
 }
 
-/* Subtext Style */
 .bm-hero-description {
-
   font-weight: 400;
   font-style: normal;
   font-size: 30px;
@@ -83,7 +94,6 @@
   letter-spacing: 0%;
   text-align: center;
 
-  /* Layout Specs */
   color: black;
   max-width: 1000px;
   margin: 0 auto 40px auto;
@@ -124,21 +134,19 @@
   align-items: center;
   justify-content: center;
 }
+
 .bm-hero-badge__icon {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Container for the text inside the button */
 .bm-hero-btn__text {
-  /* Figma Design Specs (Regular) */
   font-family: 'Afacad', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 22px;
   line-height: 10px;
-  /* Note: This will make the button very tall */
   letter-spacing: 0%;
   text-align: center;
   display: inline-flex;
@@ -167,3 +175,126 @@
     font-size: 16px;
   }
 }
+
+
+* {
+  font-family: 'Afacad', sans-serif !important;
+}
+
+.bm-hero-section {
+  padding: 80px 20px 40px;
+  text-align: center;
+  background-color: #ffffff;
+  background-image: url('../../assets/HomeSection/banner/Group\ \(1\).png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Changed to cover for better filling */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bm-hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.bm-hero-badge__text {
+  font-size: 16px;
+  /* Scaled down from 40px */
+  font-weight: 600;
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .bm-hero-badge__text {
+    font-size: 24px;
+  }
+  .bm-hero-badge {
+    gap: 20px;
+  }
+}
+
+/* Title Responsiveness */
+.bm-hero-title {
+  font-size: 32px;
+  /* Mobile size */
+  line-height: 1.2;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .bm-hero-title {
+    font-size: 75px;
+  }
+}
+
+/* Description Responsiveness */
+.bm-hero-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+@media (min-width: 768px) {
+  .bm-hero-description {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  .bm-hero-section {
+    padding-top: 80px;
+    background-size: 150%;
+  }
+
+  .bm-hero-btn {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .bm-hero-btn__text strong {
+    font-weight: 700;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bm-hero-section {
+    padding-top: 20px;
+    background-size: contain;
+    background-position: center center;
+  }
+.bm-hero-btn {
+  padding: 5px 10px;
+}
+  .bm-hero-btn__text {
+    font-size: 15px;
+  }
+  .bm-hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .bm-hero-btn__text strong {
+  font-weight: 500;
+  font-size: 16px;
+
+}
+
+.bm-hero-btn-trusted {
+  padding-top: 60px;
+  width: 100%;
+}
+}
+

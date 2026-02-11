@@ -12,7 +12,6 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
-  console.log(pathname, "activeDropdown------------")
 
 
   // Check if mobile

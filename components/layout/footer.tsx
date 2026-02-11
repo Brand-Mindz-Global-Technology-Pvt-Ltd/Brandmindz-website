@@ -31,7 +31,7 @@ const Footer = () => {
       <div className={styles.contentWrapper}>
         {/* <div className="grid grid-cols-1 md:grid-cols-12 " 
 > */}
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row justify-between gap-5">
 
           {/* Column 1: Brand */}
           <div className="md:col-span-4 lg:col-span-4">
@@ -83,7 +83,7 @@ const Footer = () => {
             <h3 className={styles.sectionTitle} style={{ fontSize: "24px" }}>Reach Us</h3>
             <div className="space-y-8">
               <div className="flex gap-3 justifi-content-center align-items-center " style={{ marginBottom: '20px' }}>
-                <FaMapMarkerAlt className="text-black" style={{marginTop:'10px'}}/>
+                <FaMapMarkerAlt className="text-black" style={{ marginTop: '10px' }} />
                 <div>
                   <h4 className="font-bold text-[20px] mb-1">Chennai Office</h4>
                   <p className="text-[19px] text-gray-500 leading-snug">
@@ -94,7 +94,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex gap-3">
-                <FaMapMarkerAlt className="text-black" style={{marginTop:'10px'}}/>
+                <FaMapMarkerAlt className="text-black" style={{ marginTop: '10px' }} />
                 <div>
                   <h4 className="font-bold text-[20px] mb-1">Tirunelveli Office</h4>
                   <p className="text-[19px] text-gray-500 leading-snug">

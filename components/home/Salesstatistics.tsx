@@ -17,8 +17,7 @@ export default function ProvenGrowthSection() {
           all-accessible insights in real time?
         </p>
       </div>
-      <div style={{ background: "#F0F0F0", paddingTop: "50px" }}>
-
+      <div className={styles.CardOver}>
         <div className={styles.cardsWrapper}>
           <div
             className={styles.leftCenterContainer}
@@ -27,7 +26,9 @@ export default function ProvenGrowthSection() {
             <div className={` ${styles.leftCard}`}>
 
               <span className={styles.pillBadge}>Setting up reports</span>
-              <div style={{ marginLeft: "-20px" }}>
+              <div
+              //  style={{ marginLeft: "-20px" }}
+               >
                 <h3 className={styles.leftTitle}>
 
 

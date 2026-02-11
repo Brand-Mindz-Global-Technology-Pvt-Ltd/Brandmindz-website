@@ -201,16 +201,34 @@ import {
 
 import "../../style/home/ouroffering.css";
 import promoImage from "../../assets/HomeSection/OurOfferings/OurImage.png";
+import PersonalBranding from '../../assets/HomeSection/OurOfferings/PersonalBranding.png'
+import BrandConsulting from '../../assets/HomeSection/OurOfferings/BrandConsulting.png'
+import BrandStrategy from '../../assets/HomeSection/OurOfferings/BrandStrategy.png'
+import CompanyBranding from '../../assets/HomeSection/OurOfferings/CompanyBranding.png'
 
 const Ouroffering = () => {
     const [activeTab, setActiveTab] = useState("Branding");
 
     const offeringsData = {
         Branding: [
-            { icon: icon2, title: "Personal Branding", desc: "Build a credible, authentic personal brand that positions you as a leader in your industry. We help founders and professionals create visibility, trust and influence that drives opportunities." },
-            { icon: icon1, title: "Company Branding", desc: "Define your brand identity clearly from positioning and messaging to visual consistency. We help companies stand out, stay relevant and build long-term recall across markets." },
-            { icon: icon3, title: "Brand Strategy", desc: "A strong brand starts with strategy. We develop structured brand frameworks that align vision, audience insights, and competitive positioning  creating a clear roadmap for growth." },
-            { icon: icon4, title: "Brand Consulting", desc: "For businesses facing confusion or stagnation, we offer clarity. Our consulting focuses on identifying gaps, refining direction, and aligning brand decisions with business outcomes." }
+            {
+                icon: icon2, title: "Personal Branding",
+                hover: PersonalBranding,
+                desc: "Build a credible, authentic personal brand that positions you as a leader in your industry. We help founders and professionals create visibility, trust and influence that drives opportunities."
+            },
+            {
+                icon: icon1, title: "Company Branding",
+                hover: CompanyBranding,
+                desc: "Define your brand identity clearly from positioning and messaging to visual consistency. We help companies stand out, stay relevant and build long-term recall across markets."
+            },
+            {
+                icon: icon3, title: "Brand Strategy",
+                hover: BrandStrategy, desc: "A strong brand starts with strategy. We develop structured brand frameworks that align vision, audience insights, and competitive positioning  creating a clear roadmap for growth."
+            },
+            {
+                icon: icon4, title: "Brand Consulting",
+                hover: BrandConsulting, desc: "For businesses facing confusion or stagnation, we offer clarity. Our consulting focuses on identifying gaps, refining direction, and aligning brand decisions with business outcomes."
+            }
         ],
         Designing: [
             { icon: <FaPaintBrush />, title: "UI / UX Design", desc: "Design intuitive experiences focused on usability and conversion." },
@@ -231,7 +249,6 @@ const Ouroffering = () => {
     };
 
     const tabs = Object.keys(offeringsData);
-
     return (
         <section className="bm-offering-section container">
             {/* 1. Header with Text Reveal Animation */}
@@ -295,7 +312,6 @@ const Ouroffering = () => {
                             </button>
                         </div>
 
-                        {/* </MagneticButton> */}
                     </div>
                 </FadeIn>
 
@@ -306,19 +322,26 @@ const Ouroffering = () => {
                     staggerDelay={0.1}
                 >
                     {offeringsData[activeTab].map((item, index) => (
-                        <StaggerItem key={index} className="bm-service-item">
-                            <div className="bm-service-header">
-                                <Image
-                                    src={item.icon}
-                                    alt="service icon"
-                                    className="service-icon"
-                                    width={35}  
-                                    height={35} 
-                                    priority
-                                />
-                                <h4>{item.title}</h4>
+                        <StaggerItem key={index}>
+                            <div
+                                className="bm-service-item"
+                                style={{
+                                    '--hover-bg': `url(${item.hover?.src || item.hover})`
+                                }}
+                            >
+                                <div className="bm-service-header">
+                                    <Image
+                                        src={item.icon}
+                                        alt="service icon"
+                                        className="service-icon"
+                                        width={35}
+                                        height={35}
+                                        priority
+                                    />
+                                    <h4>{item.title}</h4>
+                                </div>
+                                <p>{item.desc}</p>
                             </div>
-                            <p>{item.desc}</p>
                         </StaggerItem>
                     ))}
                 </StaggerChildren>

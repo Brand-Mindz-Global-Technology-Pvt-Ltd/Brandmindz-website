@@ -62,9 +62,7 @@ const OurBlog = () => {
                     />
                 </div>
 
-                <MagneticButton strength={0.2}>
                     <button className="bm-blog-all-btn">See All Blog Posts</button>
-                </MagneticButton>
             </div>
 
             <div className="bm-blog-container">
