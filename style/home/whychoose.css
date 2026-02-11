@@ -22,7 +22,7 @@
   position: absolute;
   z-index: 9999;
   top: 0px;
-  right:20px;
+  left:20px;
 }
 
 .back-btn:hover {
@@ -154,6 +154,10 @@
 
 
 
+.bm-view-btn:hover {
+  background: rgb(0, 0, 0,0.5);
+  color: white;
+}
 
 .bm-why-section {
   padding: 30px 0px 20px 30px;

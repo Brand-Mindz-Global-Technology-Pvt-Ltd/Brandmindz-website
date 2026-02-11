@@ -18,6 +18,7 @@ export const Banner = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, [words.length]);
+
   return (
     <section className="bm-hero-section">
       <FadeIn delay={0.1}>
@@ -46,7 +47,7 @@ export const Banner = () => {
                 exit="exit"
                 style={{ fontWeight: 600 }}
               >
-                {words[index].split("").map((letter, i) => (
+                {/* {words[index].split("").map((letter, i) => (
                   <motion.span
                     key={`${words[index]}-${i}`}
                     variants={{
@@ -62,14 +63,25 @@ export const Banner = () => {
                   >
                     {letter === " " ? "\u00A0" : letter}
                   </motion.span>
-                ))}
+                ))} */}
+                <motion.span
+                  key={words[index]}
+                  className="text-yellow font-[Afacad] font-medium text-[65px]"
+                  initial={{ rotateY: -90, opacity: 0 }}
+                  animate={{ rotateY: 0, opacity: 1 }}
+                  exit={{ rotateY: 90, opacity: 0 }}
+                  
 
-                {/* The Animated Cursor */}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  style={{ display: "inline-block", transformOrigin: "center" ,fontWeight: 600 }}
+                >
+                  {words[index]}
+                </motion.span>
                 <motion.span
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{
                     repeat: Infinity,
-                    duration: 0.5,        // Faster blink to match typing speed
+                    duration: 0.5,
                     ease: "linear"
                   }}
                   className="ml-1 inline-block w-[0px] h-[35px] bg-yellow shadow-[0_0_8px_#facc15]"
@@ -110,9 +122,9 @@ export const Banner = () => {
       {/* Trusted */}
       <div className="bm-hero-btn-trusted">
 
-      <FadeIn delay={0.6} >
-        <Trusted />
-      </FadeIn>
+        <FadeIn delay={0.6} >
+          <Trusted />
+        </FadeIn>
       </div>
 
 

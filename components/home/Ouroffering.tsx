@@ -200,7 +200,7 @@ import {
 } from "../animations";
 
 import "../../style/home/ouroffering.css";
-import promoImage from "../../assets/HomeSection/OurOfferings/c462af10600fc7f286db0100d0437321b6a62ed1.png";
+import promoImage from "../../assets/HomeSection/OurOfferings/OurImage.png";
 
 const Ouroffering = () => {
     const [activeTab, setActiveTab] = useState("Branding");
@@ -280,10 +280,6 @@ const Ouroffering = () => {
                             <p>Our team is ready to guide you</p>
                         </FadeIn>
 
-
-
-                        {/* Magnetic Effect for the Call Button */}
-                        {/* <MagneticButton strength={0.2}> */}
                         <div className="need_btn">
 
                             <div className="bm-offering-promo-text">
@@ -316,8 +312,8 @@ const Ouroffering = () => {
                                     src={item.icon}
                                     alt="service icon"
                                     className="service-icon"
-                                    width={35}  /* Adjust this number based on your design */
-                                    height={35} /* Adjust this number based on your design */
+                                    width={35}  
+                                    height={35} 
                                     priority
                                 />
                                 <h4>{item.title}</h4>

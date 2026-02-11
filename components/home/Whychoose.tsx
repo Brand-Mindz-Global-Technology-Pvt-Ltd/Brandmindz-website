@@ -121,7 +121,7 @@ const WhyChooseUs = () => {
         <motion.div
           layout
           className={`bm-why-right ${showGlobalMap ? 'full-width' : ''}`}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+          transition={{ duration: 1.6, ease: "easeInOut" }}
         >
           <div className={`bm-map-wrapper ${showGlobalMap ? 'full-width' : ''}`}>
             <AnimatePresence mode="wait">

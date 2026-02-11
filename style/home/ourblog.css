@@ -29,7 +29,7 @@
 .bm-blog-all-btn {
   font-weight:500;
   font-style: normal;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: center;
@@ -163,7 +163,7 @@
   font-weight:600; /* Medium */
   font-style: normal; /* Medium is font-weight, not font-style */
   font-size: 26px;
-  letter-spacing: 4%;
+  letter-spacing: 5%;
 
 
   color: #393939; 

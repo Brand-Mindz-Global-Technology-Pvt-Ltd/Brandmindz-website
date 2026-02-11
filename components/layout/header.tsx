@@ -139,8 +139,7 @@ const Header = () => {
               <Image
                 src={logo}
                 alt="Brand Mindz"
-
-                priority // Optional: for LCP optimization
+                priority 
               />
             </div>
 

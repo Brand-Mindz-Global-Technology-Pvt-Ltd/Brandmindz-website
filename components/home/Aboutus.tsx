@@ -14,12 +14,23 @@ import vision2 from "../../assets/HomeSection/about/material-symbols_target.png"
 import vision3 from "../../assets/HomeSection/about/lets-icons_target.png";
 
 
-import image1 from '../../assets/HomeSection/about/Image 1.png'
-import image2 from '../../assets/HomeSection/about/Imag2.png'
-import image3 from '../../assets/HomeSection/about/Image3.png'
-import image4 from '../../assets/HomeSection/about/Image4.png'
-import image5 from '../../assets/HomeSection/about/Image5.png'
-import image6 from '../../assets/HomeSection/about/Image6.png'
+import NoPoverty1 from '../../assets/HomeSection/about/NoPoverty1.jpg'
+import Zero2 from '../../assets/HomeSection/about/Zero2.jpg'
+import Good3 from '../../assets/HomeSection/about/Good3.jpg'
+import Quality4 from '../../assets/HomeSection/about/Quality4.jpg'
+import Equallity5 from '../../assets/HomeSection/about/Equallity5.jpg'
+import Clean6 from '../../assets/HomeSection/about/Clean6.jpg'
+import Energy7 from '../../assets/HomeSection/about/Energy7.jpg'
+import Growth8 from '../../assets/HomeSection/about/Growth8.jpg'
+import Infr9 from '../../assets/HomeSection/about/Infr9.jpg'
+import Reduced10 from '../../assets/HomeSection/about/Reduced10.jpg'
+import Communities11 from '../../assets/HomeSection/about/Communities11.jpg'
+import Production12 from '../../assets/HomeSection/about/Production12.jpg'
+import Action13 from '../../assets/HomeSection/about/Action13.jpg'
+import Life14 from '../../assets/HomeSection/about/Life14.jpg'
+import Lifeland15 from '../../assets/HomeSection/about/Lifeland15.jpg'
+import Peace16 from '../../assets/HomeSection/about/Peace16.jpg'
+import Goals17 from '../../assets/HomeSection/about/Goals17.jpg'
 
 const Aboutus = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -47,7 +58,7 @@ const Aboutus = () => {
       title: "Founder of ideas that turn into successful brands",
       img: founderImg1,
       desc: [
-        `<b >R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands. </b>`,
+        `<b >R.Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands. </b>`,
         `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an <b>official mentor for Mentor TN,</br> a government initiative for startup growth.`
       ], quote: "Promise what you deliver, and deliver what you promised.",
       btn: false
@@ -95,7 +106,12 @@ const Aboutus = () => {
     },
 
     {
-      id: 6, label: "Customer Service Philosophy", title: "Committed to clarity, consistency, and customer success.", img: founderImg1,
+      id: 6, label: "Customer Service Philosophy", title: "Committed to clarity, consistency, and customer success.",
+      img: founderImg1,
+      subtitle: "Customer Service Philosophy",
+
+      quote: "Promise what you deliver, and deliver what you promised.",
+
       desc: [
         `We operate as responsible partners, not just service vendors. We take full ownership of every project and every promise we make. Our work is driven by transparency, clear communication, and accountability at every stage. We believe real success comes from long-term collaboration, not short-term tasks. That’s why we focus on delivering meaningful results that create trust, value, and sustainable growth for the brands we work with.`,
         `We operate as responsible partners, not just service vendors. We take full ownership of every project and every promise we make. Our work is driven by transparency, accountability, and clear communication at every stage. We focus on building long-term relationships while delivering meaningful results that create trust, value, and sustainable growth.`]
@@ -113,7 +129,7 @@ const Aboutus = () => {
           id: 1,
           title: "No Poverty",
           tag: "Alignment Type",
-          image: image1,
+          image: NoPoverty1,
           description: "Detailed description for SDG 1...",
           contributions: [
             "Contribution point 1",
@@ -126,7 +142,7 @@ const Aboutus = () => {
           id: 2,
           title: "Zero Hunger",
           tag: "Alignment Type",
-          image: image2,
+          image: Zero2,
           description: "Detailed description for SDG 2...",
           contributions: [
             "Contribution point 1",
@@ -138,7 +154,7 @@ const Aboutus = () => {
           id: 3,
           title: "Good Health and Well-being",
           tag: "Alignment Type",
-          image: image3,
+          image: Good3,
           description: "Detailed description for SDG 3...",
           contributions: [
             "Contribution point 1",
@@ -151,7 +167,7 @@ const Aboutus = () => {
           id: 4,
           title: "Quality Education",
           tag: "Alignment Type",
-          image: image4,
+          image: Quality4,
           description: "Brand Mindz aligns its CSR and organizational practices with the United Nations Sustainable Development Goals (SDGs), especially SDG 5: Gender Equality. The company promotes women empowerment, supports women-led enterprises and women entrepreneurs, and ensures equal opportunity employment.",
           contributions: [
             "Entrepreneurship and skill development initiatives for women",
@@ -164,7 +180,7 @@ const Aboutus = () => {
           id: 5,
           title: "Leadership knows No Gender",
           tag: "Strong and Direct Alignment",
-          image: image5,
+          image: Equallity5,
           description: "Brand Mindz aligns its CSR and organizational practices with the United Nations Sustainable Development Goals (SDGs), especially SDG 5: Gender Equality. The company promotes women empowerment, supports women-led enterprises and women entrepreneurs, and ensures equal opportunity employment.",
           contributions: [
             "Entrepreneurship and skill development initiatives for women",
@@ -177,7 +193,7 @@ const Aboutus = () => {
           id: 6,
           title: "Clean Water and Sanitation",
           tag: "Alignment Type",
-          image: image6,
+          image: Clean6,
           description: "Detailed description for SDG 6...",
           contributions: [
             "Contribution point 1",
@@ -185,6 +201,125 @@ const Aboutus = () => {
             "Contribution point 3"
           ],
           footerNote: "This alignment is supported by CSR Focus Area..."
+        },
+        {
+          id: 6,
+          title: "Clean Water and Sanitation",
+          tag: "Alignment Type",
+          image: Clean6,
+          description: "Clean water initiatives...",
+          contributions: ["Water projects", "Sanitation programs"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 7,
+          title: "Affordable and Clean Energy",
+          tag: "Alignment Type",
+          image: Energy7,
+          description: "Energy initiatives...",
+          contributions: ["Solar awareness"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 8,
+          title: "Decent Work and Economic Growth",
+          tag: "Alignment Type",
+          image: Growth8,
+          description: "Economic growth initiatives...",
+          contributions: ["Job training"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 9,
+          title: "Industry, Innovation and Infrastructure",
+          tag: "Alignment Type",
+          image: Infr9,
+          description: "Innovation initiatives...",
+          contributions: ["Tech innovation"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 10,
+          title: "Reduced Inequalities",
+          tag: "Alignment Type",
+          image: Reduced10,
+          description: "Inclusive programs...",
+          contributions: ["Equality initiatives"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 11,
+          title: "Sustainable Cities and Communities",
+          tag: "Alignment Type",
+          image: Communities11,
+          description: "Community initiatives...",
+          contributions: ["Smart cities"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 12,
+          title: "Responsible Consumption and Production",
+          tag: "Alignment Type",
+          image: Production12,
+          description: "Sustainable production...",
+          contributions: ["Waste reduction"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 13,
+          title: "Climate Action",
+          tag: "Alignment Type",
+          image: Action13,
+          description: "Climate initiatives...",
+          contributions: ["Carbon reduction"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 14,
+          title: "Life Below Water",
+          tag: "Alignment Type",
+          image: Life14,
+          description: "Ocean protection...",
+          contributions: ["Ocean cleanup"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 15,
+          title: "Life on Land",
+          tag: "Alignment Type",
+          image: Lifeland15,
+          description: "Forest protection...",
+          contributions: ["Tree plantation"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 16,
+          title: "Peace, Justice and Strong Institutions",
+          tag: "Alignment Type",
+          image: Peace16,
+          description: "Justice initiatives...",
+          contributions: ["Legal awareness"],
+          footerNote: "Supported by CSR Focus Area..."
+        },
+
+        {
+          id: 17,
+          title: "Partnerships for the Goals",
+          tag: "Alignment Type",
+          image: Goals17,
+          description: "Global partnerships...",
+          contributions: ["CSR partnerships"],
+          footerNote: "Supported by CSR Focus Area..."
         }
       ]
     },
@@ -203,10 +338,10 @@ const Aboutus = () => {
       quote: "Promise what you deliver, and deliver what you promised.",
     },
     {
-      id: 9, label: "Awards & Accolades", 
+      id: 9, label: "Awards & Accolades",
       subtitle: "Awards & Accolades",
 
-      title: "Respect, Responsibility, and Growth for All", 
+      title: "Respect, Responsibility, and Growth for All",
       subdesc: "Ubuntu — “I am because we are; because we are, you are.”",
       img: founderImg1,
       quote: "Promise what you deliver, and deliver what you promised.",
@@ -214,11 +349,11 @@ const Aboutus = () => {
         `This philosophy guides how we work together as one team. We believe in shared ownership, mutual respect, and collective accountability in everything we do. By supporting one another and working toward common goals, we create an environment where every contribution matters and success is achieved through unity, trust, and collaboration.`,
         `We believe progress is strongest when it is built together. Our approach is rooted in cooperation, fairness, and a sense of responsibility toward one another. By encouraging open dialogue and shared decision-making, we strengthen trust and alignment across teams and partners. `]
     }, {
-      id: 10, 
-      label: "Certification", 
+      id: 10,
+      label: "Certification",
       title: "Respect, Responsibility, and Growth for All",
       subtitle: "Awards & Accolades",
-       img: founderImg1 ,
+      img: founderImg1,
       subdesc: "Ubuntu — “I am because we are; because we are, you are.”",
       quote: "Promise what you deliver, and deliver what you promised.",
       desc: [
@@ -319,7 +454,7 @@ const Aboutus = () => {
           <div className="bm-sdg-container">
             <div className="bm-vision-header">
               <p className="bm-about-subtitle">{current.subtitle}</p>
-              <h2 className="bm-about-main-title" style={{ width: '40%', letterSpacing:0.5, marginTop:'10px' }}>{current.title}</h2>
+              <h2 className="bm-about-main-title" style={{ width: '40%', letterSpacing: 0.5, marginTop: '10px' }}>{current.title}</h2>
             </div>
 
             <div className="bm-sdg-grid">

@@ -1,5 +1,5 @@
 .bm-offering-section {
-  padding: 80px 20px;
+  padding: 50px 20px;
   max-width: 90%;
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
@@ -34,12 +34,12 @@
   color: #888;
   line-height: 1.3;
   letter-spacing:1px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .text-black { color: #000; }
 .text-yellow { color: #ffcc00; }
-/* Container that holds all buttons */
+
 .bm-offering-tabs {
   display: flex;
   justify-content: space-between;
@@ -108,7 +108,9 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit:cover;
+  object-fit: cover;
+  object-position: center center; /* 👈 Girl center la irukum */
+  transform: scale(1.2); /* 👈 Zoom level */
 }
 
 .bm-offering-promo-overlay {
@@ -184,8 +186,22 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  padding:30px 10px;
 }
+.service-icon {
+  font-size: 22px;
+  color: #333;
+}
+
+.bm-service-item {
+  /* padding-right: 20px; */
+  padding: 20px;
+}
+
+.bm-service-item h4 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
 
 .bm-service-header {
   display: flex;
@@ -234,16 +250,3 @@
   .bm-offering-title { font-size: 32px; }
 }
 
-.service-icon {
-  font-size: 22px;
-  color: #333;
-}
-
-.bm-service-item {
-  padding-right: 20px;
-}
-
-.bm-service-item h4 {
-  font-size: 17px;
-  font-weight: 600;
-}

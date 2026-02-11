@@ -176,10 +176,11 @@
   background: #111;
 
   border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.05);
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color:rgba(255, 255, 255, 0.01) ;
 }
 
 .blockTitle {
@@ -196,7 +197,7 @@
 }
 
 .problemBold {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 22px;
   letter-spacing: 0.03em;
   font-style: normal;
@@ -212,10 +213,29 @@
   display: block;
 }
 
+.problemBoldsolution {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  font-style: normal;
+  color: white;
+  margin: 10 0 0px 0;
+  text-align: center;
+}
+
+
+.redSubsolution {
+  color: green;
+  font-size: 15px;
+  font-weight:600;
+  text-align: center;
+  display: block;
+}
+
 .italicQuote {
   font-weight:500;
   font-style: normal;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 20px;
   letter-spacing: 0.03em;
   /* 3% */
@@ -231,22 +251,37 @@
 .solutionList {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 10px;
   flex-grow: 1;
 }
 
 .solutionList li {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-start; /* 🔥 Important */
+  gap: 12px;
   color: #fff;
-  margin-bottom: 15px;
-  font-size: 14px;
+  margin-bottom: 14px;
+  font-size: 20px; /* 20px too big, design la small */
+  font-weight:500;
+  line-height: 1.2;
 }
 
-.solutionList li svg {
-  color: #22C55E;
+.arrowIcon {
+  width: 28px;
+  height: 28px;
+  background: #22C55E; /* Green */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black; /* Arrow color */
 }
+.solutionList li svg {
+  padding: 0px; 
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 
 
 .footerQuote {
@@ -349,4 +384,75 @@
   .massiveText {
     font-size: 100px;
   }
+}
+
+.solution-card {
+  background: #0a0a0a;
+  border: 1px solid #1f1f1f;
+  border-radius: 16px;
+  padding: 24px;
+  width: 320px;
+  color: white;
+  font-family: Inter, sans-serif;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+/* Title */
+.solution-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Green Arrow Icon */
+.solution-icon {
+  width: 28px;
+  height: 28px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+/* Subtitle */
+.solution-subtitle {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.solution-subtitle span {
+  color: #22c55e;
+  font-weight: 500;
+}
+
+/* List */
+.solution-list {
+  margin-top: 16px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.solution-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #e5e7eb;
+}
+
+/* Green Check Icon */
+.solution-list li::before {
+  content: "✔";
+  color: #22c55e;
+  font-size: 14px;
+  font-weight: bold;
 }

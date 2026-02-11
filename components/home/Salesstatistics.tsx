@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "../../style/home/ProvenGrowthSection.module.css";
-import { TrendingUp, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { TrendingUp, AlertCircle } from 'lucide-react';
+import { FaCheckCircle } from "react-icons/fa";
+import { IoIosArrowUp } from "react-icons/io";
 import { Layers } from 'lucide-react';
 export default function ProvenGrowthSection() {
   return (
@@ -27,10 +29,10 @@ export default function ProvenGrowthSection() {
               <span className={styles.pillBadge}>Setting up reports</span>
               <div style={{ marginLeft: "-20px" }}>
                 <h3 className={styles.leftTitle}>
-                
+
 
                   <span className={styles.italicText}>   Supply Chain &</span>
-  <br />Delivery Services
+                  <br />Delivery Services
                 </h3>
               </div>
 
@@ -42,7 +44,7 @@ export default function ProvenGrowthSection() {
 
             <div className={styles.centerCard}>
               <h4 className={styles.mainTitle}>Sales statistic</h4>
-              
+
               <div className={styles.leadsRow}>
                 <div className={styles.iconCircle}><Layers size={25} color="#fff" /></div>
                 <div>
@@ -57,7 +59,7 @@ export default function ProvenGrowthSection() {
                   <div className={styles.graphWrapper}>
                     <svg viewBox="0 0 400 150" className={styles.graphSvg}>
                       <path d="M10 130 L 80 100 L 150 120 L 220 70 L 300 40" fill="none" stroke="#FFD600" strokeWidth="4" />
-                      {[ [10,130], [80,100], [150,120], [220,70], [300,40] ].map(([x,y], i) => (
+                      {[[10, 130], [80, 100], [150, 120], [220, 70], [300, 40]].map(([x, y], i) => (
                         <circle key={i} cx={x} cy={y} r="5" fill="#1b5e20" />
                       ))}
                     </svg>
@@ -92,17 +94,26 @@ export default function ProvenGrowthSection() {
           {/* RIGHT CARD: Problem & Solution */}
           <div className={` ${styles.rightCard}`}>
             <div className={styles.darkBlock}>
-              <div className={styles.blockTitle}><AlertCircle size={20} color="#FFD600" /> Problem</div>
+              <div className={styles.blockTitle}><span className={styles.arrowIcon} style={{backgroundColor:'#FFD600'}}>! </span>Problem</div>
               <p className={styles.problemBold}>Driver Acquisition at Scale Is Not Easy</p>
               <p className={styles.redSub}>Truck Taxi faced key challenges:</p>
               <p className={styles.italicQuote}>We were unable to reach active commercial drivers, costs kept rising due to heavy competition, leads lacked intent, and traditional digital ads proved expensive, inefficient, and unscalable.”</p>
             </div>
 
             <div className={`${styles.darkBlock} ${styles.solutionBlock}`}>
-              <div className={styles.blockTitle}><CheckCircle2 size={20} color="#22C55E" /> Solution</div>
+              <div className={styles.blockTitle}>
+                <span className={styles.arrowIcon}>
+                  <IoIosArrowUp size={20} />
+                </span>
+                Solution
+              </div>
+
+              <p className={styles.problemBoldsolution}>Brand Mindz Global’s </p>
+              <p className={styles.redSubsolution}>Driver First Acquisition strategy</p>
               <ul className={styles.solutionList}>
-                <li><CheckCircle2 size={14} /> Hyper-targeted Meta Ads</li>
-                <li><CheckCircle2 size={14} /> Optimized lead forms</li>
+                <li><FaCheckCircle size={20} color="#22C55E" /> Hyper-targeted Meta Ads focused on driver interests & locations</li>
+                <li><FaCheckCircle size={20} color="#22C55E" />  Optimized lead forms for faster submissions</li>
+                <li><FaCheckCircle size={20} color="#22C55E" />  Continuous CPL and conversion optimization</li>
               </ul>
             </div>
           </div>
