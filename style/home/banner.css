@@ -16,7 +16,7 @@
     height: 70px;
 }
 
-.bm-hero-section {
+/* .bm-hero-section {
   padding: 50px 20px;
   padding-bottom: 0px;
   text-align: center;
@@ -30,13 +30,14 @@
   flex-direction: column;
   align-items: center;
   margin-top: 0;
-}
-.bm-hero-btn-trusted {
-  padding-top: 110px;
-}
+} */
+
 
 /* Top Badge Style */
 
+.bm-hero-btn-trusted {
+  padding-top: 110px;
+}
 .bm-hero-badge {
   display: flex;
   align-items: center;
@@ -166,35 +167,22 @@
   letter-spacing: 0%;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .bm-hero-title {
-    font-size: 32px;
-  }
-  .bm-hero-description {
-    font-size: 16px;
-  }
-}
 
-
-* {
-  font-family: 'Afacad', sans-serif !important;
-}
 
 .bm-hero-section {
-  padding: 80px 20px 40px;
+  padding: 50px 20px 40px;
   text-align: center;
   background-color: #ffffff;
-  background-image: url('../../assets/HomeSection/banner/Group\ \(1\).png');
-  background-position: center;
+  background-image: url('../../assets/HomeSection/banner/Group (1).png');
+  background-position: center 100px;
   background-repeat: no-repeat;
-  background-size: cover;
-  /* Changed to cover for better filling */
+  background-size: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 
 .bm-hero-badge {
   display: flex;
@@ -251,7 +239,7 @@
   }
   .bm-hero-section {
     padding-top: 80px;
-    background-size: 150%;
+    /* background-size: 150%; */
   }
 
   .bm-hero-btn {
@@ -276,9 +264,9 @@
     background-size: contain;
     background-position: center center;
   }
-.bm-hero-btn {
-  padding: 5px 10px;
-}
+  .bm-hero-btn {
+    padding: 5px 10px;
+  }
   .bm-hero-btn__text {
     font-size: 15px;
   }
@@ -287,18 +275,18 @@
     justify-content: center;
   }
   .bm-hero-btn__text strong {
-  font-weight: 500;
-  font-size: 16px;
+    font-weight: 500;
+    font-size: 16px;
 
+  }
+
+  .bm-hero-btn-trusted {
+    padding-top: 60px;
+    width: 100%;
+  }
 }
 
-.bm-hero-btn-trusted {
-  padding-top: 60px;
-  width: 100%;
-}
-}
-
-.animatetext{
+.animatetext {
   margin-left: 10px;
   margin-bottom: 10px;
 }
@@ -311,19 +299,21 @@
   .bm-hero-description {
     font-size: 16px;
   }
+  .animatetext {
+
+    margin-bottom: 0px;
+  }
 }
+
+
 @media (max-width:768px) {
   .bm-hero-badge__text {
+    font-size: 18px;
+  }
+  /* Top Badge Style */
+  .bm-hero-badge {
+    gap: 5px !important;
+  }
 
-  font-size:30px;
- 
-}
-/* Top Badge Style */
-.bm-hero-badge {
 
-  gap: 0px !important;
-
-}
-
-  
 }
