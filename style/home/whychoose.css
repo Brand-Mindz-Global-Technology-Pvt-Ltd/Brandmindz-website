@@ -150,13 +150,19 @@
   border-radius: 50px;
   cursor: pointer;
   z-index: 20;
+  animation: pulse 2s infinite;
 }
 
-
-
-.bm-view-btn:hover {
-  background: rgb(0, 0, 0,0.5);
-  color: white;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
 }
 
 .bm-why-section {

@@ -99,7 +99,6 @@
   background-repeat: no-repeat;
   background-position: bottom;
   opacity: 0.2;
-  /* 👈 adjust this value */
   z-index: 0;
 }
 

@@ -152,7 +152,7 @@ const FlipLetter = ({ letter, index }) => {
   };
 
   return (
-    <div className={`relative inline-block h-[40px] md:h-[75px] ${getLetterWidth(letter)} mx-[1px] perspective-[1000px]`}>
+    <div className={`relative inline-block h-[20px] md:h-[55px] ${getLetterWidth(letter)} mx-[1px] perspective-[1000px]`}>
       <AnimatePresence mode="popLayout">
         <motion.div
           key={letter}
@@ -205,7 +205,7 @@ export const Banner = () => {
           <span className="text-grey">Full-Stack Marketing Agency</span>
           <span className="text-black"> built by practitioners who understand </span>
           
-          <span className="inline-flex items-center align-middle">
+          <span className="inline-flex items-center">
             <AnimatePresence mode="wait">
               <motion.div key={words[index]} className="flex">
                 {words[index].split("").map((letter, i) => (
