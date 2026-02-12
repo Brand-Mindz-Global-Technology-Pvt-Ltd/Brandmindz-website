@@ -56,7 +56,7 @@ export const ContactUs = () => {
                 exit="exit"
                 style={{ fontWeight: 600 }}
               >
-                {words[index].split("").map((letter, i) => (
+                {words[index]?.split("")?.map((letter, i) => (
                   <motion.span
                     key={`${words[index]}-${i}`}
                     variants={{
