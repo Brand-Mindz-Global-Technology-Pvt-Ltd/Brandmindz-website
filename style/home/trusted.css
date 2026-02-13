@@ -1,18 +1,53 @@
-/* Container Spacing */
 
- *{
-  font-family: 'Afacad', sans-serif !important
- }
- 
+body{
+  overflow-x: hidden !important;
+}
+.bm-trusted-logos-scroll {
+  overflow: hidden ;
+  width: 100%;
+  position: relative;
+}
+
+.bm-trusted-logos-track {
+  display: flex;
+  gap: 100px;
+  width: max-content;
+  animation: scrollLogos 30s linear infinite;
+}
+
+.bm-trusted-logo-item img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Hover stop scrolling */
+.bm-trusted-logos-scroll:hover .bm-trusted-logos-track {
+  animation-play-state: paused;
+}
+
+
+/* Left to Right */
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+    
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* New */
+
 .bm-trusted-section {
   padding: 70px 20px ;
   padding-bottom: 0px;
-  width: 100%;
-  overflow: hidden;
+  width:100%;
 }
 
 .bm-trusted-container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   text-align: center;
 }

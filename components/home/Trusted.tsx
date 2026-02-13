@@ -21,9 +21,9 @@ export const Trusted = () => {
     { id: 7, img: swotle, alt: "Swotle" },
     { id: 8, img: Bioneemtec, alt: "Bioneemtec" },
   ];
-   const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
   const target = 300;
-    useEffect(() => {
+  useEffect(() => {
     let start = 0;
     const duration = 3000; // 2 seconds
     const increment = target / (duration / 16); // 60fps
@@ -50,7 +50,7 @@ export const Trusted = () => {
           <h2 className="bm-trusted-title">{count}+ Global Clients</h2>
         </div>
 
-        <div className="bm-trusted-logos">
+        {/* <div className="bm-trusted-logos">
           {brandLogos.map((item) => (
             <div className="bm-trusted-logo-item" key={item.id}>
               <Image
@@ -62,7 +62,23 @@ export const Trusted = () => {
               />
             </div>
           ))}
+        </div> */}
+        <div className="bm-trusted-logos-scroll">
+          <div className="bm-trusted-logos-track">
+            {[...brandLogos, ...brandLogos].map((item, index) => (
+              <div className="bm-trusted-logo-item" key={index}>
+                 <Image
+                src={item.img}
+                alt={item.alt}
+                height={60} 
+                style={{ width: 'auto', height: 'auto' }} // Keeps aspect ratio
+                priority
+              />
+              </div>
+            ))}
+          </div>
         </div>
+
 
       </div>
     </section>

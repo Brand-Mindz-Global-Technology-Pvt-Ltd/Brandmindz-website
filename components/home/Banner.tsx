@@ -143,12 +143,46 @@ import { Trusted } from "./Trusted";
 import { FadeIn } from "@/components/animations/fade-in";
 import { motion, AnimatePresence } from "framer-motion";
 
-const FlipLetter = ({ letter, index }) => {
+// const FlipLetter = ({ letter, index }) => {
+//   const getLetterWidth = (char) => {
+//     if (char === ' ' || char === '\u00A0') return 'w-[10px] md:w-[15px]'; 
+//     if ('il1|!.'.includes(char)) return 'w-[10px] md:w-[15px]';
+//     if ('mwMW'.includes(char)) return 'w-[25px] md:w-[45px]';
+//     return 'w-[20px] md:w-[35px]'; 
+//   };
+
+//   return (
+//     <div className={`relative inline-block h-[20px] md:h-[55px] ${getLetterWidth(letter)} mx-[1px] perspective-[1000px]`}>
+//       <AnimatePresence mode="popLayout">
+//         <motion.div
+//           key={letter}
+//           initial={{ rotateX: -90, opacity: 0 }}
+//           animate={{ rotateX: 0, opacity: 1 }}
+//           exit={{ rotateX: 90, opacity: 0 }}
+//           transition={{
+//             duration: 0.6,
+//             delay: index * 0.08,
+//             ease: [0.4, 0, 0.2, 1],
+//           }}
+//           className="absolute inset-0 flex items-center justify-center"
+//           style={{ transformOrigin: "top", backfaceVisibility: "hidden" }}
+//         >
+//           {/* Responsive font sizes using clamp or media queries */}
+//           <span className="text-yellow font-[Afacad] font-semibold text-[30px] md:text-[75px] leading-none tracking-tight">
+//             {letter === " " ? "\u00A0" : letter}
+//           </span>
+//         </motion.div>
+//       </AnimatePresence>
+//     </div>
+//   );
+// };
+
+const FlipLetter = ({ letter }) => {
   const getLetterWidth = (char) => {
-    if (char === ' ' || char === '\u00A0') return 'w-[10px] md:w-[15px]'; 
+    if (char === ' ' || char === '\u00A0') return 'w-[10px] md:w-[15px]';
     if ('il1|!.'.includes(char)) return 'w-[10px] md:w-[15px]';
     if ('mwMW'.includes(char)) return 'w-[25px] md:w-[45px]';
-    return 'w-[20px] md:w-[35px]'; 
+    return 'w-[20px] md:w-[35px]';
   };
 
   return (
@@ -161,14 +195,12 @@ const FlipLetter = ({ letter, index }) => {
           exit={{ rotateX: 90, opacity: 0 }}
           transition={{
             duration: 0.6,
-            delay: index * 0.08,
             ease: [0.4, 0, 0.2, 1],
           }}
           className="absolute inset-0 flex items-center justify-center"
           style={{ transformOrigin: "top", backfaceVisibility: "hidden" }}
         >
-          {/* Responsive font sizes using clamp or media queries */}
-          <span className="text-yellow font-[Afacad] font-semibold text-[35px] md:text-[75px] leading-none tracking-tight">
+          <span className="text-yellow font-[Afacad] font-semibold text-[30px] md:text-[75px] leading-none tracking-tight">
             {letter === " " ? "\u00A0" : letter}
           </span>
         </motion.div>

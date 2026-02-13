@@ -41,7 +41,6 @@ export const GlobalPresenceSection = () => {
               </h2>
             </FadeIn>
 
-            {/* Map Container - Transparent Background */}
             <div className="bm-global-map-container">
               <div className="bm-global-map-wrapper">
                 {/* World Map Image - Transparent BG */}
@@ -52,7 +51,6 @@ export const GlobalPresenceSection = () => {
                   priority
                 />
                 
-                {/* Country Markers */}
                 <div className="bm-global-markers">
                   {countries.map((country, index) => (
                     <div 
@@ -72,7 +70,6 @@ export const GlobalPresenceSection = () => {
               </div>
             </div>
 
-            {/* We Don't Sell Words - We Create Brands */}
         
 
           </div>

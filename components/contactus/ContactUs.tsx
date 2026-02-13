@@ -43,10 +43,10 @@ export const ContactUs = () => {
       
           <span className="text-grey">Talk to Experts </span>
           <br />
-          <span className="text-black">Who</span>
+          <span className="text-black">Who Understand Your Business</span>
                
 
-          <span className="inline-flex align-bottom ml-2 animatetext">
+          {/* <span className="inline-flex align-bottom ml-2 animatetext">
             <AnimatePresence mode="wait">
               <motion.span
                 key={words[index]}
@@ -85,7 +85,7 @@ export const ContactUs = () => {
                 />
               </motion.span>
             </AnimatePresence>
-          </span>
+          </span> */}
         </h1>
       </FadeIn>
 

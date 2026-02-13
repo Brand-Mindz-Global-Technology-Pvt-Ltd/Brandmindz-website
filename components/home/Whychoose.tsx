@@ -121,9 +121,9 @@ const WhyChooseUs = () => {
         <motion.div
           layout
           className={`bm-why-right ${showGlobalMap ? 'full-width' : ''}`}
-          transition={{ duration: 1.6, ease: "easeInOut" }}
+          transition={{ duration: 1.8, ease: "easeInOut" }}
         >
-          <div className={`bm-map-wrapper ${showGlobalMap ? 'full-width' : ''}`}>
+          <div className={`bm-map-wrapper-way ${showGlobalMap ? 'full-width' : ''}`}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={showGlobalMap ? 'global' : 'simple'}
@@ -133,7 +133,9 @@ const WhyChooseUs = () => {
                 transition={{ duration: 0.6 }}
               >
                 <Image
-                  src={showGlobalMap ? GlobalworldMap : worldMap}
+                  // src={showGlobalMap ? GlobalworldMap : worldMap}
+                  src={GlobalworldMap }
+
                   alt="Global presence"
                   className={`bm-world-map ${showGlobalMap ? 'full-width' : ''}`}
                   priority
@@ -160,7 +162,7 @@ const WhyChooseUs = () => {
                       style={{ top: loc.top, left: loc.left }}
                       initial={{ scale: 0, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: 0.3 + (idx * 0.05), type: "spring", stiffness: 100 }}
+                      transition={{ delay: 2 + (idx * 0.05), type: "spring", stiffness: 100 }}
                     >
                       <div className="marker-dot"></div>
                       <span className="marker-text">{loc.name}</span>

@@ -145,8 +145,9 @@ export const Aboutus = () => {
           <span className="text-black">Global thinking</span>
           <span className="text-grey">.Domestic execution.</span>
           <br />
-          <span className="text-grey">Proudly</span>
-          <span className="inline-flex align-bottom ml-2 animatetext">
+          <span className="text-grey">Proudly built from India</span>
+
+          {/* <span className="inline-flex align-bottom ml-2 animatetext">
             <AnimatePresence mode="wait">
               <motion.span
                 key={words[index]}
@@ -185,7 +186,7 @@ export const Aboutus = () => {
                 />
               </motion.span>
             </AnimatePresence>
-          </span>
+          </span> */}
         </h1>
       </FadeIn>
 

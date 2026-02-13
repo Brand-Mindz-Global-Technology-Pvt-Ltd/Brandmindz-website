@@ -1,3 +1,38 @@
+/* Base container for sticky behavior */
+.sticky-wrapper {
+    position: sticky;
+    top: 0; 
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden ;
+    background-color: #f8f9fa; 
+
+}
+
+.bm-about-content-section {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff; 
+
+}
+
+.about-founder-section {
+    z-index: 10;
+    background-color: #f9f9f9; 
+}
+
+.content-overlay-wrapper {
+    position: relative;
+    z-index: 20; /* Highest z-index to cover everything else */
+    background-color: #ffffff; 
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1); 
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
 .about-us-description{
     font-size: 30px;
     font-weight: 400;

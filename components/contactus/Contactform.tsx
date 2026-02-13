@@ -46,7 +46,7 @@ export const GetStartedSection = () => {
     <section className="bm-getstarted-section">
       {/* Background Pattern - Fluid Full Width - FIXED: Brighter background */}
       <div className="bm-getstarted-bg-fluid">
-        <Image 
+        <Image
           src={bgPattern}
           alt="Background Pattern"
           fill
@@ -60,46 +60,45 @@ export const GetStartedSection = () => {
       <div className="bm-getstarted-container-fluid">
         <div className="bm-getstarted-content-container">
           <div className="bm-getstarted-grid">
-     <FadeIn delay={0.1}>        
-{/* LEFT COLUMN - Image with Google Rating */}
-<div className="bm-left-column"
- 
-        style={{
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-           
-          backgroundColor: "#E5E7EB" 
-        }}>
- 
-    <div className="bm-left-content">
+            <FadeIn delay={0.1}>
+              {/* LEFT COLUMN - Image with Google Rating */}
+              <div className="bm-left-column border"
 
-      <div 
-       
-      >
-        {/* Google Rating with Stars - Bottom center inside image */}
-        <div className="bm-google-rating-card-inside">
-          <div className="bm-rating-stars">
-            <span className="bm-star">★</span>
-            <span className="bm-star">★</span>
-            <span className="bm-star">★</span>
-            <span className="bm-star">★</span>
-            <span className="bm-star">★</span>
-          </div>
-          <span className="bm-rating-text">4.9 Google Rating</span>
-        </div>
-      </div>
+                style={{
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundColor: "#E5E7EB",
+                }}>
 
-    </div>
-    </div>
-  </FadeIn>
+                <div className="bm-left-content">
+
+                  <div
+
+                  >
+                    {/* Google Rating with Stars - Bottom center inside image */}
+                    <div className="bm-google-rating-card-inside">
+                      <div className="bm-rating-stars">
+                        <span className="bm-star">★</span>
+                        <span className="bm-star">★</span>
+                        <span className="bm-star">★</span>
+                        <span className="bm-star">★</span>
+                        <span className="bm-star">★</span>
+                      </div>
+                      <span className="bm-rating-text">4.9 Google Rating</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </FadeIn>
 
 
             {/* RIGHT COLUMN - Form Content */}
             <div className="bm-right-column">
               <FadeIn delay={0.2}>
                 <div className="bm-right-content">
-                  
+
                   {/* Progress Steps - 1,2,3 with Green Circles */}
                   <div className="bm-progress-steps">
                     <div className={`bm-step-item ${activeStep === 1 ? 'bm-step-active' : ''} ${activeStep > 1 ? 'bm-step-completed' : ''}`}>
@@ -120,7 +119,7 @@ export const GetStartedSection = () => {
                     <div className="bm-client-logos">
                       {clientLogos.map((logo) => (
                         <div key={logo.id} className="bm-client-logo">
-                          <Image 
+                          <Image
                             src={logo.src}
                             alt={logo.alt}
                             width={40}
@@ -140,7 +139,7 @@ export const GetStartedSection = () => {
 
                   {/* Form Fields - ALL ROWS with 2 columns each */}
                   <div className="bm-form-fields">
-                    
+
                     {/* Row 1: Name & Company - 2 columns */}
                     <div className="bm-form-row">
                       <div className="bm-form-group">
@@ -159,7 +158,7 @@ export const GetStartedSection = () => {
                       <div className="bm-form-group bm-phone-group">
                         <div className="bm-country-code">
                           <div className="bm-flag-container">
-                            <Image 
+                            <Image
                               src={indiaFlag}
                               alt="India"
                               width={24}
@@ -187,18 +186,18 @@ export const GetStartedSection = () => {
                       <p className="bm-services-title">
                         How do you want Brand Mindz to help you?
                       </p>
-                      
+
                       <div className="bm-services-grid">
                         {services.map((service, index) => (
-                          <div 
-                            key={index} 
+                          <div
+                            key={index}
                             className={`bm-service-item-rounded ${selectedServices.includes(service) ? 'bm-service-selected-rounded' : ''}`}
                             onClick={() => toggleService(service)}
                           >
                             <span className="bm-service-checkbox-rounded">
                               {selectedServices.includes(service) && (
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                  <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                                  <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                                 </svg>
                               )}
                             </span>
@@ -215,7 +214,7 @@ export const GetStartedSection = () => {
 
                     {/* Buttons Row - Not Full Width, With Icon */}
                     <div className="bm-buttons-row-center">
-                      <button 
+                      <button
                         className={`bm-check-later-btn ${isCheckLaterDisabled ? 'bm-btn-disabled' : 'bm-btn-secondary'}`}
                         onClick={handleCheckLater}
                         disabled={isCheckLaterDisabled}
@@ -224,7 +223,7 @@ export const GetStartedSection = () => {
                       </button>
                       <button className="bm-get-started-btn">
                         <span className="bm-btn-icon">
-                          <Image 
+                          <Image
                             src={arrowIcon}
                             alt="arrow"
                             width={16}

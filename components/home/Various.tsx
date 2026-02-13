@@ -180,7 +180,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../../style/home/Various.module.css';
 import Image from 'next/image';
 
-import Image1 from '../../assets/HomeSection/various/“.png';
+import Image1 from '../../assets/HomeSection/various/quote.png';
 import Person1 from '../../assets/HomeSection/various/Person1.png'
 import Person2 from '../../assets/HomeSection/various/Person2.png'
 import Person3 from '../../assets/HomeSection/various/Person3.png'
