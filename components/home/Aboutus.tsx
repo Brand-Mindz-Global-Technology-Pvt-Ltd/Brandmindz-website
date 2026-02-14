@@ -174,7 +174,7 @@ const Aboutus = () => {
             "Digital literacy and financial awareness programs",
             "Inclusive hiring practices that promote women participation in the workforce"
           ],
-          subtitle:"Quality Education",
+          subtitle: "Quality Education",
 
           footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
         },
@@ -189,7 +189,7 @@ const Aboutus = () => {
             "Digital literacy and financial awareness programs",
             "Inclusive hiring practices that promote women participation in the workforce"
           ],
-          subtitle:"Gender Equality",
+          subtitle: "Gender Equality",
           footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
         },
         {
@@ -233,7 +233,7 @@ const Aboutus = () => {
           description: "Economic growth initiatives...",
           contributions: ["Job training"],
           footerNote: "Supported by CSR Focus Area...",
-          subtitle:"Decent Work  Economic Growth",
+          subtitle: "Decent Work  Economic Growth",
 
         },
 
@@ -255,7 +255,7 @@ const Aboutus = () => {
           description: "Inclusive programs...",
           contributions: ["Equality initiatives"],
           footerNote: "Supported by CSR Focus Area...",
-          subtitle:"Reduced Inequalities",
+          subtitle: "Reduced Inequalities",
 
         },
 
@@ -287,7 +287,7 @@ const Aboutus = () => {
           description: "Climate initiatives...",
           contributions: ["Carbon reduction"],
           footerNote: "Supported by CSR Focus Area...",
-          subtitle:"Climate Action",
+          subtitle: "Climate Action",
 
         },
 
@@ -493,7 +493,12 @@ const Aboutus = () => {
                   </div>
                 )
               }
-              <div className="bm-about-description">
+              <div
+                className="bm-about-description"
+                style={{
+                  lineHeight: current.subtitle === "About Brand Mindz Global" ? "30px" : "24px",
+                }}
+              >
                 {current.desc.map((text, index) => (
                   <p key={index} dangerouslySetInnerHTML={{ __html: text }} />
                 ))}

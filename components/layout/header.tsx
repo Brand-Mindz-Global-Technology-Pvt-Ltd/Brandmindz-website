@@ -7,12 +7,13 @@ import logo from '../../assets/logo/logo.png';
 import { FiMenu, FiX, FiChevronDown, FiChevronUp, FiPhone } from "react-icons/fi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
-
+const [show, setShow] = useState(false);
 
   // Check if mobile
   useEffect(() => {
@@ -110,6 +111,13 @@ const Header = () => {
     }
   };
 
+ useEffect(() => {
+    const timer = setTimeout(() => {
+      setShow(true);
+    }, 1000); // 1 second delay
+    return () => clearTimeout(timer);
+  }, []);
+
   const isActive = (path) => {
     if (path === "/") return pathname === "/";
     return pathname.startsWith(path);
@@ -120,14 +128,25 @@ const Header = () => {
 
       <div className="header-wrapper">
         {/* Availability Pill - Hidden on mobile */}
-        <div className="availability-wrapper">
+    <AnimatePresence>
+      {show && (
+        <motion.div 
+          className="availability-wrapper"
+          initial={{ y: -50, opacity: 0 }} // Starts 50px above and invisible
+          animate={{ y: 0, opacity: 1 }}   // Slides to position and fades in
+          transition={{ 
+            duration: 0.8, 
+            ease: "easeOut" 
+          }}
+        >
           <div className="availability-pill"></div>
-
           <div className="availability-text">
             <div className="dot"></div>
             <span>Available To Help You Grow</span>
           </div>
-        </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
 
 
         <header className="bm-header">

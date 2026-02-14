@@ -21,13 +21,11 @@ body{
   object-fit: contain;
 }
 
-/* Hover stop scrolling */
 .bm-trusted-logos-scroll:hover .bm-trusted-logos-track {
   animation-play-state: paused;
 }
 
 
-/* Left to Right */
 @keyframes scrollLogos {
   0% {
     transform: translateX(0);
@@ -38,10 +36,9 @@ body{
   }
 }
 
-/* New */
 
 .bm-trusted-section {
-  padding: 70px 20px ;
+  padding: 60px 20px ;
   padding-bottom: 0px;
   width:100%;
 }

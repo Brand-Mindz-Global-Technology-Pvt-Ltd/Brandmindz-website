@@ -267,7 +267,7 @@ export const Banner = () => {
       <FadeIn delay={0.5}>
         <div className="bm-hero-action">
           <button className="bm-hero-btn">
-            <div className="bm-hero-btn__icon"><FiChevronRight size={20} /></div>
+            <div className="bm-hero-btn__icon"><FiChevronRight  /></div>
             <span className="bm-hero-btn__text">Talk to a <strong>Growth Specialist</strong></span>
           </button>
         </div>
