@@ -5,7 +5,6 @@
 }
 
 .bm-contact-cards-container {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -37,7 +36,6 @@
   gap: 1.5rem;
   margin-bottom: 3rem;
   align-items: stretch;
-  /* Makes all cards same height */
 }
 
 /* Contact Card - Default White BG - SAME HEIGHT */
@@ -54,6 +52,7 @@
   /* Forces all cards to take full height of grid cell */
 }
 
+
 /* Hover Effect - Gray BG #BEBEBE */
 .bm-contact-card:hover,
 .bm-card-hovered {
@@ -61,6 +60,7 @@
   border-color: #BEBEBE;
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 /* Careers Card - Special handling */
@@ -92,8 +92,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  flex: 1;
-  /* Takes remaining space without adding extra */
+  /* flex: 1; */
+  margin-top: auto;
 }
 
 .bm-card-item {
@@ -111,7 +111,7 @@
 }
 
 .bm-card-label {
-  font-size: 0.875rem;
+  font-size: 25px;
   font-weight: 600;
   color: #000000;
   /* text-transform: uppercase; */
@@ -119,9 +119,17 @@
   text-align: left;
   transition: color 0.3s ease;
 }
-
+.bm-card-label-address{
+   font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  /* text-transform: uppercase; */
+  letter-spacing: 0.05em;
+  text-align: left;
+  transition: color 0.3s ease;
+}
 .bm-card-value {
-  font-size: 0.95rem;
+  font-size: 19px;
   line-height: 1.5;
   color: #2B2B2B;
   font-weight: 500;
@@ -130,6 +138,10 @@
   word-break: break-word;
 }
 
+.bm-card-value-address{
+  text-align: start;
+  line-height: 18px;
+}
 /* Location card specific - smaller text for address */
 .bm-contact-card:nth-child(3) .bm-card-value {
   font-size: 0.85rem;
@@ -503,15 +515,77 @@
   background-color: #ffffff;
 }
 
-/* Phone Group with India Flag */
 .bm-phone-group {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background-color: #f9fafb;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
 
+.bm-country-selector {
+  display: flex;
+  align-items: center;
+  gap:6px;
+  padding: 0 5px;
+  cursor: pointer;
+  border-right: 1px solid #e5e7eb;
+  height: 100%;
+  max-width: 70px;
+}
+
+.bm-arrow-icon {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+  color: #6b7280;
+}
+
+.bm-arrow-icon.open {
+  transform: rotate(180deg);
+}
+
+.bm-country-dropdown-list {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100px;
+  background: white;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 0 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  z-index: 999;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.bm-country-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bm-country-option:hover {
+  background-color: #f9fafb;
+}
+
+.bm-option-name {
+  flex: 1;
+  font-size: 14px;
+  color: #374151;
+}
+
+.bm-option-code {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.bm-phone-input {
+  border: none !important; /* Remove individual input border since group has one */
+  flex: 1;
 }
 
 .bm-country-code {
@@ -535,8 +609,8 @@
 }
 
 .bm-code-text {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 500;
   color: #000000;
 }
 
@@ -630,8 +704,8 @@
   background-color: #e7dbdb00;
   border: 1px solid #d1d5db;
   border-radius: 11px;
-  padding: 0.576rem 1.75rem;
-  font-size: .95rem;
+  padding: 0.2rem 1.75rem;
+  font-size: 20px;
   font-weight: 500;
   transition: all .3s ease;
 
@@ -680,6 +754,382 @@
 .bm-btn-icon {
   display: flex;
   align-items: center;
+}
+
+/* Form */
+/* Step 2 Specific Container */
+.bm-s2-step-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.bm-s2-label {
+  display: block;
+  font-size: 30px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+/* Input & Dropdown Styling */
+.bm-s2-input, .bm-s2-textarea {
+  width: 100%;
+  padding:10px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f3f4f6; /* Light grey background */
+  font-size:18px;
+  color: black;
+  outline: none;
+}
+
+.bm-s2-select-wrapper {
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.bm-s2-select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.bm-s2-select-arrow {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.bm-s2-textarea {
+  min-height: 180px;
+  resize: none;
+  line-height: 1.5;
+}
+
+/* The Black Info Bar */
+.bm-s2-info-bar {
+  background-color: #3F3F3F; 
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.bm-s2-info-label {
+  white-space: nowrap;
+}
+
+.bm-s2-info-divider {
+  width: 1.5px;
+  height: 16px;
+  background-color: white;
+  margin: 0 1rem;
+}
+
+.bm-s2-phone-icon {
+  background-color: #ffffff; /* White Background */
+  width: 28px;               /* Fixed width */
+  height: 28px;              /* Fixed height */
+  border-radius: 50%;        /* Makes it a perfect circle */
+  display: flex;             /* Flexbox to center the icon */
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;            /* Prevents the circle from squishing */
+}
+
+
+.bm-s2-phone-img {
+  filter: brightness(0);     /* This makes any colored icon solid black */
+  object-fit: contain;
+}
+
+.bm-s2-info-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bm-s2-info-content p{
+  font-size: 14px;
+}
+
+/* Buttons Styling */
+.bm-s2-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.bm-s2-prev-btn {
+  background-color: #e5e7eb;
+  color: white;
+   padding: 0.2rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-weight:500;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.bm-s2-prev-btn:hover{
+  background-color: #3F3F3F;
+  
+}
+
+.bm-s2-next-btn {
+     padding: 0.2rem 1.2rem;
+  background-color: #3F3F3F;
+  color: white;
+  border: none;
+  border-radius: 11px;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.bm-s2-next-btn:hover {
+  background-color: #111827;
+}
+
+.bm-s2-double-arrow {
+  font-size: 1.2rem;
+  letter-spacing: -2px;
+}
+
+
+/* Section Headings */
+.bm-step-hint { text-align: center; color: #666; margin-bottom: 10px; font-size: 20px; }
+.bm-step-hint strong{
+  color: black;
+}
+.bm-section-heading { font-size: 30px; font-weight: 500; color: #444; margin: 15px 0 15px 0; }
+
+.bm-date-selector {
+  display: flex;
+  background: #eee;
+  /* padding: 5px; */
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+
+}
+.bm-date-tab {
+  flex: 1;
+  text-align: center;
+  padding:10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bm-date-tab:first-child{
+  font-size:15px;
+
+}
+.bm-date-tab.active { background: #333; color: white; }
+.bm-date-tab :hover { background: #bbb; color: #eee; border-radius: 40px 0 0 40px; }
+
+/* Grid for Options */
+.bm-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 10px;
+}
+.bm-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* CUSTOM CIRCLE RADIO/CHECKBOX */
+.bm-custom-radio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+}
+
+.bm-custom-radio input { display: none; } /* Hide default */
+
+.bm-radio-circle {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* Selected State - Green Circle */
+.bm-custom-radio input:checked + .bm-radio-circle {
+  background-color: #12b000; /* Exact green from image */
+  border-color: #12b000;
+}
+
+/* White Checkmark */
+.bm-custom-radio input:checked + .bm-radio-circle::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.bm-custom-radio input:checked ~ .bm-radio-label {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Final Submit Button */
+.bm-final-submit-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Info Bar Adjustment for Step 3 */
+.bm-s2-info-bar.light { background: #f0f0f0; color: #666; }
+.bm-s2-phone-icon.dark { background: #333;   }
+
+.bm-right-content-bm-s4 {
+  position: relative;
+  width: 100%;
+  min-height: 650px; /* Slightly taller to fit the city buildings */
+  background-color: #ffffff;
+  
+  background-image: url("/assets/HomeSection/banner/Group (1).png") !important; 
+  
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain; 
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* This creates the fade effect at the top */
+.bm-right-content-bm-s4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%; /* Only fade the top half */
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  z-index: 1; /* Sits above the background image */
+}
+
+.bm-s4-card {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Sits ABOVE the gradient */
+  margin-top: 20px;
+}
+
+/* Helper to center the button if using Bootstrap-style utility */
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header with Green Check */
+.bm-s4-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.bm-s4-check-icon {
+  background: #12b000;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.bm-s4-thank {
+  font-size: 48px;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+}
+
+.bm-s4-gray {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Middle Text Section */
+.bm-s4-connection-box {
+  margin: 20px 0;
+}
+
+.bm-s4-expert-text {
+  font-size: 28px;
+  margin: 5px 0;
+  color: #000;
+  font-weight: 600;
+}
+
+.bm-s4-bold {
+  font-weight: 800;
+}
+
+
+.bm-s4-gift-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+
+
+.bm-s4-btn-arrows {
+  font-size: 22px;
+  letter-spacing: -3px;
 }
 
 /* Responsive */
@@ -870,9 +1320,9 @@
   left: 50% !important;
   transform: translateX(-50%) !important;
   display: flex !important;
-  background: white !important;
+  background: #F0F0F0 !important;
   padding: 0.75rem 1.25rem !important;
-  border-radius: 50px !important;
+  border-radius: 10px !important;
   z-index: 9999 !important;
 }
 

@@ -60,21 +60,21 @@ export const ContactCardsSection = () => {
   return (
     <section className="bm-contact-cards-section">
       <div className="bm-contact-cards-container">
-        
-  
+
+
 
         {/* Four Cards Grid */}
         <div className="bm-cards-grid">
           {contactCards.map((card) => (
             <FadeIn key={card.id} delay={0.1 + card.id * 0.05}>
-              <div 
+              <div
                 className={`bm-contact-card ${hoveredCard === card.id ? 'bm-card-hovered' : ''} ${card.type === 'careers' ? 'bm-careers-card' : ''}`}
                 onMouseEnter={() => setHoveredCard(card.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Icon */}
                 <div className="bm-card-icon">
-                  <Image 
+                  <Image
                     src={card.icon}
                     alt={card.title}
                     width={40}
@@ -87,8 +87,8 @@ export const ContactCardsSection = () => {
                 <div className="bm-card-content">
                   {card.content.map((item, index) => (
                     <div key={index} className="bm-card-item">
-                      <span className="bm-card-label">{item.label}</span>
-                      <span className="bm-card-value">{item.value}</span>
+                      <span className={card.id === 3 ? "bm-card-label-address" :"bm-card-label"}>{item.label}</span>
+                      <span className={card.id === 3 ? "bm-card-value-address" : "bm-card-value"}>{item.value}</span>
                     </div>
                   ))}
                 </div>

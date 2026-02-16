@@ -1,4 +1,4 @@
-/* Base container for sticky behavior */
+
 .sticky-wrapper {
     position: sticky;
     top: 0; 
@@ -7,29 +7,28 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden ;
-    background-color: #f8f9fa; 
 
 }
 
 .bm-about-content-section {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #ffffff; 
-
+    width: 94%;
+    margin: auto !important;
+    background-color:#F6F6F6; 
+    border-radius: 20px;
+    margin-top:40px !important;
 }
 
 .about-founder-section {
     z-index: 10;
-    background-color: #f9f9f9; 
+    /* background-color: #f9f9f9;  */
 }
 
 .content-overlay-wrapper {
     position: relative;
     z-index: 20; /* Highest z-index to cover everything else */
-    background-color: #ffffff; 
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.1); 
     overflow-y: hidden;
     overflow-x: hidden;
+    background-color: white;
 }
 
 
@@ -72,6 +71,25 @@
   overflow: hidden;
   position: relative;
   padding: 2rem 0;
+}
+
+/* Default state: Black and White */
+.logo-image-container img {
+  filter: grayscale(100%);
+  opacity: 0.7; /* Optional: makes it look more subtle when B&W */
+  transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
+}
+
+/* Hover state: Full Color */
+.logo-image-container:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+  cursor:pointer; /* Optional: slight zoom effect on hover */
+}
+
+.ticker-row:hover .logo-track {
+  animation-play-state: paused;
 }
 
 @media (min-width: 768px) {
@@ -175,22 +193,21 @@
 
 
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .bm-section-bg {
-  background-color: #f9fafb; /* light gray background */
-  border-radius: 10px; /* rounded-xl equivalent */
-  padding: 1rem 2rem; /* light space inside */
+  background-color: #f9fafb; 
+  border-radius: 10px; 
+  padding: 1rem 2rem; 
   }
   .bm-about-content-section{
       background-color: #f8f9fa;
     border-radius: 10px;
     gap: 2.5rem;
     margin: 30px;
-    /* padding: 2.5rem; */
     display: grid;
     box-shadow: 0 4px 20px #00000005;
   }
-}
+} */
 
 @media (min-width: 1024px) {
   .bm-section-bg {
@@ -206,11 +223,13 @@
   padding:5px 20px;
   border-radius: 25px; /* 3xl rounded corners */
   margin-bottom: 2rem;
+  margin-left:15px;
 
   font-weight: 500;
   font-size:20px;
   letter-spacing: 0.05em;
 }
+
 
 /* Main Heading */
 .bm-about-heading {
@@ -218,6 +237,28 @@
   font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+
+
+/* Text colors */
+.bm-text-black {
+  color: #000;
+  font-weight:600;
+}
+
+.bm-text-gray {
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* Paragraphs */
+.bm-about-paragraph {
+  font-size: 1.3rem !important;
+  line-height: 1.2;
+  margin-bottom:1.4rem;
+  text-align: justify; 
 }
 
 @media (min-width: 768px) {
@@ -233,21 +274,7 @@
   }
 }
 
-/* Text colors */
-.bm-text-black {
-  color: #000;
-}
 
-.bm-text-gray {
-  color: #6b7280;
-}
-
-/* Paragraphs */
-.bm-about-paragraph {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom:1.5rem;
-}
 
 @media (min-width: 768px) {
   .bm-about-paragraph {
@@ -258,22 +285,10 @@
 /* Image Container */
 .bm-about-image-container {
   width: 100%;
-  height: 400px;
+  /* height: 400px; */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-@media (min-width: 768px) {
-  .bm-about-image-container {
-    height: 500px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .bm-about-image-container {
-    height: 600px;
-  }
 }
 
 /* Grid Layout */
@@ -283,6 +298,20 @@
   gap: 2rem;
   align-items: center;
 }
+.bm-about-grid-founder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  /* align-items: center; */
+  justify-content: center;
+
+  padding: 10px 15px;
+}
+.bm-featured-section {
+  padding: 2rem 0;
+  background-color: #ffffff;
+}
+
 
 @media (min-width: 1024px) {
   .bm-about-grid {
@@ -300,16 +329,7 @@ margin-top: 26px;
     gap: 3rem;
   }
 }
-.bm-about-grid-founder {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
-}/* Featured Section - col-4 and col-8 Layout */
-.bm-featured-section {
-  padding: 2rem 0;
-  background-color: #ffffff;
-}
+
 
 @media (min-width: 768px) {
   .bm-featured-section {
@@ -320,27 +340,20 @@ margin-top: 26px;
 .bm-featured-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
-@media (min-width: 768px) {
-  .bm-featured-container {
-    padding: 0 2rem;
-  }
-}
+
 
 /* Grid Layout */
 .bm-featured-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
   align-items: center;
 }
 
 @media (min-width: 768px) {
   .bm-featured-grid {
-    grid-template-columns: 4fr 8fr; /* col-4 and col-8 */
-    gap: 1.5rem;
+    grid-template-columns: 3.5fr 8fr; /* col-4 and col-8 */
   }
 }
 
@@ -357,7 +370,6 @@ margin-top: 26px;
 
 .bm-featured-title {
   font-size: 2rem;
-  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -382,7 +394,7 @@ margin-top: 26px;
 .bm-channel-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
 }
@@ -434,7 +446,7 @@ margin-top: 26px;
 .bm-channel-wrapper {
   position: relative;
   width: 100%;
-  max-width: 140px;
+  /* max-width: 140px; */
   height: auto;
   display: flex;
   justify-content: center;
@@ -443,15 +455,18 @@ margin-top: 26px;
 
 .bm-channel-image {
   object-fit: contain;
-  max-width: 100%;
+  max-width: 110%;
   height: auto;
   filter: grayscale(0%);
-  transition: filter 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .bm-channel-image:hover {
   filter: grayscale(0%);
   opacity: 0.9;
+}
+.bm-channel-item:hover .bm-channel-image {
+  transform: scale(1.15); /* Adjust zoom level here */
 }
 
 /* Mobile Specific - Text first, then 3 logos per row? Wait, you said 3 logos on mobile? */
@@ -503,23 +518,25 @@ margin-top: 26px;
 .bm-global-presence-wrapper {
   width: 100%;
   background-color: #ffffff;
+  height: 100vh;
+  overflow: hidden;
  
 }
 
 .bm-global-presence-section {
-  max-width: 1400px;
+  max-width: 95%;
   margin: 0 auto;
-
 }
 
 /* Gray Container - Rounded-xl with Margin */
 .bm-global-gray-container {
-  background-color: #f8f9fa;
+  background-color: #EFEFEF;
   border-radius: 10px;
   margin: 10px; /* 10px margin */
   padding: 2.5rem;
   display: grid;
- 
+  padding: 50px 0px;
+
   gap: 2.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
@@ -532,12 +549,15 @@ margin-top: 26px;
 
 /* Our Global Presence Heading */
 .bm-global-map-heading {
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 600;
   color: #000000;
   margin-bottom: 1.5rem;
-  line-height: 1.2;
+  position: absolute;
   text-align: center;
+  letter-spacing:1px;
+  line-height: 1.2;
+width: 90%;
 }
 
 /* Map Container - Transparent BG */
@@ -550,6 +570,29 @@ margin-top: 26px;
 .bm-global-map-wrapper {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center center; /* Ensures zoom starts from center */
+}
+
+.bm-global-markers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicking through to elements if needed */
+}
+
+.bm-global-marker {
+  position: absolute;
+  pointer-events: auto; /* Makes tooltips/markers interactive again */
+}
+
+.bm-global-map-wrapper {
+  position: relative;
+  width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
@@ -557,7 +600,7 @@ margin-top: 26px;
 
 .bm-global-map-image {
   width: 100%;
-  height: auto;
+  height: 80vh;
   max-width: 100%;
   object-fit: contain;
   display: block;
@@ -741,7 +784,6 @@ margin-top: 26px;
 }
 
 .bm-testimonials-container {
-  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -788,10 +830,10 @@ margin-top: 26px;
 
 /* Compact Card - Like Image Card */
 .bm-testimonial-card-compact {
-  flex: 0 0 360px; /* Fixed width - compact size */
+  flex: 0 0 340px; /* Fixed width - compact size */
   background-color: #ffffff;
   border-radius: 12px;
-  padding: 1.25rem;
+  padding: 1rem;
   border: 1px solid #f0f0f0;
   transition: all 0.2s ease;
   display: flex;
@@ -812,21 +854,21 @@ margin-top: 26px;
 
 .bm-compact-star {
   color: #ffc107;
-  font-size: 0.9rem;
+  font-size: 1.8rem;
 }
 
 /* Compact Quote */
 .bm-compact-quote {
-  font-size: 1rem;
+  font-size:17px;
   line-height: 1.5;
   color: #000000;
+  font-weight:500;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-style: italic;
 }
 
 /* Compact Author Row */
@@ -834,7 +876,7 @@ margin-top: 26px;
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-top: 0.25rem;
+margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */  
 }
 
 .bm-compact-author-image {
@@ -842,8 +884,8 @@ margin-top: 26px;
 }
 
 .bm-compact-author-img {
-  width: 32px;
-  height: 32px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   object-fit: cover;
   border: 1.5px solid #f3f4f6;
@@ -856,9 +898,10 @@ margin-top: 26px;
 }
 
 .bm-compact-author-name {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #111827;
+  letter-spacing:0.5px;
 }
 
 .bm-compact-author-detail {
@@ -1117,6 +1160,7 @@ margin-top: 26px;
 .bm-slide {
   flex: 0 0 100%;
   width: 100%;
+  
 }
 
 

@@ -6,18 +6,18 @@ import "../../style/aboutus/aboutus.css";
 
 // Import your actual logos
 import logo1 from '../../assets/about/01-logo.png';
-import logo2 from '../../assets/about/Cheran academy.png';
+import logo2 from '../../assets/about/Cheranacademy.png';
 import logo3 from '../../assets/about/Faggro (1).png';
 import logo4 from '../../assets/about/Market-cloud.png';
 import logo5 from '../../assets/about/OIP.png';
 import logo6 from '../../assets/about/RESONANCE-LOGO.png';
-import logo7 from '../../assets/about/Seven-Star-Logo-1.png';
-import logo8 from '../../assets/about/TEDx_idkxTc8gwO_1.png';
+import logo7 from '../../assets/about/SevenStarLogo.png';
+import logo8 from '../../assets/about/TEDx.png';
 import logo9 from '../../assets/about/Tuka Baby.png';
 import logo10 from '../../assets/about/Tymerz-2048x933.png';
-import logo11 from '../../assets/about/nails and beyonds.png';
+import logo11 from '../../assets/about/nailsandbeyonds.png';
 import logo12 from '../../assets/about/naturals_header_logo.png';
-import logo13 from '../../assets/about/tan coir (1).png';
+import logo13 from '../../assets/about/tancoir.png';
 import logo14 from '../../assets/about/tan coir.png';
 
 export const LogoNewsTicker = () => {

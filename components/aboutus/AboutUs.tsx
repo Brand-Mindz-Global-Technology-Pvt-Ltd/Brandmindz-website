@@ -127,7 +127,7 @@ export const Aboutus = () => {
   }, [words.length]);
 
   return (
-    <section className="bm-hero-section">
+    <section className="bm-hero-section-about">
       {/* Your existing text content - NO CHANGES */}
       <FadeIn delay={0.1}>
         <div className="bm-hero-badge">
@@ -145,7 +145,8 @@ export const Aboutus = () => {
           <span className="text-black">Global thinking</span>
           <span className="text-grey">.Domestic execution.</span>
           <br />
-          <span className="text-grey">Proudly built from India</span>
+          <span className="text-grey">Proudly </span>
+          <span className="text-yellow"> built from India </span>
 
           {/* <span className="inline-flex align-bottom ml-2 animatetext">
             <AnimatePresence mode="wait">

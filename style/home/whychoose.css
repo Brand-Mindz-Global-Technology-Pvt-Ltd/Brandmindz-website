@@ -85,14 +85,14 @@
 
 .bm-world-map.full-width {
   width: 100%;
-  height: auto;
+  height: 89vh;
   opacity: 0.8;
   filter: grayscale(1);
 
-  transform: scale(1); /* Zoom remove */
-  transform-origin: center center; /* Center zoom */
+  transform: scale(0.9); 
+  transform-origin: center center; 
   display: block;
-  margin: 0 auto; /* Center align */
+  margin: 0 auto; 
 }
 
 
@@ -178,6 +178,7 @@
   background-color: #EFEFEF;
   border-radius: 20px;
   /* max-width: 90%; */
+  height: 91vh;
 
 }
 
@@ -213,18 +214,30 @@
 }
 
 .bm-why-card {
-  padding: 20px;
+  padding: 25px;
   padding-top: 10px;
   border-radius: 15px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(255,255,255,0.3); /* optional subtle border */
   font-style: normal;
   font-size: 24px;
   line-height: 25px;
   letter-spacing: 3%;
   text-align: justify;
-  vertical-align: middle;
-  color: white;
+  color: white; 
+    background-color: rgba(255, 255, 255, 0.15); /* semi-transparent white */
+  backdrop-filter: blur(10px);  /* adjust blur amount */
+  -webkit-backdrop-filter: blur(10px); /* for Safari support */
+  
+  background-color: rgb(228, 228, 228); /* solid color fallback */
 }
+
+/* Support detection via @supports */
+@supports (backdrop-filter: blur(10px)) {
+  .bm-why-card {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
 
 .bm-why-card:hover {
   background: #ffffff;

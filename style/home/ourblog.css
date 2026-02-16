@@ -189,6 +189,9 @@
     justify-content: center;
     cursor: pointer;
 }
+.bm-control-btn:hover{
+background-color: black;
+}
 
 .bm-new-blogs-grid {
     display: grid;

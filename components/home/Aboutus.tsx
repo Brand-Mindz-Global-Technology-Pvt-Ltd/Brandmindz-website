@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../../style/home/aboutus.css";
 import Image from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";
@@ -58,8 +58,8 @@ const Aboutus = () => {
       title: "Founder of ideas that turn into successful brands",
       img: founderImg1,
       desc: [
-        `<b >R.Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands. </b>`,
-        `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an <b>official mentor for Mentor TN,</br> a government initiative for startup growth.`
+        `R.Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands. `,
+        `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an official mentor for Mentor TN, a government initiative for startup growth.`
       ], quote: "Promise what you deliver, and deliver what you promised.",
       btn: false
 
@@ -84,8 +84,8 @@ const Aboutus = () => {
       title: "We value honesty, bold ideas, and measurable impact.",
       img: founderImg1,
       desc: [
-        `<b >R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands. </b>`,
-        `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an <b>official mentor for Mentor TN,</br> a government initiative for startup growth.`
+        `R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands.`,
+        `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an official mentor for Mentor TN, a government initiative for startup growth.`
       ], quote: "Promise what you deliver, and deliver what you promised.",
       btn: false
 
@@ -98,8 +98,8 @@ const Aboutus = () => {
       title: "We value honesty, bold ideas, and measurable impact.",
       img: founderImg1,
       desc: [
-        `<b >R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands. </b>`,
-        `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an <b>official mentor for Mentor TN,</br> a government initiative for startup growth.`
+        `R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands.`,
+        `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an official mentor for Mentor TN, a government initiative for startup growth.`
       ], quote: "Promise what you deliver, and deliver what you promised.",
       btn: false
 
@@ -374,6 +374,54 @@ const Aboutus = () => {
   const current = menuItems.find(item => item.id === activeTab) || menuItems[0];
   const [openImg, setOpenImg] = useState(null);
 
+
+  const ScrollLine = ({ content }) => {
+    const [isPassed, setIsPassed] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (ref.current) {
+          const rect = ref.current.getBoundingClientRect();
+          const triggerPoint = window.innerHeight * 0.5;
+
+          if (rect.top < triggerPoint) {
+            setIsPassed(true);
+          } else {
+            setIsPassed(false);
+          }
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Initial check
+
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    return (
+      <span
+        ref={ref}
+        className={`bm-scroll-line ${isPassed ? "active" : ""}`}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
+    );
+  };
+
+  const ScrollParagraph = ({ text }) => {
+    // We split the paragraph into sentences using regex to ensure line-by-line highlighting
+    const lines = text.split(/(?<=\. )/g);
+
+    return (
+      <p className="bm-paragraph-wrapper">
+        {lines.map((line, idx) => (
+          <ScrollLine key={idx} content={line} />
+        ))}
+      </p>
+    );
+  };
+
+
   const renderContent = () => {
     switch (current.type) {
       case "vision":
@@ -463,7 +511,7 @@ const Aboutus = () => {
           <div className="bm-sdg-container">
             <div className="bm-vision-header">
               <p className="bm-about-subtitle">{current.subtitle}</p>
-              <h2 className="bm-about-main-title" style={{ width: '40%', letterSpacing: 0.5, marginTop: '10px' }}>{current.title}</h2>
+              <h2 className="bm-about-main-title" style={{ width: '50%', letterSpacing: 0.5, marginTop: '10px' }}>{current.title}</h2>
             </div>
 
             <div className="bm-sdg-grid">
@@ -493,7 +541,7 @@ const Aboutus = () => {
                   </div>
                 )
               }
-              <div
+              {/* <div
                 className="bm-about-description"
                 style={{
                   lineHeight: current.subtitle === "About Brand Mindz Global" ? "30px" : "24px",
@@ -502,8 +550,17 @@ const Aboutus = () => {
                 {current.desc.map((text, index) => (
                   <p key={index} dangerouslySetInnerHTML={{ __html: text }} />
                 ))}
+              </div> */}
+              <div
+                className="bm-about-description"
+                style={{
+                  lineHeight: current.subtitle === "About Brand Mindz Global" ? "28px" : "25px",
+                }}
+              >
+                {current.desc.map((text, index) => (
+                  <ScrollParagraph key={index} text={text} />
+                ))}
               </div>
-
               {
                 current.btn && (
                   <button className="bm-about-learn-btn">Learn More</button>

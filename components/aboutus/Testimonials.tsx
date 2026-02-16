@@ -107,7 +107,6 @@ export const TestimonialsSection = () => {
                 ease: "linear",
               }}
             >
-              {/* Duplicate testimonials for seamless scroll */}
               {[...testimonialsData, ...testimonialsData].map((testimonial, index) => (
                 <div key={`testimonial-${index}`} className="bm-testimonial-card-compact">
                   {/* Stars */}

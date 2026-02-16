@@ -98,7 +98,7 @@ const WhyChooseUs = () => {
               <TextRevealSimple
                 as="h2"
                 className="bm-why-main-title"
-                text={<span>Powered by Creativity, <span className='bm-why-main-Sub-title'>Driven by Results</span></span>}
+                text={<span>Brand Mindz 360° <span className='bm-why-main-Sub-title'>Proven Growth Framework</span></span>}
                 delay={0.2}
               />
 

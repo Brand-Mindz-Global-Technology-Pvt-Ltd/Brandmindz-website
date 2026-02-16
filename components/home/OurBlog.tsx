@@ -101,7 +101,6 @@ const OurBlog = () => {
                             </FadeIn>
 
                             <div className="bm-slider-controls">
-                                <MagneticButton strength={0.5}>
                                     <button
                                         className="bm-control-btn"
                                         onClick={handlePrev}
@@ -109,9 +108,7 @@ const OurBlog = () => {
                                     >
                                         <FiChevronLeft />
                                     </button>
-                                </MagneticButton>
 
-                                <MagneticButton strength={0.5}>
                                     <button
                                         className="bm-control-btn"
                                         onClick={handleNext}
@@ -119,7 +116,6 @@ const OurBlog = () => {
                                     >
                                         <FiChevronRight />
                                     </button>
-                                </MagneticButton>
                             </div>
                         </div>
 

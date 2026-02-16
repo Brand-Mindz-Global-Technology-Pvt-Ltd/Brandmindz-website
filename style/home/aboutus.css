@@ -1,7 +1,26 @@
+/* Container for each paragraph */
+.bm-paragraph-wrapper {
+  /* margin-bottom: 20px; */
+}
+
+/* Base style: Grey and Normal */
+.bm-scroll-line {
+  color: #b0b0b0; /* Light Grey */
+  font-weight: 400;
+  transition: all 0.3s ease-out;
+  display: inline;
+}
+
+/* Scrolled Past style: Black and Bold */
+.bm-scroll-line.active {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+
 .bm-about-label {
   font-weight: 400;
   font-size: 20px;
-  /* Your requested size */
   line-height: 25.01px;
   white-space: normal;
 }
@@ -136,7 +155,7 @@
 .bm-about-menu-item {
   display: flex;
   align-items: center;
-  padding: 12px 30px;
+  padding: 14px 30px;
   color: #888;
   gap: 10px;
   cursor: pointer;
@@ -170,7 +189,7 @@
 }
 
 .bm-about-menu-item.active .bm-about-label {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 500;
 }
 

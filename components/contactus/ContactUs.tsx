@@ -9,7 +9,7 @@ import "../../style/aboutus/aboutus.css";
 import { FaBolt } from "react-icons/fa6";
 import { FadeIn } from "@/components/animations/fade-in";
 import { motion, AnimatePresence } from "framer-motion";
-import {ContactCardsSection} from './Contactuscards'
+import { ContactCardsSection } from './Contactuscards'
 import { LogoNewsTicker } from "../aboutus/LogoNewsTicker"; // Import here
 
 export const ContactUs = () => {
@@ -24,9 +24,9 @@ export const ContactUs = () => {
   }, [words.length]);
 
   return (
-    <section className="bm-hero-section">
+    <section className="bm-hero-section-contact ">
       {/* Your existing text content - NO CHANGES */}
-      <FadeIn delay={0.1}>
+      {/* <FadeIn delay={0.1}>
         <div className="bm-hero-badge">
           <span className="bm-hero-badge__icon">
             <FaBolt size={19} color="black" />
@@ -35,16 +35,17 @@ export const ContactUs = () => {
             India's Leading Marketing Agency
           </p>
         </div>
-      </FadeIn>
+      </FadeIn> */}
 
       <FadeIn delay={0.2}>
         <h1 className="bm-hero-title">
 
-      
+
           <span className="text-grey">Talk to Experts </span>
           <br />
-          <span className="text-black">Who Understand Your Business</span>
-               
+          <span className="text-black">Who </span>
+          <span className="               text-yellow
+"> Understand Your Business</span>
 
           {/* <span className="inline-flex align-bottom ml-2 animatetext">
             <AnimatePresence mode="wait">
@@ -92,8 +93,8 @@ export const ContactUs = () => {
 
 
       <LogoNewsTicker />
-      <ContactCardsSection/>
-      
+      <ContactCardsSection />
+
     </section>
   );
 };

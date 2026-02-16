@@ -12,7 +12,7 @@ body{
   display: flex;
   gap: 100px;
   width: max-content;
-  animation: scrollLogos 30s linear infinite;
+  animation: scrollLogos 10s linear infinite;
 }
 
 .bm-trusted-logo-item img {
@@ -32,7 +32,7 @@ body{
     
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-10%);
   }
 }
 
