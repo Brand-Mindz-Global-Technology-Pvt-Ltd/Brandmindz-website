@@ -13,7 +13,8 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
-const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
+
 
   // Check if mobile
   useEffect(() => {
@@ -73,17 +74,23 @@ const [show, setShow] = useState(false);
     {
       name: 'Our Services',
       hasDropdown: true,
-      dropdownItems: ['Web Development', 'UI/UX Design', 'Digital Marketing', 'SEO']
+      dropdownItems: [
+        { label: 'Branding', path: '/services/branding' },
+        { label: 'Designing', path: '/services/designing' },
+        { label: 'Development', path: '/services/development' },
+        { label: 'Digital Marketing', path: '/services/digital-marketing' },
+        { label: 'E-Commerce listing', path: '/services/ecommerce' }
+      ]
     },
     {
       name: 'Industries',
       hasDropdown: true,
-      dropdownItems: ['Technology', 'Healthcare', 'Finance', 'E-commerce']
+      dropdownItems: []
     },
     {
       name: 'Case Studies',
       hasDropdown: true,
-      dropdownItems: ['Project 1', 'Project 2', 'Project 3']
+      dropdownItems: []
     },
     {
       name: 'Sustainability',
@@ -94,7 +101,7 @@ const [show, setShow] = useState(false);
     {
       name: 'Resources',
       hasDropdown: true,
-      dropdownItems: ['Blog', 'Guides', 'Whitepapers', 'Tools']
+      dropdownItems: []
     },
     {
       name: 'Contact us',
@@ -111,7 +118,7 @@ const [show, setShow] = useState(false);
     }
   };
 
- useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
     }, 1000); // 1 second delay
@@ -123,30 +130,35 @@ const [show, setShow] = useState(false);
     return pathname.startsWith(path);
   };
 
+
+ const toggleDropdown = (name) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
+
   return (
     <div className="header-top">
 
       <div className="header-wrapper">
         {/* Availability Pill - Hidden on mobile */}
-    <AnimatePresence>
-      {show && (
-        <motion.div 
-          className="availability-wrapper"
-          initial={{ y: -50, opacity: 0 }} // Starts 50px above and invisible
-          animate={{ y: 0, opacity: 1 }}   // Slides to position and fades in
-          transition={{ 
-            duration: 0.8, 
-            ease: "easeOut" 
-          }}
-        >
-          <div className="availability-pill"></div>
-          <div className="availability-text">
-            <div className="dot"></div>
-            <span>Available To Help You Grow</span>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        <AnimatePresence>
+          {show && (
+            <motion.div
+              className="availability-wrapper"
+              initial={{ y: -50, opacity: 0 }} // Starts 50px above and invisible
+              animate={{ y: 0, opacity: 1 }}   // Slides to position and fades in
+              transition={{
+                duration: 0.8,
+                ease: "easeOut"
+              }}
+            >
+              <div className="availability-pill"></div>
+              <div className="availability-text">
+                <div className="dot"></div>
+                <span>Available To Help You Grow</span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
 
         <header className="bm-header">
@@ -157,7 +169,7 @@ const [show, setShow] = useState(false);
               <Image
                 src={logo}
                 alt="Brand Mindz"
-                priority 
+                priority
               />
             </div>
 
@@ -177,13 +189,13 @@ const [show, setShow] = useState(false);
                 {menuItems.map((item, index) => (
                   <li
                     key={index}
-                    className={`${item.hasDropdown ? 'has-dropdown' : ''} ${isActive(item.path) ? 'active' : ''}`}
+                    className={` ${item.hasDropdown ? 'has-dropdown' : ''} ${isActive(item.path) ? 'active' : ''}`}
                     onClick={(e) => {
                       if (!item.hasDropdown) {
                         handleMenuItemClick(item.name);
                       }
                       if (item.hasDropdown && isMobile) {
-                        //   toggleDropdown(item.name);
+                          toggleDropdown(item.name);
                         e.stopPropagation();
                       }
                     }}
@@ -209,7 +221,7 @@ const [show, setShow] = useState(false);
                           className="arrow"
                           onClick={(e) => {
                             e.stopPropagation();
-                            //   toggleDropdown(item.name);
+                              toggleDropdown(item.name);
                           }}
                         >
                           {activeDropdown === item.name ? <FiChevronUp /> : <FiChevronDown />}
@@ -222,9 +234,15 @@ const [show, setShow] = useState(false);
                           <div
                             key={idx}
                             className="dropdown-item"
-                            onClick={() => handleMenuItemClick(dropdownItem)}
+                            onClick={() => {
+                              handleMenuItemClick(dropdownItem.label); // Logic for logging/closing menu
+                              if (isMobile) closeMobileMenu();
+                            }}
                           >
-                            {dropdownItem}
+                            {/* Wrap the label in a Link to the specific page */}
+                            <Link href={dropdownItem.path} style={{ display: 'block', width: '100%' }}>
+                              {dropdownItem.label}
+                            </Link>
                           </div>
                         ))}
                       </div>

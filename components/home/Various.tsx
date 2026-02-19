@@ -278,12 +278,12 @@ const Various = () => {
           {renderSideItem(3)} {renderSideItem(4)}
         </div>
         {/* Left Column 3 */}
-        <div className={styles.column} style={{ paddingTop: '140px' }}>
+        <div className={styles.column} style={{ paddingTop: '170px' }}>
           {renderSideItem(5)}
         </div>
 
         {/* CENTER COLUMN (Always gridData[0]) */}
-        <div className={styles.column} style={{ paddingTop: '220px' }}>
+        <div className={styles.column} style={{ paddingTop: '260px' }}>
           <motion.div layout key="center-slot" className={`${styles.gridItem} ${styles.large} ${styles.activeCard}`}>
             <AnimatePresence mode="wait">
               <motion.div
@@ -307,7 +307,7 @@ const Various = () => {
         </div>
 
         {/* Right Columns */}
-        <div className={styles.column} style={{ paddingTop: '140px' }}>
+        <div className={styles.column} style={{ paddingTop: '170px' }}>
           {renderSideItem(6)}
         </div>
         <div className={styles.column} style={{ paddingTop: '0px' }}>
@@ -329,7 +329,7 @@ const Various = () => {
                 exit={{ opacity: 0, x: -20 }}
               >
                 <div className={styles.quoteIconContainer}>
-                  <Image src={Image1} alt="quote" width={40} height={40} />
+                  <Image src={Image1} alt="quote" width={40} height={40}  className={styles.quoteIcon}/>
                   <p className={styles.testimonialLabel}>Testimonials</p>
                 </div>
                 <p className={styles.testimonialText}>{active.quote}</p>

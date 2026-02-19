@@ -1,0 +1,329 @@
+import React, { useState } from 'react'
+
+import NoPoverty1 from '../../assets/HomeSection/about/NoPoverty1.jpg'
+import Zero2 from '../../assets/HomeSection/about/Zero2.jpg'
+import Good3 from '../../assets/HomeSection/about/Good3.jpg'
+import Quality4 from '../../assets/HomeSection/about/Quality4.jpg'
+import Equallity5 from '../../assets/HomeSection/about/Equallity5.jpg'
+import Clean6 from '../../assets/HomeSection/about/Clean6.jpg'
+import Energy7 from '../../assets/HomeSection/about/Energy7.jpg'
+import Growth8 from '../../assets/HomeSection/about/Growth8.jpg'
+import Infr9 from '../../assets/HomeSection/about/Infr9.jpg'
+import Reduced10 from '../../assets/HomeSection/about/Reduced10.jpg'
+import Communities11 from '../../assets/HomeSection/about/Communities11.jpg'
+import Production12 from '../../assets/HomeSection/about/Production12.jpg'
+import Action13 from '../../assets/HomeSection/about/Action13.jpg'
+import Life14 from '../../assets/HomeSection/about/Life14.jpg'
+import Lifeland15 from '../../assets/HomeSection/about/Lifeland15.jpg'
+import Peace16 from '../../assets/HomeSection/about/Peace16.jpg'
+import Goals17 from '../../assets/HomeSection/about/Goals17.jpg'
+import Image from "next/image";
+import "../../style/sustainability/brandsustainability.css";
+
+import { ArrowLeft } from "lucide-react";
+
+const Brandsustainability = () => {
+    const [activeTab, setActiveTab] = useState(7);
+
+    const menuItems = [
+        {
+            id: 7,
+            label: "Sustainability",
+            type: "sustainability",
+            subtitle: "Sustainability",
+            title: "Building growth that respects people and the planet",
+            desc: "Brand Mindz aligns its CSR and organizational practices with the United Nations Sustainable Development Goals (SDGs).",
+            sdgs: [
+                {
+                    id: 1,
+                    title: "No Poverty",
+                    tag: "Alignment Type",
+                    image: NoPoverty1,
+                    description: "Detailed description for SDG 1...",
+                    contributions: [
+                        "Contribution point 1",
+                        "Contribution point 2",
+                        "Contribution point 3"
+                    ],
+                    footerNote: "This alignment is supported by CSR Focus Area..."
+                },
+                {
+                    id: 2,
+                    title: "Zero Hunger",
+                    tag: "Alignment Type",
+                    image: Zero2,
+                    description: "Detailed description for SDG 2...",
+                    contributions: [
+                        "Contribution point 1",
+                        "Contribution point 2"
+                    ],
+                    footerNote: "This alignment is supported by CSR Focus Area..."
+                },
+                {
+                    id: 3,
+                    title: "Good Health and Well-being",
+                    tag: "Alignment Type",
+                    image: Good3,
+                    description: "Detailed description for SDG 3...",
+                    contributions: [
+                        "Contribution point 1",
+                        "Contribution point 2",
+                        "Contribution point 3"
+                    ],
+                    footerNote: "This alignment is supported by CSR Focus Area..."
+                },
+                {
+                    id: 4,
+                    title: "Quality Education",
+                    tag: "Alignment Type",
+                    image: Quality4,
+                    description: "Brand Mindz aligns its CSR and organizational practices with the United Nations Sustainable Development Goals (SDGs), especially SDG 5: Gender Equality. The company promotes women empowerment, supports women-led enterprises and women entrepreneurs, and ensures equal opportunity employment.",
+                    contributions: [
+                        "Entrepreneurship and skill development initiatives for women",
+                        "Digital literacy and financial awareness programs",
+                        "Inclusive hiring practices that promote women participation in the workforce"
+                    ],
+                    subtitle: "Quality Education",
+
+                    footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
+                },
+                {
+                    id: 5,
+                    title: "Leadership knows No Gender",
+                    tag: "Strong and Direct Alignment",
+                    image: Equallity5,
+                    description: `Brand Mindz aligns its CSR and organizational 
+                    practices with the United Nations Sustainable Development Goals 
+                    (SDGs), especially SDG 5: Gender Equality. The company promotes
+                     women empowerment, supports women-led enterprises and women entrepreneurs, 
+                     and ensures equal opportunity employment. Through inclusive growth, diversity
+                      and inclusion, and responsible business practices, Brand Mindz contributes to 
+                      sustainable development and long-term social impact.
+                       <br/>
+                       <br/>
+                       Key contributions include a strong focus on empowering women
+                        through entrepreneurship and skill development initiatives 
+                        that enhance their employability and economic independence.
+                         These programs are designed to equip women with practical 
+                         skills, leadership abilities, and business knowledge, enabling them 
+                         to build sustainable livelihoods and actively participate in economic growth.
+                       <br/>
+                       <br/>
+                         In addition, digital literacy and financial awareness programs
+                          are implemented to improve access to technology and financial systems,
+                           helping women gain confidence in using digital tools, managing personal finances,
+                          and understanding savings, credit, and investment opportunities.
+                       <br/>
+                          <br/>
+                          This strategic alignment is directly supported by CSR Focus Area 5.1 –
+                           Women Empowerment, reinforcing the commitment to advancing gender 
+                           equality, economic inclusion, and long-term social impact.`,
+                    contributions: [],
+                    subtitle: "Gender Equality",
+                    footerNote: ""
+                },
+                {
+                    id: 6,
+                    title: "Clean Water and Sanitation",
+                    tag: "Alignment Type",
+                    image: Clean6,
+                    description: "Detailed description for SDG 6...",
+                    contributions: [
+                        "Contribution point 1",
+                        "Contribution point 2",
+                        "Contribution point 3"
+                    ],
+                    footerNote: "This alignment is supported by CSR Focus Area..."
+                },
+                {
+                    id: 6,
+                    title: "Clean Water and Sanitation",
+                    tag: "Alignment Type",
+                    image: Clean6,
+                    description: "Clean water initiatives...",
+                    contributions: ["Water projects", "Sanitation programs"],
+                    footerNote: "Supported by CSR Focus Area..."
+                },
+
+                {
+                    id: 7,
+                    title: "Affordable and Clean Energy",
+                    tag: "Alignment Type",
+                    image: Energy7,
+                    description: "Energy initiatives...",
+                    contributions: ["Solar awareness"],
+                    footerNote: "Supported by CSR Focus Area..."
+                },
+
+                {
+                    id: 8,
+                    title: "Decent Work and Economic Growth",
+                    tag: "Alignment Type",
+                    image: Growth8,
+                    description: "Economic growth initiatives...",
+                    contributions: ["Job training"],
+                    footerNote: "Supported by CSR Focus Area...",
+                    subtitle: "Decent Work  Economic Growth",
+
+                },
+
+                {
+                    id: 9,
+                    title: "Industry, Innovation and Infrastructure",
+                    tag: "Alignment Type",
+                    image: Infr9,
+                    description: "Innovation initiatives...",
+                    contributions: ["Tech innovation"],
+                    footerNote: "Supported by CSR Focus Area..."
+                },
+
+                {
+                    id: 10,
+                    title: "Reduced Inequalities",
+                    tag: "Alignment Type",
+                    image: Reduced10,
+                    description: "Inclusive programs...",
+                    contributions: ["Equality initiatives"],
+                    footerNote: "Supported by CSR Focus Area...",
+                    subtitle: "Reduced Inequalities",
+
+                },
+
+                {
+                    id: 11,
+                    title: "Sustainable Cities and Communities",
+                    tag: "Alignment Type",
+                    image: Communities11,
+                    description: "Community initiatives...",
+                    contributions: ["Smart cities"],
+                    footerNote: "Supported by CSR Focus Area..."
+                },
+
+                {
+                    id: 12,
+                    title: "Responsible Consumption and Production",
+                    tag: "Alignment Type",
+                    image: Production12,
+                    description: "Sustainable production...",
+                    contributions: ["Waste reduction"],
+                    footerNote: "Supported by CSR Focus Area..."
+                },
+
+                {
+                    id: 13,
+                    title: "Climate Action",
+                    tag: "Alignment Type",
+                    image: Action13,
+                    description: "Climate initiatives...",
+                    contributions: ["Carbon reduction"],
+                    footerNote: "Supported by CSR Focus Area...",
+                    subtitle: "Climate Action",
+
+                },
+
+                {
+                    id: 14,
+                    title: "Life Below Water",
+                    tag: "Alignment Type",
+                    image: Life14,
+                    description: "Ocean protection...",
+                    contributions: ["Ocean cleanup"],
+                    footerNote: "Supported by CSR Focus Area..."
+                },
+
+                {
+                    id: 15,
+                    title: "Life on Land",
+                    tag: "Alignment Type",
+                    image: Lifeland15,
+                    description: "Forest protection...",
+                    contributions: ["Tree plantation"],
+                    footerNote: "Supported by CSR Focus Area..."
+                },
+
+                {
+                    id: 16,
+                    title: "Peace, Justice and Strong Institutions",
+                    tag: "Alignment Type",
+                    image: Peace16,
+                    description: "Justice initiatives...",
+                    contributions: ["Legal awareness"],
+                    footerNote: "Supported by CSR Focus Area..."
+                },
+
+                {
+                    id: 17,
+                    title: "Partnerships for the Goals",
+                    tag: "Alignment Type",
+                    image: Goals17,
+                    description: "Global partnerships...",
+                    contributions: ["CSR partnerships"],
+                    footerNote: "Supported by CSR Focus Area..."
+                }
+            ]
+        },
+    ];
+
+    const current = menuItems.find(item => item.id === activeTab) || menuItems[0];
+    const [openImg, setOpenImg] = useState(current.sdgs[4]);
+
+
+    return (
+        <section className="bm-about-section-sustainability">
+            <div className="bm-about-container">
+                {/* Dynamic Content Area */}
+                <div className="bm-about-content-wrapper">
+
+
+                    <div className="bm-sdg-grid">
+                        {current.sdgs.map((sdg, i) => (
+                            <div
+                                key={i}
+                                className={`sdg-box sdg-${sdg.id}`}
+                                onClick={() => setOpenImg(sdg)} // Set the whole object, not just URL
+                            >
+                                <Image src={sdg.image} alt={`SDG ${sdg.id}`} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            <div className="bm-about-container  ">
+                <div className="bm-sdg-detail-view">
+                    <div className="bm-sdg-alignment-tag  bm-sdg-alignment-tag-sustainability">{openImg?.tag}</div>
+
+                    <div className="bm-sdg-detail-flex">
+                        <div className="bm-sdg-image-main">
+                            <Image src={openImg?.image} alt="SDG Icon" />
+                        </div>
+
+                        <div className="bm-sdg-content-main">
+                            <p
+                                dangerouslySetInnerHTML={{ __html: openImg?.description }}
+                            ></p>
+                            {openImg?.contributions?.length > 0 && (
+                                <div className="bm-sdg-contributions">
+                                    <span>Key contributions include:</span>
+                                    <ul>
+                                        {openImg?.contributions.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {openImg?.footerNote !== "" && (
+                                <p className="bm-sdg-footer-note">{openImg?.footerNote}</p>
+                            )}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default Brandsustainability

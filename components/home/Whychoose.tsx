@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
   const features = [
     {
       icon: <FaChartLine />,
-      title: (<><span className="highlight-red">Measurable</span> Business Results</>),
+      title: (<><span>Measurable</span> Business Results</>),
       desc: "We focus on leads, conversions, and revenue not vanity metrics. Every action is tied to real business growth."
     },
     {
@@ -104,7 +104,7 @@ const WhyChooseUs = () => {
 
               <StaggerChildren className="bm-why-grid " staggerDelay={0.1} initialDelay={0.3}>
                 {features.map((f, i) => (
-                  <StaggerItem key={i} className="bm-why-card ">
+                  <StaggerItem key={i} className="bm-why-card">
                     <div className="bm-why-card-header">
                       <span className="bm-why-icon">{f.icon}</span>
                       <h4 className="bm-why-card-title">{f.title}</h4>

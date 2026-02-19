@@ -149,7 +149,7 @@ export default function ProvenGrowthSection() {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef(null);
-  
+
   const targetNumber = 587;
   const duration = 2000; // Animation duration in milliseconds (2 seconds)
 
@@ -173,7 +173,7 @@ export default function ProvenGrowthSection() {
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-      
+
       // Using an easing function (easeOutQuad) for a smoother finish
       const currentCount = Math.floor(progress * targetNumber);
       setCount(currentCount);
@@ -187,7 +187,7 @@ export default function ProvenGrowthSection() {
 
   return (
     <section className={styles.section} ref={sectionRef}>
-      <div className={styles.headingWrapper}>
+      <div className={`${styles.headingWrapper} `} >
         <h2 className={styles.heading}>
           Proven Growth Frameworks<br />
           <span>Backed by Real Results</span>
@@ -197,7 +197,7 @@ export default function ProvenGrowthSection() {
           all-accessible insights in real time?
         </p>
       </div>
-      
+
       <div className={styles.CardOver}>
         <div className={styles.cardsWrapper}>
           <div className={styles.leftCenterContainer}>
@@ -219,7 +219,10 @@ export default function ProvenGrowthSection() {
                 <div className={styles.iconCircle}><Layers size={25} color="#fff" /></div>
                 <div>
                   <p className={styles.statLabel}>Generated Leads</p>
-                  <p className={styles.bigNumberGreen}>{count}+ Leads Generated</p>
+                 <p className={styles.bigNumberGreen}>
+  <span className={styles.blackNumber}>{count}</span> + Leads Generated
+</p>
+
                 </div>
               </div>
 
@@ -251,14 +254,24 @@ export default function ProvenGrowthSection() {
                       </div>
                     </div>
                   </div>
+                  <div>
+                    <p className={styles.Lead}>
+                      <span className={styles.serviceGlobe}>Service:</span> Meta Lead Generation Ads
+                    </p>
+                     <p className={styles.Lead}>
+                      <span className={styles.serviceGlobe}>Campaign Duration:</span> June 2025
+                    </p>
+                  </div>
                 </div>
+
+
               </div>
             </div>
           </div>
 
           <div className={styles.rightCard}>
             <div className={styles.darkBlock}>
-              <div className={styles.blockTitle}><span className={styles.arrowIcon} style={{backgroundColor:'#FFD600'}}>! </span>Problem</div>
+              <div className={styles.blockTitle}><span className={styles.arrowIcon} style={{ backgroundColor: '#FFD600' }}>! </span>Problem</div>
               <p className={styles.problemBold}>Driver Acquisition at Scale Is Not Easy</p>
               <p className={styles.redSub}>Truck Taxi faced key challenges:</p>
               <p className={styles.italicQuote}>“We were unable to reach active commercial drivers, costs kept rising due to heavy competition, leads lacked intent, and traditional digital ads proved expensive, inefficient, and unscalable.”</p>
@@ -290,7 +303,7 @@ export default function ProvenGrowthSection() {
           </div>
           <p className={styles.footerPara}>
 One platform is a comprehensive system of solutions that will be the first step towards digitalization of your business! One platform is a comprehensive system of solutions that will be the first step towards digitalization of your business!          </p>
-        </div>
+                    </div>
       </div>
     </section>
   );

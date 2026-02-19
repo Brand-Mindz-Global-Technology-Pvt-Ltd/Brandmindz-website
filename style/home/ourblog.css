@@ -42,6 +42,7 @@
   border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;
+box-shadow: 0px 6px 20 rgb(0, 0, 0, 0.2);
 }
 
 .bm-blog-all-btn:hover {
@@ -58,7 +59,7 @@
 /* Featured Card (Left) */
 .bm-featured-card {
     position: relative;
-    height:690px;
+    height:680px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -122,7 +123,8 @@
     background: #fff;
     padding: 10px;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    /* border: 1px solid black; */
 }
 
 .bm-blog-list-item img {

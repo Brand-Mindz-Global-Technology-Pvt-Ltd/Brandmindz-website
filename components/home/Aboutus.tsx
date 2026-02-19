@@ -554,7 +554,8 @@ const Aboutus = () => {
               <div
                 className="bm-about-description"
                 style={{
-                  lineHeight: current.subtitle === "About Brand Mindz Global" ? "28px" : "25px",
+                  lineHeight: current.subtitle === "About Brand Mindz Global" ? "30px" : "28px",
+                  fontSize: current.subtitle === "Customer Service Philosophy" ? "19px" : "20px",
                 }}
               >
                 {current.desc.map((text, index) => (

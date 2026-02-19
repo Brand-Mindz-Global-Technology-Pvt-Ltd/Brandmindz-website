@@ -2,7 +2,7 @@
   padding: 60px 0;
   overflow: hidden;
   transition: background 0.5s ease;
-  margin-left: 7%;
+  margin-left: 4%;
   position: relative;
 }
 .back-btn {
@@ -20,7 +20,7 @@
   position: absolute;
   z-index: 9999;
   top: 0px;
-  left:20px;
+  left: 20px;
 }
 
 .back-btn:hover {
@@ -40,7 +40,7 @@
 .bm-why-container {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 0px;
   position: relative;
 }
 
@@ -89,10 +89,10 @@
   opacity: 0.8;
   filter: grayscale(1);
 
-  transform: scale(0.9); 
-  transform-origin: center center; 
+  transform: scale(0.9);
+  transform-origin: center center;
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 
@@ -175,10 +175,16 @@
 
 .bm-why-section {
   padding: 30px 0px 20px 30px;
-  background-color: #EFEFEF;
+  /* background-color: #EFEFEF; */
   border-radius: 20px;
   /* max-width: 90%; */
   height: 91vh;
+  background: rgba(239, 239, 239, 0.3);
+  /* 30% transparent */
+  backdrop-filter: blur(10px);
+  /* blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari support */
 
 }
 
@@ -212,61 +218,65 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-
 .bm-why-card {
-  padding: 25px;
-  padding-top: 10px;
-  border-radius: 15px;
-  border: 1px solid rgba(255,255,255,0.3); /* optional subtle border */
-  font-style: normal;
-  font-size: 24px;
-  line-height: 25px;
-  letter-spacing: 3%;
   text-align: justify;
-  color: white; 
-    background-color: rgba(255, 255, 255, 0.15); /* semi-transparent white */
-  backdrop-filter: blur(10px);  /* adjust blur amount */
-  -webkit-backdrop-filter: blur(10px); /* for Safari support */
-  
-  background-color: rgb(228, 228, 228); /* solid color fallback */
+  color: #fff;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(9px);
+  background-color: rgba(240, 240, 240, 0.5) !important;
+  border: 1px solid #ffffff4d;
+  border-radius: 15px;
+  padding: 20px 30px 30px;
+  font-size: 20px;
+  line-height: 20px;
+      z-index: 999;
+  box-shadow:
+    0px -4px 4px -10px rgba(0, 0, 0, 0.3),
+    0px 4px 4px -2px rgba(0, 0, 0, 0.3),
+    -4px 0px 4px -2px rgba(0, 0, 0, 0.3),
+    4px 0px 4px -10px rgba(0, 0, 0, 0.3),
+    inset 0 0 0px #ffffff1a !important;
 }
-
-/* Support detection via @supports */
-@supports (backdrop-filter: blur(10px)) {
-  .bm-why-card {
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-}
-
 
 .bm-why-card:hover {
-  background: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95) !important; /* White */
+  color: #000; /* Text black */
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
+
 
 .bm-why-card-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .bm-why-icon {
   font-size: 20px;
   color: #333;
+  margin-bottom: 40px;
+
 }
 
-.bm-why-card h4 {
-  font-size: 20px;
+.bm-why-card-title {
+  font-size: 22px;
   font-weight: 600;
   margin: 0;
   color: #222;
+  vertical-align: middle;
+  letter-spacing: 1;
+  /* Additional styling for cards */
+  color: #1e293b;
+  margin: 0;
+  margin-bottom: 40px;
+
 }
 
-.bm-why-card p {
+.bm-why-card-desc {
   font-size: 20px;
   color: #666;
-  line-height: 1.5;
+  line-height: 1.2;
   margin: 0;
 }
 
@@ -288,21 +298,11 @@
   margin-left: 3px;
 }
 
-.bm-why-card-title {
 
-  font-size: 34px;
-  line-height: 54px;
-  /* leading-trim: NONE equivalent */
-  vertical-align: middle;
-  letter-spacing: 1;
-  /* Additional styling for cards */
-  color: #1e293b;
-  margin: 0;
-}
 
 /* For the red "Measurable" span inside */
 .bm-why-card-title span {
-  color: #C9C9C9;
+  color: #818181;
   margin: 0px 5px;
 }
 
@@ -333,23 +333,23 @@
     padding: 50px 4%;
     min-height: 90vh;
   }
-  
+
   .bm-why-main-title {
     font-size: 42px;
   }
-  
+
   .bm-why-card-title {
     font-size: 24px;
   }
-  
+
   .bm-why-card p {
     font-size: 17px;
   }
-  
+
   .bm-world-map {
     transform: scale(1.05);
   }
-  
+
   .bm-global-title {
     font-size: 3rem;
   }
@@ -360,24 +360,24 @@
   .bm-why-container {
     gap: 30px;
   }
-  
+
   .bm-why-main-title {
     font-size: 38px;
     margin-bottom: 35px;
   }
-  
+
   .bm-why-grid {
     gap: 20px;
   }
-  
+
   .bm-why-card {
     padding: 22px;
   }
-  
+
   .bm-why-card-title {
     font-size: 22px;
   }
-  
+
   .bm-world-map {
     transform: scale(1);
     padding-right: 20px;
@@ -391,44 +391,44 @@
     margin: 15px;
     min-height: auto;
   }
-  
+
   .bm-why-container {
     flex-direction: column;
     gap: 50px;
   }
-  
+
   .bm-why-left {
     flex: 1;
     max-width: 100%;
     width: 100%;
   }
-  
+
   .bm-why-main-title {
     font-size: 36px;
   }
-  
+
   .bm-why-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .bm-why-right {
     width: 100%;
     min-height: 500px;
   }
-  
+
   .bm-why-right.full-width {
     min-height: 70vh;
   }
-  
+
   .bm-world-map {
     transform: scale(0.95);
     padding-right: 0;
   }
-  
+
   .bm-view-btn {
     left: 50%;
   }
-  
+
   .back-btn {
     top: -30px;
   }
@@ -440,23 +440,23 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .bm-why-card {
     padding: 25px;
   }
-  
+
   .bm-global-title {
     font-size: 2.5rem;
     white-space: normal;
     width: 100%;
     padding: 0 20px;
   }
-  
+
   .marker-text {
     padding: 4px 10px;
     font-size: 12px;
   }
-  
+
   .marker-text::before {
     font-size: 10px;
   }
@@ -468,44 +468,42 @@
     padding: 35px 25px;
     margin: 10px;
     border-radius: 16px;
+    height: 100vh;
   }
-  
+
   .bm-why-section.expanded {
     padding: 35px 25px;
   }
-  
+
   .bm-why-subtitle {
     font-size: 18px;
   }
-  
+
   .bm-why-main-title {
     font-size: 32px;
     margin-bottom: 30px;
   }
-  
-  .bm-why-card-title {
-    font-size: 20px;
-    line-height: 1.4;
-  }
-  
+
+
+
   .bm-why-card p {
     font-size: 16px;
   }
-  
+
   .bm-why-right {
     min-height: 450px;
   }
-  
+
   .bm-global-title {
     font-size: 2rem;
     margin: 20px 0;
   }
-  
+
   .bm-view-btn {
     padding: 12px 32px;
     font-size: 15px;
   }
-  
+
   .back-btn {
     top: -25px;
     font-size: 14px;
@@ -517,68 +515,73 @@
   .bm-why-section {
     padding: 30px 20px;
     margin: 8px;
+    height: 100%;
   }
-  
+
   .bm-why-section.expanded {
     padding: 30px 20px;
   }
-  
+
   .bm-why-main-title {
     font-size: 28px;
     letter-spacing: 0.5px;
   }
-  
+
   .bm-why-card {
     padding: 20px;
   }
-  
+
   .bm-why-card-header {
     gap: 10px;
   }
-  
+
   .bm-why-icon {
     font-size: 22px;
+    margin-bottom: 10px;
+
   }
-  
+
   .bm-why-card-title {
-    font-size: 18px;
+    font-size: 20px !important;
+    margin-bottom: 10px;
+
   }
-  
+
   .bm-why-card p {
-    font-size: 15px;
+    font-size: 20px;
   }
-  
+
   .bm-why-right {
     min-height: 400px;
   }
-  
+
   .bm-why-right.full-width {
     min-height: 60vh;
   }
-  
+
   .bm-global-title {
     font-size: 1.8rem;
   }
-  
+
   .bm-marker {
     gap: 4px;
   }
-  
+
   .marker-text {
     padding: 3px 8px;
     font-size: 11px;
   }
-  
+
   .marker-dot {
     width: 10px;
     height: 10px;
   }
-  
+
   .bm-view-btn {
     padding: 10px 28px;
     font-size: 14px;
   }
-  
+
   .back-btn {
     padding: 6px 16px;
     font-size: 13px;
@@ -591,73 +594,72 @@
   .bm-why-section {
     padding: 25px 15px;
     margin: 5px;
+    height: 100%;
   }
-  
+
   .bm-why-subtitle {
     font-size: 16px;
     margin-bottom: 10px;
   }
-  
+
   .bm-why-main-title {
     font-size: 24px;
     margin-bottom: 25px;
   }
-  
+
   .bm-why-card {
     padding: 18px;
   }
-  
+
   .bm-why-card-header {
     gap: 8px;
     margin-bottom: 12px;
   }
-  
+
   .bm-why-icon {
     font-size: 20px;
+    margin-bottom: 10px;
+
   }
-  
-  .bm-why-card-title {
-    font-size: 17px;
-    line-height: 1.3;
-  }
-  
+
+
   .bm-why-card p {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.5;
   }
-  
+
   .bm-why-right {
     min-height: 350px;
   }
-  
+
   .bm-why-right.full-width {
     min-height: 55vh;
   }
-  
+
   .bm-global-title {
     font-size: 1.5rem;
     margin: 15px 0;
   }
-  
+
   .bm-marker {
     gap: 3px;
   }
-  
+
   .marker-text {
     padding: 2px 8px;
     font-size: 10px;
   }
-  
+
   .marker-dot {
     width: 8px;
     height: 8px;
   }
-  
+
   .bm-view-btn {
     padding: 8px 24px;
     font-size: 13px;
   }
-  
+
   .back-btn {
     padding: 5px 14px;
     font-size: 12px;
@@ -665,7 +667,7 @@
     top: -18px;
     left: 10px;
   }
-  
+
   .back-icon {
     font-size: 12px;
   }
@@ -676,45 +678,46 @@
   .bm-why-section {
     padding: 20px 12px;
     margin: 5px;
+    height: 100%;
   }
-  
+
   .bm-why-subtitle {
     font-size: 14px;
   }
-  
+
   .bm-why-main-title {
     font-size: 22px;
   }
-  
+
   .bm-why-card {
     padding: 16px;
   }
-  
+
   .bm-why-card-title {
     font-size: 16px;
   }
-  
+
   .bm-why-card p {
-    font-size: 13px;
+    font-size: 15px;
   }
-  
+
   .bm-why-right {
     min-height: 300px;
   }
-  
+
   .bm-why-right.full-width {
     min-height: 50vh;
   }
-  
+
   .bm-global-title {
     font-size: 1.3rem;
   }
-  
+
   .marker-text {
     padding: 2px 6px;
     font-size: 9px;
   }
-  
+
   .bm-view-btn {
     padding: 8px 20px;
     font-size: 12px;
@@ -727,19 +730,19 @@
     min-height: auto;
     padding: 30px 20px;
   }
-  
+
   .bm-why-container {
     gap: 30px;
   }
-  
+
   .bm-why-right {
     min-height: 400px;
   }
-  
+
   .bm-why-right.full-width {
     min-height: 80vh;
   }
-  
+
   .bm-global-title {
     font-size: 2rem;
   }
@@ -751,18 +754,18 @@
     transform: none;
     box-shadow: none;
   }
-  
+
   .bm-why-card:active {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   }
-  
+
   .bm-view-btn:hover {
     background: rgba(0, 0, 0, 0.75);
     transform: translate(-50%, -50%);
     box-shadow: none;
   }
-  
+
   .bm-view-btn:active {
     background: black;
     transform: translate(-50%, -50%) scale(0.98);
@@ -776,13 +779,13 @@
     padding: 20px;
     margin: 0;
   }
-  
+
   .bm-view-btn,
   .back-btn,
   .bm-marker {
     display: none;
   }
-  
+
   .bm-world-map {
     filter: grayscale(1);
     opacity: 1;
@@ -790,7 +793,7 @@
 }
 
 /* ===== ANIMATIONS ===== */
-@keyframes fadeInUp {
+/* @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -799,12 +802,12 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
-.bm-why-card {
+/* .bm-why-card {
   animation: fadeInUp 0.6s ease forwards;
   animation-delay: calc(var(--card-index, 0) * 0.1s);
-}
+} */
 
 /* ===== UTILITY CLASSES ===== */
 .hide-scrollbar {
@@ -821,15 +824,15 @@
   .bm-why-container {
     margin-right: -40px;
   }
-  
+
   .bm-why-container > * {
     margin-right: 40px;
   }
-  
+
   .bm-why-grid {
     margin-right: -25px;
   }
-  
+
   .bm-why-grid > * {
     margin-right: 25px;
     margin-bottom: 25px;

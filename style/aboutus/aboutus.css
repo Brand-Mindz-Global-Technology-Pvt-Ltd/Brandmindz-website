@@ -255,7 +255,7 @@
 
 /* Paragraphs */
 .bm-about-paragraph {
-  font-size: 1.3rem !important;
+  /* font-size: 1.3rem !important; */
   line-height: 1.2;
   margin-bottom:1.4rem;
   text-align: justify; 

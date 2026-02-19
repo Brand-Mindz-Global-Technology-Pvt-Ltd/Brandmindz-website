@@ -20,6 +20,19 @@ import Image2 from '../../assets/Footer/e11c902dd32153b2abe7a4d93637a06c7597b932
 import back from '../../assets/HomeSection/banner/Group (1).png'
 
 const Footer = () => {
+
+  const footerLinks = [
+  { name: "About us", path: "/about" },
+  { name: "Our Services", path: "/services" },
+  { name: "Industries", path: "/industries" },
+  { name: "Case Studies", path: "/case-studies" },
+  { name: "Sustainability", path: "/sustainability" },
+  { name: "Resources", path: "/resources" },
+  { name: "Careers", path: "/careers" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact us", path: "/contact" },
+];
+
   return (
     <footer className={styles.footerContainer}>
       {/* Background City Image */}
@@ -50,7 +63,7 @@ const Footer = () => {
               </div>
 
               <div className={styles.statusBadge}>
-                <div className="w-2.5 h-2.5 bg-[#00D26A] rounded-full animate-pulse" />
+<div className="w-2.5 h-2.5 rounded-full animate-pulse bg-[linear-gradient(180deg,#00C950,#006328)]"></div>
                 <span className={styles.statusText}>All Systems Operational</span>
               </div>
 
@@ -67,7 +80,7 @@ const Footer = () => {
           </div>
 
           {/* Column 2: Navigation */}
-          <div className="md:col-span-2 lg:col-span-2 md:pl-8">
+          {/* <div className="md:col-span-2 lg:col-span-2 md:pl-8">
             <h3 className={styles.sectionTitle} >Home</h3>
             <ul className={styles.linkList}>
               {["About us", "Our Services", "Industries", "Case Studies", "Sustainability", "Resources", "Careers", "Blog", "Contact us"].map((item) => (
@@ -76,7 +89,22 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
+
+<div className="md:col-span-2 lg:col-span-2 md:pl-8">
+  <h3 className={styles.sectionTitle}>Home</h3>
+
+  <ul className={styles.linkList}>
+    {footerLinks.map((item) => (
+      <li key={item.name} className={styles.linkItem}>
+        <Link href={item.path} className={styles.navLink}>
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
+
 
           {/* Column 3: Reach Us */}
           <div className="md:col-span-3 lg:col-span-3">

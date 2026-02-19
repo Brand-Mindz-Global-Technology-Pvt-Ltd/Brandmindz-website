@@ -91,12 +91,12 @@
 /* Content Layout */
 .bm-offering-grid {
   display: flex;
-  gap: 90px;
+  gap: 60px;
   text-align: left;
 }
 
 .bm-offering-promo-card {
-  flex: 0 0 390px;
+  flex: 0 0 380px;
   border-radius: 15px;
   overflow: hidden;
   position: relative;
@@ -193,8 +193,8 @@
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap:2px 40px;
-  padding: 18px 0px;
+  gap:2px 20px;
+  /* padding: 18px 0px; */
 }
 .service-icon {
   font-size: 22px;
@@ -202,7 +202,7 @@
 }
 
 .bm-service-item {
-  padding: 10px;
+  padding: 20px;
   background-color: white !important;
   position: relative;
   overflow: hidden;
@@ -210,7 +210,6 @@
   z-index: 1;
   border-radius:20px;
   cursor: pointer;
-
 }
 
 .bm-service-item:hover {

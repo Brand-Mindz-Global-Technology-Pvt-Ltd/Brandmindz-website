@@ -12,22 +12,24 @@
   align-items: center;
   padding: 20px 100px;
   overflow: hidden;
-  background-color: #f0f0f0;
+  background: url('../../assets//HomeSection/Whychoose/Frame\ 2147226084.png');
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
   margin: 1px 0px;
   margin-top: 40px;
 }
 
 
 .heading {
-  font-size: 45px;
-  font-weight: 300;
+  font-size: 40px;
+  font-weight: 500;
   line-height: 1.1;
   color: #000;
   margin: 0;
 }
 
 .heading span {
-  font-weight: 900;
   display: block;
   color: #000;
 }
@@ -42,11 +44,11 @@
 /* MAIN CARDS CONTAINER */
 .cardsWrapper {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 55% 45%;
   gap: 20px;
   position: relative;
   background: #f0f0f0;
-  padding: 50px;
+  padding: 20px;
   padding-bottom: 10px;
   width: 90%;
   margin: auto;
@@ -60,9 +62,11 @@
   gap: 0;
   flex: 0 0 70%;
   background: white;
-  border: 1px solid #000;
   border-radius: 40px;
   overflow: hidden;
+  
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
 }
 
 /* LEFT CARD */
@@ -75,7 +79,7 @@
 }
 .CardOver {
   background-color: #F0F0F0;
-  padding-top: 50px;
+  padding-top: 0px;
 }
 .pillBadge {
   width: 140px;
@@ -172,6 +176,27 @@
   font-weight: 800;
 }
 
+.blackNumber {
+  font-weight: 700;
+  color: #1B5E20;
+  display: inline-block;
+  animation: zoomPulse 1.5s infinite ease-in-out;
+}
+
+/* Animation */
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* zoom in */
+  }
+  100% {
+    transform: scale(1); /* zoom out */
+  }
+}
+
+
 .chartBox {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -202,7 +227,7 @@
   margin-bottom: 15px;
 }
 .badgeLabel {
-  font-size: 9px;
+  font-size: 13px;
   border-bottom: 2px solid #1B5E20;
   display: inline-block;
   margin-bottom: 5px;
@@ -213,7 +238,7 @@
   gap: 8px;
 }
 .badgeValue {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 900;
 }
 .upArrow {
@@ -225,7 +250,7 @@
   font-size: 14px;
 }
 .costDetails small {
-  font-size: 8px;
+  font-size: 13px;
   color: #888;
 }
 .metaInfo {
@@ -369,10 +394,10 @@
   font-style: normal;
   color: #000;
   line-height: 30px;
-  margin-right: 6%;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
   float: right;
-  width: 550px;
+  width: 42%;
+  margin-right:4%;
   text-align: center;
 }
 .footerQuote span {
@@ -423,6 +448,16 @@
   color: #827C7C;
   margin: 0;
 }
+
+.Lead{
+  font-size: 12px;
+  font-weight: 400;
+
+}
+.serviceGlobe {
+  color: gray; /* Green globe color */
+}
+
 
 
 /* ===== DESKTOP 1400px ===== */
