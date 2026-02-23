@@ -270,7 +270,7 @@ const Brandsustainability = () => {
 
     return (
         <section className="bm-about-section-sustainability">
-            <div className="bm-about-container">
+            <div className="bm-about-container-branding">
                 {/* Dynamic Content Area */}
                 <div className="bm-about-content-wrapper">
 
@@ -289,11 +289,11 @@ const Brandsustainability = () => {
                 </div>
             </div>
 
-            <div className="bm-about-container  ">
+            <div className="bm-about-container-branding ">
                 <div className="bm-sdg-detail-view">
                     <div className="bm-sdg-alignment-tag  bm-sdg-alignment-tag-sustainability">{openImg?.tag}</div>
 
-                    <div className="bm-sdg-detail-flex">
+                    <div className="bm-sdg-detail-flex-branding">
                         <div className="bm-sdg-image-main">
                             <Image src={openImg?.image} alt="SDG Icon" />
                         </div>

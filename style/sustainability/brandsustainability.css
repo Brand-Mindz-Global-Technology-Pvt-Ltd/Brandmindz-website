@@ -5,13 +5,12 @@
   overflow: hidden;
 }
 
-.bm-about-container {
+.bm-about-container-branding {
   max-width: 95%;
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  height: 100vh;
 }
 
 /* SDG Grid Layout */
@@ -141,7 +140,7 @@
   text-align: center;
 }
 /* 1. Force the container to make both columns the same height */
-.bm-sdg-detail-flex {
+.bm-sdg-detail-flex-branding {
   display: flex;
   gap: 20px;
   align-items: stretch; /* This makes the image and text blocks equal height */
@@ -189,7 +188,7 @@
 }
 
 @media (max-width: 768px) {
-  .bm-sdg-detail-flex { flex-direction: column; align-items: center; }
+  .bm-sdg-detail-flex-branding { flex-direction: column; align-items: center; }
   .bm-sdg-image-main { flex: 0 0 100%; max-width: 100%; }
   .bm-sdg-content-main p { text-align: left; font-size: 16px; }
 }
@@ -203,13 +202,13 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .bm-sdg-grid { grid-template-columns: repeat(4, 1fr); }
-  .bm-sdg-detail-flex { flex-direction: column; align-items: center; }
+  .bm-sdg-detail-flex-branding { flex-direction: column; align-items: center; }
   .bm-sdg-image-main { flex: 0 0 100%; width: 100%; max-width: 400px; }
 }
 
 @media (max-width: 768px) {
   .bm-sdg-grid { grid-template-columns: repeat(3, 1fr); }
-  .bm-about-container { max-width: 95%; }
+  .bm-about-container-branding{ max-width: 95%; }
   .bm-sdg-detail-title { font-size: 28px; }
 }
 

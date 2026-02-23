@@ -170,10 +170,10 @@ export const Bradingabount = () => {
                   </div>
                 )
               }
+              
 
-              <div
-                className="bm-about-description"
-              >
+              <div className="bm-about-description  bm-about-description-branding"
+                >
                 {current.desc.map((text, index) => (
                   <ScrollParagraph key={index} text={text} />
                 ))}

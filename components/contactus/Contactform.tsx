@@ -13,11 +13,11 @@ import arrowIcon from '../../assets/contact/right.png';
 import leftIcon from '../../assets/contact/left.png';
 import contact from '../../assets/contact/Vector (1).png'
 import whitecontact from '../../assets/contact/Vector White.png'
-import bgImage from '../../assets/HomeSection/banner/Group (1).png'
+import bgImage from '../../assets/contact/Group5.png'
 
 export const GetStartedSection = () => {
   const [selectedServices, setSelectedServices] = useState([]);
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(4);
   const [isCheckLaterDisabled, setIsCheckLaterDisabled] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const countries = [
@@ -571,7 +571,7 @@ export const GetStartedSection = () => {
                                 onClick={() => {
                                   if (date === "Choose a Date") {
                                     setShowCalendar(true);
-                                                                        setFormData({ ...formData, connectionDate: date });
+                                    setFormData({ ...formData, connectionDate: date });
 
                                   } else if (date !== "Yesterday") {
                                     setFormData({ ...formData, connectionDate: date });
@@ -654,6 +654,18 @@ export const GetStartedSection = () => {
 
               {activeStep === 4 && (
                 <div className="bm-right-content-bm-s4">
+                  <Image
+                    src={bgImage.src}
+                    alt={bgImage.alt}
+                    fill
+                    priority
+                    quality={100}
+                    className="bm-client-img-bm-right-conten"
+                  />
+
+                  {/* WHITE SHADOW FADE */}
+                  <div className="bm-white-shadow-bottom"></div>
+
                   <div className="bm-s4-card">
 
                     {/* Success Header */}

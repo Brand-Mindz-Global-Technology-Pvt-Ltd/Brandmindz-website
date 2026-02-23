@@ -23,7 +23,7 @@
 .bm-hero-badge__text {
   font-size: 40px;
   line-height: 30px;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   color: #000;
   text-align: center;
@@ -128,7 +128,7 @@ font-size: 30px  ;
 
 
 .bm-hero-section {
-  padding: 50px 20px 40px;
+  padding: 50px 0px 40px;
   text-align: center;
   background-color: #ffffff;
   background-image: url('../../assets/HomeSection/banner/Group (1).png');

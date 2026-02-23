@@ -465,6 +465,8 @@
   .cardsWrapper {
     grid-template-columns: 58% 42%;
     padding: 40px 4%;
+  width: 95%;
+
   }
 
   .leftTitle {
@@ -476,7 +478,7 @@
   }
 
   .rightCard {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 
@@ -508,6 +510,7 @@
   .cardsWrapper {
     grid-template-columns: 1fr;
     gap: 30px;
+
   }
 
   .leftCenterContainer {

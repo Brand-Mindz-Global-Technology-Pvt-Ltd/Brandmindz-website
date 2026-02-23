@@ -34,6 +34,7 @@ import Goals17 from '../../assets/HomeSection/about/Goals17.jpg'
 
 const Aboutus = () => {
   const [activeTab, setActiveTab] = useState(1);
+  
 
   const menuItems = [
     {
@@ -554,7 +555,7 @@ const Aboutus = () => {
               <div
                 className="bm-about-description"
                 style={{
-                  lineHeight: current.subtitle === "About Brand Mindz Global" ? "30px" : "28px",
+                  lineHeight: current.subtitle === "About Brand Mindz Global" ? "34px" : "28px",
                   fontSize: current.subtitle === "Customer Service Philosophy" ? "19px" : "20px",
                 }}
               >

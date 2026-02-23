@@ -6,6 +6,7 @@ body{
   overflow: hidden ;
   width: 100%;
   position: relative;
+  
 }
 
 .bm-trusted-logos-track {
@@ -38,7 +39,7 @@ body{
 
 
 .bm-trusted-section {
-  padding: 60px 20px ;
+  padding: 100px 20px ;
   padding-bottom: 0px;
   width:100%;
 }
@@ -123,6 +124,14 @@ body{
     gap: 5px;
     margin-bottom: 30px;
   }
+
+  .bm-trusted-logos-scroll {
+  overflow: hidden !important;
+  width: 100%;
+  position: relative;
+  border: 1px solid black;
+  
+}
   
   .bm-trusted-label, 
   .bm-trusted-title {
@@ -145,7 +154,9 @@ body{
   .bm-trusted-logos {
     grid-template-columns: repeat(2, 1fr); /* 2 logos per row on mobile */
   }
-  
+  .bm-trusted-logos-track{
+    gap: 10px;
+  }
   .bm-trusted-section {
     padding: 0px 15px;
   }
