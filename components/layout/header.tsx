@@ -136,10 +136,9 @@ const Header = () => {
   };
 
   return (
-    <div className="header-top">
+    <div  className={show ?"header-top" :"header-top-matgin" }>
 
       <div className="header-wrapper">
-        {/* Availability Pill - Hidden on mobile */}
         <AnimatePresence>
           {show && (
             <motion.div

@@ -10,7 +10,11 @@
 
 .header-top {
   background-color: white;
+}
 
+.header-top-matgin{
+  margin-top:60px;
+  background-color: white;
 
 }
 .header-wrapper {
@@ -29,7 +33,6 @@
   justify-content: center;
 }
 
-/* 3D Pill Background */
 .availability-pill {
   background-color: #1a1a1a;
   width: 350px;
