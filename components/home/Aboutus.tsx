@@ -384,7 +384,7 @@ const Aboutus = () => {
       const handleScroll = () => {
         if (ref.current) {
           const rect = ref.current.getBoundingClientRect();
-          const triggerPoint = window.innerHeight * 0.5;
+          const triggerPoint = window.innerHeight * 0.2;
 
           if (rect.top < triggerPoint) {
             setIsPassed(true);
@@ -451,11 +451,11 @@ const Aboutus = () => {
 
                     <p className="bm-vision-card-text">{v.text}</p>
 
-                    <div className="bm-vision-bottom-icon">
+                    {/* <div className="bm-vision-bottom-icon">
                       {i === 1 && <Image src={vision1} alt="icon" width={60} height={60} className="grayscale-icon" />}
                       {i === 0 && <Image src={vision2} alt="icon" width={60} height={60} className="grayscale-icon" />}
                       {i === 2 && <Image src={vision3} alt="icon" width={60} height={60} className="grayscale-icon" />}
-                    </div>
+                    </div> */}
                   </div>
                   {i < current.visions.length - 1 && <div className="bm-vision-divider"></div>}
                 </React.Fragment>

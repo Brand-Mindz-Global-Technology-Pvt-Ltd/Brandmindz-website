@@ -10,7 +10,7 @@
 /* Scrolled Past style: Black and Bold */
 .bm-scroll-line.active {
   color: #000000 !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
 }
 
 
