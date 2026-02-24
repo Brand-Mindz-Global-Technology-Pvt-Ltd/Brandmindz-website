@@ -1552,9 +1552,14 @@
   display: flex !important;
   background: #F0F0F0 !important;
   padding: 0.75rem 1.25rem !important;
-  border-radius: 10px !important;
+  border-radius: 20px !important;
   z-index: 9999 !important;
   width: 85%;
+  border: 1px solid;
+
+border-image-source: conic-gradient(from 102.21deg at 52.75% 38.75%, rgba(249, 249, 249, 0.5) -32.95deg, rgba(64, 64, 64, 0.5) 10.52deg, rgba(64, 64, 64, 0.35) 32.12deg, rgba(255, 255, 255, 0.5) 60.28deg, rgba(255, 255, 255, 0.5) 107.79deg, rgba(64, 64, 64, 0.35) 187.59deg, #F9F9F9 207.58deg, rgba(255, 255, 255, 0.5) 287.31deg, rgba(249, 249, 249, 0.5) 327.05deg, rgba(64, 64, 64, 0.5) 370.52deg);
+
+
 }
 
 /* Map Section */

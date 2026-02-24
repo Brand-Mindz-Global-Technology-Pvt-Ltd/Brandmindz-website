@@ -17,7 +17,7 @@ import bgImage from '../../assets/contact/Group5.png'
 
 export const GetStartedSection = () => {
   const [selectedServices, setSelectedServices] = useState([]);
-  const [activeStep, setActiveStep] = useState(4);
+  const [activeStep, setActiveStep] = useState(1);
   const [isCheckLaterDisabled, setIsCheckLaterDisabled] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const countries = [

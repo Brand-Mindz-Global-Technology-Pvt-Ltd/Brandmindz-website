@@ -38,6 +38,7 @@
   grid-template-columns: repeat(4, 1fr); /* 4 cards in one row */
   gap: 40px;
   margin-bottom: 40px;
+  margin-top: 73px;
 }
 
 .bl-tab {
@@ -104,14 +105,18 @@
 
 }
 
-/* Card Container */
 .bl-client-card {
-  background:#DDDDDD; /* Glass effect */
+  background: #DDDDDD;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
   border-radius: 12px;
   padding: 10px 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Very soft shadow */
+  box-shadow: 
+    0px 5px 10px 0px #9b9a9a1a,
+    0px 9px 6px 0px #a5a3a317,
+    0px 4px 8px 0px #b1afaf0d,
+    0px 5px 7px 0px #7e7e7e03,
+    0px 3px 8px 0px #9c9c9c00 !important;
 }
 
 /* Header row alignment */
@@ -184,7 +189,7 @@
 
 /* Bottom Description */
 .bl-client-desc {
-  font-size: 18px;
+  font-size: 22px;
   color: #777;
   line-height: 1.1;
   margin: 0;
@@ -585,6 +590,7 @@
     .bl-tab-wrapper {
         grid-template-columns: 1fr;
         gap: 10px;
+          margin-top: 23px;
     }
 
     .bl-tab {
