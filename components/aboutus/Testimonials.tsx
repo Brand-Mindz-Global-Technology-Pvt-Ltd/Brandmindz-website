@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FadeIn } from "@/components/animations/fade-in";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 import "../../style/aboutus/aboutus.css";
 
 // Import images
@@ -83,6 +83,34 @@ const testimonialsData = [
 ];
 
 export const TestimonialsSection = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const containerRef = useRef(null);
+  const x = useMotionValue(0);
+  const speed = useRef(0.5); // Scroll speed - adjust as needed
+  
+  // Duplicate data for infinite scroll
+  const allTestimonials = [...testimonialsData, ...testimonialsData];
+
+  useAnimationFrame(() => {
+    if (!isHovered && containerRef.current) {
+      const container = containerRef.current;
+      const maxScroll = -(container.scrollWidth / 2); // Scroll only half (since duplicated)
+      
+      // Get current x value
+      let currentX = x.get();
+      
+      // Move left slowly
+      currentX -= speed.current;
+      
+      // Reset when we've scrolled half way (to create infinite loop)
+      if (currentX <= maxScroll) {
+        currentX = 0;
+      }
+      
+      x.set(currentX);
+    }
+  });
+
   return (
     <section className="bm-testimonials-section">
       <div className="bm-testimonials-container">
@@ -91,23 +119,22 @@ export const TestimonialsSection = () => {
         <FadeIn delay={0.1}>
           <div className="bm-testimonials-header">
             <h2 className="bm-testimonials-title">Testimonials</h2>
-        
           </div>
         </FadeIn>
 
         {/* Horizontal Scrolling Cards - Compact Size */}
-        <div className="bm-testimonials-scroll-wrapper">
+        <div 
+          className="bm-testimonials-scroll-wrapper"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <div className="bm-testimonials-scroll-container">
             <motion.div 
+              ref={containerRef}
               className="bm-testimonials-track-horizontal"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                repeat: Infinity,
-                duration: 40,
-                ease: "linear",
-              }}
+              style={{ x }}
             >
-              {[...testimonialsData, ...testimonialsData].map((testimonial, index) => (
+              {allTestimonials.map((testimonial, index) => (
                 <div key={`testimonial-${index}`} className="bm-testimonial-card-compact">
                   {/* Stars */}
                   <div className="bm-compact-stars">
