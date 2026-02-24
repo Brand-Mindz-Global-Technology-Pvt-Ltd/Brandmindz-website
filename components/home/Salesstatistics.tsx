@@ -25,7 +25,7 @@ export default function ProvenGrowthSection() {
           setHasAnimated(true);
         }
       },
-      { threshold: 0.5 } // Triggers when 30% of the section is visible
+      { threshold: 0.7 } // Triggers when 30% of the section is visible
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);

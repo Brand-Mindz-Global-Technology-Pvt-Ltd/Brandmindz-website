@@ -71,15 +71,7 @@
   width: 100%;
   opacity: 0.8;
   filter: grayscale(1);
-}
-
-.bm-world-map {
-  width: 100%;
-  opacity: 0.8;
-  filter: grayscale(1);
-
-  transform: scale(1.9) translateX(40%);
-  transform-origin: right center;
+  transform: scale(0.9) translateX(20%);
 }
 
 
@@ -89,7 +81,7 @@
   opacity: 0.8;
   filter: grayscale(1);
 
-  transform: scale(0.9);
+  transform: scale(1);
   transform-origin: center center;
   display: block;
   margin: 0 auto;

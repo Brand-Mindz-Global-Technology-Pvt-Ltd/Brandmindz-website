@@ -8,44 +8,75 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { motion, AnimatePresence } from "framer-motion";
 
 
+// const FlipLetter = ({ letter }) => {
+//   const isSpace = letter === ' ' || letter === '\u00A0';
+
+//   return (
+//     <span style={{ 
+//       display: 'inline-block', 
+//       overflow: 'hidden', 
+//       verticalAlign: 'bottom',
+//       position: 'relative',
+//       /* The container height must be tight to create the "cropping" effect seen in the video */
+//       height: '1.1em', 
+//       /* Masking both top and bottom ensures smooth fade-in/out as seen in Recording 2026-02-23 140743.mp4 */
+//       WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+//       maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+//     }}>
+//       <AnimatePresence mode="popLayout">
+//         <motion.span
+//           key={letter}
+//           // Enters from below the "box"
+//           initial={{ y: "100%", opacity: 0 }}
+//           // Settles at center
+//           animate={{ y: "0%", opacity: 1 }}
+//           // Exits by sliding further UP and out
+//           exit={{ y: "-100%", opacity: 0 }}
+//           transition={{
+//             duration: 0.7, // Slightly slower duration to match the smooth video feel
+//             ease: [0.4, 0, 0.2, 1], // Custom cubic-bezier for that premium motion
+//           }}
+//           style={{
+//             display: 'inline-block',
+//             whiteSpace: 'pre',
+//           }}
+//           className="text-yellow font-[Afacad] font-semibold 
+//             text-[25px] 
+//             sm:text-[32px] 
+//             md:text-[32px] 
+//             lg:text-[70px] 
+//             xl:text-[75px] 
+//             leading-none"
+//         >
+//           {isSpace ? '\u00A0' : letter}
+//         </motion.span>
+//       </AnimatePresence>
+//     </span>
+//   );
+// };
 const FlipLetter = ({ letter }) => {
-  const isSpace = letter === ' ' || letter === '\u00A0';
+  const isSpace = letter === " ";
 
   return (
-    <span style={{ 
-      display: 'inline-block', 
-      overflow: 'hidden', 
-      verticalAlign: 'bottom',
-      WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 100%)',
-      maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 100%)'
-    }}>
-      <AnimatePresence mode="popLayout">
-        <motion.span
-          key={letter}
-          // Now starts from the top (invisible) and slides down
-          initial={{ y: "-100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: "-100%", opacity: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.4, 0, 0.2, 1], 
-          }}
-          style={{
-            display: 'inline-block',
-            whiteSpace: 'pre',
-          }}
-          className="text-yellow font-[Afacad] font-semibold 
+    <motion.span
+      initial={{ y: 0, opacity: 0 }}   // bottom
+      animate={{ y: 0, opacity: 1 }}    // center
+      exit={{ y: -40, opacity: 0 }}     // top
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="inline-block 
+      font-[Afacad] 
+      font-medium 
+       text-yellow
+        font-[Afacad] 
+        font-semibold 
             text-[25px] 
-            sm:text-[32px] 
-            md:text-[32px] 
-            lg:text-[70px] 
-            xl:text-[75px] 
-            leading-none"
-        >
-          {isSpace ? '\u00A0' : letter}
-        </motion.span>
-      </AnimatePresence>
-    </span>
+             sm:text-[32px] 
+             md:text-[32px] 
+             lg:text-[70px] 
+             xl:text-[75px] "
+    >
+      {isSpace ? "\u00A0" : letter}
+    </motion.span>
   );
 };
 
@@ -90,10 +121,10 @@ export const Banner = () => {
               transition={{ repeat: Infinity, duration: 0.8 }}
               className="ml-1 w-[2px] md:w-[4px] h-[30px] md:h-[60px] bg-yellow"
             />
-          <span className="text-black">,</span>
+            <span className="text-black">,</span>
 
           </span>
-          <br/>
+          <br />
           <span className="text-black">not just </span>
           <span className="text-grey">Marketing</span>
           <span className="text-black">.</span>

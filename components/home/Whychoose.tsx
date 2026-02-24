@@ -117,8 +117,7 @@ const WhyChooseUs = () => {
           )}
         </AnimatePresence>
 
-        {/* RIGHT SIDE: Map and Markers */}
-        <motion.div
+        {/* <motion.div
           layout
           className={`bm-why-right ${showGlobalMap ? 'full-width' : ''}`}
           transition={{ duration: 1.8, ease: "easeInOut" }}
@@ -143,7 +142,6 @@ const WhyChooseUs = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Location Markers: Only appear when expanded */}
             <AnimatePresence>
               {showGlobalMap && (
                 <div className="bm-markers-layer">
@@ -177,6 +175,84 @@ const WhyChooseUs = () => {
                   {showGlobalMap ? "Back" : "View"}
                 </button>
               )}
+          </div>
+        </motion.div> */}
+          <motion.div
+          layout
+          className={`bm-why-right ${showGlobalMap ? 'full-width' : ''}`}
+          transition={{
+            duration: showGlobalMap ? 0.8 : 0,
+            ease: "easeInOut"
+          }}
+
+        >
+          <div className={`bm-map-wrapper-way ${showGlobalMap ? 'full-width' : ''}`}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={showGlobalMap ? 'global' : 'simple'}
+                initial={{ opacity: 0, scale: showGlobalMap ? 1.2 : 0.8, x: 0 }}
+                animate={{
+                  opacity: 1,
+                  scale: showGlobalMap ? 0.9 : 2,
+                }}
+                exit={{ opacity: 0, scale: 0.8, x: 0 }}
+                transition={{
+                  duration: showGlobalMap ? 0.8 : 0.8 // Matches your requested speed
+                }}
+
+              >
+                <Image
+                  src={GlobalworldMap}
+                  alt="Global presence"
+                  className={`bm-world-map ${showGlobalMap ? 'full-width' : ''}`}
+                  priority
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Location Markers */}
+            <AnimatePresence>
+              {showGlobalMap && (
+                <motion.div
+                  className="bm-markers-layer"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                    <motion.h2
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bm-global-title"
+                  >
+                    Our Global Presence
+                  </motion.h2>
+                  {locations.map((loc, idx) => (
+                    <motion.div
+                      key={loc.name}
+                      className="bm-marker"
+                      style={{ top: loc.top, left: loc.left }}
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{
+                        // Delay reduced to match your faster 0.6s map animation
+                        delay: 2 + (idx * 0.1),
+                        type: "spring",
+                        stiffness: 100
+                      }}
+                    >
+                      <div className="marker-dot"></div>
+                      <span className="marker-text">{loc.name}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {!showGlobalMap && (
+              <button className="bm-view-btn" onClick={() => setShowGlobalMap(true)}>
+                View
+              </button>
+            )}
           </div>
         </motion.div>
 
