@@ -20,12 +20,76 @@ import logo12 from '../../assets/about/naturals_header_logo.png';
 import logo13 from '../../assets/about/tancoir.png';
 import logo14 from '../../assets/about/tan coir.png';
 
+
+import naturals from '../../assets/about/Scroll_logos/naturals_header_logo.png';
+import seven from '../../assets/about/Scroll_logos/SevenStarLogo.png';
+import nails from '../../assets/about/Scroll_logos/nails and beyonds (2).png';
+import cheranacademy from '../../assets/about/Scroll_logos/Cheranacademy.png';
+import tancoir from '../../assets/about/Scroll_logos/tancoir.png';
+import tedx from '../../assets/about/Scroll_logos/TEDx_idkxTc8gwO_1 (1).png';
+import Bioneemtec from '../../assets/about/Scroll_logos/Bioneemtec  logo (1).png';
+import RESONANCE from '../../assets/about/Scroll_logos/RESONANCE-LOGO.png';
+import OIP from '../../assets/about/Scroll_logos/OIP.png';
+import Tuka from '../../assets/about/Scroll_logos/Tuka Baby.png';
+import Tymerz from '../../assets/about/Scroll_logos/Tymerz-2048x933.png';
+import Faggro from '../../assets/about/Scroll_logos/Faggro (1).png';
+import Market from '../../assets/about/Scroll_logos/Market-cloud.png'
+import logo01 from '../../assets/about/Scroll_logos/01-logo.png'
+import aasi from '../../assets/about/Scroll_logos/aasi_logo.png'
+import Copy from '../../assets/about/Scroll_logos/Copy of annam-dental-logo.png'
+import DIC from '../../assets/about/Scroll_logos/DIC tenkasi.png'
+import Ettik from '../../assets/about/Scroll_logos/Ettik.png'
+import HRLogo from '../../assets/about/Scroll_logos/HR-Logo-1.png'
+import jcom from '../../assets/about/Scroll_logos/jcom-Photoroom.png'
+import Magic from '../../assets/about/Scroll_logos/Magic-20-e.png'
+import nellai from '../../assets/about/Scroll_logos/nellai-tours-logo.png'
+import our from '../../assets/about/Scroll_logos/our studios (1).png'
+import proton from '../../assets/about/Scroll_logos/proton-images.png'
+import sakthi from '../../assets/about/Scroll_logos/she_the_sakthi_logo-Photoroom.png'
+import shortfundly from '../../assets/about/Scroll_logos/Shortfundly (1).png'
+import surprisor from '../../assets/about/Scroll_logos/Surprisor stories logo.png'
+import swotle from '../../assets/about/Scroll_logos/swotle (1).png'
+import bridal from '../../assets/about/Scroll_logos/The Bridal Artisans.png'
+import truck from '../../assets/about/Scroll_logos/truck-taxi-logo-e1732104114721 (1).png'
+import tuka from '../../assets/about/Scroll_logos/Tuka Baby.png'
+import tymerz from '../../assets/about/Scroll_logos/Tymerz-2048x933.png'
+
 export const LogoNewsTicker = () => {
   // Create array with all your actual logo imports
-  const companyLogos = [
-    logo1, logo2, logo3, logo4, logo5, logo6, logo7,
-    logo8, logo9, logo10, logo11, logo12, logo13, logo14
-  ];
+ const companyLogos = [
+  naturals,
+  seven,
+  nails,
+  cheranacademy,
+  tancoir,
+  tedx,
+  Bioneemtec,
+  RESONANCE,
+  OIP,
+  Tuka,
+  Tymerz,
+  Faggro,
+  Market,
+  logo01,
+  aasi,
+  Copy,
+  DIC,
+  Ettik,
+  HRLogo,
+  jcom,
+  Magic,
+  nellai,
+  our,
+  proton,
+  sakthi,
+  shortfundly,
+  surprisor,
+  swotle,
+  bridal,
+  truck,
+  tuka,
+  tymerz
+];
 
   return (
  <div className="logo-ticker-container">

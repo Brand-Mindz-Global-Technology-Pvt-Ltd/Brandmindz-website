@@ -450,7 +450,7 @@
     padding-right: 0;        /* Ensure no accidental padding */
 }
 
-.bl-footer-description p {
+.bl-footer-description .bm-about-paragraph-branding {
     font-size: 33px; 
     line-height: 1.3; 
     color: #1a1a1a;
@@ -580,7 +580,7 @@
         min-height: 350px;
     }
 
-    .bl-footer-description p {
+    .bl-footer-description .bm-about-paragraph-branding {
         font-size: 1.5rem;
     }
 }
@@ -667,7 +667,7 @@
         padding: 6px 12px;
     }
 
-    .bl-footer-description p {
+    .bl-footer-description .bm-about-paragraph-branding {
         font-size: 1.2rem;
     }
 
@@ -761,7 +761,7 @@
         padding: 5px 10px;
     }
 
-    .bl-footer-description p {
+    .bl-footer-description .bm-about-paragraph-branding {
         font-size: 1rem;
     }
 

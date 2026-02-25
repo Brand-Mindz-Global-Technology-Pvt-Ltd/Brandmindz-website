@@ -371,7 +371,7 @@ export const PersonalBranding = () => {
                 {/* Paragraph with Scroll Highlight Applied */}
                 <div className="bl-footer-section">
                     <div className="bl-footer-description">
-                        <p className="bm-about-paragraph">
+                        <p className="bm-about-paragraph-branding">
                             <ScrollSpan>
                                 We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.
                                 We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.

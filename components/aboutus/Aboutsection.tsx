@@ -150,11 +150,10 @@ const ScrollSpan = ({ children }) => {
 export const AboutContentSection = () => {
   return (
     <section className="bm-about-content-section bm-about-content-section-1">
-      <div className="bm-about-container">
+      {/* <div className="bm-about-container"> */}
         <div className="bm-section-bg">
           <div className="bm-about-grid">
             
-            {/* Left Column - Text */}
             <div className="bm-about-text-content">
               <FadeIn delay={0.1}>
                 <div className="bm-about-badge">
@@ -185,17 +184,19 @@ export const AboutContentSection = () => {
                   <p className="bm-about-paragraph">
                     <ScrollSpan>
                       Our approach is strategy-led and execution-focused. Every engagement is driven by clear objectives, disciplined processes, and measurable outcomes.
+                                          We partner with startups, growing businesses, and enterprises that value long-term thinking, ethical practices, and consistency in delivery.
+
                     </ScrollSpan>
                   </p>
                 </FadeIn>
 
-                <FadeIn delay={0.5}>
+                {/* <FadeIn delay={0.5}>
                   <p className="bm-about-paragraph">
                     <ScrollSpan>
                       We partner with startups, growing businesses, and enterprises that value long-term thinking, ethical practices, and consistency in delivery.
                     </ScrollSpan>
                   </p>
-                </FadeIn>
+                </FadeIn> */}
 
                 <FadeIn delay={0.6}>
                   <p className="bm-about-paragraph">
@@ -227,7 +228,7 @@ export const AboutContentSection = () => {
 
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </section>
   );
 };

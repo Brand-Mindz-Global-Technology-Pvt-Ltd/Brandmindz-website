@@ -1,78 +1,79 @@
-
 .sticky-wrapper {
-    position: sticky;
-    top: 0; 
-    height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden ;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 
 }
 
 .bm-about-content-section {
-    width: 94%;
-    margin: auto !important;
-    background-color:#F6F6F6; 
-    border-radius: 20px;
-    margin-top:40px !important;
+  width: 94%;
+  margin: auto !important;
+  background-color: #F6F6F6;
+  border-radius: 20px;
+  margin-top: 40px !important;
 }
 .bm-about-content-section-1 {
-    width: 94%;
-    margin: auto !important;
-    background-color:#F6F6F6; 
-    border-radius: 20px;
-    margin-top:0px !important;
+  width: 94%;
+  margin: auto !important;
+  background-color: #F6F6F6;
+  border-radius: 20px;
+  margin-top: 0px !important;
 }
 
 .about-founder-section {
-    z-index: 10;
-    /* background-color: #f9f9f9;  */
+  z-index: 10;
+  /* background-color: #f9f9f9;  */
 }
 
 .content-overlay-wrapper {
-    position: relative;
-    z-index: 20; /* Highest z-index to cover everything else */
-    overflow-y: hidden;
-    overflow-x: hidden;
-    background-color: white;
+  position: relative;
+  z-index: 20;
+  /* Highest z-index to cover everything else */
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: white;
 }
 
 
-.about-us-description{
-    font-size: 30px;
-    font-weight: 400;
+.about-us-description {
+  font-size: 30px;
+  font-weight: 400;
 }
-.about-us-description .text-black{
-   
-    font-weight: 600 !important;
+.about-us-description .text-black {
+
+  font-weight: 600 !important;
 }
 
 @media (max-width:768px) {
-    .about-us-description{
+  .about-us-description {
     font-size: 20px;
 
-}
- .bm-about-heading {
+  }
+  .bm-about-heading {
     font-size: 1.5rem !important;
     margin-bottom: 2rem;
   }
-    .bm-about-content-section{
+  .bm-about-content-section {
     margin: auto;
     max-width: 1300px;
     background: white !important;
   }
-    .bm-section-bg {
-  background-color: #f9fafb; /* light gray background */
-  border-radius: 10px; /* rounded-xl equivalent */
-  padding: 1rem 1rem; /* light space inside */
+  .bm-section-bg {
+    background-color: #f9fafb;
+    /* light gray background */
+    border-radius: 10px;
+    /* rounded-xl equivalent */
+    padding: 1rem 1rem;
+    /* light space inside */
   }
 
-    
-}
-/* LogoNewsTicker.css */
 
-/* Main container */
+}
+
 .logo-ticker-container {
   width: 100%;
   overflow: hidden;
@@ -83,7 +84,7 @@
 /* Default state: Black and White */
 .logo-image-container img {
   filter: grayscale(100%);
-  opacity: 0.7; /* Optional: makes it look more subtle when B&W */
+  opacity: 1;
   transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
 }
 
@@ -92,7 +93,7 @@
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.05);
-  cursor:pointer; /* Optional: slight zoom effect on hover */
+  cursor: pointer;
 }
 
 .ticker-row:hover .logo-track {
@@ -101,16 +102,18 @@
 
 @media (min-width: 768px) {
   .logo-ticker-container {
-     padding-top: 2rem;
+    padding-top: 2rem;
   }
 }
 
 /* Logo item styling */
 .logo-item {
   flex-shrink: 0;
-  background-color: #f3f4f6; /* light gray background */
+  background-color: #f3f4f6;
+  /* light gray background */
   border-radius: 12px;
-  padding: 0px 25px; /* your requested padding */
+  padding: 0px 25px;
+  /* your requested padding */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,8 +128,10 @@
 /* Logo image container */
 .logo-image-container {
   position: relative;
-  width: 5rem;  /* 96px */
-  height: 3rem; /* 64px */
+  width: 5rem;
+  /* 96px */
+  height: 3rem;
+  /* 64px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,8 +139,10 @@
 
 @media (min-width: 768px) {
   .logo-image-container {
-    width: 6rem;  /* 128px */
-    height: 4rem; /* 80px */
+    width: 6rem;
+    /* 128px */
+    height: 4rem;
+    /* 80px */
   }
 }
 
@@ -143,7 +150,8 @@
 .logo-placeholder {
   width: 100%;
   height: 100%;
-  background-color: #d1d5db; /* medium gray */
+  background-color: #d1d5db;
+  /* medium gray */
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -153,10 +161,12 @@
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .logo-image-container {
-    width: 5rem;  /* 80px */
-    height: 3rem; /* 48px */
+    width: 5rem;
+    /* 80px */
+    height: 3rem;
+    /* 48px */
   }
-  
+
   .logo-item {
     border-radius: 8px;
   }
@@ -164,12 +174,14 @@
 
 /* Gap between logos */
 .logo-gap {
-  gap: 2rem; /* 16px */
+  gap: 2rem;
+  /* 16px */
 }
 
 @media (min-width: 768px) {
   .logo-gap {
-    gap: 2.5rem; /* 24px */
+    gap: 2.5rem;
+    /* 24px */
   }
 }
 
@@ -187,7 +199,8 @@
 
 /* Second row offset */
 .second-row-offset {
-  margin-left: 3.125rem; /* 50px */
+  margin-left: 3.125rem;
+  /* 50px */
 }
 
 /* Ensure smooth scrolling */
@@ -218,7 +231,8 @@
 
 @media (min-width: 1024px) {
   .bm-section-bg {
-    padding:1rem 2rem /* even more space on large screens */
+    padding: 1rem 2rem;
+      /* even more space on large screens */
   }
 }
 
@@ -227,13 +241,12 @@
   display: inline-block;
   background-color: #000;
   color: white;
-  padding:5px 20px;
-  border-radius: 25px; /* 3xl rounded corners */
+  padding: 5px 20px;
+  border-radius: 25px;
+  /* 3xl rounded corners */
   margin-bottom: 2rem;
- 
-
   font-weight: 500;
-  font-size:20px;
+  font-size: 20px;
   letter-spacing: 0.05em;
 }
 
@@ -242,7 +255,7 @@
 .bm-about-heading {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
   letter-spacing: 1px;
 }
@@ -252,7 +265,7 @@
 /* Text colors */
 .bm-text-black {
   color: #000;
-  font-weight:600;
+  font-weight: 600;
 }
 
 .bm-text-gray {
@@ -262,22 +275,29 @@
 
 /* Paragraphs */
 .bm-about-paragraph {
-  /* font-size: 1.3rem !important; */
+  font-size: 1.3rem !important;
   line-height: 1.2;
-  margin-bottom:1.4rem;
-  text-align: justify; 
+  margin-bottom: 1.4rem;
+  text-align: justify;
+}
+
+.bm-about-paragraph-founder {
+  font-size: 1.3rem !important;
+  line-height: 1.1;
+  margin-bottom: 1.3rem;
+  text-align: justify;
 }
 
 @media (min-width: 768px) {
   .bm-about-heading {
     font-size: 3rem;
-    margin-bottom: 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   .bm-about-heading {
-    font-size: 2.1875rem; /* 35px */
+    font-size: 2.1875rem;
+    /* 35px */
   }
 }
 
@@ -287,12 +307,16 @@
   .bm-about-paragraph {
     font-size: 1.125rem;
   }
+  .bm-about-paragraph-founder {
+    font-size: 1.125rem;
+    
+  }
 }
 
 /* Image Container */
 .bm-about-image-container {
   width: 100%;
-  /* height: 400px; */
+  height: 100%;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -305,14 +329,14 @@
   gap: 2rem;
   align-items: center;
 }
+
 .bm-about-grid-founder {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 3rem;
   /* align-items: center; */
   justify-content: center;
-
-  /* padding: 10px 15px; */
+  padding: 10px 15px;
 }
 .bm-featured-section {
   padding: 2rem 0;
@@ -322,17 +346,17 @@
 
 @media (min-width: 1024px) {
   .bm-about-grid {
-    grid-template-columns: 8fr 4fr;
-    gap: 3rem;
+    grid-template-columns: 8.6fr 3.5fr;
+    gap: 2rem;
   }
 }
-.about-founder-section{
-margin-top: 26px;
+.about-founder-section {
+  margin-top: 26px;
 }
 
 @media (min-width: 1024px) {
   .bm-about-grid-founder {
-    grid-template-columns: 4fr 8fr !important;
+    grid-template-columns: 3.6fr 8.5fr !important;
     gap: 3rem;
   }
 }
@@ -360,7 +384,8 @@ margin-top: 26px;
 
 @media (min-width: 768px) {
   .bm-featured-grid {
-    grid-template-columns: 3.5fr 8fr; /* col-4 and col-8 */
+    grid-template-columns: 3.5fr 8fr;
+    /* col-4 and col-8 */
   }
 }
 
@@ -409,7 +434,8 @@ margin-top: 26px;
 
 @media (min-width: 640px) {
   .bm-channel-grid {
-    grid-template-columns: repeat(6, 1fr); /* 3 logos per row on tablet/desktop */
+    grid-template-columns: repeat(6, 1fr);
+    /* 3 logos per row on tablet/desktop */
     gap: 2rem;
   }
 }
@@ -425,7 +451,8 @@ margin-top: 26px;
 
 @media (min-width: 640px) {
   .bm-channel-grid-recognised {
-    grid-template-columns: repeat(4, 1fr); /* 3 logos per row on tablet/desktop */
+    grid-template-columns: repeat(4, 1fr);
+    /* 3 logos per row on tablet/desktop */
     gap: 2rem;
   }
 }
@@ -473,7 +500,8 @@ margin-top: 26px;
   opacity: 0.9;
 }
 .bm-channel-item:hover .bm-channel-image {
-  transform: scale(1.15); /* Adjust zoom level here */
+  transform: scale(1.15);
+  /* Adjust zoom level here */
 }
 
 /* Mobile Specific - Text first, then 3 logos per row? Wait, you said 3 logos on mobile? */
@@ -482,21 +510,23 @@ margin-top: 26px;
     display: flex;
     flex-direction: column;
   }
-  
+
   .bm-featured-text-col {
     margin-bottom: 1.5rem;
     text-align: center;
   }
-  
+
   .bm-channel-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 logos per row on mobile as requested */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 logos per row on mobile as requested */
     gap: 1rem;
   }
-   .bm-channel-grid-recognised {
-    grid-template-columns: repeat(2, 1fr); /* 3 logos per row on mobile as requested */
+  .bm-channel-grid-recognised {
+    grid-template-columns: repeat(2, 1fr);
+    /* 3 logos per row on mobile as requested */
     gap: 0rem;
   }
-  
+
   .bm-channel-wrapper {
     max-width: 100px;
   }
@@ -505,18 +535,20 @@ margin-top: 26px;
 /* Small mobile devices */
 @media (max-width: 480px) {
   .bm-channel-grid {
-    grid-template-columns: repeat(3, 1fr); /* Still 3 logos */
+    grid-template-columns: repeat(3, 1fr);
+    /* Still 3 logos */
     gap: 0.75rem;
   }
-   .bm-channel-grid-recognised {
-    grid-template-columns: repeat(2, 1fr); /* Still 3 logos */
+  .bm-channel-grid-recognised {
+    grid-template-columns: repeat(2, 1fr);
+    /* Still 3 logos */
     gap: 0rem !important;
   }
-  
+
   .bm-channel-wrapper {
     max-width: 80px;
   }
-  
+
   .bm-featured-title {
     font-size: 1.5rem;
   }
@@ -527,7 +559,7 @@ margin-top: 26px;
   background-color: #ffffff;
   height: 100vh;
   overflow: hidden;
- 
+
 }
 
 .bm-global-presence-section {
@@ -539,7 +571,8 @@ margin-top: 26px;
 .bm-global-gray-container {
   background-color: #EFEFEF;
   border-radius: 10px;
-  margin: 10px; /* 10px margin */
+  margin: 10px;
+  /* 10px margin */
   padding: 2.5rem;
   display: grid;
   padding: 50px 0px;
@@ -562,9 +595,9 @@ margin-top: 26px;
   margin-bottom: 1.5rem;
   position: absolute;
   text-align: center;
-  letter-spacing:1px;
+  letter-spacing: 1px;
   line-height: 1.2;
-width: 90%;
+  width: 90%;
 }
 
 /* Map Container - Transparent BG */
@@ -580,7 +613,8 @@ width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform-origin: center center; /* Ensures zoom starts from center */
+  transform-origin: center center;
+  /* Ensures zoom starts from center */
 }
 
 .bm-global-markers {
@@ -589,12 +623,14 @@ width: 90%;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Allows clicking through to elements if needed */
+  pointer-events: none;
+  /* Allows clicking through to elements if needed */
 }
 
 .bm-global-marker {
   position: absolute;
-  pointer-events: auto; /* Makes tooltips/markers interactive again */
+  pointer-events: auto;
+  /* Makes tooltips/markers interactive again */
 }
 
 .bm-global-map-wrapper {
@@ -732,7 +768,7 @@ width: 90%;
     gap: 2rem;
     padding: 2rem;
   }
-  
+
   .bm-global-map-heading {
     font-size: 1.75rem;
   }
@@ -743,19 +779,19 @@ width: 90%;
     margin: 8px;
     padding: 1.5rem;
   }
-  
+
   .bm-global-map-heading {
     font-size: 1.5rem;
   }
-  
+
   .bm-global-badge {
     padding: 4px 10px;
   }
-  
+
   .bm-global-country {
     font-size: 0.7rem;
   }
-  
+
   .bm-global-triangle {
     width: 12px;
     height: 12px;
@@ -767,15 +803,15 @@ width: 90%;
     margin: 6px;
     padding: 1.25rem;
   }
-  
+
   .bm-global-map-heading {
     font-size: 1.25rem;
   }
-  
+
   .bm-global-tagline {
     font-size: 1rem;
   }
-  
+
   .bm-recognized-heading {
     font-size: 1rem;
   }
@@ -797,7 +833,7 @@ width: 90%;
 
 /* Header - Centered, 60px */
 .bm-testimonials-header {
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -807,7 +843,7 @@ width: 90%;
 .bm-testimonials-title {
   font-family: 'Afacad', sans-serif;
   font-weight: 400;
-  font-size:6rem;
+  font-size: 6rem;
   line-height: 100%;
 
   color: #b9b8b8;
@@ -836,16 +872,17 @@ width: 90%;
 }
 
 .bm-testimonial-card-compact {
-    background-color: #fff;
-    border: 1px solid #f0f0f0;
-    border-radius: 12px;
-    flex-direction: column;
-    flex: 0 0 340px;
-    gap: .75rem;
-    padding: 1rem;
-    transition: all .2s;
-    display: flex;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  flex-direction: column;
+  flex: 0 0 340px;
+  gap: .75rem;
+  padding: 1rem;
+  transition: all .2s;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  /* Subtle shadow */
 }
 
 .bm-testimonial-card-compact:hover {
@@ -866,10 +903,10 @@ width: 90%;
 
 /* Compact Quote */
 .bm-compact-quote {
-  font-size:17px;
+  font-size: 17px;
   line-height: 1.5;
   color: #000000;
-  font-weight:500;
+  font-weight: 500;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -883,7 +920,8 @@ width: 90%;
   display: flex;
   align-items: center;
   gap: 0.6rem;
-margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */  
+  margin-top: auto;
+  /* Safety fallback to ensure it sticks to the bottom */
 }
 
 .bm-compact-author-image {
@@ -908,7 +946,7 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
   font-size: 1.1rem;
   font-weight: 600;
   color: #111827;
-  letter-spacing:0.5px;
+  letter-spacing: 0.5px;
 }
 
 .bm-compact-author-detail {
@@ -930,14 +968,14 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
 
 @media (max-width: 768px) {
   .bm-testimonials-title {
-    font-size:4rem;
+    font-size: 4rem;
   }
-  
+
   .bm-testimonial-card-compact {
     flex: 0 0 220px;
     padding: 1rem;
   }
-  
+
   .bm-compact-quote {
     font-size: 0.8rem;
     -webkit-line-clamp: 4;
@@ -946,23 +984,23 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
 
 @media (max-width: 480px) {
   .bm-testimonials-title {
-    font-size:3rem;
+    font-size: 3rem;
   }
-  
+
   .bm-testimonial-card-compact {
     flex: 0 0 200px;
     padding: 0.9rem;
   }
-  
+
   .bm-compact-author-img {
     width: 28px;
     height: 28px;
   }
-  
+
   .bm-compact-author-name {
     font-size: 0.75rem;
   }
-  
+
   .bm-compact-author-detail {
     font-size: 0.65rem;
     max-width: 120px;
@@ -1018,11 +1056,11 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
 /* Center Button - ABSOLUTE POSITIONED ON IMAGE */
 .bm-video-center-button {
   position: absolute;
-  top:60%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width:69px;
-  height:69px;
+  width: 69px;
+  height: 69px;
   background-color: white;
   border-radius: 50%;
   display: flex;
@@ -1059,12 +1097,12 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
   .bm-video-container {
     padding: 0 1.5rem;
   }
-  
+
   .bm-video-center-button {
     width: 70px;
     height: 70px;
   }
-  
+
   .bm-video-center-button svg {
     width: 28px;
     height: 28px;
@@ -1075,21 +1113,22 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
   .bm-video-section {
     padding: 2rem 0;
   }
-  
+
   .bm-video-container {
     padding: 0 1rem;
   }
-  
+
   .bm-video-center-button {
     width: 60px;
     height: 60px;
   }
-  
+
   .bm-video-center-button svg {
     width: 24px;
     height: 24px;
   }
-}/* Channel Grid for Recognised Section */
+}
+/* Channel Grid for Recognised Section */
 .bm-channel-grid-recognised {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1167,26 +1206,31 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
 .bm-slide {
   flex: 0 0 100%;
   width: 100%;
-  
+
 }
 
 
 
 /* Auto-sliding animation - 5 slides */
 @keyframes slideAnimation {
-  0%, 15% {
+  0%,
+  15% {
     transform: translateX(0);
   }
-  20%, 35% {
+  20%,
+  35% {
     transform: translateX(-100%);
   }
-  40%, 55% {
+  40%,
+  55% {
     transform: translateX(-200%);
   }
-  60%, 75% {
+  60%,
+  75% {
     transform: translateX(-300%);
   }
-  80%, 95% {
+  80%,
+  95% {
     transform: translateX(-400%);
   }
   100% {
@@ -1211,13 +1255,15 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.7); /* Inactive - White */
+  background-color: rgba(255, 255, 255, 0.7);
+  /* Inactive - White */
   border: 1px solid rgba(255, 255, 255, 0.9);
   transition: all 0.3s ease;
 }
 
 .bm-dot-inside.active {
-  background-color: #808080; /* Active - Gray */
+  background-color: #808080;
+  /* Active - Gray */
   transform: scale(1.2);
   border-color: #808080;
 }
@@ -1227,12 +1273,12 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
 /* Responsive */
 @media (max-width: 768px) {
 
-  
+
   .bm-dots-inside {
     bottom: 15px;
     gap: 8px;
   }
-  
+
   .bm-dot-inside {
     width: 8px;
     height: 8px;
@@ -1242,7 +1288,8 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
 
 /* Ensure the text starts as gray and transitions smoothly */
 .bm-text-gray {
-  color: #9ca3af !important; /* Tailwind gray-400 or your choice */
+  color: #9ca3af !important;
+  /* Tailwind gray-400 or your choice */
 }
 
 .bm-text-black {
@@ -1252,10 +1299,4 @@ margin-top: auto; /* Safety fallback to ensure it sticks to the bottom */
 .bm-scroll-line {
   transition: color 0.5s ease-in-out;
   display: inline;
-}
-
-/* Keeps the layout consistent */
-.bm-about-paragraph {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
 }

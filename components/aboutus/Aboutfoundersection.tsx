@@ -253,7 +253,7 @@ export const AboutFounderContentSection = () => {
 
   return (
     <section className="bm-about-content-section">
-      <div className="bm-about-container">
+      {/* <div className="bm-about-container"> */}
         <div className="bm-section-bg">
           <FadeIn delay={0.1}>
             <div className="bm-about-badge">
@@ -301,13 +301,13 @@ export const AboutFounderContentSection = () => {
               </FadeIn>
 
               <div>
-                <p className="bm-about-paragraph">
+                <p className="bm-about-paragraph-founder">
                   <ScrollSpan>
                     {Paragraph.paragraph1}
                   </ScrollSpan>
                 </p>
 
-                <p className="bm-about-paragraph">
+                <p className="bm-about-paragraph-founder">
                    <ScrollSpan>
                     {Paragraph.paragraph2}
                   </ScrollSpan>
@@ -316,7 +316,7 @@ export const AboutFounderContentSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </section>
   );
 };
