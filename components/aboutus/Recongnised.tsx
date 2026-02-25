@@ -53,7 +53,7 @@ export const RecognisedSection = () => {
       <div className="bm-featured-container">
         
         {/* Grid Layout - col-4 text, col-8 logos */}
-        <div className="bm-featured-grid">
+        <div className="bm-recongnined-grid" >
           
           {/* Left Column - Text (col-4) */}
           <div className="bm-featured-text-col">

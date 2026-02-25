@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   display: 'swap',
   variable: '--font-inter',
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MotionCraft - Premium Animation & SEO Solutions',
-    description: 'Build stunning animated websites with SEO best practices.',
+    title: 'BrandMindz - Digital Marketing & Web Development Agency',
+    description: 'BrandMindz helps businesses grow with modern websites, branding, SEO, and digital marketing solutions.',
     images: ['/og-image.jpg'],
     creator: '@motioncraft',
   },
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export const viewport: Viewport = {

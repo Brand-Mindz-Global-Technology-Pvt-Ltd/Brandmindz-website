@@ -1,7 +1,7 @@
 .sticky-wrapper {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,17 +13,25 @@
   width: 94%;
   margin: auto !important;
   background-color: #F6F6F6;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-top: 40px !important;
+
 }
+
 .bm-about-content-section-1 {
   width: 94%;
   margin: auto !important;
   background-color: #F6F6F6;
-  border-radius: 20px;
-  margin-top: 0px !important;
+  border-radius: 10px;
+  
+  margin-top: 20px !important;
 }
 
+.bm-about-image-column {
+  height: 100%;
+  display: flex;
+
+}
 .about-founder-section {
   z-index: 10;
   /* background-color: #f9f9f9;  */
@@ -35,7 +43,7 @@
   /* Highest z-index to cover everything else */
   overflow-y: hidden;
   overflow-x: hidden;
-  background-color: white;
+  /* background-color: white; */
 }
 
 
@@ -231,8 +239,8 @@
 
 @media (min-width: 1024px) {
   .bm-section-bg {
-    padding: 1rem 2rem;
-      /* even more space on large screens */
+    padding: 1rem 2.2rem;
+    /* even more space on large screens */
   }
 }
 
@@ -244,7 +252,7 @@
   padding: 5px 20px;
   border-radius: 25px;
   /* 3xl rounded corners */
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: 500;
   font-size: 20px;
   letter-spacing: 0.05em;
@@ -309,7 +317,7 @@
   }
   .bm-about-paragraph-founder {
     font-size: 1.125rem;
-    
+
   }
 }
 
@@ -321,13 +329,16 @@
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
+.bm-about-image-container img {
+  height: 100%;
+}
 
 /* Grid Layout */
 .bm-about-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
+  gap: 21rem;
+  align-items: stretch;
 }
 
 .bm-about-grid-founder {
@@ -339,14 +350,14 @@
   padding: 10px 15px;
 }
 .bm-featured-section {
-  padding: 2rem 0;
+  padding: 4rem 0;
   background-color: #ffffff;
 }
 
 
 @media (min-width: 1024px) {
   .bm-about-grid {
-    grid-template-columns: 8.6fr 3.5fr;
+    grid-template-columns: 8.6fr 4fr;
     gap: 2rem;
   }
 }
@@ -364,7 +375,7 @@
 
 @media (min-width: 768px) {
   .bm-featured-section {
-    padding: 3rem 0;
+    /* padding: 3rem 0; */
   }
 }
 
@@ -380,14 +391,20 @@
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
+  grid-template-columns: 3.5fr 8fr;
+
 }
 
-@media (min-width: 768px) {
-  .bm-featured-grid {
-    grid-template-columns: 3.5fr 8fr;
-    /* col-4 and col-8 */
-  }
+.bm-recongnined-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding-left: 50px;
+  margin-bottom: 40px;
+  grid-template-columns: 3.5fr 8fr;
+
 }
+
 
 /* Left Column - Text */
 .bm-featured-text-col {
@@ -490,7 +507,7 @@
 .bm-channel-image {
   object-fit: contain;
   max-width: 110%;
-  height: auto;
+  height: 70px;
   filter: grayscale(0%);
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -506,9 +523,13 @@
 
 /* Mobile Specific - Text first, then 3 logos per row? Wait, you said 3 logos on mobile? */
 @media (max-width: 639px) {
-  .bm-featured-grid {
+  .bm-featured-grid,
+  .bm-recongnined-grid {
     display: flex;
     flex-direction: column;
+    padding-left: 0px;
+  margin-bottom: 0px;
+
   }
 
   .bm-featured-text-col {
@@ -720,7 +741,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: #000000;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1009,6 +1030,7 @@
 /* Video Section */
 .bm-video-section {
   padding: 4rem 0;
+  padding-bottom: 0.5rem;
   background-color: #ffffff;
   width: 100%;
 }
@@ -1180,7 +1202,7 @@
 /* Optional: Add grayscale filter as backup */
 .bm-channel-image {
   filter: grayscale(100%);
-  transition: filter 0.3s ease;
+  transition: filter 1s ease;
 }
 
 .bm-channel-item:hover .bm-channel-image {
