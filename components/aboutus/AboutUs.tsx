@@ -143,7 +143,7 @@ export const Aboutus = () => {
       <FadeIn delay={0.2}>
         <h1 className="bm-abount-hero-title">
           <span className="text-black">Global thinking</span>
-          <span className="text-grey">.Domestic Execution.</span>
+          <span className="text-grey">. Domestic Execution.</span>
           <br />
           <span className="text-grey">Proudly </span>
           <span className="text-yellow"> built from India </span>

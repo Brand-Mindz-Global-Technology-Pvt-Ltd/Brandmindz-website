@@ -311,7 +311,6 @@ export const PersonalBranding = () => {
                     <div className="bl-feature-img-box">
                         <Image src={BrandingownerImage} alt="Personal Branding" />
                     </div>
-
                     <div className="bl-feature-points">
                         <div className="bl-point">
                             <div className="bl-point-icon"><Image src={Vector1} alt="Vector1" /></div>

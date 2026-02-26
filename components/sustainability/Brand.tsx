@@ -135,15 +135,15 @@ const Brandsustainability = () => {
                     ],
                     footerNote: "This alignment is supported by CSR Focus Area..."
                 },
-                {
-                    id: 6,
-                    title: "Clean Water and Sanitation",
-                    tag: "Alignment Type",
-                    image: Clean6,
-                    description: "Clean water initiatives...",
-                    contributions: ["Water projects", "Sanitation programs"],
-                    footerNote: "Supported by CSR Focus Area..."
-                },
+                // {
+                //     id: 6,
+                //     title: "Clean Water and Sanitation",
+                //     tag: "Alignment Type",
+                //     image: Clean6,
+                //     description: "Clean water initiatives...",
+                //     contributions: ["Water projects", "Sanitation programs"],
+                //     footerNote: "Supported by CSR Focus Area..."
+                // },
 
                 {
                     id: 7,
@@ -290,8 +290,8 @@ const Brandsustainability = () => {
             </div>
 
             <div className="bm-about-container-branding ">
-                <div className="bm-sdg-detail-view">
-                    <div className="bm-sdg-alignment-tag  bm-sdg-alignment-tag-sustainability">{openImg?.tag}</div>
+                <div className="bm-sdg-detail-view-branding">
+                    <div className="bm-sdg-alignment-tag-branding  bm-sdg-alignment-tag-sustainability">{openImg?.tag}</div>
 
                     <div className="bm-sdg-detail-flex-branding">
                         <div className="bm-sdg-image-main">

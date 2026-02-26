@@ -163,8 +163,8 @@ export const AboutContentSection = () => {
 
               <FadeIn delay={0.2}>
              <h2 className="bm-about-heading">
-                 <span className="bm-text-black">We Work As A Results Partner,</span>
-                  <span className="bm-text-gray"> not a service vendor,</span>
+                 <span className="bm-text-black">We Work As A Results Partner</span>
+                  <span className="bm-text-gray">, not a service vendor,</span>
                    <br />
                    <span className="bm-text-gray">focusing only on </span>
                   <span className="bm-text-black">What Moves Your Revenue Forward.</span>

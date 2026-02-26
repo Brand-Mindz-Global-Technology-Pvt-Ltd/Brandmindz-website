@@ -296,7 +296,7 @@ export const AboutFounderContentSection = () => {
                 <h2 className="bm-about-heading">
                   <span className="bm-text-black">Built By A Founder Who Respects</span>
                   <br />
-                  <span className="bm-text-gray">every business as someone's dream.</span>
+                  <span className="bm-text-gray">Every Business As Someone's Dream.</span>
                 </h2>
               </FadeIn>
 

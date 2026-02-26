@@ -29,7 +29,7 @@ export const BrandingService = () => {
             <FaBolt size={19} color="black" />
           </span>
           <p className="bm-hero-badge__text">
-            Branding
+            India’s #1 Digital Branding  Agency
           </p>
         </div>
       </FadeIn>
@@ -37,7 +37,7 @@ export const BrandingService = () => {
       <FadeIn delay={0.2}>
         <h1 className="bm-hero-title">
 
-          <span className="text-black">Building </span>
+          <span className="text-black">Branding </span>
 
           <span className="text-grey"> Focused Solutions </span>
           <br />
@@ -89,7 +89,7 @@ export const BrandingService = () => {
         </h1>
       </FadeIn>
       <FadeIn delay={0.35}>
-        <p className="bm-hero-description" style={{ maxWidth: '800px' }}>
+        <p className="bm-hero-description  bm-hero-description-branding">
           Strategy and execution delivered by a team that has
           sold, scaled, and delivered in real markets.
         </p>

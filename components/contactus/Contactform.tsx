@@ -61,8 +61,10 @@ export const GetStartedSection = () => {
   const services = [
     "Lead Generation",
     "Website Development",
+    "",
     "App Development",
     "SEO & Content Marketing",
+    "",
     "E-Commerce Listing",
     "Branding & Creative",
     "Others"
@@ -108,6 +110,8 @@ export const GetStartedSection = () => {
     contactMode: 'Phone Call',
     help: ""
   });
+
+  console.log(formData, 'formData--------------')
 
   const [errors, setErrors] = useState({});
 
@@ -399,13 +403,18 @@ export const GetStartedSection = () => {
                                       className={`bm-service-item-rounded ${isSelected ? 'bm-service-selected-rounded' : ''}`}
                                       onClick={() => toggleService(service)}
                                     >
-                                      <span className="bm-service-checkbox-rounded">
-                                        {isSelected && (
-                                          <svg width="18" height="18" viewBox="0 0 12 12" fill="none">
-                                            <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-                                          </svg>
-                                        )}
-                                      </span>
+                                      {
+                                        service !== "" && (
+                                          <span className="bm-service-checkbox-rounded">
+                                            {isSelected && (
+                                              <svg width="18" height="18" viewBox="0 0 12 12" fill="none">
+                                                <path d="M10 3L4.5 8.5L2 6" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                                              </svg>
+                                            )}
+                                          </span>
+                                        )
+                                      }
+
                                       <span className="bm-service-label-rounded">{service}</span>
                                     </div>
                                   );
@@ -556,7 +565,12 @@ export const GetStartedSection = () => {
                                 type="date"
                                 className="bm-date-input"
                                 onChange={(e) => {
-                                  setFormData({ ...formData, connectionDate: e.target.value });
+                                  const rawDate = e.target.value; // yyyy-mm-dd
+                                  const formatted = new Date(rawDate).toLocaleDateString("en-GB");
+                                  setFormData({
+                                    ...formData,
+                                    connectiondate: formatted
+                                  });
                                 }}
                               />
                             )}
@@ -583,7 +597,37 @@ export const GetStartedSection = () => {
                               </div>
                             ))}
                           </div>
+                          {/* <div className="bm-date-selector">
+                            {["Yesterday", "Today", "Tomorrow", "Choose a Date"].map((date) => {
+                              const isCustomDate = !["Yesterday", "Today", "Tomorrow"].includes(formData.connectionDate);
+                              const isActive =
+                                formData.connectionDate === date ||
+                                (date === "Choose a Date" && isCustomDate && formData.connectionDate !== "");
 
+                              return (
+                                <div
+                                  key={date}
+                                  className={`bm-date-tab ${isActive ? "active" : ""} ${date === "Yesterday" ? "bm-disabled" : ""
+                                    }`}
+                                  onClick={() => {
+                                    if (date === "Choose a Date") {
+                                      setShowCalendar(true);
+                                   
+                                    } else if (date !== "Yesterday") {
+                                      setFormData({ ...formData, connectionDate: date });
+                                      setShowCalendar(false);
+                                    }
+                                  }}
+                                >
+                                  {date === "Choose a Date" && isCustomDate && formData.connectionDate !== ""
+                                    ? formData.connectionDate
+                                    : date === "Yesterday"
+                                      ? <>You Missed<br />Yesterday</>
+                                      : date}
+                                </div>
+                              );
+                            })}
+                          </div> */}
                           {errors.connectionDate && <span className="error-text">{errors.connectionDate}</span>}
                           <h3 className="bm-section-heading">When Would You Like To Start The Project?</h3>
                           <div className="bm-options-grid">

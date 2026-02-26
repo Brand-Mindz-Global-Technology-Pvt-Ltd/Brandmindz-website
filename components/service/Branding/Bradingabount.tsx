@@ -207,7 +207,7 @@ export const Bradingabount = () => {
             {menuItems.map((item) => (
               <li
                 key={item.id}
-                className={`bm-about-menu-item ${activeTab === item.id ? "active" : ""}`}
+                className={`bm-about-menu-item ${activeTab === item.id ? "active" : ""} ${activeTab === item.id  ? "bm-about-small-size" :""} `}
                 onClick={() => setActiveTab(item.id)}
               >
                 <span className="bm-about-id">{item.id.toString().padStart(2, "0")}</span>

@@ -39,11 +39,11 @@ export const Sustainability = () => {
 
                     <span className="text-black">Building </span>
 
-                    <span className="text-grey">Responsibly</span>
+                    <span className="text-grey">Responsibly.</span>
                     <br />
                     <span className="text-black">Living </span>
                     <span className="               text-yellow
-"> Sustainably</span>
+"> Sustainably.</span>
 
                     {/* <span className="inline-flex align-bottom ml-2 animatetext">
             <AnimatePresence mode="wait">
@@ -88,9 +88,8 @@ export const Sustainability = () => {
                 </h1>
             </FadeIn>
 
-
             <FadeIn delay={0.35}>
-                <p className="bm-hero-description">
+                <p className="bm-hero-description bm-hero-description-branding">
                    At CDJ, sustainability is built into every project through smart design and responsible construction for a better future at Brand Mindz. </p>
             </FadeIn>
             <Brandsustainability/>

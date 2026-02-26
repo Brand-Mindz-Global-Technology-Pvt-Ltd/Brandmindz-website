@@ -14,20 +14,20 @@ export const MapSection = () => {
   return (
     <section className="bm-map-section">
       <div className="bm-map-container">
-  
+
 
         {/* Two Maps Grid - col-6 col-6 */}
         <div className="bm-map-grid">
-          
+
           {/* Chennai Office Map */}
           <div className="bm-map-item">
             <FadeIn delay={0.2}>
               <div className="bm-map-card">
-            
-                
+
+
                 {/* Map Container */}
                 <div className="bm-map-image-container">
-                  
+
                   {/* Google Map - NO FILTER, normal colors */}
                   <div className="bm-map-wrapper">
                     <iframe
@@ -39,10 +39,10 @@ export const MapSection = () => {
                       referrerPolicy="no-referrer-when-downgrade"
                       className="bm-map-frame"
                     ></iframe>
-                    
+
                     {/* Circle Background - Center of map */}
                     <div className="bm-circle-bg-center">
-                      <Image 
+                      <Image
                         src={circleBg}
                         alt=""
                         width={140}
@@ -50,10 +50,10 @@ export const MapSection = () => {
                         className="bm-circle-image-center"
                       />
                     </div>
-                    
+
                     {/* Location Marker - Exact address location */}
                     <div className="bm-location-marker">
-                      <Image 
+                      <Image
                         src={locationMarker}
                         alt="Location"
                         width={40}
@@ -63,7 +63,7 @@ export const MapSection = () => {
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </FadeIn>
           </div>
@@ -72,16 +72,15 @@ export const MapSection = () => {
           <div className="bm-map-item">
             <FadeIn delay={0.3}>
               <div className="bm-map-card">
-                
-                
-                
+
+
+
                 {/* Map Container */}
                 <div className="bm-map-image-container">
-                  
-                  {/* Google Map - NO FILTER, normal colors */}
+
                   <div className="bm-map-wrapper">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.123456789012!2d77.7891234!3d8.7134567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b04123456789abc%3A0x123456789abcdef!2sStartup%20TN%2C%20Tirunelveli%20Municipal%20Corporation%20Incubation%20Centre%2C%20SN%20Highway%2C%20Tirunelveli%2C%20Tamil%20Nadu%20627002!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                      src="https://www.google.com/maps?q=Startup+TN,+Tirunelveli+Municipal+Corporation+Incubation+Centre,+SN+Highway,+Tirunelveli+627002&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
@@ -89,10 +88,10 @@ export const MapSection = () => {
                       referrerPolicy="no-referrer-when-downgrade"
                       className="bm-map-frame"
                     ></iframe>
-                    
+
                     {/* Circle Background - Center of map */}
                     <div className="bm-circle-bg-center">
-                      <Image 
+                      <Image
                         src={circleBg}
                         alt=""
                         width={140}
@@ -100,10 +99,10 @@ export const MapSection = () => {
                         className="bm-circle-image-center"
                       />
                     </div>
-                    
+
                     {/* Location Marker - Exact address location */}
                     <div className="bm-location-marker">
-                      <Image 
+                      <Image
                         src={locationMarker}
                         alt="Location"
                         width={40}
@@ -113,7 +112,7 @@ export const MapSection = () => {
                     </div>
                   </div>
                 </div>
-                
+
               </div>
             </FadeIn>
           </div>

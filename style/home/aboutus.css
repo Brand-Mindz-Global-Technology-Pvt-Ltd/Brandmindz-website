@@ -103,7 +103,6 @@
   position: relative;
   overflow: hidden;
   margin-top: 30px;
-
 }
 
 /* Background image with low opacity */
@@ -127,20 +126,6 @@
 }
 
 
-.bm-about-section-sustainability {
-  position: sticky;
-  padding: 30px 0px;
-  position: relative;
-  overflow: hidden;
-}
-
-
-
-/* Keep content above background */
-.bm-about-section-sustainability > * {
-  position: relative;
-  z-index: 1;
-}
 
 .bm-about-container {
   max-width: 88%;
@@ -213,6 +198,11 @@
   font-size: 30px;
   font-weight: 500;
 }
+
+.bm-about-small-size .bm-about-label {
+  font-size: 25px !important;
+}
+
 
 /* Content Area */
 .bm-about-content-wrapper {
@@ -656,6 +646,10 @@
     font-size: 20px;
   }
 
+  .bm-about-small-size .bm-about-label {
+    font-size: 18px !important;
+  }
+
   .bm-about-content-wrapper {
     flex-direction: column;
     gap: 30px;
@@ -738,6 +732,10 @@
   .bm-about-menu-item.active .bm-about-label {
     font-size: 18px;
   }
+  
+  .bm-about-small-size .bm-about-label {
+    font-size: 18px !important;
+  }
 
   .bm-about-main-title {
     font-size: 24px;
@@ -819,7 +817,7 @@
 @media (max-width: 480px) {
   .bm-about-section {
     padding: 20px 0;
-     margin-top: 20px;
+    margin-top: 20px;
 
   }
 
@@ -847,7 +845,7 @@
 
   .bm-about-menu-item.active .bm-about-label {
     font-size: 16px;
-  background-color:transparent;
+    background-color: transparent;
 
   }
 

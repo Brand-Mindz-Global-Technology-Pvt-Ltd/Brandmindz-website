@@ -1,9 +1,8 @@
 /* Contact Cards Section */
 .bm-contact-cards-section {
   /* padding: 5rem 0; */
-  width: 100%;
-
-padding-top: 40px;
+  width: 95%;
+  padding-top: 40px;
 }
 
 .bm-contact-cards-container {
@@ -35,7 +34,7 @@ padding-top: 40px;
 .bm-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   margin-bottom: 3rem;
   align-items: stretch;
 }
@@ -49,9 +48,7 @@ padding-top: 40px;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-  height: 100%;
-  /* Forces all cards to take full height of grid cell */
+  box-shadow: 0 30px 30px rgba(190, 190, 190, 0.4);  height: 100%;
 }
 
 
@@ -80,15 +77,23 @@ padding-top: 40px;
 
 /* Card Icon */
 .bm-card-icon {
-  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.50rem;
 }
 
 .bm-icon-image {
   width: 40px;
   height: 40px;
   object-fit: contain;
+
 }
 
+
+/* Hover → Change Icon Color */
+/* .bm-contact-card:hover .bm-icon-image {
+  filter: brightness(0) saturate(100%) invert(75%);
+
+} */
 /* Card Content */
 .bm-card-content {
   display: flex;
@@ -142,7 +147,8 @@ padding-top: 40px;
 
 .bm-card-value-address {
   text-align: start;
-  line-height: 18px;
+  line-height: 16px;
+  font-size: 15px;
 }
 /* Location card specific - smaller text for address */
 .bm-contact-card:nth-child(3) .bm-card-value {
@@ -221,6 +227,8 @@ padding-top: 40px;
 @media (max-width: 480px) {
   .bm-contact-cards-section {
     padding: 0rem 0;
+  width: 100%;
+
   }
 
   .bm-contact-cards-container {
@@ -274,6 +282,7 @@ padding-top: 40px;
   object-fit: contain;
   width: 100%;
   height: 100%;
+  z-index: 99;
 }
 
 .bm-bg-overlay {
@@ -291,14 +300,14 @@ padding-top: 40px;
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 75%;
+  max-width: 78%;
   margin: auto;
+
   /* padding: 0 2rem; */
 
 }
 
 .bm-getstarted-content-container {
-  max-width: 1280px;
   margin: 0 auto;
   width: 100%;
 }
@@ -356,16 +365,14 @@ padding-top: 40px;
 .bm-star {
   font-size: 32px;
   font-weight: bold;
-  background: linear-gradient(
-    180deg,
-    #ffe58f 0%,
-    #ffd700 40%,
-    #ffb800 100%
-  );
+  background: linear-gradient(180deg,
+      #ffe58f 0%,
+      #ffd700 40%,
+      #ffb800 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-    text-shadow: 0 0 4px rgba(255, 200, 0, 0.6);
+  text-shadow: 0 0 4px rgba(255, 200, 0, 0.6);
 }
 
 .bm-rating-text {
@@ -667,8 +674,7 @@ padding-top: 40px;
 
 .bm-services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
+  grid-template-columns: 40% 40% 20%;
 }
 
 .bm-service-item-rounded {
@@ -845,6 +851,9 @@ padding-top: 40px;
   min-height: 180px;
   resize: none;
   line-height: 1.5;
+}
+.bm-s2-textarea::placeholder{
+  opacity: 0.5;
 }
 
 /* The Black Info Bar */
@@ -1141,19 +1150,23 @@ padding-top: 40px;
   right: 0;
   height: 100%;
 
-  background: linear-gradient(to top, rgba(255,255,255), rgba(255,255,255,0));  pointer-events: none;
+  background: linear-gradient(to top, rgba(255, 255, 255), rgba(255, 255, 255, 0));
+  pointer-events: none;
   z-index: 10;
 }
 .bm-client-img-bm-right-conten {
   position: absolute !important;
-  top: 0;        /* 🔥 image start from TOP */
+  top: 0;
+  /* 🔥 image start from TOP */
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 3;
 
-  object-fit: contain;      /* 🔥 no zoom, full image visible */
-  object-position: bottom;     /* 🔥 align from TOP */
+  object-fit: contain;
+  /* 🔥 no zoom, full image visible */
+  object-position: bottom;
+  /* 🔥 align from TOP */
 }
 /* Card */
 .bm-s4-card {
@@ -1477,7 +1490,7 @@ padding-top: 40px;
 /* FIX 1: Brighter background - Updated overlay */
 .bm-bg-overlay-fixed {
   z-index: 1;
-  background-color: rgb(244, 244, 246, 0.5);
+  background-color:rgb(244, 244, 246);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1553,26 +1566,25 @@ padding-top: 40px;
   transform: translateX(-50%) !important;
   display: flex !important;
   background: #F0F0F0 !important;
-  padding: 0.75rem 1.25rem !important;
+  padding: 0.50rem 1.25rem !important;
   border-radius: 20px !important;
   z-index: 9999 !important;
   width: 85%;
   border: 1px solid;
-
-border-image-source: conic-gradient(from 102.21deg at 52.75% 38.75%, rgba(249, 249, 249, 0.5) -32.95deg, rgba(64, 64, 64, 0.5) 10.52deg, rgba(64, 64, 64, 0.35) 32.12deg, rgba(255, 255, 255, 0.5) 60.28deg, rgba(255, 255, 255, 0.5) 107.79deg, rgba(64, 64, 64, 0.35) 187.59deg, #F9F9F9 207.58deg, rgba(255, 255, 255, 0.5) 287.31deg, rgba(249, 249, 249, 0.5) 327.05deg, rgba(64, 64, 64, 0.5) 370.52deg);
-
-
+  border-image-source: conic-gradient(from 102.21deg at 52.75% 38.75%, rgba(249, 249, 249, 0.5) -32.95deg, rgba(64, 64, 64, 0.5) 10.52deg, rgba(64, 64, 64, 0.35) 32.12deg, rgba(255, 255, 255, 0.5) 60.28deg, rgba(255, 255, 255, 0.5) 107.79deg, rgba(64, 64, 64, 0.35) 187.59deg, #F9F9F9 207.58deg, rgba(255, 255, 255, 0.5) 287.31deg, rgba(249, 249, 249, 0.5) 327.05deg, rgba(64, 64, 64, 0.5) 370.52deg);
 }
 
 /* Map Section */
 .bm-map-section {
   padding: 5rem 0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: #ffffff;
   width: 100%;
 }
 
 .bm-map-container {
-  max-width: 1280px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -1594,7 +1606,7 @@ border-image-source: conic-gradient(from 102.21deg at 52.75% 38.75%, rgba(249, 2
 .bm-map-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 4.5rem;
 }
 
 /* Map Item */

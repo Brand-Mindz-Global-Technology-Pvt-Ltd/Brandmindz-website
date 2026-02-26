@@ -34,7 +34,7 @@
 .bm-hero-title {
   font-size: 77px;
   line-height: 1.2;
-  max-width: 1200px;
+  max-width: 1300px;
   /* max-width: 88%; */
   margin: 0 auto 24px auto;
   font-weight: 700;
@@ -72,6 +72,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.bm-hero-description-branding{
+  max-width:950px;
+  font-size: 35px !important;
+  margin: 0px !important;
 }
 /* The Unique Black Button */
 .bm-hero-btn {
@@ -149,7 +154,7 @@
   align-items: center;
 }
 
-.bm-hero-section-about {
+/* .bm-hero-section-about {
   padding: 50px 20px 0px 10px;
   text-align: center;
   background-color: #ffffff;
@@ -159,15 +164,59 @@
     url('../../assets/HomeSection/banner/Group (1).png');
 
   background-position: center -60px;
-  background-repeat: no-repeat;
   background-size: cover;
-  /* Changed to cover to ensure it fills the area properly */
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid black;
 }
+ */
+
+ .bm-hero-section-about {
+  position: relative;
+  padding: 50px 20px 0px 10px;
+  text-align: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Image Layer */
+.bm-hero-section-about::before {
+  content: "";
+  position: absolute;
+  top: -60px;   /* 👈 Only image moves */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../assets/HomeSection/banner/Group (1).png') 
+              no-repeat center top / cover;
+  z-index: 0;
+}
+
+/* White Fade Layer */
+.bm-hero-section-about::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  z-index: 1;
+}
+
+/* Content above everything */
+.bm-hero-section-about > * {
+  position: relative;
+  z-index: 2;
+}
+
 .bm-hero-section-contact {
-  padding: 50px 20px 40px;
+  padding: 50px 20px 15px 10px;
+
   text-align: center;
   background-color: #ffffff;
   background-image: url('../../assets/HomeSection/banner/Group (1).png');
@@ -241,6 +290,9 @@
     font-size: 16px;
     line-height: 1.7;
   }
+  .bm-hero-description-branding{
+  font-size: 16px !important;
+}
   .animatetext {
 
     margin-bottom: 0px;

@@ -151,5 +151,53 @@ export const LogoNewsTicker = () => {
     </motion.div>
   </div>
 </div>
+
+//  <div className="logo-ticker-container">
+//   <div className="ticker-row">
+//     <motion.div
+//       className="logo-track"
+//       animate={{ x: ["0%", "-50%"] }}
+//       transition={{
+//         repeat: Infinity,
+//         duration: 30, 
+//         ease: "linear",
+//       }}
+//     >
+//       {[...companyLogos, ...companyLogos].map((logo, idx) => (
+//         <div key={`row1-${idx}`} className="logo-item">
+//           <div className="logo-image-container">
+//             <img 
+//               src={logo.src || logo} 
+//               alt="Company Logo" 
+//             />
+//           </div>
+//         </div>
+//       ))}
+//     </motion.div>
+//   </div>
+
+//   <div className="ticker-row mt-10">
+//     <motion.div
+//       className="logo-track"
+//       animate={{ x: ["-50%", "0%"] }}
+//       transition={{
+//         repeat: Infinity,
+//         duration: 30,
+//         ease: "linear",
+//       }}
+//     >
+//       {[...companyLogos, ...companyLogos].map((logo, idx) => (
+//         <div key={`row2-${idx}`} className="logo-item">
+//           <div className="logo-image-container">
+//             <img 
+//               src={logo.src || logo} 
+//               alt="Company Logo" 
+//             />
+//           </div>
+//         </div>
+//       ))}
+//     </motion.div>
+//   </div>
+// </div>
   );
 };

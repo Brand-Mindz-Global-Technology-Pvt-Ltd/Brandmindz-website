@@ -40,8 +40,8 @@ export const ContactCardsSection = () => {
       title: "Chennai Office",
       icon: locationIcon,
       content: [
-        { label: "Chennai", value: "Workflow, Greeta Towers, 99, Rajiv Gandhi Salai, Industrial Estate, Perungudi, Chennai, Tamil Nadu 600096." },
-        { label: "Tirunelveli", value: "Startup TN, Tirunelveli Municipal Corporation Incubation Centre, SN Highway, Tirunelveli 627002." }
+        { label: "Chennai Office", value: "Workflow, Greeta Towers, 99, Rajiv Gandhi Salai, Industrial Estate, Perungudi, Chennai, Tamil Nadu 600096." },
+        { label: "Tirunelveli Office", value: "Startup TN, Tirunelveli Municipal Corporation Incubation Centre, SN Highway, Tirunelveli 627002." }
       ],
       type: "location"
     },
