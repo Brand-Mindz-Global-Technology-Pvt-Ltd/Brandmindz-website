@@ -2,7 +2,7 @@
   background: #fff;
   overflow: hidden;
   height: 100vh;
-  min-height: 850px;
+  min-height: 900px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -114,7 +114,6 @@
   max-width: 800px;
   pointer-events: auto;
   padding: 40px 10px;
- 
 }
 
 .quoteIconContainer {
@@ -365,6 +364,7 @@
   .testimonialCard {
     padding: 30px 22px;
     border-radius: 22px;
+  
   }
   
   .quoteIconContainer {
@@ -375,7 +375,7 @@
     width: 35px;
     height: 35px;
   }
-  
+
   .testimonialLabel {
     font-size: 16px;
     letter-spacing: 1.6px;

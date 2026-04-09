@@ -73,7 +73,7 @@ const OurBlog = () => {
                         <div className="bm-featured-overlay  absolute bottom-0 left-0 right-0 p-[30px] bg-black/30 backdrop-blur-[12px] border-t border-white/20 text-white text-start">
                             <span className="bm-post-meta">08-11-2021 | Business</span>
                             <h3>How Color Influences Perception and Success in Modern Design</h3>
-                            <p>Quitting is easy but greatness is built by those who refuse to stop. Every journey worth taking comes with obstacles...</p>
+                            <p>Quitting is easy but greatness is built by those who refuse to stop. Every journey worth taking comes with obstacles, doubts, and moments where giving up feels tempting.</p>
                         </div>
                     </div>
                 </FadeIn>

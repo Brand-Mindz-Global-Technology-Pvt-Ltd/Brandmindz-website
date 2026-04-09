@@ -108,7 +108,7 @@
     
     .bm-faq-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 0px;
     }
     
     .bm-faq-header {

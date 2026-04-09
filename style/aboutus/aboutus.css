@@ -1100,7 +1100,7 @@
 }
 /* Video Section */
 .bm-video-section {
-  padding: 4rem 0;
+  padding:4rem 0 !important;
   padding-bottom: 0.5rem;
   background-color: #ffffff;
   width: 100%;
