@@ -372,11 +372,7 @@ export const PersonalBranding = () => {
                     <div className="bl-footer-description">
                         <p className="bm-about-paragraph-branding">
                             <ScrollSpan>
-                                We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.
-                                We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.
-                                We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.
-                                We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.
-                            </ScrollSpan>
+                               We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression. We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression. We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression. We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression. We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.</ScrollSpan>
                         </p>
                     </div>
                 </div>

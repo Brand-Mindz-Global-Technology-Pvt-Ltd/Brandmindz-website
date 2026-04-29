@@ -1,0 +1,236 @@
+.bm-framework-section {
+  background-color: #EEEEEE;
+  font-family: 'Afacad', sans-serif;
+  padding: 60px 5%;
+  margin: 40px 0;
+  overflow: hidden;
+}
+
+.bm-framework-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.bm-framework-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.bm-framework-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.bm-framework-subtitle {
+  font-size: 30px;
+  font-weight: 400;
+  color: #111111;
+  line-height: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bm-framework-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 60px;
+  justify-items: center;
+}
+
+.bm-framework-card {
+  width: 100%;
+  max-width: 370px;
+  height: 160px;
+  border-radius: 12px;
+  border: 1px solid #282525;
+  background-color: #ffffff;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.bm-framework-card:hover {
+  background-color: #515151;
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgb(0 0 0 / 0.15);
+  cursor: pointer;
+}
+
+.bm-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 15px 0;
+}
+
+.bm-card-description {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  color: #444444;
+  padding-right: 20px;
+}
+
+.bm-framework-card:hover .bm-card-description {
+  color: #e0e0e0;
+}
+
+.bm-framework-footer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.bm-btn-strategy {
+  width: 230px;
+  height: 50px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bm-btn-meeting {
+  width: 230px;
+  height: 50px;
+  background-color: #EEEEEE;
+  color: #000000;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bm-btn-strategy:hover,
+.bm-btn-meeting:hover {
+  opacity: 0.95;
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .bm-framework-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .bm-framework-title {
+    font-size: 40px;
+  }
+
+  .bm-framework-subtitle {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .bm-framework-card {
+    max-width: 100%;
+    height: auto;
+    min-height: 160px;
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bm-framework-section {
+    padding: 40px 20px;
+    margin: 30px 0;
+  }
+
+  .bm-framework-header {
+    margin-bottom: 40px;
+  }
+
+  .bm-framework-grid {
+    /* grid-template-columns: 1fr; */
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .bm-framework-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .bm-framework-subtitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .bm-framework-card {
+    padding: 24px 20px;
+  }
+
+  .bm-card-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .bm-card-description {
+    font-size: 16px;
+  }
+
+  .bm-framework-footer {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .bm-btn-strategy,
+  .bm-btn-meeting {
+    flex: 1;
+    width: auto;
+    max-width: 50%;
+    height: 50px;
+    font-size: 13px;
+    padding: 0 10px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .bm-framework-title {
+    font-size: 28px;
+  }
+
+  .bm-framework-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bm-framework-subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
