@@ -148,7 +148,7 @@
   height: 40px;
   border-radius: 8px;
   font-size: 18px;
-  font-weight:500;
+  font-weight: 500;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -243,8 +243,11 @@
   .bm-pkg-section {
     padding: 40px 15px;
   }
-.bm-pkg-container {
-  max-width: 100%;}
+
+  .bm-pkg-container {
+    max-width: 100%;
+  }
+
   .bm-pkg-title {
     font-size: 26px;
     line-height: 32px;
@@ -295,13 +298,17 @@
 }
 
 @media (max-width: 480px) {
+  .bm-pkg-section {
+    padding:0px;
+  }
+
   .bm-pkg-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
   .bm-pkg-container {
-    max-width: 95%;
+    max-width: 100%;
   }
 
   .bm-pkg-title {
@@ -325,6 +332,7 @@
 
   .bm-pkg-card {
     padding: 25px 15px;
+    width: 300px;
   }
 
   .bm-pkg-card-title {

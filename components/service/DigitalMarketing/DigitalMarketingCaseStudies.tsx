@@ -40,7 +40,7 @@ const caseStudies = [
   }
 ];
 
-export const BrandingCaseStudies = () => {
+export const DigitalMarketingCaseStudies = () => {
   return (
     <section className="bm-cs-section">
       <div className="bm-cs-container">

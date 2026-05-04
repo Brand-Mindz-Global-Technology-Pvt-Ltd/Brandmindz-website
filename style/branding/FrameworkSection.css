@@ -46,7 +46,7 @@
   max-width: 370px;
   height: 160px;
   border-radius: 12px;
-  border: 1px solid #282525;
+  border: 1px solid #706d6d;
   background-color: #ffffff;
   padding: 20px 15px;
   display: flex;
@@ -62,7 +62,7 @@
   background-color: #515151;
   color: #ffffff;
   border-color: transparent;
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-3px) scale(1.02);
   box-shadow: 0 20px 40px -10px rgb(0 0 0 / 0.15);
   cursor: pointer;
 }

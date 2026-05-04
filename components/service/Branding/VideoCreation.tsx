@@ -64,7 +64,7 @@ const ScrollSpan = ({ children }) => {
     );
 };
 
-export const CompanyBranding = () => {
+export const VideoCreation = () => {
     const [index, setIndex] = useState(0);
 
     const statsData = [
@@ -86,9 +86,9 @@ export const CompanyBranding = () => {
         <div className='bl-banner'>
             <div className="bl-hero-grid">
                 <div className="bl-hero-text">
-                    <h2 className="bl-subtitle">Define Your Brand with Clarity</h2>
-                    <h3 className="bl-headline-light">Control How the Market Sees and Trusts Your Business.</h3>
-                    <h1 className="bl-headline-bold">Turn Your Company Into a <span>Powerful Market Leader.</span></h1>
+                    <h2 className="bl-subtitle">Create Videos That Capture Attention</h2>
+                    <h3 className="bl-headline-light">Shape How Your Audience Sees and Remembers Your Brand.</h3>
+                    <h1 className="bl-headline-bold">Turn Your Message Into <span>High-Impact Visual Content.</span></h1>
                 </div>
 
                 <div className="bl-client-card">
@@ -109,7 +109,7 @@ export const CompanyBranding = () => {
                     <hr className="bl-card-divider" />
 
                     <p className="bl-client-desc">
-                        Work with our team to transform your company into a credible, differentiated, and recognizable brand that increases market visibility, strengthens trust, and drives long-term business growth across competitive industries.
+                        Work with our team to transform your ideas into professional, engaging, and conversion-focused videos that increase brand recall, strengthen audience trust, and drive measurable engagement across digital platforms.
                     </p>
                 </div>
             </div>
@@ -117,28 +117,28 @@ export const CompanyBranding = () => {
             <div className="bl-content-layout">
                 <div className="bl-feature-card">
                     <div className="bl-feature-img-box">
-                        <Image src={BrandingownerImage} alt="Company Branding" />
+                        <Image src={BrandingownerImage} alt="Video Creation" />
                     </div>
                     <div className="bl-feature-points">
                         <div className="bl-point">
                             <div className="bl-point-icon"><Image src={Vector1} alt="Vector1" /></div>
                             <div className="bl-point-txt">
-                                <h4>Brand Identity & Market Positioning</h4>
-                                <p>We develop a clear brand foundation by defining your mission, value proposition, competitive edge, and target audience perception to ensure your company stands out in crowded markets.</p>
+                                <h4>Video Strategy & Concept</h4>
+                                <p>We plan structured video strategies by defining objectives, target audience, content angle, and platform format to ensure every video delivers clarity, impact, and value.</p>
                             </div>
                         </div>
                         <div className="bl-point">
                             <div className="bl-point-icon"><Image src={Vector2} alt="Vector2" /></div>
                             <div className="bl-point-txt">
-                                <h4>Visual Branding & Communication System</h4>
-                                <p>We build a consistent visual identity, tone of voice, and messaging framework that ensures recognition and brand recall across websites, ads, packaging, and digital platforms.</p>
+                                <h4>Professional Production & Editing</h4>
+                                <p>We produce high-quality visuals with cinematic shooting, clean transitions, sound design, and precision editing that maintain audience attention.</p>
                             </div>
                         </div>
                         <div className="bl-point">
                             <div className="bl-point-icon"><Image src={Vector3} alt="Vector3" /></div>
                             <div className="bl-point-txt">
-                                <h4>Brand Authority & Growth Strategy</h4>
-                                <p>We implement structured brand growth plans that improve credibility, increase brand awareness, and position your company as a trusted leader in your industry.</p>
+                                <h4>Performance-Focused Optimization</h4>
+                                <p>We optimize video formats, pacing, hooks, captions, and thumbnails to improve engagement, retention, and conversion performance.</p>
                             </div>
                         </div>
                     </div>
@@ -154,12 +154,12 @@ export const CompanyBranding = () => {
                     <div className="bm-offering-promo-overlay">
                         <FadeIn delay={0.6}>
                             <h3>Need clarity?</h3>
-                            <p>Our branding specialists are ready to guide you.</p>
+                            <p>Our video specialists are ready to guide you.</p>
                         </FadeIn>
 
                         <div className="need_btn">
                             <div className="bm-offering-promo-text">
-                                Get expert support to build a strong company branding strategy with confidence. We help you define positioning, strengthen brand perception, and create long-term market authority that drives sustainable growth.
+                                Get expert support to create powerful video content with confidence. We help you plan, shoot, edit, and optimize videos that strengthen brand visibility and drive consistent audience engagement.
                             </div>
                             <button className="bm-offering-book-btn">
                                 <div className="icon-circle">
@@ -167,7 +167,7 @@ export const CompanyBranding = () => {
                                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 10.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                                     </svg>
                                 </div>
-                                Build Your Company Brand
+                                Launch Your Strategy
                             </button>
                         </div>
                     </div>
@@ -179,7 +179,7 @@ export const CompanyBranding = () => {
                     <div className="bl-footer-description">
                         <p className="bm-about-paragraph-branding">
                             <ScrollSpan>
-                                We help businesses build structured company branding strategies that establish authority and increase market trust. Research shows 81% of consumers must trust a brand before making a purchase decision. As a strategic branding agency, we refine your positioning, messaging architecture, and visual identity to improve brand recognition and credibility. Strong company branding directly impacts revenue. Businesses with consistent branding across platforms see up to 23% higher revenue growth compared to inconsistent competitors. We align your brand voice, design language, and customer communication for clarity and differentiation.
+                                Many businesses lose potential customers because their video content lacks structure, clarity, and audience focus. Studies show that viewers retain up to 95% of a message when delivered through video compared to 10% through text. Poorly edited or low-quality videos reduce trust instantly. We deliver high-impact video creation and editing solutions with professional scripting, structured storytelling, clean visuals, and optimized formats that improve retention, engagement, and conversion performance across platforms.
                             </ScrollSpan>
                         </p>
                     </div>
@@ -203,7 +203,7 @@ export const CompanyBranding = () => {
                                     <FiChevronRight />
                                 </div>
                                 <span className="bm-hero-btn__text-bl">
-                                    Strengthen <strong>Your Brand</strong>
+                                    Create <strong>With Us</strong>
                                 </span>
                             </button>
                         </div>

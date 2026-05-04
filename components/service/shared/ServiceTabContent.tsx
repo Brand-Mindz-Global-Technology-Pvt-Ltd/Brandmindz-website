@@ -2,16 +2,9 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { FiChevronRight } from "react-icons/fi";
-import { Phone, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 
-import {
-    FadeIn,
-    TextReveal,
-    StaggerChildren,
-    StaggerItem,
-    MagneticButton
-} from "../../animations";
+import { FadeIn } from "../../animations";
 
 import BrandingownerImage from '../../../assets/branding/Gemini_Generate.png'
 import OurImage from '../../../assets/branding/OurImage.png'
@@ -21,7 +14,7 @@ import Vector2 from '../../../assets/branding/Group (5).png'
 import Vector3 from '../../../assets/branding/Vector (3).png'
 
 // --- SCROLL HIGHLIGHT LOGIC ---
-const ScrollLine = ({ content }) => {
+const ScrollLine = ({ content }: { content: string }) => {
     const [isHighlighted, setIsHighlighted] = useState(false);
     const ref = useRef(null);
 
@@ -52,7 +45,7 @@ const ScrollLine = ({ content }) => {
     );
 };
 
-const ScrollSpan = ({ children }) => {
+const ScrollSpan = ({ children }: { children: string }) => {
     if (typeof children !== 'string') return <span>{children}</span>;
     const sentences = children.split(/(?<=\. )/g);
     return (
@@ -64,10 +57,10 @@ const ScrollSpan = ({ children }) => {
     );
 };
 
-export const CompanyBranding = () => {
+export const ServiceTabContent = ({ data }: { data: any }) => {
     const [index, setIndex] = useState(0);
 
-    const statsData = [
+    const statsData = data.statsData || [
         { number: "130+", label: "Global Countries" },
         { number: "500+", label: "Clients Worldwide" },
         { number: "1200+", label: "Completed" },
@@ -80,15 +73,17 @@ export const CompanyBranding = () => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [statsData.length]);
+
+    const icons = [Vector1, Vector2, Vector3];
 
     return (
         <div className='bl-banner'>
             <div className="bl-hero-grid">
                 <div className="bl-hero-text">
-                    <h2 className="bl-subtitle">Define Your Brand with Clarity</h2>
-                    <h3 className="bl-headline-light">Control How the Market Sees and Trusts Your Business.</h3>
-                    <h1 className="bl-headline-bold">Turn Your Company Into a <span>Powerful Market Leader.</span></h1>
+                    <h2 className="bl-subtitle">{data.subtitle}</h2>
+                    <h3 className="bl-headline-light">{data.headlineLight}</h3>
+                    <h1 className="bl-headline-bold">{data.headlineBoldStart} <span>{data.headlineBoldHighlight}</span></h1>
                 </div>
 
                 <div className="bl-client-card">
@@ -102,14 +97,14 @@ export const CompanyBranding = () => {
 
                         <div className="bl-client-title-group">
                             <span className="bl-client-list">Join the list of</span>
-                            <span className="bl-client-stat">300+ Growing Businesses</span>
+                            <span className="bl-client-stat">{data.clientStat}</span>
                         </div>
                     </div>
 
                     <hr className="bl-card-divider" />
 
                     <p className="bl-client-desc">
-                        Work with our team to transform your company into a credible, differentiated, and recognizable brand that increases market visibility, strengthens trust, and drives long-term business growth across competitive industries.
+                        {data.clientDesc}
                     </p>
                 </div>
             </div>
@@ -117,30 +112,18 @@ export const CompanyBranding = () => {
             <div className="bl-content-layout">
                 <div className="bl-feature-card">
                     <div className="bl-feature-img-box">
-                        <Image src={BrandingownerImage} alt="Company Branding" />
+                        <Image src={data.featureImage || BrandingownerImage} alt={data.subtitle} />
                     </div>
                     <div className="bl-feature-points">
-                        <div className="bl-point">
-                            <div className="bl-point-icon"><Image src={Vector1} alt="Vector1" /></div>
-                            <div className="bl-point-txt">
-                                <h4>Brand Identity & Market Positioning</h4>
-                                <p>We develop a clear brand foundation by defining your mission, value proposition, competitive edge, and target audience perception to ensure your company stands out in crowded markets.</p>
+                        {data.features.map((feat: any, i: number) => (
+                            <div className="bl-point" key={i}>
+                                <div className="bl-point-icon"><Image src={icons[i % 3]} alt="Icon" /></div>
+                                <div className="bl-point-txt">
+                                    <h4>{feat.title}</h4>
+                                    <p>{feat.desc}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="bl-point">
-                            <div className="bl-point-icon"><Image src={Vector2} alt="Vector2" /></div>
-                            <div className="bl-point-txt">
-                                <h4>Visual Branding & Communication System</h4>
-                                <p>We build a consistent visual identity, tone of voice, and messaging framework that ensures recognition and brand recall across websites, ads, packaging, and digital platforms.</p>
-                            </div>
-                        </div>
-                        <div className="bl-point">
-                            <div className="bl-point-icon"><Image src={Vector3} alt="Vector3" /></div>
-                            <div className="bl-point-txt">
-                                <h4>Brand Authority & Growth Strategy</h4>
-                                <p>We implement structured brand growth plans that improve credibility, increase brand awareness, and position your company as a trusted leader in your industry.</p>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
 
@@ -153,13 +136,13 @@ export const CompanyBranding = () => {
                     />
                     <div className="bm-offering-promo-overlay">
                         <FadeIn delay={0.6}>
-                            <h3>Need clarity?</h3>
-                            <p>Our branding specialists are ready to guide you.</p>
+                            <h3>{data.promoTitle}</h3>
+                            <p>{data.promoSubtitle}</p>
                         </FadeIn>
 
                         <div className="need_btn">
                             <div className="bm-offering-promo-text">
-                                Get expert support to build a strong company branding strategy with confidence. We help you define positioning, strengthen brand perception, and create long-term market authority that drives sustainable growth.
+                                {data.promoDesc}
                             </div>
                             <button className="bm-offering-book-btn">
                                 <div className="icon-circle">
@@ -167,7 +150,7 @@ export const CompanyBranding = () => {
                                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 10.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                                     </svg>
                                 </div>
-                                Build Your Company Brand
+                                {data.promoButtonText}
                             </button>
                         </div>
                     </div>
@@ -179,7 +162,7 @@ export const CompanyBranding = () => {
                     <div className="bl-footer-description">
                         <p className="bm-about-paragraph-branding">
                             <ScrollSpan>
-                                We help businesses build structured company branding strategies that establish authority and increase market trust. Research shows 81% of consumers must trust a brand before making a purchase decision. As a strategic branding agency, we refine your positioning, messaging architecture, and visual identity to improve brand recognition and credibility. Strong company branding directly impacts revenue. Businesses with consistent branding across platforms see up to 23% higher revenue growth compared to inconsistent competitors. We align your brand voice, design language, and customer communication for clarity and differentiation.
+                                {data.footerDesc}
                             </ScrollSpan>
                         </p>
                     </div>
@@ -203,7 +186,7 @@ export const CompanyBranding = () => {
                                     <FiChevronRight />
                                 </div>
                                 <span className="bm-hero-btn__text-bl">
-                                    Strengthen <strong>Your Brand</strong>
+                                    {data.actionButtonTextStart} <strong>{data.actionButtonTextEnd}</strong>
                                 </span>
                             </button>
                         </div>

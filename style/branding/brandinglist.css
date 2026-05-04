@@ -41,19 +41,19 @@
 }
 .bl-tab-wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* 4 cards in one row */
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 tabs evenly spaced */
     gap: 40px;
     margin-bottom: 40px;
     margin-top: 73px;
 }
 
 .bl-tab {
-    padding: 15px 20px;
+    padding: 15px 0px;
     border: 1px solid #ddd;
     background: #fff;
     border-radius: 8px;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 600;
     color: #666;
     cursor: pointer;

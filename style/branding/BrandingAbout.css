@@ -1,8 +1,21 @@
 .bm-about-section-branding {
-  background-color: #f5f5f5;
   font-family: 'Afacad', sans-serif;
   padding: 30px 0;
   overflow: hidden;
+  background-color: #EEEEEE;
+  position: relative;
+}
+
+.bm-about-section-branding::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/HomeSection/about/Group (2).png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  opacity: 0.2;
+  z-index: 0;
 }
 
 .bm-about-container-branding {
@@ -22,6 +35,7 @@
   color: #888888;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .bm-about-menu-branding {
@@ -99,7 +113,7 @@
   line-height: 28px;
   letter-spacing: -0.6px;
   color: #939393;
-  margin-bottom:5px;
+  margin-bottom: 5px;
 }
 
 .bm-about-main-title-branding {
@@ -107,13 +121,13 @@
   font-weight: 700;
   color: #000000;
   line-height: 1.1;
-  
-  margin-bottom:5px;
+
+  margin-bottom: 5px;
 }
 
 .bm-about-description-branding {
   font-family: 'Afacad', sans-serif;
-  font-weight:500;
+  font-weight: 500;
   font-size: 21px;
   line-height: 1.4;
   color: #555555;
@@ -135,7 +149,9 @@
   border-radius: 50px;
   padding: 12px 30px;
   font-size: 18px;
+  position: relative;
   font-weight: 600;
+  z-index: 10 !important;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -201,7 +217,7 @@
   border-radius: 5px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .bm-about-img-frame-branding img {
@@ -222,7 +238,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   pointer-events: none;
 }
 
@@ -244,20 +260,24 @@
     max-width: 95%;
     align-items: center;
   }
+
   .bm-about-sidebar-branding {
     flex: none;
     width: 100%;
     margin-bottom: 30px;
   }
+
   .bm-standard-layout-branding {
     flex-direction: column;
     gap: 30px;
   }
+
   .bm-about-image-side-branding {
     flex: none;
     width: 100%;
     align-items: center;
   }
+
   .bm-about-img-frame-branding {
     width: 100%;
     max-width: 350px;
@@ -268,19 +288,25 @@
   .bm-about-section-branding {
     padding: 20px 0;
   }
+
   .bm-about-container-branding {
     max-width: 95%;
     gap: 15px;
   }
+
   .bm-about-sidebar-branding {
     padding: 5px 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
   }
+
   .bm-about-sidebar-branding::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
+    /* Chrome, Safari, Opera */
   }
+
   .bm-about-menu-branding {
     flex-direction: row;
     height: auto;
@@ -288,41 +314,66 @@
     justify-content: flex-start;
     padding: 0 10px;
   }
-  .bm-about-menu-item-branding.active::before{
+
+  .bm-about-menu-item-branding.active::before {
     background-color: none;
     height: 0px;
     width: 0px;
   }
+
   .bm-about-menu-item-branding {
     padding: 10px 20px;
     white-space: nowrap;
     border-left: none;
-    gap:10px;
+    gap: 10px;
     border-bottom: 2px solid transparent;
   }
+
   .bm-about-menu-item-branding.active {
     background-color: transparent;
   }
+
   .bm-about-label-branding {
     font-size: 16px;
   }
+
   .bm-about-main-title-branding {
     font-size: 28px;
   }
+
   .bm-about-subtitle-branding {
     font-size: 18px;
   }
+
   .bm-about-description-branding {
     font-size: 16px;
   }
+
+  .bm-about-quote-container-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .bm-about-quote-text-branding {
-    font-size: 22px;
+    font-size: 20px;
+    text-align: center;
   }
+
   .bm-about-quote-text-branding:last-of-type {
-    font-size: 32px;
+    font-size: 26px;
+    text-align: center;
   }
+
   .bm-about-img-frame-branding {
-    height: 400px;
+    height: 350px;
+    width: 250px;
+  }
+
+  .bm-about-learn-btn-branding {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
   }
 }
 
@@ -330,17 +381,34 @@
   .bm-about-label-branding {
     font-size: 14px;
   }
+
   .bm-about-main-title-branding {
     font-size: 22px;
   }
+
   .bm-about-description-branding {
     font-size: 15px;
   }
+
   .bm-about-img-frame-branding {
-    height: 300px;
+    height: 280px;
+    width: 200px;
   }
+
   .bm-about-quote-icon-branding {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .bm-about-quote-text-branding {
+    font-size: 16px;
+  }
+
+  .bm-about-quote-text-branding:last-of-type {
+    font-size: 20px;
+  }
+
+  .bm-about-learn-btn-branding {
+    font-size: 15px;
   }
 }
