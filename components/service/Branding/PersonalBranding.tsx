@@ -256,15 +256,17 @@ const ScrollSpan = ({ children }) => {
     );
 };
 
-export const PersonalBranding = () => {
+export const PersonalBranding = ({ data }: { data: any }) => {
     const [index, setIndex] = useState(0);
 
-    const statsData = [
+    const defaultStats = [
         { number: "130+", label: "Global Countries" },
         { number: "500+", label: "Clients Worldwide" },
         { number: "1200+", label: "Completed" },
         { number: "50+", label: "Awards Won" },
     ];
+
+    const statsData = data?.stats && data.stats.length > 0 ? data.stats : defaultStats;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -272,15 +274,17 @@ export const PersonalBranding = () => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [statsData.length]);
+
+    if (!data) return null;
 
     return (
         <div className='bl-banner'>
             <div className="bl-hero-grid">
                 <div className="bl-hero-text">
-                    <h2 className="bl-subtitle">Build your identity with purpose</h2>
-                    <h3 className="bl-headline-light">Shape how the world sees you.</h3>
-                    <h1 className="bl-headline-bold">Turn your <span>Name Into A Powerful Brand.</span></h1>
+                    <h2 className="bl-subtitle">{data.subtitle}</h2>
+                    <h3 className="bl-headline-light">{data.headlineLight}</h3>
+                    <h1 className="bl-headline-bold" dangerouslySetInnerHTML={{ __html: data.headlineBold }}></h1>
                 </div>
 
                 <div className="bl-client-card">
@@ -293,46 +297,32 @@ export const PersonalBranding = () => {
                         </div>
 
                         <div className="bl-client-title-group">
-                            <span className="bl-client-list">Join the list of</span>
-                            <span className="bl-client-stat">300+ Successful Clients</span>
+                            <span className="bl-client-list">{data.clientList}</span>
+                            <span className="bl-client-stat">{data.clientStat}</span>
                         </div>
                     </div>
 
                     <hr className="bl-card-divider" />
 
-                    <p className="bl-client-desc">
-                        Work with our team to transform your ideas into powerful, results-driven solutions that create real business impact.
-                    </p>
+                    <p className="bl-client-desc">{data.clientDesc}</p>
                 </div>
             </div>
 
             <div className="bl-content-layout">
                 <div className="bl-feature-card">
                     <div className="bl-feature-img-box">
-                        <Image src={BrandingownerImage} alt="Personal Branding" />
+                        <Image src={data.featureImage} alt="Branding" />
                     </div>
                     <div className="bl-feature-points">
-                        <div className="bl-point">
-                            <div className="bl-point-icon"><Image src={Vector1} alt="Vector1" /></div>
-                            <div className="bl-point-txt">
-                                <h4>Identity & Positioning</h4>
-                                <p>We define your personal brand by highlighting your strengths, values, and what makes you unique in your industry.</p>
+                        {data.features.map((feature: any, idx: number) => (
+                            <div className="bl-point" key={idx}>
+                                <div className="bl-point-icon"><Image src={feature.icon} alt={feature.title} /></div>
+                                <div className="bl-point-txt">
+                                    <h4>{feature.title}</h4>
+                                    <p>{feature.desc}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="bl-point">
-                            <div className="bl-point-icon"><Image src={Vector2} alt="Vector2" /></div>
-                            <div className="bl-point-txt">
-                                <h4>Visual & Communication Style</h4>
-                                <p>We design a consistent look and voice that represents you professionally across all platforms.</p>
-                            </div>
-                        </div>
-                        <div className="bl-point">
-                            <div className="bl-point-icon"><Image src={Vector3} alt="Vector3" /></div>
-                            <div className="bl-point-txt">
-                                <h4>Influence & Growth Strategy</h4>
-                                <p>We build your credibility and authority through strategic branding that creates long-term impact.</p>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
 
@@ -346,12 +336,12 @@ export const PersonalBranding = () => {
                     <div className="bm-offering-promo-overlay">
                         <FadeIn delay={0.6}>
                             <h3>Need clarity?</h3>
-                            <p>Our team is ready to guide you</p>
+                            <p>{data?.rightsidsubtitle}</p>
                         </FadeIn>
 
                         <div className="need_btn">
                             <div className="bm-offering-promo-text">
-                                Get expert support and move forward with confidence. We help you make informed decisions with clarity.
+                                {data.promoText}
                             </div>
                             <button className="bm-offering-book-btn">
                                 <div className="icon-circle">
@@ -367,12 +357,12 @@ export const PersonalBranding = () => {
             </div>
 
             <div className="bl-content-layout" style={{ marginTop: "30px" }}>
-                {/* Paragraph with Scroll Highlight Applied */}
                 <div className="bl-footer-section">
                     <div className="bl-footer-description">
                         <p className="bm-about-paragraph-branding">
                             <ScrollSpan>
-                               We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression. We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression. We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression. We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression. We help you shape the way the world perceives you, turning your name into a powerful, purposeful, and unforgettable brand that leaves a lasting impression.</ScrollSpan>
+                                {data.scrollParagraph}
+                            </ScrollSpan>
                         </p>
                     </div>
                 </div>

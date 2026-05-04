@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { LogoNewsTicker } from "../../aboutus/LogoNewsTicker";
 import { BrandingTabs } from "./BrandingTabs";
 
-export const BrandingService = () => {
+export const BrandingService = ({ activeTabKey, setActiveTabKey }: { activeTabKey: any, setActiveTabKey: any }) => {
   const words = ["Understand Your Business"];
   const [index, setIndex] = useState(0);
 
@@ -29,21 +29,22 @@ export const BrandingService = () => {
             <FaBolt size={19} color="black" />
           </span>
           <p className="bm-hero-badge__text">
-            India’s #1 Digital Branding  Agency
+            Trusted Strategic Branding Partner
           </p>
         </div>
       </FadeIn>
 
       <FadeIn delay={0.2}>
-        <h1 className="bm-hero-title">
+        <h1 className="bm-hero-title" style={{maxWidth:"90%"}}>
 
-          <span className="text-black">Branding </span>
 
-          <span className="text-grey"> Focused Solutions </span>
+          <span className="text-black">Branding Agency Focused </span>
+
+          <span className="text-grey"> Solutions Designed to  </span>
           <br />
-          <span className="text-black">Designed for Your </span>
+          <span className="text-black">Build Powerful </span>
           <span className="               text-yellow
-"> Growth</span>
+">  Brands</span>
 
 
           {/* <span className="inline-flex align-bottom ml-2 animatetext">
@@ -90,15 +91,14 @@ export const BrandingService = () => {
       </FadeIn>
       <FadeIn delay={0.35}>
         <p className="bm-hero-description  bm-hero-description-branding">
-          Strategy and execution delivered by a team that has
-          sold, scaled, and delivered in real markets.
+         Strategy and execution delivered by a branding agency that has positioned, launched, and scaled brands across competitive markets.
         </p>
       </FadeIn>
 
 
       <LogoNewsTicker />
-      <BrandingTabs />
+      <BrandingTabs activeTabKey={activeTabKey} setActiveTabKey={setActiveTabKey} />
 
     </section>
   );
-};
+};

@@ -4,59 +4,44 @@ import React from 'react';
 import { FadeIn } from "@/components/animations/fade-in";
 import "../../../style/branding/BrandingCaseStudies.css";
 
-const caseStudies = [
-  {
-    badge: "Visibility",
-    title: "LinkedIn Authority Breakthrough",
-    intro: "We positioned a startup founder as a niche thought leader, resulting in:",
-    results: [
-      "4x profile views in 90 days",
-      "3 inbound speaking invitations",
-      "40% increase in qualified DM enquiries"
-    ],
-    image: "/case-studies/visibility.jpg"
-  },
-  {
-    badge: "Influence",
-    title: "LinkedIn Authority Breakthrough",
-    intro: "We positioned a startup founder as a niche thought leader, resulting in:",
-    results: [
-      "4x profile views in 90 days",
-      "3 inbound speaking invitations",
-      "40% increase in qualified DM enquiries"
-    ],
-    image: "/case-studies/influence.png"
-  },
-  {
-    badge: "Authority",
-    title: "LinkedIn Authority Breakthrough",
-    intro: "We positioned a startup founder as a niche thought leader, resulting in:",
-    results: [
-      "4x profile views in 90 days",
-      "3 inbound speaking invitations",
-      "40% increase in qualified DM enquiries"
-    ],
-    image: "/case-studies/authority.jpg"
-  }
-];
+interface CaseStudyItem {
+  badge: string;
+  title: string;
+  intro: string;
+  results: string[];
+  buttonText?: string;
+  image: string;
+}
 
-export const BrandingCaseStudies = () => {
+interface BrandingCaseStudiesProps {
+  data: {
+    title: string;
+    subtitle: string;
+    items: CaseStudyItem[];
+    buttonTitle: string;
+    buttonTitle1: string;
+  };
+}
+
+export const BrandingCaseStudies = ({ data }: BrandingCaseStudiesProps) => {
+  if (!data) return null;
+
   return (
     <section className="bm-cs-section">
       <div className="bm-cs-container">
         <FadeIn direction="up" delay={0.1}>
           <div className="bm-cs-header">
             <h2 className="bm-cs-title">
-              Personal Branding Case Studies
+              {data.title}
             </h2>
             <p className="bm-cs-subtitle">
-              Real transformations from leaders who built authority, influence, and high-value opportunities through strategic personal branding.
+              {data.subtitle}
             </p>
           </div>
         </FadeIn>
 
         <div className="bm-cs-grid">
-          {caseStudies.map((study, index) => (
+          {data.items.map((study, index) => (
             <FadeIn key={index} direction="up" delay={0.1 + index * 0.1}>
               <div className="bm-cs-card">
                 <div className="bm-cs-card-bg">
@@ -97,7 +82,7 @@ export const BrandingCaseStudies = () => {
     hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]
     
     active:scale-95">
-                      View Case study
+                      {study.buttonText || "View Case study"}
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -113,10 +98,10 @@ export const BrandingCaseStudies = () => {
         <FadeIn direction="up" delay={0.5}>
           <div className="bm-cs-actions">
             <button className="bm-cs-main-btn bm-cs-btn-primary">
-              See our Case studies
+              {data.buttonTitle}
             </button>
             <button className="bm-cs-main-btn bm-cs-btn-secondary">
-              Book a Meeting
+              {data.buttonTitle1}
             </button>
           </div>
         </FadeIn>

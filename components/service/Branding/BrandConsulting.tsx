@@ -64,15 +64,34 @@ const ScrollSpan = ({ children }) => {
     );
 };
 
-export const BrandConsulting = () => {
+interface BrandConsultingProps {
+    data?: {
+        stats?: { number: string; label: string }[];
+        subtitle?: string;
+        headlineLight?: string;
+        headlineBold?: string;
+        clientList?: string;
+        clientStat?: string;
+        clientDesc?: string;
+        featureImage?: any;
+        features?: any[];
+        promoText?: string;
+        scrollParagraph?: string;
+        rightsidsubtitle?: string;
+    };
+}
+
+export const BrandConsulting = ({ data }: BrandConsultingProps) => {
     const [index, setIndex] = useState(0);
 
-    const statsData = [
-        { number: "130+", label: "Global Countries" },
+    const defaultStats = [
+       { number: "130+", label: "Global Countries" },
         { number: "500+", label: "Clients Worldwide" },
         { number: "1200+", label: "Completed" },
         { number: "50+", label: "Awards Won" },
     ];
+
+    const statsData = data?.stats && data.stats.length > 0 ? data.stats : defaultStats;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -80,15 +99,15 @@ export const BrandConsulting = () => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [statsData.length]);
 
     return (
         <div className='bl-banner'>
             <div className="bl-hero-grid">
                 <div className="bl-hero-text">
-                    <h2 className="bl-subtitle">Build a Brand That Commands Authority</h2>
-                    <h3 className="bl-headline-light">Define How the Market Understands and Trusts Your Business.</h3>
-                    <h1 className="bl-headline-bold">Turn Your Vision Into a <span>Scalable Brand Strategy.</span></h1>
+                    <h2 className="bl-subtitle">{data?.subtitle || "Build a Brand That Commands Authority"}</h2>
+                    <h3 className="bl-headline-light">{data?.headlineLight || "Define How the Market Understands and Trusts Your Business."}</h3>
+                    <h1 className="bl-headline-bold" dangerouslySetInnerHTML={{ __html: data?.headlineBold || "Turn Your Vision Into a <span>Scalable Brand Strategy.</span>" }}></h1>
                 </div>
 
                 <div className="bl-client-card">
@@ -101,15 +120,15 @@ export const BrandConsulting = () => {
                         </div>
 
                         <div className="bl-client-title-group">
-                            <span className="bl-client-list">Join the list of</span>
-                            <span className="bl-client-stat">300+ Growing Businesses</span>
+                            <span className="bl-client-list">{data?.clientList || "Join the list of"}</span>
+                            <span className="bl-client-stat">{data?.clientStat || "300+ Growing Businesses"}</span>
                         </div>
                     </div>
 
                     <hr className="bl-card-divider" />
 
                     <p className="bl-client-desc">
-                        Work with our team to transform your company into a clearly positioned, strategically differentiated, and market-ready brand that strengthens credibility, improves perception, and drives sustainable business growth across competitive industries.
+                        {data?.clientDesc || "Work with our team to transform your company into a clearly positioned, strategically differentiated, and market-ready brand that strengthens credibility, improves perception, and drives sustainable business growth across competitive industries."}
                     </p>
                 </div>
             </div>
@@ -117,30 +136,44 @@ export const BrandConsulting = () => {
             <div className="bl-content-layout">
                 <div className="bl-feature-card">
                     <div className="bl-feature-img-box">
-                        <Image src={BrandingownerImage} alt="Brand Consulting" />
+                        <Image src={data?.featureImage || BrandingownerImage} alt="Brand Consulting" />
                     </div>
                     <div className="bl-feature-points">
-                        <div className="bl-point">
-                            <div className="bl-point-icon"><Image src={Vector1} alt="Vector1" /></div>
-                            <div className="bl-point-txt">
-                                <h4>Brand Strategy & Positioning</h4>
-                                <p>We design structured brand consulting frameworks by defining your mission clarity, competitive positioning, audience perception, and long-term market direction.</p>
-                            </div>
-                        </div>
-                        <div className="bl-point">
-                            <div className="bl-point-icon"><Image src={Vector2} alt="Vector2" /></div>
-                            <div className="bl-point-txt">
-                                <h4>Brand Architecture & Communication</h4>
-                                <p>We build strong brand foundations through messaging alignment, value proposition refinement, tone clarity, and strategic differentiation.</p>
-                            </div>
-                        </div>
-                        <div className="bl-point">
-                            <div className="bl-point-icon"><Image src={Vector3} alt="Vector3" /></div>
-                            <div className="bl-point-txt">
-                                <h4>Growth-Oriented Brand Advisory</h4>
-                                <p>We provide strategic consulting that connects brand positioning with business expansion goals. Structured brand guidance improves pricing power and strengthens customer loyalty.</p>
-                            </div>
-                        </div>
+                        {data?.features && data.features.length > 0 ? (
+                            data.features.map((feature: any, idx: number) => (
+                                <div className="bl-point" key={idx}>
+                                    <div className="bl-point-icon"><Image src={feature.icon} alt={feature.title} /></div>
+                                    <div className="bl-point-txt">
+                                        <h4>{feature.title}</h4>
+                                        <p>{feature.desc}</p>
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <>
+                                <div className="bl-point">
+                                    <div className="bl-point-icon"><Image src={Vector1} alt="Vector1" /></div>
+                                    <div className="bl-point-txt">
+                                        <h4>Brand Strategy & Positioning</h4>
+                                        <p>We design structured brand consulting frameworks by defining your mission clarity, competitive positioning, audience perception, and long-term market direction.</p>
+                                    </div>
+                                </div>
+                                <div className="bl-point">
+                                    <div className="bl-point-icon"><Image src={Vector2} alt="Vector2" /></div>
+                                    <div className="bl-point-txt">
+                                        <h4>Brand Architecture & Communication</h4>
+                                        <p>We build strong brand foundations through messaging alignment, value proposition refinement, tone clarity, and strategic differentiation.</p>
+                                    </div>
+                                </div>
+                                <div className="bl-point">
+                                    <div className="bl-point-icon"><Image src={Vector3} alt="Vector3" /></div>
+                                    <div className="bl-point-txt">
+                                        <h4>Growth-Oriented Brand Advisory</h4>
+                                        <p>We provide strategic consulting that connects brand positioning with business expansion goals. Structured brand guidance improves pricing power and strengthens customer loyalty.</p>
+                                    </div>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
 
@@ -154,12 +187,12 @@ export const BrandConsulting = () => {
                     <div className="bm-offering-promo-overlay">
                         <FadeIn delay={0.6}>
                             <h3>Need clarity?</h3>
-                            <p>Our brand consultants are ready to guide you.</p>
+                            <p>{data?.rightsidsubtitle || "Our brand consultants are ready to guide you."}</p>
                         </FadeIn>
 
                         <div className="need_btn">
                             <div className="bm-offering-promo-text">
-                                Get expert support to build a strong brand consulting strategy with confidence. We help you refine positioning, strengthen perception, and create a structured growth roadmap that supports long-term market leadership.
+                                {data?.promoText || "Get expert support to build a strong brand consulting strategy with confidence. We help you refine positioning, strengthen perception, and create a structured growth roadmap that supports long-term market leadership."}
                             </div>
                             <button className="bm-offering-book-btn">
                                 <div className="icon-circle">
@@ -179,7 +212,7 @@ export const BrandConsulting = () => {
                     <div className="bl-footer-description">
                         <p className="bm-about-paragraph-branding">
                             <ScrollSpan>
-                                Many businesses struggle because their brand lacks direction, clarity, and differentiation. Research shows consistent brand presentation across channels can increase revenue by up to 23%. Weak positioning reduces trust and limits growth potential. We deliver structured brand consulting solutions focused on clarity, differentiation, and sustainable authority. Our advisory approach strengthens market perception, improves customer confidence, and aligns brand identity with measurable business objectives.
+                                {data?.scrollParagraph || "Many businesses struggle because their brand lacks direction, clarity, and differentiation. Research shows consistent brand presentation across channels can increase revenue by up to 23%. Weak positioning reduces trust and limits growth potential. We deliver structured brand consulting solutions focused on clarity, differentiation, and sustainable authority. Our advisory approach strengthens market perception, improves customer confidence, and aligns brand identity with measurable business objectives."}
                             </ScrollSpan>
                         </p>
                     </div>

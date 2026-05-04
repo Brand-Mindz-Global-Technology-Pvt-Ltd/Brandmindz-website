@@ -44,7 +44,7 @@
 .bm-framework-card {
   width: 100%;
   max-width: 370px;
-  height: 160px;
+  height: 100%;
   border-radius: 12px;
   border: 1px solid #706d6d;
   background-color: #ffffff;
