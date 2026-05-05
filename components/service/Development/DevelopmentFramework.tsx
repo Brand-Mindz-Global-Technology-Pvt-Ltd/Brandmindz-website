@@ -12,27 +12,27 @@ const frameworkData = [
     subtitle: "Discover our structured approach designed to help businesses strengthen their digital presence, build customer trust, and create consistent growth across online platforms.",
     steps: [
       {
-        title: "01. Business Analysis & Goal Definition",
+        title: "Business Analysis & Goal Definition",
         description: "We begin by understanding your business, target audience, and long-term goals. This stage focuses on identifying growth opportunities, challenges, and defining a clear direction for your digital strategy."
       },
       {
-        title: "02. Market Research & Competitor Insights",
+        title: " Market Research & Competitor Insights",
         description: "Our team studies your industry landscape and competitor activities to uncover market trends and customer behavior. This helps us design strategies that position your brand effectively in the competitive environment."
       },
       {
-        title: "03. Brand Messaging & Content Planning",
+        title: "Brand Messaging & Content Planning",
         description: "Clear communication builds strong brand recognition. We develop meaningful messaging, structured content strategies, and communication guidelines that align with your brand identity and audience expectations."
       },
       {
-        title: "04. Digital Presence Optimization",
+        title: "Digital Presence Optimization",
         description: "We refine your digital assets including website structure, content flow, and platform positioning to ensure your brand presents a professional and trustworthy image across all online channels."
       },
       {
-        title: "05. Visual Presentation & User Experience",
+        title: "Visual Presentation & User Experience",
         description: "Design and presentation play an important role in customer engagement. We focus on improving visual consistency, user experience, and overall presentation to make your digital platforms more engaging and easy to navigate."
       },
       {
-        title: "06. Performance Tracking & Continuous Improvement",
+        title: "Performance Tracking & Continuous Improvement",
         description: "After implementation, we monitor performance metrics and analyze engagement trends. Continuous improvements ensure your strategy adapts to changing market behavior and delivers sustainable growth over time."
       }
     ]
@@ -42,27 +42,27 @@ const frameworkData = [
     subtitle: "Discover our structured e-commerce development process designed to build high-performing online stores, improve customer experience, and support consistent sales growth through scalable digital commerce platforms.",
     steps: [
       {
-        title: "01. Business Research & Customer Journey Planning",
+        title: "Business Research & Customer Journey Planning",
         description: "We study your business model, target customers, and product categories to understand how buyers interact with online stores. This insight helps us design an e-commerce platform that supports smooth navigation and better purchase decisions."
       },
       {
-        title: "02. Store Architecture & Product Structure",
+        title: "Store Architecture & Product Structure",
         description: "A well-organized store structure improves usability and product discoverability. We plan category hierarchy, product grouping, and filtering systems that allow customers to quickly find relevant products within your online store."
       },
       {
-        title: "03. Product Page Content & UX Optimization",
+        title: "Product Page Content & UX Optimization",
         description: "We design product pages that clearly present important information such as features, specifications, benefits, and pricing. Well-structured product content improves customer understanding and encourages confident buying decisions."
       },
       {
-        title: "04. Platform Development & Store Functionality",
+        title: "Platform Development & Store Functionality",
         description: "Our development process ensures your store includes essential e-commerce features such as secure checkout, payment gateway integration, inventory management, and smooth navigation across all devices."
       },
       {
-        title: "05. Visual Design & Product Presentation",
+        title: "Visual Design & Product Presentation",
         description: "We focus on clean visual layouts and clear product presentation to improve customer engagement. Well-designed product galleries, banners, and interface elements create a professional shopping experience."
       },
       {
-        title: "06. Performance Monitoring & Store Optimization",
+        title: " Performance Monitoring & Store Optimization",
         description: "After launch, we monitor store performance, user behavior, and conversion trends. Continuous improvements help maintain website performance, improve customer experience, and support long-term business growth."
       }
     ]
@@ -72,11 +72,11 @@ const frameworkData = [
     subtitle: "Discover our structured mobile development process designed to build high-performance applications, enhance user engagement, and support long-term digital growth through scalable mobile solutions.",
     steps: [
       {
-        title: "01. Requirement Analysis & User Research",
+        title: " Requirement Analysis & User Research",
         description: "We begin by understanding your business objectives, target users, and app requirements. This helps us define the right features, functionality, and user flow needed to create an effective mobile application."
       },
       {
-        title: "02. App Architecture & Feature Planning",
+        title: "App Architecture & Feature Planning",
         description: "A strong technical foundation is essential for mobile applications. We design the app architecture, feature structure, and navigation flow to ensure the application performs efficiently across different devices and platforms."
       },
       {
@@ -84,11 +84,11 @@ const frameworkData = [
         description: "Our design team focuses on creating intuitive user interfaces and seamless user experiences. Clear layouts, interactive elements, and thoughtful design improve usability and encourage long-term user engagement."
       },
       {
-        title: "04. App Development & Core Functionality",
+        title: " App Development & Core Functionality",
         description: "Using modern development frameworks, we build the core functionality of the mobile application. This includes secure backend integration, database management, and smooth interaction between features."
       },
       {
-        title: "05. Testing & Performance Optimization",
+        title: "Testing & Performance Optimization",
         description: "Before launch, the application undergoes comprehensive testing to identify and resolve bugs, ensuring optimal performance and reliability across devices."
       },
       // {
@@ -102,27 +102,27 @@ const frameworkData = [
     subtitle: "Discover our structured development process designed to build scalable web applications, enhance user experience, and support consistent digital growth through reliable and high-performance web platforms.",
     steps: [
       {
-        title: "01. Requirement Analysis & User Intent Research",
+        title: " Requirement Analysis & User Intent Research",
         description: "We begin by studying your business objectives, user expectations, and functional requirements to identify the key features your web application must deliver."
       },
       {
-        title: "02. Application Architecture & System Planning",
+        title: "Application Architecture & System Planning",
         description: "A strong technical structure ensures long-term performance. We design the application architecture, data flow, and feature framework to support efficient operation and future scalability."
       },
       {
-        title: "03. Interface Design & User Experience Optimization",
+        title: "Interface Design & User Experience Optimization",
         description: "Our design approach focuses on intuitive interfaces, clear navigation, and responsive layouts that allow users to interact with the web application easily across devices."
       },
       {
-        title: "04. Application Development & Feature Implementation",
+        title: "Application Development & Feature Implementation",
         description: "Using modern development technologies, we build the core functionality of the web application, including secure backend systems, databases, and smooth integration between modules."
       },
       {
-        title: "05. Performance Testing & Security Optimization",
+        title: "Performance Testing & Security Optimization",
         description: "Before launch, the application undergoes thorough testing to ensure stability, security, and fast performance across browsers and devices."
       },
       {
-        title: "06. Monitoring & Continuous Improvement",
+        title: "Monitoring & Continuous Improvement",
         description: "After deployment, we track user activity, system performance, and usage patterns to continuously improve functionality and maintain reliable application performance over time."
       }
     ]

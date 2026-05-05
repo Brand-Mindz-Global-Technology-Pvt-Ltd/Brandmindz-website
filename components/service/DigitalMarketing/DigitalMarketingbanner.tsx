@@ -17,24 +17,24 @@ export const DigitalMarketingService = () => {
             <FaBolt size={19} color="black" />
           </span>
           <p className="bm-hero-badge__text">
-            India’s #1 Digital Marketing Agency
+          Conversion Focused Digital Marketing Experts 
           </p>
         </div>
       </FadeIn>
 
       <FadeIn delay={0.2}>
         <h1 className="bm-hero-title">
-          <span className="text-black">Digital Marketing </span>
-          <span className="text-grey"> Focused Solutions </span>
+ 
+          <span className="text-black"> Results Driven </span>
+          <span className="text-grey"> Digital Marketing  </span>
           <br />
-          <span className="text-black">Designed for Your </span>
+          <span className="text-black">Services for Your</span>
           <span className="text-yellow"> Growth</span>
         </h1>
       </FadeIn>
       <FadeIn delay={0.35}>
         <p className="bm-hero-description  bm-hero-description-branding">
-          Marketing execution delivered by a team that has
-          scaled, optimized, and delivered in real markets.
+       Performance focused strategy by a team that has generated leads, scaled brands, and driven measurable results in competitive markets.
         </p>
       </FadeIn>
 

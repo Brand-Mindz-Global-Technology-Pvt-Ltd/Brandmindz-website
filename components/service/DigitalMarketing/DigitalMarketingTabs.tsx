@@ -1,22 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import "../../../style/branding/brandinglist.css";
-import { PersonalBranding } from "../Branding/PersonalBranding";
-import { CompanyBranding } from "../Branding/CompanyBranding";
-import { BrandStrategy } from "../Branding/BrandStrategy";
-import { BrandConsulting } from "../Branding/BrandConsulting";
-import { VideoCreation } from "../Branding/VideoCreation";
+import { SeoMarketing } from "../Branding/SeoMarketing";
+import { MetaAdMarketing } from "../Branding/MetaAdMarketing";
+import { GoogleAdMarketing } from "../Branding/GoogleAdMarketing";
+import { LinkedinMarketing } from "../Branding/LinkedinMarketing";
+import { WhatsappMarketing } from "../Branding/WhatsappMarketing";
+import { YoutubeMarketing } from "../Branding/YoutubeMarketing";
+import { useDigitalMarketingContext } from "./DigitalMarketingContext";
 
 export const DigitalMarketingTabs = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const { activeDigitalMarketingTab: activeTab, setActiveDigitalMarketingTab: setActiveTab } = useDigitalMarketingContext();
   
   const tabsData = [
-    { name: "Personal Branding", component: PersonalBranding },
-    { name: "Company Branding", component: CompanyBranding },
-    { name: "Brand Strategy", component: BrandStrategy },
-    { name: "Video Creation", component: VideoCreation },
-    { name: "Brand Consulting", component: BrandConsulting },
+    { name: "SEO", component: SeoMarketing },
+    { name: "Meta Ad", component: MetaAdMarketing },
+    { name: "Google Ad", component: GoogleAdMarketing },
+    { name: "Linkedin Marketing", component: LinkedinMarketing },
+    { name: "Whatsapp Marketing", component: WhatsappMarketing },
+    { name: "Youtube Marketing", component: YoutubeMarketing },
   ];
   
   const ActiveComponent = tabsData[activeTab].component;
@@ -36,10 +39,8 @@ export const DigitalMarketingTabs = () => {
             </button>
           ))}
         </div>
-
-        {/* Content */}
-        <div className="bl-tab-content">
-          <ActiveComponent />
+        <div className="bl-content-wrapper">
+           <ActiveComponent />
         </div>
       </div>
     </section>

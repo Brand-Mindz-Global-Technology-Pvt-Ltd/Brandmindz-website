@@ -8,22 +8,26 @@ import { DigitalMarketingPackages } from '@/components/service/DigitalMarketing/
 import { DigitalMarketingCaseStudies } from '@/components/service/DigitalMarketing/DigitalMarketingCaseStudies';
 import { WhyChooseDigitalMarketing } from "@/components/service/DigitalMarketing/WhyChooseDigitalMarketing";
 import Faq from "@/components/home/Faq";
+import { DigitalMarketingProvider } from "@/components/service/DigitalMarketing/DigitalMarketingContext";
 
 export default function ServiceDigitalMarketing() {
     return (
         <>
             <Header />
-            <main>
-                <DigitalMarketingService />
-                <DigitalMarketingabout />
-                <DigitalMarketingFramework />
-                <DigitalMarketingPackages />
-                <DigitalMarketingCaseStudies />
-                <WhyChooseDigitalMarketing />
-                <Various />  
-                <Faq />
-            </main>
+            <DigitalMarketingProvider>
+                <main>
+                    <DigitalMarketingService />
+                    <DigitalMarketingabout />
+                    <DigitalMarketingFramework />
+                    <DigitalMarketingPackages />
+                    <DigitalMarketingCaseStudies />
+                    <WhyChooseDigitalMarketing />
+                    <Various />  
+                    <Faq />
+                </main>
+            </DigitalMarketingProvider>
             <Footer />
         </>
     )
 }
+

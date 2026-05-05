@@ -59,16 +59,23 @@
 
 .bm-pkg-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   margin-bottom: 50px;
-  justify-items: center;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.bm-pkg-grid > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .bm-pkg-card {
   width: 100%;
-  max-width: 310px;
-  height: auto;
+  max-width: 380px;
+  flex: 1;
   border-radius: 10px;
   border: 1px solid #cccccc;
   background-color: #ffffff;
@@ -79,6 +86,7 @@
   position: relative;
   transition: all 0.4s ease;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .bm-pkg-card:hover,
@@ -157,7 +165,7 @@
   transition: all 0.3s ease;
   background-color: #cccccc;
   color: #ffffff;
-  margin-top: 10px;
+  margin-top: auto;
 }
 
 .bm-pkg-card:hover .bm-pkg-btn,
@@ -302,7 +310,7 @@
 
 @media (max-width: 480px) {
   .bm-pkg-section {
-    padding:0px;
+    padding: 0px;
   }
 
   .bm-pkg-grid {
