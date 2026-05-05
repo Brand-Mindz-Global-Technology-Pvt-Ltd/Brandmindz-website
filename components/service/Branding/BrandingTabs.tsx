@@ -8,7 +8,7 @@ export const BrandingTabs = ({ activeTabKey, setActiveTabKey }: { activeTabKey: 
     { name: "Personal Branding", key: "personalBranding" },
     { name: "Company Branding", key: "companyBranding" },
     { name: "Brand Strategy", key: "brandStrategy" },
-    { name: "Video Creation", key: "videoCreation" },
+    { name: "Video Creation and Editing", key: "videoCreation" },
     { name: "Brand Consulting", key: "brandConsulting" },
   ];
 

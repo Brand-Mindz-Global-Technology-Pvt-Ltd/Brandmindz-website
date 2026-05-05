@@ -1320,9 +1320,149 @@ positioned in the market. Studies show that 64% of consumers build trust through
         }
       ]
     },
-    caseStudies: { title: "Video Case Studies", subtitle: "Visual narratives that drove engagement.", items: [] },
-    packages: { title: "Video Packages", subtitle: "Packages for high-end video production.", bonusText: "", items: [] },
-    
+ caseStudies: {
+  title: "Video Creation & Editing Case Studies",
+
+  subtitle:
+    "Real video marketing outcomes from brands that improved engagement, increased content performance, and accelerated growth through structured video creation and editing.",
+
+  items: [
+    {
+      badge: "Content Performance Growth",
+
+      title: "High-Impact Video Optimization",
+
+      intro:
+        "We worked with a growing brand struggling with low engagement and inconsistent video quality across platforms.",
+
+      results: [
+        "3.1X increase in video engagement within 4 months",
+        "52% improvement in average watch time",
+        "40% growth in qualified leads from video content",
+        "Stronger content consistency across platforms",
+      ],
+
+      buttonText: "View Case Study",
+
+      image: "/case-studies/visibility.jpg",
+    },
+
+    {
+      badge: "Audience Engagement Optimization",
+
+      title: "Video Quality & Storytelling Improvement",
+
+      intro:
+        "A scaling business enhanced its video storytelling, editing quality, and content structure to improve audience retention.",
+
+      results: [
+        "2.6X increase in audience retention rate",
+        "48% improvement in click-through rates",
+        "44% higher engagement across social media",
+        "Better content performance across multiple platforms",
+      ],
+
+      buttonText: "View Case Study",
+
+      image: "/case-studies/influence.png",
+    },
+
+    {
+      badge: "Content Strategy Expansion",
+
+      title: "Video Marketing Growth & Scaling",
+
+      intro:
+        "Through structured video strategy and advanced editing techniques, a brand strengthened its presence in a competitive digital space.",
+
+      results: [
+        "75% increase in content reach and impressions",
+        "3.3X growth in overall video views",
+        "60% improvement in audience interaction",
+        "Stronger brand visibility through consistent video content",
+      ],
+
+      buttonText: "View Case Study",
+
+      image: "/case-studies/authority.jpg",
+    },
+  ],
+
+  buttonTitle: "See Our Video Creation & Editing Case Studies",
+  buttonTitle1: "Book a Video Strategy Consultation",
+},
+    packages: {
+  title:
+    "Tailored Video Creation & Editing Packages <br /><span class='bm-pkg-title-span'>Built for Brands Ready to Stand Out</span>",
+
+  subtitle:
+    "Strategy, production, and editing delivered by creative experts experienced in crafting high-impact visual content that drives engagement and brand recall.",
+
+  bonusText:
+    "<strong>Exclusive Bonus:</strong> Free Video Content Audit for New Clients",
+
+  items: [
+    {
+      title: "Foundation",
+      subtitle: "For Brands Starting with Video Content",
+      highlight: false,
+      recommended: false,
+
+      features: [
+        "Video Content Planning & Concept Development",
+        "Basic Script & Storyboard Creation",
+        "Simple Shoot Planning Guidance",
+        "Short-Form Video Editing (Reels/Shorts)",
+        "Basic Motion Graphics & Transitions",
+        "Music & Sound Integration",
+        "Brand Style Application",
+        "Video Quality Optimization",
+        "Monthly Content Suggestions",
+        "Dedicated Video Editor Support",
+      ],
+    },
+
+    {
+      title: "Growth",
+      subtitle: "For Brands Building Consistent Video Presence",
+      highlight: true,
+      recommended: true,
+
+      features: [
+        "Advanced Video Content Strategy",
+        "Scriptwriting & Storytelling Structure",
+        "Professional Editing with Transitions & Effects",
+        "Motion Graphics & Text Animations",
+        "Multi-Platform Video Optimization",
+        "Brand-Based Visual Consistency",
+        "Thumbnail & Hook Optimization",
+        "Audience Engagement Editing Techniques",
+        "Performance-Based Content Suggestions",
+        "Monthly Creative Strategy Consultation",
+      ],
+    },
+
+    {
+      title: "Scale",
+      subtitle: "For Brands Dominating with Video Marketing",
+      highlight: false,
+      recommended: false,
+
+      features: [
+        "End-to-End Video Production Strategy",
+        "High-Impact Storytelling & Creative Direction",
+        "Premium Editing with Advanced Effects & VFX",
+        "Cinematic Motion Graphics & Animations",
+        "Multi-Platform Content Distribution Plan",
+        "Brand Video Identity System Development",
+        "Campaign-Based Video Creation Strategy",
+        "Performance Tracking & Optimization",
+        "Creative Direction for Ads & Campaigns",
+        "Dedicated Video Production Team",
+      ],
+    },
+  ],
+},
     whyChoose: {
       title: "Why Choose Brand Mindz for Video Creation & Editing?",
 
@@ -1331,7 +1471,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
 
       items: [
         {
-          number: "01",
+          number: "1",
           icon: FrameIcon,
 
           title: "Strategic Video Planning",
@@ -1341,7 +1481,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         },
 
         {
-          number: "02",
+          number: "2",
           icon: GroupIcon,
 
           title: "Performance-First Production",
@@ -1351,7 +1491,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         },
 
         {
-          number: "03",
+          number: "3",
           icon: FrameIcon,
 
           title: "Data-Driven Content Optimization",
