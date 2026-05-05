@@ -8,21 +8,24 @@ import { DevelopmentPackages } from '@/components/service/Development/Developmen
 import { DevelopmentCaseStudies } from '@/components/service/Development/DevelopmentCaseStudies';
 import { WhyChooseDevelopment } from "@/components/service/Development/WhyChooseDevelopment";
 import Faq from "@/components/home/Faq";
+import { DevelopmentProvider } from "@/components/service/Development/DevelopmentContext";
 
 export default function ServiceDevelopment() {
     return (
         <>
             <Header />
-            <main>
-                <DevelopmentService />
-                <Developmentabout />
-                <DevelopmentFramework />
-                <DevelopmentPackages />
-                <DevelopmentCaseStudies />
-                <WhyChooseDevelopment />
-                <Various />  
-                <Faq />
-            </main>
+            <DevelopmentProvider>
+                <main>
+                    <DevelopmentService />
+                    <Developmentabout />
+                    <DevelopmentFramework />
+                    <DevelopmentPackages />
+                    <DevelopmentCaseStudies />
+                    <WhyChooseDevelopment />
+                    <Various />  
+                    <Faq />
+                </main>
+            </DevelopmentProvider>
             <Footer />
         </>
     )

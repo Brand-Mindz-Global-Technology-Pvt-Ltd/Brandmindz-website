@@ -2,22 +2,28 @@
 
 import React, { useState } from "react";
 import "../../../style/branding/brandinglist.css";
-import { PersonalBranding } from "../Branding/PersonalBranding";
-import { CompanyBranding } from "../Branding/CompanyBranding";
-import { BrandStrategy } from "../Branding/BrandStrategy";
-import { BrandConsulting } from "../Branding/BrandConsulting";
-import { VideoCreation } from "../Branding/VideoCreation";
+import { StaticDevelopment } from "../Branding/StaticDevelopment";
+import { EcomDevelopment } from "../Branding/EcomDevelopment";
+import { MobileAppDevelopment } from "../Branding/MobileAppDevelopment";
+import { WebApplicationsDevelopment } from "../Branding/WebApplicationsDevelopment";
+import { useDevelopmentContext } from "./DevelopmentContext";
+
 
 export const DevelopmentTabs = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const { activeDevelopmentTab: activeTab, setActiveDevelopmentTab: setActiveTab } = useDevelopmentContext();
   
   const tabsData = [
-    { name: "Personal Branding", component: PersonalBranding },
-    { name: "Company Branding", component: CompanyBranding },
-    { name: "Brand Strategy", component: BrandStrategy },
-    { name: "Video Creation", component: VideoCreation },
-    { name: "Brand Consulting", component: BrandConsulting },
+    { name: " Static Development", component: StaticDevelopment},
+    { name: "E.com Development", component: EcomDevelopment },
+    { name: "Mobile App Development", component: MobileAppDevelopment },
+    { name: "Web Applications Development", component: WebApplicationsDevelopment },
+  
   ];
+ 
+
+
+
+
   
   const ActiveComponent = tabsData[activeTab].component;
 

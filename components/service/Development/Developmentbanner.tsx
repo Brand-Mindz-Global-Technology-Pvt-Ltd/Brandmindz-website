@@ -17,24 +17,25 @@ export const DevelopmentService = () => {
             <FaBolt size={19} color="black" />
           </span>
           <p className="bm-hero-badge__text">
-            India’s #1 Development Agency
+           India’s Trusted Development Experts
           </p>
         </div>
       </FadeIn>
 
       <FadeIn delay={0.2}>
+       
+
         <h1 className="bm-hero-title">
-          <span className="text-black">Development </span>
-          <span className="text-grey"> Focused Solutions </span>
+          <span className="text-black">Strategic </span>
+          <span className="text-grey">Development Solution</span>
           <br />
-          <span className="text-black">Designed for Your </span>
-          <span className="text-yellow"> Growth</span>
+          <span className="text-black">That Build Scalable Digital</span>
+          <span className="text-yellow"> Products</span>
         </h1>
       </FadeIn>
       <FadeIn delay={0.35}>
         <p className="bm-hero-description  bm-hero-description-branding">
-          Technical execution delivered by a team that has
-          built, scaled, and delivered in real markets.
+       Performance-focused development services that create fast, secure, and scalable digital platforms for modern businesses.
         </p>
       </FadeIn>
 
