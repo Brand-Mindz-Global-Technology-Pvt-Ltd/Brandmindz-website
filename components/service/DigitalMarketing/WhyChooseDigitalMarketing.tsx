@@ -65,14 +65,14 @@ const linkedinData = {
 
 const whatsappData = {
   title: "Why Choose Brand Mindz for WhatsApp Marketing?",
-  subtitle: "Many agencies blast messages. \nWe build structured conversational growth systems that generate trust, visibility, and predictable leads.",
+  subtitle: "Many agencies send messages. \n We build structured WhatsApp growth systems that generate trust, engagement, and predictable leads.",
   reasons: [
-    { number: "1", icon: FrameIcon, title: "Data-Driven Targeting", desc: "We use professional filters and behavioral insights to reach high-intent customers and real decision-makers." },
-    { number: "2", icon: GroupIcon, title: "Authority-Based Messaging Approach", desc: "We position your brand as a trusted industry voice through structured conversational engagement." },
-    { number: "3", icon: Group1Icon, title: "Paid & Organic Integration", desc: "We combine click-to-WhatsApp ads with automated growth strategies for stronger pipeline results." },
-    { number: "4", icon: Group1Icon, title: "Conversion-Focused Flow Design", desc: "Every campaign and automated sequence is built to generate meetings and sales, not just responses." },
-    { number: "5", icon: GroupIcon, title: "Transparent Reporting & Measurable ROI", desc: "We provide detailed reports on engagement, message open rates, lead cost, and campaign effectiveness." },
-    { number: "6", icon: FrameIcon, title: "Long-Term Conversational Strategy", desc: "WhatsApp marketing, when executed strategically, builds sustainable customer relationships and consistent business opportunities." }
+    { number: "1", icon: FrameIcon, title: "Data-Driven Targeting", desc: "We use customer data and behavioral insights to reach the right audience at the right time through WhatsApp campaigns." },
+    { number: "2", icon: GroupIcon, title: "Authority-Based Messaging Approach", desc: "We position your brand as a trusted choice through structured and consistent messaging that builds credibility." },
+    { number: "3", icon: Group1Icon, title: "Paid & Organic Integration", desc: "We combine Click-to-WhatsApp ads with organic messaging strategies for stronger lead flow and better conversions." },
+    { number: "4", icon: Group1Icon, title: "Conversion-Focused Campaign Design", desc: "Every campaign is designed to generate enquiries, conversations, and sales, not just message delivery." },
+    { number: "5", icon: GroupIcon, title: "Transparent Reporting & Measurable ROI", desc: "We provide clear reports on message performance, response rates, lead cost, and campaign effectiveness." },
+    { number: "6", icon: FrameIcon, title: "Long-Term Business Growth Strategy", desc: "WhatsApp marketing, when executed properly, builds strong customer relationships and consistent business opportunities over time." }
   ]
 };
 

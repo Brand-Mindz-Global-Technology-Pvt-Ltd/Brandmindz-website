@@ -131,32 +131,32 @@ const linkedinFramework = {
 };
 
 const whatsappFramework = {
-  title: "Our Strategic 6-Step WhatsApp Marketing Framework",
-  subtitle: "A structured WhatsApp growth system designed to generate B2B leads, strengthen brand authority, and create consistent opportunities through automated and paid conversational campaigns.",
+  title: "Our Strategic 6-Step Whatsapp Marketing Framework",
+  subtitle: "A structured WhatsApp marketing system designed to generate leads, build customer trust, and create consistent business growth through automated and targeted WhatsApp campaigns.",
   steps: [
     {
-      title: "WhatsApp Profile & Page Audit",
-      description: "We analyze your WhatsApp Business profile, messaging performance, and audience targeting to identify growth gaps.",
+      title: "WhatsApp Business Setup & Audit",
+      description: "We analyze your current WhatsApp setup, communication flow, customer interaction patterns, and competitor strategies to identify growth gaps.",
     },
     {
-      title: "Audience Targeting & Positioning Strategy",
-      description: "We define your ideal decision-makers based on industry, job title, company size, and buying intent.",
+      title: "Audience Segmentation & Targeting Strategy",
+      description: "We define your ideal customer segments based on behavior, interests, and buying intent to ensure the right message reaches the right audience.",
     },
     {
-      title: "Content Strategy & Authority Building",
-      description: "We develop structured messaging pillars including promotional broadcasts, industry insights, and customer support flows.",
+      title: "Content & Messaging Strategy",
+      description: "We create structured WhatsApp content that engages, informs, and converts your audience effectively.",
     },
     {
-      title: "WhatsApp Ads & Lead Funnel Setup",
-      description: "We create targeted click-to-WhatsApp ad campaigns for lead generation, immediate inquiries, and brand awareness.",
+      title: "Campaign & Automation Setup",
+      description: "We build WhatsApp campaigns and automation systems to generate leads and manage communication efficiently.",
     },
     {
-      title: "Engagement & Relationship Nurturing",
-      description: "We implement automated replies, drip sequences, and conversational remarketing systems to nurture prospects.",
+      title: "Engagement & Lead Nurturing",
+      description: "We implement structured follow-up systems to convert enquiries into customers.",
     },
     {
       title: "Performance Tracking & Optimization",
-      description: "We monitor open rates, engagement rate, cost per lead, and conversion metrics through analytics.",
+      description: "We monitor campaign performance and continuously improve results based on data insights.",
     }
   ]
 };

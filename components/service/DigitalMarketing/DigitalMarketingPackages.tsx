@@ -241,35 +241,35 @@ const linkedinPackagesData = {
 
 const whatsappPackagesData = {
   title: "Custom WhatsApp Marketing Plans",
-  titleSpan: "Built for Brands Maximizing Direct Conversations",
-  subtitle: "Strategy and execution managed by conversational marketing specialists with proven WhatsApp lead generation experience.",
-  bonus: "Exclusive Bonus: Get a Free WhatsApp Business Profile Review with Your First Month",
+  titleSpan: "Built for Businesses Targeting Customers & High-Intent Leads",
+  subtitle: "Strategy and execution managed by WhatsApp marketing specialists with proven lead generation and conversion experience",
+  bonus: "Exclusive Bonus: Get a Free WhatsApp Marketing Audit with Your First Month",
   packages: [
     {
       title: "Foundation",
-      subtitle: "For Initial Chatbot & Broadcast Setup",
+      subtitle: "Get a Free WhatsApp Marketing Audit with Your First Month",
       features: [
         "WhatsApp Business Profile Optimization",
         "Messaging Strategy Planning",
-        "2-4 Monthly WhatsApp Broadcasts",
-        "Quick Replies & Tag Management Setup",
-        "Basic Automated Reply Setup",
+        "8–12 Monthly Broadcast Campaigns",
+        "Content & CTA Optimization",
+        "Basic Engagement Strategy",
         "Monthly Performance Summary",
-        "Dedicated Account Manager"
+        "Dedicated WhatsApp Marketing Manager"
       ],
       highlight: false,
       recommended: false,
     },
     {
       title: "Growth",
-      subtitle: "For Advanced Automation & Lead Nurturing",
+      subtitle: "For Lead Generation & Customer Engagement",
       features: [
-        "Advanced Contact Segmentation",
-        "Click-to-WhatsApp Ad Campaign Setup",
-        "Broadcast Campaigns & Drip Sequences",
-        "Conversational Flow Planning",
-        "Chatbot Opt-in Optimization",
-        "Retargeting Strategy",
+        "Advanced Audience Segmentation",
+        "Lead Generation Campaign Setup",
+        "Click-to-WhatsApp Ads Integration",
+        "Promotional & Nurture Messaging",
+        "Lead Capture Optimization",
+        "Retargeting Campaign Strategy",
         "Detailed Performance Reports",
         "Strategy Review Calls"
       ],
@@ -278,16 +278,16 @@ const whatsappPackagesData = {
     },
     {
       title: "Scale",
-      subtitle: "For Market Dominance & Omni-channel Scaling",
+      subtitle: "For Market Expansion & Sales Growth",
       features: [
-        "Full WhatsApp Conversational Framework Implementation",
-        "Omni-channel Conversational Strategy",
-        "Advanced CRM Integration & Custom Webhooks",
-        "Advanced Funnel & CRM Integration",
-        "Cross-platform Conversational Remarketing",
-        "High-Volume Outreach Systems",
+        "Full WhatsApp Marketing System Implementation",
+        "Multi-Campaign Automation Strategy",
+        "Customer Journey & Funnel Setup",
+        "Advanced CRM Integration",
+        "Brand Positioning via Messaging",
+        "High-Volume Broadcast Systems",
         "Weekly Performance Monitoring",
-        "Dedicated Conversational Marketing Team"
+        "Dedicated WhatsApp Growth Team"
       ],
       highlight: false,
       recommended: false,

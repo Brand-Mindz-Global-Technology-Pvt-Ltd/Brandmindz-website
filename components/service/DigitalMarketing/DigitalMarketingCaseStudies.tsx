@@ -175,12 +175,12 @@ const linkedinCaseStudiesData = {
 
 const whatsappCaseStudiesData = {
   title: "WhatsApp Marketing Case Studies",
-  subtitle: "Real business results from structured WhatsApp automated messaging and conversational marketing strategies.",
+  subtitle: "Real business results from structured WhatsApp campaigns and automated messaging strategies.",
   studies: [
     {
-      badge: "Lead Nurturing",
+      badge: "Lead Generation Growth",
       title: "Conversational Funnel Breakthrough",
-      intro: "We helped a consulting firm nurture prospects through structured WhatsApp sequences.",
+      intro: "We helped a consulting firm target high-intent prospects through structured WhatsApp campaigns and messaging flows.",
       results: [
         "3X increase in qualified enquiries",
         "48% reduction in cost per lead",
@@ -189,24 +189,24 @@ const whatsappCaseStudiesData = {
       image: "/case-studies/visibility.jpg"
     },
     {
-      badge: "Customer Retention",
+      badge: "Customer Engagement & Brand Visibility",
       title: "Automated Engagement Growth",
-      intro: "We improved customer support and retention for a fast-growing brand.",
+      intro: "We improved positioning for a founder-led brand in a competitive market using consistent WhatsApp communication and engagement strategies.",
       results: [
         "4X increase in message open rates",
-        "60% growth in response rate",
-        "2.7X increase in repeat purchases"
+        "60% growth in engagement rate",
+        "2.7X increase in inbound enquiries"
       ],
       image: "/case-studies/influence.png"
     },
     {
-      badge: "Pipeline Expansion",
+      badge: "Sales Pipeline Expansion",
       title: "Click-to-WhatsApp Ad Scaling",
-      intro: "We implemented WhatsApp lead forms and automated retargeting campaigns.",
+      intro: "We implemented WhatsApp lead capture systems, automated follow-ups, and retargeting campaigns.",
       results: [
         "2.5X growth in booked discovery calls",
-        "37% lower cost per meeting",
-        "3X improvement in chat completion rate"
+        "37% lower cost per conversion",
+        "3X improvement in response rate"
       ],
       image: "/case-studies/authority.jpg"
     }
