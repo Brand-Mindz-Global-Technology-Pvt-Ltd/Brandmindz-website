@@ -5,84 +5,35 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { Phone, PhoneCall, PhoneForwarded } from 'lucide-react';
 import "../../../style/branding/BrandingPackages.css";
 
-const packages = [
-  {
-    title: "Foundation",
-    subtitle: "For Foundation Building",
-    features: [
-      "Personal Brand Positioning Strategy",
-      "LinkedIn Profile Optimization",
-      "Bio & Authority Story Development",
-      "Visual Identity Guidelines (Basic)",
-      "4 Thought Leadership Posts / Month",
-      "Monthly Performance Report",
-      "Dedicated Brand Consultant"
-    ],
-    highlight: false,
-    recommended: false,
-  },
-  {
-    title: "Growth",
-    subtitle: "For Authority Acceleration",
-    features: [
-      "Advanced Personal Brand Strategy",
-      "Content Pillar Development",
-      "LinkedIn + Instagram Optimization",
-      "8 Authority Content Pieces / Month",
-      "Personal Website Wireframe Plan",
-      "Media Pitch Drafting",
-      "Brand Messaging Framework",
-      "AI-Driven Visibility Tracking"
-    ],
-    highlight: true,
-    recommended: true,
-  },
-  {
-    title: "Scale",
-    subtitle: "For Industry Domination",
-    features: [
-      "Complete Personal Brand Ecosystem",
-      "Multi-Platform Authority Building",
-      "Personal Website Development",
-      "Video Content Strategy & Scripting",
-      "PR & Media Outreach Campaign",
-      "Speaking & Podcast Positioning",
-      "Real-Time Brand Analytics Dash",
-      "Strategic Growth Mentorship"
-    ],
-    highlight: false,
-    recommended: false,
-  }
-];
+export const DesigningPackages = ({ data }: { data: any }) => {
+  const packages = data?.items || [];
 
-export const DesigningPackages = () => {
   return (
     <section className="bm-pkg-section">
       <div className="bm-pkg-container">
         <FadeIn direction="up" delay={0.1}>
           <div className="bm-pkg-header">
-            <h2 className="bm-pkg-title">
-              Tailored Personal Branding <br />
-              <span className='bm-pkg-title-span' >Packages for Visionary Leaders</span>
+            <h2 className="bm-pkg-title" dangerouslySetInnerHTML={{ __html: data?.title || "Tailored Design Packages" }}>
             </h2>
             <p className="bm-pkg-subtitle">
-              Strategy and execution delivered by a team that has sold, scaled, and delivered in real markets.
+              {data?.subtitle || "Strategy and execution delivered by a team that has conceptualized, crafted, and delivered in real markets."}
             </p>
           </div>
         </FadeIn>
 
-        <FadeIn direction="up" delay={0.2}>
-          <div className="bm-pkg-bonus-banner">
-            <p className="bm-pkg-bonus-text">
-              <strong>Exclusive Bonus:</strong> Get a Free Personal Brand Audit with Your First Month
-            </p>
-          </div>
-        </FadeIn>
+        {data?.bonusText && (
+          <FadeIn direction="up" delay={0.2}>
+            <div className="bm-pkg-bonus-banner">
+              <p className="bm-pkg-bonus-text" dangerouslySetInnerHTML={{ __html: data.bonusText }}>
+              </p>
+            </div>
+          </FadeIn>
+        )}
 
-        <div className="bm-pkg-grid">
-          {packages.map((pkg, index) => (
+        <div className="bm-pkg-grid"  style={{ gridTemplateColumns: `repeat(${data?.items?.length}, 1fr)` }}>
+          {packages.map((pkg: any, index: number) => (
             <FadeIn key={index} direction="up" delay={0.1 + index * 0.1}>
-              <div className={`bm-pkg-card`}>
+              <div className={`bm-pkg-card ${pkg.highlight ? 'highlight' : ''}`}>
                 {pkg.recommended && (
                   <div className="bm-pkg-tag">Recommended</div>
                 )}
@@ -90,7 +41,7 @@ export const DesigningPackages = () => {
                 <p className="bm-pkg-card-desc">{pkg.subtitle}</p>
                 
                 <ul className="bm-pkg-list">
-                  {pkg.features.map((feature, fIndex) => (
+                  {pkg.features.map((feature: string, fIndex: number) => (
                     <li key={fIndex} className="bm-pkg-list-item">
                       {feature}
                     </li>
@@ -108,13 +59,13 @@ export const DesigningPackages = () => {
         <FadeIn direction="up" delay={0.5}>
           <div className="bm-pkg-footer">
             <p className="bm-pkg-footer-text">
-              Need a customized branding roadmap?
+              Need a customized design roadmap?
             </p>
             <div className="bm-pkg-cta">
               <div className="bm-pkg-cta-icon-wrapper">
                 <Phone size={15} color="white" fill="white" />
               </div>
-              <span>Schedule a Personal Brand Strategy Call</span>
+              <span>Schedule a Design Strategy Call</span>
             </div>
           </div>
         </FadeIn>
@@ -122,3 +73,4 @@ export const DesigningPackages = () => {
     </section>
   );
 };
+

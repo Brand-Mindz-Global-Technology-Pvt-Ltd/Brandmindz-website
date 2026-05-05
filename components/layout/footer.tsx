@@ -22,16 +22,16 @@ import back from '../../assets/HomeSection/banner/Group (1).png'
 const Footer = () => {
 
   const footerLinks = [
-  { name: "About us", path: "/about" },
-  { name: "Our Services", path: "/services" },
-  { name: "Industries", path: "/industries" },
-  { name: "Case Studies", path: "/case-studies" },
-  { name: "Sustainability", path: "/sustainability" },
-  { name: "Resources", path: "/resources" },
-  { name: "Careers", path: "/careers" },
-  { name: "Blog", path: "/blog" },
-  { name: "Contact us", path: "/contact" },
-];
+    { name: "About us", path: "/about" },
+    { name: "Our Services", path: "/services" },
+    { name: "Industries", path: "/industries" },
+    { name: "Case Studies", path: "/case-studies" },
+    { name: "Sustainability", path: "/sustainability" },
+    { name: "Resources", path: "/resources" },
+    { name: "Careers", path: "/careers" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact us", path: "/contact" },
+  ];
 
   return (
     <footer className={styles.footerContainer}>
@@ -50,20 +50,54 @@ const Footer = () => {
           <div className="md:col-span-4 lg:col-span-4">
             <div className={styles.brandColumn}>
               <div className={styles.logoContainer}>
-                <Image src={logo} alt="Brand Mindz" width={200} height={55} priority />
+                <Link href="/">
+                  <Image src={logo} alt="Brand Mindz" width={200} height={55} priority />
+                </Link>
                 <p className={styles.brandDescription} >
                   Brand Mindz is built by people who genuinely care about your growth.
                 </p>
               </div>
 
               <div className={styles.socialLinks}>
-                {[FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaInstagram, FaGooglePlusG, FaPinterestP, FaBehance, FaDribbble].map((Icon, i) => (
+                {/* {[FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaInstagram, FaGooglePlusG, FaPinterestP, FaBehance, FaDribbble].map((Icon, i) => (
                   <Link key={i} href="#" className={styles.socialIcon}><Icon /></Link>
-                ))}
+                ))} */}
+                {[
+                  {
+                    icon: FaFacebookF,
+                    link: "https://www.facebook.com/p/Brand-Mindz-Global-100093914452560/",
+                  },
+                  {
+                    icon: FaLinkedinIn,
+                    link: "https://in.linkedin.com/company/brand-mindz-global",
+                  },
+                  {
+                    icon: FaYoutube,
+                    link: "https://youtube.com/@brandmindzglobal?si=ljAGQQjLqyEMIOFD",
+                  },
+                  {
+                    icon: FaInstagram,
+                    link: "https://www.instagram.com/brandmindzglobal/",
+                  },
+                ].map((item, i) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <Link
+                      key={i}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.socialIcon}
+                    >
+                      <Icon />
+                    </Link>
+                  );
+                })}
               </div>
 
               <div className={styles.statusBadge}>
-<div className="w-2.5 h-2.5 rounded-full animate-pulse bg-[linear-gradient(180deg,#00C950,#006328)]"></div>
+                <div className="w-2.5 h-2.5 rounded-full animate-pulse bg-[linear-gradient(180deg,#00C950,#006328)]"></div>
                 <span className={styles.statusText}>All Systems Operational</span>
               </div>
 
@@ -91,19 +125,19 @@ const Footer = () => {
             </ul>
           </div> */}
 
-<div className="md:col-span-2 lg:col-span-2 md:pl-8">
-  <h3 className={styles.sectionTitle}>Home</h3>
+          <div className="md:col-span-2 lg:col-span-2 md:pl-8">
+            <h3 className={styles.sectionTitle}>Home</h3>
 
-  <ul className={styles.linkList}>
-    {footerLinks.map((item) => (
-      <li key={item.name} className={styles.linkItem}>
-        <Link href={item.path} className={styles.navLink}>
-          {item.name}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
+            <ul className={styles.linkList}>
+              {footerLinks.map((item) => (
+                <li key={item.name} className={styles.linkItem}>
+                  <Link href={item.path} className={styles.navLink}>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
 
           {/* Column 3: Reach Us */}

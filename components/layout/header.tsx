@@ -164,13 +164,13 @@ const Header = () => {
           <div className="bm-header__container">
 
             {/* Logo */}
-            <div className="bm-header__logo">
+            <Link href="/" className="bm-header__logo">
               <Image
                 src={logo}
                 alt="Brand Mindz"
                 priority
               />
-            </div>
+            </Link>
 
             {/* Mobile Menu Toggle Button */}
             <button

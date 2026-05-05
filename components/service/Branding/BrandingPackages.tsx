@@ -29,7 +29,7 @@ export const BrandingPackages = ({ data }: { data: any }) => {
           </FadeIn>
         )}
 
-        <div className="bm-pkg-grid">
+        <div className="bm-pkg-grid"   style={{ gridTemplateColumns: `repeat(${data?.items?.length}, 1fr)` }}>
           {data.items.map((pkg: any, index: number) => (
             <FadeIn key={index} direction="up" delay={0.1 + index * 0.1}>
               <div className={`bm-pkg-card`}>

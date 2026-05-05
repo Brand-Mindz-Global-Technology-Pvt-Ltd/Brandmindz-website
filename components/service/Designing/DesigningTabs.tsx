@@ -1,25 +1,15 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import "../../../style/branding/brandinglist.css";
-import { PersonalBranding } from "../Branding/PersonalBranding";
-import { CompanyBranding } from "../Branding/CompanyBranding";
-import { BrandStrategy } from "../Branding/BrandStrategy";
-import { BrandConsulting } from "../Branding/BrandConsulting";
-import { VideoCreation } from "../Branding/VideoCreation";
+import { designingData } from "@/data/designingData";
+import { DesigningHero } from "./DesigningHero";
 
-export const DesigningTabs = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  
+export const DesigningTabs = ({ activeTabKey, setActiveTabKey }: { activeTabKey: any, setActiveTabKey: any }) => {
   const tabsData = [
-    { name: "Personal Branding", component: PersonalBranding },
-    { name: "Company Branding", component: CompanyBranding },
-    { name: "Brand Strategy", component: BrandStrategy },
-    { name: "Video Creation", component: VideoCreation },
-    { name: "Brand Consulting", component: BrandConsulting },
+    { name: "UI UX Design", key: "uiuxDesign" },
+    { name: "Graphic Design", key: "graphicDesign" },
+    { name: "Package Design", key: "packageDesign" },
+    { name: "Logo Design", key: "logoDesign" },
   ];
-  
-  const ActiveComponent = tabsData[activeTab].component;
 
   return (
     <section className="bl-main-section">
@@ -29,8 +19,8 @@ export const DesigningTabs = () => {
           {tabsData.map((tab, index) => (
             <button
               key={index}
-              className={`bl-tab ${activeTab === index ? "active" : ""}`}
-              onClick={() => setActiveTab(index)}
+              className={`bl-tab ${activeTabKey === tab.key ? "active" : ""}`}
+              onClick={() => setActiveTabKey(tab.key as any)}
             >
               {tab.name}
             </button>
@@ -39,9 +29,11 @@ export const DesigningTabs = () => {
 
         {/* Content */}
         <div className="bl-tab-content">
-          <ActiveComponent />
+          <DesigningHero data={designingData[activeTabKey as keyof typeof designingData].hero} />
         </div>
       </div>
     </section>
   );
 };
+
+

@@ -11,8 +11,8 @@ export const brandingData = {
   personalBranding: {
     hero: {
       subtitle: "Define your identity with confidence",
-      headlineLight: "Control how the world sees and trusts you. Turn your ",
-      headlineBold: "<span>Story Into A Powerful Personal Brand.</span>",
+      headlineLight: "Control how the world sees and trusts you.",
+      headlineBold: "<span>Turn your Story Into A Powerful Personal Brand.</span>",
       clientList: "Trusted by ",
       clientStat: "300+ Ambitious Professionals",
       clientDesc: "Work with our team to transform your personal identity into a powerful, credible, and influential brand that increases visibility, builds authority, and opens new opportunities across your industry.",
@@ -701,7 +701,7 @@ Strengthen Your Brand Today
 
         {
           number: "03",
-          icon: GroupIcon,
+          icon: FrameIcon,
           title: "Authority & Reputation Development",
           desc:
             "Trust drives buying decisions. Studies show 81% of consumers must trust a brand before making a purchase. We build credibility through structured messaging, brand storytelling, corporate identity systems, and visibility strategy. Strong company branding increases perceived reliability and strengthens long-term customer relationships."
@@ -709,7 +709,7 @@ Strengthen Your Brand Today
 
         {
           number: "04",
-          icon: FrameIcon,
+          icon: GroupIcon,
           title: "Conversion-Focused Brand Messaging",
           desc:
             "Branding is not just design — it is communication. We craft messaging frameworks aligned with customer psychology and buying behavior. Clear value communication improves website engagement, sales conversations, and brand memorability. Companies with strong messaging clarity experience higher inquiry rates and improved conversion performance."
@@ -717,7 +717,7 @@ Strengthen Your Brand Today
 
         {
           number: "05",
-          icon: GroupIcon,
+          icon: FrameIcon,
           title: "Transparent Brand Performance Tracking",
           desc:
             "Branding results are measurable. We track brand perception indicators, engagement growth, direct traffic increases, and customer interaction patterns. Structured monitoring ensures your company branding strategy evolves with market demands and competitive shifts."
@@ -725,7 +725,7 @@ Strengthen Your Brand Today
 
         {
           number: "06",
-          icon: FrameIcon,
+          icon: GroupIcon,
           title: "Long-Term Brand Equity & Market Leadership",
           desc:
             "Strong company branding builds long-term business value. Recognizable brands command premium pricing and stronger loyalty. Research indicates that consistent brand presentation increases overall business revenue and improves market stability. We build company branding systems designed for sustained authority and scalable growth."
@@ -1081,9 +1081,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         {
           number: "01",
           icon: FrameIcon,
-
           title: "Strategic Market Positioning",
-
           desc:
             "Many brands compete without clear direction. We define your category position, competitive edge, and audience perception using structured research and industry analysis. Clear brand positioning improves recall, strengthens trust, and ensures your business stands out in crowded markets."
         },
@@ -1091,9 +1089,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         {
           number: "02",
           icon: GroupIcon,
-
           title: "Differentiation-First Framework",
-
           desc:
             "In competitive industries, similarity reduces value. Our brand strategy process identifies unique value propositions, messaging gaps, and competitive opportunities. Companies with strong differentiation frameworks experience better customer loyalty and stronger premium positioning."
         },
@@ -1101,9 +1097,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         {
           number: "03",
           icon: FrameIcon,
-
           title: "Data-Driven Brand Growth",
-
           desc:
             "Brand strategy should be measurable. We analyze market behavior, customer insights, and competitive performance to refine strategic direction. Structured brand strategy improves consistency, strengthens communication clarity, and supports sustainable business expansion."
         }
@@ -1114,14 +1108,10 @@ positioned in the market. Studies show that 64% of consumers build trust through
   videoCreation: {
     hero: {
       subtitle: "Create Videos That Capture Attention",
-
-      headlineLight: "Shape How Your Audience Sees and Remembers Your Brand.",
-
+      headlineLight: "Shape How Your Audience Sees and Remembers Your Brand.Turn Your ",
       headlineBold:
-        "Turn Your Message Into <span>High-Impact Visual Content.</span>",
-
+        "Message Into <span>High-Impact Visual Content.</span>",
       clientList: "Trusted by ",
-
       clientStat: "300+ Growing Businesses",
 
       clientDesc:
@@ -1635,9 +1625,7 @@ caseStudies: {
         "58% improvement in audience trust perception",
         "Stronger market positioning against key competitors"
       ],
-
       buttonText: "View Case Study",
-
         image: "/case-studies/authority.jpg"
     }
   ],
@@ -1736,44 +1724,35 @@ whyChoose: {
     {
       number: "01",
       icon: FrameIcon,
-
       title: "Data-Backed Brand Strategy",
-
       desc:
         "We don’t rely on assumptions. We use market research, audience insights, competitor benchmarking, and industry analysis to develop clear positioning strategies. Structured brand consulting improves recall, strengthens trust, and aligns brand perception with real market demand."
     },
-
     {
       number: "02",
       icon: GroupIcon,
-
       title: "Strategic Positioning & Differentiation",
-
       desc:
         "Clear positioning defines leadership. We identify authority gaps, refine value propositions, and build differentiation frameworks that help your brand stand out in competitive sectors. Strong positioning increases perceived expertise and improves decision-making confidence among customers."
     },
-
     {
       number: "03",
-      icon: GroupIcon,
-
+      icon: FrameIcon,
       title: "Business-Aligned Brand Architecture",
-
       desc:
         "Brand strategy must connect to business performance. We align messaging systems, communication structure, and brand hierarchy with growth objectives to ensure clarity across all customer touchpoints."
     },
 
     {
       number: "04",
-      icon: FrameIcon,
-
+      icon: GroupIcon,
       title: "Consistent Brand Communication Systems",
       desc:
         "Inconsistent messaging reduces trust. We build structured brand voice guidelines, narrative frameworks, and communication standards that strengthen recognition across digital and offline channels."
     },
     {
       number: "05",
-      icon: GroupIcon,
+      icon: FrameIcon,
 
       title: "Measurable Brand Performance Insights",
 
@@ -1783,7 +1762,7 @@ whyChoose: {
 
     {
       number: "06",
-      icon: FrameIcon,
+      icon: GroupIcon,
 
       title: "Long-Term Brand Growth Focus",
 

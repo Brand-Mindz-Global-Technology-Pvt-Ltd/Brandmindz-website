@@ -39,6 +39,7 @@
 .bl-banner {
     width: 100%;
 }
+
 .bl-tab-wrapper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -87,7 +88,7 @@
 
 /* Typography Hierarchy */
 .bl-subtitle {
-    font-size: clamp(30px, 4vw, 60px);
+    font-size: clamp(30px, 3vw, 60px);
     font-weight: 600;
     margin-bottom: 8px;
     letter-spacing: 1px;
@@ -96,7 +97,7 @@
 
 .bl-headline-light,
 .bl-headline-bold {
-    font-size: clamp(30px, 3.4vw, 60px);
+    font-size: clamp(30px, 3vw, 60px);
 
     font-weight: 600;
     margin-bottom: 8px;
@@ -105,8 +106,9 @@
 
 
 }
+
 .bl-headline-bold span {
-    font-size: clamp(30px, 3.3vw, 60px);
+    font-size: clamp(30px, 2.9vw, 60px);
 
     font-weight: 600;
     margin-bottom: 8px;
@@ -188,7 +190,7 @@
 
 .bl-client-stat {
     font-size: 23px;
-    font-weight:600;
+    font-weight: 600;
     color: #222;
     letter-spacing: 1px;
 }
@@ -229,6 +231,7 @@
         padding-bottom: 40px;
 
     }
+
     .bl-client-card {
         width: 100%;
         max-width: 450px;
@@ -349,15 +352,18 @@
     font-size: 80px;
     font-weight: 600;
 }
+
 .bl-stat-card p {
     font-size: 40px;
     font-weight: 600;
     color: #3C3C3C;
 }
+
 .bl-stat-card p span {
     color: #707070;
 
 }
+
 .bl-btn-brand {
     width: 100%;
     background: #222;
@@ -423,6 +429,7 @@
     text-align: center;
     vertical-align: middle;
 }
+
 .bm-offering-promo-overlay p {
     font-style: normal;
     /* CSS-la SemiBold separate illa */
@@ -489,6 +496,7 @@
 .bl-text-fade {
     color: #b5b5b5;
 }
+
 .bm-hero-action {
     padding: 0px 10px;
 }
@@ -537,7 +545,7 @@
     font-weight: 400;
     font-style: normal;
     font-size: 23px;
-    line-height: 10px;
+    line-height: 25px;
     letter-spacing: 0%;
     text-align: center;
     display: inline-flex;
@@ -732,6 +740,7 @@
     .bl-main-section {
         padding: 0px;
     }
+
     .bl-container {
         padding: 0px;
     }
@@ -749,6 +758,7 @@
     .bl-headline-bold {
         font-size: 1.5rem !important;
     }
+
     .bl-headline-bold span {
         font-size: 1.6rem !important;
 
@@ -775,11 +785,13 @@
     .bl-point-txt h4 {
         font-size: 1rem;
     }
+
     .bl-card-top {
         display: flex;
         flex-direction: column;
         gap: 12px;
     }
+
     .bl-point-txt p {
         font-size: 0.8rem;
     }
