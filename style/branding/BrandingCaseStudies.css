@@ -52,7 +52,7 @@
 
 .bm-cs-card {
   width: 370px;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
