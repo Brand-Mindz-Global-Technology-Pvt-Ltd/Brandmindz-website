@@ -1,25 +1,17 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import "../../../style/branding/brandinglist.css";
 import { PersonalBranding } from "../Branding/PersonalBranding";
-import { CompanyBranding } from "../Branding/CompanyBranding";
-import { BrandStrategy } from "../Branding/BrandStrategy";
-import { BrandConsulting } from "../Branding/BrandConsulting";
-import { VideoCreation } from "../Branding/VideoCreation";
+import { ecommerceData } from "@/data/ecommerceData";
 
-export const EcommerceTabs = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  
+export const EcommerceTabs = ({ activeTabKey, setActiveTabKey }: { activeTabKey: any, setActiveTabKey: any }) => {
   const tabsData = [
-    { name: "Personal Branding", component: PersonalBranding },
-    { name: "Company Branding", component: CompanyBranding },
-    { name: "Brand Strategy", component: BrandStrategy },
-    { name: "Video Creation", component: VideoCreation },
-    { name: "Brand Consulting", component: BrandConsulting },
+    { name: "Flipkart Listing", key: "flipkartListing" },
+    { name: "Amazon Listing", key: "amazonListing" },
+    { name: "Meesho Listing", key: "meeshoListing" },
+    { name: "Myntra Listing", key: "myntraListing" },
+    { name: "Jiomart Listing", key: "jiomartListing" },
+    { name: "Seller Account Management", key: "sellerAccountManagement" },
   ];
-  
-  const ActiveComponent = tabsData[activeTab].component;
 
   return (
     <section className="bl-main-section">
@@ -29,8 +21,8 @@ export const EcommerceTabs = () => {
           {tabsData.map((tab, index) => (
             <button
               key={index}
-              className={`bl-tab ${activeTab === index ? "active" : ""}`}
-              onClick={() => setActiveTab(index)}
+              className={`bl-tab ${activeTabKey === tab.key ? "active" : ""}`}
+              onClick={() => setActiveTabKey(tab.key as any)}
             >
               {tab.name}
             </button>
@@ -39,7 +31,7 @@ export const EcommerceTabs = () => {
 
         {/* Content */}
         <div className="bl-tab-content">
-          <ActiveComponent />
+          <PersonalBranding data={ecommerceData[activeTabKey as keyof typeof ecommerceData].hero} />
         </div>
       </div>
     </section>

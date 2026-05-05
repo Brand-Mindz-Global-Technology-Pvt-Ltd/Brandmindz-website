@@ -8,7 +8,7 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { LogoNewsTicker } from "../../aboutus/LogoNewsTicker";
 import { EcommerceTabs } from "./EcommerceTabs";
 
-export const EcommerceService = () => {
+export const EcommerceService = ({ activeTabKey, setActiveTabKey }: { activeTabKey: any, setActiveTabKey: any }) => {
   return (
     <section className="bm-hero-section-contact ">
       <FadeIn delay={0.1}>
@@ -17,29 +17,28 @@ export const EcommerceService = () => {
             <FaBolt size={19} color="black" />
           </span>
           <p className="bm-hero-badge__text">
-            India’s #1 E-Commerce Agency
+            India’s Trusted Ecommerce Listing Experts
           </p>
         </div>
       </FadeIn>
 
       <FadeIn delay={0.2}>
         <h1 className="bm-hero-title">
-          <span className="text-black">E-Commerce </span>
-          <span className="text-grey"> Focused Solutions </span>
+          <span className="text-black">Strategic Ecommerce </span>
+          <span className="text-grey"> Listing Services </span>
           <br />
-          <span className="text-black">Designed for Your </span>
-          <span className="text-yellow"> Growth</span>
+          <span className="text-black">That Turn Products Into </span>
+          <span className="text-yellow"> Best Sellers</span>
         </h1>
       </FadeIn>
       <FadeIn delay={0.35}>
         <p className="bm-hero-description  bm-hero-description-branding">
-          E-Commerce execution delivered by a team that has
-          sold, scaled, and delivered in real markets.
+          SEO optimized product listings that rank higher and convert faster across major marketplaces.
         </p>
       </FadeIn>
 
       <LogoNewsTicker />
-      <EcommerceTabs />
+      <EcommerceTabs activeTabKey={activeTabKey} setActiveTabKey={setActiveTabKey} />
 
     </section>
   );

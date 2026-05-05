@@ -316,37 +316,37 @@ Ongoing optimization ensures sustained authority, stronger influence, and measur
 
       items: [
         {
-          number: "01",
+          number: "1",
           icon: FrameIcon,
           title: "Strategic Personal Brand Positioning",
           desc: "We don’t “make you visible.” We position you clearly. Through market perception analysis, audience mapping, and authority gap identification, we define what you should be known for — and why it matters. Strong positioning increases perceived expertise by over 60% and improves audience trust significantly across digital platforms."
         },
         {
-          number: "02",
+          number: "2",
           icon: GroupIcon,
           title: "Authority-First Content Framework",
           desc: "Random posting creates noise. Authority frameworks create influence. We build structured content pillars aligned with your industry, expertise, and long-term goals. Professionals with defined content themes see up to 3X higher engagement rates compared to inconsistent posting strategies."
         },
         {
-          number: "03",
+          number: "3",
           icon: FrameIcon,
           title: "Reputation & Credibility Architecture",
           desc: "Trust drives decisions. 92% of people trust individuals more than corporate brands. We design credibility assets — optimized profiles, thought leadership content, proof-based storytelling, and media positioning — that strengthen your professional reputation across platforms."
         },
         {
-          number: "04",
+          number: "4",
           icon: GroupIcon,
           title: "Visibility That Converts to Opportunities",
           desc: "Visibility alone is vanity. We focus on opportunity-driven reach. Our structured personal branding systems improve inbound enquiries, speaking invitations, partnerships, and qualified conversations. Leaders with active personal brands generate up to 2X more inbound opportunities than those without one."
         },
         {
-          number: "05",
+          number: "5",
           icon: FrameIcon,
           title: "Data-Driven Performance Tracking",
           desc: "Personal branding is measurable. We track profile growth, content engagement, audience demographics, and inbound lead patterns. Consistent performance optimization improves engagement rates by 40%+ within structured campaigns."
         },
         {
-          number: "06",
+          number: "6",
           icon: GroupIcon,
           title: "Long-Term Influence & Growth System",
           desc: "Personal branding is not a campaign — it’s a compounding asset. Strong personal brands increase professional valuation, partnership opportunities, and pricing power. Studies show professionals with high perceived authority command up to 20–30% higher consulting or service fees."
@@ -684,7 +684,7 @@ Strengthen Your Brand Today
 
       items: [
         {
-          number: "01",
+          number: "1",
           icon: FrameIcon,
           title: "Research-Driven Brand Strategy",
           desc:
@@ -692,7 +692,7 @@ Strengthen Your Brand Today
         },
 
         {
-          number: "02",
+          number: "2",
           icon: GroupIcon,
           title: "Strategic Brand Architecture",
           desc:
@@ -700,7 +700,7 @@ Strengthen Your Brand Today
         },
 
         {
-          number: "03",
+          number: "3",
           icon: FrameIcon,
           title: "Authority & Reputation Development",
           desc:
@@ -708,7 +708,7 @@ Strengthen Your Brand Today
         },
 
         {
-          number: "04",
+          number: "4",
           icon: GroupIcon,
           title: "Conversion-Focused Brand Messaging",
           desc:
@@ -716,7 +716,7 @@ Strengthen Your Brand Today
         },
 
         {
-          number: "05",
+          number: "5",
           icon: FrameIcon,
           title: "Transparent Brand Performance Tracking",
           desc:
@@ -724,7 +724,7 @@ Strengthen Your Brand Today
         },
 
         {
-          number: "06",
+          number: "6",
           icon: GroupIcon,
           title: "Long-Term Brand Equity & Market Leadership",
           desc:
@@ -1079,7 +1079,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
 
       items: [
         {
-          number: "01",
+          number: "1",
           icon: FrameIcon,
           title: "Strategic Market Positioning",
           desc:
@@ -1087,7 +1087,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         },
 
         {
-          number: "02",
+          number: "2",
           icon: GroupIcon,
           title: "Differentiation-First Framework",
           desc:
@@ -1095,7 +1095,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         },
 
         {
-          number: "03",
+          number: "3",
           icon: FrameIcon,
           title: "Data-Driven Brand Growth",
           desc:
@@ -1272,7 +1272,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
 
       steps: [
         {
-          number: "01",
+          number: "1",
           title: "Brand & Audience Research",
           description:
             "We analyze your industry, target audience behavior, competitor content, and brand positioning to identify content gaps and communication opportunities. Research shows viewers decide within the first 8 seconds whether to continue watching. Clear audience insights help us create videos that immediately connect and maintain interest.",
@@ -1280,7 +1280,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         },
 
         {
-          number: "02",
+          number: "2",
           title: "Concept Development & Script Strategy",
           description:
             "We build a structured video blueprint aligned with your marketing goals, audience intent, and platform requirements. Strong scripting improves message clarity and increases retention rates significantly. A clear concept ensures your video delivers value, authority, and measurable impact.",
@@ -1288,7 +1288,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         },
 
         {
-          number: "03",
+          number: "3",
           title: "Professional Production & Cinematic Execution",
           description:
             "We execute high-quality shooting with proper lighting, framing, sound design, and direction to ensure visual credibility. Professionally produced videos increase perceived brand trust and improve viewer engagement compared to low-quality content.",
@@ -1296,7 +1296,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         },
 
         {
-          number: "04",
+          number: "4",
           title: "Precision Editing & Visual Enhancement",
           description:
             "We refine pacing, transitions, graphics, subtitles, and audio balance to improve watch time and clarity. Structured editing improves content flow and keeps viewers engaged throughout the video.",
@@ -1304,7 +1304,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         },
 
         {
-          number: "05",
+          number: "5",
           title: "Platform Optimization & Distribution Readiness",
           description:
             "We adapt formats, aspect ratios, thumbnails, and captions based on platform algorithms. Optimized videos perform better on Instagram, YouTube, LinkedIn, and paid campaigns.",
@@ -1312,7 +1312,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
         },
 
         {
-          number: "06",
+          number: "6",
           title: "Performance Review & Continuous Improvement",
           description:
             "We monitor engagement metrics such as watch time, completion rate, and interaction patterns. Data-driven refinement improves audience retention, strengthens brand recall, and supports long-term content growth.",
@@ -1670,7 +1670,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
 
   steps: [
     {
-      number: "01",
+      number: "1",
       title: "Brand Audit & Market Analysis",
       description:
         "We evaluate your current brand presence, messaging clarity, competitive positioning, and audience perception to identify strategic gaps and missed differentiation opportunities.",
@@ -1678,7 +1678,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
     },
 
     {
-      number: "02",
+      number: "2",
       title: "Positioning & Value Proposition Development",
       description:
         "We define your unique market position by clarifying core strengths, competitive advantages, and customer relevance. Strong positioning improves brand recall and strengthens decision-making confidence.",
@@ -1686,7 +1686,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
     },
 
     {
-      number: "03",
+      number: "3",
       title: "Brand Messaging & Communication Architecture",
       description:
         "We refine brand voice, key messages, storytelling direction, and communication structure to ensure clarity and consistency across all customer touchpoints.",
@@ -1694,7 +1694,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
     },
 
     {
-      number: "04",
+      number: "4",
       title: "Visual Identity & Brand System Alignment",
       description:
         "Our brand strategy framework ensures logo systems, design language, tone, and visual consistency align with your positioning and business objectives.",
@@ -1702,7 +1702,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
     },
 
     {
-      number: "05",
+      number: "5",
       title: "Competitive Differentiation & Authority Building",
       description:
         "We identify perception gaps, competitive weaknesses, and market opportunities to strengthen brand authority and establish leadership within your sector.",
@@ -1710,7 +1710,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
     },
 
     {
-      number: "06",
+      number: "6",
       title: "Brand Performance Monitoring & Strategic Evolution",
       description:
         "Using structured evaluation metrics, we track brand perception, engagement signals, and market response. Continuous refinement ensures your brand remains relevant, competitive, and growth-oriented as industry dynamics evolve.",
