@@ -103,15 +103,19 @@ export const SeoMarketing = () => {
                         </div>
 
                         <div className="bl-client-title-group">
+                        
+
+
+
                             <span className="bl-client-list">Trusted by</span>
-                            <span className="bl-client-stat"> 300+ Growing Brands</span>
+                            <span className="bl-client-stat">  300+ Brands Growing With SEO</span>
                         </div>
                     </div>
 
                     <hr className="bl-card-divider" />
 
                     <p className="bl-client-desc">
-                        Work with our team to develop structured, SEO-friendly static websites that load faster, improve performance, and enhance user trust across all digital platforms.
+                        Partner with our team to transform your SEO strategy into a structured growth engine that drives organic traffic, consistent leads, and measurable long-term results through data-driven optimization and search visibility.
                     </p>
                 </div>
             </div>
@@ -153,6 +157,7 @@ export const SeoMarketing = () => {
                         className="bm-offering-promo-img"
                         priority
                     />
+                    
                     <div className="bm-offering-promo-overlay">
                         <FadeIn delay={0.6}>
                             <h3>Need clarity?</h3>

@@ -101,6 +101,8 @@ export const MetaAdMarketing = () => {
                             <div className="bl-avatar-img" style={{ backgroundImage: 'url(/path-to-img3.jpg)' }}></div>
                             <div className="bl-avatar-count">15K</div>
                         </div>
+                    
+
 
                         <div className="bl-client-title-group">
                             <span className="bl-client-list">Trusted by</span>

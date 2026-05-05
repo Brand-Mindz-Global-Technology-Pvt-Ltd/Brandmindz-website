@@ -251,7 +251,7 @@ const whatsappPackagesData = {
       features: [
         "WhatsApp Business Profile Optimization",
         "Messaging Strategy Planning",
-        "8–12 Monthly Broadcast Campaigns",
+        "8–12 Monthly Broadcast Campaigns", 
         "Content & CTA Optimization",
         "Basic Engagement Strategy",
         "Monthly Performance Summary",
