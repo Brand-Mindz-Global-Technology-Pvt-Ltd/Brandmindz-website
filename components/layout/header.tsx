@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
   const [show, setShow] = useState(false);
@@ -85,12 +85,20 @@ const Header = () => {
     {
       name: 'Industries',
       hasDropdown: true,
-      dropdownItems: []
+      dropdownItems: [
+        { label: 'IT & SaaS Solutions', path: '/industries?tab=it' },
+        { label: 'E-Commerce Brands', path: '/industries?tab=ecommerce' },
+        { label: 'Healthcare & Biotech', path: '/industries?tab=healthcare' },
+        { label: 'Education & E-Learning', path: '/industries?tab=education' },
+        { label: 'Real Estate & Property', path: '/industries?tab=realestate' }
+      ],
+      path: "/industries"
     },
     {
       name: 'Case Studies',
-      hasDropdown: true,
-      dropdownItems: []
+      hasDropdown: false,
+      dropdownItems: [],
+      path: "/case-studies"
     },
     {
       name: 'Sustainability',
@@ -101,7 +109,10 @@ const Header = () => {
     {
       name: 'Resources',
       hasDropdown: true,
-      dropdownItems: []
+      dropdownItems: [
+        { label: 'Glossary', path: '/resources' }
+      ],
+      path: "/resources"
     },
     {
       name: 'Contact us',
@@ -125,13 +136,14 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const isActive = (path) => {
+  const isActive = (path?: string) => {
+    if (!path) return false;
     if (path === "/") return pathname === "/";
     return pathname.startsWith(path);
   };
 
 
- const toggleDropdown = (name) => {
+  const toggleDropdown = (name: string) => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
 
