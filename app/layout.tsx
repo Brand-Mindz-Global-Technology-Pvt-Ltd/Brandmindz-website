@@ -58,19 +58,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/logo.png',
+        url: '/icon-light-32x32.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/logo.png',
+        url: '/icon-dark-32x32.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/logo.png',
-        type: 'image/png',
+        url: '/icon.svg',
+        type: 'image/svg+xml',
       },
     ],
-    apple: '/logo.png',
+    apple: '/apple-icon.png',
   },
   generator: 'v0.app'
 }

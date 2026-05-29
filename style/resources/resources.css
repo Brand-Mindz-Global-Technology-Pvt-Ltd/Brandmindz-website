@@ -1,0 +1,654 @@
+/* Resources Page Stylesheet */
+
+.resources-main-container {
+  background-color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Afacad', sans-serif;
+}
+
+/* Resources Hero / Banner Section */
+.bm-hero-section-resources {
+  position: relative;
+  padding: 85px 20px 50px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Skyscraper Outline Background Layer */
+.bm-hero-section-resources::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../assets/HomeSection/banner/Group (1).png') no-repeat center top / cover;
+  z-index: -1;
+  opacity: 0.85;
+}
+
+/* Gradient Fade to White at Bottom */
+.bm-hero-section-resources::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  z-index: -1;
+}
+
+/* Hero Badge */
+.bm-resources-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: transparent;
+  margin-bottom: 25px;
+}
+
+.bm-resources-badge__icon {
+  background: #ffdb00;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(170deg);
+  box-shadow: 0 4px 10px rgba(255, 219, 0, 0.3);
+}
+
+.bm-resources-badge__text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* Hero Title */
+.bm-resources-hero-title {
+  font-size: 72px;
+  line-height: 1.15;
+  max-width: 1100px;
+  margin: 0 auto 35px auto;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.bm-resources-hero-title .text-black {
+  color: #000000;
+}
+
+.bm-resources-hero-title .text-grey {
+  color: #888888;
+}
+
+.bm-resources-hero-title .text-yellow {
+  color: #ffcc00;
+}
+
+/* Interactive Search Bar Wrapper */
+.glossary-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto 30px auto;
+  z-index: 20;
+}
+
+.glossary-search-bar {
+  width: 100%;
+  padding: 16px 65px 16px 30px;
+  font-size: 19px;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glossary-search-bar::placeholder {
+  color: #a0a0a0;
+  font-weight: 400;
+}
+
+.glossary-search-bar:focus {
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Search Icon Button inside Input */
+.glossary-search-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.glossary-search-btn:hover {
+  background-color: #1a1a1a;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.glossary-search-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Alphabet Scroll / Filter Navigation */
+.alphabet-navigation-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.alphabet-navigation-container::-webkit-scrollbar {
+  display: none;
+}
+
+.alphabet-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 10px 5px;
+  min-width: max-content;
+}
+
+.alphabet-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #888888;
+  background-color: transparent;
+  border: none;
+  min-width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.alphabet-letter:hover {
+  color: #000000;
+  background-color: #f0f0f0;
+}
+
+.alphabet-letter.active {
+  color: #ffffff !important;
+  background-color: #000000 !important;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.alphabet-divider {
+  width: 1px;
+  height: 16px;
+  background-color: #e0e0e0;
+  margin: 0 5px;
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------- */
+/* Multi-column Directory Layout (Mockup Design Match)  */
+/* ---------------------------------------------------- */
+
+.glossary-directory-section {
+  padding: 50px 5% 100px 5%;
+  max-width: 1350px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Skyscraper Backdrop specific to Directory */
+.glossary-directory-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../assets/HomeSection/banner/Group (1).png') no-repeat center center / contain;
+  opacity: 0.08;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glossary-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+.glossary-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  text-align: left;
+}
+
+.glossary-column-header {
+  font-size: 38px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 25px;
+  font-family: 'Afacad', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.glossary-column-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.glossary-term-item {
+  font-size: 16.5px;
+  color: #4a4a4a;
+  line-height: 1.45;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  word-wrap: break-word;
+}
+
+.glossary-term-item:hover {
+  color: #ffcc00;
+  transform: translateX(3px);
+}
+
+.glossary-show-all {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.glossary-show-all:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* Empty search result states */
+.glossary-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fafafa;
+  border-radius: 20px;
+  border: 1px dashed #e0e0e0;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.glossary-empty-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+.glossary-empty-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.glossary-empty-desc {
+  font-size: 15px;
+  color: #888888;
+  line-height: 1.5;
+}
+
+/* Additional Resources: Guides & Ebooks Section */
+.additional-resources-section {
+  background-color: #fafafa;
+  padding: 80px 5%;
+  border-top: 1px solid #f0f0f0;
+}
+
+.additional-resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #ffcc00;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section-main-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #101010;
+  margin-bottom: 40px;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 30px;
+}
+
+.resource-guide-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-guide-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.resource-guide-image-container {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.resource-guide-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ffcc00;
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resource-guide-card-content {
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resource-guide-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.resource-guide-desc {
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.resource-guide-cta {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding-top: 15px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.resource-guide-card:hover .resource-guide-cta svg {
+  transform: translateX(4px);
+}
+
+/* Call to Action Banner */
+.resources-cta-section {
+  padding: 90px 20px;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.resources-cta-bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 204, 0, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.resources-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.resources-cta-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.resources-cta-desc {
+  font-size: 19px;
+  color: #cccccc;
+  max-width: 600px;
+  margin: 0 auto 35px auto;
+  line-height: 1.6;
+}
+
+.resources-cta-btn {
+  background-color: #ffcc00;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 15px 40px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.25);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resources-cta-btn:hover {
+  background-color: #ffe066;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 204, 0, 0.4);
+}
+
+.resources-cta-btn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1300px) {
+  .glossary-directory-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .glossary-directory-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  .bm-resources-hero-title {
+    font-size: 56px;
+  }
+  .section-main-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bm-hero-section-resources {
+    padding: 65px 15px 35px 15px;
+  }
+  
+  .bm-resources-hero-title {
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
+  
+  .bm-resources-badge__text {
+    font-size: 16px;
+  }
+  
+  .glossary-search-bar {
+    font-size: 16px;
+    padding: 13px 55px 13px 20px;
+  }
+  
+  .glossary-search-btn {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .glossary-directory-section {
+    padding: 30px 15px 60px 15px;
+  }
+  
+  .glossary-directory-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .glossary-column-header {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  
+  .glossary-term-item {
+    font-size: 15.5px;
+  }
+
+  .additional-resources-section {
+    padding: 50px 15px;
+  }
+  
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .resource-guide-card-content {
+    padding: 20px;
+  }
+  
+  .resource-guide-title {
+    font-size: 19px;
+  }
+  
+  .resources-cta-section {
+    padding: 60px 15px;
+  }
+  
+  .resources-cta-title {
+    font-size: 32px;
+  }
+  
+  .resources-cta-desc {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glossary-directory-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .glossary-column-header {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+}

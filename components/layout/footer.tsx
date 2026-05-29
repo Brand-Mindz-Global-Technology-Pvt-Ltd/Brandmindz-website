@@ -198,9 +198,17 @@ const Footer = () => {
             © 2026 <span className={styles.semibold}>Brand Mindz.</span> All Rights Reserved.
           </p>
           <div className="flex gap-6">
-            {["Media Kit", "Terms & Conditions", "Privacy Policy", "Cookies Policy"].map((p) => (
-              <Link key={p} href="#" className="hover:text-black transition-colors">{p}</Link>
-            ))}
+            {["Media Kit", "Terms & Conditions", "Privacy Policy", "Cookies Policy", "Refund Policy", "CSR Policy"].map((p) => {
+              let href = "#";
+              if (p === "Privacy Policy") href = "/privacy-policy";
+              else if (p === "Terms & Conditions") href = "/terms-of-service";
+              else if (p === "Cookies Policy") href = "/cookie-policy";
+              else if (p === "Refund Policy") href = "/refund-policy";
+              else if (p === "CSR Policy") href = "/csr-policy";
+              return (
+                <Link key={p} href={href} className="hover:text-black transition-colors">{p}</Link>
+              );
+            })}
           </div>
         </div>
       </div>
