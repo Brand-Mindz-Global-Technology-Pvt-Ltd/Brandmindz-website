@@ -1,0 +1,41 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  REGISTRY_IMAGE: $CI_REGISTRY_IMAGE:latest
+
+build:
+  stage: build
+  image: docker:24.0.5
+  services:
+    - docker:24.0.5-dind
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build --pull -t $REGISTRY_IMAGE .
+    - docker push $REGISTRY_IMAGE
+
+deploy:
+  stage: deploy
+  image: alpine:latest
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  before_script:
+    - apk update && apk add openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H $EC2_IP >> ~/.ssh/known_hosts
+  script:
+    - ssh $EC2_USER@$EC2_IP "
+        docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY &&
+        docker pull $REGISTRY_IMAGE &&
+        docker stop brandmindz-app || true &&
+        docker rm brandmindz-app || true &&
+        docker run -d --name brandmindz-app --restart always -p 3000:3000 $REGISTRY_IMAGE &&
+        docker image prune -af
+      "

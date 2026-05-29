@@ -1,0 +1,347 @@
+.bm-hero-btn-trusted {
+  padding-top: 110px;
+}
+.bm-hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+
+}
+
+.bm-hero-badge__icon {
+  background: #ffdb00;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(170deg);
+}
+
+.bm-hero-badge__text {
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: 500;
+  font-style: normal;
+  color: #000;
+  text-align: center;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.bm-hero-title {
+  font-size: 77px;
+  line-height: 1.2;
+  max-width: 1300px;
+  /* max-width: 88%; */
+  margin: 0 auto 24px auto;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+.bm-abount-hero-title {
+  font-size: 70px;
+  line-height: 1.2;
+  max-width: 1200px;
+  margin: 0 auto 24px auto;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+.text-black {
+  color: #000000;
+}
+.text-grey {
+  color: #888888;
+}
+.text-yellow {
+  color: #ffcc00;
+}
+
+.bm-hero-description {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: 0%;
+  text-align: center;
+
+  color: black;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bm-hero-description-branding{
+  max-width:950px;
+  font-size: 35px !important;
+  margin: 0px !important;
+}
+/* The Unique Black Button */
+.bm-hero-btn {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  padding: 13px 15px 13px 15px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bm-hero-btn:hover {
+  transform: translateY(-2px);
+  background-color: #000;
+}
+
+.bm-hero-btn__icon {
+  background-color: black;
+  padding: 8px;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  font-size: 25px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.bm-hero-badge__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bm-hero-btn__text {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 10px;
+  letter-spacing: 0%;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  color: inherit;
+}
+
+.bm-hero-btn__text strong {
+  padding-left: 5px;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 23px;
+  line-height: 45px;
+  letter-spacing: 0%;
+}
+
+
+
+.bm-hero-section {
+  padding: 50px 0px 40px;
+  text-align: center;
+  background-color: #ffffff;
+  background-image: url('../../assets/HomeSection/banner/Group (1).png');
+  background-position: center 100px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .bm-hero-section-about {
+  padding: 50px 20px 0px 10px;
+  text-align: center;
+  background-color: #ffffff;
+
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0)10%, #ffffff 100%),
+    url('../../assets/HomeSection/banner/Group (1).png');
+
+  background-position: center -60px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+ */
+
+ .bm-hero-section-about {
+  position: relative;
+  padding: 50px 20px 0px 10px;
+  text-align: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Image Layer */
+.bm-hero-section-about::before {
+  content: "";
+  position: absolute;
+  top: -60px;   /* 👈 Only image moves */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../assets/HomeSection/banner/Group (1).png') 
+              no-repeat center top / cover;
+  z-index: 0;
+}
+
+/* White Fade Layer */
+.bm-hero-section-about::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  z-index: 1;
+}
+
+/* Content above everything */
+.bm-hero-section-about > * {
+  position: relative;
+  z-index: 2;
+}
+
+.bm-hero-section-contact {
+  padding: 50px 20px 15px 10px;
+
+  text-align: center;
+  background-color: #ffffff;
+  background-image: url('../../assets/HomeSection/banner/Group (1).png');
+  background-position: center -20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bm-hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+
+/* 
+@media (min-width: 768px) {
+  .bm-hero-badge__text {
+    font-size: 24px;
+  }
+  .bm-hero-badge {
+    gap: 20px;
+  }
+  .bm-hero-title {
+    font-size: 75px;
+  }
+   .bm-hero-description {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+  .bm-hero-section {
+    padding-top: 80px;
+  }
+
+  .bm-hero-btn {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .bm-hero-btn__text strong {
+    font-weight: 700;
+    margin-left: 4px;
+  }
+} */
+
+@media (max-width:768px) {
+  .bm-hero-badge__text {
+    font-size: 18px;
+  }
+  /* Top Badge Style */
+  .bm-hero-badge {
+    gap: 5px !important;
+  }
+
+  .bm-hero-title {
+    font-size: 28px !important;
+  }
+  .bm-abount-hero-title {
+    font-size: 28px !important;
+  }
+  .bm-hero-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .bm-hero-description-branding{
+  font-size: 16px !important;
+}
+  .animatetext {
+
+    margin-bottom: 0px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .bm-hero-section {
+    padding-top: 20px;
+    background-size: contain;
+    background-position: center center;
+    min-height: 100%
+  }
+  .bm-hero-btn {
+    padding: 5px 10px;
+  }
+  .bm-hero-btn__text {
+    font-size: 15px;
+    margin-right: 7px;
+  }
+  .bm-hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .bm-hero-btn__text strong {
+    font-weight: 500;
+    font-size: 16px;
+
+  }
+
+  .bm-hero-btn-trusted {
+    padding-top: 60px;
+    width: 100%;
+  }
+  .bm-hero-title {
+    letter-spacing: 0px;
+  }
+  .bm-abount-hero-title {
+    letter-spacing: 0px;
+
+  }
+  .bm-hero-btn__icon {
+    font-size: 15px;
+  }
+
+}
+
+.animatetext {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}

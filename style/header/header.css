@@ -1,0 +1,557 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Afacad', sans-serif;
+}
+
+
+
+.header-top {
+  background-color: white;
+}
+
+.header-top-matgin{
+  margin-top:60px;
+  background-color: white;
+
+}
+.header-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 88%;
+  margin: 0 auto;
+  padding: 0 0px;
+
+}
+
+.availability-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.availability-pill {
+  background-color: #1a1a1a;
+  width: 350px;
+  height: 50px;
+  border-radius: 0 0 20px 20px;
+  transform: perspective(300px) rotateX(-30deg);
+  transform-origin: top;
+
+}
+
+/* Text Layer (No Rotate) */
+.availability-text {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Green Dot */
+.dot {
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(180deg, #00C950, #006328);
+  /* Direction reversed for better depth */
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Expanding Ring Effect */
+.dot::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #00C950;
+  /* Green ring */
+  animation: premiumPulse 2s infinite ease-out;
+}
+
+@keyframes premiumPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    /* Ring expands outward */
+    opacity: 0;
+    /* Fades away */
+  }
+}
+
+.availability-text {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: showText 0.6s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes showText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* The exact header bar */
+.bm-header {
+  background-color: #eeeeee;
+  border-radius: 50px;
+  /* border: 1px solid #ddd; */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 100;
+  margin-top: 10px;
+}
+
+.menu-item-wrapper {
+  display: flex;
+}
+.bm-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px 13px 30px;
+  position: relative;
+}
+
+/* Logo */
+.bm-header__logo {
+  flex-shrink: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.bm-header__logo img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  z-index: 110;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+}
+
+/* Navigation */
+.bm-header__nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  background: transparent;
+}
+
+.bm-header__menu {
+  display: flex;
+  list-style: none;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.bm-header__menu li {
+  font-size: 19px;
+  color: #444;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: 0.2s;
+  position: relative;
+  padding: 8px 0;
+  white-space: nowrap;
+}
+
+.bm-header__menu li.active {
+  color: #2B2B2B;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+}
+
+.bm-header__menu li:hover {
+  color: black;
+
+}
+
+
+
+/* Dropdown Content */
+.dropdown-content {
+  position: absolute;
+  top: 75%;
+  left: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  min-width: 150px;
+  z-index: 1000;
+  margin-top: 10px;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+  color: black;
+}
+
+/* Arrow icon */
+.bm-header__menu .arrow {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+/* Button with the circle icon */
+.bm-header__action {
+  flex-shrink: 0;
+  z-index: 110;
+}
+
+.bm-header__action.desktop {
+  display: block;
+}
+
+.bm-header__btn {
+  background-color: #333333;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 7px 22px 7px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.bm-header__btn:hover {
+  background-color: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bm-header__btn.mobile {
+  display: none;
+}
+
+.icon-circle {
+  background-color: #fff;
+  color: #333;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Mobile Menu Overlay - FIXED */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+  .bm-header__menu {
+    gap: 15px;
+  }
+
+  .bm-header__menu li {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-wrapper {
+    padding: 0 15px;
+  }
+
+  .availability-pill {
+    display: none;
+  }
+
+  .bm-header {
+    border-radius: 25px;
+    margin-top: 10px;
+  }
+
+  .bm-header__container {
+    padding: 10px 15px;
+  }
+
+  .bm-header__logo img {
+    height: 35px;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  /* Show overlay when menu is open */
+  .mobile-menu-overlay {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile Navigation - SLIDE IN DESIGN */
+  .bm-header__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: white !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 30px 25px;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    overflow-y: auto;
+    margin: 0;
+  }
+
+  /* Close button for mobile menu */
+  .bm-header__nav::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
+    z-index: 101;
+    display: none;
+  }
+
+  .bm-header__nav.active {
+    right: 0;
+  }
+
+  .bm-header__menu {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .bm-header__menu li {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+  }
+
+  .bm-header__menu li:last-child {
+    border-bottom: none;
+  }
+
+  .bm-header__menu li.has-dropdown {
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+  }
+
+  .bm-header__menu li.has-dropdown > span:first-child {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 10px;
+    border-left: 2px solid #f0f0f0;
+    min-width: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  /* Show dropdown when the 'show' class is present */
+  .dropdown-content.show {
+    max-height: 300px;
+    /* Adjust based on your content */
+  }
+
+  .has-dropdown.active .dropdown-content {
+    max-height: 300px;
+  }
+
+  .dropdown-item {
+    padding: 12px 0 12px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown-item:last-child {
+    border-bottom: none;
+  }
+
+  .bm-header__action.desktop {
+    display: none;
+  }
+
+  .mobile-call-button {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .bm-header__btn.mobile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #333333;
+    color: white;
+    margin-top: 20px;
+  }
+
+  .bm-header__btn.mobile:hover {
+    background-color: #000;
+  }
+
+  /* Remove the old overlay */
+  .bm-header__nav.active::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-wrapper {
+    padding: 0 10px;
+  }
+
+  .bm-header {
+    border-radius: 20px;
+  }
+
+  .bm-header__container {
+    padding: 8px 12px;
+  }
+
+  .bm-header__logo img {
+    height: 30px;
+  }
+
+  .bm-header__nav {
+    width: 280px;
+    padding: 25px 20px;
+  }
+
+  .bm-header__menu li {
+    font-size: 15px;
+    padding: 14px 0;
+  }
+
+  .bm-header__btn {
+    padding: 10px 20px 10px 10px;
+    font-size: 13px;
+  }
+
+  .icon-circle {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Tablet specific adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bm-header__menu {
+    gap: 12px;
+  }
+
+  .bm-header__menu li {
+    font-size: 12px;
+  }
+
+  .bm-header__btn {
+    padding: 8px 18px 8px 10px;
+    font-size: 13px;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1400px) {
+  .header-wrapper {
+    padding: 0;
+  }
+}
+
+/* Fix hover for desktop dropdowns */
+@media (min-width: 769px) {
+  .has-dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content {
+    display: none;
+  }
+
+  .has-dropdown:hover .dropdown-content {
+    display: block;
+  }
+}

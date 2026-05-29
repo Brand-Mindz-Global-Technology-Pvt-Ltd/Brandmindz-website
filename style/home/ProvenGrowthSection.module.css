@@ -1,0 +1,1179 @@
+.section {
+  background: #fff;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* HEADER SECTION */
+.headingWrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  overflow: hidden;
+  background: url('../../assets//HomeSection/Whychoose/Frame\ 2147226084.png');
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 1px 0px;
+  margin-top: 40px;
+}
+
+
+.heading {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #000;
+  margin: 0;
+}
+
+.heading span {
+  display: block;
+  color: #000;
+}
+
+.headingDesc {
+  text-align: right;
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* MAIN CARDS CONTAINER */
+.cardsWrapper {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 20px;
+  position: relative;
+  background: #f0f0f0;
+  padding: 20px;
+  padding-bottom: 10px;
+  width: 90%;
+  margin: auto;
+  border-radius: 0;
+}
+
+/* LEFT + CENTER CARD CONTAINER */
+.leftCenterContainer {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 0;
+  flex: 0 0 70%;
+  background: white;
+  border-radius: 40px;
+  overflow: hidden;
+  
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+}
+
+/* LEFT CARD */
+.leftCard {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-right: 1px solid #e5e7eb;
+}
+.CardOver {
+  background-color: #F0F0F0;
+  padding-top: 0px;
+}
+.pillBadge {
+  width: 140px;
+  background: #FFD600;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  opacity: 1;
+  margin-bottom: 13px;
+}
+
+.leftTitle {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  color: #B9B9B9;
+}
+
+.italicText {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 25px;
+
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #000;
+}
+
+
+.cardDesc {
+  font-style: normal;
+  font-size: 19px ;
+  line-height: 24px ;
+  letter-spacing: 0;
+  text-align: justify;
+  vertical-align: middle;
+  color: #434343;
+  margin-bottom: 15px;
+}
+
+
+.viewButton {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  transition: transform 0.2s;
+}
+
+.viewButton:hover {
+  transform: translateY(-2px);
+}
+/* Sales Statistic Card Replicating Image */
+.centerCard {
+  padding: 30px;
+  background: #F9F9F9;
+  margin: 15px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+}
+.mainTitle {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.leadsRow {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.iconCircle {
+  background: #FF4D2A;
+  padding: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bigNumberGreen {
+  color: #1B5E20;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.blackNumber {
+  font-weight: 700;
+  color: #1B5E20;
+  display: inline-block;
+  animation: zoomPulse 1.5s infinite ease-in-out;
+}
+
+/* Animation */
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* zoom in */
+  }
+  100% {
+    transform: scale(1); /* zoom out */
+  }
+}
+
+
+.chartBox {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  border: 1px solid #eee;
+}
+.graphSvg {
+  width: 100%;
+  height: 80px;
+}
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-right: 8px;
+  margin-top: 5px;
+}
+.statLabel {
+  font-size: 20px;
+  color: gray;
+}
+.conversionBadge {
+  background: #F2F2F2;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.badgeLabel {
+  font-size: 13px;
+  border-bottom: 2px solid #1B5E20;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.badgeData {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.badgeValue {
+  font-size: 25px;
+  font-weight: 900;
+}
+.upArrow {
+  color: #1B5E20;
+  font-size: 12px;
+}
+.costDetails strong {
+  display: block;
+  font-size: 14px;
+}
+.costDetails small {
+  font-size: 13px;
+  color: #888;
+}
+.metaInfo {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.4;
+}
+.metaInfo span {
+  color: #000;
+}
+/* RIGHT CARD */
+.rightCard {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: #111;
+  border-radius: 20px;
+  padding: 20px;
+  gap: 10px;
+}
+
+.darkBlock {
+  padding: 10px;
+  background: #111;
+
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.blockTitle {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 30px;
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+
+}
+
+.problemBold {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  font-style: normal;
+  color: white;
+  margin: 10 0 5px 0;
+}
+
+
+.redSub {
+  color: #FF0000;
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+}
+
+.problemBoldsolution {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  font-style: normal;
+  color: white;
+  margin: 10 0 0px 0;
+  text-align: center;
+}
+
+
+.redSubsolution {
+  color: green;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+}
+
+.italicQuote {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  /* 3% */
+  color: white;
+  margin: 10px 0 0 0;
+}
+
+/* SOLUTION BLOCK */
+.solutionBlock {
+  background: #111;
+}
+
+.solutionList {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+.solutionList li {
+  display: flex;
+  align-items: flex-start;
+  /* 🔥 Important */
+  gap: 12px;
+  color: #fff;
+  margin-bottom: 14px;
+  font-size: 20px;
+  /* 20px too big, design la small */
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.arrowIcon {
+  width: 28px;
+  height: 28px;
+  background: #22C55E;
+  /* Green */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  /* Arrow color */
+}
+.solutionList li svg {
+  padding: 0px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+
+
+.footerQuote {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  color: #000;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  float: right;
+  width: 42%;
+  margin-right:4%;
+  text-align: center;
+}
+.footerQuote span {
+  color: #777777;
+  font-size: 20px;
+
+}
+
+.growthRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 40px;
+}
+
+.grewBy {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.grewLabel {
+  font-size: 30px;
+  font-weight: 400;
+  color: #827C7C;
+  text-align: left;
+}
+
+.massiveText {
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 0px;
+  color: #827C7C;
+  line-height: 1;
+  text-align: left;
+}
+
+.footerPara {
+  max-width: 600px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0;
+  text-align: justify;
+  vertical-align: middle;
+  color: #827C7C;
+  margin: 0;
+}
+
+.Lead{
+  font-size: 12px;
+  font-weight: 400;
+
+}
+.serviceGlobe {
+  color: gray; /* Green globe color */
+}
+
+
+
+/* ===== DESKTOP 1400px ===== */
+@media (max-width: 1400px) {
+  .cardsWrapper {
+    grid-template-columns: 58% 42%;
+    padding: 40px 4%;
+  width: 95%;
+
+  }
+
+  .leftTitle {
+    font-size: 26px;
+  }
+
+  .italicText {
+    font-size: 28px;
+  }
+
+  .rightCard {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .footerQuote {
+    max-width: 500px;
+    font-size: 18px;
+  }
+
+  .massiveText {
+    font-size: 70px;
+  }
+}
+
+/* ===== DESKTOP 1200px ===== */
+@media (max-width: 1200px) {
+  .headingWrapper {
+    padding: 25px 4%;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+
+  .headingDesc {
+    font-size: 18px;
+    max-width: 400px;
+  }
+
+  .cardsWrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+  }
+
+  .leftCenterContainer {
+    grid-template-columns: 40% 60%;
+  }
+
+  .rightCard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .growthRow {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .grewBy {
+    justify-content: center;
+  }
+
+  .grewLabel {
+    font-size: 28px;
+  }
+
+  .massiveText {
+    font-size: 60px;
+  }
+
+  .footerPara {
+    border-left: none;
+    border-top: 2px solid #e5e7eb;
+    padding-left: 0;
+    padding-top: 25px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .footerQuote {
+    float: none;
+    margin: 20px auto;
+    width: 100%;
+  }
+}
+
+/* ===== LAPTOP 1024px ===== */
+@media (max-width: 1024px) {
+  .leftCenterContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .leftCard {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .rightCard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blockTitle {
+    font-size: 22px;
+  }
+
+  .chartBox {
+    grid-template-columns: 1fr;
+  }
+
+  .footerQuote {
+    font-size: 18px;
+    padding: 15px;
+  }
+}
+
+/* ===== TABLET 900px ===== */
+@media (max-width: 900px) {
+  .headingWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 5%;
+  }
+
+  .headingDesc {
+    text-align: left;
+    margin-top: 0;
+    max-width: 100%;
+  }
+
+  .cardsWrapper {
+    padding: 30px 5%;
+  }
+
+  .rightCard {
+    grid-template-columns: 1fr;
+  }
+
+  .darkBlock {
+    padding: 20px;
+  }
+
+  .blockTitle {
+    font-size: 24px;
+  }
+
+  .solutionList li {
+    font-size: 16px;
+  }
+
+  .footerQuote {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .footerQuote span {
+    font-size: 18px;
+  }
+}
+
+/* ===== TABLET 768px ===== */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 36px;
+  }
+
+  .heading span {
+    font-size: 36px;
+  }
+
+  .leftCard {
+    padding: 25px;
+  }
+
+  .leftTitle {
+    font-size: 24px;
+  }
+
+  .italicText {
+    font-size: 26px;
+  }
+
+  .cardDesc {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .viewButton {
+    padding: 10px 24px;
+    font-size: 16px;
+  }
+
+  .centerCard {
+    padding: 20px;
+    margin: 12px;
+  }
+
+  .mainTitle {
+    font-size: 22px;
+  }
+
+  .iconCircle {
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+  }
+
+  .bigNumberGreen {
+    font-size: 24px;
+  }
+
+  .badgeValue {
+    font-size: 22px;
+  }
+
+  .grewLabel {
+    font-size: 26px;
+  }
+
+  .massiveText {
+    font-size: 50px;
+  }
+
+  .footerPara {
+    font-size: 15px;
+  }
+}
+
+/* ===== MOBILE LARGE 580px ===== */
+@media (max-width: 580px) {
+  .headingWrapper {
+    padding: 20px 4%;
+    margin-top: 20px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .heading span {
+    font-size: 32px;
+  }
+
+  .headingDesc {
+    font-size: 16px;
+  }
+
+  .cardsWrapper {
+    padding: 20px 4%;
+  }
+
+  .leftCard {
+    padding: 20px;
+  }
+
+  .pillBadge {
+    width: 120px;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 12px;
+  }
+
+  .leftTitle {
+    font-size: 22px;
+  }
+
+  .italicText {
+    font-size: 24px;
+  }
+
+  .cardDesc {
+    font-size: 15px;
+  }
+
+  .viewButton {
+    padding: 10px 22px;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .centerCard {
+    padding: 18px;
+    margin: 10px;
+  }
+
+  .mainTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .leadsRow {
+    gap: 12px;
+  }
+
+  .iconCircle {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+  }
+
+  .chartBox {
+    padding: 12px;
+  }
+
+  .statLabel {
+    font-size: 16px;
+  }
+
+  .badgeValue {
+    font-size: 20px;
+  }
+
+  .rightCard {
+    padding: 20px;
+  }
+
+  .darkBlock {
+    padding: 18px;
+  }
+
+  .blockTitle {
+    font-size: 22px;
+    padding-bottom: 12px;
+  }
+
+  .problemBold,
+  .problemBoldsolution {
+    font-size: 16px;
+  }
+
+  .redSub,
+  .redSubsolution {
+    font-size: 15px;
+  }
+
+  .solutionList li {
+    font-size: 15px;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .arrowIcon {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .italicQuote {
+    font-size: 16px;
+  }
+
+  .growthRow {
+    padding: 30px 4%;
+    gap: 25px;
+  }
+
+  .grewBy {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .grewLabel {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .massiveText {
+    font-size: 48px;
+  }
+
+  .footerPara {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .footerQuote {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .footerQuote span {
+    font-size: 16px;
+  }
+}
+
+/* ===== MOBILE MEDIUM 480px ===== */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 28px;
+  }
+
+  .heading span {
+    font-size: 28px;
+  }
+
+  .headingDesc {
+    font-size: 15px;
+  }
+
+  .leftCard {
+    padding: 18px;
+  }
+
+  .pillBadge {
+    width: 110px;
+    padding: 7px;
+    font-size: 11px;
+  }
+
+  .leftTitle {
+    font-size: 20px;
+  }
+
+  .italicText {
+    font-size: 22px;
+  }
+
+  .cardDesc {
+    font-size: 14px;
+  }
+
+  .viewButton {
+    padding: 9px 20px;
+    font-size: 14px;
+  }
+  .CardOver {
+  padding-top: 0px;
+}
+
+  .centerCard {
+    padding: 15px;
+    margin: 8px;
+  }
+
+  .mainTitle {
+    font-size: 18px;
+  }
+
+  .iconCircle {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .bigNumberGreen {
+    font-size: 22px;
+  }
+
+  .chartBox {
+    padding: 10px;
+  }
+
+  .timeline {
+    font-size: 11px;
+  }
+
+  .badgeValue {
+    font-size: 18px;
+  }
+
+  .costDetails strong {
+    font-size: 14px;
+  }
+
+  .metaInfo {
+    font-size: 12px;
+  }
+
+  .rightCard {
+    padding: 18px;
+  }
+
+  .darkBlock {
+    padding: 16px;
+  }
+
+  .blockTitle {
+    font-size: 20px;
+    gap: 8px;
+  }
+
+  .problemBold,
+  .problemBoldsolution {
+    font-size: 15px;
+  }
+
+  .redSub,
+  .redSubsolution {
+    font-size: 14px;
+  }
+
+  .solutionList li {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .arrowIcon {
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  .italicQuote {
+    font-size: 15px;
+  }
+
+  .grewLabel {
+    font-size: 22px;
+  }
+
+  .massiveText {
+    font-size: 42px;
+  }
+
+  .footerPara {
+    font-size: 13px;
+  }
+
+  .footerQuote {
+    font-size: 15px;
+  }
+
+  .footerQuote span {
+    font-size: 15px;
+  }
+}
+
+/* ===== MOBILE SMALL 360px ===== */
+@media (max-width: 360px) {
+  .heading {
+    font-size: 24px;
+  }
+
+  .heading span {
+    font-size: 24px;
+  }
+
+  .headingDesc {
+    font-size: 14px;
+  }
+
+  .leftCard {
+    padding: 15px;
+  }
+
+  .pillBadge {
+    width: 100px;
+    padding: 6px;
+    font-size: 10px;
+  }
+
+  .leftTitle {
+    font-size: 18px;
+  }
+
+  .italicText {
+    font-size: 20px;
+  }
+
+  .cardDesc {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .viewButton {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  .centerCard {
+    padding: 12px;
+    margin: 6px;
+  }
+
+  .mainTitle {
+    font-size: 16px;
+  }
+
+  .iconCircle {
+    width: 35px;
+    height: 35px;
+    padding: 7px;
+  }
+
+  .bigNumberGreen {
+    font-size: 20px;
+  }
+
+  .badgeValue {
+    font-size: 16px;
+  }
+
+  .blockTitle {
+    font-size: 18px;
+  }
+
+  .problemBold,
+  .problemBoldsolution {
+    font-size: 14px;
+  }
+
+  .solutionList li {
+    font-size: 13px;
+  }
+
+  .arrowIcon {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .grewLabel {
+    font-size: 20px;
+  }
+
+  .massiveText {
+    font-size: 36px;
+  }
+
+  .footerPara {
+    font-size: 12px;
+  }
+
+  .footerQuote {
+    font-size: 14px;
+  }
+
+  .footerQuote span {
+    font-size: 14px;
+  }
+}
+
+/* ===== LANDSCAPE MODE ===== */
+@media (max-width: 900px) and (orientation: landscape) {
+  .cardsWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .rightCard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .growthRow {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+@media (hover: none) and (pointer: coarse) {
+  .viewButton:hover {
+    transform: none;
+  }
+
+  .viewButton:active {
+    transform: translateY(-2px);
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .section {
+    background: white;
+  }
+
+  .rightCard {
+    background: #111;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .viewButton {
+    display: none;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== FLEXBOX GAP FALLBACK ===== */
+@supports not (gap: 20px) {
+  .cardsWrapper {
+    margin-right: -20px;
+  }
+
+  .cardsWrapper > * {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .rightCard {
+    margin-right: -15px;
+  }
+
+  .rightCard > * {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+}
