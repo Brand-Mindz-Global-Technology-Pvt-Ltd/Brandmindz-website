@@ -352,17 +352,14 @@
     overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 5px;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
+    border-bottom: none;
   }
   
   .bm-offering-tabs::-webkit-scrollbar {
-    height: 4px;
-  }
-  
-  .bm-offering-tabs::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
+    display: none;
   }
   
   .bm-offering-tab-btn {

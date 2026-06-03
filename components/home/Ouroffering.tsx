@@ -29,10 +29,12 @@ import PersonalBranding from '../../assets/HomeSection/OurOfferings/PersonalBran
 import BrandConsulting from '../../assets/HomeSection/OurOfferings/BrandConsulting.png'
 import BrandStrategy from '../../assets/HomeSection/OurOfferings/BrandStrategy.png'
 import CompanyBranding from '../../assets/HomeSection/OurOfferings/CompanyBranding.png'
+import { useRouter } from "next/navigation";
 
 const Ouroffering = () => {
     const [activeTab, setActiveTab] = useState("Branding");
 
+    const router = useRouter();
     const offeringsData = {
         Branding: [
             {
@@ -55,20 +57,79 @@ const Ouroffering = () => {
             }
         ],
         Designing: [
-            { icon: <FaPaintBrush />, title: "UI / UX Design", desc: "Design intuitive experiences focused on usability and conversion." },
-            { icon: <FaPaintBrush />, title: "Graphic Design", desc: "Visually compelling creatives aligned with brand identity." }
+            {
+                icon: icon2, title: "UI / UX Design",
+                hover: PersonalBranding,
+                desc: `Design with clarity and purpose
+Craft visuals that attract attention and
+Turn your brand into a powerful identity.` },
+            { icon: icon1, title: "Graphic Design", hover: CompanyBranding, desc: `Design compelling visuals that capture attention
+Express brand values, and build a
+Memorable and professional identity.` },
+            {
+                icon: icon3, title: "Package Design", hover: BrandStrategy, desc: `Craft packaging visuals that
+capture attention instantly and turn your product into a memorable
+shelf-winning brand identity.` },
+            {
+                icon: icon4, title: "Logo Design", hover: BrandConsulting, desc: `Design with strategic thinking and Precision craft logos that
+build strong brand identity and create
+instant visual recognition.` }
         ],
         Development: [
-            { icon: <FaLaptopCode />, title: "Web Development", desc: "Fast, scalable, SEO-friendly websites built with modern tech." },
-            { icon: <FaLaptopCode />, title: "App Development", desc: "Modern frontend and backend systems for mobile and web." }
+            {
+                icon: icon2, title: "Static Development", hover: PersonalBranding, desc: `Build your static website with precision
+Stand strong with fast loading performance.
+Turn your Website Into A High Credibility Asset.` },
+            {
+                icon: icon1, title: "E-commerce Development", hover: CompanyBranding, desc: `Build your e-commerce website with precision
+Stand strong with high conversion performance.
+Turn your Store Into A Scalable Revenue Engine.` },
+            {
+                icon: icon3, title: "Mobile App Development", hover: BrandStrategy, desc: `Build your mobile app with strategic precision
+Stand strong with seamless user performance.
+Turn your App Into A Scalable Business Asset.` },
+            {
+                icon: icon4, title: "Web Application Development", hover: BrandConsulting, desc: `Build your web application with strong architecture
+Stand ahead with scalable performance and functionality.
+Turn your Application Into A Business Growth Engine.` }
         ],
         "Digital Marketing": [
-            { icon: <FaChartLine />, title: "Performance Marketing", desc: "ROI-driven ad campaigns that scale your business." },
-            { icon: <FaChartLine />, title: "SEO & Growth", desc: "Long-term organic growth strategies to dominate search." }
+            {
+                icon: icon2, title: "SEO", hover: PersonalBranding, desc: `Grow your online presence with smart SEO
+Increase how customers find your website.
+Turn your Website Into A Consistent Lead Generator.`},
+            {
+                icon: icon1, title: "Meta Ada", hover: CompanyBranding, desc: `Scale Faster With Performance Driven Meta Ads
+Reach the right audience at the right time.
+Turn Paid Campaigns Into Predictable Revenue Streams.` },
+            {
+                icon: icon3, title: "Google Ads", hover: BrandStrategy, desc: `Drive qualified traffic with precision targeting
+Capture high intent buyers instantly
+Turn your Ad Spend Into Predictable Revenue`},
+            {
+                icon: icon4, title: "Linkedin Marketing", hover: BrandConsulting, desc: `Grow authority where decisions are made.
+Build credibility with the right audience.
+Turn LinkedIn Into A Lead Generation Engine.`}
         ],
         "E-Commerce listing": [
-            { icon: <FaShoppingCart />, title: "Product Listing", desc: "Optimized listings for global marketplaces." },
-            { icon: <FaShoppingCart />, title: "Catalog Management", desc: "End-to-end catalog handling for your store." }
+            {
+                icon: icon2, title: "Flipkart Listing", hover: PersonalBranding, desc: `Build your Flipkart listing with strategy
+Stand out in competitive Flipkart search.Turn your
+Listing Into A Sales Driving Asset.` },
+            {
+                icon: icon1, title: "Amazon Listing", hover: CompanyBranding, desc: `Build your Amazon listing with precision
+Stand strong in competitive Amazon search. Turn your
+Listing Into A Revenue Driving Asset.
+` },
+            {
+                icon: icon3, title: "Meesho Listing", hover: BrandStrategy, desc: `Build your Meesho listing with precision
+Stand strong in competitive Meesho search. Turn your
+Listing Into A Consistent Sales Driver.`},
+            {
+                icon: icon4, title: "Myntra Listing", hover: BrandConsulting, desc: `Build Myntra Listings That Drive Fashion Sales
+Stand out with strategic optimization. Turn your
+listings into conversion-driven fashion storefronts.
+` }
         ]
     };
 
@@ -126,7 +187,7 @@ const Ouroffering = () => {
                             <div className="bm-offering-promo-text">
                                 Get expert support and move forward with confidence. We help you make informed decisions with clarity.
                             </div>
-                            <button className="bm-offering-book-btn">
+                            <button className="bm-offering-book-btn" onClick={() => router.push('/contact')}>
                                 <div className="icon-circle">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 10.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>

@@ -281,10 +281,17 @@
     height: 24px;
   }
 
+  .bm-pkg-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
   .bm-pkg-card {
     height: auto;
     min-height: auto;
     padding: 30px 20px;
+    width: 100%;
+    max-width: 380px;
   }
 
   .bm-pkg-card-title {
@@ -314,7 +321,7 @@
   }
 
   .bm-pkg-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 20px;
   }
 
@@ -343,7 +350,8 @@
 
   .bm-pkg-card {
     padding: 25px 15px;
-    width: 300px;
+    width: 100%;
+    max-width: 340px;
   }
 
   .bm-pkg-card-title {

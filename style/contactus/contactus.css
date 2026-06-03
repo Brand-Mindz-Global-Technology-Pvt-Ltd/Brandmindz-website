@@ -48,7 +48,8 @@
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
-  box-shadow: 0 30px 30px rgba(190, 190, 190, 0.4);  height: 100%;
+  box-shadow: 0 30px 30px rgba(190, 190, 190, 0.4);
+  height: 100%;
 }
 
 
@@ -126,6 +127,7 @@
   text-align: left;
   transition: color 0.3s ease;
 }
+
 .bm-card-label-address {
   font-size: 20px;
   font-weight: 600;
@@ -135,6 +137,7 @@
   text-align: left;
   transition: color 0.3s ease;
 }
+
 .bm-card-value {
   font-size: 19px;
   line-height: 1.5;
@@ -150,6 +153,7 @@
   line-height: 16px;
   font-size: 15px;
 }
+
 /* Location card specific - smaller text for address */
 .bm-contact-card:nth-child(3) .bm-card-value {
   font-size: 0.85rem;
@@ -227,7 +231,7 @@
 @media (max-width: 480px) {
   .bm-contact-cards-section {
     padding: 0rem 0;
-  width: 100%;
+    width: 100%;
 
   }
 
@@ -253,7 +257,7 @@
   }
 
   .bm-card-value {
-    font-size: 0.9rem;
+    font-size: 15px;
   }
 
   .bm-contact-card:nth-child(3) .bm-card-value {
@@ -532,6 +536,7 @@
   transition: all .3s;
 
 }
+
 .bm-form-input-Phone {
   /* color: #000; */
   background-color: #F4F4F4;
@@ -543,6 +548,7 @@
 
   transition: all .3s;
 }
+
 .bm-form-input:focus {
   outline: none;
   border-color: #000000;
@@ -852,7 +858,8 @@
   resize: none;
   line-height: 1.5;
 }
-.bm-s2-textarea::placeholder{
+
+.bm-s2-textarea::placeholder {
   opacity: 0.5;
 }
 
@@ -913,6 +920,7 @@
   align-items: center;
   gap: 8px;
 }
+
 .bm-s2-info-content p {
   font-size: 14px;
 }
@@ -938,6 +946,7 @@
   gap: 5px;
   cursor: pointer;
 }
+
 .bm-s2-prev-btn:hover {
   background-color: #3F3F3F;
 
@@ -976,15 +985,18 @@
   margin-bottom: 10px;
   font-size: 20px;
 }
+
 .bm-step-hint strong {
   color: black;
 }
+
 .bm-section-heading {
   font-size: 25px;
   font-weight: 500;
   color: #444;
   margin: 15px 0 15px 0;
 }
+
 .bm-connect-row {
   display: flex;
   align-items: center;
@@ -1016,6 +1028,7 @@
   overflow: hidden;
 
 }
+
 .bm-date-tab {
   flex: 1;
   text-align: center;
@@ -1027,14 +1040,17 @@
   align-items: center;
   justify-content: center;
 }
+
 .bm-date-tab:first-child {
   font-size: 15px;
 
 }
+
 .bm-date-tab.active {
   background: #333;
   color: white;
 }
+
 .bm-date-tab :hover {
   background: #bbb;
   color: #eee;
@@ -1047,6 +1063,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 10px;
 }
+
 .bm-grid-3 {
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 15px;
@@ -1065,6 +1082,7 @@
 .bm-custom-radio input {
   display: none;
 }
+
 /* Hide default */
 
 .bm-radio-circle {
@@ -1078,14 +1096,14 @@
 }
 
 /* Selected State - Green Circle */
-.bm-custom-radio input:checked + .bm-radio-circle {
+.bm-custom-radio input:checked+.bm-radio-circle {
   background-color: #12b000;
   /* Exact green from image */
   border-color: #12b000;
 }
 
 /* White Checkmark */
-.bm-custom-radio input:checked + .bm-radio-circle::after {
+.bm-custom-radio input:checked+.bm-radio-circle::after {
   content: '';
   position: absolute;
   left: 10px;
@@ -1097,7 +1115,7 @@
   transform: rotate(45deg);
 }
 
-.bm-custom-radio input:checked ~ .bm-radio-label {
+.bm-custom-radio input:checked~.bm-radio-label {
   color: #000;
   font-weight: 600;
 }
@@ -1122,9 +1140,11 @@
   background: #f0f0f0;
   color: #666;
 }
+
 .bm-s2-phone-icon.dark {
   background: #333;
 }
+
 /* Main Section */
 
 .bm-right-content-bm-s4 {
@@ -1154,6 +1174,7 @@
   pointer-events: none;
   z-index: 10;
 }
+
 .bm-client-img-bm-right-conten {
   position: absolute !important;
   top: 0;
@@ -1168,6 +1189,7 @@
   object-position: bottom;
   /* 🔥 align from TOP */
 }
+
 /* Card */
 .bm-s4-card {
   width: 100%;
@@ -1268,10 +1290,12 @@
 
 /* For Tablets and smaller (below 1024px) */
 @media (max-width: 1024px) {
+
   .bm-s2-label,
   .bm-section-heading {
     font-size: 24px;
   }
+
   .bm-s4-thank {
     font-size: 36px;
   }
@@ -1279,6 +1303,7 @@
 
 /* For Mobile Devices (below 768px) */
 @media (max-width: 768px) {
+
   /* Step 2 & 3 Adjustments */
   .bm-s2-label,
   .bm-section-heading {
@@ -1362,6 +1387,7 @@
 
 /* For Small Mobile (below 480px) */
 @media (max-width: 480px) {
+
   .bm-options-grid,
   .bm-grid-3 {
     grid-template-columns: 1fr;
@@ -1395,9 +1421,11 @@
     grid-template-rows: 500px 1fr;
     gap: 2rem;
   }
+
   .bm-rating-text {
     font-size: small;
   }
+
   .bm-google-rating-card-inside {
     display: flex;
     flex-direction: row;
@@ -1415,6 +1443,7 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
   .bm-left-column {
     order: 1;
   }
@@ -1453,11 +1482,11 @@
 
 @media (max-width: 480px) {
   .bm-getstarted-container-fluid {
-    padding: 0 1rem;
+    padding: 0rem;
   }
 
   .bm-right-content {
-    padding: 1.5rem;
+    padding: 10px;
   }
 
   .bm-trusted-heading {
@@ -1490,7 +1519,7 @@
 /* FIX 1: Brighter background - Updated overlay */
 .bm-bg-overlay-fixed {
   z-index: 1;
-  background-color:rgb(244, 244, 246);
+  background-color: rgb(244, 244, 246);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1526,10 +1555,15 @@
 
 .bm-left-column {
   position: relative !important;
-  height: 100% !important;
+  height:100% !important;
   width: 100% !important;
   display: flex !important;
   border-radius: 5px !important;
+  background-image: url('../../public/Contactsimage.png');
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #ffffff !important;
 }
 
 .bm-left-content {
@@ -1561,7 +1595,7 @@
 /* Rating card - inside image bottom */
 .bm-google-rating-card-inside {
   position: absolute !important;
-  bottom: 10% !important;
+  bottom: 2% !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   display: flex !important;

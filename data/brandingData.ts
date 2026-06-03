@@ -284,7 +284,7 @@ Ongoing optimization ensures sustained authority, stronger influence, and measur
             "60% improvement in profile connection acceptance rate"
           ],
           buttonText: "View Case Study",
-          image: "/case-studies/Influence.png"
+          image: "/case-studies/influence.png"
         },
         {
           badge: "Authority & Reputation Growth",
