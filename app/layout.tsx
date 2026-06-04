@@ -11,7 +11,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://motioncraft.dev'),
+  metadataBase: new URL('https://brandmindz.com'),
   title: {
     default: 'Brandmindz',
     template: '%s | MotionCraft',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://motioncraft.dev',
-    siteName: 'MotionCraft',
+    url: 'https://brandmindz.com',
+    siteName: 'Brandmindz',
     title: 'Brandmindz',
     description: 'Build stunning animated websites with SEO best practices.',
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'Brandmindz',
       },
-    ],
+    ],  
   },
   twitter: {
     card: 'summary_large_image',
