@@ -198,22 +198,19 @@ export const GetStartedSection = () => {
           <div className="bm-getstarted-grid">
             <FadeIn delay={0.1}>
               {/* LEFT COLUMN - Image with Google Rating */}
-              <div className="bm-left-column border"
+              <div className="bm-left-column"
 
                 style={{
-                  backgroundSize: 'cover',
+                  backgroundSize: 'contain',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
-                  backgroundColor: "#E5E7EB",
+                  backgroundColor: "#ffffff",
                 }}
               >
 
                 <div className="bm-left-content">
 
-                  {/* <div
-
-                  > */}
-                  {/* Google Rating with Stars - Bottom center inside image */}
+                  
                   <div className="bm-google-rating-card-inside">
                     <div className="bm-rating-stars">
                       <span className="bm-star">★</span>
@@ -224,7 +221,6 @@ export const GetStartedSection = () => {
                     </div>
                     <span className="bm-rating-text">4.9 Google Rating</span>
                   </div>
-                  {/* </div> */}
 
                 </div>
               </div>

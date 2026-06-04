@@ -6,6 +6,7 @@ import { FiChevronRight } from "react-icons/fi";
 import { Trusted } from "./Trusted";
 import { FadeIn } from "@/components/animations/fade-in";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 
 // const FlipLetter = ({ letter }) => {
@@ -83,7 +84,6 @@ const FlipLetter = ({ letter }) => {
 export const Banner = () => {
   const words = ["Business", "Growth", "Scale"];
   const [index, setIndex] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
@@ -91,6 +91,7 @@ export const Banner = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const router = useRouter();
   return (
     <section className="bm-hero-section">
       <FadeIn delay={0.1}>
@@ -140,7 +141,9 @@ export const Banner = () => {
 
       <FadeIn delay={0.5}>
         <div className="bm-hero-action">
-          <button className="bm-hero-btn">
+          <button className="bm-hero-btn" onClick={() => {
+            router.push('/contact');
+          }}>
             <div className="bm-hero-btn__icon"><FiChevronRight /></div>
             <span className="bm-hero-btn__text">Talk to a <strong>Growth Specialist</strong></span>
           </button>

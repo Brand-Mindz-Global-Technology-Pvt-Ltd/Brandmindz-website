@@ -215,10 +215,10 @@ export const ResourcesForm = () => {
               <div
                 className="bm-left-column border"
                 style={{
-                  backgroundSize: "cover",
+                  backgroundSize: "contain",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
-                  backgroundColor: "#E5E7EB"
+                  backgroundColor: "#ffffff"
                 }}
               >
                 <div className="bm-left-content">

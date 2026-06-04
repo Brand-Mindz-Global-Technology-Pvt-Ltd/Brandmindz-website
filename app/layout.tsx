@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: 'Build stunning animated websites with SEO best practices.',
     images: [
       {
-        url: '',
+        url: '/logo.png',
         width: 1200,
         height: 630,
         alt: 'Brandmindz',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'BrandMindz - Digital Marketing & Web Development Agency',
     description: 'BrandMindz helps businesses grow with modern websites, branding, SEO, and digital marketing solutions.',
-    images: ['/og-image.jpg'],
+    images: ['/logo.png'],
     creator: '@motioncraft',
   },
   robots: {
@@ -56,21 +56,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
   generator: 'v0.app'
 }

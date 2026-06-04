@@ -1,13 +1,14 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import {
   FaFacebookF, FaTwitter, FaLinkedinIn,
   FaYoutube, FaInstagram, FaGooglePlusG,
   FaPinterestP, FaBehance, FaDribbble,
-  FaMapMarkerAlt
+  FaMapMarkerAlt, FaChevronDown, FaChevronUp
 } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Styles import
 import styles from '../../style/footer/Footer.module.css';
@@ -20,16 +21,18 @@ import Image2 from '../../assets/Footer/e11c902dd32153b2abe7a4d93637a06c7597b932
 import back from '../../assets/HomeSection/banner/Group (1).png'
 
 const Footer = () => {
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const footerLinks = [
+    { name: "Home", path: "/" },
     { name: "About us", path: "/about" },
     { name: "Our Services", path: "/services" },
     { name: "Industries", path: "/industries" },
     { name: "Case Studies", path: "/case-studies" },
     { name: "Sustainability", path: "/sustainability" },
     { name: "Resources", path: "/resources" },
-    { name: "Careers", path: "/careers" },
-    { name: "Blog", path: "/blog" },
+    // { name: "Careers", path: "/careers" },
+    // { name: "Blog", path: "/blog" },
     { name: "Contact us", path: "/contact" },
   ];
 
@@ -126,16 +129,62 @@ const Footer = () => {
           </div> */}
 
           <div className="md:col-span-2 lg:col-span-2 md:pl-8">
-            <h3 className={styles.sectionTitle}>Home</h3>
+            <h3 className={styles.sectionTitle} style={{ fontSize: "24px" }}>Quick Links</h3>
 
             <ul className={styles.linkList}>
-              {footerLinks.map((item) => (
-                <li key={item.name} className={styles.linkItem}>
-                  <Link href={item.path} className={styles.navLink}>
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+              {footerLinks.map((item) => {
+                if (item.name === "Our Services") {
+                  return (
+                    <li key={item.name} className={styles.linkItem}>
+                      <button
+                        onClick={() => setIsServicesOpen(!isServicesOpen)}
+                        className={styles.dropdownToggleBtn}
+                        aria-expanded={isServicesOpen}
+                      >
+                        {item.name}
+                        {isServicesOpen ? (
+                          <FaChevronUp className={styles.chevronIcon} />
+                        ) : (
+                          <FaChevronDown className={styles.chevronIcon} />
+                        )}
+                      </button>
+                      <AnimatePresence>
+                        {isServicesOpen && (
+                          <motion.ul
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className={styles.dropdownList}
+                          >
+                            {[
+                              { label: 'Branding', path: '/services/branding' },
+                              { label: 'Designing', path: '/services/designing' },
+                              { label: 'Development', path: '/services/development' },
+                              { label: 'Digital Marketing', path: '/services/digital-marketing' },
+                              { label: 'E-Commerce listing', path: '/services/ecommerce' }
+                            ].map((subItem) => (
+                              <li key={subItem.label} className={styles.dropdownLinkItem}>
+                                <Link href={subItem.path} className={styles.dropdownNavLink}>
+                                  {subItem.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </motion.ul>
+                        )}
+                      </AnimatePresence>
+                    </li>
+                  );
+                }
+
+                return (
+                  <li key={item.name} className={styles.linkItem}>
+                    <Link href={item.path} className={styles.navLink}>
+                      {item.name}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -197,11 +246,12 @@ const Footer = () => {
           <p>
             © 2026 <span className={styles.semibold}>Brand Mindz.</span> All Rights Reserved.
           </p>
-          <div className="flex gap-6">
-            {["Media Kit", "Terms & Conditions", "Privacy Policy", "Cookies Policy", "Refund Policy", "CSR Policy"].map((p) => {
+          {/* Media Kit */}
+          <div className={styles.bottomLinks}>
+            {[, "Terms of Service", "Privacy Policy", "Cookies Policy", "Refund Policy", "CSR Policy"].map((p) => {
               let href = "#";
               if (p === "Privacy Policy") href = "/privacy-policy";
-              else if (p === "Terms & Conditions") href = "/terms-of-service";
+              else if (p === "Terms of Service") href = "/terms-of-service";
               else if (p === "Cookies Policy") href = "/cookie-policy";
               else if (p === "Refund Policy") href = "/refund-policy";
               else if (p === "CSR Policy") href = "/csr-policy";

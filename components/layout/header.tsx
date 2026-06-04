@@ -6,15 +6,16 @@ import Image from 'next/image';
 import logo from '../../assets/logo/logo.png';
 import { FiMenu, FiX, FiChevronDown, FiChevronUp, FiPhone } from "react-icons/fi";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
   const [show, setShow] = useState(false);
-
+  const router = useRouter();
 
   // Check if mobile
   useEffect(() => {
@@ -267,7 +268,7 @@ const Header = () => {
                 <button
                   className="bm-header__btn mobile"
                   onClick={() => {
-                    console.log('Book a Call clicked');
+                   router.push('/contact');
                     closeMobileMenu();
                   }}
                 >
@@ -284,7 +285,7 @@ const Header = () => {
               <button
                 className="bm-header__btn"
                 onClick={() => {
-                  console.log('Book a Call clicked');
+                router.push('/contact');
                 }}
               >
                 <div className="icon-circle">

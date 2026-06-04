@@ -1204,7 +1204,7 @@
 
 @media (max-width: 480px) {
   .bm-video-section {
-    padding: 2rem 0;
+    padding:0px !important;
   }
 
   .bm-video-container {
@@ -1220,6 +1220,11 @@
     width: 24px;
     height: 24px;
   }
+
+  .bm-global-map-image {
+  object-fit:unset;
+  height: 89vh;
+}
 }
 /* Channel Grid for Recognised Section */
 .bm-channel-grid-recognised {
