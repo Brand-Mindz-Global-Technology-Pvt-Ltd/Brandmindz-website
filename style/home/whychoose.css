@@ -2,8 +2,9 @@
   padding: 60px 0;
   overflow: hidden;
   transition: background 0.5s ease;
-  margin-left: 4%;
+  margin-left: 5%;
   position: relative;
+  margin-top:40px;
 }
 .back-btn {
   display: flex;
@@ -240,15 +241,14 @@
 
 .bm-why-card-header {
   display: flex;
-  align-items: center;
+  align-items:center;
   gap: 10px;
+  margin-bottom: 30px;
 }
 
-.bm-why-icon {
-  font-size: 20px;
-  color: #333;
-  margin-bottom: 40px;
 
+.bm-why-icon-img {
+  object-fit: contain;
 }
 
 .bm-why-card-title {
@@ -261,7 +261,6 @@
   /* Additional styling for cards */
   color: #1e293b;
   margin: 0;
-  margin-bottom: 40px;
 
 }
 
@@ -508,6 +507,7 @@
     padding: 30px 20px;
     margin: 8px;
     height: 100%;
+    margin-top: 20px;
   }
 
   .bm-why-section.expanded {
