@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { FaChartLine, FaRocket, FaBullseye, FaLightbulb } from 'react-icons/fa';
+
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Animation components import
@@ -16,6 +16,10 @@ import { FaArrowLeft } from "react-icons/fa";
 import '../../style/home/whychoose.css';
 import worldMap from '../../assets/HomeSection/Whychoose/Group (3).png';
 import GlobalworldMap from '../../assets/HomeSection/Whychoose/Group (4).png';
+import frameIcon1 from '../../assets/HomeSection/Whychoose/Frame (1).png';
+import frameIcon2 from '../../assets/HomeSection/Whychoose/Frame (2).png';
+import frameIcon3 from '../../assets/HomeSection/Whychoose/Frame.png';
+import frameIcon4 from '../../assets/HomeSection/Whychoose/Frame 2147226084.png';
 
 const WhyChooseUs = () => {
   const [showGlobalMap, setShowGlobalMap] = useState(false);
@@ -36,22 +40,22 @@ const WhyChooseUs = () => {
 
   const features = [
     {
-      icon: <FaChartLine />,
-      title: (<><span>Measurable</span> Business Results</>),
+      icon:  frameIcon3,
+      title: (<><span>Measurable</span>Business Results</>),
       desc: "We focus on leads, conversions, and revenue not vanity metrics. Every action is tied to real business growth."
     },
     {
-      icon: <FaRocket />,
+      icon: frameIcon1,
       title: (<>Strategy <span className="highlight-red">Before Execution</span></>),
       desc: "We understand your business and goals before execution, ensuring every effort drives meaningful growth."
     },
     {
-      icon: <FaBullseye />,
+      icon: frameIcon2,
       title: (<>ROI <span className="highlight-red"> Driven Decisions</span></>),
       desc: "All decisions are based on data and clear benchmarks to maximize return on investment."
     },
     {
-      icon: <FaLightbulb />,
+      icon: frameIcon2,
       title: (<><span className="highlight-red"> Systems</span> for Growth</>),
       desc: "We build scalable systems that generate steady leads and support long-term business growth."
     }
@@ -106,7 +110,13 @@ const WhyChooseUs = () => {
                 {features.map((f, i) => (
                   <StaggerItem key={i} className="bm-why-card">
                     <div className="bm-why-card-header">
-                      <span className="bm-why-icon">{f.icon}</span>
+                      <Image
+                        src={f.icon}
+                        alt="icon"
+                        width={30}
+                        height={30}
+                        className="bm-why-icon-img"
+                      />
                       <h4 className="bm-why-card-title">{f.title}</h4>
                     </div>
                     <p className="bm-why-card-desc">{f.desc}</p>

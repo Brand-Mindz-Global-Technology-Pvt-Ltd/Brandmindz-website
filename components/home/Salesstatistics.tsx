@@ -58,7 +58,7 @@ export default function ProvenGrowthSection() {
         </h2>
         <p className={styles.headingDesc}>
           Ready for exciting, instantaneous,<br />
-          all-accessible insights in real time?
+           all-accessible insights in real time?
         </p>
       </div>
 
@@ -94,13 +94,27 @@ export default function ProvenGrowthSection() {
                 <div className={styles.chartLeftPane}>
                   <p className={styles.statLabel}>Visit statistics</p>
                   <div className={styles.graphWrapper}>
-                    <svg viewBox="0 0 400 150" className={styles.graphSvg}>
-                      <path d="M10 130 L 80 100 L 150 120 L 220 70 L 300 40" fill="none" stroke="#FFD600" strokeWidth="4" />
-                      {[[10, 130], [80, 100], [150, 120], [220, 70], [300, 40]].map(([x, y], i) => (
-                        <circle key={i} cx={x} cy={y} r="5" fill="#1b5e20" />
-                      ))}
-                    </svg>
-                  </div>
+  <svg viewBox="0 0 120 60" className={styles.graphSvg}>
+    <path
+      d="M5 50 L35 25 L55 40 L85 15 L115 5"
+      fill="none"
+      stroke="#F2CF20"
+      strokeWidth="1.5"
+      strokeLinejoin="round"
+      strokeLinecap="round"
+    />
+
+    {[ [35, 25], [85, 15], [115, 5] ].map(([x, y], i) => (
+      <circle
+        key={i}
+        cx={x}
+        cy={y}
+        r="2"
+        fill="#1F7A1F"
+      />
+    ))}
+  </svg>
+</div>
                   <div className={styles.timeline}>
                     <span>2022</span><span>2023</span><span>2024</span>
                   </div>
