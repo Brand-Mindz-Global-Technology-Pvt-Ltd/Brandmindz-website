@@ -78,7 +78,12 @@
     padding: 1rem 1rem;
     /* light space inside */
   }
-
+  .sticky-wrapper{
+    position: relative;
+  }
+.bm-about-grid {
+  gap:1rem !important;
+}
 
 }
 

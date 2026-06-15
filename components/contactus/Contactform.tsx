@@ -44,7 +44,10 @@ export const GetStartedSection = () => {
   ];
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  console.log("isDropdownOpen:", isDropdownOpen);
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+
+  console.log("selectedCountry:", selectedCountry);
   const dropdownRef = useRef(null);
 
   // 3. Close dropdown when clicking outside
@@ -111,7 +114,6 @@ export const GetStartedSection = () => {
     help: ""
   });
 
-  console.log(formData, 'formData--------------')
 
   const [errors, setErrors] = useState({});
 
@@ -177,6 +179,22 @@ export const GetStartedSection = () => {
   };
 
 
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
 
   return (
     <section className="bm-getstarted-section">
