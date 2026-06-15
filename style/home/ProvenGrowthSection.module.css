@@ -695,6 +695,7 @@
   .footerPara {
     font-size: 15px;
   }
+    
 }
 
 /* ===== MOBILE LARGE 580px ===== */
@@ -702,6 +703,7 @@
   .headingWrapper {
     padding: 20px 4%;
     margin-top: 20px;
+     background-size:cover;
   }
 
   .heading {
