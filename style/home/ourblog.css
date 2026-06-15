@@ -408,8 +408,8 @@ background-color: black;
     }
     
     .bm-new-blogs-header {
-        flex-direction: column;
         align-items: flex-start;
+        margin-bottom: 15px;
     }
     
     .bm-new-blogs-header h3 {
