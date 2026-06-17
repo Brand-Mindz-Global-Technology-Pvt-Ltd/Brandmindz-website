@@ -25,15 +25,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tailored Business Growth Solutions by Industry | Brandmindz",
     description: "Explore tailored digital marketing, SEO, branding, and customer acquisition frameworks for SaaS, E-Commerce, Healthcare, Education, and Real Estate industries.",
-    url: "https://motioncraft.dev/industries",
+    url: "https://BrandMindz.dev/industries",
     type: "website"
   }
 };
 
 export default function IndustriesPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://motioncraft.dev" },
-    { name: "Industries", url: "https://motioncraft.dev/industries" }
+    { name: "Home", url: "https://BrandMindz.dev" },
+    { name: "Industries", url: "https://BrandMindz.dev/industries" }
   ]);
 
   return (

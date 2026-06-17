@@ -1,13 +1,13 @@
 export const siteConfig = {
-  name: "MotionCraft",
+  name: "BrandMindz",
   description: "Build stunning animated websites with SEO best practices. Professional web development solutions for modern businesses.",
-  url: "https://motioncraft.dev",
-  ogImage: "https://motioncraft.dev/og-image.jpg",
+  url: "https://BrandMindz.dev",
+  ogImage: "https://BrandMindz.dev/og-image.jpg",
   links: {
-    twitter: "https://twitter.com/motioncraft",
-    github: "https://github.com/motioncraft",
+    twitter: "https://twitter.com/BrandMindz",
+    github: "https://github.com/BrandMindz",
   },
-  creator: "MotionCraft Team",
+  creator: "BrandMindz Team",
 }
 
 export const navLinks = [
