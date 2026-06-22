@@ -287,6 +287,7 @@
   width: 100%;
   height: 100%;
   z-index: 99;
+  
 }
 
 .bm-bg-overlay {
@@ -560,9 +561,9 @@
   display: flex;
   align-items: center;
   background: white;
-  /* border: 1px solid #e5e7eb; */
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  overflow: hidden;
+  /* overflow: hidden; */
 
 }
 
@@ -594,7 +595,7 @@
   position: absolute;
   top: 105%;
   left: 0;
-  width: 100px;
+  width: 80px;
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
@@ -602,8 +603,15 @@
   z-index: 999;
   max-height: 250px;
   overflow-y: auto;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
+
+.bm-country-dropdown-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
 .bm-country-option {
   display: flex;
   align-items: center;
@@ -1482,11 +1490,12 @@
 
 @media (max-width: 480px) {
   .bm-getstarted-container-fluid {
+   max-width: 90%;
     padding: 0rem;
   }
 
   .bm-right-content {
-    padding: 10px;
+    padding: 20px;
   }
 
   .bm-trusted-heading {
@@ -1560,7 +1569,7 @@
   display: flex !important;
   border-radius: 5px !important;
   background-image: url('../../public/Contactsimage.png');
-  background-size: contain;
+  background-size: center;
   background-position: center top;
   background-repeat: no-repeat;
   background-color: #ffffff !important;

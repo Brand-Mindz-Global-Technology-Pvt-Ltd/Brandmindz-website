@@ -60,6 +60,7 @@
   width: 100%;
   top: 40px;
 
+
 }
 
 .bm-map-wrapper-way.full-width {
@@ -483,6 +484,7 @@
 
   .bm-why-right {
     min-height: 450px;
+    margin-top:25px;
   }
 
   .bm-global-title {

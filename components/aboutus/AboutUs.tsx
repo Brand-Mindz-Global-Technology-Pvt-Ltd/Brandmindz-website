@@ -196,7 +196,7 @@ export const Aboutus = () => {
           <span className="text-grey">We blend</span>
           <span className="text-black"> Global Strategy</span>
           <span className="text-grey"> with deep local market insight</span>
-          <br />
+    <br className="hidden md:block" />
           <span className="text-grey">to deliver real,</span>
           <span className="text-black"> Measurable Growth For Brands.</span>
         </p>

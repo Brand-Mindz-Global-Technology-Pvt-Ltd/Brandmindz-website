@@ -147,6 +147,7 @@ const ScrollSpan = ({ children }) => {
   );
 };
 
+
 export const AboutContentSection = () => {
   return (
     <section className="bm-about-content-section bm-about-content-section-1">

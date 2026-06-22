@@ -163,7 +163,7 @@ export default function ProvenGrowthSection() {
               <p className={styles.problemBoldsolution}>Brand Mindz Global’s </p>
               <p className={styles.redSubsolution}>Driver First Acquisition strategy</p>
               <ul className={styles.solutionList}>
-                <li><FaCheckCircle size={20} color="#22C55E" /> Hyper-targeted Meta Ads focused on driver interests & locations </li>
+                <li><FaCheckCircle size={20} color="#22C55E" /> Hyper-targeted Meta Ads focused on driver interests & locations</li>
                 <li><FaCheckCircle size={20} color="#22C55E" /> Optimized lead forms for faster submissions</li>
                 <li><FaCheckCircle size={20} color="#22C55E" /> Continuous CPL and conversion optimization</li>
               </ul>

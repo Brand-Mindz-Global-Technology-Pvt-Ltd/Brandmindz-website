@@ -9,6 +9,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 
+
+
 // const FlipLetter = ({ letter }) => {
 //   const isSpace = letter === ' ' || letter === '\u00A0';
 
