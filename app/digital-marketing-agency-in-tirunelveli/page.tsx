@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     canonical: meta.url,
   },
   openGraph: {
-    title: "Top Digital Marketing Agency in Tirunelveli",
-    description: "Partner with Brand Mindz for expert digital marketing, SEO and business growth solutions.",
+    title: `${meta.title} | Brandmindz`,
+    description: meta.description,
     url: meta.url,
     siteName: "Brandmindz",
     type: "website",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Top Digital Marketing Agency in Tirunelveli",
-    description: "Partner with Brand Mindz for expert digital marketing, SEO and business growth solutions.",
+    title: `${meta.title} | Brandmindz`,
+    description: meta.description,
     images: ["/logo.png"],
   },
   robots: {

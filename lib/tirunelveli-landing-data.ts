@@ -1,8 +1,8 @@
 export const tirunelveliLandingData = {
   meta: {
-    title: "Top Digital Marketing Agency in Tirunelveli | Brand Mindz",
+    title: "Digital Marketing Agency in Tirunelveli",
     description:
-      "Work with Brand Mindz, the best digital marketing agency in Tirunelveli with 10+ years and 200+ happy clients. We help your business grow.",
+      "Brand Mindz is the top digital marketing agency in Tirunelveli with 10+ years of experience. We offer SEO, Google Ads, social media marketing, branding & web development for local businesses.",
     keywords: [
       "digital marketing agency in Tirunelveli",
       "digital marketing company Tirunelveli",
