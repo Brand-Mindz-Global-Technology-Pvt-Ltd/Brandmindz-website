@@ -4,10 +4,11 @@ import React from 'react';
 import { FadeIn } from "@/components/animations/fade-in";
 import { Phone, PhoneCall, PhoneForwarded } from 'lucide-react';
 import "../../../style/branding/BrandingPackages.css";
+import { useRouter } from 'next/navigation';
 
 export const DesigningPackages = ({ data }: { data: any }) => {
   const packages = data?.items || [];
-
+  const router = useRouter();
   return (
     <section className="bm-pkg-section">
       <div className="bm-pkg-container">
@@ -61,7 +62,7 @@ export const DesigningPackages = ({ data }: { data: any }) => {
             <p className="bm-pkg-footer-text">
               Need a customized design roadmap?
             </p>
-            <div className="bm-pkg-cta">
+            <div className="bm-pkg-cta" onClick={() => router.push("/contact")}>
               <div className="bm-pkg-cta-icon-wrapper">
                 <Phone size={15} color="white" fill="white" />
               </div>

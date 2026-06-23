@@ -11,6 +11,14 @@ import {
 
 import OurImage from '../../../assets/branding/OurImage.png'
 
+
+import Person1 from '../../../assets/HomeSection/various/Person1.png'
+import Person2 from '../../../assets/HomeSection/various/Person2.png'
+import Person3 from '../../../assets/HomeSection/various/Person3.png'
+import Person4 from '../../../assets/HomeSection/various/Person4.jpg'
+import Person5 from '../../../assets/HomeSection/various/Person5.png'
+
+
 // --- SCROLL HIGHLIGHT LOGIC ---
 const ScrollLine = ({ content }) => {
     const [isHighlighted, setIsHighlighted] = useState(false);
@@ -88,10 +96,16 @@ export const DesigningHero = ({ data }: { data: any }) => {
 
                 <div className="bl-client-card">
                     <div className="bl-card-top">
-                        <div className="bl-avatars">
-                            <div className="bl-avatar-img" style={{ backgroundImage: 'url(/path-to-img1.jpg)' }}></div>
-                            <div className="bl-avatar-img" style={{ backgroundImage: 'url(/path-to-img2.jpg)' }}></div>
-                            <div className="bl-avatar-img" style={{ backgroundImage: 'url(/path-to-img3.jpg)' }}></div>
+                        
+
+                         <div className="bl-avatars">
+                            <div
+  className="bl-avatar-img"
+  style={{ backgroundImage: `url(${Person1.src})` }}
+></div>
+                            <div className="bl-avatar-img"  style={{ backgroundImage: `url(${Person2.src})` }}></div>
+                            <div className="bl-avatar-img"  style={{ backgroundImage: `url(${Person3.src})` }}></div>
+                            <div className="bl-avatar-img"  style={{ backgroundImage: `url(${Person4.src})` }}></div>
                             <div className="bl-avatar-count">15K</div>
                         </div>
 

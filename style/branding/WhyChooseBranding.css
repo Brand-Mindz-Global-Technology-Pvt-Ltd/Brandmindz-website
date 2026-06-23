@@ -1,5 +1,6 @@
 .bm-why-branding-section {
   padding: 50px 0%;
+  padding-bottom: 0px;
   background-color: #FFFFFF;
   font-family: 'Afacad', sans-serif;
 }
@@ -11,7 +12,7 @@
 
 .bm-why-branding-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
 }
 
 .bm-why-branding-title {
@@ -110,6 +111,7 @@
   }
   .bm-why-branding-section {
     padding: 40px 15px;
+    padding-bottom: 0px;
   }
   .bm-why-branding-title {
     font-size: 26px;

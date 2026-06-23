@@ -4,6 +4,7 @@ import React from 'react';
 import { FadeIn } from "@/components/animations/fade-in";
 import "../../../style/branding/BrandingCaseStudies.css";
 import { useDigitalMarketingContext } from './DigitalMarketingContext';
+import { useRouter } from 'next/navigation';
 
 const seoCaseStudiesData = {
   title: "SEO Case Studies",
@@ -261,6 +262,7 @@ const youtubeCaseStudiesData = {
 export const DigitalMarketingCaseStudies = () => {
   const { activeDigitalMarketingTab } = useDigitalMarketingContext();
 
+  const router = useRouter()
   const getActiveData = () => {
     switch (activeDigitalMarketingTab) {
       case 0: return seoCaseStudiesData;
@@ -277,10 +279,10 @@ export const DigitalMarketingCaseStudies = () => {
 
   return (
     <section className="bm-cs-section">
-      <div className="bm-cs-container">
+      <div className="bm-cs-container-services">
         <FadeIn key={`header-${activeDigitalMarketingTab}`} direction="up" delay={0.1}>
-          <div className="bm-cs-header">
-            <h2 className="bm-cs-title">
+          <div className="bm-cs-header-services">
+            <h2 className="bm-cs-title-services">
               {activeData.title}
             </h2>
             <p className="bm-cs-subtitle">
@@ -289,7 +291,7 @@ export const DigitalMarketingCaseStudies = () => {
           </div>
         </FadeIn>
 
-        <div className="bm-cs-grid">
+        <div className="bm-cs-grid-services">
           {activeData.studies.map((study, index) => (
             <FadeIn key={`${activeDigitalMarketingTab}-${index}`} direction="up" delay={0.1 + index * 0.1}>
               <div className="bm-cs-card">
@@ -330,7 +332,9 @@ export const DigitalMarketingCaseStudies = () => {
     hover:border-white/80 
     hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]
     
-    active:scale-95">
+    active:scale-95" 
+      onClick={() => router.push("/case-studies")}
+      >
                       View Case study
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -349,7 +353,7 @@ export const DigitalMarketingCaseStudies = () => {
             <button className="bm-cs-main-btn bm-cs-btn-primary">
               {activeData.button1}
             </button>
-            <button className="bm-cs-main-btn bm-cs-btn-secondary">
+            <button className="bm-cs-main-btn bm-cs-btn-secondary" onClick={() => router.push("/contact")}>
               {activeData.button2}
             </button>
           </div>

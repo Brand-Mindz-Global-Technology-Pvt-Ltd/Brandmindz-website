@@ -11,8 +11,8 @@ export const ecommerceData = {
   flipkartListing: {
     hero: {
       subtitle: "Build your Flipkart listing with strategy",
-      headlineLight: "Stand out in competitive Flipkart search.Turn your ",
-      headlineBold: "<span>Listing Into A Sales Driving Asset.</span>",
+      headlineLight: "Stand out in competitive Flipkart search.",
+      headlineBold: "<span>Turn your Listing Into A Sales Driving Asset.</span>",
       clientList: "Trusted by ",
       clientStat: "300+ Growing Brands",
       clientDesc: "Work with our team to transform your flipkart product listings into high ranking, conversion focused pages that improve visibility and increase sales on Flipkart.",
@@ -305,8 +305,8 @@ export const ecommerceData = {
   amazonListing: {
     hero: {
       subtitle: "Build your Amazon listing with precision",
-      headlineLight: "Stand strong in competitive Amazon search. Turn your ",
-      headlineBold: "<span>Listing Into A Revenue Driving Asset.</span>",
+      headlineLight: "Stand strong in competitive Amazon search. Turn your Listing Into A Revenue Driving Asset. ",
+      headlineBold: "",
       clientList: "Trusted by ",
       clientStat: "300+ Growing Brands",
       clientDesc: "Our Amazon product listing services are designed around search intent and category competition that improve visibility and increase sales on Amazon.",
@@ -600,8 +600,8 @@ export const ecommerceData = {
   meeshoListing: {
     hero: {
       subtitle: "Build your Meesho listing with precision",
-      headlineLight: "Stand strong in competitive Meesho search. Turn your ",
-      headlineBold: "<span>Listing Into A Consistent Sales Driver.</span>",
+      headlineLight: "Stand strong in competitive Meesho search. Turn your Listing Into A Consistent Sales Driver. ",
+      headlineBold: "",
       clientList: "Serving ",
       clientStat: "300+ Scaling Brands",
       clientDesc: "Our Meesho product listing service focuses on transforming your product listings into high visibility, conversion focused pages that increase impressions and boost sales performance on Meesho.",

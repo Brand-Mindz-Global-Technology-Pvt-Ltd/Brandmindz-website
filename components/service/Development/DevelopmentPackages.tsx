@@ -5,6 +5,7 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { Phone } from 'lucide-react';
 import "../../../style/branding/BrandingPackages.css";
 import { useDevelopmentContext } from "./DevelopmentContext";
+import { useRouter } from 'next/navigation';
 
 const packagesData = [
   {
@@ -256,7 +257,7 @@ const packagesData = [
 export const DevelopmentPackages = () => {
   const { activeDevelopmentTab } = useDevelopmentContext();
   const currentContent = packagesData[activeDevelopmentTab] || packagesData[0];
-
+  const router = useRouter();
   return (
     <section className="bm-pkg-section">
       <div className="bm-pkg-container">
@@ -311,7 +312,7 @@ export const DevelopmentPackages = () => {
             <p className="bm-pkg-footer-text">
               {currentContent.footerText}
             </p>
-            <div className="bm-pkg-cta">
+            <div className="bm-pkg-cta" onClick={() => router.push("/contact")}>
               <div className="bm-pkg-cta-icon-wrapper">
                 <Phone size={15} color="white" fill="white" />
               </div>

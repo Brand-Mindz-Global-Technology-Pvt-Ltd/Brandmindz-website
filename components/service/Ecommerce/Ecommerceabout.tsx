@@ -96,12 +96,15 @@ export const Ecommerceabout = ({ data }: { data: any }) => {
                 </div>
 
                 {current.btn && (
-                  <button className="bm-about-learn-btn-branding">
-                    <div className="bm-btn-icon-branding">
-                      <ArrowRight size={18} />
-                    </div>
-                    Grow Now
-                  </button>
+                 
+                      <button className="bm-about-learn-btn-branding">
+                                                                                           <div className="bm-btn-icon-branding">
+                                                                                             <ArrowRight size={18} />
+                                                                                           </div>
+                                                                                           <div>
+                                                                                           Grow<span> Now</span>
+                                                                                           </div>
+                                                                                         </button>
                 )}
               </div>
 
@@ -111,15 +114,16 @@ export const Ecommerceabout = ({ data }: { data: any }) => {
                   <svg className="bm-about-quote-icon-branding" viewBox="0 0 78 74" fill="currentColor">
                     <path d="M19.5 0C8.73 0 0 8.73 0 19.5V74H34V39.5H14.5V19.5C14.5 16.74 16.74 14.5 19.5 14.5H34V0H19.5ZM63.5 0C52.73 0 44 8.73 44 19.5V74H78V39.5H58.5V19.5C58.5 16.74 60.74 14.5 63.5 14.5H78V0H63.5Z" />
                   </svg>
-                  <h4 className="bm-about-quote-text-branding" dangerouslySetInnerHTML={{ __html: current.quoteLine1 }}></h4>
-                  <h4 className="bm-about-quote-text-branding" dangerouslySetInnerHTML={{ __html: current.quoteLine2 }}></h4>
+                  {/* <h4 className="bm-about-quote-text-branding" dangerouslySetInnerHTML={{ __html: current.quoteLine1 }}></h4>
+                  <h4 className="bm-about-quote-text-branding" dangerouslySetInnerHTML={{ __html: current.quoteLine2 }}></h4> */}
+                  <h4 className="bm-about-quote-text-branding"><span className='bm-grey-text '>Your</span> Startup Is Your Product.</h4>
+                  <h4 className="bm-about-quote-text-branding">You <span className='bm-grey-text'>are</span> the <span className='bm-grey-text'>Brand.</span></h4>
                 </div>
-                
                 {/* Image Frame - Exact 379x541px */}
                 <div className="bm-about-img-frame-branding">
                   <Image src={current.img} alt={current.label} priority width={379} height={541} />
                   <div className="bm-about-quote-overlay-branding">
-                    {current.quoteOverlay}
+                    {/* {current.quoteOverlay} */} Persona crafting
                   </div>
                 </div>
               </div>

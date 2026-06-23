@@ -41,6 +41,7 @@ export const designingData = {
       bottombtn: " Transform Your Digital Experience ",
       rightsidsubtitle:
         "Our branding and design specialists are ready to guide you.",
+         herocta: "Start Your Design Consultation",
       ctaButton: "Start Your Design Consultation",
     },
     about: {
