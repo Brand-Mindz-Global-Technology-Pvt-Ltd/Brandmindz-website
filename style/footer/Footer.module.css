@@ -188,6 +188,9 @@ background-color: #F3F3F3;
   .statusBadge {
     padding: 9px 20px;
   }
+  .footerContainer{
+    margin-top: 10px;
+  }
   .bottomLinks {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

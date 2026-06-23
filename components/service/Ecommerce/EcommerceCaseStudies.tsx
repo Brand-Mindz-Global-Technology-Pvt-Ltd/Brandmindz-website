@@ -3,16 +3,18 @@
 import React from 'react';
 import { FadeIn } from "@/components/animations/fade-in";
 import "../../../style/branding/BrandingCaseStudies.css";
+import { useRouter } from 'next/navigation';
 
 export const EcommerceCaseStudies = ({ data }: { data: any }) => {
   if (!data) return null;
 
+  const router = useRouter()
   return (
     <section className="bm-cs-section">
-      <div className="bm-cs-container">
+      <div className="bm-cs-container-services">
         <FadeIn direction="up" delay={0.1}>
-          <div className="bm-cs-header">
-            <h2 className="bm-cs-title">
+          <div className="bm-cs-header-services">
+            <h2 className="bm-cs-title-services">
               {data.title}
             </h2>
             <p className="bm-cs-subtitle">
@@ -21,7 +23,7 @@ export const EcommerceCaseStudies = ({ data }: { data: any }) => {
           </div>
         </FadeIn>
 
-        <div className="bm-cs-grid">
+        <div className="bm-cs-grid-services">
           {data.items.map((study: any, index: number) => (
             <FadeIn key={index} direction="up" delay={0.1 + index * 0.1}>
               <div className="bm-cs-card">
@@ -62,7 +64,9 @@ export const EcommerceCaseStudies = ({ data }: { data: any }) => {
     hover:border-white/80 
     hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]
     
-    active:scale-95">
+    active:scale-95"  
+     onClick={() => router.push("/case-studies")}
+     >
                       {study.buttonText || "View Case study"}
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -81,7 +85,7 @@ export const EcommerceCaseStudies = ({ data }: { data: any }) => {
             <button className="bm-cs-main-btn bm-cs-btn-primary">
               {data.buttonTitle || "See our Case studies"}
             </button>
-            <button className="bm-cs-main-btn bm-cs-btn-secondary">
+            <button className="bm-cs-main-btn bm-cs-btn-secondary" onClick={() => router.push("/contact")}>
               {data.buttonTitle1 || "Book a Meeting"}
             </button>
           </div>

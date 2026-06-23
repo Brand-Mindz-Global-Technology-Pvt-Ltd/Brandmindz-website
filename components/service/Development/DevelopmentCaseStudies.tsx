@@ -4,7 +4,7 @@ import React from 'react';
 import { FadeIn } from "@/components/animations/fade-in";
 import "../../../style/branding/BrandingCaseStudies.css";
 import { useDevelopmentContext } from "./DevelopmentContext";
-
+import { useRouter } from 'next/navigation';
 const caseStudiesData = [
   {
     title: "Static Development Case Studies",
@@ -176,12 +176,13 @@ export const DevelopmentCaseStudies = () => {
   const { activeDevelopmentTab } = useDevelopmentContext();
   const currentContent = caseStudiesData[activeDevelopmentTab] || caseStudiesData[0];
 
+  const router = useRouter()
   return (
     <section className="bm-cs-section">
-      <div className="bm-cs-container">
+      <div className="bm-cs-container-services">
         <FadeIn direction="up" delay={0.1}>
-          <div className="bm-cs-header">
-            <h2 className="bm-cs-title">
+          <div className="bm-cs-header-services">
+            <h2 className="bm-cs-title-services">
               {currentContent.title}
             </h2>
             <p className="bm-cs-subtitle">
@@ -190,7 +191,7 @@ export const DevelopmentCaseStudies = () => {
           </div>
         </FadeIn>
 
-        <div className="bm-cs-grid">
+        <div className="bm-cs-grid-services">
           {currentContent.studies.map((study, index) => (
             <FadeIn key={index} direction="up" delay={0.1 + index * 0.1}>
               <div className="bm-cs-card">
@@ -231,7 +232,9 @@ export const DevelopmentCaseStudies = () => {
     hover:border-white/80 
     hover:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]
     
-    active:scale-95">
+    active:scale-95"   
+    onClick={() => router.push("/case-studies")}
+    >
                       View Case study
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -250,7 +253,7 @@ export const DevelopmentCaseStudies = () => {
             <button className="bm-cs-main-btn bm-cs-btn-primary">
               {currentContent.primaryBtn}
             </button>
-            <button className="bm-cs-main-btn bm-cs-btn-secondary">
+            <button className="bm-cs-main-btn bm-cs-btn-secondary" onClick={() => router.push("/contact")}>
               {currentContent.secondaryBtn}
             </button>
           </div>

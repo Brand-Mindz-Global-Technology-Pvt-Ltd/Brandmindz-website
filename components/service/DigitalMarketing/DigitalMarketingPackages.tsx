@@ -5,6 +5,7 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { Phone, PhoneCall, PhoneForwarded } from 'lucide-react';
 import "../../../style/branding/BrandingPackages.css";
 import { useDigitalMarketingContext } from './DigitalMarketingContext';
+import { useRouter } from 'next/navigation';
 
 const seoPackagesData = {
   title: "Tailored SEO Packages",
@@ -369,7 +370,7 @@ export const DigitalMarketingPackages = () => {
   };
 
   const activeData = getActiveData();
-
+  const router = useRouter();
   return (
     <section className="bm-pkg-section">
       <div className="bm-pkg-container">
@@ -424,7 +425,7 @@ export const DigitalMarketingPackages = () => {
             <p className="bm-pkg-footer-text">
               Need a customized marketing roadmap?
             </p>
-            <div className="bm-pkg-cta">
+            <div className="bm-pkg-cta" onClick={() => router.push("/contact")}>
               <div className="bm-pkg-cta-icon-wrapper">
                 <Phone size={15} color="white" fill="white" />
               </div>

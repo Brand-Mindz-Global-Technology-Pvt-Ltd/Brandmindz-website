@@ -385,7 +385,7 @@ Ongoing optimization ensures sustained authority, stronger influence, and measur
       scrollParagraph: `We help businesses build structured company branding strategies that establish authority and increase market trust. Research shows 81% of consumers must trust a brand before making a purchase decision. As a strategic branding agency, we refine your positioning, messaging architecture, and visual identity to improve brand recognition and credibility.
 Strong company branding directly impacts revenue. Businesses with consistent branding across platforms see up to 23% higher revenue growth compared to inconsistent competitors. We align your brand voice, design language, and customer communication for clarity and differentiation.
 In competitive markets, over 70% of buyers research a company’s online presence before engagement. Our branding agency approach ensures your business is perceived as reliable, professional, and industry-leading.
-Strengthen Your Brand Today
+
 `,
     },
     about: {
@@ -736,8 +736,8 @@ Strengthen Your Brand Today
   brandStrategy: {
     hero: {
       subtitle: "Define Your Strategy with Precision",
-      headlineLight: "Shape How the Market Understands Your Brand Turn Your Vision Into a",
-      headlineBold: " <span>Clear Growth Blueprint.</span>",
+      headlineLight: "Shape How the Market Understands Your Brand Turn Your Vision Into a Clear Growth Blueprint.",
+      // headlineBold: " <span>Clear Growth Blueprint.</span>",
       clientList: "Join the list of ",
       clientStat: "300+ Growing Businesses",
       clientDesc: "Work with our team to develop a structured brand strategy that clarifies your positioning, sharpens your competitive edge, and aligns your business direction for scalable long-term growth in competitive markets.",
@@ -1108,7 +1108,7 @@ positioned in the market. Studies show that 64% of consumers build trust through
   videoCreation: {
     hero: {
       subtitle: "Create Videos That Capture Attention",
-      headlineLight: "Shape How Your Audience Sees and Remembers Your Brand.Turn Your ",
+      headlineLight: "Shape How Your Audience Sees and Remembers Your Brand. Turn Your ",
       headlineBold:
         "Message Into <span>High-Impact Visual Content.</span>",
       clientList: "Trusted by ",

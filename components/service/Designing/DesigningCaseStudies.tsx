@@ -3,16 +3,18 @@
 import React from 'react';
 import { FadeIn } from "@/components/animations/fade-in";
 import "../../../style/branding/BrandingCaseStudies.css";
+import { useRouter } from 'next/navigation';
 
 export const DesigningCaseStudies = ({ data }: { data: any }) => {
   const caseStudies = data?.items || [];
 
+  const router = useRouter()
   return (
     <section className="bm-cs-section">
-      <div className="bm-cs-container">
+      <div className="bm-cs-container-services">
         <FadeIn direction="up" delay={0.1}>
-          <div className="bm-cs-header">
-            <h2 className="bm-cs-title">
+          <div className="bm-cs-header-services">
+            <h2 className="bm-cs-title-services">
               {data?.title || "Design Case Studies"}
             </h2>
             <p className="bm-cs-subtitle">
@@ -21,7 +23,7 @@ export const DesigningCaseStudies = ({ data }: { data: any }) => {
           </div>
         </FadeIn>
 
-        <div className="bm-cs-grid">
+        <div className="bm-cs-grid-services">
           {caseStudies.map((study: any, index: number) => (
             <FadeIn key={index} direction="up" delay={0.1 + index * 0.1}>
               <div className="bm-cs-card">
@@ -48,7 +50,9 @@ export const DesigningCaseStudies = ({ data }: { data: any }) => {
                   </ul>
 
                   <div className="bm-cs-card-footer">
-                    <button className="bm-cs-view-btn 
+                    <button 
+                      onClick={() => router.push("/case-studies")}
+                    className="bm-cs-view-btn 
     relative flex items-center gap-2 px-6 py-2.5 
     rounded-full text-white font-medium
     bg-white/5 backdrop-blur-[1px] 
@@ -76,7 +80,7 @@ export const DesigningCaseStudies = ({ data }: { data: any }) => {
             <button className="bm-cs-main-btn bm-cs-btn-primary">
               {data?.buttonTitle || "See Our Case Studies"}
             </button>
-            <button className="bm-cs-main-btn bm-cs-btn-secondary">
+            <button className="bm-cs-main-btn bm-cs-btn-secondary" onClick={() => router.push("/contact")}>
               {data?.buttonTitle1 || "Book a Meeting"}
             </button>
           </div>

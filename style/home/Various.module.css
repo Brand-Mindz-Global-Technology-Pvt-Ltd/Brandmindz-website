@@ -366,17 +366,35 @@
 
   .masonryGrid {
     position: relative !important;
-    height: 480px !important;
-    margin-top: 10px !important;
+    height: 270px !important;
+    margin-top: 0px !important;
   }
 
-  .masonryGrid > div:nth-child(1) { padding-top: 60px !important; }
+  .masonryGrid > div:nth-child(1) { padding-top: 10px !important; }
   .masonryGrid > div:nth-child(2) { padding-top: 0px !important; }
-  .masonryGrid > div:nth-child(3) { padding-top: 110px !important; }
-  .masonryGrid > div:nth-child(4) { padding-top: 180px !important; }
-  .masonryGrid > div:nth-child(5) { padding-top: 110px !important; }
+  .masonryGrid > div:nth-child(3) { padding-top: 20px !important; }
+  .masonryGrid > div:nth-child(4) { padding-top: 35px !important; }
+  .masonryGrid > div:nth-child(5) { padding-top: 20px !important; }
   .masonryGrid > div:nth-child(6) { padding-top: 0px !important; }
-  .masonryGrid > div:nth-child(7) { padding-top: 60px !important; }
+  .masonryGrid > div:nth-child(7) { padding-top: 10px !important; }
+
+  .gridItem {
+    width: 160px !important;
+    height: 200px !important;
+    border-radius: 15px !important;
+  }
+  
+  .large {
+    height: 220px !important;
+  }
+
+  .leaderLabel h4 {
+    font-size: 16px !important;
+  }
+
+  .leaderLabel p {
+    font-size: 12px !important;
+  }
   
   .testimonialContainer {
     position: relative !important;
@@ -559,7 +577,6 @@
 @media (max-width: 375px) {
   .headingWrapper {
     padding: 0 10px;
-    margin-top: 50px;
   }
   
   .mainHeading {

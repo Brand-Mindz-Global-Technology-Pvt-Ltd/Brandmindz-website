@@ -303,6 +303,7 @@
 @media (max-width: 480px) {
   .bm-hero-section {
     padding-top: 20px;
+    padding-bottom: 10px;
     background-size: contain;
     background-position: center center;
     min-height: 100%
@@ -325,7 +326,7 @@
   }
 
   .bm-hero-btn-trusted {
-    padding-top: 60px;
+    padding-top: 10px;
     width: 100%;
   }
   .bm-hero-title {

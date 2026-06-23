@@ -368,7 +368,7 @@
   }
   
   .bm-offering-grid {
-    gap: 40px;
+    gap:10px;
     flex-direction: column;
   }
   
@@ -391,6 +391,7 @@
   .bm-offering-section {
     width: 100%;
     padding: 50px 20px;
+    gap: 10px;
   }
   
   .bm-offering-badge {
@@ -510,7 +511,7 @@
 /* ===== MOBILE MEDIUM 480px ===== */
 @media (max-width: 480px) {
   .bm-offering-section {
-    padding: 30px 12px;
+    padding: 10px 12px;
   }
   
   .bm-offering-title {
