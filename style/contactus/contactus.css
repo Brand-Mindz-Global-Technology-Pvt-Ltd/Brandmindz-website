@@ -573,9 +573,9 @@
   gap: 6px;
   padding: 0 5px;
   cursor: pointer;
-  border-right: 1px solid #e5e7eb;
+  /* border-right: 1px solid #e5e7eb; */
   max-width: 70px;
-  background-color: #F4F4F4;
+  /* background-color: #F4F4F4; */
   overflow: hidden;
 
 
@@ -877,7 +877,7 @@
   color: #d1d5db;
   display: flex;
   align-items: center;
-  padding: 0.2rem 1.25rem;
+  padding: 0.2rem 2.30rem;
   border-radius: 4px;
   font-size: 0.85rem;
 

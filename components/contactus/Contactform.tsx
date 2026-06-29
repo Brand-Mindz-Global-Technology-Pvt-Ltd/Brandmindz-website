@@ -17,7 +17,7 @@ import bgImage from '../../assets/contact/Group5.png'
 
 export const GetStartedSection = () => {
   const [selectedServices, setSelectedServices] = useState([]);
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(3);
   const [isCheckLaterDisabled, setIsCheckLaterDisabled] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const countries = [
@@ -49,12 +49,73 @@ export const GetStartedSection = () => {
 
   console.log("selectedCountry:", selectedCountry);
   const dropdownRef = useRef(null);
+  const industryDropdownRef = useRef(null);
+  const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
+  const [industrySearchQuery, setIndustrySearchQuery] = useState("");
+
+  const industriesList = [
+    { value: "information-technology-saas", label: "Information Technology / SaaS" },
+    { value: "digital-marketing-advertising", label: "Digital Marketing / Advertising" },
+    { value: "ecommerce", label: "E-commerce" },
+    { value: "retail", label: "Retail" },
+    { value: "manufacturing", label: "Manufacturing" },
+    { value: "fmcg", label: "FMCG" },
+    { value: "healthcare", label: "Healthcare" },
+    { value: "hospitals-clinics", label: "Hospitals & Clinics" },
+    { value: "pharmaceuticals", label: "Pharmaceuticals" },
+    { value: "education-edtech", label: "Education / EdTech" },
+    { value: "training-coaching", label: "Training & Coaching" },
+    { value: "real-estate", label: "Real Estate" },
+    { value: "construction", label: "Construction" },
+    { value: "architecture-interior-design", label: "Architecture & Interior Design" },
+    { value: "finance", label: "Finance" },
+    { value: "fintech", label: "FinTech" },
+    { value: "banking", label: "Banking" },
+    { value: "insurance", label: "Insurance" },
+    { value: "legal-services", label: "Legal Services" },
+    { value: "logistics-supply-chain", label: "Logistics & Supply Chain" },
+    { value: "transportation", label: "Transportation" },
+    { value: "travel-tourism", label: "Travel & Tourism" },
+    { value: "hospitality", label: "Hospitality (Hotels / Resorts)" },
+    { value: "food-beverage", label: "Food & Beverage" },
+    { value: "restaurants-cafes", label: "Restaurants & Cafes" },
+    { value: "cloud-kitchens", label: "Cloud Kitchens" },
+    { value: "agriculture", label: "Agriculture" },
+    { value: "agritech", label: "AgriTech" },
+    { value: "food-processing", label: "Food Processing" },
+    { value: "fashion-apparel", label: "Fashion & Apparel" },
+    { value: "jewellery", label: "Jewellery" },
+    { value: "beauty-cosmetics", label: "Beauty & Cosmetics" },
+    { value: "wellness-fitness", label: "Wellness & Fitness" },
+    { value: "sports-fitness-centres", label: "Sports & Fitness Centres" },
+    { value: "media-entertainment", label: "Media & Entertainment" },
+    { value: "events-exhibitions", label: "Events & Exhibitions" },
+    { value: "film-production", label: "Film & Production" },
+    { value: "printing-publishing", label: "Printing & Publishing" },
+    { value: "ngos-trusts", label: "NGOs & Trusts" },
+    { value: "government-psu", label: "Government / PSU" },
+    { value: "startups", label: "Startups" },
+    { value: "professional-services", label: "Professional Services" },
+    { value: "consulting", label: "Consulting" },
+    { value: "hr-recruitment", label: "HR & Recruitment" },
+    { value: "staffing", label: "Staffing" },
+    { value: "telecommunications", label: "Telecommunications" },
+    { value: "electronics", label: "Electronics" },
+    { value: "electrical-automation", label: "Electrical & Automation" },
+    { value: "energy-renewables", label: "Energy & Renewables" },
+    { value: "automobile", label: "Automobile" },
+    { value: "ev-mobility", label: "EV & Mobility" },
+    { value: "other", label: "Other" }
+  ];
 
   // 3. Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
+      }
+      if (industryDropdownRef.current && !industryDropdownRef.current.contains(event.target)) {
+        setIsIndustryDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -70,6 +131,9 @@ export const GetStartedSection = () => {
     "",
     "E-Commerce Listing",
     "Branding & Creative",
+    "",
+    "Social Media Management",
+    "Complete Growth Package",
     "Others"
   ];
 
@@ -110,16 +174,25 @@ export const GetStartedSection = () => {
     industry: '',
     requirement: '',
     timeline: 'Immediately',
-    contactMode: 'Phone Call',
-    help: ""
+    contactMode:[],
+    help: "",
+    connectionDate: "Tomorrow"
   });
 
 
   const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox' && name === 'contactMode') {
+      // Toggle selection in array
+      const newModes = checked
+        ? [...formData.contactMode, value]
+        : formData.contactMode.filter((m) => m !== value);
+      setFormData({ ...formData, contactMode: newModes });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
     // Clear error when user types
     if (errors[name]) setErrors({ ...errors, [name]: '' });
   };
@@ -133,6 +206,13 @@ export const GetStartedSection = () => {
       if (!formData.designation.trim()) newErrors.designation = "Designation is required";
       if (!formData.location.trim()) newErrors.location = "Location is required";
       if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+
+
+      if (!formData.phone.trim()) {
+        newErrors.phone = "Phone is required";
+      } else if (!/^[6-9]\d{9}$/.test(formData.phone)) {
+        newErrors.phone = "Enter a valid 10-digit phone number";
+      }
 
       // Help (Services) Validation
       if (!formData.help || formData.help.trim() === "") {
@@ -156,16 +236,16 @@ export const GetStartedSection = () => {
 
     if (step === 2) {
       if (!formData.industry) newErrors.industry = "Please select your industry";
-      if (!formData.requirement.trim()) {
-        newErrors.requirement = "Please share your requirements";
-      } else if (formData.requirement.length < 10) {
-        newErrors.requirement = "Requirement should be at least 10 characters";
-      }
+      // if (!formData.requirement.trim()) {
+      //   newErrors.requirement = "Please share your requirements";
+      // } else if (formData.requirement.length < 10) {
+      //   newErrors.requirement = "Requirement should be at least 10 characters";
+      // }
     }
 
     if (step === 3) {
       if (!formData.timeline) newErrors.timeline = "Please select a project timeline";
-      if (!formData.contactMode) newErrors.contactMode = "Please select contact mode";
+      if (!formData.contactMode || formData.contactMode.length === 0) newErrors.contactMode = "Please select contact mode";
       if (!formData.connectionDate) newErrors.connectionDate = "Please choose a date";
     }
 
@@ -179,22 +259,28 @@ export const GetStartedSection = () => {
   };
 
 
-useEffect(() => {
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
-    ) {
-      setIsDropdownOpen(false);
-    }
-  };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+      if (
+        industryDropdownRef.current &&
+        !industryDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsIndustryDropdownOpen(false);
+      }
+    };
 
-  document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <section className="bm-getstarted-section">
@@ -228,7 +314,7 @@ useEffect(() => {
 
                 <div className="bm-left-content">
 
-                  
+
                   <div className="bm-google-rating-card-inside">
                     <div className="bm-rating-stars">
                       <span className="bm-star">★</span>
@@ -329,50 +415,54 @@ useEffect(() => {
 
                               </div>
 
-                              <div className="bm-form-group bm-phone-group" ref={dropdownRef}>
-                                <div
-                                  className="bm-country-selector"
-                                  style={{ height: errors.designation ? "65%" : "100%" }}
-                                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                >
-                                  <div className="bm-flag-container">
-                                    <Image
-                                      src={selectedCountry.flag}
-                                      alt="flag"
-                                      width={24}
-                                      height={16}
-                                    />
+                              <div className="bm-form-group">
+                                <div className="bm-phone-group" ref={dropdownRef}>
+                                  <div
+                                    className="bm-country-selector"
+                                    style={{ height: errors.designation ? "65%" : "100%" }}
+                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                  >
+                                    <div className="bm-flag-container">
+                                      <Image
+                                        src={selectedCountry.flag}
+                                        alt="flag"
+                                        width={24}
+                                        height={16}
+                                      />
+                                    </div>
+                                    <span className="bm-code-text">{selectedCountry.code}</span>
+                                    <span className={`bm-arrow-icon ${isDropdownOpen ? 'open' : ''}`}>▾</span>
                                   </div>
-                                  <span className="bm-code-text">{selectedCountry.code}</span>
-                                  <span className={`bm-arrow-icon ${isDropdownOpen ? 'open' : ''}`}>▾</span>
+
+
+                                  {isDropdownOpen && (
+                                    <div className="bm-country-dropdown-list">
+                                      {countries.map((country, idx) => (
+                                        <div
+                                          key={idx}
+                                          className="bm-country-option"
+                                          onClick={() => {
+                                            setSelectedCountry(country);
+                                            setIsDropdownOpen(false);
+                                          }}
+                                        >
+                                          <img src={country.flag} alt="" width="20" />
+                                          <span className="bm-option-code">{country.code}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  )}
+
+                                  <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Phone Number"
+                                    value={formData.phone}
+                                    className={`bm-form-input-Phone ${errors.phone ? 'error-border' : ''}`}
+                                    onChange={handleInputChange}
+                                  />
                                 </div>
-
-                                {isDropdownOpen && (
-                                  <div className="bm-country-dropdown-list">
-                                    {countries.map((country, idx) => (
-                                      <div
-                                        key={idx}
-                                        className="bm-country-option"
-                                        onClick={() => {
-                                          setSelectedCountry(country);
-                                          setIsDropdownOpen(false);
-                                        }}
-                                      >
-                                        <img src={country.flag} alt="" width="20" />
-                                        <span className="bm-option-code">{country.code}</span>
-                                      </div>
-                                    ))}
-                                  </div>
-                                )}
-
-                                <input
-                                  type="tel"
-                                  name="phone"
-                                  placeholder="Phone Number"
-                                  value={formData.phone}
-                                  className={`bm-form-input-Phone`}
-                                  onChange={handleInputChange}
-                                />
+                                {errors.phone && <span className="error-text">{errors.phone}</span>}
                               </div>
                             </div>
 
@@ -482,21 +572,84 @@ useEffect(() => {
                         <div className="bm-s2-step-container">
                           <div className="bm-s2-form-group">
                             <label className="bm-s2-label">Which Industry Do You Belong To?</label>
-                            <div className={`bm-s2-select-wrapper ${errors.industry ? 'error-border' : ''}`}>
-                              <select
-                                name="industry"
+                            <div className={`bm-s2-select-wrapper ${errors.industry ? 'error-border' : ''}`} ref={industryDropdownRef}>
+                              <div
                                 className="bm-s2-input bm-s2-select"
-                                value={formData.industry}
-                                onChange={handleInputChange}
+                                onClick={() => setIsIndustryDropdownOpen(!isIndustryDropdownOpen)}
+                                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer' }}
                               >
-                                <option value="">Select Industry</option>
-                                <option value="it">Information Technology / SaaS</option>
-                                <option value="ecommerce">E-commerce</option>
-                                <option value="healthcare">Healthcare</option>
-                                <option value="education">Education</option>
-                                <option value="realestate">Real Estate</option>
-                              </select>
-                              <span className="bm-s2-select-arrow">▾</span>
+                                <span style={{ color: formData.industry ? '#000' : '#757575' }}>
+                                  {formData.industry
+                                    ? industriesList.find(i => i.value === formData.industry)?.label || "Select Industry"
+                                    : "Select Industry"}
+                                </span>
+                                <span className={`bm-s2-select-arrow ${isIndustryDropdownOpen ? 'open' : ''}`}>▾</span>
+                              </div>
+
+                              {isIndustryDropdownOpen && (
+                                <div className="bm-industry-dropdown-list" style={{
+                                  position: 'absolute',
+                                  top: '100%',
+                                  left: 0,
+                                  width: '100%',
+                                  background: 'white',
+                                  border: '1px solid #e5e7eb',
+                                  borderRadius: '8px',
+                                  marginTop: '4px',
+                                  maxHeight: '250px',
+                                  overflowY: 'auto',
+                                  zIndex: 1000,
+                                  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)'
+                                }}>
+                                  <div style={{ padding: '8px', position: 'sticky', top: 0, background: 'white', zIndex: 2, borderBottom: '1px solid #e5e7eb' }}>
+                                    <input
+                                      type="text"
+                                      placeholder="Search industry..."
+                                      value={industrySearchQuery}
+                                      onChange={(e) => setIndustrySearchQuery(e.target.value)}
+                                      style={{
+                                        width: '100%',
+                                        padding: '8px 12px',
+                                        border: '1px solid #e5e7eb',
+                                        borderRadius: '6px',
+                                        outline: 'none',
+                                        fontSize: '14px'
+                                      }}
+                                      onClick={(e) => e.stopPropagation()}
+                                    />
+                                  </div>
+                                  <div style={{ padding: '4px 0' }}>
+                                    {industriesList
+                                      .filter(ind => ind.label.toLowerCase().includes(industrySearchQuery.toLowerCase()))
+                                      .map((ind, idx) => (
+                                        <div
+                                          key={idx}
+                                          onClick={() => {
+                                            setFormData({ ...formData, industry: ind.value });
+                                            if (errors.industry) setErrors({ ...errors, industry: '' });
+                                            setIsIndustryDropdownOpen(false);
+                                            setIndustrySearchQuery("");
+                                          }}
+                                          style={{
+                                            padding: '10px 16px',
+                                            cursor: 'pointer',
+                                            transition: 'background 0.2s',
+                                            fontSize: '15px'
+                                          }}
+                                          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f9fafb'}
+                                          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                                        >
+                                          {ind.label}
+                                        </div>
+                                      ))}
+                                    {industriesList.filter(ind => ind.label.toLowerCase().includes(industrySearchQuery.toLowerCase())).length === 0 && (
+                                      <div style={{ padding: '10px 16px', color: '#6b7280', textAlign: 'center', fontSize: '15px' }}>
+                                        No industry found
+                                      </div>
+                                    )}
+                                  </div>
+                                </div>
+                              )}
                             </div>
                             {errors.industry && <span className="error-text">{errors.industry}</span>}
                           </div>
@@ -583,7 +736,7 @@ useEffect(() => {
                                   const formatted = new Date(rawDate).toLocaleDateString("en-GB");
                                   setFormData({
                                     ...formData,
-                                    connectiondate: formatted
+                                    connectionDate: formatted
                                   });
                                 }}
                               />
@@ -611,41 +764,10 @@ useEffect(() => {
                               </div>
                             ))}
                           </div>
-                          {/* <div className="bm-date-selector">
-                            {["Yesterday", "Today", "Tomorrow", "Choose a Date"].map((date) => {
-                              const isCustomDate = !["Yesterday", "Today", "Tomorrow"].includes(formData.connectionDate);
-                              const isActive =
-                                formData.connectionDate === date ||
-                                (date === "Choose a Date" && isCustomDate && formData.connectionDate !== "");
-
-                              return (
-                                <div
-                                  key={date}
-                                  className={`bm-date-tab ${isActive ? "active" : ""} ${date === "Yesterday" ? "bm-disabled" : ""
-                                    }`}
-                                  onClick={() => {
-                                    if (date === "Choose a Date") {
-                                      setShowCalendar(true);
-                                   
-                                    } else if (date !== "Yesterday") {
-                                      setFormData({ ...formData, connectionDate: date });
-                                      setShowCalendar(false);
-                                    }
-                                  }}
-                                >
-                                  {date === "Choose a Date" && isCustomDate && formData.connectionDate !== ""
-                                    ? formData.connectionDate
-                                    : date === "Yesterday"
-                                      ? <>You Missed<br />Yesterday</>
-                                      : date}
-                                </div>
-                              );
-                            })}
-                          </div> */}
                           {errors.connectionDate && <span className="error-text">{errors.connectionDate}</span>}
                           <h3 className="bm-section-heading">When Would You Like To Start The Project?</h3>
                           <div className="bm-options-grid">
-                            {["Immediately", "Within 7 Days", "Within 15 Days", "Within 30 Days", "Just Exploring", "Need Consultation"].map((item) => (
+                            {["Immediately", "Within 7 Days", "Within 15 Days", "Within 30 Days", "Just Exploring", "Just exploring / planning"].map((item) => (
                               <label key={item} className="bm-custom-radio">
                                 <input
                                   type="radio"
@@ -662,13 +784,13 @@ useEffect(() => {
 
                           <h3 className="bm-section-heading">Preferred Mode of Contact?</h3>
                           <div className="bm-options-grid bm-grid-3">
-                            {["Phone Call", "WhatsApp", "Google Meet"].map((mode) => (
+                            {["Phone Call", "WhatsApp", "Google Meet", "Email"].map((mode) => (
                               <label key={mode} className="bm-custom-radio">
                                 <input
-                                  type="radio"
+                                  type="checkbox"
                                   name="contactMode"
                                   value={mode}
-                                  checked={formData.contactMode === mode}
+                                  checked={formData.contactMode.includes(mode)}
                                   onChange={handleInputChange}
                                 />
                                 <span className="bm-radio-circle"></span>
@@ -721,46 +843,42 @@ useEffect(() => {
                     className="bm-client-img-bm-right-conten"
                   />
 
-                  {/* WHITE SHADOW FADE */}
-                  <div className="bm-white-shadow-bottom"></div>
+                  
+{/* WHITE SHADOW FADE */}
+<div className="bm-white-shadow-bottom"></div>
 
-                  <div className="bm-s4-card">
+<div className="bm-s4-card">
+  {/* Success Header */}
+  <div className="bm-s4-header">
+    <span className="bm-s4-check-icon">✓</span>
+    <h1 className="bm-s4-thank">
+      Thank <span className="bm-s4-gray">You!</span>
+    </h1>
+  </div>
 
-                    {/* Success Header */}
-                    <div className="bm-s4-header">
-                      <span className="bm-s4-check-icon">✓</span>
-                      <h1 className="bm-s4-thank">
-                        Thank <span className="bm-s4-gray">You!</span>
-                      </h1>
-                    </div>
+  {/* Message */}
+  <div className="bm-s4-connection-box">
+    <h2 className="bm-s4-expert-text">
+      Our Growth Expert <span className="bm-s4-gray">Will Connect</span> with you within <span className="bm-s4-bold">24 Hours</span>.
+    </h2>
+  </div>
 
-                    {/* Middle Text */}
-                    <div className="bm-s4-connection-box">
-                      <h2 className="bm-s4-expert-text">
-                        Our Growth Expert <span className="bm-s4-gray">Will Connect</span>
-                      </h2>
-                      <h2 className="bm-s4-expert-text">
-                        With You Within <span className="bm-s4-bold">24 Hours.</span>
-                      </h2>
-                    </div>
-
-                    {/* GIFT SECTION (BOTTOM + BG IMAGE) */}
-                    <div className="bm-s4-gift-content">
-                      <h3 className="bm-s4-gift-title">We Have A Gift For You</h3>
-
-                      <button
-                        className="bm-s2-next-btn m-auto"
-                        onClick={() => setActiveStep(4)}
-                      >
-                        <span className="bm-btn-icon">
-                          <Image src={arrowIcon} alt="arrow" width={18} height={18} />
-                        </span>
-                        Download Your Growth Plan
-                      </button>
-                    </div>
+  {/* Quick actions */}
+  <div className="bm-s4-quick-actions" style={{ display: "flex", gap: "1rem", justifyContent: "center", marginTop: "1rem" }}>
+    <button className="bm-quick-btn" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+      {/* Placeholder icon */}
+      <span>📞</span>
+      WhatsApp Us Now
+    </button>
+    <button className="bm-quick-btn" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+      {/* Placeholder icon */}
+      <span>📅</span>
+      Book a Strategy Call
+    </button>
+  </div>
+</div>
 
                   </div>
-                </div>
               )}
 
             </div>
