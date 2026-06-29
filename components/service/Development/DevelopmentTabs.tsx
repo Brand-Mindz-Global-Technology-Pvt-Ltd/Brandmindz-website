@@ -8,7 +8,8 @@ import { MobileAppDevelopment } from "../Branding/MobileAppDevelopment";
 import { WebApplicationsDevelopment } from "../Branding/WebApplicationsDevelopment";
 import { useDevelopmentContext } from "./DevelopmentContext";
 
-
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 export const DevelopmentTabs = () => {
   const { activeDevelopmentTab: activeTab, setActiveDevelopmentTab: setActiveTab } = useDevelopmentContext();
   
@@ -26,6 +27,9 @@ export const DevelopmentTabs = () => {
 
   
   const ActiveComponent = tabsData[activeTab].component;
+
+
+  console.log(tabsData[activeTab].name, 'activeTab')
 
   return (
     <section className="bl-main-section">

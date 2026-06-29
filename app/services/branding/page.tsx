@@ -32,9 +32,9 @@ export default function ServiceBranding() {
                 <WhyChooseBranding data={data.whyChoose} />
                 {/* <VideoSection /> */}
                 <Various />  
-                <Faq />
+                <Faq activeTabKey={activeTabKey} />
             </main>
             <Footer />
         </>
     )
-}
+}
