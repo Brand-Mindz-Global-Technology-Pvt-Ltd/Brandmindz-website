@@ -107,30 +107,36 @@ export const Banner = () => {
 
       <FadeIn delay={0.2}>
         <h1 className="bm-hero-title">
-          <span className="text-black">A </span>
-          <span className="text-grey">Full-Stack Marketing Agency</span>
-          <span className="text-black"> built by practitioners who understand </span>
+          <div className="line-1">
+            <span className="text-black">A </span>
+            <span className="text-grey">Full-Stack Marketing Agency</span>
+            <span className="text-black"> built by practitioners who understand 
 
-          <span className="inline-flex items-center">
-            <AnimatePresence mode="wait">
-              <motion.div key={words[index]}>
-                {words[index].split("").map((letter, i) => (
-                  <FlipLetter key={`${words[index]}-${i}`} letter={letter} />
-                ))}
-              </motion.div>
-            </AnimatePresence>
-            <motion.span
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ repeat: Infinity, duration: 0.8 }}
-              className="ml-1 w-[2px] md:w-[4px] h-[30px] md:h-[60px] bg-yellow"
-            />
-            <span className="text-black">,</span>
+              <span className="inline-flex items-center" style={{marginLeft:"10px"}}>
+                <AnimatePresence mode="wait">
+                  <motion.div key={words[index]}>
+                    {words[index].split("").map((letter, i) => (
+                      <FlipLetter key={`${words[index]}-${i}`} letter={letter} />
+                    ))}
+                  </motion.div>
+                </AnimatePresence>
 
-          </span>
-          <br />
-          <span className="text-black">not just </span>
-          <span className="text-grey">Marketing</span>
-          <span className="text-black">.</span>
+                <motion.span
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{ repeat: Infinity, duration: 0.8 }}
+                  className="ml-1 w-[2px] md:w-[4px] h-[30px] md:h-[60px] bg-yellow"
+                />
+              </span>
+
+              <span>,</span>
+            </span>
+          </div>
+
+          <div className="line-3">
+            <span className="text-black">not just </span>
+            <span className="text-grey">Marketing</span>
+            <span>.</span>
+          </div>
         </h1>
       </FadeIn>
 
