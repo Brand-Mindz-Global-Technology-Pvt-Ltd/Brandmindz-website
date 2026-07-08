@@ -99,7 +99,7 @@ Turn your Application Into A Business Growth Engine.` }
 Increase how customers find your website.
 Turn your Website Into A Consistent Lead Generator.`},
             {
-                icon: icon1, title: "Meta Ada", hover: CompanyBranding, desc: `Scale Faster With Performance Driven Meta Ads
+                icon: icon1, title: "Meta Ads", hover: CompanyBranding, desc: `Scale Faster With Performance Driven Meta Ads
 Reach the right audience at the right time.
 Turn Paid Campaigns Into Predictable Revenue Streams.` },
             {

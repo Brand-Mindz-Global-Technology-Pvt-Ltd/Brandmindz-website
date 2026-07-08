@@ -28,7 +28,7 @@ export default function ServiceEcommerce() {
                 <EcommerceCaseStudies data={data.caseStudies} />
                 <WhyChooseEcommerce data={data.whyChoose} />
                 <Various />  
-                <Faq />
+                <Faq activeTabKey={activeTabKey} />
             </main>
             <Footer />
         </>

@@ -27,8 +27,8 @@ export default function ServiceDesigning() {
                 <DesigningPackages data={data.packages} />
                 <DesigningCaseStudies data={data.caseStudies} />
                 <WhyChooseDesigning data={data.whyChoose} />
-                <Various />  
-                <Faq />
+                <Various />
+                <Faq activeTabKey={activeTabKey} />
             </main>
             <Footer />
         </>

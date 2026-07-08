@@ -61,6 +61,7 @@
 .bm-about-menu-item-branding.active {
   background-color: #1a1a1a;
   color: #ffffff;
+  border-radius: 12px;
 }
 
 .bm-about-menu-item-branding.active::before {
