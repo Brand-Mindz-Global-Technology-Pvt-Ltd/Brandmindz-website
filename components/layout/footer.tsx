@@ -192,9 +192,9 @@ const Footer = () => {
           {/* Column 3: Reach Us */}
           <div className="md:col-span-3 lg:col-span-3">
             <h3 className={styles.sectionTitle} style={{ fontSize: "24px" }}>Reach Us</h3>
-            <div className="space-y-8">
+            <div className="space-y-8 ">
               <div className="flex gap-3 justifi-content-center align-items-center " style={{ marginBottom: '20px' }}>
-                <FaMapMarkerAlt className="text-black" style={{ marginTop: '10px' }} />
+                <FaMapMarkerAlt className="text-black hidden md:block" style={{ marginTop: '10px' }} />
                 <div>
                   <h4 className="font-bold text-[20px] mb-1">Chennai Office</h4>
                   <p className="text-[19px] text-gray-500 leading-snug">
@@ -204,8 +204,8 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex gap-3">
-                <FaMapMarkerAlt className="text-black" style={{ marginTop: '10px' }} />
+             <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
+                <FaMapMarkerAlt className="text-black hidden md:block " style={{ marginTop: '10px' }} />
                 <div>
                   <h4 className="font-bold text-[20px] mb-1">Tirunelveli Office</h4>
                   <p className="text-[19px] text-gray-500 leading-snug">
