@@ -17,7 +17,7 @@ import bgImage from '../../assets/contact/Group5.png'
 
 export const GetStartedSection = () => {
   const [selectedServices, setSelectedServices] = useState([]);
-  const [activeStep, setActiveStep] = useState(3);
+  const [activeStep, setActiveStep] = useState(1);
   const [isCheckLaterDisabled, setIsCheckLaterDisabled] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   const countries = [
@@ -44,11 +44,9 @@ export const GetStartedSection = () => {
   ];
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  console.log("isDropdownOpen:", isDropdownOpen);
-  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
 
-  console.log("selectedCountry:", selectedCountry);
-  const dropdownRef = useRef(null);
+  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+ const dropdownRef = useRef(null);
   const industryDropdownRef = useRef(null);
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [industrySearchQuery, setIndustrySearchQuery] = useState("");
@@ -281,6 +279,61 @@ export const GetStartedSection = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbylboHU_WyOf0fvqmnnYLRF54rloqhojNcUxq7R_GIjQtUPIa5VT-cMulNGnrbvKN9K/exec";
+ 
+const submitLead = async (leadData) => {
+  const response = await fetch(SCRIPT_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify(leadData),
+  });
+
+  return await response.json();
+};
+const handleSubmitLead = async () => {
+  // Validate Step 3
+  if (!validateStep(3)) return;
+
+  setIsSubmitting(true);
+
+  try {
+  const payload = {
+
+  name: formData.name,
+  companyName: formData.companyName,
+  designation: formData.designation,
+  phone: `${selectedCountry.code} ${formData.phone}`,
+  email: formData.email,
+  location: formData.location,
+  serviceRequired: formData.help,
+  industry: formData.industry,
+  detailedRequirement: formData.requirement,
+  preferredConnection: formData.connectionDate,
+  projectStart: formData.timeline,
+  contactMode: formData.contactMode.join(", ")
+};
+ 
+
+    const response = await submitLead(payload);
+
+    if (response.success) {
+      setActiveStep(4); // Success page
+    } else {
+      alert(response.message || "Something went wrong");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Failed to submit. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <section className="bm-getstarted-section">
@@ -818,12 +871,17 @@ export const GetStartedSection = () => {
                               Previous
                             </button>
 
-                            <button className="bm-s2-next-btn" onClick={() => handleNext(3)}>
-                              <span className="bm-btn-icon">
-                                <Image src={arrowIcon} alt="arrow" width={18} height={18} />
-                              </span>
-                              Begin My Growth Journey
-                            </button>
+                          <button
+  className="bm-s2-next-btn"
+  onClick={handleSubmitLead}
+  disabled={isSubmitting}
+>
+  <span className="bm-btn-icon">
+    <Image src={arrowIcon} alt="arrow" width={18} height={18} />
+  </span>
+
+  {isSubmitting ? "Submitting..." : "Begin My Growth Journey"}
+</button>
                           </div>
                         </div>
                       )}
