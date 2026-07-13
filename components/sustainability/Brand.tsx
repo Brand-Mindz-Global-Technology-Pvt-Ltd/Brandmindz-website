@@ -105,7 +105,7 @@ In addition to external CSR programs, the Company actively promotes gender inclu
                          "Inclusive hiring practices that promote women participation in the workforce" 
                     ],
                     subtitle: "Gender Equality",
-                    footerNote: ""
+                    footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
                 },
                 {
                     id: 6,
@@ -180,7 +180,7 @@ In addition to external CSR programs, the Company actively promotes gender inclu
 
                                 "Community-focused CSR initiatives"
                             ],
-                    footerNote: "Supported by CSR Focus Area...",
+                    footerNote: "",
                     subtitle: "Reduced Inequalities",
 
                 },
@@ -211,8 +211,8 @@ In addition to external CSR programs, the Company actively promotes gender inclu
                     tag: "Selective Alignment",
                     image: Action13,
                     description: "The Company supports environmental responsibility through awareness initiatives and digital campaigns that promote sustainable practices and conservation, in line with its CSR Policy. ",
-                    contributions: ["Carbon reduction"],
-                    footerNote: "Supported by CSR Focus Area...",
+                    contributions: [],
+                    footerNote: "",
                     subtitle: "Climate Action",
 
                 },

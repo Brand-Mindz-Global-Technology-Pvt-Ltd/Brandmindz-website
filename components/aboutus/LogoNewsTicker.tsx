@@ -21,7 +21,7 @@ import logo13 from '../../assets/about/tancoir.png';
 import logo14 from '../../assets/about/tan coir.png';
 
 
-import naturals from '../../assets/about/Scroll_logos/naturals_header_logo.png';
+import naturals from '../../assets/about/Scroll_logos/natulalscolorimage.jpeg';
 import seven from '../../assets/about/Scroll_logos/SevenStarLogo.png';
 import nails from '../../assets/about/Scroll_logos/nails and beyonds (2).png';
 import cheranacademy from '../../assets/about/Scroll_logos/Cheranacademy.png';
