@@ -11,9 +11,21 @@ import Various from "@/components/home/Various"
 import Footer from "@/components/layout/footer"
 import ProvenGrowthPage from "@/components/home/Salesstatistics"
 
+export const metadata = {
+  verification: {
+    google: "a55gBWr0MHNf8959SEre1QJYxhdr0roTW4B6zPfJMtY",
+  },
+  alternates: {
+    canonical: "https://www.brandmindz.com",
+  },
+}
+
 export default function HomePage() {
   return (
     <>
+      <link rel="canonical" href="https://www.brandmindz.com" />
+      <meta name="google-site-verification" content="a55gBWr0MHNf8959SEre1QJYxhdr0roTW4B6zPfJMtY" />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

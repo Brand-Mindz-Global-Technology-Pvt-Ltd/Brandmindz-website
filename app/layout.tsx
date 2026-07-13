@@ -11,7 +11,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://brandmindz.com'),
+  metadataBase: new URL('https://www.brandmindz.com'),
+  verification: {
+    google: "a55gBWr0MHNf8959SEre1QJYxhdr0roTW4B6zPfJMtY",
+  },
   title: {
     default: 'Brandmindz',
     template: '%s | BrandMindz',
