@@ -21,11 +21,12 @@ import Vector2 from '../../../assets/branding/Group (5).png'
 import Vector3 from '../../../assets/branding/Vector (3).png'
 
 
-import Person1 from '../../../assets/HomeSection/various/Person1.png'
-import Person2 from '../../../assets/HomeSection/various/Person2.png'
-import Person3 from '../../../assets/HomeSection/various/Person3.png'
-import Person4 from '../../../assets/HomeSection/various/Person4.jpg'
-import Person5 from '../../../assets/HomeSection/various/Person5.png'
+import Person1 from '../../../assets/HomeSection/various/Person1.webp'
+import Person2 from '../../../assets/HomeSection/various/Person2.webp'
+import Person3 from '../../../assets/HomeSection/various/Person3.webp'
+import Person4 from '../../../assets/HomeSection/various/Person4.webp'
+import Person5 from '../../../assets/HomeSection/various/Person5.webp'
+import { useRouter } from 'next/navigation';
 
 
 // --- SCROLL HIGHLIGHT LOGIC ---
@@ -73,6 +74,7 @@ const ScrollSpan = ({ children }) => {
 };
 
 export const MetaAdMarketing = () => {
+    const router = useRouter();
     const [index, setIndex] = useState(0);
 
     const statsData = [
@@ -177,7 +179,7 @@ export const MetaAdMarketing = () => {
                             <div className="bm-offering-promo-text">
                                 Get expert Meta Ads management support and move forward with confidence. We help you reduce cost per lead, improve return on ad spend, and generate consistent conversions through structured campaign optimization.
                             </div>
-                            <button className="bm-offering-book-btn">
+                            <button className="bm-offering-book-btn" onClick={() => router.push('/contact')}>
                                 <div className="icon-circle">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 10.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>

@@ -37,16 +37,95 @@ const Faq = ({ activeTabKey }: { activeTabKey: string }) => {
       setFaqs([
         {
           question: "What services does your digital agency offer?",
-          answer: "We provide comprehensive digital solutions including website development, mobile application development, digital marketing, performance advertising (Meta and Google Ads), SEO, social media management, UI/UX design, branding, and digital strategy consulting. Our services are designed to support businesses across different growth stages, from startups to established enterprises."
+          answer:
+            "We provide comprehensive digital solutions including website development, mobile application development, digital marketing, performance advertising (Meta and Google Ads), SEO, social media management, UI/UX design, branding, and digital strategy consulting. Our services are designed to support businesses across different growth stages, from startups to established enterprises."
         },
-        { question: "Which industries do you work with?", answer: "We work across various sectors including E-commerce, Healthcare, Real Estate, and Tech." },
-        { question: "How is your agency different from other digital marketing and development companies?", answer: "Our focus on ROI and measurable results sets us apart." },
-        { question: "Do you work with startups and small businesses?", answer: "Yes, we have specialized packages for growing businesses." },
-        { question: "What is your project onboarding process?", answer: "It starts with a deep discovery session followed by strategy mapping." },
-        { question: "How long does it take to develop a website or mobile app?", answer: "Timeline depends on complexity, typically ranging from 4 to 12 weeks." },
-        { question: "Do you provide post-launch support and maintenance?", answer: "Yes, we offer ongoing maintenance to ensure peak performance." },
-        { question: "How do we get started with your agency?", answer: "Simply book a call via our contact button to begin the discovery process." }
+        {
+          question: "Which industries do you work with?",
+          answer:
+            "We work across multiple industries including retail, e-commerce, education, healthcare, manufacturing, real estate, professional services, and startups. Our approach is industry-agnostic but strategy-driven, allowing us to adapt our execution based on business goals, audience behavior, and market dynamics."
+        },
+        {
+          question: "How is your agency different from other digital marketing and development companies?",
+          answer:
+            "Our focus is on business outcomes rather than isolated deliverables. We combine strategic planning, technical execution, and performance-driven marketing under one roof. This ensures consistency across platforms, faster execution, and accountability at every stage of the engagement."
+        },
+        {
+          question: "Do you work with startups and small businesses?",
+          answer:
+            "Yes. We work with startups, small and medium businesses, as well as established brands. Our engagement models are flexible and scalable, allowing businesses to start with essential services and expand as their digital requirements grow."
+        },
+        {
+          question: "What is your project onboarding process?",
+          answer:
+            "Once an engagement is confirmed, we initiate a structured onboarding process that includes requirement validation, scope alignment, timeline confirmation, and access setup. This ensures clarity on deliverables, responsibilities, and execution timelines before work begins."
+        },
+        {
+          question: "How long does it take to develop a website or mobile app?",
+          answer:
+            "Project timelines depend on the scope, complexity, and client inputs. A standard business website typically takes 10–20 working days, while mobile applications and custom platforms follow milestone-based timelines. Final timelines are shared after requirement assessment."
+        },
+        {
+          question: "Do you provide post-launch support and maintenance?",
+          answer:
+            "Yes. We offer optional post-launch support and maintenance services for websites, applications, and digital marketing campaigns. This includes performance monitoring, updates, issue resolution, and ongoing optimization based on business needs."
+        },
+        {
+          question: "How do we get started with your agency?",
+          answer:
+            "You can get started by contacting us through our website or scheduling an initial consultation. Our team will understand your requirements, recommend suitable solutions, and share a detailed proposal outlining scope, timelines, and commercials."
+        }
       ]);
+    }
+
+    else if (pathname === "/services/designing") {
+      if (activeTabKey === "uiuxDesign") {
+        setFaqs([
+          {
+            question: "What UI/UX design services do you offer?",
+            answer:
+              "We provide user interface (UI) and user experience (UX) design services for websites, web applications, mobile applications, and digital platforms, focusing on usability, clarity, and brand consistency."
+          },
+          {
+            question: "How do you approach UI/UX design projects?",
+            answer:
+              "Our approach includes requirement understanding, user flow planning, wireframing, visual design, and design validation to ensure a user-centric experience."
+          },
+          {
+            question: "Do you design for both web and mobile platforms?",
+            answer:
+              "Yes. We design interfaces for websites, web applications, Android apps, and iOS apps with platform-specific considerations."
+          },
+          {
+            question: "Will the designs align with our brand identity?",
+            answer:
+              "Yes. Designs are aligned with the client’s branding guidelines, visual language, and business positioning."
+          },
+          {
+            question: "Do you provide design prototypes?",
+            answer:
+              "Yes. Interactive or static prototypes can be shared to visualize user journeys and screen flows before development."
+          },
+          {
+            question: "How many revisions are included in UI/UX design?",
+            answer:
+              "The number of revisions is defined in the project scope. Additional iterations can be accommodated through change requests."
+          },
+          {
+            question: "Can your designs be directly handed over to developers?",
+            answer:
+              "Yes. Design files are shared in standard formats suitable for development handover, along with necessary guidelines."
+          },
+          {
+            question: "Do you redesign existing digital products?",
+            answer:
+              "Yes. We offer redesign and UX improvement services for existing websites, apps, and platforms."
+          }
+        ]);
+      }
+      else {
+        setFaqs(defaultFaqs);
+      }
     }
 
     else if (pathname === "/services/digital-marketing") {
@@ -94,46 +173,54 @@ const Faq = ({ activeTabKey }: { activeTabKey: string }) => {
           }
         ]);
       }
-      
+
     }
 
     else if (pathname === "/services/development") {
 
       if (activeTabKey === "webApplicationsDevelopment") {
-        setFaqs([
-          {
-            question: "What kind of static websites do you develop?",
-            answer: "We develop fast, secure, and responsive static websites suitable for business profiles, portfolios, landing pages, and informational websites."
-          },
-          {
-            question: "Are static websites mobile-friendly?",
-            answer: "Yes. All static websites are designed to be fully responsive and optimized for desktops, tablets, and mobile devices."
-          },
-          {
-            question: "Can I update the content later?",
-            answer: "Yes. Content updates can be handled by our team, or a suitable content management approach can be implemented based on project requirements."
-          },
-          {
-            question: "Will the website be SEO-friendly?",
-            answer: "Yes. Static websites are developed following SEO best practices, including optimized structure, metadata, and performance."
-          },
-          {
-            question: "How long does it take to build a static website?",
-            answer: "The timeline depends on the number of pages and design requirements, but most projects are completed within the agreed project schedule."
-          },
-          {
-            question: "Can you redesign my existing static website?",
-            answer: "Yes. We provide redesign and modernization services for existing static websites."
-          },
-          {
-            question: "Will the website load quickly?",
-            answer: "Yes. Static websites are optimized for speed and performance to ensure fast loading times."
-          },
-          {
-            question: "Do you provide post-launch support?",
-            answer: "Yes. Maintenance and support services are available after project delivery."
-          }
-        ]);
+   setFaqs([
+  {
+    question: "What is a web application?",
+    answer:
+      "A web application is a functional platform designed to manage workflows, data processing, and user interactions beyond informational websites."
+  },
+  {
+    question: "Do you build custom web applications?",
+    answer:
+      "Yes. We develop custom web applications tailored to specific business processes and operational requirements."
+  },
+  {
+    question: "Which industries use web applications?",
+    answer:
+      "Web applications are used across industries such as education, healthcare, logistics, finance, SaaS, and enterprise operations."
+  },
+  {
+    question: "Are your web applications scalable?",
+    answer:
+      "Yes. Applications are developed with scalability and performance considerations to support future growth."
+  },
+  {
+    question: "Can web applications integrate with third-party tools?",
+    answer:
+      "Yes. Integration with APIs, CRMs, ERPs, payment systems, and analytics platforms is supported."
+  },
+  {
+    question: "How secure are your web applications?",
+    answer:
+      "Security best practices are followed during development, including access control, data protection, and secure architecture principles."
+  },
+  {
+    question: "Will the application work across browsers?",
+    answer:
+      "Yes. Applications are tested for compatibility across major modern browsers."
+  },
+  {
+    question: "Do you offer post-deployment support?",
+    answer:
+      "Yes. Ongoing support and enhancement services are available based on engagement terms."
+  }
+]);
       }
       else if (activeTabKey === "mobileAppDevelopment") {
         setFaqs([
