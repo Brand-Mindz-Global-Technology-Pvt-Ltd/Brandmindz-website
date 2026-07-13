@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../../style/home/Various.module.css';
 import Image from 'next/image';
 
-import Image1 from '../../assets/HomeSection/various/quote.png';
+import Image1 from '../../assets/HomeSection/various/quote.webp';
 import VasuKarthick from '../../assets/HomeSection/various/Vasu-Karthick.png';
 import PraveenSpaceman from '../../assets/HomeSection/various/praveen-spaceman.png';
 import NoelImg from '../../assets/HomeSection/various/Noel.png';
