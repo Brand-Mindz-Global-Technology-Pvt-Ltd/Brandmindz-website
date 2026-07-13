@@ -228,12 +228,12 @@ const Footer = () => {
               </div>
               <div className={styles.contactGroup}>
                 <h4>For B2B</h4>
-                <p className={styles.emailLink}>+91 87541 39334</p>
+                <p className={styles.emailLink}>+91 84282 76993</p>
                 <Link href="mailto:headoffice@brandmindz.com" className={styles.emailLink}>headoffice@brandmindz.com</Link>
               </div>
               <div className={styles.contactGroup}>
                 <h4>For HR</h4>
-                <p className={styles.emailLink}>+91 87541 39334</p>
+                <p className={styles.emailLink}>+91 84282 76993</p>
                 <Link href="mailto:brandmindzteam@gmail.com" className={styles.emailLink}>brandmindzteam@gmail.com</Link>
               </div>
             </div>

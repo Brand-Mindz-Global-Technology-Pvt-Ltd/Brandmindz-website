@@ -12,7 +12,7 @@ import locationIcon from '../../assets/about/Vector (19).png';
 import userIcon from '../../assets/about/Vector (20).png';
 
 export const ContactCardsSection = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const contactCards = [
     {
@@ -21,7 +21,7 @@ export const ContactCardsSection = () => {
       icon: phoneIcon,
       content: [
         { label: "For Sales", value: "+91 90806 77945" },
-        { label: "For HR", value: "+91 87541 39334" }
+        { label: "For HR", value: "+91 84282 76993" }
       ],
       type: "phone"
     },
@@ -87,7 +87,7 @@ export const ContactCardsSection = () => {
                 <div className="bm-card-content">
                   {card.content.map((item, index) => (
                     <div key={index} className="bm-card-item">
-                      <span className={card.id === 3 ? "bm-card-label-address" :"bm-card-label"}>{item.label}</span>
+                      <span className={card.id === 3 ? "bm-card-label-address" : "bm-card-label"}>{item.label}</span>
                       <span className={card.id === 3 ? "bm-card-value-address" : "bm-card-value"}>{item.value}</span>
                     </div>
                   ))}

@@ -4,31 +4,24 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../../style/home/Various.module.css';
 import Image from 'next/image';
 
-import Image1 from '../../assets/HomeSection/various/quote.webp';
-import Person1 from '../../assets/HomeSection/various/Person1.webp'
-import Person2 from '../../assets/HomeSection/various/Person2.webp'
-import Person3 from '../../assets/HomeSection/various/Person3.webp'
-import Person4 from '../../assets/HomeSection/various/Person4.webp'
-import Person5 from '../../assets/HomeSection/various/Person5.webp'
-import Person6 from '../../assets/HomeSection/various/Person6.webp'
-import Person7 from '../../assets/HomeSection/various/Person7.webp'
-import Person8 from '../../assets/HomeSection/various/Person8.webp'
-import Person9 from '../../assets/HomeSection/various/Person9.webp'
-import Person10 from '../../assets/HomeSection/various/Person10.webp'
-import Person11 from '../../assets/HomeSection/various/Person11.webp'
-
+import Image1 from '../../assets/HomeSection/various/quote.png';
+import VasuKarthick from '../../assets/HomeSection/various/Vasu-Karthick.png';
+import PraveenSpaceman from '../../assets/HomeSection/various/praveen-spaceman.png';
+import NoelImg from '../../assets/HomeSection/various/Noel.png';
+import MenagaBioneem from '../../assets/HomeSection/various/Menaga-bioneem.png';
+import MariaSubiRajan from '../../assets/HomeSection/various/maria-subi-rajan.png';
+import Kannan7Stars from '../../assets/HomeSection/various/Kannan-7stars.png';
+import KalpanaShakthivel from '../../assets/HomeSection/various/Kalpana-shakthivel.png';
+import CkKumaravel from '../../assets/HomeSection/various/ckkumaravel.png';
 const initialLeaders = [
-  { id: 1, name: "C K Kumaravel", role: "Co-Founder of Naturals", src: Person1, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 2, name: "Sumi Johnson", role: "Founder of Bright Wave", src: Person2, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 3, name: "Alex Rivera", role: "CEO of TechFlow", src: Person3, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 4, name: "Priya Dharshini", role: "Director at Creative Studio", src: Person4, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 5, name: "John Doe", role: "Marketing Lead", src: Person5, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 6, name: "Rahul Sharma", role: "Startup Founder", src: Person6, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 7, name: "Ananya Singh", role: "Brand Strategist", src: Person7, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 8, name: "Vikram Patel", role: "Business Owner", src: Person8, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 9, name: "Meera Nair", role: "Product Manager", src: Person9, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 10, name: "David Lee", role: "Tech Consultant", src: Person10, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 11, name: "Aarthi Kumar", role: "Entrepreneur", src: Person11, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." }
+  { id: 1, name: "Vasu Karthick", role: "Magic 20", src: VasuKarthick, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 2, name: "Praveen", role: "Spaceman carft", src: PraveenSpaceman, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 3, name: "Noel", role: "Truck Taxi", src: NoelImg, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 4, name: "Menaga", role: "Bioneem tech", src: MenagaBioneem, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 5, name: "Maria Subi rajan", role: "She the shakthi", src: MariaSubiRajan, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 6, name: "Kannan", role: "Seven stars", src: Kannan7Stars, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 7, name: "Kalpana Shakthivel", role: "The HR Scope", src: KalpanaShakthivel, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 8, name: "C K Kumaravel", role: "Co-Founder of Naturals", src: CkKumaravel, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." }
 ];
 
 const Various = () => {
@@ -37,45 +30,57 @@ const Various = () => {
   const autoPlayCounter = useRef(1); // To keep track of the next one to bring to center
 
   // The center image is always index 0
-  const active = gridData[0];
+  const active = gridData[0] ?? initialLeaders[0];
 
-  const performSwap = (indexToSwap) => {
+  const getItemForPosition = (positionIndex: number) => {
+    if (!gridData.length) return null;
+    return gridData[positionIndex % gridData.length] ?? null;
+  };
+
+  const performSwap = (indexToSwap: number) => {
+    if (!gridData.length) return;
+
+    const safeIndex = indexToSwap % gridData.length;
+
     setGridData((prev) => {
+      if (!prev.length) return prev;
+
       const newData = [...prev];
       const temp = newData[0]; // Current Center
-      newData[0] = newData[indexToSwap]; // New Center
-      newData[indexToSwap] = temp; // Old Center goes to side
+      newData[0] = newData[safeIndex]; // New Center
+      newData[safeIndex] = temp; // Old Center goes to side
       return newData;
     });
   };
 
   // Auto-switch Logic
   useEffect(() => {
-    let interval;
-    if (isAutoPlay) {
-      interval = setInterval(() => {
-        // Swap center with the next sequential item
-        performSwap(autoPlayCounter.current);
-        // Increment counter or reset to 1
-        autoPlayCounter.current = autoPlayCounter.current >= gridData.length - 1 ? 1 : autoPlayCounter.current + 1;
-      }, 5000);
-    }
+    if (!isAutoPlay || !gridData.length) return undefined;
+
+    const interval = setInterval(() => {
+      const nextIndex = autoPlayCounter.current % Math.max(gridData.length - 1, 1);
+      performSwap(nextIndex + 1);
+      autoPlayCounter.current = (nextIndex + 1) % Math.max(gridData.length - 1, 1);
+    }, 5000);
+
     return () => clearInterval(interval);
   }, [isAutoPlay, gridData.length]);
 
-  const handleManualClick = (index) => {
+  const handleManualClick = (index: number) => {
     setIsAutoPlay(false);
     performSwap(index);
-    
-    // Restart autoplay after 8 seconds
-    setTimeout(() => setIsAutoPlay(true), 8000);
+
+    window.setTimeout(() => setIsAutoPlay(true), 8000);
   };
 
-  const renderSideItem = (index) => {
-    const item = gridData[index];
+  const renderSideItem = (index: number) => {
+    const item = getItemForPosition(index);
+
+    if (!item) return null;
+
     return (
       <motion.div
-        layout // This makes the swap look smooth
+        layout
         key={item.id}
         className={`${styles.gridItem} ${styles.faded}`}
         onClick={() => handleManualClick(index)}
