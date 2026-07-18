@@ -1,0 +1,156 @@
+.glossary-definition-main {
+    background-color: #fff;
+}
+
+.glossary-definition-header {
+    max-width: 88%;
+    margin: 0 auto;
+    padding: 40px 0 0;
+    text-align: center;
+}
+
+.glossary-definition-container {
+    max-width: 88%;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+    display: flex;
+    gap: 80px;
+}
+
+.glossary-definition-sidebar {
+    flex: 0 0 320px;
+    position: sticky;
+    top: 150px;
+    height: fit-content;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.glossary-definition-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.glossary-definition-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.glossary-definition-sidebar::-webkit-scrollbar-thumb {
+    background: #eee;
+    border-radius: 10px;
+}
+
+.glossary-definition-sidebar:hover::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+.glossary-definition-body {
+    flex: 1;
+}
+
+.glossary-definition-title {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.glossary-definition-title span {
+    font-weight: 300;
+    color: #888;
+}
+
+.glossary-definition-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.glossary-definition-nav-link {
+    font-size: 19px;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    line-height: 1.4;
+    width: fit-content;
+}
+
+.glossary-definition-nav-link:hover {
+    color: #777;
+}
+
+.glossary-definition-nav-link.active {
+    color: #000;
+    border-bottom-color: #ffb7b7;
+    font-weight: 650;
+}
+
+.glossary-definition-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 180px;
+}
+
+.glossary-definition-heading {
+    font-size: 38px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 25px;
+}
+
+.glossary-definition-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.glossary-definition-text p {
+    margin-bottom: 15px;
+}
+
+.glossary-subsection-heading {
+    font-size: 26px;
+    font-weight: 700;
+    color: #000;
+    margin: 30px 0 15px;
+}
+
+.glossary-definition-cta {
+    color: #000;
+    font-weight: 650;
+    padding: 18px 20px;
+    border-left: 3px solid #ffb7b7;
+    background: #fafafa;
+}
+
+@media (max-width: 992px) {
+    .glossary-definition-header {
+        padding-top: 40px;
+    }
+
+    .glossary-definition-container {
+        flex-direction: column;
+        padding-top: 20px;
+        gap: 30px;
+    }
+
+    .glossary-definition-sidebar {
+        position: relative;
+        top: 0;
+        flex: none;
+        width: 100%;
+        padding-right: 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .glossary-definition-title {
+        font-size: 42px;
+    }
+}

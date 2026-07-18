@@ -139,6 +139,11 @@ export const privacyPolicyData = {
                     <li>Resolve disputes or enforce agreements</li>
                 </ul>
                 <p>Data no longer required is securely deleted or anonymized.</p>
+                <p>Users may request access, correction, or deletion of their personal data by contacting headoffice@brandmindz.com. We process such requests within 7–14 working days.</p>
+                <p>Lead data: retained for 24 months</p>
+                <p>Client data: retained during contract + 3 years for legal compliance</p>
+                <p>Marketing data: retained until user unsubscribes</p>
+                <p>HR data: retained for 2 years post-application</p>
             `
     },
     {

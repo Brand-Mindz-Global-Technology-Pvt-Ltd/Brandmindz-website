@@ -5,12 +5,17 @@ import '../../style/home/faq.css';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { usePathname } from 'next/navigation';
 
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 const Faq = ({ activeTabKey }: { activeTabKey: string }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const pathname = usePathname();
 
 
-  const [faqs, setFaqs] = useState<any>()
+  const [faqs, setFaqs] = useState<FaqItem[]>([]);
 
 
   console.log(activeTabKey, 'activeTabKey')
@@ -302,9 +307,93 @@ const Faq = ({ activeTabKey }: { activeTabKey: string }) => {
           }
         ]);
       }
-
+      else if (activeTabKey === "staticDevelopment") {
+        setFaqs([
+          {
+            question: "What types of websites do you develop?",
+            answer:
+              "We develop corporate websites, business websites, landing pages, portfolio websites, and custom websites based on branding, functionality, and scalability requirements."
+          },
+          {
+            question: "Will the website be mobile-responsive?",
+            answer:
+              "Yes. All websites are designed to be fully responsive and optimized for desktops, tablets, and mobile devices."
+          },
+          {
+            question: "Is the website built with SEO best practices?",
+            answer:
+              "Yes. Websites are developed following SEO-friendly structure, clean code practices, optimized page speed, and proper content hierarchy."
+          },
+          {
+            question: "Can we manage website content after launch?",
+            answer:
+              "Yes. Websites are built using content management systems or custom admin panels, allowing clients to update content independently."
+          },
+          {
+            question: "How long does website development take?",
+            answer:
+              "Timelines depend on scope and complexity. Standard business websites generally take a few weeks, while custom solutions follow milestone-based timelines."
+          },
+          {
+            question: "Will you assist with domain and hosting?",
+            answer:
+              "Domain and hosting can be client-provided or assisted by us based on requirements. Ownership always remains with the client."
+          },
+          {
+            question: "Is post-launch support available?",
+            answer:
+              "Yes. Optional support and maintenance services are available for updates, monitoring, and issue resolution."
+          },
+          {
+            question: "Who owns the website after completion?",
+            answer:
+              "Upon project completion and full payment, ownership of the website and related assets is transferred to the client."
+          }
+        ]);
+      }
       else {
-        setFaqs(defaultFaqs);
+        setFaqs([
+          {
+            question: "What types of websites do you develop?",
+            answer:
+              "We develop corporate websites, business websites, landing pages, portfolio websites, and custom websites based on branding, functionality, and scalability requirements."
+          },
+          {
+            question: "Will the website be mobile-responsive?",
+            answer:
+              "Yes. All websites are designed to be fully responsive and optimized for desktops, tablets, and mobile devices."
+          },
+          {
+            question: "Is the website built with SEO best practices?",
+            answer:
+              "Yes. Websites are developed following SEO-friendly structure, clean code practices, optimized page speed, and proper content hierarchy."
+          },
+          {
+            question: "Can we manage website content after launch?",
+            answer:
+              "Yes. Websites are built using content management systems or custom admin panels, allowing clients to update content independently."
+          },
+          {
+            question: "How long does website development take?",
+            answer:
+              "Timelines depend on scope and complexity. Standard business websites generally take a few weeks, while custom solutions follow milestone-based timelines."
+          },
+          {
+            question: "Will you assist with domain and hosting?",
+            answer:
+              "Domain and hosting can be client-provided or assisted by us based on requirements. Ownership always remains with the client."
+          },
+          {
+            question: "Is post-launch support available?",
+            answer:
+              "Yes. Optional support and maintenance services are available for updates, monitoring, and issue resolution."
+          },
+          {
+            question: "Who owns the website after completion?",
+            answer:
+              "Upon project completion and full payment, ownership of the website and related assets is transferred to the client."
+          }
+        ]);
       }
     }
 
