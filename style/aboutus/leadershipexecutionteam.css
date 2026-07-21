@@ -1,0 +1,156 @@
+        .leadership-team-page > .bm-hero-section-industries { padding-top: 50px; }
+        .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge__text { font-size: clamp(1.2rem, 2.5vw, 2.5rem); line-height: 1.15; text-transform: none; }
+        .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge__icon { width: 40px; height: 40px; flex: 0 0 40px; transform: none; }
+        .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge__icon svg { width: 18px; height: 18px; }
+        .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-title { max-width: 1300px; font-size: clamp(3rem, 6.35vw, 6rem); line-height: 1.12; letter-spacing: -.035em; }
+        .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-description { max-width: 1200px; font-size: clamp(1.125rem, 2vw, 2.13rem); line-height: 1.4; }
+        .lt-container { width: 90%; max-width: 1440px; margin-inline: auto; }
+        .lt-experience { padding: 76px 0 90px; background: #eee; position: relative; }
+        .lt-experience::before { content: ""; position: absolute; inset: 0; background: url('/placeholder.svg') center/cover; opacity: .025; }
+        .lt-experience-grid { display: grid; grid-template-columns: 1.25fr .75fr; align-items: start; gap: 56px; position: relative; }
+        .lt-eyebrow { display: block; margin-bottom: 10px; color: #939393; font-size: 15px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+        .lt-heading { margin: 0; color: #1a1a1a; font-size: clamp(34px,4vw,52px); font-weight: 700; line-height: 1.1; letter-spacing: -1px; }
+        .lt-body { display: grid; gap: 18px; margin-top: 30px; }
+        .lt-body p { margin: 0; color: #484848; font-size: 19px; line-height: 1.65; }
+        .lt-body strong { color: #1a1a1a; }
+        .lt-experience-panel { padding: 38px 32px; position: sticky; top: 110px; border-radius: 18px; background: #191919; color: #fff; box-shadow: 0 20px 45px rgba(0,0,0,.12); }
+        .lt-experience-panel-icon { display: grid; width: 54px; height: 54px; margin-bottom: 26px; place-items: center; border-radius: 16px; background: #ffdb00; color: #171717; }
+        .lt-experience-panel h3 { margin: 0 0 16px; font-size: 27px; line-height: 1.2; }
+        .lt-experience-panel p { margin: 0; color: #bbb; font-size: 17px; line-height: 1.65; }
+        .lt-experience-panel strong { display: block; margin-top: 22px; padding: 17px 18px; border-left: 3px solid #ffdb00; background: rgba(255,255,255,.05); color: #ffdb00; font-size: 17px; line-height: 1.5; }
+
+        .lt-teams { padding: 88px 0; background: #fff; }
+        .lt-section-header { max-width: 850px; margin-bottom: 44px; }
+        .lt-section-header p { margin: 18px 0 0; color: #555; font-size: 19px; line-height: 1.6; }
+        .lt-team-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+        .lt-team-card { padding: 30px; border: 1px solid rgba(0,0,0,.12); border-radius: 16px; background: #fff; box-shadow: 0 9px 26px rgba(0,0,0,.045); transition: .3s ease; }
+        .lt-team-card:hover { transform: translateY(-4px); border-color: #888888; box-shadow: 0 14px 32px rgba(0,0,0,.08); }
+        .lt-team-card-head { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+        .lt-team-card-icon { display: grid; width: 46px; height: 46px; flex: none; place-items: center; border-radius: 50%; background: #888888; color: #fff; }
+        .lt-team-card h3 { margin: 0; color: #000; font-size: 23px; line-height: 1.25; }
+        .lt-team-card p { margin: 0 0 14px; color: #888888; font-size: 16px; line-height: 1.65; }
+        .lt-team-card-statement { margin: 20px 0 0 !important; padding: 15px 16px; border-left: 3px solid #000; border-radius: 0 9px 9px 0; background: #888888; color: #fff !important; font-weight: 700; }
+
+        .lt-governance { padding: 90px 0; background: #1a1a1a; color: #fff; }
+        .lt-governance-grid { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 80px; }
+        .lt-governance .lt-eyebrow { color: #ffdb00; }
+        .lt-governance .lt-heading { color: #fff; }
+        .lt-governance-copy p { margin: 24px 0 0; color: #bbb; font-size: 19px; line-height: 1.65; }
+        .lt-governance-copy strong { color: #fff; }
+        .lt-governance-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+        .lt-governance-item { display: flex; align-items: center; gap: 12px; min-height: 70px; padding: 16px; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; background: rgba(255,255,255,.05); font-size: 16px; font-weight: 600; line-height: 1.4; }
+        .lt-governance-item span { display: grid; width: 27px; height: 27px; flex: none; place-items: center; border-radius: 50%; background: #ffdb00; color: #151515; }
+
+        .lt-culture { padding: 90px 0; background: #fff; }
+        .lt-culture-grid { display: grid; grid-template-columns: .7fr 1.3fr; align-items: start; gap: 64px; }
+        .lt-stat-card { padding: 40px 34px; border-radius: 20px; background: #888888; color: #151515; }
+        .lt-stat-value { display: block; font-size: clamp(70px,8vw,108px); font-weight: 800; line-height: .9; letter-spacing: -5px; }
+        .lt-stat-card h3 { margin: 20px 0 10px; font-size: 28px; line-height: 1.2; }
+        .lt-stat-card p { margin: 0; font-size: 17px; line-height: 1.55; }
+        .lt-culture-copy > p { margin: 22px 0; color: #555; font-size: 18px; line-height: 1.65; }
+        .lt-inclusion-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+        .lt-inclusion-item { display: flex; align-items: center; gap: 10px; padding: 14px; border-radius: 11px; background: #f4f4f4; color: #333; font-size: 15px; font-weight: 600; }
+        .lt-inclusion-item svg { flex: none; color: #000; }
+        .lt-culture-standard { margin: 24px 0 0; padding: 18px; border-left: 4px solid #ffdb00; background: #fffbea; color: #1a1a1a; font-size: 18px; font-weight: 700; line-height: 1.55; }
+
+        .lt-integrated { padding: 90px 0; background: #eee; }
+        .lt-integrated-header { max-width: 900px; margin: 0 auto 42px; text-align: center; }
+        .lt-integrated-header p { margin: 18px auto 0; max-width: 760px; color: #555; font-size: 19px; line-height: 1.6; }
+        .lt-outcome-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
+        .lt-outcome { min-height: 180px; padding: 26px; border-radius: 15px; background: #fff; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,.04); }
+        .lt-outcome span { display: grid; width: 48px; height: 48px; margin: 0 auto 20px; place-items: center; border-radius: 50%; background: rgba(255,219,0,.2); }
+        .lt-outcome h3 { margin: 0; color: #1a1a1a; font-size: 19px; line-height: 1.35; }
+        .lt-integrated-note { max-width: 760px; margin: 34px auto 0; color: #1a1a1a; font-size: 20px; font-weight: 700; line-height: 1.5; text-align: center; }
+        .lt-faq-wrap { padding: 80px 0; background: #fff; }
+        .lt-faq-wrap .bm-faq-item > summary { list-style: none; }
+        .lt-faq-wrap .bm-faq-item > summary::-webkit-details-marker { display: none; }
+        .lt-faq-wrap .bm-faq-item[open] { box-shadow: 0 15px 35px rgba(0, 0, 0, .1); }
+        .lt-faq-wrap .bm-faq-item[open] .bm-faq-q-box { background: #333; color: #fff; font-weight: 500; }
+        .lt-faq-wrap .bm-faq-chevron { flex: 0 0 auto; transition: transform .3s ease; }
+        .lt-faq-wrap .bm-faq-item[open] .bm-faq-chevron { transform: rotate(180deg); }
+        .leadership-team-page .bm-hero-action { display: flex; align-items: center; justify-content: center; }
+        .leadership-team-page .bm-hero-btn {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          padding: 13px 15px;
+          border: 0;
+          border-radius: 40px;
+          background: #1a1a1a;
+          color: #fff;
+          cursor: pointer;
+          box-shadow: 0 10px 20px rgba(0,0,0,.15);
+          transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+        }
+        .leadership-team-page .bm-hero-btn:hover {
+          transform: translateY(-2px);
+          background: #000;
+          box-shadow: 0 15px 30px rgba(0,0,0,.22);
+        }
+        .leadership-team-page .bm-hero-btn__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 8px;
+          border: 2.5px solid #fff;
+          border-radius: 50%;
+          background: #000;
+          font-size: 25px;
+          transition: transform .3s ease;
+        }
+        .leadership-team-page .bm-hero-btn:hover .bm-hero-btn__icon { transform: rotate(360deg); }
+        .leadership-team-page .bm-hero-btn__text {
+          display: inline-flex;
+          align-items: center;
+          color: #fff;
+          font-size: 21px;
+          font-weight: 400;
+          line-height: 1.2;
+        }
+        .leadership-team-page .bm-hero-btn__text strong {
+          padding-left: 5px;
+          color: #fff;
+          font-size: 23px;
+          font-weight: 500;
+        }
+
+        /* Home-page-aligned typography scale */
+        .leadership-team-page .lt-eyebrow { font-size: clamp(17px, 1.35vw, 20px); }
+        .leadership-team-page .lt-heading { font-size: clamp(42px, 4.6vw, 64px); line-height: 1.08; }
+        .leadership-team-page .lt-body p,
+        .leadership-team-page .lt-section-header p,
+        .leadership-team-page .lt-governance-copy p,
+        .leadership-team-page .lt-culture-copy > p,
+        .leadership-team-page .lt-integrated-header p { font-size: clamp(19px, 1.55vw, 22px); }
+        .leadership-team-page .lt-experience-panel h3 { font-size: clamp(28px, 2.4vw, 34px); }
+        .leadership-team-page .lt-experience-panel p,
+        .leadership-team-page .lt-experience-panel strong { font-size: 20px; }
+        .leadership-team-page .lt-team-card h3 { font-size: clamp(24px, 2vw, 29px); }
+        .leadership-team-page .lt-team-card p { font-size: clamp(18px, 1.35vw, 20px); }
+        .leadership-team-page .lt-governance-item { font-size: 19px; }
+        .leadership-team-page .lt-stat-card h3 { font-size: clamp(28px, 2.4vw, 34px); }
+        .leadership-team-page .lt-stat-card p { font-size: 20px; }
+        .leadership-team-page .lt-inclusion-item { font-size: 18px; }
+        .leadership-team-page .lt-culture-standard { font-size: 21px; }
+        .leadership-team-page .lt-outcome h3 { font-size: clamp(21px, 1.7vw, 25px); }
+        .leadership-team-page .lt-integrated-note { font-size: 24px; }
+
+        @media (max-width: 1100px) {
+          .lt-experience-grid, .lt-governance-grid, .lt-culture-grid { grid-template-columns: 1fr; }
+          .lt-experience-panel { position: static; }
+          .lt-outcome-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+        }
+        @media (max-width: 768px) {
+          .lt-team-grid, .lt-governance-list, .lt-inclusion-list { grid-template-columns: 1fr; }
+          .lt-experience, .lt-teams, .lt-governance, .lt-culture, .lt-integrated { padding-block: 64px; }
+          .lt-faq-wrap { padding: 60px 0; }
+        }
+        @media (max-width: 480px) {
+          .leadership-team-page > .bm-hero-section-industries { padding-top: 20px; }
+          .lt-container { width: 92%; }
+          .lt-outcome-grid { grid-template-columns: 1fr; }
+          .lt-team-card { padding: 24px 20px; }
+          .lt-heading { font-size: 32px; }
+          .lt-body p, .lt-section-header p, .lt-governance-copy p, .lt-integrated-header p { font-size: 17px; }
+          .lt-faq-wrap { padding: 44px 0; }
+        }

@@ -1,0 +1,139 @@
+        .connect-page > .bm-hero-section-industries { padding-top:50px; }
+        .connect-page > .bm-hero-section-industries .bm-industries-hero-badge__text { font-size: clamp(1.2rem, 2.5vw, 2.5rem); line-height: 1.15; text-transform: none; }
+        .connect-page > .bm-hero-section-industries .bm-industries-hero-badge__icon { width: 40px; height: 40px; flex: 0 0 40px; transform: none; }
+        .connect-page > .bm-hero-section-industries .bm-industries-hero-badge__icon svg { width: 18px; height: 18px; }
+        .connect-page > .bm-hero-section-industries .bm-industries-hero-title { max-width: 1300px; font-size: clamp(3rem, 6.35vw, 6rem); line-height: 1.12; letter-spacing: -.035em; }
+        .connect-page > .bm-hero-section-industries .bm-industries-hero-description { max-width: 1200px; font-size: clamp(1.125rem, 2vw, 2.13rem); line-height: 1.4; }
+        .connect-container { width:90%; max-width:1440px; margin-inline:auto; }
+        .connect-manifesto {
+          display:grid; grid-template-columns:.78fr 1.22fr; align-items:center; max-width:90%; gap:42px;
+          margin:-30px auto 50px; padding:30px 34px; position:relative; z-index:20; border-radius:18px;
+          background:#242424; color:#fff; box-shadow:0 20px 40px rgba(0,0,0,.15);
+        }
+        .connect-manifesto-copy { padding-right:34px; border-right:1px solid rgba(255,255,255,.12); }
+        .connect-manifesto-copy span { display:block; margin-bottom:7px; color:#ffdb00; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+        .connect-manifesto-copy h2 { margin:0; font-size:28px; line-height:1.2; }
+        .connect-manifesto-copy p { margin:9px 0 0; color:#aaa; font-size:15px; }
+        .connect-manifesto-values { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+        .connect-manifesto-value { display:grid; min-height:92px; place-items:center; gap:8px; padding:14px 10px; border:1px solid rgba(255,255,255,.08); border-radius:12px; background:rgba(255,255,255,.045); font-size:14px; font-weight:600; text-align:center; }
+        .connect-manifesto-value span { display:grid; width:34px; height:34px; place-items:center; border-radius:50%; background:#ffdb00; color:#151515; }
+
+        .connect-section { padding:90px 0; }
+        .connect-grey { background:#eee; }
+        .connect-dark { background:#191919; color:#fff; }
+        .connect-eyebrow { display:block; margin-bottom:10px; color:#939393; font-size:15px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; }
+        .connect-dark .connect-eyebrow { color:#ffdb00; }
+        .connect-heading { margin:0; color:#1a1a1a; font-size:clamp(34px,4vw,52px); font-weight:700; line-height:1.1; letter-spacing:-1px; }
+        .connect-dark .connect-heading { color:#fff; }
+        .connect-copy { display:grid; gap:18px; margin-top:28px; }
+        .connect-copy p { margin:0; color:#505050; font-size:18px; line-height:1.65; }
+        .connect-dark .connect-copy p { color:#bbb; }
+        .connect-copy strong { color:#1a1a1a; }
+        .connect-dark .connect-copy strong { color:#fff; }
+
+        .connect-purpose-grid { display:grid; grid-template-columns:1.05fr .95fr; align-items:start; gap:64px; }
+        .connect-examples { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+        .connect-example { padding:24px; border:1px solid rgba(0,0,0,.06); border-radius:15px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.04); }
+        .connect-example-icon { display:grid; width:43px; height:43px; margin-bottom:18px; place-items:center; border-radius:50%; background:rgba(255,219,0,.2); }
+        .connect-example span { display:block; color:#888; font-size:13px; text-transform:uppercase; letter-spacing:1px; }
+        .connect-example h3 { margin:6px 0 0; color:#1a1a1a; font-size:20px; line-height:1.3; }
+        .connect-example-arrow { display:flex; align-items:center; gap:8px; margin-top:14px; color:#846f00; font-size:14px; font-weight:700; }
+        .connect-purpose-note { margin:24px 0 0; padding:18px; border-left:4px solid #ffdb00; background:#fffbea; color:#1a1a1a; font-size:17px; font-weight:700; line-height:1.55; }
+
+        .connect-vision-grid { display:grid; grid-template-columns:.7fr 1.3fr; align-items:center; gap:70px; }
+        .connect-founder { position:relative; min-height:520px; overflow:hidden; border-radius:20px; }
+        .connect-founder img { object-fit:cover; object-position:center top; }
+        .connect-founder-label { position:absolute; right:20px; bottom:20px; left:20px; z-index:2; padding:18px; border-radius:12px; background:rgba(20,20,20,.88); color:#fff; backdrop-filter:blur(8px); }
+        .connect-founder-label strong { display:block; font-size:19px; }
+        .connect-founder-label span { display:block; margin-top:4px; color:#ffdb00; font-size:14px; }
+        .connect-vision-statement { margin:26px 0 0; padding:19px; border-left:4px solid #ffdb00; background:#fffbea; color:#1a1a1a; font-size:18px; font-weight:700; line-height:1.55; }
+
+        .connect-trust-grid { display:grid; grid-template-columns:.8fr 1.2fr; align-items:center; gap:75px; }
+        .connect-trust-panel { padding:38px; border:1px solid rgba(255,255,255,.1); border-radius:18px; background:rgba(255,255,255,.05); }
+        .connect-trust-panel-icon { display:grid; width:53px; height:53px; margin-bottom:24px; place-items:center; border-radius:15px; background:#ffdb00; color:#151515; }
+        .connect-trust-panel h3 { margin:0 0 16px; font-size:29px; line-height:1.2; }
+        .connect-trust-panel p { margin:0; color:#bbb; font-size:17px; line-height:1.65; }
+        .connect-trust-points { display:grid; gap:11px; margin-top:24px; }
+        .connect-trust-point { display:flex; align-items:center; gap:11px; padding:14px; border-radius:10px; background:rgba(255,255,255,.05); color:#eee; font-size:15px; font-weight:600; }
+        .connect-trust-point span { display:grid; width:25px; height:25px; flex:none; place-items:center; border-radius:50%; background:#ffdb00; color:#151515; }
+
+        .connect-process-header { max-width:850px; margin-bottom:46px; }
+        .connect-process-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+        .connect-process-step { position:relative; min-height:260px; padding:28px 25px; border:1px solid rgba(0,0,0,.06); border-radius:16px; background:#fff; box-shadow:0 8px 24px rgba(0,0,0,.04); }
+        .connect-process-number { position:absolute; top:22px; right:22px; color:#ddd; font-size:38px; font-weight:800; line-height:1; }
+        .connect-process-icon { display:grid; width:48px; height:48px; margin-bottom:24px; place-items:center; border-radius:50%; background:rgba(255,219,0,.22); }
+        .connect-process-step h3 { margin:0 0 12px; color:#1a1a1a; font-size:21px; line-height:1.3; }
+        .connect-process-step p { margin:0; color:#555; font-size:15px; line-height:1.6; }
+        .connect-process-note { max-width:780px; margin:36px auto 0; color:#1a1a1a; font-size:20px; font-weight:700; line-height:1.5; text-align:center; }
+
+        .connect-opportunities-header { max-width:850px; margin-bottom:42px; }
+        .connect-opportunity-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:13px; }
+        .connect-opportunity { display:flex; min-height:76px; align-items:center; gap:13px; padding:17px; border:1px solid rgba(255,255,255,.1); border-radius:12px; background:rgba(255,255,255,.05); color:#eee; font-size:16px; font-weight:600; }
+        .connect-opportunity span { display:grid; width:36px; height:36px; flex:none; place-items:center; border-radius:50%; background:#ffdb00; color:#151515; }
+        .connect-long-term { margin:30px 0 0; padding:20px; border-left:4px solid #ffdb00; background:rgba(255,255,255,.05); color:#ffdb00; font-size:18px; font-weight:700; line-height:1.55; }
+
+        .connect-shared { padding:100px 0; background:#888888; }
+        .connect-shared-grid { display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:70px; }
+        .connect-shared .connect-eyebrow { color: #000; }
+        .connect-question { margin:30px 0 0; padding:28px; border-radius:16px; background:#1a1a1a; color:#fff; font-size:clamp(23px,2.5vw,34px); font-weight:700; line-height:1.35; }
+        .connect-shared-copy p { margin:0 0 18px; color:#2c2c2c; font-size:18px; line-height:1.65; }
+        .connect-shared-copy strong { color:#111; }
+        .connect-closing { margin-top:25px; font-size:22px !important; font-weight:700; }
+
+        .connect-cta { padding:88px 20px; background:#fff; text-align:center; }
+        .connect-cta-inner { max-width:900px; margin:0 auto; }
+        .connect-cta h2 { margin:0; color:#1a1a1a; font-size:clamp(34px,4vw,50px); line-height:1.15; }
+        .connect-cta p { max-width:660px; margin:20px auto 30px; color:#555; font-size:19px; line-height:1.55; }
+        .connect-cta-link { display:inline-flex; min-height:54px; align-items:center; gap:10px; padding:14px 24px; border-radius:999px; background:#1a1a1a; color:#fff; font-weight:700; text-decoration:none; }
+
+        /* Home-page-aligned typography scale */
+        .connect-page .connect-manifesto-copy span,
+        .connect-page .connect-eyebrow { font-size: clamp(17px, 1.35vw, 20px); }
+        .connect-page .connect-manifesto-copy h2 { font-size: clamp(36px, 3.5vw, 48px); }
+        .connect-page .connect-manifesto-copy p { font-size: 20px; }
+        .connect-page .connect-manifesto-value { font-size: 18px; }
+        .connect-page .connect-heading { font-size: clamp(42px, 4.6vw, 64px); line-height: 1.08; }
+        .connect-page .connect-copy p,
+        .connect-page .connect-shared-copy p,
+        .connect-page .connect-cta p { font-size: clamp(19px, 1.55vw, 22px); }
+        .connect-page .connect-example span:not(.connect-example-icon) { font-size: 16px; }
+        .connect-page .connect-example h3 { font-size: clamp(23px, 2vw, 28px); }
+        .connect-page .connect-example-arrow { font-size: 17px; }
+        .connect-page .connect-purpose-note,
+        .connect-page .connect-vision-statement,
+        .connect-page .connect-long-term { font-size: 21px; }
+        .connect-page .connect-founder-label strong { font-size: 24px; }
+        .connect-page .connect-founder-label span { font-size: 18px; }
+        .connect-page .connect-trust-panel h3 { font-size: clamp(30px, 2.7vw, 38px); }
+        .connect-page .connect-trust-panel p { font-size: 20px; }
+        .connect-page .connect-trust-point { font-size: 18px; }
+        .connect-page .connect-process-step h3 { font-size: clamp(23px, 2vw, 28px); }
+        .connect-page .connect-process-step p { font-size: 18px; }
+        .connect-page .connect-process-note { font-size: 24px; }
+        .connect-page .connect-opportunity { font-size: 19px; }
+        .connect-page .connect-question { font-size: clamp(28px, 3vw, 40px); }
+        .connect-page .connect-closing { font-size: 25px !important; }
+        .connect-page .connect-cta h2 { font-size: clamp(42px, 4.6vw, 64px); }
+        .connect-page .connect-cta-link { font-size: 18px; }
+
+        @media(max-width:1100px) {
+          .connect-purpose-grid, .connect-vision-grid, .connect-trust-grid, .connect-shared-grid { grid-template-columns:1fr; }
+          .connect-founder { min-height:600px; }
+          .connect-process-grid { grid-template-columns:repeat(2,1fr); }
+        }
+        @media(max-width:768px) {
+          .connect-manifesto { grid-template-columns:1fr; max-width:95%; gap:22px; margin-top:-12px; padding:24px; }
+          .connect-manifesto-copy { padding:0 0 20px; border-right:0; border-bottom:1px solid rgba(255,255,255,.12); }
+          .connect-manifesto-values { grid-template-columns:repeat(3,1fr); }
+          .connect-section, .connect-shared { padding-block:64px; }
+          .connect-opportunity-grid { grid-template-columns:repeat(2,1fr); }
+          .connect-founder { min-height:500px; }
+        }
+        @media(max-width:480px) {
+          .connect-page > .bm-hero-section-industries { padding-top:20px; }
+          .connect-container { width:92%; }
+          .connect-manifesto-values, .connect-examples, .connect-process-grid, .connect-opportunity-grid { grid-template-columns:1fr; }
+          .connect-heading { font-size:32px; }
+          .connect-copy p { font-size:17px; }
+          .connect-founder { min-height:420px; }
+        }

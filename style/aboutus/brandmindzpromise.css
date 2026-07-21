@@ -1,0 +1,196 @@
+        .brand-promise-industries > .bm-hero-section-industries { padding-top: 50px; }
+        .brand-promise-industries > .bm-hero-section-industries .bm-industries-hero-badge__text { font-size: clamp(1.2rem, 2.5vw, 2.5rem); line-height: 1.15; text-transform: none; }
+        .brand-promise-industries > .bm-hero-section-industries .bm-industries-hero-badge__icon { width: 40px; height: 40px; flex: 0 0 40px; transform: none; }
+        .brand-promise-industries > .bm-hero-section-industries .bm-industries-hero-badge__icon svg { width: 18px; height: 18px; }
+        .brand-promise-industries > .bm-hero-section-industries .bm-industries-hero-title { max-width: 1300px; font-size: clamp(3rem, 6.35vw, 6rem); line-height: 1.12; letter-spacing: -.035em; }
+        .brand-promise-industries > .bm-hero-section-industries .bm-industries-hero-description { max-width: 1200px; font-size: clamp(1.125rem, 2vw, 2.13rem); line-height: 1.4; }
+        .bmp-manifesto-banner {
+          display: grid;
+          grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr);
+          align-items: center;
+          max-width: 90%;
+          gap: 36px;
+          margin: -30px auto 50px;
+          padding: 28px 32px;
+          position: relative;
+          z-index: 20;
+          border-radius: 18px;
+          background: #242424;
+          color: #fff;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, .15);
+        }
+        .bmp-manifesto-copy { padding-right: 30px; border-right: 1px solid rgba(255,255,255,.12); }
+        .bmp-manifesto-copy span { display: block; margin-bottom: 7px; color: #888888; font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+        .bmp-manifesto-copy h2 { margin: 0; color: #fff; font-size: 30px; font-weight: 700; line-height: 1.2; }
+        .bmp-manifesto-copy p { margin: 9px 0 0; color: #aaa; font-size: 17px; line-height: 1.45; }
+        .bmp-manifesto-pillars {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+        .bmp-manifesto-pillar {
+          display: flex;
+          min-width: 0;
+          align-items: center;
+          gap: 10px;
+          min-height: 50px;
+          padding: 11px 14px;
+          border: 1px solid rgba(255,255,255,.08);
+          border-radius: 11px;
+          background: rgba(255,255,255,.045);
+          color: #e8e8e8;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.3;
+        }
+        .bmp-manifesto-pillar span {
+          display: grid;
+          width: 24px;
+          height: 24px;
+          flex: none;
+          place-items: center;
+          border-radius: 50%;
+          background: #ffdb00;
+          color: #151515;
+        }
+        .brand-promise-industries .bm-industry-details-section { padding: 64px 0 80px; }
+        .brand-promise-industries .bm-industry-grid-layout { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+        .brand-promise-industries .bm-industry-left-pane { min-width: 0; }
+        .bmp-promise-grid { align-items: stretch; gap: 20px; }
+        .bmp-promise-grid .bmp-promise-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+        .bmp-promise-card { scroll-margin-top: 120px; border-color: rgba(0,0,0,.12); }
+        .bmp-promise-card:hover { border-color: #888888; }
+        .bmp-promise-card .bm-cs-header { align-items: flex-start; }
+        .bmp-promise-card .bm-cs-icon-wrapper { background: #888888; color: #fff; width: 42px; height: 42px; }
+        .bmp-promise-card .bm-cs-title { color: #000; font-size: 20px; line-height: 1.25; }
+        .bmp-card-eyebrow { display: block; margin: -4px 0 14px; color: #888888; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        .bmp-promise-card .bm-cs-body { color: #888888; line-height: 1.65; text-align: left; }
+        .bmp-card-points { display: grid; gap: 8px; margin-top: 16px; }
+        .bmp-card-point { display: flex; align-items: flex-start; gap: 8px; color: #000; font-size: 14px; font-weight: 600; line-height: 1.45; }
+        .bmp-card-point svg { flex: none; margin-top: 2px; color: #000; }
+        .bmp-card-statement { margin: 18px 0 0; padding: 13px 14px; border-left: 3px solid #000; border-radius: 0 8px 8px 0; background: #888888; color: #fff; font-size: 15px; font-weight: 700; line-height: 1.5; }
+        .bmp-side-promise { display: flex; align-items: flex-start; gap: 14px; }
+        .bmp-side-promise svg { flex: none; color: #000; }
+        .bmp-side-promise strong { display: block; margin-bottom: 4px; color: #fff; font-size: 17px; }
+        .bmp-side-promise span { color: #b0b0b0; font-size: 14px; line-height: 1.4; }
+        .bmp-side-quote { margin: 0; color: #e0e0e0; font-size: 17px; line-height: 1.55; }
+        .bmp-side-quote strong { display: block; margin-top: 10px; color: #fff; }
+        .brand-promise-industries .bm-industry-right-pane {
+          position: static;
+          top: auto;
+          display: grid;
+          grid-template-columns: minmax(230px, .75fr) minmax(0, 1.5fr) minmax(230px, .75fr);
+          gap: 30px;
+          align-items: center;
+        }
+        .brand-promise-industries .bm-stats-header-wrapper {
+          padding: 0 28px 0 0;
+          border-right: 1px solid rgba(255,255,255,.1);
+          border-bottom: 0;
+        }
+        .brand-promise-industries .bm-stats-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 24px;
+        }
+        .brand-promise-industries .bm-industry-testimonial {
+          display: flex;
+          min-height: 100%;
+          align-items: center;
+        }
+        .bmp-home-faq-wrap { padding: 80px 0; background: #fff; }
+        .bmp-home-faq-wrap .bm-faq-item > summary { list-style: none; }
+        .bmp-home-faq-wrap .bm-faq-item > summary::-webkit-details-marker { display: none; }
+        .bmp-home-faq-wrap .bm-faq-item[open] { box-shadow: 0 15px 35px rgba(0, 0, 0, .1); }
+        .bmp-home-faq-wrap .bm-faq-item[open] .bm-faq-q-box { background: #333; color: #fff; font-weight: 500; }
+        .bmp-home-faq-wrap .bm-faq-chevron { flex: 0 0 auto; transition: transform .3s ease; }
+        .bmp-home-faq-wrap .bm-faq-item[open] .bm-faq-chevron { transform: rotate(180deg); }
+        .bmp-cta-link { text-decoration: none; }
+        .brand-promise-industries .bm-hero-action { display: flex; align-items: center; justify-content: center; }
+        .brand-promise-industries .bmp-cta-button {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          padding: 13px 15px;
+          border: 0;
+          border-radius: 40px;
+          background: #1a1a1a;
+          color: #fff;
+          cursor: pointer;
+          box-shadow: 0 10px 20px rgba(0,0,0,.15);
+          transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+        }
+        .brand-promise-industries .bmp-cta-button:hover {
+          transform: translateY(-2px);
+          background: #000;
+          box-shadow: 0 15px 30px rgba(0,0,0,.22);
+        }
+        .brand-promise-industries .bmp-cta-button .bm-hero-btn__icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 8px;
+          border: 2.5px solid #fff;
+          border-radius: 50%;
+          background: #000;
+          font-size: 25px;
+          transition: transform .3s ease;
+        }
+        .brand-promise-industries .bmp-cta-button:hover .bm-hero-btn__icon { transform: rotate(360deg); }
+        .brand-promise-industries .bmp-cta-button .bm-hero-btn__text {
+          display: inline-flex;
+          align-items: center;
+          color: #fff;
+          font-size: 21px;
+          font-weight: 400;
+          line-height: 1.2;
+        }
+        .brand-promise-industries .bmp-cta-button .bm-hero-btn__text strong {
+          padding-left: 5px;
+          color: #fff;
+          font-size: 23px;
+          font-weight: 500;
+        }
+
+        /* Home-page-aligned typography scale */
+        .brand-promise-industries .bm-industry-pretitle { font-size: clamp(17px, 1.35vw, 20px); }
+        .brand-promise-industries .bm-industry-main-title { font-size: clamp(42px, 4.6vw, 64px); line-height: 1.1; }
+        .brand-promise-industries .bm-industry-description { font-size: clamp(19px, 1.55vw, 22px); line-height: 1.6; }
+        .brand-promise-industries .bm-challenges-solutions-title { font-size: clamp(30px, 2.6vw, 38px); }
+        .brand-promise-industries .bmp-manifesto-copy span { font-size: 17px; }
+        .brand-promise-industries .bmp-manifesto-copy h2 { font-size: clamp(36px, 3.5vw, 48px); }
+        .brand-promise-industries .bmp-manifesto-copy p { font-size: 20px; }
+        .brand-promise-industries .bmp-manifesto-pillar { font-size: 18px; }
+        .brand-promise-industries .bmp-promise-card .bm-cs-title { font-size: clamp(24px, 2vw, 28px); }
+        .brand-promise-industries .bmp-promise-card .bm-cs-body { font-size: clamp(18px, 1.35vw, 20px); }
+        .brand-promise-industries .bmp-card-eyebrow { font-size: 16px; }
+        .brand-promise-industries .bmp-card-point { font-size: 18px; }
+        .brand-promise-industries .bmp-card-statement { font-size: 19px; }
+        .brand-promise-industries .bmp-side-promise strong { font-size: 22px; }
+        .brand-promise-industries .bmp-side-promise span { font-size: 18px; }
+        .brand-promise-industries .bmp-side-quote { font-size: 21px; }
+        @media (max-width: 1200px) {
+          .brand-promise-industries .bm-industry-grid-layout { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+          .bmp-manifesto-banner {
+            grid-template-columns: 1fr;
+            max-width: 95%;
+            gap: 22px;
+            margin-top: -12px;
+            padding: 24px;
+          }
+          .bmp-manifesto-copy { padding: 0 0 20px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+          .brand-promise-industries .bm-industry-details-section { padding: 52px 0 64px; }
+          .brand-promise-industries .bm-industry-right-pane { grid-template-columns: 1fr; align-items: stretch; }
+          .brand-promise-industries .bm-stats-header-wrapper { padding: 0 0 18px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+          .brand-promise-industries .bm-stats-grid { grid-template-columns: 1fr; }
+          .bmp-promise-grid .bmp-promise-card:last-child:nth-child(odd) { grid-column: auto; }
+          .bmp-home-faq-wrap { padding: 60px 0; }
+        }
+        @media (max-width: 480px) {
+          .brand-promise-industries > .bm-hero-section-industries { padding-top: 20px; }
+          .bmp-manifesto-pillars { grid-template-columns: 1fr; }
+          .bmp-manifesto-copy h2 { font-size: 24px; }
+          .bmp-home-faq-wrap { padding: 44px 0; }
+        }

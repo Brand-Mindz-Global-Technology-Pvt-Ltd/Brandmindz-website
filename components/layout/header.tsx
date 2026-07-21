@@ -6,16 +6,15 @@ import Image from 'next/image';
 import logo from '../../assets/logo/logo.png';
 import { FiMenu, FiX, FiChevronDown, FiChevronUp, FiPhone } from "react-icons/fi";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
   const [show, setShow] = useState(false);
-  const router = useRouter();
+
 
   // Check if mobile
   useEffect(() => {
@@ -66,12 +65,19 @@ const Header = () => {
       dropdownItems: [],
       path: "/"
     },
-    {
-      name: 'About us',
-      hasDropdown: false,
-      dropdownItems: [],
-      path: "/about"
-    },
+   {
+  name: 'About us',
+  hasDropdown: true,
+  dropdownItems: [
+    { label: 'About Brand Mindz', path: '/about' },
+    { label: 'Work Culture', path: '/work-culture' },
+    { label: 'Global Capability', path: '/global-capability' },
+    { label: 'Brand Mindz Promise', path: '/brand-mindz-promise' },
+    { label: 'Leadership & Execution Team', path: '/leadership-execution-team' },
+    { label: 'Partner With Us', path: '/partner-with-us' },
+    { label: 'Brand Mindz Connect™️', path: '/brand-mindz-connect' }
+  ]
+},
     {
       name: 'Our Services',
       hasDropdown: true,
@@ -268,7 +274,7 @@ const Header = () => {
                 <button
                   className="bm-header__btn mobile"
                   onClick={() => {
-                   router.push('/contact');
+                    console.log('Book a Call clicked');
                     closeMobileMenu();
                   }}
                 >
@@ -285,7 +291,7 @@ const Header = () => {
               <button
                 className="bm-header__btn"
                 onClick={() => {
-                router.push('/contact');
+                  console.log('Book a Call clicked');
                 }}
               >
                 <div className="icon-circle">
