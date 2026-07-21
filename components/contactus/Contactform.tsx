@@ -46,7 +46,7 @@ export const GetStartedSection = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
- const dropdownRef = useRef(null);
+  const dropdownRef = useRef(null);
   const industryDropdownRef = useRef(null);
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [industrySearchQuery, setIndustrySearchQuery] = useState("");
@@ -172,7 +172,7 @@ export const GetStartedSection = () => {
     industry: '',
     requirement: '',
     timeline: 'Immediately',
-    contactMode:[],
+    contactMode: [],
     help: "",
     connectionDate: "Tomorrow"
   });
@@ -282,58 +282,58 @@ export const GetStartedSection = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbylboHU_WyOf0fvqmnnYLRF54rloqhojNcUxq7R_GIjQtUPIa5VT-cMulNGnrbvKN9K/exec";
- 
-const submitLead = async (leadData) => {
-  const response = await fetch(SCRIPT_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8",
-    },
-    body: JSON.stringify(leadData),
-  });
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbylboHU_WyOf0fvqmnnYLRF54rloqhojNcUxq7R_GIjQtUPIa5VT-cMulNGnrbvKN9K/exec";
 
-  return await response.json();
-};
-const handleSubmitLead = async () => {
-  // Validate Step 3
-  if (!validateStep(3)) return;
+  const submitLead = async (leadData) => {
+    const response = await fetch(SCRIPT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(leadData),
+    });
 
-  setIsSubmitting(true);
+    return await response.json();
+  };
+  const handleSubmitLead = async () => {
+    // Validate Step 3
+    if (!validateStep(3)) return;
 
-  try {
-  const payload = {
+    setIsSubmitting(true);
 
-  name: formData.name,
-  companyName: formData.companyName,
-  designation: formData.designation,
-  phone: `${selectedCountry.code} ${formData.phone}`,
-  email: formData.email,
-  location: formData.location,
-  serviceRequired: formData.help,
-  industry: formData.industry,
-  detailedRequirement: formData.requirement,
-  preferredConnection: formData.connectionDate,
-  projectStart: formData.timeline,
-  contactMode: formData.contactMode.join(", ")
-};
- 
+    try {
+      const payload = {
 
-    const response = await submitLead(payload);
+        name: formData.name,
+        companyName: formData.companyName,
+        designation: formData.designation,
+        phone: `${selectedCountry.code} ${formData.phone}`,
+        email: formData.email,
+        location: formData.location,
+        serviceRequired: formData.help,
+        industry: formData.industry,
+        detailedRequirement: formData.requirement,
+        preferredConnection: formData.connectionDate,
+        projectStart: formData.timeline,
+        contactMode: formData.contactMode.join(", ")
+      };
 
-    if (response.success) {
-      setActiveStep(4); // Success page
-    } else {
-      alert(response.message || "Something went wrong");
+
+      const response = await submitLead(payload);
+
+      if (response.success) {
+        setActiveStep(4); // Success page
+      } else {
+        alert(response.message || "Something went wrong");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Failed to submit. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error(error);
-    alert("Failed to submit. Please try again.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <section className="bm-getstarted-section">
@@ -871,17 +871,17 @@ const handleSubmitLead = async () => {
                               Previous
                             </button>
 
-                          <button
-  className="bm-s2-next-btn"
-  onClick={handleSubmitLead}
-  disabled={isSubmitting}
->
-  <span className="bm-btn-icon">
-    <Image src={arrowIcon} alt="arrow" width={18} height={18} />
-  </span>
+                            <button
+                              className="bm-s2-next-btn"
+                              onClick={handleSubmitLead}
+                              disabled={isSubmitting}
+                            >
+                              <span className="bm-btn-icon">
+                                <Image src={arrowIcon} alt="arrow" width={18} height={18} />
+                              </span>
 
-  {isSubmitting ? "Submitting..." : "Begin My Growth Journey"}
-</button>
+                              {isSubmitting ? "Submitting..." : "Begin My Growth Journey"}
+                            </button>
                           </div>
                         </div>
                       )}
@@ -901,42 +901,42 @@ const handleSubmitLead = async () => {
                     className="bm-client-img-bm-right-conten"
                   />
 
-                  
-{/* WHITE SHADOW FADE */}
-<div className="bm-white-shadow-bottom"></div>
 
-<div className="bm-s4-card">
-  {/* Success Header */}
-  <div className="bm-s4-header">
-    <span className="bm-s4-check-icon">✓</span>
-    <h1 className="bm-s4-thank">
-      Thank <span className="bm-s4-gray">You!</span>
-    </h1>
-  </div>
+                  {/* WHITE SHADOW FADE */}
+                  <div className="bm-white-shadow-bottom"></div>
 
-  {/* Message */}
-  <div className="bm-s4-connection-box">
-    <h2 className="bm-s4-expert-text">
-      Our Growth Expert <span className="bm-s4-gray">Will Connect</span> with you within <span className="bm-s4-bold">24 Hours</span>.
-    </h2>
-  </div>
+                  <div className="bm-s4-card">
+                    {/* Success Header */}
+                    <div className="bm-s4-header">
+                      <span className="bm-s4-check-icon">✓</span>
+                      <h1 className="bm-s4-thank">
+                        Thank <span className="bm-s4-gray">You!</span>
+                      </h1>
+                    </div>
 
-  {/* Quick actions */}
-  <div className="bm-s4-quick-actions" style={{ display: "flex", gap: "1rem", justifyContent: "center", marginTop: "1rem" }}>
-    <button className="bm-quick-btn" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-      {/* Placeholder icon */}
-      <span>📞</span>
-      WhatsApp Us Now
-    </button>
-    <button className="bm-quick-btn" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-      {/* Placeholder icon */}
-      <span>📅</span>
-      Book a Strategy Call
-    </button>
-  </div>
-</div>
+                    {/* Message */}
+                    <div className="bm-s4-connection-box">
+                      <h2 className="bm-s4-expert-text">
+                        Our Growth Expert <span className="bm-s4-gray">Will Connect</span> with you within <span className="bm-s4-bold">24 Hours</span>.
+                      </h2>
+                    </div>
 
+                    {/* Quick actions */}
+                    <div className="bm-s4-quick-actions" style={{ display: "flex", gap: "1rem", justifyContent: "center", marginTop: "1rem" }}>
+                      <button className="bm-quick-btn" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                        {/* Placeholder icon */}
+                        <span>📞</span>
+                        WhatsApp Us Now
+                      </button>
+                      <button className="bm-quick-btn" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                        {/* Placeholder icon */}
+                        <span>📅</span>
+                        Book a Strategy Call
+                      </button>
+                    </div>
                   </div>
+
+                </div>
               )}
 
             </div>

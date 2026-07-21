@@ -13,7 +13,9 @@ export default function Aboutpage() {
             <Header />
             <main>
                 <ContactUs />
-                <GetStartedSection />
+                <div id="contact-form" style={{ scrollMarginTop: "120px" }}>
+                    <GetStartedSection />
+                </div>
                 <MapSection />
                 <TestimonialsSection />
             </main>

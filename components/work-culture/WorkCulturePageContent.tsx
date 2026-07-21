@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import founderImage from "@/assets/HomeSection/about/210446c72e34182875e9edee3773a3ddc673e220.jpg";
 import heroPattern from "@/assets/HomeSection/banner/Group (1).png";
-import womenStoryImage from "@/assets/HomeSection/various/Person2.png";
+import womenStoryImage from "@/assets/about/Women.webp";
 export const metadata: Metadata = {
   title: "Building the Best Work Culture in Tamil Nadu",
   description:

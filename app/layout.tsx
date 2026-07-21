@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import FloatingContactCTA from "@/components/layout/FloatingContactCTA";
 import Script from 'next/script'
 import './globals.css'
 
@@ -108,6 +109,7 @@ export default function RootLayout({
         </Script>
         {children}
         <Analytics />
+        <FloatingContactCTA/>
       </body>
     </html>
   )

@@ -1,0 +1,56 @@
+.floating-contact-cta {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 9999;
+  transform: translateY(-50%);
+
+  width: 52px;
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 12px;
+
+  background: #4a4a49;
+  color: #ffffff;
+  border-radius: 16px 0 0 16px;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+  font-size: 17px;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+
+  transition:
+    padding 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.floating-contact-cta span {
+  display: block;
+  white-space: nowrap;
+  transform: rotate(-180deg);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.floating-contact-cta:hover {
+  padding-right: 18px;
+  background: #040404;
+}
+
+.floating-contact-arrow {
+  writing-mode: horizontal-tb;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .floating-contact-cta {
+    padding: 14px 9px;
+    border-radius: 12px 0 0 12px;
+    font-size: 14px;
+  }
+}
