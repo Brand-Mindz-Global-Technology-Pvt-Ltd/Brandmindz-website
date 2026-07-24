@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: 'Build stunning animated websites with SEO best practices.',
     images: [
       {
-        url: '/triangle.png',
+        url: '/assets/logo/triangle.jpg',
         width: 1200,
         height: 1000,
         alt: 'Brand Mindz - A Global Marketing Company',
