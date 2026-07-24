@@ -39,8 +39,8 @@ export const metadata: Metadata = {
       {
         url: '/assets/logo/triangle.jpg',
         width: 1200,
-        height: 1000,
-        alt: 'Brand Mindz - A Global Marketing Company',
+        height: 630,
+        alt: 'Brand Mindz',
       },
     ],
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brand Mindz - Digital Marketing & Web Development Agency',
     description: 'Brand Mindz helps businesses grow with modern websites, branding, SEO, and digital marketing solutions.',
-    images: ['/logo.png'],
+    images: ['/assets/logo/triangle.jpg'],
     creator: '@BrandMindz',
   },
   robots: {
