@@ -21,7 +21,7 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
-import founderImage from "@/assets/HomeSection/about/210446c72e34182875e9edee3773a3ddc673e220.jpg";
+import founderImage from "@/assets/HomeSection/about/210446c72e34182875e9edee3773a3ddc673e220.webp";
 import Image from "next/image";
 
 export const metadata: Metadata = {

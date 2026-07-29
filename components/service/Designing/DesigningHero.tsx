@@ -9,14 +9,14 @@ import {
     FadeIn,
 } from "../../animations";
 
-import OurImage from '../../../assets/branding/OurImage.png'
+import OurImage from '../../../assets/branding/ourimage.webp'
 
 
-import Person1 from '../../../assets/HomeSection/various/Person1.webp'
-import Person2 from '../../../assets/HomeSection/various/Person2.webp'
-import Person3 from '../../../assets/HomeSection/various/Person3.webp'
-import Person4 from '../../../assets/HomeSection/various/Person4.webp'
-import Person5 from '../../../assets/HomeSection/various/Person5.webp'
+import Person1 from '../../../assets/HomeSection/various/person1.webp'
+import Person2 from '../../../assets/HomeSection/various/person2.webp'
+import Person3 from '../../../assets/HomeSection/various/person3.webp'
+import Person4 from '../../../assets/HomeSection/various/person4.webp'
+import Person5 from '../../../assets/HomeSection/various/person5.webp'
 
 
 // --- SCROLL HIGHLIGHT LOGIC ---

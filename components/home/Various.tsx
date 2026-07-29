@@ -5,14 +5,14 @@ import styles from '../../style/home/Various.module.css';
 import Image from 'next/image';
 
 import Image1 from '../../assets/HomeSection/various/quote.webp';
-import VasuKarthick from '../../assets/HomeSection/various/Vasu-Karthick.png';
-import PraveenSpaceman from '../../assets/HomeSection/various/praveen-spaceman.png';
-import NoelImg from '../../assets/HomeSection/various/Noel.png';
-import MenagaBioneem from '../../assets/HomeSection/various/Menaga-bioneem.png';
-import MariaSubiRajan from '../../assets/HomeSection/various/maria-subi-rajan.png';
-import Kannan7Stars from '../../assets/HomeSection/various/Kannan-7stars.png';
-import KalpanaShakthivel from '../../assets/HomeSection/various/Kalpana-shakthivel.png';
-import CkKumaravel from '../../assets/HomeSection/various/ckkumaravel.png';
+import VasuKarthick from '../../assets/HomeSection/various/vasu-karthick.webp';
+import PraveenSpaceman from '../../assets/HomeSection/various/praveen-spaceman.webp';
+import NoelImg from '../../assets/HomeSection/various/noel.webp';
+import MenagaBioneem from '../../assets/HomeSection/various/menaga-bioneem.webp';
+import MariaSubiRajan from '../../assets/HomeSection/various/maria-subi-rajan.webp';
+import Kannan7Stars from '../../assets/HomeSection/various/kannan-7stars.webp';
+import KalpanaShakthivel from '../../assets/HomeSection/various/kalpana-shakthivel.webp';
+import CkKumaravel from '../../assets/HomeSection/various/ckkumaravel.webp';
 const initialLeaders = [
   { id: 1, name: "Vasu Karthick", role: "Magic 20", src: VasuKarthick, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
   { id: 2, name: "Praveen", role: "Spaceman carft", src: PraveenSpaceman, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },

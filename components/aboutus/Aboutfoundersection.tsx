@@ -5,12 +5,12 @@
 // import { FadeIn } from "@/components/animations/fade-in";
 // import Image from "next/image";
 // import "../../style/aboutus/aboutus.css";
-// import aboutpic from '../../assets/about/Frame 2147226233 (2).png'
-// import founder1 from '../../assets/about/Frame 2147226233 (2).png'
-// import founder2 from '../../assets/about/Frame 2147226233 (2).png'
-// import founder3 from '../../assets/about/Frame 2147226233 (2).png'
-// import founder4 from '../../assets/about/Frame 2147226233 (2).png'
-// import founder5 from '../../assets/about/founder5.png'
+// import aboutpic from '../../assets/about/frame21472262332.webp'
+// import founder1 from '../../assets/about/frame21472262332.webp'
+// import founder2 from '../../assets/about/frame21472262332.webp'
+// import founder3 from '../../assets/about/frame21472262332.webp'
+// import founder4 from '../../assets/about/frame21472262332.webp'
+// import founder5 from '../../assets/about/founder5.webp'
 
 // const Paragraph = {
 //   paragraph1: "R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10 years of experience leading marketing teams in large corporates and mentoring over 20,000 entrepreneurs across India. Vasanth founded Brand Mindz with a singular mission: to help businesses grow digitally through strategic, outcome-driven approaches. His commitment to accountability and ethical business practices is guided by a personal principle: 'Promise what you deliver, and deliver what you promised.'",
@@ -167,11 +167,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/animations/fade-in";
 import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
-import aboutpic from '../../assets/about/Frame 2147226233 (2).png'
-import founder1 from '../../assets/about/Frame 2147226233 (2).png'
-import founder2 from '../../assets/about/Frame 2147226233 (2).png'
-import founder3 from '../../assets/about/Frame 2147226233 (2).png'
-import founder4 from '../../assets/about/Frame 2147226233 (2).png'
+import aboutpic from '../../assets/about/frame21472262332.webp'
+import founder1 from '../../assets/about/frame21472262332.webp'
+import founder2 from '../../assets/about/frame21472262332.webp'
+import founder3 from '../../assets/about/frame21472262332.webp'
+import founder4 from '../../assets/about/frame21472262332.webp'
 
 // --- Only Adding the Logic Components ---
 const ScrollLine = ({ content }) => {

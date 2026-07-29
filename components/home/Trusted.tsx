@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "../../style/home/trusted.css";
 import Image from "next/image";
-import Bioneemtec from "../../assets/HomeSection/brand/Bioneemtec.png";
-import Cheranacademy from "../../assets/HomeSection/brand/Cheranacademy.png";
-import nailsandbeyonds from "../../assets/HomeSection/brand/nailsandbeyonds.png";
-import SevenStarLogo from "../../assets/HomeSection/brand/SevenStarLogo.png";
-import Shortfundly from "../../assets/HomeSection/brand/Shortfundly.png";
-import swotle from "../../assets/HomeSection/brand/swotle.png";
-import tancoir from "../../assets/HomeSection/brand/tancoir.png";
-import TEDx from "../../assets/HomeSection/brand/TEDx.png";
+import Bioneemtec from "../../assets/HomeSection/brand/bioneemtec.webp";
+import Cheranacademy from "../../assets/HomeSection/brand/cheranacademy.webp";
+import nailsandbeyonds from "../../assets/HomeSection/brand/nailsandbeyonds.webp";
+import SevenStarLogo from "../../assets/HomeSection/brand/sevenstarlogo.webp";
+import Shortfundly from "../../assets/HomeSection/brand/shortfundly.webp";
+import swotle from "../../assets/HomeSection/brand/swotle.webp";
+import tancoir from "../../assets/HomeSection/brand/tancoir.webp";
+import TEDx from "../../assets/HomeSection/brand/tedx.webp";
 
 export const Trusted = () => {
   const brandLogos = [

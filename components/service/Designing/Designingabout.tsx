@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ArrowRight } from "lucide-react";
 
-import founderImg from "../../../assets/branding/Braddingabount.png";
+import founderImg from "../../../assets/branding/braddingabount.webp";
 
 export const Designingabout = ({ data }: { data: any }) => {
   const [activeTab, setActiveTab] = useState(data?.menuItems?.[0]?.id || 1);

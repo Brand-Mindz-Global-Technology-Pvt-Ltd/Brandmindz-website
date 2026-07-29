@@ -7,7 +7,7 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { ArrowRight } from "lucide-react";
 import { useDigitalMarketingContext } from "./DigitalMarketingContext";
 
-import founderImg from "../../../assets/branding/Braddingabount.png";
+import founderImg from "../../../assets/branding/braddingabount.webp";
 
 export const DigitalMarketingabout = () => {
   const { activeDigitalMarketingTab } = useDigitalMarketingContext();

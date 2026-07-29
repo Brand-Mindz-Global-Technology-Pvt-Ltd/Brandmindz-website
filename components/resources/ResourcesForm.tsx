@@ -7,13 +7,13 @@ import "../../style/aboutus/aboutus.css";
 import "../../style/contactus/contactus.css";
 
 // Import your assets
-import bgPattern from "../../assets/contact/Group (3).png";
-import clientLogo1 from "../../assets/contact/Frame 7 89.png";
-import arrowIcon from "../../assets/contact/right.png";
-import leftIcon from "../../assets/contact/left.png";
-import contactIcon from "../../assets/contact/Vector (1).png";
-import whitecontact from "../../assets/contact/Vector White.png";
-import bgImage from "../../assets/contact/Group5.png";
+import bgPattern from "../../assets/contact/group3.webp";
+import clientLogo1 from "../../assets/contact/frame789.webp";
+import arrowIcon from "../../assets/contact/right.webp";
+import leftIcon from "../../assets/contact/left.webp";
+import contactIcon from "../../assets/contact/vector1.webp";
+import whitecontact from "../../assets/contact/vectorwhite.webp";
+import bgImage from "../../assets/contact/group5.webp";
 
 interface CountryItem {
   name: string;

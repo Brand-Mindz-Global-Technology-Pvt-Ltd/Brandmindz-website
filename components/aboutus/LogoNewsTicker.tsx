@@ -5,54 +5,54 @@ import { motion } from "framer-motion";
 import "../../style/aboutus/aboutus.css";
 
 // Import your actual logos
-import logo1 from '../../assets/about/01-logo.png';
-import logo2 from '../../assets/about/Cheranacademy.png';
-import logo3 from '../../assets/about/Faggro (1).png';
-import logo4 from '../../assets/about/Market-cloud.png';
-import logo5 from '../../assets/about/OIP.png';
-import logo6 from '../../assets/about/RESONANCE-LOGO.png';
-import logo7 from '../../assets/about/SevenStarLogo.png';
-import logo8 from '../../assets/about/TEDx.png';
-import logo9 from '../../assets/about/Tuka Baby.png';
-import logo10 from '../../assets/about/Tymerz-2048x933.png';
-import logo11 from '../../assets/about/nailsandbeyonds.png';
-import logo12 from '../../assets/about/naturals_header_logo.png';
-import logo13 from '../../assets/about/tancoir.png';
-import logo14 from '../../assets/about/tan coir.png';
+import logo1 from '../../assets/about/01-logo.webp';
+import logo2 from '../../assets/about/cheranacademy.webp';
+import logo3 from '../../assets/about/faggro1.webp';
+import logo4 from '../../assets/about/market-cloud.webp';
+import logo5 from '../../assets/about/oip.webp';
+import logo6 from '../../assets/about/resonance-logo.webp';
+import logo7 from '../../assets/about/sevenstarlogo.webp';
+import logo8 from '../../assets/about/tedx.webp';
+import logo9 from '../../assets/about/tukababy.webp';
+import logo10 from '../../assets/about/tymerz-2048x933.webp';
+import logo11 from '../../assets/about/nailsandbeyonds.webp';
+import logo12 from '../../assets/about/naturals_header_logo.webp';
+import logo13 from '../../assets/about/tancoir.webp';
+import logo14 from '../../assets/about/tancoirlogo.webp';
 
 
-import naturals from '../../assets/about/Scroll_logos/natulalscolorimage.jpeg';
-import seven from '../../assets/about/Scroll_logos/SevenStarLogo.png';
-import nails from '../../assets/about/Scroll_logos/nails and beyonds (2).png';
-import cheranacademy from '../../assets/about/Scroll_logos/Cheranacademy.png';
-import tancoir from '../../assets/about/Scroll_logos/tancoir.png';
-import tedx from '../../assets/about/Scroll_logos/TEDx_idkxTc8gwO_1 (1).png';
-import Bioneemtec from '../../assets/about/Scroll_logos/Bioneemtec  logo (1).png';
-import RESONANCE from '../../assets/about/Scroll_logos/RESONANCE-LOGO.png';
-import OIP from '../../assets/about/Scroll_logos/OIP.png';
-import Tuka from '../../assets/about/Scroll_logos/Tuka Baby.png';
-import Tymerz from '../../assets/about/Scroll_logos/Tymerz-2048x933.png';
-import Faggro from '../../assets/about/Scroll_logos/Faggro (1).png';
-import Market from '../../assets/about/Scroll_logos/Market-cloud.png'
-import logo01 from '../../assets/about/Scroll_logos/01-logo.png'
-import aasi from '../../assets/about/Scroll_logos/aasi_logo.png'
-import Copy from '../../assets/about/Scroll_logos/Copy of annam-dental-logo.png'
-import DIC from '../../assets/about/Scroll_logos/DIC tenkasi.png'
-import Ettik from '../../assets/about/Scroll_logos/Ettik.png'
-import HRLogo from '../../assets/about/Scroll_logos/HR-Logo-1.png'
-import jcom from '../../assets/about/Scroll_logos/jcom-Photoroom.png'
-import Magic from '../../assets/about/Scroll_logos/Magic-20-e.png'
-import nellai from '../../assets/about/Scroll_logos/nellai-tours-logo.png'
-import our from '../../assets/about/Scroll_logos/our studios (1).png'
-import proton from '../../assets/about/Scroll_logos/proton-images.png'
-import sakthi from '../../assets/about/Scroll_logos/she_the_sakthi_logo-Photoroom.png'
-import shortfundly from '../../assets/about/Scroll_logos/Shortfundly (1).png'
-import surprisor from '../../assets/about/Scroll_logos/Surprisor stories logo.png'
-import swotle from '../../assets/about/Scroll_logos/swotle (1).png'
-import bridal from '../../assets/about/Scroll_logos/The Bridal Artisans.png'
-import truck from '../../assets/about/Scroll_logos/truck-taxi-logo-e1732104114721 (1).png'
-import tuka from '../../assets/about/Scroll_logos/Tuka Baby.png'
-import tymerz from '../../assets/about/Scroll_logos/Tymerz-2048x933.png'
+import naturals from '../../assets/about/Scroll_logos/natulalscolorimage.webp';
+import seven from '../../assets/about/Scroll_logos/sevenstarlogo.webp';
+import nails from '../../assets/about/Scroll_logos/nailsandbeyonds2.webp';
+import cheranacademy from '../../assets/about/Scroll_logos/cheranacademy.webp';
+import tancoir from '../../assets/about/Scroll_logos/tancoir.webp';
+import tedx from '../../assets/about/Scroll_logos/tedx_idkxtc8gwo_11.webp';
+import Bioneemtec from '../../assets/about/Scroll_logos/bioneemteclogo1.webp';
+import RESONANCE from '../../assets/about/Scroll_logos/resonance-logo.webp';
+import OIP from '../../assets/about/Scroll_logos/oip.webp';
+import Tuka from '../../assets/about/Scroll_logos/tukababy.webp';
+import Tymerz from '../../assets/about/Scroll_logos/tymerz-2048x933.webp';
+import Faggro from '../../assets/about/Scroll_logos/faggro1.webp';
+import Market from '../../assets/about/Scroll_logos/market-cloud.webp'
+import logo01 from '../../assets/about/Scroll_logos/01-logo.webp'
+import aasi from '../../assets/about/Scroll_logos/aasi_logo.webp'
+import Copy from '../../assets/about/Scroll_logos/copyofannam-dental-logo.webp'
+import DIC from '../../assets/about/Scroll_logos/dictenkasi.webp'
+import Ettik from '../../assets/about/Scroll_logos/ettik.webp'
+import HRLogo from '../../assets/about/Scroll_logos/hr-logo-1.webp'
+import jcom from '../../assets/about/Scroll_logos/jcom-photoroom.webp'
+import Magic from '../../assets/about/Scroll_logos/magic-20-e.webp'
+import nellai from '../../assets/about/Scroll_logos/nellai-tours-logo.webp'
+import our from '../../assets/about/Scroll_logos/ourstudios1.webp'
+import proton from '../../assets/about/Scroll_logos/proton-images.webp'
+import sakthi from '../../assets/about/Scroll_logos/she_the_sakthi_logo-photoroom.webp'
+import shortfundly from '../../assets/about/Scroll_logos/shortfundly1.webp'
+import surprisor from '../../assets/about/Scroll_logos/surprisorstorieslogo.webp'
+import swotle from '../../assets/about/Scroll_logos/swotle1.webp'
+import bridal from '../../assets/about/Scroll_logos/thebridalartisans.webp'
+import truck from '../../assets/about/Scroll_logos/truck-taxi-logo-e17321041147211.webp'
+import tuka from '../../assets/about/Scroll_logos/tukababy.webp'
+import tymerz from '../../assets/about/Scroll_logos/tymerz-2048x933.webp'
 
 export const LogoNewsTicker = () => {
   // Create array with all your actual logo imports

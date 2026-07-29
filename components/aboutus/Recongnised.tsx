@@ -6,16 +6,16 @@ import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
 
 // Import your black & white logos
-import news18BW from '../../assets/about/Frame 2147226239 (1).png';
-import dinamalar3BW from '../../assets/about/Sun news 1 (3).png';
-import platform5BW from '../../assets/about/News 18 Tamil 1 (1).png';
-import platform6BW from '../../assets/about/Dinamalar 1 (3).png';
+import news18BW from '../../assets/about/frame21472262391.webp';
+import dinamalar3BW from '../../assets/about/sunnews13.webp';
+import platform5BW from '../../assets/about/news18tamil11.webp';
+import platform6BW from '../../assets/about/dinamalar13.webp';
 
 // Import your COLOR logos (replace these with your actual color image imports)
-import news18Color from '../../assets/about/Vikatan 1.png';
-import dinamalar3Color from '../../assets/about/Sun news 1 (3).png';
-import platform5Color from '../../assets/about/News 18 Tamil 1 (1).png';
-import platform6Color from '../../assets/about/Dinamalar 1 (6).png';
+import news18Color from '../../assets/about/vikatan1.webp';
+import dinamalar3Color from '../../assets/about/sunnews13.webp';
+import platform5Color from '../../assets/about/news18tamil11.webp';
+import platform6Color from '../../assets/about/dinamalar16.webp';
 
 export const RecognisedSection = () => {
   

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: 'Build stunning animated websites with SEO best practices.',
     images: [
       {
-        url: '/assets/logo/triangle.jpg',
+        url: '/assets/logo/triangle.webp',
         width: 1200,
         height: 630,
         alt: 'Brand Mindz',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brand Mindz - Digital Marketing & Web Development Agency',
     description: 'Brand Mindz helps businesses grow with modern websites, branding, SEO, and digital marketing solutions.',
-    images: ['/assets/logo/triangle.jpg'],
+    images: ['/assets/logo/triangle.webp'],
     creator: '@BrandMindz',
   },
   robots: {

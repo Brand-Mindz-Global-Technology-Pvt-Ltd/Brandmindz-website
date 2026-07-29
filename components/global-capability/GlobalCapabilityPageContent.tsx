@@ -12,10 +12,10 @@ import {
   Shield,
   TrendingUp,
 } from "lucide-react";
-import heroPattern from "@/assets/HomeSection/banner/Group (1).png";
-import faqBackground from "@/assets/HomeSection/faq/15645760_7845 (1) 1.png";
+import heroPattern from "@/assets/HomeSection/banner/group1.webp";
+import faqBackground from "@/assets/HomeSection/faq/15645760_784511.webp";
 import globalCapabilityTeam from "@/assets/about/global-capability-team.webp";
-import globalWorldMap from "@/assets/HomeSection/Whychoose/Group (4).png";
+import globalWorldMap from "@/assets/HomeSection/Whychoose/group4.webp";
 
 export const metadata: Metadata = {
   title: "Global Capability | Brand Mindz",

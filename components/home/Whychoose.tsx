@@ -14,12 +14,12 @@ import {
 import { TextRevealSimple } from '../animations/text-reveal';
 import { FaArrowLeft } from "react-icons/fa";
 import '../../style/home/whychoose.css';
-import worldMap from '../../assets/HomeSection/Whychoose/Group (3).png';
-import GlobalworldMap from '../../assets/HomeSection/Whychoose/Group (4).png';
-import frameIcon1 from '../../assets/HomeSection/Whychoose/Frame (1).png';
-import frameIcon2 from '../../assets/HomeSection/Whychoose/Frame (2).png';
-import frameIcon3 from '../../assets/HomeSection/Whychoose/Frame.png';
-import frameIcon4 from '../../assets/HomeSection/Whychoose/Frame 2147226084.png';
+import worldMap from '../../assets/HomeSection/Whychoose/group3.webp';
+import GlobalworldMap from '../../assets/HomeSection/Whychoose/group4.webp';
+import frameIcon1 from '../../assets/HomeSection/Whychoose/frame1.webp';
+import frameIcon2 from '../../assets/HomeSection/Whychoose/frame2.webp';
+import frameIcon3 from '../../assets/HomeSection/Whychoose/frame.webp';
+import frameIcon4 from '../../assets/HomeSection/Whychoose/frame2147226084.webp';
 
 const WhyChooseUs = () => {
   const [showGlobalMap, setShowGlobalMap] = useState(false);

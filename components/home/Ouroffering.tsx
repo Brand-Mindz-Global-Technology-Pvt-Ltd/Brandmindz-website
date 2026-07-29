@@ -9,10 +9,10 @@ import {
     FaPaintBrush, FaLaptopCode, FaChartLine, FaShoppingCart
 } from "react-icons/fa";
 
-import icon1 from '../../assets/HomeSection/OurOfferings/icon1.png'
-import icon2 from '../../assets/HomeSection/OurOfferings/icon2.png'
-import icon3 from '../../assets/HomeSection/OurOfferings/icon3.png'
-import icon4 from '../../assets/HomeSection/OurOfferings/icon4.png'
+import icon1 from '../../assets/HomeSection/OurOfferings/icon1.webp'
+import icon2 from '../../assets/HomeSection/OurOfferings/icon2.webp'
+import icon3 from '../../assets/HomeSection/OurOfferings/icon3.webp'
+import icon4 from '../../assets/HomeSection/OurOfferings/icon4.webp'
 
 // Importing your custom animation components
 import {
@@ -24,11 +24,11 @@ import {
 } from "../animations";
 
 import "../../style/home/ouroffering.css";
-import promoImage from "../../assets/HomeSection/OurOfferings/OurImage.png";
-import PersonalBranding from '../../assets/HomeSection/OurOfferings/PersonalBranding.png'
-import BrandConsulting from '../../assets/HomeSection/OurOfferings/BrandConsulting.png'
-import BrandStrategy from '../../assets/HomeSection/OurOfferings/BrandStrategy.png'
-import CompanyBranding from '../../assets/HomeSection/OurOfferings/CompanyBranding.png'
+import promoImage from "../../assets/HomeSection/OurOfferings/ourimage.webp";
+import PersonalBranding from '../../assets/HomeSection/OurOfferings/personalbranding.webp'
+import BrandConsulting from '../../assets/HomeSection/OurOfferings/brandconsulting.webp'
+import BrandStrategy from '../../assets/HomeSection/OurOfferings/brandstrategy.webp'
+import CompanyBranding from '../../assets/HomeSection/OurOfferings/companybranding.webp'
 import { useRouter } from "next/navigation";
 
 const Ouroffering = () => {

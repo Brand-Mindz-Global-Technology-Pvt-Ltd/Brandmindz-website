@@ -2,7 +2,7 @@
 // import { FadeIn } from "@/components/animations/fade-in";
 // import Image from "next/image";
 // import "../../style/aboutus/aboutus.css";
-// import aboutpic from '../../assets/about/Frame 2147226233.png'
+// import aboutpic from '../../assets/about/frame2147226233.webp'
 
 // export const AboutContentSection = () => {
 //   return (
@@ -86,7 +86,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FadeIn } from "@/components/animations/fade-in";
 import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
-import aboutpic from '../../assets/about/Frame 2147226233.png'
+import aboutpic from '../../assets/about/frame2147226233.webp'
 
 const ScrollLine = ({ content }) => {
   const [isHighlighted, setIsHighlighted] = useState(false);

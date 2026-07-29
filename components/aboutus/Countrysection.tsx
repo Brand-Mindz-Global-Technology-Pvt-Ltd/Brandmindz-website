@@ -4,7 +4,7 @@
 // import "../../style/aboutus/aboutus.css";
 
 // // Import assets
-// import worldMap from '../../assets/about/Group (2).png';
+// import worldMap from '../../assets/about/group2.webp';
 
 
 // export const GlobalPresenceSection = () => {
@@ -92,7 +92,7 @@ import { motion } from "framer-motion"; // Import motion
 import { FadeIn } from "@/components/animations/fade-in";
 import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
-import worldMap from '../../assets/about/Group (2).png';
+import worldMap from '../../assets/about/group2.webp';
 
 export const GlobalPresenceSection = () => {
   const countries = [
