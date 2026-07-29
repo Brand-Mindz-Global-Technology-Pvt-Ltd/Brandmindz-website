@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { FiChevronRight } from "react-icons/fi";
 import { Phone, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
@@ -20,9 +20,22 @@ import Person5 from '../../../assets/HomeSection/various/person5.webp'
 
 
 // --- SCROLL HIGHLIGHT LOGIC ---
-const ScrollLine = ({ content }) => {
+type ScrollLineProps = {
+    content: string;
+};
+
+type ScrollSpanProps = {
+    children: ReactNode;
+};
+
+type Stat = {
+    number: string;
+    label: string;
+};
+
+const ScrollLine = ({ content }: ScrollLineProps) => {
     const [isHighlighted, setIsHighlighted] = useState(false);
-    const ref = useRef(null);
+    const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -51,7 +64,7 @@ const ScrollLine = ({ content }) => {
     );
 };
 
-const ScrollSpan = ({ children }) => {
+const ScrollSpan = ({ children }: ScrollSpanProps) => {
     if (typeof children !== 'string') return <span>{children}</span>;
     const sentences = children.split(/(?<=\. )/g);
     return (
@@ -64,16 +77,17 @@ const ScrollSpan = ({ children }) => {
 };
 
 export const DesigningHero = ({ data }: { data: any }) => {
+    const router = useRouter();
     const [index, setIndex] = useState(0);
 
-    const defaultStats = [
+    const defaultStats: Stat[] = [
         { number: "200+", label: "Creative Projects" },
         { number: "500+", label: "Clients Worldwide" },
         { number: "100+", label: "Awards Won" },
         { number: "10+", label: "Years Experience" },
     ];
 
-    const statsData = data?.stats && data.stats.length > 0 ? data.stats : defaultStats;
+    const statsData: Stat[] = data?.stats && data.stats.length > 0 ? data.stats : defaultStats;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -186,7 +200,7 @@ export const DesigningHero = ({ data }: { data: any }) => {
                         <p>{statsData[index].label}</p>
 
                         <div className="bl-dots">
-                            {statsData.map((_, i) => (
+                            {statsData.map((_: Stat, i: number) => (
                                 <span key={i} className={i === index ? "active" : ""}></span>
                             ))}
                         </div>
