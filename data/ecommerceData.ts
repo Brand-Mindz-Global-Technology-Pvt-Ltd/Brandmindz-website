@@ -1,11 +1,11 @@
-import founderImg from "../assets/branding/Braddingabount.png";
-import BrandingownerImage from '../assets/branding/Gemini_Generate.png';
-import Vector1 from '../assets/branding/Vector (1).png';
-import Vector2 from '../assets/branding/Group (5).png';
-import Vector3 from '../assets/branding/Vector (3).png';
-import FrameIcon from "../assets/branding/Frame.png";
-import GroupIcon from "../assets/branding/Group.png";
-import Group1Icon from "../assets/branding/Group (1).png";
+import founderImg from "../assets/branding/braddingabount.webp";
+import BrandingownerImage from '../assets/branding/gemini_generate.webp';
+import Vector1 from '../assets/branding/vector1.webp';
+import Vector2 from '../assets/branding/group5.webp';
+import Vector3 from '../assets/branding/vector3.webp';
+import FrameIcon from "../assets/branding/frame.webp";
+import GroupIcon from "../assets/branding/group.webp";
+import Group1Icon from "../assets/branding/group1.webp";
 
 export const ecommerceData = {
   flipkartListing: {

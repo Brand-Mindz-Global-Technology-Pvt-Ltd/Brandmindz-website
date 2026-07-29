@@ -6,9 +6,9 @@ import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
 
 // Import circle background
-import circleBg from '../../assets/contact/Ellipse 1.png';
+import circleBg from '../../assets/contact/ellipse1.webp';
 // Import location marker icon
-import locationMarker from '../../assets/contact/image 3.png'; // Your marker image
+import locationMarker from '../../assets/contact/image3.webp'; // Your marker image
 
 export const MapSection = () => {
   return (

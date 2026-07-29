@@ -7,9 +7,9 @@ import Image from 'next/image';
 import { useDigitalMarketingContext } from './DigitalMarketingContext';
 
 // Import assets from root assets folder
-import FrameIcon from "../../../assets/branding/Frame.png";
-import GroupIcon from "../../../assets/branding/Group.png";
-import Group1Icon from "../../../assets/branding/Group (1).png";
+import FrameIcon from "../../../assets/branding/frame.webp";
+import GroupIcon from "../../../assets/branding/group.webp";
+import Group1Icon from "../../../assets/branding/group1.webp";
 
 const seoData = {
   title: "Why Choose Brand Mindz for SEO?",

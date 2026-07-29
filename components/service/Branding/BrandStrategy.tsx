@@ -13,12 +13,12 @@ import {
     MagneticButton
 } from "../../animations";
 
-import BrandingownerImage from '../../../assets/branding/Gemini_Generate.png'
-import OurImage from '../../../assets/branding/OurImage.png'
+import BrandingownerImage from '../../../assets/branding/gemini_generate.webp'
+import OurImage from '../../../assets/branding/ourimage.webp'
 
-import Vector1 from '../../../assets/branding/Vector (1).png'
-import Vector2 from '../../../assets/branding/Group (5).png'
-import Vector3 from '../../../assets/branding/Vector (3).png'
+import Vector1 from '../../../assets/branding/vector1.webp'
+import Vector2 from '../../../assets/branding/group5.webp'
+import Vector3 from '../../../assets/branding/vector3.webp'
 
 // --- SCROLL HIGHLIGHT LOGIC ---
 const ScrollLine = ({ content }) => {

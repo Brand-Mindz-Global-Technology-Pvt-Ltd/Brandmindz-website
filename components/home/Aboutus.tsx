@@ -7,30 +7,30 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { ArrowLeft } from "lucide-react";
 
 // Asset Imports (Replace with your actual paths)
-import founderImg from "../../assets/HomeSection/about/Frame.png";
-import founderImg1 from "../../assets/HomeSection/about/210446c72e34182875e9edee3773a3ddc673e220.jpg";
-import vision1 from "../../assets/HomeSection/about/mingcute_target-line.png";
-import vision2 from "../../assets/HomeSection/about/material-symbols_target.png";
-import vision3 from "../../assets/HomeSection/about/lets-icons_target.png";
+import founderImg from "../../assets/HomeSection/about/frame.webp";
+import founderImg1 from "../../assets/HomeSection/about/210446c72e34182875e9edee3773a3ddc673e220.webp";
+import vision1 from "../../assets/HomeSection/about/mingcute_target-line.webp";
+import vision2 from "../../assets/HomeSection/about/material-symbols_target.webp";
+import vision3 from "../../assets/HomeSection/about/lets-icons_target.webp";
 
 
-import NoPoverty1 from '../../assets/HomeSection/about/NoPoverty1.jpg'
-import Zero2 from '../../assets/HomeSection/about/Zero2.jpg'
-import Good3 from '../../assets/HomeSection/about/Good3.jpg'
-import Quality4 from '../../assets/HomeSection/about/Quality4.jpg'
-import Equallity5 from '../../assets/HomeSection/about/Equallity5.jpg'
-import Clean6 from '../../assets/HomeSection/about/Clean6.jpg'
-import Energy7 from '../../assets/HomeSection/about/Energy7.jpg'
-import Growth8 from '../../assets/HomeSection/about/Growth8.jpg'
-import Infr9 from '../../assets/HomeSection/about/Infr9.jpg'
-import Reduced10 from '../../assets/HomeSection/about/Reduced10.jpg'
-import Communities11 from '../../assets/HomeSection/about/Communities11.jpg'
-import Production12 from '../../assets/HomeSection/about/Production12.jpg'
-import Action13 from '../../assets/HomeSection/about/Action13.jpg'
-import Life14 from '../../assets/HomeSection/about/Life14.jpg'
-import Lifeland15 from '../../assets/HomeSection/about/Lifeland15.jpg'
-import Peace16 from '../../assets/HomeSection/about/Peace16.jpg'
-import Goals17 from '../../assets/HomeSection/about/Goals17.jpg'
+import NoPoverty1 from '../../assets/HomeSection/about/nopoverty1.webp'
+import Zero2 from '../../assets/HomeSection/about/zero2.webp'
+import Good3 from '../../assets/HomeSection/about/good3.webp'
+import Quality4 from '../../assets/HomeSection/about/quality4.webp'
+import Equallity5 from '../../assets/HomeSection/about/equallity5.webp'
+import Clean6 from '../../assets/HomeSection/about/clean6.webp'
+import Energy7 from '../../assets/HomeSection/about/energy7.webp'
+import Growth8 from '../../assets/HomeSection/about/growth8.webp'
+import Infr9 from '../../assets/HomeSection/about/infr9.webp'
+import Reduced10 from '../../assets/HomeSection/about/reduced10.webp'
+import Communities11 from '../../assets/HomeSection/about/communities11.webp'
+import Production12 from '../../assets/HomeSection/about/production12.webp'
+import Action13 from '../../assets/HomeSection/about/action13.webp'
+import Life14 from '../../assets/HomeSection/about/life14.webp'
+import Lifeland15 from '../../assets/HomeSection/about/lifeland15.webp'
+import Peace16 from '../../assets/HomeSection/about/peace16.webp'
+import Goals17 from '../../assets/HomeSection/about/goals17.webp'
 
 const Aboutus = () => {
   const [activeTab, setActiveTab] = useState(1);

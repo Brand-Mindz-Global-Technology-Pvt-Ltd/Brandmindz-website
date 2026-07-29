@@ -6,9 +6,9 @@ import "../../../style/branding/WhyChooseBranding.css";
 import Image from 'next/image';
 
 // Import assets from root assets folder
-import FrameIcon from "../../../assets/branding/Frame.png";
-import GroupIcon from "../../../assets/branding/Group.png";
-import Group1Icon from "../../../assets/branding/Group (1).png";
+import FrameIcon from "../../../assets/branding/frame.webp";
+import GroupIcon from "../../../assets/branding/group.webp";
+import Group1Icon from "../../../assets/branding/group1.webp";
 
 export const WhyChooseDesigning = ({ data }: { data: any }) => {
   const reasons = data?.items || [];

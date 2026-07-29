@@ -14,11 +14,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from '../../style/footer/Footer.module.css';
 
 // Assets imports
-import logo from '../../assets/logo/logo.png'
-import Image0 from '../../assets/Footer/5a3c8c71acdddaa4740210c8170c51773e0e0543.png'
-import Image1 from '../../assets/Footer/a07119e2e776b18257a77e888622077bb8f4f6c1.png'
-import Image2 from '../../assets/Footer/e11c902dd32153b2abe7a4d93637a06c7597b932.png'
-import back from '../../assets/HomeSection/banner/Group (1).png'
+import logo from '../../assets/logo/logo.webp'
+import Image0 from '../../assets/Footer/5a3c8c71acdddaa4740210c8170c51773e0e0543.webp'
+import Image1 from '../../assets/Footer/a07119e2e776b18257a77e888622077bb8f4f6c1.webp'
+import Image2 from '../../assets/Footer/e11c902dd32153b2abe7a4d93637a06c7597b932.webp'
+import back from '../../assets/HomeSection/banner/group1.webp'
 
 const Footer = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);

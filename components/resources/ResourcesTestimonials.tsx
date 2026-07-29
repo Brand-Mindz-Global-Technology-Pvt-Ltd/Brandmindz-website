@@ -7,10 +7,10 @@ import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 import "../../style/aboutus/aboutus.css";
 
 // Import local assets
-import dinamalar from "../../assets/about/Ellipse 365 (1).png";
-import news18 from "../../assets/about/Ellipse 365 (2).png";
-import sunnews from "../../assets/about/Ellipse 365.png";
-import vikatan from "../../assets/about/Ellipse 365 (3).png";
+import dinamalar from "../../assets/about/ellipse3651.webp";
+import news18 from "../../assets/about/ellipse3652.webp";
+import sunnews from "../../assets/about/ellipse365.webp";
+import vikatan from "../../assets/about/ellipse3653.webp";
 
 // Testimonials Data
 const testimonialsData = [

@@ -160,7 +160,7 @@
   padding: 50px 0px 40px;
   text-align: center;
   background-color: #ffffff;
-  background-image: url('../../assets/HomeSection/banner/Group (1).png');
+  background-image: url('../../assets/HomeSection/banner/group1.webp');
   background-position: center 100px;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -177,7 +177,7 @@
 
   background-image:
     linear-gradient(to bottom, rgba(255, 255, 255, 0)10%, #ffffff 100%),
-    url('../../assets/HomeSection/banner/Group (1).png');
+    url('../../assets/HomeSection/banner/group1.webp');
 
   background-position: center -60px;
   background-size: cover;
@@ -208,7 +208,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../../assets/HomeSection/banner/Group (1).png') no-repeat center top / cover;
+  background: url('../../assets/HomeSection/banner/group1.webp') no-repeat center top / cover;
   z-index: 0;
 }
 
@@ -235,7 +235,7 @@
 
   text-align: center;
   background-color: #ffffff;
-  background-image: url('../../assets/HomeSection/banner/Group (1).png');
+  background-image: url('../../assets/HomeSection/banner/group1.webp');
   background-position: center -20px;
   background-repeat: no-repeat;
   background-size: 100%;

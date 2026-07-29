@@ -6,10 +6,10 @@ import Image from "next/image";
 import "../../style/contactus/contactus.css";
 
 // Import icons (replace with your actual icon images)
-import phoneIcon from '../../assets/about/ic_baseline-call.png';
-import emailIcon from '../../assets/about/Vector (18).png';
-import locationIcon from '../../assets/about/Vector (19).png';
-import userIcon from '../../assets/about/Vector (20).png';
+import phoneIcon from '../../assets/about/ic_baseline-call.webp';
+import emailIcon from '../../assets/about/vector18.webp';
+import locationIcon from '../../assets/about/vector19.webp';
+import userIcon from '../../assets/about/vector20.webp';
 
 export const ContactCardsSection = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);

@@ -17,10 +17,10 @@ import {
 } from "../animations";
 
 import '../../style/home/ourblog.css';
-import left from '../../assets/HomeSection/Ourblog/leftside.jpg';
-import bottomleft from '../../assets/HomeSection/Ourblog/bottomleft.jpg';
-import bottomright from '../../assets/HomeSection/Ourblog/bottomright.jpg';
-import map from '../../assets/HomeSection/Ourblog/map.jpg';
+import left from '../../assets/HomeSection/Ourblog/leftside.webp';
+import bottomleft from '../../assets/HomeSection/Ourblog/bottomleft.webp';
+import bottomright from '../../assets/HomeSection/Ourblog/bottomright.webp';
+import map from '../../assets/HomeSection/Ourblog/map.webp';
 
 const OurBlog = () => {
     const sidePosts = [1, 2, 3];

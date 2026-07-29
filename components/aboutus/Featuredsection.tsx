@@ -6,20 +6,20 @@ import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
 
 // Import your BLACK & WHITE logos
-import news18BW from '../../assets/about/News 18 Tamil 1.png';
-import dinamalar1BW from '../../assets/about/Dinamalar 1 (1).png';
-import dinamalar2BW from '../../assets/about/Dinamalar 1 (2).png';
-import dinamalar3BW from '../../assets/about/Dinamalar 1.png';
-import platform5BW from '../../assets/about/Frame 2147226239.png';
-import platform6BW from '../../assets/about/Sun news 1.png';
+import news18BW from '../../assets/about/news18tamil1.webp';
+import dinamalar1BW from '../../assets/about/dinamalar11.webp';
+import dinamalar2BW from '../../assets/about/dinamalar12.webp';
+import dinamalar3BW from '../../assets/about/dinamalar1.webp';
+import platform5BW from '../../assets/about/frame2147226239.webp';
+import platform6BW from '../../assets/about/sunnews1.webp';
 
 // Import your COLOR logos (replace with your actual color image paths)
-import news18Color from '../../assets/about/News 18 Tamil 1 (2).png';
-import dinamalar1Color from '../../assets/about/Dinamalar 1 (4).png';
-import dinamalar2Color from '../../assets/about/Dinamalar 1 (5).png';
-import dinamalar3Color from '../../assets/about/Dinamalar 1.png';
-import platform5Color from '../../assets/about/Frame 2147226239.png';
-import platform6Color from '../../assets/about/Sun news 1 (2).png';
+import news18Color from '../../assets/about/news18tamil12.webp';
+import dinamalar1Color from '../../assets/about/dinamalar14.webp';
+import dinamalar2Color from '../../assets/about/dinamalar15.webp';
+import dinamalar3Color from '../../assets/about/dinamalar1.webp';
+import platform5Color from '../../assets/about/frame2147226239.webp';
+import platform6Color from '../../assets/about/sunnews12.webp';
 
 export const FeaturedSection = () => {
   

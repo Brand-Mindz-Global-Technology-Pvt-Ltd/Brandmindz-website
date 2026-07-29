@@ -29,7 +29,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../../assets/HomeSection/banner/Group (1).png') no-repeat center top / cover;
+  background: url('../../assets/HomeSection/banner/group1.webp') no-repeat center top / cover;
   z-index: -1;
   opacity: 0.85;
 }
@@ -241,7 +241,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('../../assets/HomeSection/banner/Group (1).png') no-repeat center center / contain;
+  background: url('../../assets/HomeSection/banner/group1.webp') no-repeat center center / contain;
   opacity: 0.08;
   z-index: -1;
   pointer-events: none;

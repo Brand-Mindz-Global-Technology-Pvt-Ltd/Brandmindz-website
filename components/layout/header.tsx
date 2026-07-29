@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import '../../style/header/header.css';
 import Image from 'next/image';
-import logo from '../../assets/logo/logo.png';
+import logo from '../../assets/logo/logo.webp';
 import { FiMenu, FiX, FiChevronDown, FiChevronUp, FiPhone } from "react-icons/fi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

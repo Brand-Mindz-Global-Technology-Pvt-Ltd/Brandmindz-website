@@ -6,14 +6,14 @@ import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
 
 // Import your images
-import bgPattern from '../../assets/contact/Group (3).png';
-import clientLogo1 from '../../assets/contact/Frame 7 89.png';
-import indiaFlag from '../../assets/contact/emojione-v1_flag-for-india.png';
-import arrowIcon from '../../assets/contact/right.png';
-import leftIcon from '../../assets/contact/left.png';
-import contact from '../../assets/contact/Vector (1).png'
-import whitecontact from '../../assets/contact/Vector White.png'
-import bgImage from '../../assets/contact/Group5.png'
+import bgPattern from '../../assets/contact/group3.webp';
+import clientLogo1 from '../../assets/contact/frame789.webp';
+import indiaFlag from '../../assets/contact/emojione-v1_flag-for-india.webp';
+import arrowIcon from '../../assets/contact/right.webp';
+import leftIcon from '../../assets/contact/left.webp';
+import contact from '../../assets/contact/vector1.webp'
+import whitecontact from '../../assets/contact/vectorwhite.webp'
+import bgImage from '../../assets/contact/group5.webp'
 
 export const GetStartedSection = () => {
   const [selectedServices, setSelectedServices] = useState([]);

@@ -6,7 +6,7 @@ import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
 
 // Import your video banner image
-import videoBanner from '../../assets/about/1 5645761 (1).png'; // Replace with your actual image
+import videoBanner from '../../assets/about/156457611.webp'; // Replace with your actual image
 
 export const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
