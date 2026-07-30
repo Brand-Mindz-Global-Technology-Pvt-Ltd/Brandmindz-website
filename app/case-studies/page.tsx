@@ -8,8 +8,10 @@ import "../../style/casestudies/casestudies.css";
 
 // Page-specific premium SEO metadata
 export const metadata: Metadata = {
-  title: "Case Studies | BrandMindz",
-  description: "Read BrandMindz case studies and client success stories. See how we drive growth, scale digital products, list catalogs, and optimize ROI for our partners.",
+  title: {
+    absolute: "Real Results from Branding & Digital Marketing | Brand Mindz Global",
+  },
+  description: "Read client case studies from Brand Mindz Global and discover how our branding, technology, and marketing expertise delivers measurable results.",
   keywords: [
     "case studies", 
     "marketing success stories", 
