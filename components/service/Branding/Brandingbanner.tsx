@@ -9,6 +9,8 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { motion, AnimatePresence } from "framer-motion";
 import { LogoNewsTicker } from "../../aboutus/LogoNewsTicker";
 import { BrandingTabs } from "./BrandingTabs";
+import Image from "next/image";
+import heroPattern from "../../../assets/HomeSection/banner/group1.webp";
 
 export const BrandingService = ({ activeTabKey, setActiveTabKey }: { activeTabKey: any, setActiveTabKey: any }) => {
   const words = ["Understand Your Business"];
@@ -22,7 +24,16 @@ export const BrandingService = ({ activeTabKey, setActiveTabKey }: { activeTabKe
   }, [words.length]);
 
   return (
-    <section className="bm-hero-section-contact ">
+    <section className="bm-hero-section-contact bm-hero-section-branding">
+      <Image
+        src={heroPattern}
+        alt=""
+        aria-hidden="true"
+        className="bm-hero-lcp-image"
+        sizes="100vw"
+        preload
+        fetchPriority="high"
+      />
       <FadeIn delay={0.1}>
         <div className="bm-hero-badge">
           <span className="bm-hero-badge__icon">

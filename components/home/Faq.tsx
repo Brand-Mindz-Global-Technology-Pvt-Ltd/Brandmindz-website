@@ -10,7 +10,7 @@ interface FaqItem {
   answer: string;
 }
 
-const Faq = ({ activeTabKey }: { activeTabKey: string }) => {
+const Faq = ({ activeTabKey = "" }: { activeTabKey?: string }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const pathname = usePathname();
 

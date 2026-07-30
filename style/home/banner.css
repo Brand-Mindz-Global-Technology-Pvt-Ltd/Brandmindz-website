@@ -381,3 +381,25 @@
   margin-left: 10px;
   margin-bottom: 10px;
 }
+
+/* Branding hero LCP image: visually matches the existing shared CSS background. */
+.bm-hero-section-contact.bm-hero-section-branding {
+  position: relative;
+  overflow: hidden;
+  background-image: none;
+}
+
+.bm-hero-lcp-image {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bm-hero-section-branding > *:not(.bm-hero-lcp-image) {
+  position: relative;
+  z-index: 1;
+}
