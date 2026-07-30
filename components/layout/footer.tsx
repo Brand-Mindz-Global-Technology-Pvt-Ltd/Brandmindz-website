@@ -54,7 +54,7 @@ const Footer = () => {
             <div className={styles.brandColumn}>
               <div className={styles.logoContainer}>
                 <Link href="/">
-                  <Image src={logo} alt="Brand Mindz" width={200} height={55} priority />
+                  <Image src={logo} alt="Brand Mindz" width={200} height={55} sizes="200px" />
                 </Link>
                 <p className={styles.brandDescription} >
                   Brand Mindz is built by people who genuinely care about your growth.

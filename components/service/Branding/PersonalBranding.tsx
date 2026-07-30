@@ -214,14 +214,14 @@ import Vector2 from '../../../assets/branding/group5.webp'
 import Vector3 from '../../../assets/branding/vector3.webp'
 
 
-import Person1 from '../../../assets/HomeSection/various/Person1.webp'
-import Person2 from '../../../assets/HomeSection/various/Person2.webp'
-import Person3 from '../../../assets/HomeSection/various/Person3.webp'
-import Person4 from '../../../assets/HomeSection/various/Person4.webp'
+import Person1 from '../../../assets/HomeSection/various/person1.webp'
+import Person2 from '../../../assets/HomeSection/various/person2.webp'
+import Person3 from '../../../assets/HomeSection/various/person3.webp'
+import Person4 from '../../../assets/HomeSection/various/person4.webp'
 import Person5 from '../../../assets/HomeSection/various/person5.webp'
 
 // --- SCROLL HIGHLIGHT LOGIC ---
-const ScrollLine = ({ content }) => {
+const ScrollLine = ({ content }: { content: string }) => {
     const [isHighlighted, setIsHighlighted] = useState(false);
     const ref = useRef(null);
 
@@ -252,7 +252,7 @@ const ScrollLine = ({ content }) => {
     );
 };
 
-const ScrollSpan = ({ children }) => {
+const ScrollSpan = ({ children }: { children: React.ReactNode }) => {
     if (typeof children !== 'string') return <span>{children}</span>;
     const sentences = children.split(/(?<=\. )/g);
     return (
@@ -344,7 +344,7 @@ export const PersonalBranding = ({ data }: { data: any }) => {
                         src={OurImage}
                         alt="Promo"
                         className="bm-offering-promo-img"
-                        priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div className="bm-offering-promo-overlay">
                         <FadeIn delay={0.6}>
@@ -386,7 +386,7 @@ export const PersonalBranding = ({ data }: { data: any }) => {
                         <p>{statsData[index].label}</p>
 
                         <div className="bl-dots">
-                            {statsData.map((_, i) => (
+                            {statsData.map((_: { number: string; label: string }, i: number) => (
                                 <span key={i} className={i === index ? "active" : ""}></span>
                             ))}
                         </div>

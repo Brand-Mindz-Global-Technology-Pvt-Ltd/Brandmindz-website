@@ -3,18 +3,42 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../../../style/branding/BrandingAbout.css";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ArrowRight } from "lucide-react";
 
 import founderImg from "../../../assets/branding/braddingabount.webp";
 
-export const Bradingabount = ({ data }: { data: any }) => {
+interface BrandingAboutItem {
+  id: number;
+  label: string;
+  subtitle: string;
+  title: string;
+  img: string | StaticImageData;
+  desc: string[];
+  btn?: boolean;
+}
+
+interface BrandingAboutData {
+  menuItems?: BrandingAboutItem[];
+}
+
+interface ScrollLineProps {
+  content: string;
+}
+
+interface ScrollParagraphProps {
+  text: string;
+}
+
+export const Bradingabount = ({ data }: { data: BrandingAboutData }) => {
   const [activeTab, setActiveTab] = useState(1);
 
   // Initialize activeTab based on data availability
   useEffect(() => {
-    if (data?.menuItems?.length > 0) {
-      setActiveTab(data.menuItems[0].id);
+    const firstMenuItem = data.menuItems?.[0];
+    if (firstMenuItem) {
+      setActiveTab(firstMenuItem.id);
     }
   }, [data]);
 
@@ -25,9 +49,9 @@ export const Bradingabount = ({ data }: { data: any }) => {
   const current = menuItems.find(item => item.id === activeTab) || menuItems[0];
 
 
-  const ScrollLine = ({ content }) => {
+  const ScrollLine = ({ content }: ScrollLineProps) => {
     const [isPassed, setIsPassed] = useState(false);
-    const ref = useRef(null);
+    const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
       const handleScroll = () => {
@@ -52,7 +76,7 @@ export const Bradingabount = ({ data }: { data: any }) => {
     );
   };
 
-  const ScrollParagraph = ({ text }) => {
+  const ScrollParagraph = ({ text }: ScrollParagraphProps) => {
     const lines = text.split(/(?<=\. )/g);
     return (
       <p className="bm-about-paragraph-branding">
@@ -125,7 +149,7 @@ export const Bradingabount = ({ data }: { data: any }) => {
 
                 {/* Image Frame - Exact 379x541px */}
                 <div className="bm-about-img-frame-branding">
-                  <Image src={current.img} alt={current.label} priority width={379} height={541} />
+                  <Image src={current.img} alt={current.label} width={379} height={541} sizes="(max-width: 768px) 90vw, 379px" />
                   <div className="bm-about-quote-overlay-branding">
                     {/* {current.quoteOverlay} */} Persona crafting
                   </div>
