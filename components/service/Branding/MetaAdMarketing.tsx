@@ -21,10 +21,10 @@ import Vector2 from '../../../assets/branding/group5.webp'
 import Vector3 from '../../../assets/branding/vector3.webp'
 
 
-import Person1 from '../../../assets/HomeSection/various/person1.webp'
-import Person2 from '../../../assets/HomeSection/various/person2.webp'
-import Person3 from '../../../assets/HomeSection/various/person3.webp'
-import Person4 from '../../../assets/HomeSection/various/person4.webp'
+import Person1 from '../../../assets/HomeSection/various/Person1.webp'
+import Person2 from '../../../assets/HomeSection/various/Person2.webp'
+import Person3 from '../../../assets/HomeSection/various/Person3.webp'
+import Person4 from '../../../assets/HomeSection/various/Person4.webp'
 import Person5 from '../../../assets/HomeSection/various/person5.webp'
 import { useRouter } from 'next/navigation';
 

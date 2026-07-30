@@ -78,14 +78,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
 }
-import { Afacad } from "next/font/google";
-
-const afacad = Afacad({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
