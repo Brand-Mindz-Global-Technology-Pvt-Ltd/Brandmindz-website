@@ -21,15 +21,15 @@ import Vector2 from '../../../assets/branding/group5.webp'
 import Vector3 from '../../../assets/branding/vector3.webp'
 
 
-import Person1 from '../../../assets/HomeSection/various/Person1.webp'
-import Person2 from '../../../assets/HomeSection/various/Person2.webp'
-import Person3 from '../../../assets/HomeSection/various/Person3.webp'
-import Person4 from '../../../assets/HomeSection/various/Person4.webp'
+import Person1 from '../../../assets/HomeSection/various/person1.webp'
+import Person2 from '../../../assets/HomeSection/various/person2.webp'
+import Person3 from '../../../assets/HomeSection/various/person3.webp'
+import Person4 from '../../../assets/HomeSection/various/person4.webp'
 import Person5 from '../../../assets/HomeSection/various/person5.webp'
 import { useRouter } from 'next/navigation';
 
 // --- SCROLL HIGHLIGHT LOGIC ---
-const ScrollLine = ({ content }) => {
+const ScrollLine = ({ content }: { content: string }) => {
     const [isHighlighted, setIsHighlighted] = useState(false);
     const ref = useRef(null);
 
@@ -60,7 +60,7 @@ const ScrollLine = ({ content }) => {
     );
 };
 
-const ScrollSpan = ({ children }) => {
+const ScrollSpan = ({ children }: { children: React.ReactNode }) => {
     if (typeof children !== 'string') return <span>{children}</span>;
     const sentences = children.split(/(?<=\. )/g);
     return (

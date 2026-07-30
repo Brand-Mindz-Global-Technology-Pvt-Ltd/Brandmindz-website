@@ -85,7 +85,7 @@ const Various = () => {
         className={`${styles.gridItem} ${styles.faded}`}
         onClick={() => handleManualClick(index)}
       >
-        <Image src={item.src} alt={item.name} width={120} height={120} className={styles.personImg}priority />
+        <Image src={item.src} alt={item.name} width={120} height={120} className={styles.personImg} sizes="120px" />
       </motion.div>
     );
   };
@@ -125,7 +125,7 @@ const Various = () => {
                 className={styles.activeWrapper}
               >
                 <div className={styles.activeImageRing}>
-                   <Image src={active.src} alt={active.name} width={220} height={220} className={styles.activeImg} priority />
+                   <Image src={active.src} alt={active.name} width={220} height={220} className={styles.activeImg} sizes="220px" />
                 </div>
                 <div className={styles.leaderLabel}>
                   <h4>{active.name}</h4>

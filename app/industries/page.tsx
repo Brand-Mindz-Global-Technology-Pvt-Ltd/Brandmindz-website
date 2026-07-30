@@ -12,8 +12,10 @@ import { generateBreadcrumbSchema } from "@/lib/seo";
 import "@/style/industries/industries.css";
 
 export const metadata: Metadata = {
-  title: "Tailored Business Growth Solutions by Industry | Brandmindz",
-  description: "Explore tailored digital marketing, SEO, branding, and customer acquisition frameworks for SaaS, E-Commerce, Healthcare, Education, and Real Estate industries.",
+  title: {
+    absolute: "Industry-Focused Branding & Digital Solutions | Brand Mindz Global",
+  },
+  description: "Partner with Brand Mindz Global for industry-focused branding, digital marketing, and technology services that drive measurable business growth.",
   keywords: [
     "IT & SaaS Marketing",
     "E-Commerce optimization",

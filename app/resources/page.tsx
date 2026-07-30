@@ -4,8 +4,10 @@ import "../../style/resources/resources.css";
 
 // Page-specific premium SEO metadata
 export const metadata: Metadata = {
-  title: "Resources & Glossary | BrandMindz",
-  description: "Explore the BrandMindz digital knowledge hub. Browse our marketing, design, and web development glossary, download free e-books, and read premium business guides.",
+  title: {
+    absolute: "Resources & Insights | Branding, SEO & Marketing | Brand Mindz Global",
+  },
+  description: "Explore expert blogs, branding tips, SEO guides, digital marketing insights, and web development resources to help your business grow faster.",
   keywords: ["marketing glossary", "branding terms", "web development definitions", "SEO dictionary", "free business guides", "BrandMindz resources"],
   openGraph: {
     title: "Resources & Knowledge Hub | BrandMindz",

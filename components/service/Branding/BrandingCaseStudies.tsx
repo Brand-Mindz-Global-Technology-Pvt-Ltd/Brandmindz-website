@@ -51,12 +51,14 @@ export const BrandingCaseStudies = ({ data }: BrandingCaseStudiesProps) => {
                   <img
                     src={study.image}
                     alt={study.title}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="bm-cs-card-overlay"></div>
                 <div className="bm-cs-content">
                   <div className="bm-cs-badge">{study.badge}</div>
-                  <h3 className="bm-cs-card-title relative inline-block px-[15px] py-[4px] rounded-full text-[18px] font-medium text-white bg-gray/1 backdrop-blur-[1px] border border-white/20 transition-all duration-400 ease-in-out hover:bg-gray/20 hover:border-gray/20 hover:shadow-[0_4_15px_rgba(255,255,255,0.1)] cursor-pointer">
+                  <h3 className="bm-cs-card-title relative inline-block px-3.75 py-1 rounded-full text-[18px] font-medium text-white bg-gray/1 backdrop-blur-[1px] border border-white/20 transition-all duration-400 ease-in-out hover:bg-gray/20 hover:border-gray/20 hover:shadow-[0_4_15px_rgba(255,255,255,0.1)] cursor-pointer">
                     {study.title}
                   </h3>
                   <p className="bm-cs-intro">{study.intro}</p>

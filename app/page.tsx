@@ -12,6 +12,10 @@ import Footer from "@/components/layout/footer"
 import ProvenGrowthPage from "@/components/home/Salesstatistics"
 
 export const metadata = {
+  title: {
+    absolute: "Brand Mindz Global | Build Powerful Brands with Creative, Digital & Technology Experts",
+  },
+  description: "Grow your business with Brand Mindz Global. Expert branding, web development, SEO, digital marketing, and creative solutions that drive measurable results.",
   verification: {
     google: "a55gBWr0MHNf8959SEre1QJYxhdr0roTW4B6zPfJMtY",
   },

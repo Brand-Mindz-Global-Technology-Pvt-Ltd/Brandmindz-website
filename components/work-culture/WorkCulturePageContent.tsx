@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import founderImage from "@/assets/HomeSection/about/210446c72e34182875e9edee3773a3ddc673e220.webp";
 import heroPattern from "@/assets/HomeSection/banner/group1.webp";
-import womenStoryImage from "@/assets/about/Women.webp";
+import womenStoryImage from "@/assets/about/women.webp";
 export const metadata: Metadata = {
   title: "Building the Best Work Culture in Tamil Nadu",
   description:
@@ -199,7 +199,7 @@ const PointGrid = ({
     {items.map((item) => (
       <div
         key={item}
-        className={`wc-point-item flex min-h-[90px] min-w-0 items-center justify-center gap-4 rounded-2xl px-6 py-5 text-center text-base font-bold leading-6 shadow-sm sm:text-lg ${
+        className={`wc-point-item flex min-h-22.5 min-w-0 items-center justify-center gap-4 rounded-2xl px-6 py-5 text-center text-base font-bold leading-6 shadow-sm sm:text-lg ${
           dark
             ? "border border-white/10 bg-white/[.07] text-white"
             : "border border-zinc-200 bg-white text-zinc-950"
@@ -209,7 +209,7 @@ const PointGrid = ({
           <Check size={19} strokeWidth={3} />
         </span>
 
-        <span className="wc-point-label min-w-0 break-words">
+        <span className="wc-point-label min-w-0 wrap-break-word">
           {item}
         </span>
       </div>
@@ -283,7 +283,7 @@ Culture is our operating system.
                 <h2 className="wc-founder-title font-extrabold tracking-[-0.045em]">
                   We built the company we wish existed.
                 </h2>
-                <div className="wc-founder-body  text-zinc-300 !text-lg md:!text-xl">
+                <div className="wc-founder-body  text-zinc-300 text-lg! md:text-xl!">
   <p>
     Brand Mindz was not started in a metro city. It was built in Tirunelveli.
   </p>
@@ -304,7 +304,7 @@ Culture is our operating system.
                 <br />
                   Opportunity is.
                 </blockquote>
-                <p className="wc-founder-body text-zinc-300 !text-lg md:!text-xl">
+                <p className="wc-founder-body text-zinc-300 text-lg! md:text-xl!">
                   So instead of asking talented people to migrate, he decided to build a global-standard company from Tamil Nadu itself.
                   That is how Brand Mindz was born.
                   <span className="mt-2 block">

@@ -9,6 +9,14 @@ import { RecognisedSection } from '@/components/aboutus/Recongnised'
 import { TestimonialsSection } from '@/components/aboutus/Testimonials'
 import { VideoSection } from '@/components/aboutus/Videosection'
 import '../../style/aboutus/aboutus.css'
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: {
+        absolute: "About Brand Mindz Global | Creative Branding & Digital Growth Experts",
+    },
+    description: "Learn about Brand Mindz Global, a trusted branding, digital marketing, and technology agency helping businesses grow with innovative strategies and results.",
+};
 
 export default function Aboutpage() {
     return (

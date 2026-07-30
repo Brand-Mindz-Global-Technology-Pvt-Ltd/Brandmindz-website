@@ -110,8 +110,10 @@ export const LogoNewsTicker = () => {
             <div className="logo-image-container">
               {/* Actual logo image with reduced width */}
               <img 
-                src={logo.src || logo} 
+                src={logo.src} 
                 alt={`Company ${idx % 7 + 1}`}
+                loading="lazy"
+                decoding="async"
                 className="w-3/4 h-full object-contain p-1 mx-auto"
                 style={{ maxWidth: '80%',maxHeight:"80%" }}
               />
@@ -139,8 +141,10 @@ export const LogoNewsTicker = () => {
             <div className="logo-image-container">
               {/* Actual logo image with reduced width */}
               <img 
-                src={logo.src || logo} 
+                src={logo.src} 
                 alt={`Company ${idx % 7 + 8}`}
+                loading="lazy"
+                decoding="async"
                 className="w-3/4 h-full object-contain p-1 mx-auto"
                 style={{ maxWidth: '80%',maxHeight:"80%" }}
               />
