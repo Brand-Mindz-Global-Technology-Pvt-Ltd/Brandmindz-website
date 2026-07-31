@@ -43,7 +43,7 @@ export const TirunelveliServices = () => {
         {services.items.map((service, index) => {
           const Icon = serviceIcons[index];
           return (
-            <StaggerItem key={service.title}>
+            <StaggerItem key={service.title} className="bm-tvl-service-step">
               <div className="bm-tvl-service-card">
                 <div className="bm-tvl-service-icon">
                   <Icon />

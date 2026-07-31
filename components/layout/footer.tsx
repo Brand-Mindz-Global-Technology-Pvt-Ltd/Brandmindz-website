@@ -188,8 +188,9 @@ const Footer = () => {
             </ul>
           </div>
 
+          
 
-          {/* Column 3: Reach Us */}
+          {/* Column 4: Reach Us */}
           <div className="md:col-span-3 lg:col-span-3">
             <h3 className={styles.sectionTitle} style={{ fontSize: "24px" }}>Reach Us</h3>
             <div className="space-y-8 ">
@@ -218,7 +219,27 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 4: Contact */}
+          {/* Column 3: Locations Served */}
+          <div className="md:col-span-2 lg:col-span-2">
+            <h3 className={styles.sectionTitle} style={{ fontSize: "24px" }}>
+              Locations Serves
+            </h3>
+            <ul className={styles.linkList}>
+              <li className={styles.linkItem}>
+                <Link
+                  href="/digital-marketing-agency-in-tirunelveli"
+                  className={styles.navLink}
+                >
+                  Tirunelveli
+                </Link>
+              </li>
+              <li className={styles.linkItem}>
+                <span className={styles.navLink}>Chennai</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 5: Contact */}
           <div className="md:col-span-3 lg:col-span-3">
             <div className={styles.contactInfo}>
               <div className={styles.contactGroup}>

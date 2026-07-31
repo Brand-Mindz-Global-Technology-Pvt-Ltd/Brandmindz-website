@@ -1,14 +1,24 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaGoogle, FaLaptopCode, FaSearch, FaPaintBrush } from "react-icons/fa";
 import { FadeIn } from "@/components/animations/fade-in";
 import { tirunelveliLandingData } from "@/lib/tirunelveli-landing-data";
+import googleAdsImage from "../../../assets/tirunelveli/google-ads.webp";
+import developmentImage from "../../../assets/tirunelveli/web-and-app.webp";
+import seoImage from "../../../assets/tirunelveli/seo.webp";
+import brandingImage from "../../../public/case-studies/founder.png";
 import "../../../style/landing/tirunelveli.css";
 
 const sectionIcons = [FaGoogle, FaLaptopCode, FaSearch, FaPaintBrush];
+const sectionImages = [
+  googleAdsImage,
+  developmentImage,
+  seoImage,
+  brandingImage,
+];
 
 const shortLabels = [
   "Google Ads",
@@ -30,26 +40,9 @@ export const TirunelveliGoogleAds = () => {
     [activeIndex]
   );
 
-  const handlePrev = () => {
-    const next = activeIndex === 0 ? expertSections.length - 1 : activeIndex - 1;
-    goTo(next);
-  };
-
-  const handleNext = () => {
-    const next = activeIndex === expertSections.length - 1 ? 0 : activeIndex + 1;
-    goTo(next);
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setDirection(1);
-      setActiveIndex((prev) => (prev + 1) % expertSections.length);
-    }, 7000);
-    return () => clearInterval(timer);
-  }, [expertSections.length]);
-
   const active = expertSections[activeIndex];
   const ActiveIcon = sectionIcons[activeIndex];
+  const activeImage = sectionImages[activeIndex];
 
   return (
     <section className="bm-tvl-expert-slider-section">
@@ -99,27 +92,8 @@ export const TirunelveliGoogleAds = () => {
             })}
           </div>
 
-          {/* Right — slide content */}
+          {/* Center — selected service content */}
           <div className="bm-tvl-expert-slide-panel">
-            <div className="bm-tvl-expert-slide-controls">
-              <button
-                type="button"
-                className="bm-tvl-expert-control-btn"
-                onClick={handlePrev}
-                aria-label="Previous slide"
-              >
-                <FiChevronLeft />
-              </button>
-              <button
-                type="button"
-                className="bm-tvl-expert-control-btn"
-                onClick={handleNext}
-                aria-label="Next slide"
-              >
-                <FiChevronRight />
-              </button>
-            </div>
-
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={activeIndex}
@@ -131,8 +105,9 @@ export const TirunelveliGoogleAds = () => {
                 className="bm-tvl-expert-slide-content"
               >
                 <div className="bm-tvl-expert-slide-top">
-                  <span className="bm-tvl-expert-slide-badge">
-                    <ActiveIcon />
+                  <span className="bm-tvl-expert-slide-eyebrow">
+                    <ActiveIcon aria-hidden="true" />
+                    {shortLabels[activeIndex]}
                   </span>
                   <span className="bm-tvl-expert-slide-count">
                     {String(activeIndex + 1).padStart(2, "0")} /{" "}
@@ -144,19 +119,31 @@ export const TirunelveliGoogleAds = () => {
                 <p className="bm-tvl-expert-slide-desc">{active.description}</p>
               </motion.div>
             </AnimatePresence>
+          </div>
 
-            {/* Progress dots */}
-            <div className="bm-tvl-expert-dots">
-              {expertSections.map((_, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  className={`bm-tvl-expert-dot ${index === activeIndex ? "bm-tvl-expert-dot--active" : ""}`}
-                  onClick={() => goTo(index)}
-                  aria-label={`Go to slide ${index + 1}`}
+          {/* Right — image changes with the selected service */}
+          <div className="bm-tvl-expert-image-panel">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, scale: 1.03 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="bm-tvl-expert-image-frame"
+              >
+                <Image
+                  src={activeImage}
+                  alt={`${active.title} at Brand Mindz`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 34vw"
+                  className="bm-tvl-expert-image"
                 />
-              ))}
-            </div>
+                <div className="bm-tvl-expert-image-caption">
+                  {active.title}
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

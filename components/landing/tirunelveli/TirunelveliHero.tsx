@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { FaBolt } from "react-icons/fa6";
-import { FiPhone } from "react-icons/fi";
+import { FiChevronRight } from "react-icons/fi";
 import { FadeIn } from "@/components/animations/fade-in";
 import { LogoNewsTicker } from "@/components/aboutus/LogoNewsTicker";
 import { tirunelveliLandingData } from "@/lib/tirunelveli-landing-data";
@@ -33,13 +34,21 @@ export const TirunelveliHero = () => {
       </FadeIn>
 
       <FadeIn delay={0.35}>
-        <a href={`tel:${hero.phone.replace(/\s/g, "")}`} className="bm-tvl-hero-phone">
-          <FiPhone size={18} />
-          {hero.phone}
-        </a>
+        <div className="bm-hero-action bm-tvl-hero-action">
+          <Link href="/contact" className="bm-hero-btn">
+            <span className="bm-hero-btn__icon">
+              <FiChevronRight />
+            </span>
+            <span className="bm-hero-btn__text">
+              Talk to a <strong>Growth Specialist</strong>
+            </span>
+          </Link>
+        </div>
       </FadeIn>
 
-      <LogoNewsTicker />
+      <div className="bm-tvl-hero-logos">
+        <LogoNewsTicker />
+      </div>
     </section>
   );
 };

@@ -12,9 +12,14 @@ export const TirunelveliIntro = () => {
     <section className="bm-tvl-section bm-tvl-intro-section">
       <FadeIn direction="up" delay={0.1}>
         <div className="bm-tvl-intro-card">
-          <div className="bm-tvl-intro-accent" />
+          <div className="bm-tvl-intro-accent">
+            <span>Digital Marketing</span>
+          </div>
           <div className="bm-tvl-intro-content">
-            <h2 className="bm-tvl-title">{intro.title}</h2>
+            <h2 className="bm-tvl-title">
+              <span>Unlock the Power of </span>
+              <strong>Digital Marketing</strong>
+            </h2>
             <p className="bm-tvl-desc bm-tvl-desc--last">{intro.description}</p>
           </div>
         </div>
