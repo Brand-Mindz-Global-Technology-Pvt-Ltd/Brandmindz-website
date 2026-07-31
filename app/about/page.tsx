@@ -16,6 +16,22 @@ export const metadata: Metadata = {
         absolute: "About Brand Mindz Global | Creative Branding & Digital Growth Experts",
     },
     description: "Learn about Brand Mindz Global, a trusted branding, digital marketing, and technology agency helping businesses grow with innovative strategies and results.",
+    robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    alternates: {
+        canonical: "https://www.brandmindz.com/about",
+    },
+    openGraph: {
+        type: "website",
+        url: "https://brandmindz.com/about",
+        title: "About Brand Mindz Global | A Results-Driven Digital Agency",
+        description: "Meet the practitioners behind Brand Mindz Global — our founder, mission, core values, and the 360° Growth Framework we use to help startups and enterprises scale with clarity and accountability.",
+        images: [
+            {
+                url: "/logo.png",
+                alt: "About Brand Mindz Global — founder, mission and growth framework",
+            },
+        ],
+    },
 };
 
 export default function Aboutpage() {
