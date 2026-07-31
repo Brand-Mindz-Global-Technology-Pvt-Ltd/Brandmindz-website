@@ -16,6 +16,10 @@ export const metadata: Metadata = {
     absolute: "Industry-Focused Branding & Digital Solutions | Brand Mindz Global",
   },
   description: "Partner with Brand Mindz Global for industry-focused branding, digital marketing, and technology services that drive measurable business growth.",
+  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  alternates: {
+    canonical: "https://www.brandmindz.com/industries",
+  },
   keywords: [
     "IT & SaaS Marketing",
     "E-Commerce optimization",
@@ -25,10 +29,16 @@ export const metadata: Metadata = {
     "Brandmindz custom industry solutions"
   ],
   openGraph: {
-    title: "Tailored Business Growth Solutions by Industry | Brandmindz",
-    description: "Explore tailored digital marketing, SEO, branding, and customer acquisition frameworks for SaaS, E-Commerce, Healthcare, Education, and Real Estate industries.",
-    url: "https://BrandMindz.dev/industries",
-    type: "website"
+    type: "website",
+    url: "https://brandmindz.com/industries",
+    title: "Industries We Serve | IT, E-commerce, Healthcare, Education, Real Estate — Brand Mindz Global",
+    description: "From IT & SaaS to healthcare, education and real estate — see how Brand Mindz Global adapts its 360° Growth Framework to your industry's buyer journey.",
+    images: [
+      {
+        url: "/logo.png",
+        alt: "Industries served by Brand Mindz Global — IT, e-commerce, healthcare, education, real estate",
+      },
+    ],
   }
 };
 

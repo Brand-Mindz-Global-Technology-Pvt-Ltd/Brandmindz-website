@@ -16,18 +16,30 @@ export const metadata = {
     absolute: "Brand Mindz Global | Build Powerful Brands with Creative, Digital & Technology Experts",
   },
   description: "Grow your business with Brand Mindz Global. Expert branding, web development, SEO, digital marketing, and creative solutions that drive measurable results.",
+  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   verification: {
     google: "a55gBWr0MHNf8959SEre1QJYxhdr0roTW4B6zPfJMtY",
   },
   alternates: {
-    canonical: "https://www.brandmindz.com",
+    canonical: "https://www.brandmindz.com/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://brandmindz.com",
+    title: "Brand Mindz Global | India's Leading Full-Stack Marketing Agency",
+    description: "Branding, design, development, digital marketing & e-commerce listing — delivered by practitioners who've sold, scaled and grown 300+ brands across industries and geographies.",
+    images: [
+      {
+        url: "/logo.png",
+        alt: "Brand Mindz Global — India's Leading Full-Stack Marketing Agency",
+      },
+    ],
   },
 }
 
 export default function HomePage() {
   return (
     <>
-      <link rel="canonical" href="https://www.brandmindz.com" />
       <meta name="google-site-verification" content="a55gBWr0MHNf8959SEre1QJYxhdr0roTW4B6zPfJMtY" />
 
       <script
