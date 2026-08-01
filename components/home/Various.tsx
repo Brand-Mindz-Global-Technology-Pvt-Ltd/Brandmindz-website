@@ -14,14 +14,14 @@ import Kannan7Stars from '../../assets/HomeSection/various/kannan-7stars.webp';
 import KalpanaShakthivel from '../../assets/HomeSection/various/kalpana-shakthivel.webp';
 import CkKumaravel from '../../assets/HomeSection/various/ckkumaravel.webp';
 const initialLeaders = [
-  { id: 1, name: "Vasu Karthick", role: "Magic 20", src: VasuKarthick, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 2, name: "Praveen", role: "Spaceman carft", src: PraveenSpaceman, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 3, name: "Noel", role: "Truck Taxi", src: NoelImg, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 4, name: "Menaga", role: "Bioneem tech", src: MenagaBioneem, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 5, name: "Maria Subi rajan", role: "She the shakthi", src: MariaSubiRajan, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 6, name: "Kannan", role: "Seven stars", src: Kannan7Stars, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 7, name: "Kalpana Shakthivel", role: "The HR Scope", src: KalpanaShakthivel, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
-  { id: 8, name: "C K Kumaravel", role: "Co-Founder of Naturals", src: CkKumaravel, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." }
+  { id: 1, name: "Mr. Vasu Karthick", role: "Magic 20", src: VasuKarthick, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 2, name: "Mr. Praveen", role: "Spaceman carft", src: PraveenSpaceman, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 3, name: "Mr. Noel", role: "Truck Taxi", src: NoelImg, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 4, name: "Ms. Menaga", role: "Bioneem tech", src: MenagaBioneem, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 5, name: "Ms. Maria Subi rajan", role: "She the shakthi", src: MariaSubiRajan, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 6, name: "Mr. Kannan", role: "Seven stars", src: Kannan7Stars, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 7, name: "Ms. Kalpana Shakthivel", role: "The HR Scope", src: KalpanaShakthivel, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." },
+  { id: 8, name: "Mr. C K Kumaravel", role: "Co-Founder of Naturals", src: CkKumaravel, quote: "The team delivered a stunning website that exceeded our expectations. Their creativity and attention to detail made the entire process effortless." }
 ];
 
 const Various = () => {

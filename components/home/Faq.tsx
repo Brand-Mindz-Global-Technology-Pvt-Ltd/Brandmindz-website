@@ -11,7 +11,7 @@ interface FaqItem {
 }
 
 const Faq = ({ activeTabKey = "" }: { activeTabKey?: string }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const pathname = usePathname();
 
 
@@ -514,7 +514,7 @@ const Faq = ({ activeTabKey = "" }: { activeTabKey?: string }) => {
             <div
               key={index}
               className={`bm-faq-item ${activeIndex === index ? 'active' : ''}`}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => setActiveIndex(activeIndex === index ? null : index)}
             >
               <div className="bm-faq-q-box">
                 <span>{faq.question}</span>
@@ -537,7 +537,7 @@ const Faq = ({ activeTabKey = "" }: { activeTabKey?: string }) => {
               <div
                 key={actualIndex}
                 className={`bm-faq-item ${activeIndex === actualIndex ? 'active' : ''}`}
-                onClick={() => setActiveIndex(actualIndex)}
+                onClick={() => setActiveIndex(activeIndex === actualIndex ? null : actualIndex)}
               >
                 <div className="bm-faq-q-box">
                   <span>{faq.question}</span>

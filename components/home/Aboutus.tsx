@@ -3,12 +3,17 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../../style/home/aboutus.css";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ArrowLeft } from "lucide-react";
 
 // Asset Imports (Replace with your actual paths)
 import founderImg from "../../assets/HomeSection/about/frame.webp";
-import founderImg1 from "../../assets/HomeSection/about/210446c72e34182875e9edee3773a3ddc673e220.webp";
+import founderImg1 from "../../assets/about/foundern-1.webp";
+import founderImg2 from "../../assets/about/foundern-2.webp";
+import founderImg3 from "../../assets/about/foundern-3.webp";
+import founderImg4 from "../../assets/about/foundern-n.webp";
+
 import vision1 from "../../assets/HomeSection/about/mingcute_target-line.webp";
 import vision2 from "../../assets/HomeSection/about/material-symbols_target.webp";
 import vision3 from "../../assets/HomeSection/about/lets-icons_target.webp";
@@ -32,11 +37,37 @@ import Lifeland15 from '../../assets/HomeSection/about/lifeland15.webp'
 import Peace16 from '../../assets/HomeSection/about/peace16.webp'
 import Goals17 from '../../assets/HomeSection/about/goals17.webp'
 
+interface SdgItem {
+  id: number;
+  title: string;
+  tag: string;
+  image: StaticImageData;
+  description: string;
+  contributions: string[];
+  footerNote: string;
+  subtitle?: string;
+}
+
+interface MenuItem {
+  id: number;
+  label: string;
+  type?: "standard" | "vision" | "sustainability";
+  subtitle?: string;
+  title: string;
+  img?: StaticImageData;
+  desc?: string | string[];
+  quote?: string;
+  btn?: boolean;
+  subdesc?: string;
+  visions?: Array<{ title: string; text: string }>;
+  sdgs?: SdgItem[];
+}
+
 const Aboutus = () => {
   const [activeTab, setActiveTab] = useState(1);
   
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     {
       id: 1,
       label: "About Us",
@@ -97,7 +128,7 @@ const Aboutus = () => {
       type: "standard",
       subtitle: "Our Growth",
       title: "We value honesty, bold ideas, and measurable impact.",
-      img: founderImg1,
+      img: founderImg2,
       desc: [
         `R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands.`,
         `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an official mentor for Mentor TN, a government initiative for startup growth.`
@@ -108,7 +139,7 @@ const Aboutus = () => {
 
     {
       id: 6, label: "Customer Service Philosophy", title: "Committed to clarity, consistency, and customer success.",
-      img: founderImg1,
+      img: founderImg3,
       subtitle: "Customer Service Philosophy",
 
       quote: "Promise what you deliver, and deliver what you promised.",
@@ -339,7 +370,7 @@ const Aboutus = () => {
       subtitle: "Our Work Culture",
       type: "standard",
       title: "Respect, Responsibility, and Growth for All",
-      img: founderImg1,
+      img: founderImg2,
       subdesc: "Ubuntu — “I am because we are; because we are, you are.”",
       desc: [
         `This philosophy guides how we work together as one team. We believe in shared ownership, mutual respect, and collective accountability in everything we do. By supporting one another and working toward common goals, we create an environment where every contribution matters and success is achieved through unity, trust, and collaboration.`,
@@ -353,7 +384,7 @@ const Aboutus = () => {
 
       title: "Respect, Responsibility, and Growth for All",
       subdesc: "Ubuntu — “I am because we are; because we are, you are.”",
-      img: founderImg1,
+      img: founderImg4,
       quote: "Promise what you deliver, and deliver what you promised.",
       desc: [
         `This philosophy guides how we work together as one team. We believe in shared ownership, mutual respect, and collective accountability in everything we do. By supporting one another and working toward common goals, we create an environment where every contribution matters and success is achieved through unity, trust, and collaboration.`,
@@ -373,12 +404,12 @@ const Aboutus = () => {
   ];
 
   const current = menuItems.find(item => item.id === activeTab) || menuItems[0];
-  const [openImg, setOpenImg] = useState(null);
+  const [openImg, setOpenImg] = useState<SdgItem | null>(null);
 
 
-  const ScrollLine = ({ content }) => {
+  const ScrollLine = ({ content }: { content: string }) => {
     const [isPassed, setIsPassed] = useState(false);
-    const ref = useRef(null);
+    const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
       const handleScroll = () => {
@@ -409,13 +440,13 @@ const Aboutus = () => {
     );
   };
 
-  const ScrollParagraph = ({ text }) => {
+  const ScrollParagraph = ({ text }: { text: string }) => {
     // We split the paragraph into sentences using regex to ensure line-by-line highlighting
     const lines = text.split(/(?<=\. )/g);
 
     return (
       <p className="bm-paragraph-wrapper">
-        {lines.map((line, idx) => (
+        {lines.map((line: string, idx: number) => (
           <ScrollLine key={idx} content={line} />
         ))}
       </p>
@@ -457,7 +488,7 @@ const Aboutus = () => {
                       {i === 2 && <Image src={vision3} alt="icon" width={60} height={60} className="grayscale-icon" />}
                     </div> */}
                   </div>
-                  {i < current.visions.length - 1 && <div className="bm-vision-divider"></div>}
+                  {i < (current.visions?.length ?? 0) - 1 && <div className="bm-vision-divider"></div>}
                 </React.Fragment>
 
               ))}
@@ -516,7 +547,7 @@ const Aboutus = () => {
             </div>
 
             <div className="bm-sdg-grid">
-              {current.sdgs.map((sdg, i) => (
+              {current.sdgs?.map((sdg, i) => (
                 <div
                   key={i}
                   className={`sdg-box sdg-${sdg.id}`}
@@ -548,7 +579,7 @@ const Aboutus = () => {
                   lineHeight: current.subtitle === "About Brand Mindz Global" ? "30px" : "24px",
                 }}
               >
-                {current.desc.map((text, index) => (
+                {Array.isArray(current.desc) && current.desc.map((text, index) => (
                   <p key={index} dangerouslySetInnerHTML={{ __html: text }} />
                 ))}
               </div> */}
@@ -559,7 +590,7 @@ const Aboutus = () => {
                   fontSize: current.subtitle === "Customer Service Philosophy" ? "19px" : "20px",
                 }}
               >
-                {current.desc.map((text, index) => (
+                {Array.isArray(current.desc) && current.desc.map((text, index) => (
                   <ScrollParagraph key={index} text={text} />
                 ))}
               </div>
@@ -570,14 +601,14 @@ const Aboutus = () => {
                 )
               }
             </div>
-            <div className="bm-about-image-side">
+            {current.img && <div className="bm-about-image-side">
               <div className="bm-about-img-frame">
                 <Image src={current.img} alt={current.label} priority />
                 <div className="bm-about-quote-overlay">
                   "{current.quote}"
                 </div>
               </div>
-            </div>
+            </div>}
           </div>
         );
     }

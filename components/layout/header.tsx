@@ -8,12 +8,14 @@ import { FiMenu, FiX, FiChevronDown, FiChevronUp, FiPhone } from "react-icons/fi
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import BookCallModal from "./BookCallModal";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const pathname = usePathname();
   const [show, setShow] = useState(false);
+  const [isBookCallOpen, setIsBookCallOpen] = useState(false);
 
 
   // Check if mobile
@@ -37,7 +39,7 @@ const Header = () => {
 
   // Prevent body scroll when menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
+    if (isMobileMenuOpen || isBookCallOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
@@ -46,7 +48,25 @@ const Header = () => {
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, isBookCallOpen]);
+
+  // Open the shared modal from every existing or future "Book a Call" button.
+  useEffect(() => {
+    const handleBookCallClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      const trigger = target?.closest<HTMLElement>('button, a, [role="button"]');
+
+      if (trigger?.textContent?.replace(/\s+/g, ' ').trim().toLowerCase() === 'book a call') {
+        event.preventDefault();
+        event.stopPropagation();
+        setIsMobileMenuOpen(false);
+        setIsBookCallOpen(true);
+      }
+    };
+
+    document.addEventListener('click', handleBookCallClick, true);
+    return () => document.removeEventListener('click', handleBookCallClick, true);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -274,8 +294,8 @@ const Header = () => {
                 <button
                   className="bm-header__btn mobile"
                   onClick={() => {
-                    console.log('Book a Call clicked');
                     closeMobileMenu();
+                    setIsBookCallOpen(true);
                   }}
                 >
                   <div className="icon-circle">
@@ -291,7 +311,7 @@ const Header = () => {
               <button
                 className="bm-header__btn"
                 onClick={() => {
-                  console.log('Book a Call clicked');
+                  setIsBookCallOpen(true);
                 }}
               >
                 <div className="icon-circle">
@@ -310,6 +330,10 @@ const Header = () => {
           onClick={closeMobileMenu}
         />
       </div>
+      <BookCallModal
+        isOpen={isBookCallOpen}
+        onClose={() => setIsBookCallOpen(false)}
+      />
     </div>
 
   );
