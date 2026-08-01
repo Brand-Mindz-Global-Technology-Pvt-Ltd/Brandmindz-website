@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, type ChangeEvent } from "react";
 import { FadeIn } from "@/components/animations/fade-in";
 import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
@@ -15,8 +15,26 @@ import contact from '../../assets/contact/vector1.webp'
 import whitecontact from '../../assets/contact/vectorwhite.webp'
 import bgImage from '../../assets/contact/group5.webp'
 
+interface ContactFormData {
+  name: string;
+  companyName: string;
+  designation: string;
+  phone: string;
+  email: string;
+  location: string;
+  industry: string;
+  requirement: string;
+  otherRequirement: string;
+  timeline: string;
+  contactMode: string[];
+  help: string;
+  connectionDate: string;
+}
+
+type FormErrors = Record<string, string>;
+
 export const GetStartedSection = () => {
-  const [selectedServices, setSelectedServices] = useState([]);
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [activeStep, setActiveStep] = useState(1);
   const [isCheckLaterDisabled, setIsCheckLaterDisabled] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
@@ -46,8 +64,8 @@ export const GetStartedSection = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
-  const dropdownRef = useRef(null);
-  const industryDropdownRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const industryDropdownRef = useRef<HTMLDivElement>(null);
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [industrySearchQuery, setIndustrySearchQuery] = useState("");
 
@@ -108,11 +126,11 @@ export const GetStartedSection = () => {
 
   // 3. Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsDropdownOpen(false);
       }
-      if (industryDropdownRef.current && !industryDropdownRef.current.contains(event.target)) {
+      if (industryDropdownRef.current && !industryDropdownRef.current.contains(event.target as Node)) {
         setIsIndustryDropdownOpen(false);
       }
     };
@@ -135,7 +153,7 @@ export const GetStartedSection = () => {
     "Others"
   ];
 
-  const toggleService = (service) => {
+  const toggleService = (service: string) => {
     let currentHelp = formData.help || "";
     let servicesArray = currentHelp.split(', ').filter(s => s !== "");
 
@@ -162,7 +180,7 @@ export const GetStartedSection = () => {
   const clientLogos = [
     { id: 1, src: clientLogo1, alt: "Client 1" },
   ];
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     companyName: '',
     designation: '',
@@ -171,6 +189,7 @@ export const GetStartedSection = () => {
     location: '',
     industry: '',
     requirement: '',
+    otherRequirement: '',
     timeline: 'Immediately',
     contactMode: [],
     help: "",
@@ -178,10 +197,11 @@ export const GetStartedSection = () => {
   });
 
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    const checked = e.target instanceof HTMLInputElement ? e.target.checked : false;
     if (type === 'checkbox' && name === 'contactMode') {
       // Toggle selection in array
       const newModes = checked
@@ -195,8 +215,8 @@ export const GetStartedSection = () => {
     if (errors[name]) setErrors({ ...errors, [name]: '' });
   };
 
-  const validateStep = (step) => {
-    let newErrors = {};
+  const validateStep = (step: number) => {
+    const newErrors: FormErrors = {};
 
     if (step === 1) {
       if (!formData.name.trim()) newErrors.name = "Name is required";
@@ -250,7 +270,7 @@ export const GetStartedSection = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  const handleNext = (nextStep) => {
+  const handleNext = (nextStep: number) => {
     if (validateStep(nextStep)) {
       setActiveStep(nextStep + 1);
     }
@@ -285,7 +305,7 @@ export const GetStartedSection = () => {
   const SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbylboHU_WyOf0fvqmnnYLRF54rloqhojNcUxq7R_GIjQtUPIa5VT-cMulNGnrbvKN9K/exec";
 
-  const submitLead = async (leadData) => {
+  const submitLead = async (leadData: Record<string, string>) => {
     const response = await fetch(SCRIPT_URL, {
       method: "POST",
       headers: {
@@ -894,7 +914,7 @@ export const GetStartedSection = () => {
                 <div className="bm-right-content-bm-s4">
                   <Image
                     src={bgImage.src}
-                    alt={bgImage.alt}
+                    alt="Brand Mindz growth journey"
                     fill
                     priority
                     quality={100}

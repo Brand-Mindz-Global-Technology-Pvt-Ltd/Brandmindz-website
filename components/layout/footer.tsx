@@ -208,7 +208,9 @@ const Footer = () => {
              <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
                 <FaMapMarkerAlt className="text-black hidden md:block " style={{ marginTop: '10px' }} />
                 <div>
-                  <h4 className="font-bold text-[20px] mb-1">Tirunelveli Office</h4>
+                  <Link href="/digital-marketing-agency-in-tirunelveli">
+                    <h4 className="font-bold text-[20px] mb-1">Tirunelveli Office</h4>
+                  </Link>
                   <p className="text-[19px] text-gray-500 leading-snug">
                     Startup TN, Tirunelveli Municipal<br />
                     Corporation Incubation Centre,<br />
@@ -217,26 +219,6 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Column 3: Locations Served */}
-          <div className="md:col-span-2 lg:col-span-2">
-            <h3 className={styles.sectionTitle} style={{ fontSize: "24px" }}>
-              Locations Serves
-            </h3>
-            <ul className={styles.linkList}>
-              <li className={styles.linkItem}>
-                <Link
-                  href="/digital-marketing-agency-in-tirunelveli"
-                  className={styles.navLink}
-                >
-                  Tirunelveli
-                </Link>
-              </li>
-              <li className={styles.linkItem}>
-                <span className={styles.navLink}>Chennai</span>
-              </li>
-            </ul>
           </div>
 
           {/* Column 5: Contact */}
