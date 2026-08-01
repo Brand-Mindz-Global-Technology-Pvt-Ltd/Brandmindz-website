@@ -98,7 +98,7 @@
 
 .bm-about-section {
   position: sticky;
-  padding: 30px 0px 70px 0px;
+  padding: 50px 0;
   background-color: #EEEEEE;
   position: relative;
   overflow: hidden;
@@ -345,6 +345,7 @@
   /* Gradient Text Effect */
   background: linear-gradient(to bottom, #ffffff 50%, #a0a0a0 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 10px 40px;
   /* Box-kulla gap */

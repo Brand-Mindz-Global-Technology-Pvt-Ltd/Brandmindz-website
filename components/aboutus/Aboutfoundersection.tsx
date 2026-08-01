@@ -167,16 +167,17 @@ import React, { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/animations/fade-in";
 import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
-import aboutpic from '../../assets/about/frame21472262332.webp'
-import founder1 from '../../assets/about/frame21472262332.webp'
-import founder2 from '../../assets/about/frame21472262332.webp'
-import founder3 from '../../assets/about/frame21472262332.webp'
-import founder4 from '../../assets/about/frame21472262332.webp'
+import aboutpic from '../../assets/about/foundern-1.webp'
+import founder1 from '../../assets/about/frame2147226233-2.webp'
+import founder2 from '../../assets/about/foundern-2.webp'
+import founder3 from '../../assets/about/foundern-n.webp'
+import founder4 from '../../assets/about/foundern-3.webp'
 
 // --- Only Adding the Logic Components ---
-const ScrollLine = ({ content }) => {
+const ScrollLine = ({ content }: { content: string }) => {
   const [isHighlighted, setIsHighlighted] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLSpanElement>(null);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -206,7 +207,7 @@ const ScrollLine = ({ content }) => {
   );
 };
 
-const ScrollSpan = ({ children }) => {
+const ScrollSpan = ({ children }: { children: React.ReactNode }) => {
   if (typeof children !== 'string') return <span>{children}</span>;
   const sentences = children.split(/(?<=\. )/g);
   return (
@@ -233,7 +234,8 @@ const founderData = [
 
 export const AboutFounderContentSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const carouselRef = useRef(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const carousel = carouselRef.current;
@@ -256,14 +258,14 @@ export const AboutFounderContentSection = () => {
       {/* <div className="bm-about-container"> */}
         <div className="bm-section-bg">
           <FadeIn delay={0.1}>
-            <div className="bm-about-badge">
+            <div className="bm-about-badge bm-about-founder-badge">
               <span>About Founder</span>
             </div>
           </FadeIn>
           
           <div className="bm-about-grid-founder">
             {/* Left Column - Carousel (Kept Exactly Same) */}
-            <div>
+            <div className="bm-about-founder-media">
               <div className="bm-founder-carousel-container">
                 <div className="bm-founder-slider" ref={carouselRef}>
                   {founderData.map((founder, index) => (
@@ -292,7 +294,7 @@ export const AboutFounderContentSection = () => {
 
             {/* Right Column - Highlight Logic Added ONLY to Paragraphs */}
             <div className="bm-about-Right">
-              <FadeIn delay={0.2}>
+              <FadeIn delay={0.2} className="bm-about-founder-heading-wrap">
                 <h2 className="bm-about-heading">
                   <span className="bm-text-black">Built By A Founder Who Respects</span>
                   <br />
@@ -300,7 +302,7 @@ export const AboutFounderContentSection = () => {
                 </h2>
               </FadeIn>
 
-              <div>
+              <div className="bm-about-founder-copy">
                 <p className="bm-about-paragraph-founder">
                   <ScrollSpan>
                     {Paragraph.paragraph1}

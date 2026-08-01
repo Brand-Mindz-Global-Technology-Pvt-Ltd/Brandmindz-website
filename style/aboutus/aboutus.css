@@ -311,6 +311,10 @@
   letter-spacing: 0.05em;
 }
 
+.bm-about-founder-badge {
+  margin-left: 15px;
+}
+
 
 /* Main Heading */
 .bm-about-heading {
@@ -423,6 +427,42 @@
   .bm-about-grid-founder {
     grid-template-columns: 3.6fr 8.5fr !important;
     gap: 3rem;
+  }
+
+  .bm-about-Right {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .bm-about-founder-media,
+  .bm-about-founder-media .bm-founder-carousel-container,
+  .bm-about-founder-media .bm-founder-slider,
+  .bm-about-founder-media .bm-slide,
+  .bm-about-founder-media .bm-about-image-container {
+    height: 100%;
+  }
+
+  .bm-about-founder-media .bm-about-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bm-about-founder-heading-wrap {
+    flex: none;
+    margin-top: -8px;
+  }
+
+  .bm-about-founder-copy {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .bm-about-founder-copy .bm-about-paragraph-founder:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -1023,6 +1063,7 @@
   font-weight: 500;
   margin: 0;
   display: -webkit-box;
+  line-clamp: 4;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -1092,6 +1133,7 @@
 
   .bm-compact-quote {
     font-size: 0.8rem;
+    line-clamp: 4;
     -webkit-line-clamp: 4;
   }
 }
@@ -1158,7 +1200,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  cursor: pointer;
 }
 
 /* Banner Image */
