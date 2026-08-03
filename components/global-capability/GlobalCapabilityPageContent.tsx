@@ -281,7 +281,7 @@ export default function GlobalCapabilityPageContent() {
               </div>
             </div>
             <h1
-  className="gc-hero-title mx-auto mt-8 text-center text-[clamp(3rem,6.35vw,6rem)] font-bold leading-[1.12] tracking-[-0.035em] text-black"
+  className="gc-hero-title mx-auto text-center text-[clamp(3rem,6.35vw,6rem)] font-bold leading-[1.12] tracking-[-0.035em] text-black"
   style={{ maxWidth: "1300px" }}
 >
               <span>Built for</span>{" "}

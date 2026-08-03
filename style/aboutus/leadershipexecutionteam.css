@@ -1,9 +1,15 @@
         .leadership-team-page > .bm-hero-section-industries { padding-top: 50px; }
-        .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge__text { font-size: clamp(1.2rem, 2.5vw, 2.5rem); line-height: 1.15; text-transform: none; }
+        .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge { gap: 12px; margin-bottom: 30px; padding: 0; border: 0; border-radius: 0; background: transparent; backdrop-filter: none; }
+        .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge__text { margin: 0; font-size: 40px; font-weight: 500; line-height: 30px; letter-spacing: 0; text-transform: none; }
         .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge__icon { width: 40px; height: 40px; flex: 0 0 40px; transform: none; }
         .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge__icon svg { width: 18px; height: 18px; }
         .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-title { max-width: 1300px; font-size: clamp(3rem, 6.35vw, 6rem); line-height: 1.12; letter-spacing: -.035em; }
         .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-description { max-width: 1200px; font-size: clamp(1.125rem, 2vw, 2.13rem); line-height: 1.4; }
+        @media (max-width: 768px) {
+          .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge { gap: 5px; }
+          .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge__text { font-size: 18px; line-height: 1.2; }
+          .leadership-team-page > .bm-hero-section-industries .bm-industries-hero-badge__icon { width: 32px; height: 32px; flex-basis: 32px; }
+        }
         .lt-container { width: 90%; max-width: 1440px; margin-inline: auto; }
         .lt-experience { padding: 76px 0 90px; background: #eee; position: relative; }
         .lt-experience::before { content: ""; position: absolute; inset: 0; background: url('/placeholder.svg') center/cover; opacity: .025; }

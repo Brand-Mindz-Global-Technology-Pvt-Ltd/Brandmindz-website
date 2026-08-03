@@ -30,6 +30,10 @@
           margin-top: clamp(10px, 1vw, 2px);
         }
 
+        .gc-hero-title {
+          margin-top: clamp(28px, 4vw, 28px);
+        }
+
         .gc-hero-copy {
           max-width: 1200px;
           margin: 0 auto;
