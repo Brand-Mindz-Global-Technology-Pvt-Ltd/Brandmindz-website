@@ -15,6 +15,10 @@ import {
 import founderImage from "@/assets/HomeSection/about/210446c72e34182875e9edee3773a3ddc673e220.webp";
 import heroPattern from "@/assets/HomeSection/banner/group1.webp";
 import womenStoryImage from "@/assets/about/women.webp";
+import globalExposureImage from "@/assets/branding/authority.webp";
+import structuredReportingImage from "@/assets/branding/visibility.webp";
+import globalStandardsImage from "@/assets/branding/influence.webp";
+import measurablePerformanceImage from "@/assets/branding/gemini_generate.webp";
 export const metadata: Metadata = {
   title: "Building the Best Work Culture in Tamil Nadu",
   description:
@@ -39,11 +43,10 @@ export const metadata: Metadata = {
 const wellnessPolicies = [
   {
     title: "Monthly Wellness WFH Day",
-    text: "Every female team member is entitled to one “No-Questions-Asked” Wellness WFH day per month.",
-    preQuote: ["No approval process.", "No tracking.", "No explanation required."],
-    leadIn: "Simply inform the team:",
+    text: "Every female team member is entitled to one “No-Questions-Asked” Wellness WFH day per month. On this day:",
+    preQuote: ["No approval process, No tracking, No explanation required. Simply inform the team:"],
+    leadIn: "",
     quote: "“Taking my Wellness WFH today. I’m online and reachable.”",
-    listIntro: "On this day:",
     icon: HeartHandshake,
     points: [
       "Camera-off is completely acceptable",
@@ -97,6 +100,13 @@ const trustPoints = [
   "Faster turnaround",
   "Structured communication",
   "Transparent reporting",
+];
+
+const globalCompetenceCards = [
+  { title: "International exposure", image: globalExposureImage },
+  { title: "Structured reporting", image: structuredReportingImage },
+  { title: "Global quality standards", image: globalStandardsImage },
+  { title: "Measurable performance", image: measurablePerformanceImage },
 ];
 
 const faqs = [
@@ -230,7 +240,7 @@ export default function WorkCulturePageContent() {
 
           <div className="wc-container">
             <div className="flex w-full justify-center px-4 text-center">
-              <div className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[clamp(1.35rem,2.5vw,2.5rem)] font-semibold leading-tight"
+              <div className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[18px] font-medium leading-normal tracking-normal md:text-[40px] md:leading-[30px]"
               style={{ maxWidth: "1100px" }}
               >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffdb00] text-black sm:h-10 sm:w-10">
@@ -334,7 +344,7 @@ Culture is our operating system.
   </strong>
 
   <span className="mt-2 block text-base font-medium text-zinc-600">
-    Founder, Brand Mindz
+    Founder of Brand Mindz
   </span>
 </div>
               </div>
@@ -342,20 +352,20 @@ Culture is our operating system.
           </div>
         </section>
 
-        <section className="wc-section bg-[#f5f5f3]">
+        <section className="wc-section wc-potential-section">
           <div className="wc-container">
             <SectionIntro
               eyebrow="Potential over privilege"
               title="If you're a first-generation graduate, we see you."
               text="Many of our team members are first-generation graduates. We understand the pressure, the responsibility, and the hunger to grow. Joining Brand Mindz is more than filling a role. It is an opportunity to build competence that can compete globally—from Tamil Nadu."
             />
-            <div className="text-3xl font-bold">
-  We Not Hire
+            <div className="text-3xl font-bold text-white">
+  We Do Not Hire
 </div>
             <PointGrid items={["Based on accent", "Based on city background", "Based on privilege"]} />
             <br></br>
             <div className="text-3xl font-bold">
-  We Hire Only Based on potential & ownership
+  We Hire Based Only on Potential and Ownership
 </div>
           </div>
         </section>
@@ -438,7 +448,7 @@ Culture is our operating system.
               </div>
 
               <div className="wc-wellness-panels">
-                {wellnessPolicies.map(({ title, text, preQuote, leadIn, quote, listIntro, icon: Icon, points, closing }) => (
+                {wellnessPolicies.map(({ title, text, preQuote, leadIn, quote, icon: Icon, points, closing }) => (
                   <article key={title} className="wc-wellness-panel">
                     <div className="wc-wellness-feature">
                       <div className="wc-wellness-icon">
@@ -448,19 +458,28 @@ Culture is our operating system.
                         <h3 className="wc-wellness-title text-[clamp(1.7rem,2.4vw,2.5rem)] font-extrabold leading-[1.12] tracking-[-0.035em]">
                           {title}
                         </h3>
-                        <p className="wc-wellness-description">{text}</p>
+                        {title !== "Monthly Wellness WFH Day" ? (
+                          <p className="wc-wellness-description">{text}</p>
+                        ) : null}
                         {preQuote ? (
                           <p className="wc-wellness-pre-quote">
                             {preQuote.map((line) => <span key={line}>{line}</span>)}
                           </p>
                         ) : null}
-                        {leadIn ? <p className="wc-wellness-supporting-copy">{leadIn}</p> : null}
+                        {leadIn && title !== "Power Girls Team (PGT)" ? (
+                          <p className="wc-wellness-supporting-copy">{leadIn}</p>
+                        ) : null}
                         {quote ? <p className="wc-wellness-quote">{quote}</p> : null}
-                        {listIntro ? <p className="wc-wellness-list-intro">{listIntro}</p> : null}
                       </div>
                     </div>
 
                     <div className="wc-wellness-points">
+                      {title === "Monthly Wellness WFH Day" || title === "Power Girls Team (PGT)" ? (
+                        <div className="wc-wellness-points-intro">
+                          {title === "Monthly Wellness WFH Day" ? <p>{text}</p> : null}
+                          {title === "Power Girls Team (PGT)" && leadIn ? <p>{leadIn}</p> : null}
+                        </div>
+                      ) : null}
                       {points.map((point) => (
                         <div key={point} className="wc-wellness-point">
                           <span className="wc-wellness-point-icon" aria-hidden="true">
@@ -470,7 +489,7 @@ Culture is our operating system.
                         </div>
                       ))}
                       <div className="wc-wellness-closing">
-                        {closing.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                        <p>{closing.join(" ")}</p>
                       </div>
                     </div>
                   </article>
@@ -549,17 +568,27 @@ Culture is our operating system.
           <div className="wc-container">
             <SectionIntro
               eyebrow="Build Global Competence From Here"
-              title="You don't need to leave Tamil Nadu to build a global career."
+              title={"You don't need to leave Tamil\u00A0Nadu to build a global career."}
               text="We work with structured systems and maintain professional reporting. We operate with international-level quality expectations. That is our philosophy.
 Not words.
  Action.
 "
             />
             <div className="wc-global-grid grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {['International exposure', 'Structured reporting', 'Global quality standards', 'Measurable performance'].map((item) => (
-                <div key={item} className="wc-global-card flex items-center justify-center rounded-[30px] bg-white px-6 py-8 text-xl font-extrabold leading-7 shadow-sm"
-                style={{ minHeight: "150px" }}>
-                  {item}
+              {globalCompetenceCards.map((item) => (
+                <div
+                  key={item.title}
+                  className="wc-global-card relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-[30px] px-6 py-8 text-center text-xl font-extrabold leading-7 text-white shadow-lg md:min-h-[260px]"
+                >
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <span className="absolute inset-0 bg-black/55" aria-hidden="true" />
+                  <span className="relative z-10">{item.title}</span>
                 </div>
               ))}
             </div>
@@ -614,7 +643,7 @@ Not words.
 
         <section className="wc-section wc-final-section bg-white">
           <div className="wc-container">
-            <div className="wc-final-cta rounded-[44px] bg-[#888888] shadow-[0_26px_70px_rgba(0,0,0,.10)]">
+            <div className="wc-final-cta rounded-[44px] shadow-[0_26px_70px_rgba(0,0,0,.10)]">
               <p className="wc-final-cta-kicker font-bold uppercase tracking-[0.18em]">Ready to grow with us?</p>
               <h2 className="wc-final-cta-title font-extrabold tracking-[-0.05em]">
                 Build global competence from Tamil Nadu.

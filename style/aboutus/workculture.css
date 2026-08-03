@@ -28,6 +28,21 @@
 
         }
 
+        .wc-potential-section {
+          position: relative;
+          background-color: #f8f5ef;
+          background-image:
+            linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
+            url("../../assets/about/team.webp");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .wc-potential-section .wc-section-intro-text {
+          color: #fff;
+        }
+
         .wc-hero-description {
           margin-top: clamp(2px, 2vw, 64px);
         }
@@ -240,7 +255,8 @@
         .wc-wellness-feature {
           position: relative;
           display: flex;
-          min-height: 420px;
+          height: 450px;
+          min-height: 450px;
           overflow: hidden;
           flex-direction: column;
           justify-content: space-between;
@@ -309,6 +325,22 @@
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 0 clamp(32px, 5vw, 72px);
           align-content: center;
+        }
+
+        .wc-wellness-points-intro {
+          grid-column: 1 / -1;
+          max-width: 860px;
+          margin: 0 4px 10px;
+          color: #3f3f46;
+          font-size: clamp(1.1rem, 1.45vw, 1.3rem);
+          font-weight: 600;
+          line-height: 1.65;
+          text-align: left;
+          text-wrap: pretty;
+        }
+
+        .wc-wellness-points-intro p {
+          margin: 0 0 8px;
         }
 
         .wc-wellness-point {
@@ -859,6 +891,14 @@
           align-items: center;
           justify-content: center;
           padding: clamp(42px, 5vw, 64px) clamp(28px, 6vw, 84px);
+          background-color: #3f3f3f;
+          background-image:
+            linear-gradient(rgba(0, 0, 0, .52), rgba(0, 0, 0, .52)),
+            url("../../assets/about/team.webp");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          color: #fff;
           text-align: center;
         }
 
@@ -931,6 +971,7 @@
           }
 
           .wc-wellness-feature {
+            height: auto;
             min-height: 330px;
           }
 
@@ -1032,4 +1073,3 @@
             border-width: 2px;
           }
         }
-      

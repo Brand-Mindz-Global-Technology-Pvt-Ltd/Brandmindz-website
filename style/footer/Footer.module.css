@@ -42,7 +42,7 @@ background-color: #F3F3F3;
 
 .logoContainer img {
   object-fit: contain;
-  margin-left: -5px;
+  margin-left: 0;
   margin-bottom:20px;
   cursor: pointer;
 }

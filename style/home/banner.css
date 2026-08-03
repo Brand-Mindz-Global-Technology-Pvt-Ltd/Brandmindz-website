@@ -33,13 +33,13 @@
 }
 
 .bm-hero-title {
-  font-size: 77px;
-  line-height: 1.2;
-  max-width: 1300px;
+  font-size: 64px;
+  line-height: 1.15;
+  max-width: 1100px;
   /* max-width: 88%; */
   margin: 0 auto 24px auto;
   font-weight: 700;
-  letter-spacing: 2.5px;
+  letter-spacing: -1.5px;
 }
 
 .bm-abount-hero-title {
@@ -53,7 +53,7 @@
 .line-1,
 .line-2 {
   display: block;
-  text-align: left;
+  text-align: center;
 }
 
 .line-3 {
