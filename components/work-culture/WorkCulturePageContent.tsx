@@ -240,7 +240,7 @@ export default function WorkCulturePageContent() {
 
           <div className="wc-container">
             <div className="flex w-full justify-center px-4 text-center">
-              <div className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[18px] font-medium leading-normal tracking-normal md:text-[40px] md:leading-[30px]"
+              <div className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[18px] font-medium leading-normal tracking-normal md:text-[40px] md:leading-7.5"
               style={{ maxWidth: "1100px" }}
               >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffdb00] text-black sm:h-10 sm:w-10">
@@ -578,7 +578,7 @@ Not words.
               {globalCompetenceCards.map((item) => (
                 <div
                   key={item.title}
-                  className="wc-global-card relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-[30px] px-6 py-8 text-center text-xl font-extrabold leading-7 text-white shadow-lg md:min-h-[260px]"
+                  className="wc-global-card relative flex min-h-55 items-center justify-center overflow-hidden rounded-[30px] px-6 py-8 text-center text-xl font-extrabold leading-7 text-white shadow-lg md:min-h-65"
                 >
                   <Image
                     src={item.image}
