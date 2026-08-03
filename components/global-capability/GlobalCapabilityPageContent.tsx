@@ -16,6 +16,11 @@ import heroPattern from "@/assets/HomeSection/banner/group1.webp";
 import faqBackground from "@/assets/HomeSection/faq/15645760_784511.webp";
 import globalCapabilityTeam from "@/assets/about/global-capability-team.webp";
 import globalWorldMap from "@/assets/HomeSection/Whychoose/group4.webp";
+import womenImage from "@/assets/about/women.webp";
+import definedKpisImage from "@/assets/branding/gemini_generate.webp";
+import visibilityImage from "@/assets/branding/visibility.webp";
+import influenceImage from "@/assets/branding/influence.webp";
+import authorityImage from "@/assets/branding/authority.webp";
 
 export const metadata: Metadata = {
   title: "Global Capability | Brand Mindz",
@@ -71,26 +76,32 @@ const scaleCapabilities = [
   {
     title: "Quality Standards Before Execution",
     description: "Clear quality benchmarks are established before work begins, keeping delivery consistent as projects expand.",
+    image: globalCapabilityTeam,
   },
   {
     title: "Defined KPIs",
     description: "Every engagement starts with measurable performance indicators connected to business priorities.",
+    image: definedKpisImage,
   },
   {
     title: "Structured Reporting",
     description: "Consistent reporting formats provide visibility across campaigns, platforms, teams, and markets.",
+    image: visibilityImage,
   },
   {
     title: "Documented Milestones",
     description: "Timelines, responsibilities, and delivery checkpoints are documented to keep complex work predictable.",
+    image: authorityImage,
   },
   {
     title: "Shared Accountability",
     description: "Ownership is distributed clearly across teams so decisions move faster and outcomes remain protected.",
+    image: womenImage,
   },
   {
     title: "Sustainable Scale",
     description: "Our Growth Accelerator Program builds capability into culture, enabling growth without sacrificing standards.",
+    image: influenceImage,
   },
 ];
 
@@ -260,7 +271,7 @@ export default function GlobalCapabilityPageContent() {
           <div className="gc-container">
             <div className="flex w-full justify-center px-4 text-center">
               <div
-  className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[clamp(1.35rem,2.5vw,2.5rem)] font-semibold leading-normal"
+  className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[18px] font-medium leading-normal tracking-normal md:text-[40px] md:leading-[30px]"
   style={{ maxWidth: "1100px" }}
 >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffdb00] text-black sm:h-10 sm:w-10">
@@ -336,8 +347,16 @@ export default function GlobalCapabilityPageContent() {
                 text="Growth introduces complexity. Campaigns expand, platforms multiply, and expectations rise. Our internal Growth Accelerator Program ensures that quality standards are defined before execution begins."
               />
               <div className="gc-scale-grid grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {scaleCapabilities.map(({ title, description }) => (
+                {scaleCapabilities.map(({ title, description, image }) => (
                   <article key={title} className="gc-scale-card">
+                    <Image
+                      src={image}
+                      alt=""
+                      fill
+                      className="gc-scale-card-image"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <span className="gc-scale-card-overlay" aria-hidden="true" />
                     <h3 className="gc-scale-card-title">{title}</h3>
                     <p className="gc-scale-card-text">{description}</p>
                   </article>

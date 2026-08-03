@@ -467,9 +467,10 @@
           min-height: 285px;
           overflow: hidden;
           padding: clamp(28px, 3vw, 40px);
-          border: 1px solid #8f8f8f;
+          border: 1px solid rgba(255, 255, 255, .45);
           border-radius: 18px;
-          background: #fff;
+          background: #18181b;
+          color: #fff;
           text-align: left;
           box-shadow: 0 8px 20px rgba(0, 0, 0, .04);
           transition: transform .3s cubic-bezier(.2, .8, .2, 1),
@@ -477,6 +478,20 @@
             border-color .3s ease,
             box-shadow .3s ease,
             color .3s ease;
+        }
+
+        .gc-scale-card-image {
+          z-index: 0;
+          object-fit: cover;
+          transition: transform .45s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .gc-scale-card-overlay {
+          position: absolute;
+          z-index: 1;
+          inset: 0;
+          background: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .78));
+          transition: background .3s ease;
         }
 
         .gc-scale-card::after {
@@ -487,12 +502,15 @@
           height: 6px;
           background: #3f3f46;
           content: "";
+          z-index: 3;
           transform: scaleX(0);
           transform-origin: left;
           transition: transform .3s ease;
         }
 
         .gc-scale-card-title {
+          position: relative;
+          z-index: 2;
           margin: 0;
           font-size: clamp(1.4rem, 1.75vw, 1.8rem);
           font-weight: 800;
@@ -502,8 +520,10 @@
         }
 
         .gc-scale-card-text {
+          position: relative;
+          z-index: 2;
           margin: 24px 0 0;
-          color: #52525b;
+          color: #f4f4f5;
           font-size: clamp(1rem, 1.1vw, 1.12rem);
           line-height: 1.7;
           text-align: left;
@@ -514,10 +534,13 @@
         @media (hover: hover) {
           .gc-scale-card:hover {
             border-color: #71717a;
-            background: #71717a;
             color: #fff;
             box-shadow: 0 20px 42px rgba(24, 24, 27, .2);
             transform: translateY(-8px);
+          }
+
+          .gc-scale-card:hover .gc-scale-card-image {
+            transform: scale(1.05);
           }
 
           .gc-scale-card:hover .gc-scale-card-text {
