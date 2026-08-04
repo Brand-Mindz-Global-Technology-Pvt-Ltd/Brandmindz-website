@@ -11,7 +11,8 @@
    ========================================================================== */
 .bm-cs-hero {
   position: relative;
-  padding: 80px 20px 60px 20px;
+  min-height: auto;
+  padding: 50px 20px 80px;
   text-align: center;
   background-color: #ffffff;
   display: flex;
@@ -52,12 +53,10 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 24px;
-  background: rgba(255, 219, 0, 0.1);
-  padding: 8px 18px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 219, 0, 0.3);
-  backdrop-filter: blur(5px);
+  margin-bottom: 30px;
+  background: transparent;
+  padding: 0;
+  border: 0;
   animation: fadeInDown 0.8s ease-out;
   width: fit-content;
 }
@@ -65,37 +64,38 @@
 .bm-cs-hero-badge__icon {
   background: #ffdb00;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   transform: rotate(170deg);
-  box-shadow: 0 2px 8px rgba(255, 219, 0, 0.4);
 }
 
 .bm-cs-hero-badge__text {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: 500;
   color: #1a1a1a;
   margin: 0;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .bm-cs-title {
-  font-size: 64px;
-  line-height: 1.15;
-  max-width: 1100px;
+  font-size: 77px;
+  line-height: 1.2;
+  max-width: 1300px;
   margin: 0 auto 24px auto;
   font-weight: 700;
-  letter-spacing: -1.5px;
+  letter-spacing: 2.5px;
   color: #1a1a1a;
 }
 
 .bm-cs-title span.highlight-yellow {
   background: linear-gradient(120deg, #ffdb00 0%, #ffcc00 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
@@ -106,10 +106,10 @@
 }
 
 .bm-cs-description {
-  font-size: 24px;
-  line-height: 1.5;
-  color: #5e5e5e;
-  max-width: 800px;
+  font-size: 30px;
+  line-height: 45px;
+  color: #000;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -789,9 +789,6 @@
 
 /* ===== DESKTOP 1366px ===== */
 @media (max-width: 1366px) {
-  .bm-cs-title {
-    font-size: 64px;
-  }
   .bm-cs-featured__title {
     font-size: 48px;
   }
@@ -799,9 +796,6 @@
 
 /* ===== DESKTOP 1200px ===== */
 @media (max-width: 1200px) {
-  .bm-cs-title {
-    font-size: 56px;
-  }
   .bm-cs-featured__container {
     gap: 40px;
   }
@@ -820,12 +814,6 @@
 
 /* ===== LAPTOP 1024px ===== */
 @media (max-width: 1024px) {
-  .bm-cs-title {
-    font-size: 48px;
-  }
-  .bm-cs-description {
-    font-size: 20px;
-  }
   .bm-cs-grid {
     gap: 30px;
   }
@@ -856,13 +844,23 @@
 /* ===== TABLET 768px ===== */
 @media (max-width: 768px) {
   .bm-cs-hero {
-    padding-top: 50px;
+    min-height: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .bm-cs-hero-badge {
+    gap: 5px;
+  }
+  .bm-cs-hero-badge__text {
+    font-size: 18px;
   }
   .bm-cs-title {
-    font-size: 38px;
+    font-size: 28px;
+    letter-spacing: 0;
   }
   .bm-cs-description {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.7;
   }
   .bm-cs-tabs-container {
     max-width: 95%;
@@ -910,12 +908,6 @@
 
 /* ===== MOBILE LARGE 580px ===== */
 @media (max-width: 580px) {
-  .bm-cs-title {
-    font-size: 32px;
-  }
-  .bm-cs-description {
-    font-size: 16px;
-  }
   .bm-cs-tab-button {
     flex: 1 1 45%;
     font-size: 14px;

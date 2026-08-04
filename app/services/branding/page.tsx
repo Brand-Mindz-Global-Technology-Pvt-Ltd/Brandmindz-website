@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { VideoSection } from "@/components/aboutus/Videosection";
 import Various from "@/components/home/Various";
 import Footer from "@/components/layout/footer";
@@ -18,7 +18,16 @@ import Faq from "@/components/home/Faq";
 
 export default function ServiceBranding() {
     const [activeTabKey, setActiveTabKey] = useState<keyof typeof brandingData>("personalBranding");
+
+    useEffect(() => {
+        const requestedService = new URLSearchParams(window.location.search).get("service");
+        if (requestedService && requestedService in brandingData) {
+            setActiveTabKey(requestedService as keyof typeof brandingData);
+        }
+    }, []);
+
     const data = brandingData[activeTabKey];
+    const faq = "faq" in data ? data.faq : undefined;
 
     return (
         <>
@@ -31,8 +40,8 @@ export default function ServiceBranding() {
                 <BrandingCaseStudies data={data.caseStudies} />
                 <WhyChooseBranding data={data.whyChoose} />
                 {/* <VideoSection /> */}
-                <Various />  
-                <Faq activeTabKey={activeTabKey} />
+                <Various />
+                <Faq items={faq?.items} subtitle={faq?.subtitle} />
             </main>
             <Footer />
         </>

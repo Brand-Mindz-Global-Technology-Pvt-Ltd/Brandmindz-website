@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { FadeIn } from "@/components/animations/fade-in";
-import { FaBolt } from "react-icons/fa6";
 import { FiSearch, FiX } from "react-icons/fi";
+import { HeroBoltIcon } from "@/components/ui/HeroBoltIcon";
 import { ResourcesDirectory } from "./ResourcesDirectory";
 import { ResourcesTestimonials } from "./ResourcesTestimonials";
 import { ResourcesForm } from "./ResourcesForm";
@@ -30,9 +30,7 @@ export const ResourcesClient = () => {
         <section className="bm-hero-section-resources">
           <FadeIn delay={0.1}>
             <div className="bm-resources-badge">
-              <span className="bm-resources-badge__icon">
-                <FaBolt size={16} color="black" />
-              </span>
+              <HeroBoltIcon />
               <p className="bm-resources-badge__text">The Best Knowledge Hub</p>
             </div>
           </FadeIn>

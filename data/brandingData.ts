@@ -284,7 +284,7 @@ Ongoing optimization ensures sustained authority, stronger influence, and measur
             "60% improvement in profile connection acceptance rate"
           ],
           buttonText: "View Case Study",
-          image: "/case-studies/influence.png"
+          image: "/case-studies/Influence.png"
         },
         {
           badge: "Authority & Reputation Growth",
@@ -352,6 +352,44 @@ Ongoing optimization ensures sustained authority, stronger influence, and measur
           desc: "Personal branding is not a campaign — it’s a compounding asset. Strong personal brands increase professional valuation, partnership opportunities, and pricing power. Studies show professionals with high perceived authority command up to 20–30% higher consulting or service fees."
         }
       ]
+    },
+
+    faq: {
+      subtitle: "Frequently Asked Questions – Personal Branding",
+      items: [
+        {
+          question: "What is personal branding, and why is it important?",
+          answer: "Personal branding is the process of building a professional reputation and online presence that reflects your expertise, values, and credibility. A strong personal brand helps entrepreneurs, business leaders, consultants, and professionals build trust, attract opportunities, and become recognized authorities in their industry."
+        },
+        {
+          question: "Who needs personal branding services?",
+          answer: "Personal branding is valuable for founders, CEOs, entrepreneurs, consultants, doctors, lawyers, coaches, speakers, influencers, and professionals who want to establish credibility, grow their network, and create new business opportunities."
+        },
+        {
+          question: "How can personal branding help grow my business?",
+          answer: "People connect with people before they connect with businesses. A well-developed personal brand builds trust, strengthens authority, attracts qualified leads, improves brand visibility, and creates long-term business opportunities."
+        },
+        {
+          question: "What personal branding services does Brand Mindz provide?",
+          answer: "Brand Mindz offers end-to-end personal branding services including brand positioning, LinkedIn branding, social media strategy, content planning, website development, media positioning, thought leadership content, and digital reputation management."
+        },
+        {
+          question: "Which platforms are important for building a personal brand?",
+          answer: "The right platforms depend on your audience. Common platforms include LinkedIn, Instagram, Facebook, YouTube, X (Twitter), personal websites, podcasts, and industry publications. Brand Mindz develops a strategy based on your business goals and target audience."
+        },
+        {
+          question: "How long does it take to build a strong personal brand?",
+          answer: "Personal branding is a long-term strategy rather than a one-time activity. While visibility can improve within a few months, building authority and industry recognition requires consistent content, engagement, and strategic positioning over time."
+        },
+        {
+          question: "What makes Brand Mindz different as a personal branding agency?",
+          answer: "Brand Mindz approaches personal branding as a business growth strategy rather than a social media exercise. We combine branding, content strategy, digital marketing, web development, and performance analytics to build a personal brand that supports long-term business growth and professional credibility."
+        },
+        {
+          question: "Can Brand Mindz build a personal brand for global professionals and business leaders?",
+          answer: "Yes. Brand Mindz works with entrepreneurs, executives, and professionals looking to build a strong personal brand across domestic and international markets through structured branding strategies, professional content, and digital visibility."
+        }
+      ]
     }
   },
   companyBranding: {
@@ -385,7 +423,7 @@ Ongoing optimization ensures sustained authority, stronger influence, and measur
       scrollParagraph: `We help businesses build structured company branding strategies that establish authority and increase market trust. Research shows 81% of consumers must trust a brand before making a purchase decision. As a strategic branding agency, we refine your positioning, messaging architecture, and visual identity to improve brand recognition and credibility.
 Strong company branding directly impacts revenue. Businesses with consistent branding across platforms see up to 23% higher revenue growth compared to inconsistent competitors. We align your brand voice, design language, and customer communication for clarity and differentiation.
 In competitive markets, over 70% of buyers research a company’s online presence before engagement. Our branding agency approach ensures your business is perceived as reliable, professional, and industry-leading.
-
+Strengthen Your Brand Today
 `,
     },
     about: {
@@ -732,12 +770,58 @@ In competitive markets, over 70% of buyers research a company’s online presenc
         }
       ]
     },
+
+    faq: {
+      subtitle: "Frequently Asked Questions – Company Branding",
+      items: [
+        {
+          question: "What is company branding?",
+          answer: "Company branding is the process of creating a unique identity that defines how customers perceive your business. It includes your brand strategy, logo, visual identity, messaging, positioning, and overall customer experience. A strong brand helps businesses build trust, stand out from competitors, and create long-term recognition."
+        },
+        {
+          question: "Why is company branding important for business growth?",
+          answer: "Your brand is often the first impression customers have of your business. Effective company branding builds credibility, increases customer trust, improves brand recall, supports marketing efforts, and helps businesses attract and retain loyal customers."
+        },
+        {
+          question: "What does Brand Mindz include in its company branding services?",
+          answer: "Our company branding services include brand strategy, market research, brand positioning, brand identity design, logo design, visual identity systems, brand messaging, tone of voice, brand guidelines, marketing collateral, website branding, and digital brand implementation."
+        },
+        {
+          question: "How is branding different from logo design?",
+          answer: "A logo is only one part of your brand identity. Company branding goes beyond visual design to define your business's purpose, positioning, personality, messaging, customer perception, and overall brand experience. A strong brand ensures consistency across every customer touchpoint."
+        },
+        {
+          question: "How long does it take to develop a company brand?",
+          answer: "The timeline depends on the size of the business and project scope. A complete branding project typically involves research, strategy, identity design, brand guidelines, and implementation, ensuring your business has a strong and consistent market presence."
+        },
+        {
+          question: "Can Brand Mindz help rebrand an existing business?",
+          answer: "Yes. Whether your business needs a visual refresh or a complete repositioning, Brand Mindz helps modernize your brand while preserving the trust and recognition you have already built. Our rebranding approach aligns your business with your future growth goals."
+        },
+        {
+          question: "Who should invest in company branding?",
+          answer: "Company branding is valuable for startups, SMEs, established businesses, manufacturers, service providers, educational institutions, healthcare organizations, technology companies, and enterprises looking to strengthen their market position and build long-term customer trust."
+        },
+        {
+          question: "What makes Brand Mindz different as a company branding agency?",
+          answer: "Brand Mindz combines strategy, creativity, technology, and marketing to build brands that do more than look good—they support business growth. We focus on creating brands that are consistent, memorable, customer-focused, and ready for today's digital and AI-driven search landscape."
+        },
+        {
+          question: "Will company branding improve my digital marketing results?",
+          answer: "Yes. A strong brand improves the effectiveness of digital marketing by increasing trust, improving conversion rates, creating consistent messaging, strengthening customer recall, and making every marketing campaign more impactful."
+        },
+        {
+          question: "Can company branding improve visibility in Google and AI-powered search platforms?",
+          answer: "Yes. A well-structured brand with consistent messaging, authoritative content, and a strong digital presence improves discoverability across search engines and AI-powered platforms such as ChatGPT, Google AI, Gemini, and Perplexity. At Brand Mindz, we build brands that are designed for long-term visibility in both traditional and AI-driven search environments."
+        }
+      ]
+    },
   },
   brandStrategy: {
     hero: {
       subtitle: "Define Your Strategy with Precision",
-      headlineLight: "Shape How the Market Understands Your Brand Turn Your Vision Into a Clear Growth Blueprint.",
-      // headlineBold: " <span>Clear Growth Blueprint.</span>",
+      headlineLight: "Shape How the Market Understands Your Brand Turn Your Vision Into a",
+      headlineBold: " <span>Clear Growth Blueprint.</span>",
       clientList: "Join the list of ",
       clientStat: "300+ Growing Businesses",
       clientDesc: "Work with our team to develop a structured brand strategy that clarifies your positioning, sharpens your competitive edge, and aligns your business direction for scalable long-term growth in competitive markets.",
@@ -1104,11 +1188,57 @@ positioned in the market. Studies show that 64% of consumers build trust through
       ]
     },
 
+    faq: {
+      subtitle: "Frequently Asked Questions – Brand Strategy",
+      items: [
+        {
+          question: "What is brand strategy?",
+          answer: "Brand strategy is the long-term plan that defines how your business is positioned in the market and perceived by customers. It includes your brand purpose, positioning, target audience, messaging, competitive differentiation, and communication strategy to build a strong and consistent brand."
+        },
+        {
+          question: "Why is brand strategy important before branding or marketing?",
+          answer: "Without a clear brand strategy, marketing efforts often become inconsistent and ineffective. A well-defined strategy provides direction for your branding, marketing campaigns, customer communication, and business growth, ensuring every activity aligns with your long-term objectives."
+        },
+        {
+          question: "What does Brand Mindz include in its brand strategy services?",
+          answer: "Our brand strategy services include market research, competitor analysis, customer persona development, brand positioning, value proposition, messaging framework, brand voice, communication strategy, brand architecture, and strategic recommendations for long-term growth."
+        },
+        {
+          question: "How is brand strategy different from brand identity?",
+          answer: "Brand strategy defines your business's direction, positioning, and purpose, while brand identity represents how that strategy is expressed visually through your logo, colours, typography, and design elements. Strategy comes first, and identity is built upon it."
+        },
+        {
+          question: "Who needs a brand strategy?",
+          answer: "Brand strategy is essential for startups launching a new business, growing companies entering new markets, established businesses looking to reposition themselves, and organisations planning a rebranding or expansion."
+        },
+        {
+          question: "Can Brand Mindz help reposition an existing brand?",
+          answer: "Yes. We help businesses evaluate their current market position, identify new opportunities, refine their messaging, and reposition their brand to better connect with their target audience while maintaining customer trust."
+        },
+        {
+          question: "How long does it take to develop a brand strategy?",
+          answer: "The timeline depends on the complexity of the business, industry, and research involved. Developing a strong brand strategy requires understanding your market, customers, competitors, and business goals to create a clear roadmap for sustainable growth."
+        },
+        {
+          question: "What makes Brand Mindz different as a brand strategy consulting company?",
+          answer: "Brand Mindz combines business strategy, branding, digital marketing, market research, and customer insights to develop practical brand strategies that support measurable business growth. Our approach focuses on creating brands that are differentiated, scalable, and built for long-term success."
+        },
+        {
+          question: "Will a brand strategy improve my marketing results?",
+          answer: "Yes. A clear brand strategy helps improve marketing performance by creating consistent messaging, attracting the right audience, increasing customer trust, strengthening brand recall, and improving conversion rates across all marketing channels."
+        },
+        {
+          question: "Can a strong brand strategy improve visibility in Google and AI-powered search?",
+          answer: "Yes. Businesses with clear positioning, consistent messaging, authoritative content, and a well-structured digital presence are more likely to build credibility across search engines and AI-powered platforms such as ChatGPT, Google AI, Gemini, and Perplexity. Brand Mindz develops brand strategies that support long-term visibility and authority in the evolving digital landscape."
+        }
+      ]
+    },
+
   },
   videoCreation: {
     hero: {
       subtitle: "Create Videos That Capture Attention",
-      headlineLight: "Shape How Your Audience Sees and Remembers Your Brand. Turn Your ",
+      headlineLight: "Shape How Your Audience Sees and Remembers Your Brand.Turn Your ",
       headlineBold:
         "Message Into <span>High-Impact Visual Content.</span>",
       clientList: "Trusted by ",
@@ -1498,6 +1628,52 @@ positioned in the market. Studies show that 64% of consumers build trust through
 
           desc:
             "Video performance should be measurable. We analyze watch time, retention rate, engagement patterns, and audience behavior to refine structure and pacing. Optimized videos generate higher completion rates and stronger recall. Continuous improvement ensures your content remains relevant, engaging, and aligned with growth objectives."
+        }
+      ]
+    },
+
+    faq: {
+      subtitle: "Video Creation & Editing – FAQs",
+      items: [
+        {
+          question: "What is video creation and editing?",
+          answer: "Video creation and editing is the process of planning, producing, and refining videos that communicate your brand message effectively. It includes scripting, filming, editing, colour correction, motion graphics, sound design, subtitles, and final production for digital platforms."
+        },
+        {
+          question: "Why should businesses invest in professional video production?",
+          answer: "Video is one of the most engaging forms of content. Professional videos help businesses build brand awareness, explain products and services, increase customer trust, improve engagement, and generate more leads across digital platforms."
+        },
+        {
+          question: "What types of videos does Brand Mindz create?",
+          answer: "We create corporate videos, brand films, promotional videos, social media reels, product videos, explainer videos, customer testimonials, event highlights, recruitment videos, educational content, and advertisement videos tailored to your business objectives."
+        },
+        {
+          question: "Do you provide both video production and editing services?",
+          answer: "Yes. Brand Mindz offers end-to-end video solutions, including concept development, scripting, filming, editing, motion graphics, visual effects, background music, subtitles, and final video optimisation for different platforms."
+        },
+        {
+          question: "Which platforms are your videos optimised for?",
+          answer: "Our videos are optimised for Instagram, Facebook, YouTube, LinkedIn, WhatsApp, websites, Google Ads, Meta Ads, and other digital marketing platforms, ensuring the best viewing experience across devices."
+        },
+        {
+          question: "Can Brand Mindz create videos for social media marketing?",
+          answer: "Absolutely. We create platform-specific short-form videos, Instagram Reels, YouTube Shorts, Facebook videos, LinkedIn videos, and promotional content designed to increase engagement and improve campaign performance."
+        },
+        {
+          question: "Do you help with video scripting and creative concepts?",
+          answer: "Yes. Our team develops creative concepts, storyboards, scripts, and content strategies to ensure every video aligns with your brand identity, marketing goals, and target audience."
+        },
+        {
+          question: "Which industries do you provide video creation services for?",
+          answer: "We work with businesses across manufacturing, construction, healthcare, education, real estate, retail, hospitality, technology, e-commerce, startups, and professional services."
+        },
+        {
+          question: "How does video marketing improve business growth?",
+          answer: "Video content increases customer engagement, improves brand recall, enhances social media performance, boosts website conversions, strengthens SEO, and helps businesses communicate complex ideas more effectively than text or images alone."
+        },
+        {
+          question: "Why choose Brand Mindz for video creation and editing?",
+          answer: "Brand Mindz combines storytelling, creative production, digital marketing expertise, and strategic planning to produce videos that not only look professional but also support measurable business growth. Every video is created with a clear purpose—to engage audiences, strengthen your brand, and deliver meaningful business results."
         }
       ]
     },
@@ -1908,6 +2084,51 @@ whyChoose: {
 
       desc:
         "Sustainable brands outperform short-term campaigns. Research shows strong brands can command 20–30% higher pricing power. Our focus is not temporary visibility — but building long-term authority and competitive advantage."
+    }
+  ]
+},
+faq: {
+  subtitle: "Brand Consulting – FAQs",
+  items: [
+    {
+      question: "What is brand consulting?",
+      answer: "Brand consulting is a strategic service that helps businesses define their brand positioning, identify market opportunities, differentiate from competitors, and create a clear roadmap for long-term growth."
+    },
+    {
+      question: "Why does my business need brand consulting?",
+      answer: "A strong brand strategy helps your business build trust, communicate consistently, attract the right customers, and make better marketing decisions. Without a clear strategy, branding and marketing efforts often become inconsistent."
+    },
+    {
+      question: "How is brand consulting different from branding?",
+      answer: "Brand consulting focuses on strategy, positioning, customer perception, and business direction, while branding focuses on visual identity such as logos, colours, typography, and design systems. Strategy always comes before design."
+    },
+    {
+      question: "Who should invest in brand consulting?",
+      answer: "Brand consulting is ideal for startups, growing businesses, established companies, manufacturers, service providers, educational institutions, healthcare organisations, and businesses planning expansion or rebranding."
+    },
+    {
+      question: "What does Brand Mindz include in its brand consulting services?",
+      answer: "Our services include brand audits, competitor analysis, customer research, market positioning, value proposition development, messaging frameworks, brand architecture, communication strategy, and long-term growth planning."
+    },
+    {
+      question: "Can Brand Mindz help reposition an existing brand?",
+      answer: "Yes. We help businesses redefine their market position, improve customer perception, refine messaging, and align their brand with changing business goals while preserving existing brand equity."
+    },
+    {
+      question: "How long does a brand consulting project take?",
+      answer: "The timeline depends on your business size, industry, and objectives. A comprehensive consulting engagement involves research, workshops, strategic planning, and actionable recommendations tailored to your business."
+    },
+    {
+      question: "What industries does Brand Mindz provide brand consulting for?",
+      answer: "We work with businesses across industries including technology, manufacturing, healthcare, education, construction, real estate, retail, hospitality, professional services, and startups."
+    },
+    {
+      question: "What makes Brand Mindz different as a brand consulting company?",
+      answer: "Brand Mindz combines branding, digital marketing, technology, customer psychology, and business strategy to create practical brand solutions that drive measurable business growth rather than just improving aesthetics."
+    },
+    {
+      question: "Can brand consulting improve my business's online visibility?",
+      answer: "Yes. A well-defined brand creates consistent messaging, stronger authority, and better customer trust, improving visibility across search engines and AI-powered search platforms such as ChatGPT, Google AI, Gemini, and Perplexity."
     }
   ]
 },

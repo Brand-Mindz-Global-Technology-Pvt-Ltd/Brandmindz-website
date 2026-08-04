@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Various from "@/components/home/Various";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
@@ -15,7 +15,16 @@ import Faq from "@/components/home/Faq";
 
 export default function ServiceDesigning() {
     const [activeTabKey, setActiveTabKey] = useState<keyof typeof designingData>("uiuxDesign");
+
+    useEffect(() => {
+        const requestedService = new URLSearchParams(window.location.search).get("service");
+        if (requestedService && requestedService in designingData) {
+            setActiveTabKey(requestedService as keyof typeof designingData);
+        }
+    }, []);
+
     const data = designingData[activeTabKey];
+    const faq = "faq" in data ? data.faq : undefined;
 
     return (
         <>
@@ -27,8 +36,8 @@ export default function ServiceDesigning() {
                 <DesigningPackages data={data.packages} />
                 <DesigningCaseStudies data={data.caseStudies} />
                 <WhyChooseDesigning data={data.whyChoose} />
-                <Various />
-                <Faq activeTabKey={activeTabKey} />
+                <Various />  
+                <Faq items={faq?.items} subtitle={faq?.subtitle} />
             </main>
             <Footer />
         </>

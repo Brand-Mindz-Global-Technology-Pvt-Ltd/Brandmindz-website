@@ -11,8 +11,8 @@ export const ecommerceData = {
   flipkartListing: {
     hero: {
       subtitle: "Build your Flipkart listing with strategy",
-      headlineLight: "Stand out in competitive Flipkart search.",
-      headlineBold: "<span>Turn your Listing Into A Sales Driving Asset.</span>",
+      headlineLight: "Stand out in competitive Flipkart search.Turn your ",
+      headlineBold: "<span>Listing Into A Sales Driving Asset.</span>",
       clientList: "Trusted by ",
       clientStat: "300+ Growing Brands",
       clientDesc: "Work with our team to transform your flipkart product listings into high ranking, conversion focused pages that improve visibility and increase sales on Flipkart.",
@@ -305,8 +305,8 @@ export const ecommerceData = {
   amazonListing: {
     hero: {
       subtitle: "Build your Amazon listing with precision",
-      headlineLight: "Stand strong in competitive Amazon search. Turn your Listing Into A Revenue Driving Asset. ",
-      headlineBold: "",
+      headlineLight: "Stand strong in competitive Amazon search. Turn your ",
+      headlineBold: "<span>Listing Into A Revenue Driving Asset.</span>",
       clientList: "Trusted by ",
       clientStat: "300+ Growing Brands",
       clientDesc: "Our Amazon product listing services are designed around search intent and category competition that improve visibility and increase sales on Amazon.",
@@ -600,8 +600,8 @@ export const ecommerceData = {
   meeshoListing: {
     hero: {
       subtitle: "Build your Meesho listing with precision",
-      headlineLight: "Stand strong in competitive Meesho search. Turn your Listing Into A Consistent Sales Driver. ",
-      headlineBold: "",
+      headlineLight: "Stand strong in competitive Meesho search. Turn your ",
+      headlineBold: "<span>Listing Into A Consistent Sales Driver.</span>",
       clientList: "Serving ",
       clientStat: "300+ Scaling Brands",
       clientDesc: "Our Meesho product listing service focuses on transforming your product listings into high visibility, conversion focused pages that increase impressions and boost sales performance on Meesho.",
@@ -887,6 +887,51 @@ export const ecommerceData = {
           icon: GroupIcon,
           title: "Long-Term Marketplace Growth",
           desc: "Our goal is to help sellers build sustainable growth systems on Meesho — not just short-term visibility."
+        }
+      ]
+    },
+    faq: {
+      subtitle: "Meesho Listing – FAQs",
+      items: [
+        {
+          question: "What is Meesho product listing?",
+          answer: "Meesho product listing is the process of adding your products to the Meesho marketplace with optimised titles, descriptions, images, pricing, attributes, and categories to improve visibility and sales."
+        },
+        {
+          question: "Why should my business sell on Meesho?",
+          answer: "Meesho is one of India's fastest-growing e-commerce platforms, helping businesses reach millions of customers across the country with minimal investment and a seller-friendly ecosystem."
+        },
+        {
+          question: "What Meesho listing services does Brand Mindz provide?",
+          answer: "We assist with seller account setup, product listing, catalogue optimisation, image enhancement, keyword-rich product descriptions, category mapping, pricing strategy, and inventory management."
+        },
+        {
+          question: "How does an optimised Meesho listing improve sales?",
+          answer: "A well-optimised listing improves product discoverability, attracts more clicks, builds customer confidence, and increases the likelihood of conversions through accurate information and appealing visuals."
+        },
+        {
+          question: "Can Brand Mindz optimise my existing Meesho listings?",
+          answer: "Yes. We analyse your current listings and improve titles, descriptions, product images, keywords, attributes, and categories to maximise visibility and sales performance."
+        },
+        {
+          question: "Do you provide SEO-friendly product descriptions for Meesho?",
+          answer: "Yes. Our product descriptions are written to improve search visibility within the platform while clearly communicating product benefits to potential buyers."
+        },
+        {
+          question: "Can you help upload products in bulk on Meesho?",
+          answer: "Yes. We support bulk product uploads, catalogue management, inventory updates, and listing optimisation for businesses with large product collections."
+        },
+        {
+          question: "Do you help new sellers start selling on Meesho?",
+          answer: "Absolutely. We guide new sellers through account registration, product listing, compliance requirements, and marketplace best practices."
+        },
+        {
+          question: "Which businesses benefit from Meesho listing services?",
+          answer: "Meesho is suitable for apparel, fashion accessories, home décor, kitchen products, beauty products, lifestyle items, footwear, and small consumer goods businesses."
+        },
+        {
+          question: "Why choose Brand Mindz for Meesho listing services?",
+          answer: "Brand Mindz focuses on creating marketplace listings that combine SEO, compelling content, quality visuals, and marketplace best practices to help businesses improve product visibility and increase sales."
         }
       ]
     }
@@ -1182,6 +1227,51 @@ export const ecommerceData = {
           icon: GroupIcon,
           title: "Long-Term Marketplace Growth",
           desc: "Our goal is to help brands build long-term marketplace growth systems on Myntra — not just temporary listing improvements."
+        }
+      ]
+    },
+    faq: {
+      subtitle: "Myntra Listing – FAQs",
+      items: [
+        {
+          question: "What is Myntra product listing?",
+          answer: "Myntra product listing is the process of uploading and optimising fashion and lifestyle products on the Myntra marketplace with accurate product information, professional images, attributes, and descriptions."
+        },
+        {
+          question: "Why should fashion brands sell on Myntra?",
+          answer: "Myntra is one of India's leading fashion and lifestyle marketplaces, providing brands with access to millions of shoppers actively looking for clothing, footwear, accessories, and lifestyle products."
+        },
+        {
+          question: "What Myntra listing services does Brand Mindz provide?",
+          answer: "We offer seller onboarding support, catalogue creation, product listing, image optimisation, attribute mapping, product description writing, inventory management, and catalogue maintenance."
+        },
+        {
+          question: "How can optimised Myntra listings improve sales?",
+          answer: "Optimised listings improve search visibility, present products more professionally, increase customer confidence, and enhance the overall shopping experience, leading to higher conversion rates."
+        },
+        {
+          question: "Can Brand Mindz optimise my existing Myntra catalogue?",
+          answer: "Yes. We improve product titles, descriptions, fashion attributes, sizing information, images, and category mapping to maximise listing performance."
+        },
+        {
+          question: "Do you provide SEO-friendly product descriptions for Myntra?",
+          answer: "Yes. We write engaging, customer-focused product descriptions that accurately communicate product features while improving marketplace discoverability."
+        },
+        {
+          question: "Can you upload products in bulk on Myntra?",
+          answer: "Yes. We support bulk catalogue uploads, inventory updates, product modifications, and ongoing catalogue management for growing fashion brands."
+        },
+        {
+          question: "Which businesses should sell on Myntra?",
+          answer: "Myntra is ideal for clothing brands, footwear manufacturers, fashion accessory brands, beauty products, handbags, jewellery, sportswear, and lifestyle businesses."
+        },
+        {
+          question: "Do you help new fashion brands start selling on Myntra?",
+          answer: "Yes. We assist new brands with seller onboarding, catalogue preparation, marketplace compliance, product listings, and optimisation to help them launch successfully."
+        },
+        {
+          question: "Why choose Brand Mindz for Myntra listing services?",
+          answer: "Brand Mindz understands fashion e-commerce. We combine marketplace optimisation, compelling product presentation, strategic content, and catalogue management to help fashion brands improve visibility and grow sales on Myntra."
         }
       ]
     }
@@ -1480,6 +1570,51 @@ export const ecommerceData = {
           desc: "Our goal is to help sellers build long-term growth systems on JioMart — not just temporary listing improvements."
         }
       ]
+    },
+    faq: {
+      subtitle: "JioMart Listing – FAQs",
+      items: [
+        {
+          question: "What is JioMart product listing?",
+          answer: "JioMart product listing involves uploading and optimising products on the JioMart marketplace with complete product information, high-quality images, accurate categorisation, and compelling descriptions to improve online visibility."
+        },
+        {
+          question: "Why should businesses sell on JioMart?",
+          answer: "JioMart provides access to a rapidly growing customer base across India and offers businesses an opportunity to expand their online presence through one of the country's leading retail marketplaces."
+        },
+        {
+          question: "What JioMart listing services does Brand Mindz provide?",
+          answer: "We offer seller account setup, product catalogue creation, SEO-friendly listings, image optimisation, category mapping, inventory management, pricing support, and listing maintenance."
+        },
+        {
+          question: "Can Brand Mindz optimise my existing JioMart listings?",
+          answer: "Yes. We review and improve your existing product listings to increase discoverability, improve customer engagement, and support higher sales performance."
+        },
+        {
+          question: "How does product optimisation improve JioMart sales?",
+          answer: "Optimised listings help products appear more prominently in marketplace searches, improve customer confidence, increase click-through rates, and drive better conversion rates."
+        },
+        {
+          question: "Do you provide keyword-optimised product descriptions?",
+          answer: "Yes. We create clear, informative, and keyword-optimised product descriptions that help customers understand product features while improving marketplace search performance."
+        },
+        {
+          question: "Can you manage bulk product uploads on JioMart?",
+          answer: "Yes. We handle bulk catalogue uploads, inventory updates, product modifications, and listing maintenance for businesses of all sizes."
+        },
+        {
+          question: "Do you support new businesses joining JioMart?",
+          answer: "Yes. We assist businesses throughout the onboarding process, including account setup, documentation, product listing, and marketplace compliance."
+        },
+        {
+          question: "Which industries benefit from JioMart listing services?",
+          answer: "Businesses selling groceries, FMCG products, fashion, electronics, home essentials, beauty products, kitchenware, and consumer goods can benefit from JioMart listings."
+        },
+        {
+          question: "Why choose Brand Mindz for JioMart listing services?",
+          answer: "Brand Mindz combines marketplace expertise, content optimisation, product presentation, and strategic catalogue management to help businesses maximise their visibility and sales on JioMart."
+        }
+      ]
     }
   },
   sellerAccountManagement: {
@@ -1773,6 +1908,51 @@ export const ecommerceData = {
           icon: GroupIcon,
           title: "Long-Term Marketplace Growth",
           desc: "Well-managed seller accounts support sustainable ecommerce expansion.Our goal is to build scalable seller operations — not just temporary improvements."
+        }
+      ]
+    },
+    faq: {
+      subtitle: "Seller Account Management – FAQs",
+      items: [
+        {
+          question: "What is seller account management?",
+          answer: "Seller account management is the process of managing and optimising your online marketplace accounts to improve product visibility, sales performance, operational efficiency, and overall business growth. It includes listing management, inventory monitoring, pricing optimisation, advertising support, order management, and performance tracking."
+        },
+        {
+          question: "Which marketplaces does Brand Mindz manage?",
+          answer: "Brand Mindz provides seller account management services for leading marketplaces, including Amazon, Flipkart, Meesho, Myntra, JioMart, and other e-commerce platforms based on your business requirements."
+        },
+        {
+          question: "What services are included in seller account management?",
+          answer: "Our services include seller account setup, product listing, catalogue optimisation, inventory management, pricing updates, order monitoring, advertising support, performance analysis, account health monitoring, and marketplace growth strategies."
+        },
+        {
+          question: "Why should I outsource my seller account management?",
+          answer: "Managing multiple marketplaces requires continuous monitoring, optimisation, and compliance. Outsourcing to experts allows you to focus on product development and business operations while ensuring your marketplace accounts perform efficiently."
+        },
+        {
+          question: "Can Brand Mindz optimise my existing seller accounts?",
+          answer: "Yes. We conduct a complete audit of your marketplace accounts, identify improvement opportunities, optimise listings, improve catalogue quality, monitor account health, and implement strategies to increase sales and operational efficiency."
+        },
+        {
+          question: "How do you help increase marketplace sales?",
+          answer: "We improve product discoverability through catalogue optimisation, keyword-rich product content, better product presentation, pricing strategies, marketplace advertising, inventory planning, and continuous performance monitoring."
+        },
+        {
+          question: "Do you manage marketplace advertising campaigns?",
+          answer: "Yes. We help manage marketplace advertising, including Amazon Ads and other platform-specific promotional campaigns, to improve product visibility, attract qualified buyers, and increase sales."
+        },
+        {
+          question: "Can Brand Mindz manage multiple marketplace accounts simultaneously?",
+          answer: "Absolutely. We manage multiple marketplace accounts from a centralised workflow, ensuring consistent branding, accurate product information, inventory synchronisation, and efficient marketplace operations."
+        },
+        {
+          question: "Which businesses benefit from seller account management services?",
+          answer: "Our services are ideal for manufacturers, wholesalers, retailers, D2C brands, startups, SMEs, fashion brands, consumer goods companies, and businesses looking to scale their online marketplace presence."
+        },
+        {
+          question: "Why choose Brand Mindz for seller account management?",
+          answer: "Brand Mindz combines marketplace expertise, catalogue optimisation, digital marketing, analytics, and growth strategies to help businesses build a strong presence across multiple e-commerce platforms. We focus on long-term marketplace success by improving visibility, increasing sales, maintaining account health, and delivering measurable business growth."
         }
       ]
     }

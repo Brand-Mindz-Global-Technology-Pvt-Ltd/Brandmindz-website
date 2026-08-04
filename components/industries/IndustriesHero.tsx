@@ -1,17 +1,15 @@
 "use client";
 
 import React from "react";
-import { FaBolt } from "react-icons/fa6";
 import { FadeIn } from "@/components/animations/fade-in";
+import { HeroBoltIcon } from "@/components/ui/HeroBoltIcon";
 
 export const IndustriesHero = () => {
   return (
     <section className="bm-hero-section-industries">
       <FadeIn delay={0.1}>
         <div className="bm-industries-hero-badge">
-          <span className="bm-industries-hero-badge__icon">
-            <FaBolt className="w-3.5 h-3.5" color="black" />
-          </span>
+          <HeroBoltIcon />
           <p className="bm-industries-hero-badge__text">Tailored Growth Frameworks</p>
         </div>
       </FadeIn>

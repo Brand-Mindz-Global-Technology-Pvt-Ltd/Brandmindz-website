@@ -1,9 +1,15 @@
         .partner-page > .bm-hero-section-industries { padding-top: 50px; }
-        .partner-page > .bm-hero-section-industries .bm-industries-hero-badge__text { font-size: clamp(1.2rem, 2.5vw, 2.5rem); line-height: 1.15; text-transform: none; }
+        .partner-page > .bm-hero-section-industries .bm-industries-hero-badge { gap: 12px; margin-bottom: 30px; padding: 0; border: 0; border-radius: 0; background: transparent; backdrop-filter: none; }
+        .partner-page > .bm-hero-section-industries .bm-industries-hero-badge__text { margin: 0; font-size: 34px; font-weight: 500; line-height: 1.15; letter-spacing: 0; text-transform: none; }
         .partner-page > .bm-hero-section-industries .bm-industries-hero-badge__icon { width: 40px; height: 40px; flex: 0 0 40px; transform: none; }
         .partner-page > .bm-hero-section-industries .bm-industries-hero-badge__icon svg { width: 18px; height: 18px; }
         .partner-page > .bm-hero-section-industries .bm-industries-hero-title { max-width: 1300px; font-size: clamp(3rem, 6.35vw, 6rem); line-height: 1.12; letter-spacing: -.035em; }
         .partner-page > .bm-hero-section-industries .bm-industries-hero-description { max-width: 1200px; font-size: clamp(1.125rem, 2vw, 2.13rem); line-height: 1.4; }
+        @media (max-width: 768px) {
+          .partner-page > .bm-hero-section-industries .bm-industries-hero-badge { gap: 5px; }
+          .partner-page > .bm-hero-section-industries .bm-industries-hero-badge__text { font-size: 18px; line-height: 1.2; }
+          .partner-page > .bm-hero-section-industries .bm-industries-hero-badge__icon { width: 32px; height: 32px; flex-basis: 32px; }
+        }
         .pw-container { width: 90%; max-width: 1440px; margin-inline: auto; }
         .pw-manifesto {
           display:grid; grid-template-columns:.78fr 1.22fr; align-items:center; width:90%; max-width:1440px; gap:54px;
@@ -22,6 +28,14 @@
 
         .pw-section { padding:88px 0; }
         .pw-grey { background:#eee; }
+        .pw-manifesto + .pw-section.pw-grey {
+          background:
+            #eee
+            url("../../assets/HomeSection/Whychoose/group4.webp")
+            right center / 62% auto no-repeat;
+        }
+        .pw-manifesto + .pw-section.pw-grey .pw-eyebrow { color:#767676; }
+        .pw-manifesto + .pw-section.pw-grey .pw-intro { color:#484848; }
         .pw-dark { background:#191919; color:#fff; }
         .pw-eyebrow { display:block; margin-bottom:10px; color:#939393; font-size:15px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; }
         .pw-dark .pw-eyebrow { color:#ffdb00; }
@@ -31,7 +45,7 @@
         .pw-dark .pw-intro { color:#bbb; }
         .pw-partner-grid { display:grid; grid-template-columns:.8fr 1.2fr; align-items:start; gap:60px; }
         .pw-partner-cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-        .pw-partner-card { display:flex; min-height:82px; align-items:center; gap:13px; padding:18px; border:1px solid rgba(0,0,0,.06); border-radius:13px; background:#fff; font-size:16px; font-weight:600; box-shadow:0 8px 22px rgba(0,0,0,.035); }
+        .pw-partner-card { display:flex; min-height:112px; align-items:center; gap:13px; padding:24px 20px; border:1px solid rgba(0,0,0,.06); border-radius:13px; background:#fff; font-size:16px; font-weight:600; box-shadow:0 8px 22px rgba(0,0,0,.035); }
         .pw-partner-card span { display:grid; width:34px; height:34px; flex:none; place-items:center; border-radius:50%; background:rgba(255,219,0,.2); }
         .pw-partner-note { margin:25px 0 0; padding:18px; border-left:4px solid #ffdb00; background:#fffbea; color:#1a1a1a; font-size:17px; font-weight:700; line-height:1.55; }
 
@@ -52,8 +66,20 @@
         .pw-structure-copy strong { color:#fff; }
 
         .pw-trust-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
-        .pw-trust-card { padding:38px 34px; border-radius:18px; background:#fff; box-shadow:0 10px 30px rgba(0,0,0,.05); }
-        .pw-trust-card.dark { background:#191919; color:#fff; }
+        .pw-trust-card {
+          padding:38px 34px;
+          border-radius:18px;
+          background:
+            linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)),
+            url("../../assets/HomeSection/Whychoose/group4.webp") center / 120% auto no-repeat;
+          box-shadow:0 10px 30px rgba(0,0,0,.05);
+        }
+        .pw-trust-card.dark {
+          background:
+            linear-gradient(rgba(15,15,15,.88),rgba(15,15,15,.88)),
+            url("../../assets/branding/visibility.webp") center / cover no-repeat;
+          color:#fff;
+        }
         .pw-trust-icon { display:grid; width:52px; height:52px; margin-bottom:24px; place-items:center; border-radius:15px; background:#ffdb00; color:#151515; }
         .pw-trust-card h2 { margin:0 0 16px; color:#1a1a1a; font-size:32px; line-height:1.2; }
         .pw-trust-card.dark h2 { color:#fff; }
@@ -62,12 +88,48 @@
         .pw-trust-statement { margin:24px 0 0 !important; padding:17px; border-left:3px solid #ffdb00; background:#fffbea; color:#1a1a1a !important; font-weight:700; }
         .pw-trust-card.dark .pw-trust-statement { background:rgba(255,255,255,.05); color:#ffdb00 !important; }
 
-        .pw-terms-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:30px; }
-        .pw-terms-card { padding:38px; border:1px solid rgba(0,0,0,.06); border-radius:18px; background:#fff; }
-        .pw-terms-card.yellow { background:#000; }
-        .pw-terms-card h2 { margin:0 0 24px; color:#1a1a1a; font-size:32px; line-height:1.2; }
-        .pw-terms-card.yellow .pw-check-item { background:rgba(255,255,255,.5); }
-        .pw-terms-note { margin:24px 0 0; color:#1a1a1a; font-size:18px; font-weight:700; line-height:1.55; }
+        .pw-terms-grid {
+          display:grid;
+          grid-template-columns:repeat(2,minmax(0,1fr));
+          gap:0;
+          overflow:hidden;
+          padding:18px;
+          border-radius:24px;
+          background:
+            linear-gradient(rgba(22,22,22,.94),rgba(22,22,22,.94)),
+            url("../../assets/HomeSection/Whychoose/group4.webp") center / 88% auto no-repeat;
+          box-shadow:0 20px 50px rgba(0,0,0,.1);
+        }
+        .pw-terms-card {
+          padding:42px;
+          border:0;
+          border-radius:0;
+          background:transparent;
+          box-shadow:none;
+          color:#fff;
+        }
+        .pw-terms-card.yellow {
+          border-left:1px solid rgba(255,255,255,.16);
+          background:transparent;
+        }
+        .pw-terms-card .pw-eyebrow { color:#ffdb00; }
+        .pw-terms-card h2 { margin:0 0 24px; color:#fff; font-size:32px; line-height:1.2; }
+        .pw-terms-card .pw-check-item {
+          border:1px solid rgba(255,255,255,.13);
+          background:rgba(255,255,255,.08);
+          color:#fff;
+          backdrop-filter:blur(4px);
+        }
+        .pw-terms-note {
+          margin:24px 0 0;
+          padding:18px 20px;
+          border-left:4px solid #ffdb00;
+          background:rgba(255,255,255,.07);
+          color:#fff;
+          font-size:18px;
+          font-weight:700;
+          line-height:1.55;
+        }
 
         .pw-application { padding:90px 0; background:#191919; color:#fff; }
         .pw-application-grid { display:grid; grid-template-columns:.65fr 1.35fr; align-items:start; gap:60px; }
@@ -145,6 +207,7 @@
           .pw-manifesto-points { grid-template-columns:repeat(3,1fr); }
           .pw-section, .pw-application { padding-block:64px; }
           .pw-trust-grid, .pw-terms-grid { grid-template-columns:1fr; }
+          .pw-terms-card.yellow { border-top:1px solid rgba(255,255,255,.16); border-left:0; }
           .pw-form { padding:24px 20px; }
           .pw-form-grid { grid-template-columns:1fr; }
           .pw-checkbox-grid { grid-template-columns:repeat(2,1fr); }

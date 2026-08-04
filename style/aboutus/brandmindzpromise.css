@@ -233,3 +233,198 @@
           .bmp-manifesto-copy h2 { font-size: 24px; }
           .bmp-home-faq-wrap { padding: 44px 0; }
         }
+
+        .bmp-commitments-section {
+          padding: 72px 5% 88px;
+          background: #eee;
+        }
+        .bmp-commitments-heading {
+          max-width: 1800px;
+          margin: 0 auto 38px;
+          text-align: center;
+        }
+        .bmp-commitments-heading .bm-industry-pretitle {
+          display: block;
+          font-size: clamp(19px, 1.55vw, 23px);
+          text-align: center;
+        }
+        .bmp-commitments-heading .bm-industry-main-title {
+          margin: 10px 0 24px;
+          text-align: center;
+        }
+        .bmp-commitments-heading .bm-industry-description {
+          max-width: 1450px;
+          margin: 0 auto 36px;
+          font-size: clamp(21px, 1.7vw, 25px);
+          line-height: 1.65;
+          text-align: center;
+        }
+        .bmp-commitments-heading .bm-challenges-solutions-title {
+          margin: 0;
+          font-size: clamp(34px, 3vw, 44px);
+          text-align: center;
+        }
+        .bmp-commitments-layout {
+          display: grid;
+          grid-template-columns: minmax(270px, .72fr) minmax(440px, 1.45fr) minmax(300px, .82fr);
+          max-width: 1800px;
+          min-height: 720px;
+          margin: 0 auto;
+          overflow: hidden;
+          border-radius: 22px;
+          background: #f5f5f5;
+          box-shadow: 0 22px 60px rgba(0,0,0,.1);
+        }
+        .bmp-commitments-nav {
+          display: flex;
+          flex-direction: column;
+          background: #292929;
+        }
+        .bmp-commitment-tab {
+          display: grid;
+          flex: 1;
+          grid-template-columns: 44px 1fr;
+          align-items: center;
+          gap: 16px;
+          width: 100%;
+          padding: 22px 28px;
+          border: 0;
+          border-bottom: 1px solid rgba(255,255,255,.06);
+          background: transparent;
+          color: #8f8f8f;
+          text-align: left;
+          cursor: pointer;
+          transition: background-color .25s ease, color .25s ease;
+        }
+        .bmp-commitment-tab span {
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .bmp-commitment-tab strong {
+          font-size: clamp(17px, 1.2vw, 22px);
+          font-weight: 600;
+          line-height: 1.28;
+        }
+        .bmp-commitment-tab.is-active {
+          position: relative;
+          background: #191919;
+          color: #fff;
+        }
+        .bmp-commitment-tab.is-active::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 22px;
+          height: 2px;
+          background: #fff;
+        }
+        .bmp-commitment-content {
+          padding: clamp(34px, 3vw, 48px);
+          animation: bmpCommitmentIn .4s ease both;
+        }
+        .bmp-commitment-content > h3 {
+          max-width: 780px;
+          margin: 10px 0 20px;
+          color: #111;
+          font-size: clamp(36px, 3vw, 52px);
+          font-weight: 700;
+          line-height: 1.03;
+          letter-spacing: -.03em;
+        }
+        .bmp-commitment-content > p {
+          margin: 0;
+          color: #333;
+          font-size: clamp(18px, 1.5vw, 23px);
+          line-height: 1.55;
+        }
+        .bmp-commitment-points {
+          display: grid;
+          gap: 7px;
+          margin-top: 18px;
+        }
+        .bmp-commitment-points > span {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: #111;
+          font-size: 18px;
+          font-weight: 600;
+        }
+        .bmp-operating-standard {
+          margin-top: 24px;
+          padding: 22px 24px;
+          border-radius: 18px;
+          background: #fff;
+          box-shadow: 0 10px 30px rgba(0,0,0,.06);
+        }
+        .bmp-operating-standard h4 {
+          margin: 0;
+          font-size: 24px;
+        }
+        .bmp-operating-standard > p {
+          margin: 4px 0 16px;
+          color: #888;
+          font-size: 18px;
+        }
+        .bmp-operating-standard > div {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px 18px;
+        }
+        .bmp-operating-standard > div > span {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+        }
+        .bmp-operating-standard svg { flex: none; margin-top: 4px; }
+        .bmp-operating-standard strong,
+        .bmp-operating-standard small { display: block; }
+        .bmp-operating-standard strong { color: #111; font-size: 18px; }
+        .bmp-operating-standard small { margin-top: 2px; color: #777; font-size: 15px; line-height: 1.4; }
+        .bmp-commitment-visual {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          min-width: 0;
+          padding: 44px 36px;
+          background:
+            radial-gradient(circle at 72% 16%, rgba(255,219,0,.2), transparent 30%),
+            linear-gradient(180deg, rgba(18,18,18,.82), rgba(18,18,18,.96)),
+            url("../../assets/about/global-capability-team.webp") center / cover no-repeat;
+          color: #fff;
+          animation: bmpCommitmentIn .4s ease both;
+        }
+        .bmp-commitment-icon {
+          display: grid;
+          width: 104px;
+          height: 104px;
+          margin-bottom: auto;
+          place-items: center;
+          border-radius: 28px;
+          background: #ffdb00;
+          color: #111;
+        }
+        .bmp-commitment-icon svg { width: 52px; height: 52px; }
+        .bmp-commitment-visual > span { color: #999; font-size: 17px; }
+        .bmp-commitment-visual > strong { margin: 10px 0 38px; font-size: clamp(24px, 2.3vw, 38px); line-height: 1.2; }
+        .bmp-commitment-visual > p { margin: 0; color: #bbb; font-size: 20px; }
+        .bmp-commitment-visual > h3 { margin: 12px 0 0; color: #fff; font-size: 27px; line-height: 1.35; }
+        @keyframes bmpCommitmentIn {
+          from { opacity: 0; transform: translateY(14px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 1180px) {
+          .bmp-commitments-layout { grid-template-columns: 280px 1fr; }
+          .bmp-commitment-visual { grid-column: 1 / -1; min-height: 340px; }
+          .bmp-commitment-icon { margin-bottom: 70px; }
+        }
+        @media (max-width: 760px) {
+          .bmp-commitments-section { padding: 52px 14px 64px; }
+          .bmp-commitments-layout { display: block; min-height: 0; }
+          .bmp-commitments-nav { overflow-x: auto; flex-direction: row; }
+          .bmp-commitment-tab { min-width: 220px; min-height: 100px; }
+          .bmp-commitment-content { padding: 34px 24px; }
+          .bmp-commitment-content > h3 { font-size: 36px; }
+          .bmp-operating-standard > div { grid-template-columns: 1fr; }
+          .bmp-commitment-visual { min-height: 390px; padding: 34px 24px; }
+        }

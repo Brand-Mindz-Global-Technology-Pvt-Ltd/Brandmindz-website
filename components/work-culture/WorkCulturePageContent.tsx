@@ -2,10 +2,10 @@ import "../../style/aboutus/workculture.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Faq from "@/components/home/Faq";
 import {
   ArrowRight,
   Check,
-  ChevronDown,
   ChevronRight,
   HeartHandshake,
   Sparkles,
@@ -58,7 +58,8 @@ const wellnessPolicies = [
   },
   {
     title: "Brand Mindz Comfort Kit",
-    text: "Our office maintains a permanently stocked Comfort Kit including:",
+    text: "Brand Mindz maintains a permanently stocked Comfort Kit with essential wellness products, ensuring every employee stays healthy and motivated to perform confidently every day.",
+    leadIn: "Our Comfort Kit provides everyday wellness essentials to support employee comfort, health, and productivity. ",
     icon: Sparkles,
     points: [
       "Emergency sanitary products",
@@ -66,11 +67,11 @@ const wellnessPolicies = [
       "Peppermint & ginger herbal teas",
       "Light snacks and dark chocolate",
     ],
-    closing: ["Because physical comfort improves mental clarity."],
+    closing: ["Every thoughtful essential reflects our commitment to employee well-being, comfort, and productivity."],
   },
   {
     title: "Power Girls Team (PGT)",
-    text: "The Power Girls Team is our internal sanctuary for wellness and leadership growth.",
+    text: "A dedicated initiative that promotes well-being, professional development, and leadership opportunities for women, creating an inclusive workplace where talent can thrive. ",
     leadIn: "Led by a team member with at least 6 months tenure, the PGT focuses on:",
     icon: Users,
     points: [
@@ -240,7 +241,7 @@ export default function WorkCulturePageContent() {
 
           <div className="wc-container">
             <div className="flex w-full justify-center px-4 text-center">
-              <div className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[18px] font-medium leading-normal tracking-normal md:text-[40px] md:leading-[30px]"
+              <div className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[18px] font-medium leading-normal tracking-normal md:text-[40px] md:leading-7.5"
               style={{ maxWidth: "1100px" }}
               >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffdb00] text-black sm:h-10 sm:w-10">
@@ -261,7 +262,7 @@ export default function WorkCulturePageContent() {
             <div className="wc-hero-description text-center">
               <p className="relative left-1/2 mt-6 -translate-x-1/2 text-center text-[clamp(1.25rem,2.0vw,2.13rem)] font-normal leading-[1.4] text-zinc-900"
               style={{ maxWidth: "1200px" }}>
-                At Brand Mindz Global Technology Pvt Ltd, we believe businesses are built by people — and people are the greatest asset of any organization.
+                At Brand Mindz Global Technology Pvt Ltd, we believe businesses are built by people and people are the greatest asset of any organization.
 Our mission is not just to become India’s Largest Digital Distribution Agency.
 Our mission is to build the most performance-driven and inclusive work culture in Tamil Nadu’s digital industry.
 Because culture is not a statement.
@@ -374,9 +375,9 @@ Culture is our operating system.
           <div className="wc-container">
             <div className="wc-section-intro">
               <h2 className="wc-section-intro-title text-[clamp(2.35rem,4vw,3.75rem)] font-extrabold leading-[1.12] tracking-[-0.045em]">
-                70% of Our Team Are Women — And That Is Not a Coincidence
+                70% of Our Team Are Women And That Is Not a Coincidence
               </h2>
-              <p className="mx-auto mt-6 max-w-3xl text-[clamp(1.15rem,1.6vw,1.45rem)] font-semibold leading-relaxed text-zinc-600">
+              <p className="wc-women-intro-text mx-auto mt-6 max-w-3xl text-[clamp(1.15rem,1.6vw,1.45rem)] font-semibold leading-relaxed text-zinc-600">
                 Today, more than 70% of our workforce are women professionals.
               </p>
             </div>
@@ -466,18 +467,15 @@ Culture is our operating system.
                             {preQuote.map((line) => <span key={line}>{line}</span>)}
                           </p>
                         ) : null}
-                        {leadIn && title !== "Power Girls Team (PGT)" ? (
-                          <p className="wc-wellness-supporting-copy">{leadIn}</p>
-                        ) : null}
                         {quote ? <p className="wc-wellness-quote">{quote}</p> : null}
                       </div>
                     </div>
 
                     <div className="wc-wellness-points">
-                      {title === "Monthly Wellness WFH Day" || title === "Power Girls Team (PGT)" ? (
+                      {title === "Monthly Wellness WFH Day" || leadIn ? (
                         <div className="wc-wellness-points-intro">
                           {title === "Monthly Wellness WFH Day" ? <p>{text}</p> : null}
-                          {title === "Power Girls Team (PGT)" && leadIn ? <p>{leadIn}</p> : null}
+                          {leadIn ? <p>{leadIn}</p> : null}
                         </div>
                       ) : null}
                       {points.map((point) => (
@@ -578,7 +576,7 @@ Not words.
               {globalCompetenceCards.map((item) => (
                 <div
                   key={item.title}
-                  className="wc-global-card relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-[30px] px-6 py-8 text-center text-xl font-extrabold leading-7 text-white shadow-lg md:min-h-[260px]"
+                  className="wc-global-card relative flex min-h-55 items-center justify-center overflow-hidden rounded-[30px] px-6 py-8 text-center text-xl font-extrabold leading-7 text-white shadow-lg md:min-h-65"
                 >
                   <Image
                     src={item.image}
@@ -615,31 +613,7 @@ Not words.
           </div>
         </section>
 
-        <section className="wc-section wc-faq-section border-t border-zinc-200">
-          <Image src={heroPattern} alt="" aria-hidden className="wc-faq-pattern" priority />
-          <div className="wc-faq-shell">
-            <div className="wc-faq-header">
-              <p className="wc-faq-kicker">Frequently Asked Questions</p>
-              <h2 className="wc-faq-title">Got Questions? We&apos;ve Got Answers</h2>
-            </div>
-
-            <div className="wc-faq-grid">
-              {[faqs.slice(0, 4), faqs.slice(4)].map((column, columnIndex) => (
-                <div key={columnIndex} className="wc-faq-column">
-                  {column.map((faq, index) => (
-                    <details key={faq.question} className="wc-faq-item" open={columnIndex === 0 && index === 0}>
-                      <summary className="wc-faq-summary">
-                        <span>{faq.question}</span>
-                        <ChevronDown className="wc-faq-icon" size={22} strokeWidth={2.4} />
-                      </summary>
-                      <p className="wc-faq-answer">{faq.answer}</p>
-                    </details>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Faq items={faqs} subtitle="Frequently Asked Questions — Work Culture" />
 
         <section className="wc-section wc-final-section bg-white">
           <div className="wc-container">

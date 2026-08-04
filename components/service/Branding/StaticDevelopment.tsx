@@ -113,9 +113,9 @@ export const StaticDevelopment = () => {
   className="bl-avatar-img"
   style={{ backgroundImage: `url(${Person1.src})` }}
 ></div>
+                            <div className="bl-avatar-img"  style={{ backgroundImage: `url(${Person1.src})` }}></div>
                             <div className="bl-avatar-img"  style={{ backgroundImage: `url(${Person2.src})` }}></div>
                             <div className="bl-avatar-img"  style={{ backgroundImage: `url(${Person3.src})` }}></div>
-                            <div className="bl-avatar-img"  style={{ backgroundImage: `url(${Person4.src})` }}></div>
                             <div className="bl-avatar-count">15K</div>
                         </div>
 

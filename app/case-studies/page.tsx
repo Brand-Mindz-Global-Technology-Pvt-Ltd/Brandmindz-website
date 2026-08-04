@@ -8,14 +8,8 @@ import "../../style/casestudies/casestudies.css";
 
 // Page-specific premium SEO metadata
 export const metadata: Metadata = {
-  title: {
-    absolute: "Real Results from Branding & Digital Marketing | Brand Mindz Global",
-  },
-  description: "Read client case studies from Brand Mindz Global and discover how our branding, technology, and marketing expertise delivers measurable results.",
-  robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-  alternates: {
-    canonical: "https://www.brandmindz.com/case-studies",
-  },
+  title: "Case Studies | BrandMindz",
+  description: "Read BrandMindz case studies and client success stories. See how we drive growth, scale digital products, list catalogs, and optimize ROI for our partners.",
   keywords: [
     "case studies", 
     "marketing success stories", 
@@ -26,16 +20,9 @@ export const metadata: Metadata = {
     "BrandMindz success"
   ],
   openGraph: {
+    title: "Case Studies & Success Stories | BrandMindz",
+    description: "Real growth, backed by real results. Explore our portfolio of branding, performance marketing, development, and e-commerce campaigns.",
     type: "website",
-    url: "https://brandmindz.com/case-studies",
-    title: "Case Studies | 130% Growth, 500+ Leads Generated — Brand Mindz Global",
-    description: "See how Brand Mindz Global helped Truck Taxi solve driver acquisition at scale — 500+ qualified leads and 130% growth through hyper-targeted Meta Ads and CPL optimization.",
-    images: [
-      {
-        url: "/logo.png",
-        alt: "Brand Mindz Global case study — Truck Taxi driver acquisition results",
-      },
-    ],
   }
 };
 

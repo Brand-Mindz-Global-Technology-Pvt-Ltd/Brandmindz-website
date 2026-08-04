@@ -41,7 +41,6 @@ export const designingData = {
       bottombtn: " Transform Your Digital Experience ",
       rightsidsubtitle:
         "Our branding and design specialists are ready to guide you.",
-         herocta: "Start Your Design Consultation",
       ctaButton: "Start Your Design Consultation",
     },
     about: {
@@ -383,6 +382,43 @@ export const designingData = {
             "Great design supports long-term product growth. Our UI/UX frameworks ensure your digital platform can evolve smoothly while maintaining usability and visual clarity.",
         },
       ],
+    },
+    faq: {
+      subtitle: "UI/UX Designing – Frequently Asked Questions",
+      items: [
+        {
+          question: "What UI/UX design services do you offer?",
+          answer: "We provide user interface (UI) and user experience (UX) design services for websites, web applications, mobile applications, and digital platforms, focusing on usability, clarity, and brand consistency."
+        },
+        {
+          question: "How do you approach UI/UX design projects?",
+          answer: "Our approach includes requirement understanding, user flow planning, wireframing, visual design, and design validation to ensure a user-centric experience."
+        },
+        {
+          question: "Do you design for both web and mobile platforms?",
+          answer: "Yes. We design interfaces for websites, web applications, Android apps, and iOS apps with platform-specific considerations."
+        },
+        {
+          question: "Will the designs align with our brand identity?",
+          answer: "Yes. Designs are aligned with the client’s branding guidelines, visual language, and business positioning."
+        },
+        {
+          question: "Do you provide design prototypes?",
+          answer: "Yes. Interactive or static prototypes can be shared to visualize user journeys and screen flows before development."
+        },
+        {
+          question: "How many revisions are included in UI/UX design?",
+          answer: "The number of revisions is defined in the project scope. Additional iterations can be accommodated through change requests."
+        },
+        {
+          question: "Can your designs be directly handed over to developers?",
+          answer: "Yes. Design files are shared in standard formats suitable for development handover, along with necessary guidelines."
+        },
+        {
+          question: "Do you redesign existing digital products?",
+          answer: "Yes. We offer redesign and UX improvement services for existing websites, apps, and platforms."
+        }
+      ]
     },
   },
   graphicDesign: {
@@ -762,6 +798,51 @@ export const designingData = {
             "As your business grows, your design assets must evolve. We create flexible design frameworks that allow brands to maintain visual consistency while expanding marketing campaigns and digital presence.",
         },
       ],
+    },
+    faq: {
+      subtitle: "Graphic Design – FAQs",
+      items: [
+        {
+          question: "What is graphic design for businesses?",
+          answer: "Graphic design is the visual communication of your brand through marketing materials, digital creatives, social media posts, brochures, presentations, advertisements, and other brand assets that support business growth."
+        },
+        {
+          question: "Why is graphic design important for my business?",
+          answer: "Professional graphic design builds credibility, improves brand consistency, enhances customer engagement, and helps businesses communicate their message effectively across digital and print platforms."
+        },
+        {
+          question: "What graphic design services does Brand Mindz provide?",
+          answer: "We offer social media creatives, brochures, flyers, business cards, banners, posters, corporate presentations, packaging graphics, marketing materials, print designs, and digital advertising creatives."
+        },
+        {
+          question: "Can Brand Mindz create designs that match my brand identity?",
+          answer: "Yes. Every design is developed based on your brand guidelines, colour palette, typography, messaging, and overall visual identity to maintain consistency across all customer touchpoints."
+        },
+        {
+          question: "Do you provide graphic design for digital marketing campaigns?",
+          answer: "Yes. We design high-converting creatives for Meta Ads, Google Display Ads, LinkedIn campaigns, email marketing, websites, landing pages, and social media platforms."
+        },
+        {
+          question: "Can you redesign my existing marketing materials?",
+          answer: "Yes. We refresh outdated designs while maintaining brand consistency and improving visual appeal to better connect with your target audience."
+        },
+        {
+          question: "Will I receive editable design files?",
+          answer: "Yes. Based on the project scope, we provide the required source files and print-ready formats for future modifications and business use."
+        },
+        {
+          question: "How does professional graphic design improve marketing performance?",
+          answer: "Well-designed visuals capture attention, improve communication, strengthen brand recall, increase engagement, and support higher conversion rates across marketing campaigns."
+        },
+        {
+          question: "Which industries do you provide graphic design services for?",
+          answer: "We work with businesses across healthcare, education, manufacturing, real estate, construction, retail, hospitality, technology, professional services, and startups."
+        },
+        {
+          question: "Why choose Brand Mindz for graphic design?",
+          answer: "Brand Mindz combines creativity with strategic thinking to create designs that not only look visually appealing but also communicate your brand message and support measurable business growth."
+        }
+      ]
     },
   },
   packageDesign: {
@@ -1147,6 +1228,51 @@ export const designingData = {
             "Businesses scaling with structured Meta Ads strategies achieve predictable lead flow and sustainable revenue growth. We create campaigns built for long-term scalability.",
         },
       ],
+    },
+    faq: {
+      subtitle: "Package Design – FAQs",
+      items: [
+        {
+          question: "What is package design, and why is it important?",
+          answer: "Package design is the process of creating visually appealing and functional packaging that represents your brand and attracts customers. A well-designed package influences purchasing decisions, builds brand recognition, and enhances the overall customer experience."
+        },
+        {
+          question: "Why should businesses invest in professional package design?",
+          answer: "Professional package design helps products stand out on retail shelves and online marketplaces. It improves brand perception, communicates product information effectively, and increases customer trust, ultimately supporting higher sales."
+        },
+        {
+          question: "Which industries require package design services?",
+          answer: "Package design is essential for FMCG brands, food and beverages, cosmetics, healthcare products, personal care, consumer goods, organic products, electronics, and industrial products."
+        },
+        {
+          question: "What does Brand Mindz include in its package design services?",
+          answer: "Our package design services include packaging strategy, label design, box design, pouch design, bottle design, compliance with printing specifications, mockups, and print-ready artwork."
+        },
+        {
+          question: "Can Brand Mindz redesign my existing product packaging?",
+          answer: "Yes. We help businesses modernise outdated packaging while maintaining brand recognition, improving shelf appeal, and enhancing the customer experience."
+        },
+        {
+          question: "Do you design packaging for e-commerce products?",
+          answer: "Yes. We create packaging solutions that are suitable for both retail stores and e-commerce businesses, ensuring durability, functionality, and a premium unboxing experience."
+        },
+        {
+          question: "Will the packaging design be ready for printing?",
+          answer: "Yes. We provide print-ready files with the correct dimensions, bleed settings, colour profiles, and specifications required by professional printing companies."
+        },
+        {
+          question: "How does good package design increase sales?",
+          answer: "Effective package design attracts attention, communicates product value, builds customer confidence, differentiates products from competitors, and influences buying decisions at the point of purchase."
+        },
+        {
+          question: "What makes Brand Mindz different as a package design company?",
+          answer: "Brand Mindz combines branding, consumer psychology, market research, and creative design to develop packaging that not only looks attractive but also strengthens your brand and improves product visibility."
+        },
+        {
+          question: "Can package design strengthen my overall brand identity?",
+          answer: "Absolutely. Consistent packaging reinforces your brand identity, creates memorable customer experiences, and helps customers recognise your products across multiple sales channels."
+        }
+      ]
     },
   },
   logoDesign: {
@@ -1580,6 +1706,51 @@ export const designingData = {
             "A well-designed logo becomes the foundation of your brand identity. We create logos that remain timeless and support your brand’s long-term growth.",
         },
       ],
+    },
+    faq: {
+      subtitle: "Logo Design – FAQs",
+      items: [
+        {
+          question: "Why is a logo important for a business?",
+          answer: "A logo is one of the most recognisable elements of your brand. It creates the first impression, builds brand recognition, communicates professionalism, and helps customers remember your business."
+        },
+        {
+          question: "What makes a good logo design?",
+          answer: "A good logo is simple, memorable, versatile, timeless, and relevant to your business. It should represent your brand values while working effectively across digital and print platforms."
+        },
+        {
+          question: "What is included in Brand Mindz's logo design service?",
+          answer: "Our logo design service includes brand discovery, concept development, multiple design options, revisions, colour variations, typography selection, and final logo files suitable for web and print."
+        },
+        {
+          question: "How many logo concepts will I receive?",
+          answer: "The number of concepts depends on your selected package. Each concept is strategically developed based on your business goals, industry, and target audience."
+        },
+        {
+          question: "Do you design logos for startups and established businesses?",
+          answer: "Yes. We create logos for startups, SMEs, enterprises, non-profit organisations, educational institutions, healthcare providers, and businesses across various industries."
+        },
+        {
+          question: "Will I receive all the logo file formats?",
+          answer: "Yes. We provide your logo in multiple formats, including AI, EPS, SVG, PNG, JPG, and PDF, ensuring compatibility across digital and print applications."
+        },
+        {
+          question: "Can you redesign or modernise an existing logo?",
+          answer: "Yes. We help businesses refresh outdated logos while preserving brand recognition and creating a modern identity that aligns with current business goals."
+        },
+        {
+          question: "How long does the logo design process take?",
+          answer: "The timeline depends on the project scope and revision process. We focus on developing a logo that accurately represents your business rather than rushing the creative process."
+        },
+        {
+          question: "Will my logo work across all platforms?",
+          answer: "Yes. Every logo is designed to maintain clarity and consistency across websites, social media, packaging, business cards, signage, merchandise, and other branding materials."
+        },
+        {
+          question: "Why choose Brand Mindz for logo design?",
+          answer: "At Brand Mindz, we design logos with strategy, not just creativity. Every logo is built around your business vision, target audience, and long-term brand positioning, ensuring it becomes a strong foundation for your brand identity."
+        }
+      ]
     },
   }
 };

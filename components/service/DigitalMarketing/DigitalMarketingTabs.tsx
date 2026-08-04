@@ -9,6 +9,7 @@ import { LinkedinMarketing } from "../Branding/LinkedinMarketing";
 import { WhatsappMarketing } from "../Branding/WhatsappMarketing";
 import { YoutubeMarketing } from "../Branding/YoutubeMarketing";
 import { useDigitalMarketingContext } from "./DigitalMarketingContext";
+import { SocialMediaManagement } from "../Branding/SocialMediaManagement";
 
 export const DigitalMarketingTabs = () => {
   const { activeDigitalMarketingTab: activeTab, setActiveDigitalMarketingTab: setActiveTab } = useDigitalMarketingContext();
@@ -20,6 +21,7 @@ export const DigitalMarketingTabs = () => {
     { name: "Linkedin Marketing", component: LinkedinMarketing },
     { name: "Whatsapp Marketing", component: WhatsappMarketing },
     { name: "Youtube Marketing", component: YoutubeMarketing },
+    { name: "Social Media Management", component: SocialMediaManagement},
   ];
   
   const ActiveComponent = tabsData[activeTab].component;

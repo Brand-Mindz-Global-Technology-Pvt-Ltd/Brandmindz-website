@@ -18,7 +18,7 @@
           min-height: auto;
           padding-block: clamp(64px, 8vw, 112px);
           padding-top: 50px;
-          padding-bottom: clamp(36px, 4vw, 56px);
+          padding-bottom: clamp(20px, 2.5vw, 32px);
           background-color: #fff;
         }
 
@@ -41,11 +41,22 @@
 
         .gc-global-story {
           width: 100%;
-          max-width: 1240px;
-          margin: clamp(48px, 6vw, 80px) auto 0;
-          padding: 0;
-          color: #18181b;
-          text-align: center;
+          max-width: 1320px;
+          margin: clamp(28px, 3.5vw, 44px) auto 0;
+          padding: clamp(34px, 4.5vw, 58px);
+          border: 1px solid #2f2f2f;
+          border-radius: 32px;
+          background:
+            radial-gradient(circle at 8% 10%, rgba(255, 212, 0, .18), transparent 28%),
+            linear-gradient(90deg, rgba(16, 16, 16, .94) 0%, rgba(16, 16, 16, .88) 52%, rgba(16, 16, 16, .93) 100%),
+            url("../../assets/branding/authority.webp") center 44% / cover no-repeat;
+          color: #fff;
+          display: grid;
+          grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+          align-items: center;
+          gap: clamp(38px, 5vw, 72px);
+          text-align: left;
+          box-shadow: 0 24px 70px rgba(0, 0, 0, .13);
         }
 
         .gc-global-story::before {
@@ -63,15 +74,15 @@
 
         .gc-global-story-title {
           display: block;
-          max-width: 1100px;
+          max-width: 560px;
           margin: 0;
-          margin-inline: auto;
+          margin-inline: 0;
           padding: 0;
           font-size: clamp(2rem, 3.5vw, 3.55rem);
           font-weight: 800;
-          line-height: 1.08;
+          line-height: 1.04;
           letter-spacing: -.035em;
-          text-align: center;
+          text-align: left;
           text-wrap: balance;
         }
 
@@ -80,36 +91,38 @@
         }
 
         .gc-global-story-title span:last-child {
-          margin-top: 12px;
-          color: #8b8b8f;
+          margin-top: 18px;
+          color: #ffd400;
         }
 
         .gc-global-story-copy {
           display: block;
-          max-width: 1040px;
-          margin: clamp(36px, 5vw, 58px) auto 0;
+          max-width: 660px;
+          margin: 0;
           padding: 0;
         }
 
         .gc-global-story-copy p {
-          margin: 0 auto;
-          color: #3f3f46;
+          margin: 0;
+          color: #c7c7ca;
           font-size: clamp(1rem, 1.25vw, 1.2rem);
-          line-height: 1.72;
-          text-align: center;
+          line-height: 1.65;
+          text-align: left;
           text-wrap: pretty;
         }
 
         .gc-global-story-closing {
-          max-width: 920px;
-          margin-top: clamp(34px, 5vw, 54px) !important;
-          padding: clamp(28px, 4vw, 44px) 0 0;
-          border-top: 2px solid #18181b;
-          background: transparent;
-          color: #18181b !important;
-          font-size: clamp(1.4rem, 2vw, 1.9rem) !important;
+          max-width: none;
+          margin-top: clamp(22px, 3vw, 30px) !important;
+          padding: clamp(20px, 2.5vw, 28px);
+          border: 1px solid #3a3a3a;
+          border-left: 5px solid #ffd400;
+          border-radius: 16px;
+          background: #222;
+          color: #fff !important;
+          font-size: clamp(1.25rem, 1.75vw, 1.7rem) !important;
           font-weight: 800;
-          line-height: 1.45 !important;
+          line-height: 1.35 !important;
         }
 
         .gc-section-intro {
@@ -356,6 +369,128 @@
           height: auto;
         }
 
+        .gc-standards-view-button {
+          position: absolute;
+          z-index: 4;
+          top: 55%;
+          right: 15%;
+          min-width: 112px;
+          padding: 14px 26px;
+          border: 0;
+          border-radius: 999px;
+          background: #8d8d8d;
+          color: #fff;
+          font-size: 1rem;
+          font-weight: 700;
+          cursor: pointer;
+          box-shadow: 0 10px 24px rgba(24, 24, 27, .18);
+          transition: transform .2s ease, background-color .2s ease;
+        }
+
+        .gc-standards-view-button:hover {
+          background: #111;
+          transform: translateY(-2px);
+        }
+
+        .gc-standards-view-button:focus-visible,
+        .gc-standards-back-button:focus-visible {
+          outline: 3px solid #ffdb00;
+          outline-offset: 4px;
+        }
+
+        .gc-standards-expanded {
+          position: fixed;
+          z-index: 19000;
+          inset: 0;
+          overflow: auto;
+          background: #e9e9e9;
+          color: #111;
+        }
+
+        .gc-standards-back-button {
+          position: fixed;
+          z-index: 3;
+          top: 34px;
+          left: 5%;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 14px;
+          border: 0;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, .7);
+          color: #111;
+          font-size: 1rem;
+          font-weight: 700;
+          cursor: pointer;
+          backdrop-filter: blur(10px);
+        }
+
+        .gc-standards-expanded-heading {
+          position: relative;
+          z-index: 2;
+          width: min(900px, 72vw);
+          margin: 42px auto 0;
+          text-align: center;
+        }
+
+        .gc-standards-expanded-heading h2 {
+          margin: 0;
+          font-size: clamp(2.8rem, 4vw, 4.5rem);
+          font-weight: 800;
+          line-height: 1;
+        }
+
+        .gc-standards-expanded-map {
+          position: relative;
+          width: min(1740px, 94vw);
+          min-height: 680px;
+          margin: -18px auto 0;
+        }
+
+        .gc-standards-expanded-map-motion {
+          width: 100%;
+          height: 100%;
+        }
+
+        .gc-standards-expanded-map-motion > img {
+          width: 100%;
+          height: 100%;
+          min-height: 680px;
+          object-fit: contain;
+          opacity: .82;
+        }
+
+        .gc-standards-expanded-markers {
+          position: absolute;
+          inset: 0;
+        }
+
+        .gc-standards-marker {
+          position: absolute;
+          display: inline-flex;
+          align-items: center;
+          gap: 9px;
+          max-width: 310px;
+          padding: 12px 18px;
+          border-radius: 999px;
+          background: #050505;
+          color: #fff;
+          font-size: clamp(.85rem, 1vw, 1.05rem);
+          font-weight: 700;
+          line-height: 1.25;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, .22);
+        }
+
+        .gc-location-triangle {
+          width: 0;
+          height: 0;
+          flex: 0 0 auto;
+          border-right: 8px solid transparent;
+          border-bottom: 14px solid #fff;
+          border-left: 8px solid transparent;
+        }
+
         .gc-standards-box {
           position: relative;
           z-index: 1;
@@ -419,6 +554,12 @@
             right: -20%;
             width: 85%;
             opacity: .1;
+          }
+
+          .gc-standards-view-button {
+            top: auto;
+            right: 42px;
+            bottom: 42px;
           }
         }
 
@@ -902,6 +1043,16 @@
         .global-capability-page .gc-final-cta-button { font-size: 18px; }
 
         @media (max-width: 900px) {
+          .gc-global-story {
+            grid-template-columns: 1fr;
+            gap: 30px;
+          }
+
+          .gc-global-story-title,
+          .gc-global-story-copy {
+            max-width: none;
+          }
+
           .gc-travel-layout {
             grid-template-columns: 1fr;
             gap: 36px;
@@ -944,6 +1095,54 @@
             padding: 22px 24px;
           }
 
+          .gc-standards-view-button {
+            position: relative;
+            right: auto;
+            bottom: auto;
+            display: block;
+            width: 100%;
+            margin-top: 22px;
+          }
+
+          .gc-standards-expanded {
+            padding: 84px 20px 34px;
+          }
+
+          .gc-standards-back-button {
+            top: 20px;
+            left: 20px;
+          }
+
+          .gc-standards-expanded-heading {
+            width: 100%;
+            margin: 0;
+          }
+
+          .gc-standards-expanded-map {
+            width: 100%;
+            min-height: 0;
+            margin-top: 24px;
+          }
+
+          .gc-standards-expanded-map-motion > img {
+            height: auto;
+            min-height: 0;
+            opacity: .4;
+          }
+
+          .gc-standards-expanded-markers {
+            position: relative;
+            display: grid;
+            gap: 12px;
+            margin-top: 22px;
+          }
+
+          .gc-standards-marker {
+            position: static;
+            max-width: none;
+            border-radius: 16px;
+          }
+
           .gc-faq-section {
             padding: 50px 30px;
             background-size: cover;
@@ -970,7 +1169,8 @@
 
         @media (max-width: 480px) {
           .gc-global-story {
-            padding: 0;
+            padding: 26px 22px;
+            border-radius: 22px;
           }
 
           .gc-global-story-title,

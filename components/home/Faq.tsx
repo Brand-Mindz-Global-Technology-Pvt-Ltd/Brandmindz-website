@@ -10,16 +10,22 @@ interface FaqItem {
   answer: string;
 }
 
-const Faq = ({ activeTabKey = "" }: { activeTabKey?: string }) => {
+interface FaqProps {
+  activeTabKey?: string;
+  items?: FaqItem[];
+  subtitle?: string;
+}
+
+const Faq = ({
+  activeTabKey = "",
+  items,
+  subtitle = "Frequently Asked Questions",
+}: FaqProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const pathname = usePathname();
 
 
   const [faqs, setFaqs] = useState<FaqItem[]>([]);
-
-
-  console.log(activeTabKey, 'activeTabKey')
-
 
 
   const defaultFaqs = [
@@ -37,6 +43,13 @@ const Faq = ({ activeTabKey = "" }: { activeTabKey?: string }) => {
   ]
 
   useEffect(() => {
+
+    setActiveIndex(0);
+
+    if (items) {
+      setFaqs(items);
+      return;
+    }
 
     if (pathname === "/") {
       setFaqs([
@@ -495,7 +508,7 @@ const Faq = ({ activeTabKey = "" }: { activeTabKey?: string }) => {
     else {
       setFaqs([]);
     }
-  }, [pathname, activeTabKey]);
+  }, [pathname, activeTabKey, items]);
 
   // Split FAQs into two columns as seen in the image
   const leftColumn = faqs?.slice(0, 4);
@@ -504,7 +517,7 @@ const Faq = ({ activeTabKey = "" }: { activeTabKey?: string }) => {
   return (
     <section className="bm-faq-section">
       <div className="bm-faq-header">
-        <p className="bm-faq-subtitle">Frequently Asked Questions</p>
+        <p className="bm-faq-subtitle">{subtitle}</p>
         <h2 className="bm-faq-title">Got Questions? We've Got Answers</h2>
       </div>
 

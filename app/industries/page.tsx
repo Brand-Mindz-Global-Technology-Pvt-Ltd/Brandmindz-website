@@ -59,7 +59,7 @@ export default function IndustriesPage() {
       />
 
       <Header />
-      <main className="industries-main-container">
+      <main className="industries-main-container industries-page">
         <IndustriesHero />
         <IndustriesContent />
         <IndustriesCTA />
