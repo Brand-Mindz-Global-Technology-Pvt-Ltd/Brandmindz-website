@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "../../style/home/banner.css";
-import { FaBolt } from "react-icons/fa6";
+import { HeroBoltIcon } from "@/components/ui/HeroBoltIcon";
 import { FiChevronRight } from "react-icons/fi";
 import { Trusted } from "./Trusted";
 import { FadeIn } from "@/components/animations/fade-in";
@@ -57,7 +57,7 @@ import { useRouter } from "next/navigation";
 //     </span>
 //   );
 // };
-const FlipLetter = ({ letter }) => {
+const FlipLetter = ({ letter }: { letter: string }) => {
   const isSpace = letter === " ";
 
   return (
@@ -66,17 +66,7 @@ const FlipLetter = ({ letter }) => {
       animate={{ y: 0, opacity: 1 }}    // center
       exit={{ y: -40, opacity: 0 }}     // top
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="inline-block 
-      font-[Afacad] 
-      font-medium 
-       text-yellow
-        font-[Afacad] 
-        font-semibold 
-            text-[25px] 
-             sm:text-[32px] 
-             md:text-[32px] 
-             lg:text-[70px] 
-             xl:text-[75px] "
+      className="inline-block font-[Afacad] text-[25px] font-semibold text-yellow sm:text-[32px] md:text-[32px] lg:text-[70px] xl:text-[75px]"
     >
       {isSpace ? "\u00A0" : letter}
     </motion.span>
@@ -98,9 +88,7 @@ export const Banner = () => {
     <section className="bm-hero-section">
       <FadeIn delay={0.1}>
         <div className="bm-hero-badge">
-          <span className="bm-hero-badge__icon">
-            <FaBolt className="w-3 h-3 md:w-5 md:h-5" color="black" />
-          </span>
+          <HeroBoltIcon />
           <p className="bm-hero-badge__text">India's Leading Marketing Agency</p>
         </div>
       </FadeIn>
@@ -124,7 +112,7 @@ export const Banner = () => {
                 <motion.span
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{ repeat: Infinity, duration: 0.8 }}
-                  className="ml-1 w-[2px] md:w-[4px] h-[30px] md:h-[60px] bg-yellow"
+                  className="ml-1 h-7.5 w-0.5 bg-yellow md:h-15 md:w-1"
                 />
               </span>
 

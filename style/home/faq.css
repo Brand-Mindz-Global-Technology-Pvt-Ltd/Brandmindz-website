@@ -1,11 +1,10 @@
 .bm-faq-section {
     padding: 70px 80px;
-    padding-top: 40px;
     max-width: 97%;
     margin: 0 auto;
     font-family: 'Afacad', sans-serif;
     background-image: url('../../assets/HomeSection/faq/15645760_784511.webp');
-    background-size: cover;
+    background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
     background-color: #EDEDED;
@@ -13,19 +12,19 @@
 }
 
 .bm-faq-header {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     text-align: start;
 }
 
 .bm-faq-subtitle {
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-    color: #888;
-    margin-bottom: 10px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #888;
+  margin-bottom: 10px;
 }
 
 .bm-faq-title {
@@ -45,7 +44,7 @@
     background: #ffffff;
     border-radius: 15px;
     margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s ease;
@@ -54,13 +53,13 @@
 
 /* Active State Design */
 .bm-faq-item.active {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
 .bm-faq-item.active .bm-faq-q-box {
     background: #333333;
     color: #ffffff;
-    font-weight: 500;
+    font-weight:500;
 
 }
 
@@ -69,7 +68,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: 600;
+    font-weight:600;
     font-size: 20px;
     color: #333;
     transition: 0.3s;
@@ -77,7 +76,7 @@
 
 .bm-faq-a-box {
     padding: 28px;
-    background: #F7F7F7 !important;
+      background:#F7F7F7 !important;
     line-height: 1.6;
     font-size: 18px;
     text-align: start;
@@ -91,11 +90,11 @@
         max-width: 100%;
         border-radius: 15px;
     }
-
+    
     .bm-faq-title {
         font-size: 28px;
     }
-
+    
     .bm-faq-grid {
         gap: 20px;
     }
@@ -106,29 +105,29 @@
         padding: 50px 30px;
         background-size: cover;
     }
-
+    
     .bm-faq-grid {
         grid-template-columns: 1fr;
         gap: 0px;
     }
-
+    
     .bm-faq-header {
         margin-bottom: 30px;
     }
-
+    
     .bm-faq-title {
         font-size: 26px;
     }
-
+    
     .bm-faq-item {
         margin-bottom: 15px;
     }
-
+    
     .bm-faq-q-box {
         padding: 18px 20px;
         font-size: 15px;
     }
-
+    
     .bm-faq-a-box {
         padding: 20px;
         font-size: 15px;
@@ -137,28 +136,28 @@
 
 @media (max-width: 576px) {
     .bm-faq-section {
-        padding: 10px 20px;
+        padding: 40px 20px;
         border-radius: 10px;
     }
-
+    
     .bm-faq-header {
         margin-bottom: 25px;
+        text-align: center;
     }
-
+    
     .bm-faq-subtitle {
         font-size: 14px;
-        margin:0px
     }
-
+    
     .bm-faq-title {
         font-size: 22px;
     }
-
+    
     .bm-faq-q-box {
         padding: 16px;
         font-size: 14px;
     }
-
+    
     .bm-faq-a-box {
         padding: 16px;
         font-size: 14px;
@@ -168,18 +167,18 @@
 
 @media (max-width: 375px) {
     .bm-faq-section {
-        padding: 20px 15px;
+        padding: 30px 15px;
     }
-
+    
     .bm-faq-title {
         font-size: 20px;
     }
-
+    
     .bm-faq-q-box {
         padding: 14px;
         font-size: 13px;
     }
-
+    
     .bm-faq-a-box {
         padding: 14px;
         font-size: 13px;
@@ -189,17 +188,17 @@
 /* For very small screens like iPhone SE */
 @media (max-width: 320px) {
     .bm-faq-section {
-        padding: 10px 10px;
+        padding: 20px 10px;
     }
-
+    
     .bm-faq-title {
         font-size: 18px;
     }
-
+    
     .bm-faq-q-box {
         padding: 12px;
     }
-
+    
     .bm-faq-a-box {
         padding: 12px;
     }

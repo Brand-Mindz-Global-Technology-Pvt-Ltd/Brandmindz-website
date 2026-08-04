@@ -642,6 +642,51 @@
   }
 }
 
+/* Resources hero aligned to the Home hero typography scale. */
+.bm-hero-section-resources {
+  padding: 50px 20px 80px;
+}
+
+.bm-resources-badge {
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.bm-resources-badge__text {
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.bm-resources-hero-title {
+  max-width: 1300px;
+  font-size: 77px;
+  line-height: 1.2;
+  letter-spacing: 2.5px;
+}
+
+@media (max-width: 768px) {
+  .bm-hero-section-resources {
+    padding: 20px 15px 40px;
+  }
+
+  .bm-resources-badge {
+    gap: 5px;
+  }
+
+  .bm-resources-badge__text {
+    font-size: 18px;
+  }
+
+  .bm-resources-hero-title {
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+}
+
 @media (max-width: 480px) {
   .glossary-directory-grid {
     grid-template-columns: 1fr;

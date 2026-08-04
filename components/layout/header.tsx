@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import '../../style/header/header.css';
 import Image from 'next/image';
 import logo from '../../assets/logo/logo.webp';
+import officeImage from '../../assets/header/office.webp';
 import { FiMenu, FiX, FiChevronDown, FiChevronUp, FiPhone } from "react-icons/fi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,6 +17,10 @@ const Header = () => {
   const pathname = usePathname();
   const [show, setShow] = useState(false);
   const [isBookCallOpen, setIsBookCallOpen] = useState(false);
+  const [activeMegaCategory, setActiveMegaCategory] = useState<Record<string, number>>({
+    'Our Services': 0,
+    Industries: 0,
+  });
 
 
   // Check if mobile
@@ -149,6 +154,108 @@ const Header = () => {
     },
   ];
 
+  const megaMenuData = {
+    'Our Services': {
+      eyebrow: 'Our Services',
+      viewAllPath: '/services/branding',
+      viewAllLabel: 'View all',
+      cardTitle: <>Structured execution.<br />Measurable growth.</>,
+      cardLinkLabel: 'Explore all services',
+      categories: [
+        {
+          name: 'Branding',
+          path: '/services/branding',
+          links: [
+            { label: 'Personal Branding', path: '/services/branding?tab=personal-branding' },
+            { label: 'Company Branding', path: '/services/branding?tab=company-branding' },
+            { label: 'Brand Strategy', path: '/services/branding?tab=brand-strategy' },
+            { label: 'Video Creation and Editing', path: '/services/branding?tab=video-creation' },
+            { label: 'Brand Consulting', path: '/services/branding?tab=brand-consulting' },
+          ],
+        },
+        {
+          name: 'Designing',
+          path: '/services/designing',
+          links: [
+            { label: 'Logo Designing', path: '/services/designing?tab=logo-designing' },
+            { label: 'Graphic Designing', path: '/services/designing?tab=graphic-designing' },
+            { label: 'UI/UX Designing', path: '/services/designing?tab=ui-ux-designing' },
+            { label: 'Print Designing', path: '/services/designing?tab=print-designing' },
+          ],
+        },
+        {
+          name: 'Development',
+          path: '/services/development',
+          links: [
+            { label: 'Static Website Development', path: '/services/development?tab=static' },
+            { label: 'E-Commerce Development', path: '/services/development?tab=ecommerce' },
+            { label: 'Mobile App Development', path: '/services/development?tab=mobile-app' },
+            { label: 'Web Application Development', path: '/services/development?tab=web-application' },
+          ],
+        },
+        {
+          name: 'Digital Marketing',
+          path: '/services/digital-marketing',
+          links: [
+            { label: 'SEO', path: '/services/digital-marketing?tab=seo' },
+            { label: 'Meta Ads', path: '/services/digital-marketing?tab=meta-ads' },
+            { label: 'Google Ads', path: '/services/digital-marketing?tab=google-ads' },
+            { label: 'LinkedIn Marketing', path: '/services/digital-marketing?tab=linkedin' },
+            { label: 'WhatsApp Marketing', path: '/services/digital-marketing?tab=whatsapp' },
+            { label: 'YouTube Marketing', path: '/services/digital-marketing?tab=youtube' },
+            { label: 'Social Media Management', path: '/services/digital-marketing?tab=social-media' },
+          ],
+        },
+        {
+          name: 'E-Commerce Listing',
+          path: '/services/ecommerce',
+          links: [
+            { label: 'Flipkart Listing', path: '/services/ecommerce?tab=flipkartListing' },
+            { label: 'Amazon Listing', path: '/services/ecommerce?tab=amazonListing' },
+            { label: 'Meesho Listing', path: '/services/ecommerce?tab=meeshoListing' },
+            { label: 'Myntra Listing', path: '/services/ecommerce?tab=myntraListing' },
+            { label: 'JioMart Listing', path: '/services/ecommerce?tab=jiomartListing' },
+            { label: 'Seller Account Management', path: '/services/ecommerce?tab=sellerAccountManagement' },
+          ],
+        },
+      ],
+    },
+    Industries: {
+      eyebrow: 'Industries',
+      viewAllPath: '/industries',
+      viewAllLabel: 'View all',
+      cardTitle: <>Industry insight.<br />Focused outcomes.</>,
+      cardLinkLabel: 'Explore all industries',
+      categories: [
+        { name: 'IT & SaaS Solutions', path: '/industries?tab=it', links: [
+          { label: 'SaaS Growth Marketing', path: '/industries?tab=it' },
+          { label: 'B2B Lead Generation', path: '/industries?tab=it' },
+          { label: 'Technology Brand Positioning', path: '/industries?tab=it' },
+        ] },
+        { name: 'E-Commerce Brands', path: '/industries?tab=ecommerce', links: [
+          { label: 'Marketplace Growth', path: '/industries?tab=ecommerce' },
+          { label: 'Performance Marketing', path: '/industries?tab=ecommerce' },
+          { label: 'Conversion Optimisation', path: '/industries?tab=ecommerce' },
+        ] },
+        { name: 'Healthcare & Biotech', path: '/industries?tab=healthcare', links: [
+          { label: 'Healthcare Brand Strategy', path: '/industries?tab=healthcare' },
+          { label: 'Patient Acquisition', path: '/industries?tab=healthcare' },
+          { label: 'Medical Content Marketing', path: '/industries?tab=healthcare' },
+        ] },
+        { name: 'Education & E-Learning', path: '/industries?tab=education', links: [
+          { label: 'Student Acquisition', path: '/industries?tab=education' },
+          { label: 'Education Brand Building', path: '/industries?tab=education' },
+          { label: 'Course Promotion', path: '/industries?tab=education' },
+        ] },
+        { name: 'Real Estate & Property', path: '/industries?tab=realestate', links: [
+          { label: 'Property Lead Generation', path: '/industries?tab=realestate' },
+          { label: 'Project Branding', path: '/industries?tab=realestate' },
+          { label: 'Real Estate Digital Marketing', path: '/industries?tab=realestate' },
+        ] },
+      ],
+    },
+  };
+
   const handleMenuItemClick = (itemName: string) => {
     console.log(`Clicked: ${itemName}`);
     if (isMobile) {
@@ -172,6 +279,64 @@ const Header = () => {
 
   const toggleDropdown = (name: string) => {
     setActiveDropdown(activeDropdown === name ? null : name);
+  };
+
+  const isMegaMenu = (name: string): name is keyof typeof megaMenuData =>
+    name === 'Our Services' || name === 'Industries';
+
+  const renderMegaMenu = (name: keyof typeof megaMenuData) => {
+    const menu = megaMenuData[name];
+    const selectedIndex = activeMegaCategory[name] ?? 0;
+    const selectedCategory = menu.categories[selectedIndex] ?? menu.categories[0];
+
+    return (
+      <div className="bm-mega-menu" onClick={(event) => event.stopPropagation()}>
+        <div className="bm-mega-menu__categories">
+          {menu.categories.map((category, categoryIndex) => (
+            <button
+              type="button"
+              key={category.name}
+              className={`bm-mega-menu__category ${selectedIndex === categoryIndex ? 'active' : ''}`}
+              onMouseEnter={() => setActiveMegaCategory((current) => ({ ...current, [name]: categoryIndex }))}
+              onFocus={() => setActiveMegaCategory((current) => ({ ...current, [name]: categoryIndex }))}
+              onClick={() => setActiveMegaCategory((current) => ({ ...current, [name]: categoryIndex }))}
+            >
+              <span className="bm-mega-menu__number">{String(categoryIndex + 1).padStart(2, '0')}</span>
+              <span>{category.name}</span>
+              <span className="bm-mega-menu__chevron">›</span>
+            </button>
+          ))}
+        </div>
+
+        <div className="bm-mega-menu__content">
+          <div className="bm-mega-menu__content-head">
+            <div>
+              <span className="bm-mega-menu__eyebrow">{menu.eyebrow}</span>
+              <h2>{selectedCategory.name}</h2>
+            </div>
+            <Link href={selectedCategory.path} className="bm-mega-menu__view-all">
+              {menu.viewAllLabel} ↗
+            </Link>
+          </div>
+          <div className="bm-mega-menu__links">
+            {selectedCategory.links.map((link) => (
+              <Link key={link.label} href={link.path} className="bm-mega-menu__link">
+                <span>{link.label}</span>
+                <span aria-hidden="true">↗</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <Link href={selectedCategory.path} className="bm-mega-menu__visual">
+          <Image src={officeImage} alt="Brand Mindz office" fill sizes="360px" />
+          <div className="bm-mega-menu__visual-shade" />
+          <span className="bm-mega-menu__visual-brand">BRAND MINDZ</span>
+          <strong>{menu.cardTitle}</strong>
+          <span className="bm-mega-menu__visual-link">{menu.cardLinkLabel} →</span>
+        </Link>
+      </div>
+    );
   };
 
   return (
@@ -227,7 +392,7 @@ const Header = () => {
                 {menuItems.map((item, index) => (
                   <li
                     key={index}
-                    className={` ${item.hasDropdown ? 'has-dropdown' : ''} ${isActive(item.path) ? 'active' : ''}`}
+                    className={`${item.hasDropdown ? 'has-dropdown' : ''} ${isMegaMenu(item.name) ? 'has-mega-menu' : ''} ${isActive(item.path) ? 'active' : ''}`}
                     onClick={(e) => {
                       if (!item.hasDropdown) {
                         handleMenuItemClick(item.name);
@@ -266,25 +431,26 @@ const Header = () => {
                         </span>
                       )}
                     </div>
-                    {item.hasDropdown && (
-                      <div className={`dropdown-content ${activeDropdown === item.name ? 'show' : ''}`}>
-                        {item.dropdownItems.map((dropdownItem, idx) => (
-                          <div
-                            key={idx}
-                            className="dropdown-item"
-                            onClick={() => {
-                              handleMenuItemClick(dropdownItem.label); // Logic for logging/closing menu
-                              if (isMobile) closeMobileMenu();
-                            }}
-                          >
-                            {/* Wrap the label in a Link to the specific page */}
-                            <Link href={dropdownItem.path} style={{ display: 'block', width: '100%' }}>
-                              {dropdownItem.label}
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                    {item.hasDropdown && isMegaMenu(item.name) && !isMobile
+                      ? renderMegaMenu(item.name)
+                      : item.hasDropdown && (
+                        <div className={`dropdown-content ${activeDropdown === item.name ? 'show' : ''}`}>
+                          {item.dropdownItems.map((dropdownItem, idx) => (
+                            <div
+                              key={idx}
+                              className="dropdown-item"
+                              onClick={() => {
+                                handleMenuItemClick(dropdownItem.label);
+                                if (isMobile) closeMobileMenu();
+                              }}
+                            >
+                              <Link href={dropdownItem.path} style={{ display: 'block', width: '100%' }}>
+                                {dropdownItem.label}
+                              </Link>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                   </li>
                 ))}
               </ul>

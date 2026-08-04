@@ -96,6 +96,7 @@
 .bm-industries-hero-title span.highlight {
   background: linear-gradient(120deg, #ffdb00 0%, #ffcc00 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
@@ -515,5 +516,65 @@
   }
   .bm-industry-right-pane {
     padding: 24px 16px;
+  }
+}
+
+/* Industries landing hero aligned to the Home hero scale. */
+.industries-page .bm-hero-section-industries {
+  padding: 50px 20px 80px;
+}
+
+.industries-page .bm-industries-hero-badge {
+  gap: 12px;
+  margin-bottom: 30px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.industries-page .bm-industries-hero-badge__text {
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.industries-page .bm-industries-hero-title {
+  max-width: 1300px;
+  font-size: 77px;
+  line-height: 1.2;
+  letter-spacing: 2.5px;
+}
+
+.industries-page .bm-industries-hero-description {
+  max-width: 1000px;
+  font-size: 30px;
+  line-height: 45px;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .industries-page .bm-hero-section-industries {
+    padding: 20px 15px 40px;
+  }
+
+  .industries-page .bm-industries-hero-badge {
+    gap: 5px;
+  }
+
+  .industries-page .bm-industries-hero-badge__text {
+    font-size: 18px;
+  }
+
+  .industries-page .bm-industries-hero-title {
+    font-size: 28px;
+    letter-spacing: 0;
+  }
+
+  .industries-page .bm-industries-hero-description {
+    font-size: 16px;
+    line-height: 1.7;
   }
 }

@@ -16,6 +16,7 @@ import React, { useState } from "react";
 export default function ServiceEcommerce() {
     const [activeTabKey, setActiveTabKey] = useState<keyof typeof ecommerceData>("flipkartListing");
     const data = ecommerceData[activeTabKey];
+    const faq = "faq" in data ? data.faq : undefined;
 
     return (
         <>
@@ -28,7 +29,11 @@ export default function ServiceEcommerce() {
                 <EcommerceCaseStudies data={data.caseStudies} />
                 <WhyChooseEcommerce data={data.whyChoose} />
                 <Various />  
-                <Faq activeTabKey={activeTabKey} />
+                <Faq
+                    activeTabKey={activeTabKey}
+                    items={faq?.items}
+                    subtitle={faq?.subtitle}
+                />
             </main>
             <Footer />
         </>

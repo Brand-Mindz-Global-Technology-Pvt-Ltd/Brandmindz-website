@@ -2,19 +2,13 @@ import "../../style/aboutus/brandmindzpromise.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 import "../../style/home/faq.css";
+import Faq from "@/components/home/Faq";
 import {
   ArrowRight,
-  BarChart3,
   Check,
-  ChevronDown,
-  Clock3,
-  Globe2,
-  Handshake,
-  LineChart,
-  Scale,
   ShieldCheck,
-  Target,
 } from "lucide-react";
+import { PromiseCommitments } from "./PromiseCommitments";
 
 export const metadata: Metadata = {
   title: "The Brand Mindz Promise | Structured, Measurable Growth",
@@ -44,83 +38,6 @@ const promisePillars = [
   "Measurable performance",
   "Accountable partnership",
   "Ethical conduct",
-];
-
-const promises = [
-  {
-    number: "01",
-    eyebrow: "Alignment before action",
-    title: "We Promise Structured Clarity",
-    description:
-      "Every engagement begins with alignment. Before execution starts, we define scope, objectives, timelines, and success metrics. There is no ambiguity about what is being built and how success will be measured.",
-    statement: "Clarity protects performance. Clarity protects relationships.",
-    icon: Target,
-  },
-  {
-    number: "02",
-    eyebrow: "Business impact over noise",
-    title: "We Promise Measurable Impact",
-    description:
-      "Brand Mindz operates as a performance-driven digital marketing, web development, and branding partner. We focus on business impact — not vanity metrics.",
-    points: [
-      "Lead quality over lead volume",
-      "Conversion efficiency over impressions",
-      "Scalable growth over short-term noise",
-    ],
-    statement: "If it cannot be measured, it cannot be improved.",
-    icon: LineChart,
-  },
-  {
-    number: "03",
-    eyebrow: "Visibility at every stage",
-    title: "We Promise Accountability",
-    description:
-      "Execution without ownership creates instability. We operate with defined KPIs, structured reporting systems, and performance visibility at every stage.",
-    points: [
-      "Where the project stands",
-      "What is working",
-      "What requires optimization",
-    ],
-    statement: "We do not disappear after launch. We own outcomes.",
-    icon: BarChart3,
-  },
-  {
-    number: "04",
-    eyebrow: "Integrity made visible",
-    title: "We Promise Ethical Conduct",
-    description:
-      "Brand Mindz operates with professional governance and transparent systems. We follow clear scope documentation, defined billing practices, structured escalation channels, and zero tolerance for favoritism or bias.",
-    statement: "Trust grows when integrity is visible.",
-    icon: Scale,
-  },
-  {
-    number: "05",
-    eyebrow: "Systems that sustain",
-    title: "We Promise Long-Term Thinking",
-    description:
-      "We do not promise shortcuts. We build systems that sustain. Our strategies are designed for scalability, consistency, and measurable long-term growth.",
-    statement: "Reputation is earned slowly and lost quickly. We protect both.",
-    icon: Clock3,
-  },
-  {
-    number: "06",
-    eyebrow: "Partners, never just vendors",
-    title: "We Promise Partnership — Not Vendor Mentality",
-    description:
-      "Large-scale brands do not look for vendors. They look for reliable performance partners. We work best with organizations that value structure, transparency, and disciplined execution.",
-    statement: "If alignment is unclear, we do not proceed. That honesty protects long-term trust.",
-    icon: Handshake,
-  },
-  {
-    number: "07",
-    eyebrow: "One standard, every market",
-    title: "We Promise Consistency Across Markets",
-    description:
-      "Whether domestic or international, our standards remain unchanged.",
-    points: ["Performance", "Structure", "Accountability", "Reliability"],
-    statement: "We are global-ready by design. And we operate accordingly.",
-    icon: Globe2,
-  },
 ];
 
 const faqs = [
@@ -224,96 +141,9 @@ export default function BrandMindzPromise() {
         </div>
       </section>
 
-      <section className="bm-industry-details-section">
-        <div className="bm-industry-container">
-          <div className="bm-industry-grid-layout">
-            <div className="bm-industry-left-pane">
-              <div className="bm-industry-header">
-                <span className="bm-industry-pretitle">Seven commitments. One operating standard.</span>
-                <h2 className="bm-industry-main-title">A Promise Designed for Performance</h2>
-              </div>
-              <p className="bm-industry-description">
-                We do not sell campaigns. We build performance systems. Brand Mindz is built for businesses that take growth seriously. These principles shape how we plan, execute, report, and grow alongside every client.
-              </p>
-              <div>
-                <h3 className="bm-challenges-solutions-title">What Every Partnership Can Expect</h3>
-                <div className="bm-challenge-solution-grid bmp-promise-grid">
-                  {promises.map((promise) => {
-                    const Icon = promise.icon;
-                    return (
-                      <article className="bm-cs-card solution bmp-promise-card" id={`promise-${promise.number}`} key={promise.number}>
-                        <div className="bm-cs-header">
-                          <span className="bm-cs-icon-wrapper"><Icon /></span>
-                          <div>
-                            <span className="bmp-card-eyebrow">{promise.number} · {promise.eyebrow}</span>
-                            <h3 className="bm-cs-title">{promise.title}</h3>
-                          </div>
-                        </div>
-                        <p className="bm-cs-body">{promise.description}</p>
-                        {promise.points ? (
-                          <div className="bmp-card-points">
-                            {promise.points.map((point) => (
-                              <span className="bmp-card-point" key={point}><Check size={15} strokeWidth={3} />{point}</span>
-                            ))}
-                          </div>
-                        ) : null}
-                        <p className="bmp-card-statement">{promise.statement}</p>
-                      </article>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
+      <PromiseCommitments />
 
-            <aside className="bm-industry-right-pane">
-              <div className="bm-stats-header-wrapper">
-                <h3 className="bm-stats-title">Our Operating Standard</h3>
-                <p className="bm-stats-subtitle">The foundations behind every engagement</p>
-              </div>
-              <div className="bm-stats-grid">
-                {promisePillars.map((pillar, index) => (
-                  <div className="bmp-side-promise" key={pillar}>
-                    <Check size={22} strokeWidth={3} />
-                    <div>
-                      <strong>{pillar}</strong>
-                      <span>{index === 0 ? "Clear scope, objectives, timelines, and success metrics." : index === 1 ? "KPIs connected to real business outcomes." : index === 2 ? "Visible ownership and disciplined follow-through." : "Transparent systems, governance, and integrity."}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="bm-industry-testimonial">
-                <p className="bmp-side-quote">Trust is a system, not a slogan.<strong>That is the Brand Mindz Promise.</strong></p>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <div className="bmp-home-faq-wrap">
-        <section className="bm-faq-section">
-          <div className="bm-faq-header">
-            <p className="bm-faq-subtitle">Frequently Asked Questions — The Brand Mindz Promise</p>
-            <h2 className="bm-faq-title">Got Questions? We&apos;ve Got Answers</h2>
-          </div>
-          <div className="bm-faq-grid">
-            {[faqs.slice(0, 4), faqs.slice(4)].map((column, columnIndex) => (
-              <div className="bm-faq-col" key={columnIndex}>
-                {column.map((faq, index) => (
-                  <details className="bm-faq-item" key={faq.question} open={columnIndex === 0 && index === 0}>
-                    <summary className="bm-faq-q-box">
-                      <span>{faq.question}</span>
-                      <ChevronDown className="bm-faq-chevron" size={22} />
-                    </summary>
-                    <div className="bm-faq-a-box">
-                      <p>{faq.answer}</p>
-                    </div>
-                  </details>
-                ))}
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+      <Faq items={faqs} subtitle="Frequently Asked Questions — The Brand Mindz Promise" />
 
       <section className="bm-industries-cta-section">
         <div className="bm-industries-cta-container">

@@ -40,7 +40,14 @@
         }
 
         .wc-potential-section .wc-section-intro-text {
+          max-width: 1180px;
+          margin-top: 110px;
           color: #fff;
+          transform: translateY(28px);
+        }
+
+        .wc-potential-section .wc-section-intro {
+          max-width: 1240px;
         }
 
         .wc-hero-description {
@@ -153,6 +160,14 @@
           margin: 32px auto 0;
           text-align: center;
           text-wrap: pretty;
+        }
+
+        .wc-section-intro .wc-women-intro-text {
+          display: block;
+          width: min(100%, 900px);
+          margin-right: auto !important;
+          margin-left: auto !important;
+          text-align: center !important;
         }
 
         .wc-point-grid {
@@ -711,7 +726,7 @@
 
         .wc-stay-card {
           width: 100%;
-          max-width: 1180px;
+          max-width: 1280px;
           margin: 0 auto;
           padding: clamp(52px, 6vw, 80px) clamp(28px, 5vw, 72px);
           text-align: center;

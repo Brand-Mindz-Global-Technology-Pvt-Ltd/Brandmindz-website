@@ -5,18 +5,20 @@ import {
   ArrowRight,
   BriefcaseBusiness,
   Building2,
+  Calculator,
   Check,
+  Code2,
   Handshake,
   HeartHandshake,
-  Lightbulb,
   Link2,
   Megaphone,
   Network,
   PackageCheck,
-  Rocket,
+  Paintbrush,
   SearchCheck,
   ShieldCheck,
   Target,
+  Truck,
   UserRoundCheck,
   Users,
   Wrench,
@@ -46,10 +48,10 @@ export const metadata: Metadata = {
 };
 
 const businessExamples = [
-  { title: "Manufacturer", need: "Logistics partner", icon: Building2 },
-  { title: "Startup", need: "Accountant", icon: Rocket },
-  { title: "Construction company", need: "Interior designer", icon: Wrench },
-  { title: "Educational institution", need: "Software company", icon: Lightbulb },
+  { title: "Manufacturer", need: "Logistics partner", icon: Truck },
+  { title: "Startup", need: "Accountant", icon: Calculator },
+  { title: "Construction company", need: "Interior designer", icon: Paintbrush },
+  { title: "Educational institution", need: "Software company", icon: Code2 },
 ];
 
 const processSteps = [
@@ -156,7 +158,7 @@ export default function BrandMindzConnect() {
         <div className="connect-container connect-vision-grid">
           <div className="connect-founder">
             <Image src={founderImage} alt="R. Vasanth Kumar, Founder of Brand Mindz" fill sizes="(max-width: 1100px) 90vw, 35vw" />
-            <div className="connect-founder-label"><strong>R. Vasanth Kumar</strong><span>Founder, Brand Mindz</span></div>
+            <div className="connect-founder-label"><strong>R. Vasanth Kumar</strong><span>Founder of Brand Mindz</span></div>
           </div>
           <div>
             <span className="connect-eyebrow">The vision behind Brand Mindz Connect™</span>

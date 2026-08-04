@@ -346,6 +346,17 @@
     margin-bottom: 20px;
 }
 
+.social-media-stat-card {
+    height: 365px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.social-media-cta-action .bm-hero-btn-bl {
+    margin: 10px 0;
+}
+
 .bl-stat-card h2 {
     font-size: 80px;
     font-weight: 600;

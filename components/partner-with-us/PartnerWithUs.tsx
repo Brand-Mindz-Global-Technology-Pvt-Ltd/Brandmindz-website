@@ -2,10 +2,10 @@ import "../../style/aboutus/partnerwithus.css";
 import type { Metadata } from "next";
 import "../../style/home/faq.css";
 import PartnershipForm from "./PartnershipForm";
+import Faq from "@/components/home/Faq";
 import {
   BarChart3,
   Check,
-  ChevronDown,
   ClipboardCheck,
   Code2,
   FileCheck2,
@@ -281,31 +281,7 @@ export default function PartnerWithUs() {
         </div>
       </section>
 
-      <div className="pw-faq-wrap">
-        <section className="bm-faq-section">
-          <div className="bm-faq-header">
-            <p className="bm-faq-subtitle">Frequently Asked Questions — Agency Partnership Model</p>
-            <h2 className="bm-faq-title">Got Questions? We&apos;ve Got Answers</h2>
-          </div>
-          <div className="bm-faq-grid">
-            {[faqs.slice(0, 4), faqs.slice(4)].map((column, columnIndex) => (
-              <div className="bm-faq-col" key={columnIndex}>
-                {column.map((faq, index) => (
-                  <details className="bm-faq-item" key={faq.question} open={columnIndex === 0 && index === 0}>
-                    <summary className="bm-faq-q-box">
-                      <span>{faq.question}</span>
-                      <ChevronDown className="bm-faq-chevron" size={22} />
-                    </summary>
-                    <div className="bm-faq-a-box">
-                      <p>{faq.answer}</p>
-                    </div>
-                  </details>
-                ))}
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+      <Faq items={faqs} subtitle="Frequently Asked Questions — Agency Partnership Model" />
     </main>
   );
 }

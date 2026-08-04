@@ -9,12 +9,13 @@ import {
   FaShoppingCart, 
   FaArrowRight, 
   FaQuoteRight, 
-  FaBolt, 
+  FaBolt,
   FaCheckCircle 
 } from "react-icons/fa";
 import { FiChevronRight } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn, StaggerChildren, StaggerItem } from "../animations";
+import { HeroBoltIcon } from "@/components/ui/HeroBoltIcon";
 
 // Reusable Counter Component with ease-out intersection animation
 interface CounterProps {
@@ -64,6 +65,7 @@ const Counter: React.FC<CounterProps> = ({ target, duration = 2000, suffix = "",
 // Case Study Item Interface
 interface CaseStudy {
   id: string;
+  contentUrl: string;
   client: string;
   category: string;
   title: string;
@@ -78,101 +80,48 @@ interface CaseStudy {
 
 const caseStudiesData: CaseStudy[] = [
   {
-    id: "truck-taxi",
-    client: "Truck Taxi Logistics",
+    id: "performance-marketing-case-studies",
+    contentUrl: "/case-studies/performance-marketing-case-studies",
+    client: "Truck Taxi & Arts and Science College",
     category: "Digital Marketing",
-    title: "Scaling Driver Acquisition at Speed in 15 Days",
-    description: "Brand Mindz Global enabled scalable driver onboarding using hyper-local targeting and performance-optimized Meta Ads to deliver high-intent, qualified leads.",
-    logoText: "TRUCK TAXI",
+    title: "Fast, Scalable & Cost-Efficient Driver Onboarding",
+    description: "Truck Taxi is an on-demand truck and commercial vehicle booking platform. Our objective was clear — onboard quality drivers at scale while maintaining an ultra-low cost per lead.",
+    logoText: "PERFORMANCE",
     icon: <FaChartLine />,
     metrics: [
-      { value: "587+", label: "Leads" },
-      { value: "₹2.72", label: "Cost Per Lead" },
-      { value: "130%", label: "Growth Rate" }
+      { value: "1,000+", label: "Verified Driver Leads Generated" },
+      { value: "₹2.60–₹3.62", label: "Cost Per Lead" },
+      { value: "13+ Lakh", label: "Total Reach" }
     ]
   },
   {
-    id: "paywise",
-    client: "PayWise Solutions",
-    category: "Development",
-    title: "Complete Digital Overhaul & Next-Gen FinTech Launch",
-    description: "Built a lightning-fast, secure, and modern SaaS banking platform with intuitive UI/UX design, scaling user onboarding and registrations seamlessly.",
-    logoText: "PAYWISE",
-    icon: <FaLaptopCode />,
-    metrics: [
-      { value: "10K+", label: "Active Users" },
-      { value: "45%", label: "Conv. Rate Up" },
-      { value: "<1s", label: "Page Load Time" }
-    ]
-  },
-  {
-    id: "luxedecor",
-    client: "LuxeDecor Home",
-    category: "E-Commerce listing",
-    title: "Overhauling Catalog Listings & Marketplace Strategy",
-    description: "Optimized e-commerce listing layout structure, SEO-targeted description copywriting, and search visibility across leading global marketplaces.",
-    logoText: "LUXE DECOR",
-    icon: <FaShoppingCart />,
-    metrics: [
-      { value: "3.5x", label: "Sales Revenue" },
-      { value: "25K+", label: "Monthly Orders" },
-      { value: "85%", label: "Rating Boost" }
-    ]
-  },
-  {
-    id: "technova",
-    client: "TechNova Systems",
+    id: "mathi-packaging-case-study",
+    contentUrl: "/case-studies/mathi-packaging-case-study",
+    client: "MaTHi–Mahalir Thittam",
     category: "Branding",
-    title: "Redefining Brand Identity for Competitive Global Markets",
-    description: "Structured a cohesive brand strategy, styling guidelines, and marketing assets to reposition TechNova as an innovative industry leader.",
-    logoText: "TECH NOVA",
+    title: "From a Local Cinnamon Product to a Brand Ready for a Bigger Market",
+    description: "Packaging redesign for a women-led Self-Help Group under the MaTHi–Mahalir Thittam ecosystem",
+    logoText: "MaTHi",
     icon: <FaPaintBrush />,
     metrics: [
-      { value: "100%", label: "Brand Uniformity" },
-      { value: "60%", label: "Engagement Up" },
-      { value: "5+", label: "Markets Entered" }
+      { value: "Clearer", label: "Product Recognition" },
+      { value: "Stronger", label: "Retail Presence" },
+      { value: "Scalable", label: "Visual Foundation" }
     ]
   },
   {
-    id: "oakwood",
-    client: "Oakwood Residencies",
-    category: "Digital Marketing",
-    title: "Hyper-Local Search and Social Ads for Premium Villas",
-    description: "Crafted targeted high-intent lead generation funnels, connecting ready-to-buy real estate investors with premium residential villa communities.",
-    logoText: "OAKWOOD",
-    icon: <FaChartLine />,
-    metrics: [
-      { value: "120+", label: "Qualified Site Visits" },
-      { value: "8x", label: "ROI on Ad Spend" },
-      { value: "24", label: "Units Sold" }
-    ]
-  },
-  {
-    id: "skillpath",
-    client: "SkillPath LMS",
+    id: "dic-tenkasi-case-study",
+    contentUrl: "/case-studies/dic-tenkasi-case-study",
+    client: "District Industries Centre, Tenkasi",
     category: "Development",
-    title: "Designing & Engineering a Interactive EdTech Platform",
-    description: "Developed a modern, interactive e-learning platform with sub-second page transition speeds, analytics dashboards, and offline capabilities.",
-    logoText: "SKILL PATH",
+    title: "Rebuilding the Digital Experience of DIC Tenkasi",
+    description: "A government website designed to make schemes, incentives, industrial information and entrepreneurship support easier to access.",
+    logoText: "DIC TENKASI",
     icon: <FaLaptopCode />,
     metrics: [
-      { value: "50K+", label: "Active Students" },
-      { value: "99.9%", label: "Platform Uptime" },
-      { value: "4.8★", label: "App Store Rating" }
-    ]
-  },
-  {
-    id: "zenith-ui",
-    client: "Zenith Wealth Portal",
-    category: "Designing",
-    title: "Premium UI/UX Transformation for Investment Platforms",
-    description: "Designed a clean, modern wealth dashboard structure and interactive flow designs that decreased user friction and boosted platform onboarding by 70%.",
-    logoText: "ZENITH",
-    icon: <FaPaintBrush />,
-    metrics: [
-      { value: "70%", label: "Onboarding Up" },
-      { value: "<2m", label: "Onboarding Time" },
-      { value: "4.9★", label: "User Rating" }
+      { value: "Faster", label: "Page Performance" },
+      { value: "Responsive", label: "Mobile Experience" },
+      { value: "Scalable", label: "Content Structure" }
     ]
   }
 ];
@@ -192,9 +141,7 @@ export const CaseStudiesClient: React.FC = () => {
       <section className="bm-cs-hero">
         <FadeIn delay={0.1}>
           <div className="bm-cs-hero-badge">
-            <span className="bm-cs-hero-badge__icon">
-              <FaBolt className="w-3.5 h-3.5" color="black" />
-            </span>
+            <HeroBoltIcon />
             <p className="bm-cs-hero-badge__text">Our Work & Success Stories</p>
           </div>
         </FadeIn>
@@ -268,9 +215,9 @@ export const CaseStudiesClient: React.FC = () => {
                             ))}
                           </div>
 
-                          <span className="bm-cs-card__link">
+                          <Link href={study.contentUrl} className="bm-cs-card__link">
                             View Case Study <FaArrowRight size={14} />
-                          </span>
+                          </Link>
                         </div>
                       </article>
                     </StaggerItem>
@@ -293,9 +240,9 @@ export const CaseStudiesClient: React.FC = () => {
           <div>
             <div className="bm-cs-featured__badge">Spotlight Success</div>
             <h2 className="bm-cs-featured__title">
-              How we built a sustainable <span>driver onboarding engine</span> for Truck Taxi
+              Fast, Scalable &amp; Cost-Efficient <span>Driver Onboarding</span>
             </h2>
-            <p className="bm-cs-featured__client">Client: Truck Taxi Logistics | Campaign: June 2025</p>
+            <p className="bm-cs-featured__client">Truck Taxi is an on-demand truck and commercial vehicle booking platform.</p>
 
             <div className="bm-cs-featured__blocks">
               <div className="bm-cs-featured__block">
@@ -303,7 +250,7 @@ export const CaseStudiesClient: React.FC = () => {
                   <FaBolt /> The Challenge
                 </h4>
                 <p className="bm-cs-featured__block-text">
-                  Truck Taxi faced heavy competition in acquiring active commercial truck drivers. Traditional digital advertising paths proved expensive, inefficient, and struggled with lead intent.
+                  Traditional digital ads were expensive, inefficient, and not scalable.
                 </p>
               </div>
 
@@ -312,7 +259,7 @@ export const CaseStudiesClient: React.FC = () => {
                   <FaCheckCircle color="#ffcc00" /> Our Solution
                 </h4>
                 <p className="bm-cs-featured__block-text">
-                  We engineered a "Driver-First Acquisition" strategy. Hyper-targeted Meta lead ads based on driver localization interests, coupled with ultra-simple form completions, reduced friction and drove direct conversions.
+                  Brand Mindz Global implemented a driver-first acquisition strategy.
                 </p>
               </div>
             </div>
@@ -323,7 +270,7 @@ export const CaseStudiesClient: React.FC = () => {
             <div className="bm-cs-featured__stat-header">
               <span className="bm-cs-featured__stat-label">Generated Leads</span>
               <div className="bm-cs-featured__stat-value">
-                <Counter target={587} /><span>+ Leads</span>
+                <Counter target={1000} /><span>+ Verified Driver Leads Generated</span>
               </div>
             </div>
 
@@ -368,11 +315,11 @@ export const CaseStudiesClient: React.FC = () => {
             <div className="bm-cs-featured__meta-grid">
               <div className="bm-cs-featured__meta-item">
                 <span className="bm-cs-featured__meta-label">Conversion Rate</span>
-                <span className="bm-cs-featured__meta-value">30K+ / ▲</span>
+                <span className="bm-cs-featured__meta-value">13+ Lakh Drivers</span>
               </div>
               <div className="bm-cs-featured__meta-item">
                 <span className="bm-cs-featured__meta-label">Cost Per Lead</span>
-                <span className="bm-cs-featured__meta-value">₹2.72</span>
+                <span className="bm-cs-featured__meta-value">₹2.60 – ₹3.62</span>
               </div>
             </div>
           </div>
@@ -385,27 +332,27 @@ export const CaseStudiesClient: React.FC = () => {
           <div className="bm-cs-counters__grid">
             <div className="bm-cs-counter-item">
               <span className="bm-cs-counter-num">
-                <Counter target={50} suffix="+" />
+                <Counter target={1000} suffix="+" />
               </span>
-              <span className="bm-cs-counter-label">Projects Delivered</span>
+              <span className="bm-cs-counter-label">Verified Driver Leads Generated</span>
             </div>
             <div className="bm-cs-counter-item">
               <span className="bm-cs-counter-num">
-                <Counter target={130} suffix="%" />
+                <Counter target={13} suffix="+ Lakh" />
               </span>
-              <span className="bm-cs-counter-label">Avg. Business Growth</span>
+              <span className="bm-cs-counter-label">Total Reach</span>
             </div>
             <div className="bm-cs-counter-item">
               <span className="bm-cs-counter-num">
-                <Counter target={10} suffix="+" />
+                <Counter target={550} />
               </span>
-              <span className="bm-cs-counter-label">Countries Served</span>
+              <span className="bm-cs-counter-label">Sales Qualified Leads Generated</span>
             </div>
             <div className="bm-cs-counter-item">
               <span className="bm-cs-counter-num">
-                <Counter target={2} prefix="₹" suffix=".72" />
+                <Counter target={110} prefix="~" />
               </span>
-              <span className="bm-cs-counter-label">Avg. Cost Per Lead</span>
+              <span className="bm-cs-counter-label">Confirmed Admissions</span>
             </div>
           </div>
         </div>
@@ -417,11 +364,11 @@ export const CaseStudiesClient: React.FC = () => {
           <FadeIn delay={0.2}>
             <div className="bm-cs-testimonial-card">
               <p className="bm-cs-testimonial-text">
-                "We didn't just generate leads. Brand Mindz Global built a sustainable, scalable driver onboarding engine for Truck Taxi that surpassed all our expectations."
+                “We didn’t just generate leads — we built a sustainable driver onboarding engine for Truck Taxi.”
               </p>
               <div className="bm-cs-testimonial-avatar">TT</div>
-              <h4 className="bm-cs-testimonial-author">Logistics Acquisition Team</h4>
-              <p className="bm-cs-testimonial-role">Truck Taxi India</p>
+              <h4 className="bm-cs-testimonial-author">Truck Taxi</h4>
+              <p className="bm-cs-testimonial-role">Driver Onboarding (Meta Lead Forms)</p>
             </div>
           </FadeIn>
         </div>

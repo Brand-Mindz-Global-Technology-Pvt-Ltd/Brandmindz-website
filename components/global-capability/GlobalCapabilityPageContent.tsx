@@ -2,6 +2,7 @@ import "../../style/aboutus/globalcapability.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Faq from "@/components/home/Faq";
 import {
   ArrowRight,
   Globe,
@@ -13,9 +14,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import heroPattern from "@/assets/HomeSection/banner/group1.webp";
-import faqBackground from "@/assets/HomeSection/faq/15645760_784511.webp";
 import globalCapabilityTeam from "@/assets/about/global-capability-team.webp";
-import globalWorldMap from "@/assets/HomeSection/Whychoose/group4.webp";
+import GlobalStandardsInteractive from "./GlobalStandardsInteractive";
 import womenImage from "@/assets/about/women.webp";
 import definedKpisImage from "@/assets/branding/gemini_generate.webp";
 import visibilityImage from "@/assets/branding/visibility.webp";
@@ -271,7 +271,7 @@ export default function GlobalCapabilityPageContent() {
           <div className="gc-container">
             <div className="flex w-full justify-center px-4 text-center">
               <div
-  className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[18px] font-medium leading-normal tracking-normal md:text-[40px] md:leading-[30px]"
+  className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[clamp(1.35rem,2.5vw,2.5rem)] font-semibold leading-normal"
   style={{ maxWidth: "1100px" }}
 >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffdb00] text-black sm:h-10 sm:w-10">
@@ -281,7 +281,7 @@ export default function GlobalCapabilityPageContent() {
               </div>
             </div>
             <h1
-  className="gc-hero-title mx-auto text-center text-[clamp(3rem,6.35vw,6rem)] font-bold leading-[1.12] tracking-[-0.035em] text-black"
+  className="gc-hero-title mx-auto mt-8 text-center text-[clamp(3rem,6.35vw,6rem)] font-bold leading-[1.12] tracking-[-0.035em] text-black"
   style={{ maxWidth: "1300px" }}
 >
               <span>Built for</span>{" "}
@@ -427,29 +427,7 @@ export default function GlobalCapabilityPageContent() {
         </section>
 
         {/* Global Standards Section */}
-        <section className="gc-section gc-standards-section">
-          <div className="gc-container gc-standards-framework">
-            <div className="gc-standards-content">
-              <div className="gc-standards-box">
-                <h2 className="gc-standards-title">
-                  How we maintain global standards
-                </h2>
-                <p className="gc-standards-text">
-                  We follow structured SOPs, defined KPIs, performance reporting frameworks, and disciplined communication cycles to ensure consistency across regions. This systematic approach enables us to deliver predictable results while scaling operations across multiple markets.
-                </p>
-              </div>
-
-              <PointGrid
-                items={globalStandardsPoints}
-                dark={false}
-              />
-            </div>
-
-            <div className="gc-standards-map" aria-hidden="true">
-              <Image src={globalWorldMap} alt="" />
-            </div>
-          </div>
-        </section>
+        <GlobalStandardsInteractive points={globalStandardsPoints} />
 
         {/* Global Benchmark Section */}
         <section className="gc-section gc-benchmark-section">
@@ -469,34 +447,7 @@ export default function GlobalCapabilityPageContent() {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section
-          className="gc-faq-section"
-          style={{ backgroundImage: `url("${faqBackground.src}")` }}
-        >
-          <div className="gc-faq-shell">
-            <div className="gc-faq-header">
-              <p className="gc-faq-kicker">Frequently Asked Questions</p>
-              <h2 className="gc-faq-title">Global Capability Explained</h2>
-            </div>
-
-            <div className="gc-faq-grid">
-              {[faqs.slice(0, 4), faqs.slice(4)].map((column, columnIndex) => (
-                <div key={columnIndex} className="gc-faq-column">
-                  {column.map((faq, index) => (
-                    <details key={faq.question} className="gc-faq-item" open={columnIndex === 0 && index === 0}>
-                      <summary className="gc-faq-summary">
-                        {faq.question}
-                        <ChevronDown className="gc-faq-icon" size={24} />
-                      </summary>
-                      <p className="gc-faq-answer">{faq.answer}</p>
-                    </details>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Faq items={faqs} subtitle="Frequently Asked Questions — Global Capability" />
 
         {/* Final CTA */}
         <section className="gc-section gc-final-cta-section bg-white">
@@ -514,24 +465,5 @@ export default function GlobalCapabilityPageContent() {
         </section>
       </main>
     </>
-  );
-}
-
-function ChevronDown({ className, size }: { className?: string; size?: number }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size || 24}
-      height={size || 24}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <polyline points="6 9 12 15 18 9"></polyline>
-    </svg>
   );
 }

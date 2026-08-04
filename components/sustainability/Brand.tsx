@@ -75,37 +75,52 @@ const Brandsustainability = () => {
                 {
                     id: 4,
                     title: "Quality Education",
-                    tag: "Direct Alignment",
+                    tag: "Alignment Type",
                     image: Quality4,
-                    description: "Through education and skill-focused CSR initiatives, Brand Mindz contributes to improving access to learning and career readiness, especially for youth and underserved communities.",
+                    description: "Brand Mindz aligns its CSR and organizational practices with the United Nations Sustainable Development Goals (SDGs), especially SDG 5: Gender Equality. The company promotes women empowerment, supports women-led enterprises and women entrepreneurs, and ensures equal opportunity employment.",
                     contributions: [
-                      "Education and learning support programs",
-
-                       "Digital education and technology access initiatives ",
-
-                       "Career readiness and vocational skill development "
+                        "Entrepreneurship and skill development initiatives for women",
+                        "Digital literacy and financial awareness programs",
+                        "Inclusive hiring practices that promote women participation in the workforce"
                     ],
                     subtitle: "Quality Education",
 
-                    footerNote: ""
+                    footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
                 },
                 {
                     id: 5,
                     title: "Leadership knows No Gender",
                     tag: "Strong and Direct Alignment",
                     image: Equallity5,
-                    description: `Brand Mindz prioritizes women-led businesses, women entrepreneurs, and women professionals across its CSR initiatives and organizational practices. 
-<br/>
-In addition to external CSR programs, the Company actively promotes gender inclusion in employment by prioritizing opportunities for women talents across functions. `,
-                    contributions: [
-                        "Entrepreneurship and skill development initiatives for women",
-
-                          "Digital literacy and financial awareness programs ",
-
-                         "Inclusive hiring practices that promote women participation in the workforce" 
-                    ],
+                    description: `Brand Mindz aligns its CSR and organizational
+                    practices with the United Nations Sustainable Development Goals
+                    (SDGs), especially SDG 5: Gender Equality. The company promotes
+                     women empowerment, supports women-led enterprises and women entrepreneurs,
+                     and ensures equal opportunity employment. Through inclusive growth, diversity
+                      and inclusion, and responsible business practices, Brand Mindz contributes to
+                      sustainable development and long-term social impact.
+                       <br/>
+                       <br/>
+                       Key contributions include a strong focus on empowering women
+                        through entrepreneurship and skill development initiatives
+                        that enhance their employability and economic independence.
+                         These programs are designed to equip women with practical
+                         skills, leadership abilities, and business knowledge, enabling them
+                         to build sustainable livelihoods and actively participate in economic growth.
+                       <br/>
+                       <br/>
+                         In addition, digital literacy and financial awareness programs
+                          are implemented to improve access to technology and financial systems,
+                           helping women gain confidence in using digital tools, managing personal finances,
+                          and understanding savings, credit, and investment opportunities.
+                       <br/>
+                          <br/>
+                          This strategic alignment is directly supported by CSR Focus Area 5.1 –
+                           Women Empowerment, reinforcing the commitment to advancing gender
+                           equality, economic inclusion, and long-term social impact.`,
+                    contributions: [],
                     subtitle: "Gender Equality",
-                    footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
+                    footerNote: ""
                 },
                 {
                     id: 6,
@@ -143,17 +158,11 @@ In addition to external CSR programs, the Company actively promotes gender inclu
                 {
                     id: 8,
                     title: "Decent Work and Economic Growth",
-                    tag: "Strong and Direct Alignment ",
+                    tag: "Alignment Type",
                     image: Growth8,
-                    description: "Brand Mindz actively supports decent work and economic growth by enabling employment opportunities for first-generation graduates and women talents, particularly from Tier 2 and emerging regions. <br/>The Company consciously builds teams from Tier 2 cities, creating global exposure and growth opportunities through technology, digital services, and international-standard work environments.",
-                    contributions: ["Prioritizing employment for first-generation graduates ",
-
-     "Creating structured growth opportunities for women professionals", 
-
-"Providing skill development and real-world digital exposure ",
-
-"Supporting entrepreneurship and employability initiatives through CSR programs"],
-                    footerNote: "This approach directly supports sustainable livelihoods and inclusive economic participation. ",
+                    description: "Economic growth initiatives...",
+                    contributions: ["Job training"],
+                    footerNote: "Supported by CSR Focus Area...",
                     subtitle: "Decent Work  Economic Growth",
 
                 },
@@ -171,16 +180,11 @@ In addition to external CSR programs, the Company actively promotes gender inclu
                 {
                     id: 10,
                     title: "Reduced Inequalities",
-                    tag: "Indirect but Meaningful Alignment ",
+                    tag: "Alignment Type",
                     image: Reduced10,
-                    description: "By prioritizing talent from Tier 2 regions, first-generation graduates, women professionals, and underserved communities, Brand Mindz helps reduce geographic, social, and economic inequalities. ",
-                    contributions: ["Inclusive hiring beyond metro-centric talent pools", 
-
-                                  "Digital access and career opportunities for regional talent ",
-
-                                "Community-focused CSR initiatives"
-                            ],
-                    footerNote: "",
+                    description: "Inclusive programs...",
+                    contributions: ["Equality initiatives"],
+                    footerNote: "Supported by CSR Focus Area...",
                     subtitle: "Reduced Inequalities",
 
                 },
@@ -208,11 +212,11 @@ In addition to external CSR programs, the Company actively promotes gender inclu
                 {
                     id: 13,
                     title: "Climate Action",
-                    tag: "Selective Alignment",
+                    tag: "Alignment Type",
                     image: Action13,
-                    description: "The Company supports environmental responsibility through awareness initiatives and digital campaigns that promote sustainable practices and conservation, in line with its CSR Policy. ",
-                    contributions: [],
-                    footerNote: "",
+                    description: "Climate initiatives...",
+                    contributions: ["Carbon reduction"],
+                    footerNote: "Supported by CSR Focus Area...",
                     subtitle: "Climate Action",
 
                 },
