@@ -3,7 +3,9 @@ stages:
   - deploy
 
 variables:
-  REGISTRY_IMAGE: $CI_REGISTRY_IMAGE:latest
+  WEBSITE_IMAGE: $CI_REGISTRY_IMAGE/website:latest
+  ADMIN_FRONTEND_IMAGE: $CI_REGISTRY_IMAGE/admin-frontend:latest
+  ADMIN_API_IMAGE: $CI_REGISTRY_IMAGE/admin-api:latest
 
 build:
   stage: build
@@ -15,8 +17,17 @@ build:
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker build --pull -t $REGISTRY_IMAGE .
-    - docker push $REGISTRY_IMAGE
+    # 1. Build & Push Website
+    - docker build --pull -t $WEBSITE_IMAGE .
+    - docker push $WEBSITE_IMAGE
+    
+    # 2. Build & Push Admin Frontend
+    - docker build --pull -t $ADMIN_FRONTEND_IMAGE -f brandmindz_admin/Dockerfile.frontend brandmindz_admin/
+    - docker push $ADMIN_FRONTEND_IMAGE
+    
+    # 3. Build & Push Admin API
+    - docker build --pull -t $ADMIN_API_IMAGE -f brandmindz_admin/brandmindz_admin_API/Dockerfile.api brandmindz_admin/brandmindz_admin_API/
+    - docker push $ADMIN_API_IMAGE
 
 deploy:
   stage: deploy
@@ -33,9 +44,25 @@ deploy:
   script:
     - ssh $EC2_USER@$EC2_IP "
         docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY &&
-        docker pull $REGISTRY_IMAGE &&
+        
+        # Pull latest images
+        docker pull $WEBSITE_IMAGE &&
+        docker pull $ADMIN_FRONTEND_IMAGE &&
+        docker pull $ADMIN_API_IMAGE &&
+        
+        # Stop & Remove existing containers
         docker stop brandmindz-app || true &&
         docker rm brandmindz-app || true &&
-        docker run -d --name brandmindz-app --restart always -p 3000:3000 $REGISTRY_IMAGE &&
+        docker stop brandmindz-admin-frontend || true &&
+        docker rm brandmindz-admin-frontend || true &&
+        docker stop brandmindz-admin-api || true &&
+        docker rm brandmindz-admin-api || true &&
+        
+        # Start containers
+        docker run -d --name brandmindz-app --restart always -p 3000:3000 $WEBSITE_IMAGE &&
+        docker run -d --name brandmindz-admin-frontend --restart always -p 3001:80 $ADMIN_FRONTEND_IMAGE &&
+        docker run -d --name brandmindz-admin-api --restart always --add-host=host.docker.internal:host-gateway -p 3007:3007 -e DB_HOST=host.docker.internal -e PORT=3007 $ADMIN_API_IMAGE &&
+        
+        # Clean up old images
         docker image prune -af
       "

@@ -1,0 +1,22 @@
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.form-card {
+  max-width: 800px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.editor {
+  min-height: 300px;
+  resize: vertical;
+}
