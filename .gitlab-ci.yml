@@ -42,27 +42,4 @@ deploy:
     - chmod 700 ~/.ssh
     - ssh-keyscan -H $EC2_IP >> ~/.ssh/known_hosts
   script:
-    - ssh $EC2_USER@$EC2_IP "
-        docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY &&
-        
-        # Pull latest images
-        docker pull $WEBSITE_IMAGE &&
-        docker pull $ADMIN_FRONTEND_IMAGE &&
-        docker pull $ADMIN_API_IMAGE &&
-        
-        # Stop & Remove existing containers
-        docker stop brandmindz-app || true &&
-        docker rm brandmindz-app || true &&
-        docker stop brandmindz-admin-frontend || true &&
-        docker rm brandmindz-admin-frontend || true &&
-        docker stop brandmindz-admin-api || true &&
-        docker rm brandmindz-admin-api || true &&
-        
-        # Start containers
-        docker run -d --name brandmindz-app --restart always -p 3000:3000 $WEBSITE_IMAGE &&
-        docker run -d --name brandmindz-admin-frontend --restart always -p 3001:80 $ADMIN_FRONTEND_IMAGE &&
-        docker run -d --name brandmindz-admin-api --restart always --add-host=host.docker.internal:host-gateway -p 3007:3007 -e DB_HOST=host.docker.internal -e PORT=3007 $ADMIN_API_IMAGE &&
-        
-        # Clean up old images
-        docker image prune -af
-      "
+    - ssh $EC2_USER@$EC2_IP "docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY && docker pull $WEBSITE_IMAGE && docker pull $ADMIN_FRONTEND_IMAGE && docker pull $ADMIN_API_IMAGE && docker stop brandmindz-app || true && docker rm brandmindz-app || true && docker stop brandmindz-admin-frontend || true && docker rm brandmindz-admin-frontend || true && docker stop brandmindz-admin-api || true && docker rm brandmindz-admin-api || true && docker run -d --name brandmindz-app --restart always -p 3000:3000 $WEBSITE_IMAGE && docker run -d --name brandmindz-admin-frontend --restart always -p 3001:80 $ADMIN_FRONTEND_IMAGE && docker run -d --name brandmindz-admin-api --restart always --add-host=host.docker.internal:host-gateway -p 3007:3007 -e DB_HOST=host.docker.internal -e PORT=3007 $ADMIN_API_IMAGE && docker image prune -af"
