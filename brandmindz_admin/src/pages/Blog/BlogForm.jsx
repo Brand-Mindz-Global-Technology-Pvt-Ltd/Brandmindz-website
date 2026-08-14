@@ -61,7 +61,7 @@ const BlogForm = () => {
         });
         // Show existing image as preview
         if (blog.image) {
-          setImagePreview(`http://localhost:3007/storage/uploads/blog/${blog.image}`);
+          setImagePreview(`${BASE_ENV}/storage/uploads/blog/${blog.image}`);
         }
       }
     } catch (error) {
