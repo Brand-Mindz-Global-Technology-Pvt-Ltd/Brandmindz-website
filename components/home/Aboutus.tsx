@@ -10,10 +10,23 @@ import { ArrowLeft } from "lucide-react";
 
 // Asset Imports (Replace with your actual paths)
 import founderImg from "../../assets/HomeSection/about/frame.webp";
+import founderImg5 from "../../assets/about/frame2147226233.webp";
+import founderImg6 from "../../assets/about/frame2147226233-2.webp";
 import founderImg1 from "../../assets/about/foundern-1.webp";
 import founderImg2 from "../../assets/about/foundern-2.webp";
 import founderImg3 from "../../assets/about/foundern-3.webp";
 import founderImg4 from "../../assets/about/foundern-n.webp";
+import team1 from "../../assets/about/team.webp";
+import trademarkLogo from "../../assets/about/news18tamil11.webp";
+import dpiitLogo from "../../assets/about/sunnews11.webp";
+import msmeLogo from "../../assets/about/MSME_Logo.svg";
+import privateLimitedLogo from "../../assets/about/pl.webp";
+import gstLogo from "../../assets/about/gst.webp";
+import gemLogo from "../../assets/about/gem.png";
+
+import promisingStartupAward from "../../assets/about/awards/a1.webp";
+import startupAward from "../../assets/about/awards/a2.webp";
+
 
 import vision1 from "../../assets/HomeSection/about/mingcute_target-line.webp";
 import vision2 from "../../assets/HomeSection/about/material-symbols_target.webp";
@@ -49,10 +62,15 @@ interface SdgItem {
   subtitle?: string;
 }
 
+interface CertificateItem {
+  title: string;
+  image: StaticImageData;
+}
+
 interface MenuItem {
   id: number;
   label: string;
-  type?: "standard" | "vision" | "sustainability";
+  type?: "standard" | "vision" | "sustainability" | "awards" | "certification";
   subtitle?: string;
   title: string;
   img?: StaticImageData;
@@ -62,6 +80,8 @@ interface MenuItem {
   subdesc?: string;
   visions?: Array<{ title: string; text: string }>;
   sdgs?: SdgItem[];
+  certificates?: CertificateItem[];
+  awards?: CertificateItem[];
 }
 
 const Aboutus = () => {
@@ -76,7 +96,7 @@ const Aboutus = () => {
       type: "standard",
       subtitle: "About Brand Mindz Global",
       title: "A Results Driven Digital Agency Focused on Growth",
-      img: founderImg,
+      img: founderImg5,
       desc: [
         "We are a full-stack marketing agency built to help businesses grow with clarity, structure, and accountability. We work at the intersection of design, marketing, and technology, enabling brands to build strong digital foundations and scale with confidence.",
         "Our approach is strategy-led and execution-focused. Every engagement is driven by clear objectives, disciplined processes, and measurable outcomes. We partner with startups, growing businesses, and enterprises that value long-term thinking, ethical practices, and consistency in delivery."
@@ -90,7 +110,7 @@ const Aboutus = () => {
       type: "standard",
       subtitle: "Our Founder",
       title: "Founder of ideas that turn into successful brands",
-      img: founderImg1,
+      img: founderImg6,
       desc: [
         `R.Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands. `,
         `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an official mentor for Mentor TN, a government initiative for startup growth.`
@@ -415,7 +435,7 @@ Our climate action efforts focus on reducing unnecessary paper and printing, usi
       subtitle: "Our Work Culture",
       type: "standard",
       title: "Respect, Responsibility, and Growth for All",
-      img: founderImg2,
+      img: team1,
       subdesc: "Ubuntu — “I am because we are; because we are, you are.”",
       desc: [
         `This philosophy guides how we work together as one team. We believe in shared ownership, mutual respect, and collective accountability in everything we do. By supporting one another and working toward common goals, we create an environment where every contribution matters and success is achieved through unity, trust, and collaboration.`,
@@ -425,26 +445,35 @@ Our climate action efforts focus on reducing unnecessary paper and printing, usi
     },
     {
       id: 9, label: "Awards & Accolades",
+      type: "awards",
       subtitle: "Awards & Accolades",
-
-      title: "Respect, Responsibility, and Growth for All",
-      subdesc: "Ubuntu — “I am because we are; because we are, you are.”",
+      title: "Celebrating Milestones of Excellence",
       img: founderImg4,
       quote: "Promise what you deliver, and deliver what you promised.",
-      desc: [
-        `This philosophy guides how we work together as one team. We believe in shared ownership, mutual respect, and collective accountability in everything we do. By supporting one another and working toward common goals, we create an environment where every contribution matters and success is achieved through unity, trust, and collaboration.`,
-        `We believe progress is strongest when it is built together. Our approach is rooted in cooperation, fairness, and a sense of responsibility toward one another. By encouraging open dialogue and shared decision-making, we strengthen trust and alignment across teams and partners. `]
+      awards: [
+        { title: "Promising Startup Award 2023", image: promisingStartupAward },
+        { title: "Best Startup Award 2024", image: startupAward },
+        { title: "Best Startup Entrepreneur Award 2024", image: startupAward },
+        { title: "Promising Growth Startup 2025", image: startupAward },
+        { title: "Startup Icon Award 2025", image: startupAward },
+        { title: "Outstanding Growth Award 2026", image: startupAward },
+      ]
     }, {
       id: 10,
       label: "Certification",
-      title: "Respect, Responsibility, and Growth for All",
-      subtitle: "Awards & Accolades",
+      type: "certification",
+      title: "Our Registrations & Certifications",
+      subtitle: "Certifications & Registrations",
       img: founderImg1,
-      subdesc: "Ubuntu — “I am because we are; because we are, you are.”",
       quote: "Promise what you deliver, and deliver what you promised.",
-      desc: [
-        `This philosophy guides how we work together as one team. We believe in shared ownership, mutual respect, and collective accountability in everything we do. By supporting one another and working toward common goals, we create an environment where every contribution matters and success is achieved through unity, trust, and collaboration.`,
-        `We believe progress is strongest when it is built together. Our approach is rooted in cooperation, fairness, and a sense of responsibility toward one another. By encouraging open dialogue and shared decision-making, we strengthen trust and alignment across teams and partners. `]
+      certificates: [
+        { title: "Registered Trademark", image: trademarkLogo },
+        { title: "DPIIT - Registered Startup", image: dpiitLogo },
+        { title: "MSME Certified", image: msmeLogo },
+        { title: "Registered Private Limited", image: privateLimitedLogo },
+        { title: "GST Certificate", image: gstLogo },
+        { title: "GEM Registered", image: gemLogo },
+      ]
     },
   ];
 
@@ -602,6 +631,81 @@ Our climate action efforts focus on reducing unnecessary paper and printing, usi
                 </div>
               ))}
             </div>
+          </div>
+        );
+
+      case "awards":
+        return (
+          <div className="bm-awards-layout">
+            <div className="bm-awards-content">
+              <div className="bm-awards-header">
+                <p className="bm-about-subtitle">{current.subtitle}</p>
+                <h2 className="bm-about-main-title">{current.title}</h2>
+              </div>
+
+              <div className="bm-awards-grid">
+                {current.awards?.map((award) => (
+                  <article className="bm-award-card" key={award.title}>
+                    <div className="bm-award-image">
+                      <Image
+                        src={award.image}
+                        alt={award.title}
+                        sizes="(max-width: 480px) 30vw, (max-width: 1024px) 20vw, 9vw"
+                      />
+                    </div>
+                    <h3>{award.title}</h3>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            {current.img && (
+              <div className="bm-about-image-side bm-awards-founder">
+                <div className="bm-about-img-frame">
+                  <Image src={current.img} alt="Brand Mindz founder" priority />
+                  <div className="bm-about-quote-overlay">&quot;{current.quote}&quot;</div>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+
+      case "certification":
+        return (
+          <div className="bm-certification-layout">
+            <div className="bm-certification-content">
+              <div className="bm-certification-header">
+                <p className="bm-about-subtitle">{current.subtitle}</p>
+                <h2 className="bm-about-main-title">{current.title}</h2>
+                <p className="bm-certification-intro">
+                  Recognised registrations that reflect our commitment to trusted and compliant business practices.
+                </p>
+              </div>
+
+              <div className="bm-certificate-grid">
+                {current.certificates?.map((certificate) => (
+                  <article className="bm-certificate-card" key={certificate.title}>
+                    <div className="bm-certificate-image">
+                      <Image
+                        src={certificate.image}
+                        alt={certificate.title}
+                        sizes="(max-width: 480px) 42vw, (max-width: 1024px) 28vw, 15vw"
+                      />
+                    </div>
+                    <h3>{certificate.title}</h3>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            {current.img && (
+              <div className="bm-about-image-side bm-certification-founder">
+                <div className="bm-about-img-frame">
+                  <Image src={current.img} alt="Brand Mindz founder" priority />
+                  <div className="bm-about-quote-overlay">&quot;{current.quote}&quot;</div>
+                </div>
+              </div>
+            )}
           </div>
         );
 

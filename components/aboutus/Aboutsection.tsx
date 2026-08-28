@@ -88,9 +88,9 @@ import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
 import aboutpic from '../../assets/about/frame2147226233.webp'
 
-const ScrollLine = ({ content }) => {
+const ScrollLine = ({ content }: { content: string }) => {
   const [isHighlighted, setIsHighlighted] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -132,7 +132,7 @@ const ScrollLine = ({ content }) => {
   );
 };
 
-const ScrollSpan = ({ children }) => {
+const ScrollSpan = ({ children }: { children: React.ReactNode }) => {
   if (typeof children !== 'string') return <span>{children}</span>;
   
   // Split by period and space

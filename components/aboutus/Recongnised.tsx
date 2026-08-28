@@ -10,6 +10,8 @@ import news18BW from '../../assets/about/frame21472262391.webp';
 import dinamalar3BW from '../../assets/about/sunnews13.webp';
 import platform5BW from '../../assets/about/news18tamil11.webp';
 import platform6BW from '../../assets/about/dinamalar13.webp';
+import platform7BW from '../../assets/about/MSME_Logo.svg';
+
 
 // Import your COLOR logos (replace these with your actual color image imports)
 import news18Color from '../../assets/about/vikatan1.webp';
@@ -22,9 +24,9 @@ export const RecognisedSection = () => {
   const channelLogos = [
     { 
       id: 1, 
-      bw: news18BW, 
-      color: news18Color, 
-      alt: "News 18 Tamil" 
+      bw: platform5BW, 
+      color: platform5Color, 
+      alt: "Dinamalar" 
     },
     { 
       id: 2, 
@@ -33,20 +35,26 @@ export const RecognisedSection = () => {
       alt: "Dinamalar" 
     },
     { 
-      id: 3, 
-      bw: platform5BW, 
-      color: platform5Color, 
-      alt: "Dinamalar" 
+      id: 5, 
+      bw: platform7BW, 
+      color: platform7BW, 
+      alt: "MSME Logo" 
     },
     { 
-      id: 4, 
+      id: 3, 
       bw: platform6BW, 
       color: platform6Color, 
       alt: "Dinamalar" 
     },
+    { 
+      id: 4, 
+      bw: news18BW, 
+      color: news18Color, 
+      alt: "News 18 Tamil" 
+    },
   ];
 
-  const [hoveredId, setHoveredId] = useState(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
     <section className="bm-featured-section">

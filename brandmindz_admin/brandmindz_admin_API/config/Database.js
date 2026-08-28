@@ -1,31 +1,28 @@
-var mysql = require('mysql2');
-var db = mysql.createConnection({
+const mysql = require('mysql2');
+
+const db = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
+    port: Number(process.env.DB_PORT || 3306),
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'brandmindz'
+    database: process.env.DB_NAME || 'brandmindz',
+    waitForConnections: true,
+    connectionLimit: Number(process.env.DB_CONNECTION_LIMIT || 10),
+    queueLimit: 0,
+    enableKeepAlive: true,
+    keepAliveInitialDelay: 10000
 });
 
-db.connect(function (err) {
+// Check configuration at startup without leaving the application tied to one
+// connection. Pool queries can acquire a fresh connection after a DB restart.
+db.getConnection((err, connection) => {
     if (err) {
-        console.error('Error connecting to MySQL database:', err.message);
-        if (err.code === 'ER_BAD_DB_ERROR') {
-            console.error(`[MySQL] Unknown database: '${process.env.DB_NAME || 'pmsbm'}'. Please make sure the database is created, or check your DB_NAME in the .env file.`);
-        }
+        console.error(`[MySQL] Initial connection failed (${err.code || 'UNKNOWN'}): ${err.message}`);
         return;
     }
-    console.log('Connected to MySQL database successfully.');
-});
 
-db.on('error', function (err) {
-    console.error('MySQL connection error:', err.message);
-    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-        console.error('MySQL database connection was closed.');
-    } else if (err.code === 'ER_CON_COUNT_ERROR') {
-        console.error('MySQL database has too many connections.');
-    } else if (err.code === 'ECONNREFUSED') {
-        console.error('MySQL database connection was refused.');
-    }
+    console.log('Connected to MySQL database successfully.');
+    connection.release();
 });
 
 module.exports = db;

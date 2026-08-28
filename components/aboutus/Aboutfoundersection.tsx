@@ -221,7 +221,8 @@ const ScrollSpan = ({ children }: { children: React.ReactNode }) => {
 
 const Paragraph = {
   paragraph1: "R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10 years of experience leading marketing teams in large corporates and mentoring over 20,000 entrepreneurs across India. Vasanth founded Brand Mindz with a singular mission: to help businesses grow digitally through strategic, outcome-driven approaches. His commitment to accountability and ethical business practices is guided by a personal principle: 'Promise what you deliver, and deliver what you promised.'",
-  paragraph2: "Inspired by his own family's entrepreneurial journey and the challenges faced by startups, Vasanth is passionate about supporting the entrepreneur community. He serves as an official mentor for Mentor TN, a government initiative aimed at nurturing startups and guiding them toward sustainable growth. Under his leadership, Brand Mindz has become a trusted partner for ethical, value-driven businesses, combining corporate-grade expertise with a mission-driven approach to empower entrepreneurs and create measurable digital impact."
+  paragraph2: "Inspired by his own family's entrepreneurial journey and the challenges faced by startups, Vasanth is passionate about supporting the entrepreneur community. He serves as an official mentor for Mentor TN, a government initiative aimed at nurturing startups and guiding them toward sustainable growth. Under his leadership, Brand Mindz has become a trusted partner for ethical, value-driven businesses, combining corporate-grade expertise with a mission-driven approach to empower entrepreneurs and create measurable digital impact.",
+  paragraph3: "At Brand Mindz Global Technology, the aim is not just to provide marketing services, but to help businesses grow in the right direction. Vasanth believes that every business, whether it is a startup or an established company, needs a clear plan, honest support, and results that can be seen. He understands the challenges business owners face because of his own experience working with entrepreneurs and growing businesses. From building a strong online presence for new businesses to helping existing companies reach more customers, his approach is simple, practical, and focused on real business growth. This mindset continues to guide Brand Mindz in helping businesses build a strong digital presence and achieve long-term success."
 }
 
 const founderData = [
@@ -312,6 +313,11 @@ export const AboutFounderContentSection = () => {
                 <p className="bm-about-paragraph-founder">
                    <ScrollSpan>
                     {Paragraph.paragraph2}
+                  </ScrollSpan>
+                </p>
+                <p className="bm-about-paragraph-founder">
+                   <ScrollSpan>
+                    {Paragraph.paragraph3}
                   </ScrollSpan>
                 </p>
               </div>
