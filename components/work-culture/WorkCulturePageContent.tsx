@@ -284,7 +284,7 @@ Culture is our operating system.
 
         <section className="wc-section bg-white">
           <div className="wc-container">
-            <div className="mx-auto grid items-stretch gap-8 overflow-hidden rounded-[44px] bg-zinc-950 p-5 text-white shadow-[0_30px_90px_rgba(0,0,0,.18)] lg:grid-cols-2 lg:p-7"
+            <div className="mx-auto grid items-stretch gap-8 overflow-hidden rounded-[44px] bg-[#2a2a2a] p-5 text-white shadow-[0_30px_90px_rgba(0,0,0,.18)] lg:grid-cols-2 lg:p-7"
             style={{ maxWidth: "1360px" }}>
               <div
   className="wc-founder-copy flex flex-col items-center justify-center rounded-[36px] text-center"
@@ -546,7 +546,7 @@ Culture is our operating system.
                 </div>
               </article>
 
-              <article className="wc-dual-card rounded-[42px] bg-[#000000]">
+              <article className="wc-dual-card rounded-[42px] bg-[#2a2a2a]">
                 <p className="wc-dual-eyebrow text-sm font-bold uppercase tracking-[0.22em] text-white">Respect in practice</p>
                 <h2 className="wc-dual-title font-extrabold text-white tracking-[-0.045em]">
                   Every belief, background, and practice matters.
@@ -595,7 +595,7 @@ Not words.
 
         <section className="wc-section bg-white">
           <div className="wc-container">
-            <div className="wc-stay-card rounded-[44px] bg-zinc-950 text-white shadow-[0_30px_80px_rgba(0,0,0,.16)]">
+            <div className="wc-stay-card rounded-[44px] bg-[#2a2a2a] text-white shadow-[0_30px_80px_rgba(0,0,0,.16)]">
               <p className="wc-stay-eyebrow text-sm font-bold uppercase tracking-[0.22em] text-[#ffdb00]">Why people stay</p>
               <h2 className="wc-stay-title font-extrabold tracking-[-0.05em]">
                 Respected. Heard. Growing.

@@ -47,7 +47,7 @@ export const EcommercePackages = ({ data }: { data: any }) => {
                   ))}
                 </ul>
 
-                <button className="bm-pkg-btn">
+                <button className="bm-pkg-btn" onClick={() => router.push("/contact")}>
                   Get a Proposal
                 </button>
               </div>

@@ -6,10 +6,12 @@ import Image from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ArrowRight } from "lucide-react";
 import { useDevelopmentContext } from "./DevelopmentContext";
+import { useRouter } from 'next/navigation';
 
 import founderImg from "../../../assets/branding/braddingabount.webp";
 
 export const Developmentabout = () => {
+  const router = useRouter();
   const { activeDevelopmentTab } = useDevelopmentContext();
   const [activeTab, setActiveTab] = useState(1);
 
@@ -498,7 +500,7 @@ export const Developmentabout = () => {
                 </div>
 
                 {current.btn && (
-                  <button className="bm-about-learn-btn-branding">
+                  <button className="bm-about-learn-btn-branding" onClick={() => router.push('/contact')}>
                     <div className="bm-btn-icon-branding">
                       <ArrowRight size={18} />
                     </div>

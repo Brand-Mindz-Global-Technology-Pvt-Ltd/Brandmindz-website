@@ -1,40 +1,29 @@
-const mysql = require('mysql2');
-const config = require('../config');
+const mysql = require('mysql2/promise');
 
-async function query(sql, params) {
-  const connection = await mysql.createConnection({
-    /* don't expose password or any sensitive info, done only for demo */
-    host: "localhost",
-    user: "naijagahuser",
-    password: "E5jZs8WHEAhMDE7D",
-    database: "naijagah",
-  });
-//   return
-//   const [results,] = await connection.execute(sql, params);
-// connection.execute(
-//   'SELECT * FROM `programming_languages`',[],
-//   function(err, results, fields) {
-//     console.log(results); // results contains rows returned by server
-//     console.log(fields); // fields contains extra meta data about results, if available
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'naijagahuser',
+  password: 'E5jZs8WHEAhMDE7D',
+  database: 'naijagah',
 
-//     // If you execute same statement again, it will be picked from a LRU cache
-//     // which will save query preparation time and give better performance
-//   }
-// );
-// simple query
-connection.query(
-  'SELECT * FROM programming_language',
-  function(err, results, fields) {
-    console.log(results); // results contains rows returned by server
-    console.log(fields);
-    return results// fields contains extra meta data about results, if available
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 10000,
+});
+
+async function query(sql, params = []) {
+  try {
+    const [results] = await pool.execute(sql, params);
+    return results;
+  } catch (error) {
+    console.error('MySQL Query Error:', error);
+    throw error;
   }
-);
- 
-
-     
 }
 
 module.exports = {
-  query
-}
+  query,
+};

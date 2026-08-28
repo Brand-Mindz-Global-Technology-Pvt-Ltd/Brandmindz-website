@@ -1,6 +1,3 @@
-
-
-
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -8,11 +5,12 @@ import styles from "../../style/home/ProvenGrowthSection.module.css";
 import { TrendingUp, AlertCircle, Layers } from 'lucide-react';
 import { FaCheckCircle } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
+import Link from "next/link";
 
 export default function ProvenGrowthSection() {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   const targetNumber = 587;
   const duration = 2000; // Animation duration in milliseconds (2 seconds)
@@ -33,12 +31,12 @@ export default function ProvenGrowthSection() {
   }, [hasAnimated]);
 
   const startCountAnimation = () => {
-    let startTimestamp = null;
-    const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp;
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (startTimestamp === null) startTimestamp = timestamp;
+      const elapsed = timestamp - startTimestamp;
+      const progress = Math.min(elapsed / duration, 1);
 
-      // Using an easing function (easeOutQuad) for a smoother finish
       const currentCount = Math.floor(progress * targetNumber);
       setCount(currentCount);
 
@@ -74,7 +72,9 @@ export default function ProvenGrowthSection() {
               <p className={styles.cardDesc}>
                 Brand Mindz Global enables scalable truck taxi driver acquisition in 15 days using data-driven marketing, hyper-local targeting, and performance optimization to deliver qualified driver leads.
               </p>
-              <button className={styles.viewButton}>View our case study</button>
+              <Link href="/case-studies" className={styles.viewButton}>
+                View our case study
+              </Link>
             </div>
 
             <div className={styles.centerCard}>

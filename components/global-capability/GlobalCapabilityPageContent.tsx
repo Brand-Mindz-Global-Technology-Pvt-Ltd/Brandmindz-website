@@ -405,8 +405,8 @@ export default function GlobalCapabilityPageContent() {
         </section>
 
         {/* Beyond Borders Section */}
-        <section className="gc-section gc-readiness-section">
-          <div className="gc-container">
+        <section className="gc-section gc-readiness-section bg-[#2a2a2a]">
+          <div className="gc-container ">
             <SectionIntro
               eyebrow="Beyond Borders. Beyond Excuses."
               title="Global operations demand maturity and preparation."
@@ -414,7 +414,7 @@ export default function GlobalCapabilityPageContent() {
               dark
             />
 
-            <div className="gc-readiness-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="gc-readiness-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ">
               {borderReadiness.map(({ title, description, icon: Icon }) => (
                 <article key={title} className="gc-readiness-card">
                   <Icon className="gc-readiness-icon" size={30} />
@@ -430,8 +430,8 @@ export default function GlobalCapabilityPageContent() {
         <GlobalStandardsInteractive points={globalStandardsPoints} />
 
         {/* Global Benchmark Section */}
-        <section className="gc-section gc-benchmark-section">
-          <div className="gc-container gc-benchmark-layout">
+        <section className="gc-section gc-benchmark-section ">
+          <div className="gc-container gc-benchmark-layout ">
             <SectionIntro
               eyebrow="The Standard We Compete Against"
               title="We compare our work to global expectations—not regional benchmarks."

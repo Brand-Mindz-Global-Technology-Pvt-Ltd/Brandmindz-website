@@ -216,7 +216,7 @@
           width: 34px;
           height: 3px;
           border-radius: 999px;
-          background: #18181b;
+          background: #2a2a2a;
           content: "";
         }
 
@@ -610,7 +610,7 @@
           padding: clamp(28px, 3vw, 40px);
           border: 1px solid rgba(255, 255, 255, .45);
           border-radius: 18px;
-          background: #18181b;
+          background: #2a2a2a;
           color: #fff;
           text-align: left;
           box-shadow: 0 8px 20px rgba(0, 0, 0, .04);
@@ -694,7 +694,7 @@
         }
 
         .gc-readiness-section {
-          background: #18181b;
+          background: #2a2a2a;
           color: #fff;
         }
 
@@ -769,7 +769,7 @@
 
         .gc-benchmark-section {
           padding-block: clamp(42px, 5vw, 64px);
-          background: #18181b;
+          background: #2a2a2a;
           color: #fff;
         }
 

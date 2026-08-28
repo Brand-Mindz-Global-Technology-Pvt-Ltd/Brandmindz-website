@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import "../../style/home/aboutus.css";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
@@ -64,6 +65,7 @@ interface MenuItem {
 }
 
 const Aboutus = () => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState(1);
   
 
@@ -113,12 +115,15 @@ const Aboutus = () => {
       label: "Our Core Values",
       type: "standard",
       subtitle: "Our Core Values",
-      title: "We value honesty, bold ideas, and measurable impact.",
+      title: "Our values shape every result.",
       img: founderImg1,
       desc: [
-        `R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands.`,
-        `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an official mentor for Mentor TN, a government initiative for startup growth.`
-      ], quote: "Promise what you deliver, and deliver what you promised.",
+        `We believe sustainable growth comes from doing the right things consistently—with honesty, creativity, accountability, and a clear focus on measurable impact.`,
+        `<b>Honesty & Transparency</b> We believe strong partnerships begin with trust. We communicate openly, and maintain transparency in our strategies, processes, and results.`,
+        `<b>Measurable Impact</b> We focus on outcomes, not vanity metrics. Every strategy is designed around meaningful business objectives, measurable performance, and long-term growth.`,
+        `<b>Customer First</b> Our clients are at the heart of everything we do. We take time to understand their business, audience, challenges, and ambitions before creating solutions that truly fit their needs.`,
+        `<b>Long-Term Thinking</b> We don't believe in shortcuts that deliver temporary results. Our focus is on building strong brands, sustainable marketing systems, and lasting business value.`
+      ], quote: "Our promise is simple: think boldly, act responsibly, measure what matters, and create growth that lasts.",
       btn: false
 
     },
@@ -127,12 +132,14 @@ const Aboutus = () => {
       label: "Our Growth",
       type: "standard",
       subtitle: "Our Growth",
-      title: "We value honesty, bold ideas, and measurable impact.",
+      title: "We grow by growing businesses.",
       img: founderImg2,
       desc: [
-        `R. Vasanth Kumar, Founder & CEO of Brand Mindz Global Technology Pvt Ltd, brings over 10+ years of experience leading marketing teams in large corporates, conducting 500+ training program as a guest speaker and mentoring 20,000+ entrepreneurs across India. An Ex-Google & HCL expert and an official mentor appointed by the Government of Tamil Nadu, he works closely with startups to help them scale into strong, trusted brands.`,
-        `What began as a family business failure became his driving force motivating Vasanth to guide founders toward sustainable growth and long-term success. Vasanth is passionate about supporting entrepreneurs and serves as an official mentor for Mentor TN, a government initiative for startup growth.`
-      ], quote: "Promise what you deliver, and deliver what you promised.",
+        `What began as a vision for stronger brands is now a growing technology and marketing ecosystem.`,
+        `<b>Growing Through Innovation</b> The digital landscape changes rapidly. We continuously explore new technologies, platforms, marketing strategies, and creative approaches to help our clients stay competitive and relevant.`,
+        `<b>Growing Our Capabilities</b> Our journey has expanded beyond individual marketing services. Today, our capabilities bring together strategy, branding, creativity, technology, and digital growth to provide businesses with more connected solutions.`,
+        `<b>Growing With Purpose</b> Growth is not simply about numbers. For us, it means creating stronger brands, delivering better experiences, developing meaningful partnerships, and creating measurable value for the businesses we work with.`
+      ], quote: "Our journey is still evolving. We are committed to learning, innovating, and growing—while helping our clients move forward with confidence.",
       btn: false
 
     },
@@ -196,34 +203,56 @@ const Aboutus = () => {
           footerNote: "This alignment is supported by CSR Focus Area..."
         },
         {
-          id: 4,
-          title: "Quality Education",
-          tag: "Alignment Type",
-          image: Quality4,
-          description: "Brand Mindz aligns its CSR and organizational practices with the United Nations Sustainable Development Goals (SDGs), especially SDG 5: Gender Equality. The company promotes women empowerment, supports women-led enterprises and women entrepreneurs, and ensures equal opportunity employment.",
-          contributions: [
-            "Entrepreneurship and skill development initiatives for women",
-            "Digital literacy and financial awareness programs",
-            "Inclusive hiring practices that promote women participation in the workforce"
-          ],
-          subtitle: "Quality Education",
+    id: 4,
+    title: "Quality Education",
+    tag: "CSR Focus Area",
+    image: Quality4,
+    description: `At Brand Mindz, we believe education can open doors to better opportunities. Learning is not only about classrooms or certificates. Having access to useful knowledge, digital tools, and practical skills can help people become more confident in their work and make better decisions about their future.
 
-          footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
-        },
+As a digital marketing and technology-focused company, we understand the value of learning in a changing digital world. New tools, platforms, and technologies are introduced every day, so continuous learning has become an important part of professional growth. At Brand Mindz, we encourage our team to learn new skills, share their knowledge with others, and keep improving their understanding of digital marketing, technology, design, and business.
+
+We also see digital literacy as an important part of education today. Knowing how to use online platforms, find reliable information, communicate effectively, and make responsible use of digital tools can be valuable for students, professionals, and people starting their own businesses. Through knowledge sharing and practical learning, we aim to make useful digital knowledge easier to understand and apply.
+
+Our focus is on creating a workplace where people have the opportunity to learn and grow. We encourage employees to develop both their professional and personal skills and believe that sharing experience within a team can be just as valuable as formal training. As Brand Mindz grows, we hope to support more learning opportunities and initiatives that help people build skills for the future.`,
+    contributions: [],
+    subtitle: "Quality Education",
+    footerNote: "CSR Focus Area: Education, Digital Literacy & Skill Development"
+},
         {
-          id: 5,
-          title: "Leadership knows No Gender",
-          tag: "Strong and Direct Alignment",
-          image: Equallity5,
-          description: "Brand Mindz aligns its CSR and organizational practices with the United Nations Sustainable Development Goals (SDGs), especially SDG 5: Gender Equality. The company promotes women empowerment, supports women-led enterprises and women entrepreneurs, and ensures equal opportunity employment.",
-          contributions: [
-            "Entrepreneurship and skill development initiatives for women",
-            "Digital literacy and financial awareness programs",
-            "Inclusive hiring practices that promote women participation in the workforce"
-          ],
-          subtitle: "Gender Equality",
-          footerNote: "This alignment is directly supported by CSR Focus Area 5.1 – Women Empowerment."
-        },
+                    id: 5,
+                    title: "Leadership knows No Gender",
+                    tag: "Strong and Direct Alignment",
+                    image: Equallity5,
+                    description: `Brand Mindz aligns its CSR and organizational
+                    practices with the United Nations Sustainable Development Goals
+                    (SDGs), especially SDG 5: Gender Equality. The company promotes
+                     women empowerment, supports women-led enterprises and women entrepreneurs,
+                     and ensures equal opportunity employment. Through inclusive growth, diversity
+                      and inclusion, and responsible business practices, Brand Mindz contributes to
+                      sustainable development and long-term social impact.
+                       <br/>
+                       <br/>
+                       Key contributions include a strong focus on empowering women
+                        through entrepreneurship and skill development initiatives
+                        that enhance their employability and economic independence.
+                         These programs are designed to equip women with practical
+                         skills, leadership abilities, and business knowledge, enabling them
+                         to build sustainable livelihoods and actively participate in economic growth.
+                       <br/>
+                       <br/>
+                         In addition, digital literacy and financial awareness programs
+                          are implemented to improve access to technology and financial systems,
+                           helping women gain confidence in using digital tools, managing personal finances,
+                          and understanding savings, credit, and investment opportunities.
+                       <br/>
+                          <br/>
+                          This strategic alignment is directly supported by CSR Focus Area 5.1 –
+                           Women Empowerment, reinforcing the commitment to advancing gender
+                           equality, economic inclusion, and long-term social impact.`,
+                    contributions: [],
+                    subtitle: "Gender Equality",
+                    footerNote: ""
+                },
         {
           id: 6,
           title: "Clean Water and Sanitation",
@@ -258,16 +287,21 @@ const Aboutus = () => {
         },
 
         {
-          id: 8,
-          title: "Decent Work and Economic Growth",
-          tag: "Alignment Type",
-          image: Growth8,
-          description: "Economic growth initiatives...",
-          contributions: ["Job training"],
-          footerNote: "Supported by CSR Focus Area...",
-          subtitle: "Decent Work  Economic Growth",
+    id: 8,
+    title: "Decent Work and Economic Growth",
+    tag: "CSR Focus Area",
+    image: Growth8,
+    description: `At Brand Mindz, we believe that a growing business should also create better opportunities for the people who work with it. A good workplace is not only about completing work on time. It is also about respect, learning, fair opportunities, and giving people the space to develop their skills. We want our team to feel that their work matters and that they have room to grow.
 
-        },
+The digital industry changes quickly, so learning new skills is a regular part of the job. We encourage our team to keep learning and improving their knowledge in areas such as SEO, digital marketing, web development, branding, and design. Sharing ideas and learning from one another also helps our team handle new challenges with more confidence.
+
+We believe that people do better work when they are given the right support and a positive working environment. Clear responsibilities, teamwork, open communication, and respect are important parts of the way we work. We also encourage team members to take ownership of their work and make use of opportunities to improve their professional skills.
+
+As Brand Mindz continues to grow, we want that growth to benefit both the business and our people. Our goal is to create meaningful work opportunities, support skill development, and build a workplace where people can develop their careers over time.`,
+    contributions: [],
+    footerNote: "CSR Focus Area: Decent Work, Skill Development & Sustainable Economic Growth",
+    subtitle: "Decent Work & Economic Growth",
+},
 
         {
           id: 9,
@@ -280,16 +314,22 @@ const Aboutus = () => {
         },
 
         {
-          id: 10,
-          title: "Reduced Inequalities",
-          tag: "Alignment Type",
-          image: Reduced10,
-          description: "Inclusive programs...",
-          contributions: ["Equality initiatives"],
-          footerNote: "Supported by CSR Focus Area...",
-          subtitle: "Reduced Inequalities",
+                    id: 10,
+                    title: "Reduced Inequalities",
+                    tag: "Alignment Type",
+                    image: Reduced10,
+                    description: `At Brand Mindz, we believe everyone should get a fair chance to learn, work, and build their career. People have different backgrounds, experiences, and skills, and we believe these differences should be respected. What matters to us is giving people the opportunity to contribute, improve their skills, and move forward in their professional journey.
 
-        },
+Technology can also help create more opportunities when it is made easier to understand and use. Digital skills can help people look for jobs, start a business, reach customers, and learn new things without being limited by where they live. As a digital-focused company, we see value in sharing our knowledge and making digital information easier to understand.
+
+Inside our workplace, we encourage people to communicate openly and share their ideas. Everyone should feel comfortable being part of discussions and working with others. We believe that listening to different opinions and experiences helps create a better working environment and allows teams to learn from each other.
+
+For us, reducing inequalities is about the small things we do every day — treating people fairly, respecting different perspectives, and giving people opportunities to learn and grow. As Brand Mindz continues to develop, we will continue to support an inclusive workplace where people have a fair opportunity to participate and progress.`,
+                    contributions: [],
+                    footerNote: "CSR Focus Area: Inclusion, Equal Opportunity & Reduced Inequalities",
+                    subtitle: "Reduced Inequalities",
+
+                },
 
         {
           id: 11,
@@ -312,16 +352,21 @@ const Aboutus = () => {
         },
 
         {
-          id: 13,
-          title: "Climate Action",
-          tag: "Alignment Type",
-          image: Action13,
-          description: "Climate initiatives...",
-          contributions: ["Carbon reduction"],
-          footerNote: "Supported by CSR Focus Area...",
-          subtitle: "Climate Action",
+    id: 13,
+    title: "Climate Action",
+    tag: "CSR Focus Area",
+    image: Action13,
+    description: `At Brand Mindz, we believe that protecting the environment is something businesses can contribute to through everyday choices. Since much of our work is digital, we try to reduce unnecessary use of paper, printing, and other physical resources wherever possible. Simple changes in the way we work can help us operate more responsibly.
 
-        },
+We make use of digital communication and online collaboration to reduce the need for unnecessary travel and paperwork. Our team also tries to be mindful of electricity and other resources used in our day-to-day operations. These may seem like small steps, but they are practical changes that can become part of how we work every day.
+
+We do not see climate action as a one-time activity. It is an ongoing effort to understand our impact and find better ways to reduce it. As Brand Mindz grows, we will continue looking for practical and responsible ways to make our workplace and business practices more environmentally conscious.
+
+Our climate action efforts focus on reducing unnecessary paper and printing, using digital-first communication, being mindful of energy consumption, limiting avoidable travel through online meetings, and encouraging responsible environmental practices among our team.`,
+    contributions: [],
+    footerNote: "CSR Focus Area: Climate & Environmental Responsibility",
+    subtitle: "Climate Action",
+},
 
         {
           id: 14,
@@ -591,15 +636,27 @@ const Aboutus = () => {
                 }}
               >
                 {Array.isArray(current.desc) && current.desc.map((text, index) => (
-                  <ScrollParagraph key={index} text={text} />
+                  current.id === 4 ? (
+                    <p
+                      key={index}
+                      className={index === 0 ? "" : "bm-core-value-card"}
+                      dangerouslySetInnerHTML={{ __html: text }}
+                    />
+                  ) : (
+                    <ScrollParagraph key={index} text={text} />
+                  )
                 ))}
               </div>
               {
-                current.btn && (
-                  <button className="bm-about-learn-btn">Learn More</button>
-
-                )
-              }
+  current.btn && (
+    <button
+      className="bm-about-learn-btn"
+      onClick={() => router.push("/about")}
+    >
+      Learn More
+    </button>
+  )
+}
             </div>
             {current.img && <div className="bm-about-image-side">
               <div className="bm-about-img-frame">
@@ -623,7 +680,7 @@ const Aboutus = () => {
             {menuItems.map((item) => (
               <li
                 key={item.id}
-                className={`bm-about-menu-item ${activeTab === item.id ? "active" : ""}`}
+                className={`bm-about-menu-item ${item.id === 3 || item.id === 9 ? "bm-about-small-size" : ""} ${activeTab === item.id ? "active" : ""}`}
                 onClick={() => setActiveTab(item.id)}
               >
                 <span className="bm-about-id">{item.id.toString().padStart(2, "0")}</span>

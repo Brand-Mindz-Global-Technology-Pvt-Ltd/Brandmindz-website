@@ -406,7 +406,7 @@
           overflow: hidden;
           grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
           border-radius: 30px;
-          background: #121216;
+          background: #2a2a2a;
         }
 
         .wc-women-story-image {

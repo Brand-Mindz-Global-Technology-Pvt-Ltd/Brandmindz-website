@@ -6,6 +6,7 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from 'next/navigation';
 
 import founderImg from "../../../assets/branding/braddingabount.webp";
 
@@ -32,6 +33,7 @@ interface ScrollParagraphProps {
 }
 
 export const Bradingabount = ({ data }: { data: BrandingAboutData }) => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState(1);
 
   // Initialize activeTab based on data availability
@@ -124,7 +126,7 @@ export const Bradingabount = ({ data }: { data: BrandingAboutData }) => {
                 </div>
 
                 {current.btn && (
-                  <button className="bm-about-learn-btn-branding">
+                  <button className="bm-about-learn-btn-branding" onClick={() => router.push('/contact')}>
                     <div className="bm-btn-icon-branding">
                       <ArrowRight size={18} />
                     </div>
