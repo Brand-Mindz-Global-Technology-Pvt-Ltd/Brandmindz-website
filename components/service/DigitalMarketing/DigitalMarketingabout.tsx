@@ -6,10 +6,12 @@ import Image from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ArrowRight } from "lucide-react";
 import { useDigitalMarketingContext } from "./DigitalMarketingContext";
+import { useRouter } from 'next/navigation';
 
 import founderImg from "../../../assets/branding/braddingabount.webp";
 
 export const DigitalMarketingabout = () => {
+  const router = useRouter();
   const { activeDigitalMarketingTab } = useDigitalMarketingContext();
   const [activeTab, setActiveTab] = useState(1);
 
@@ -673,7 +675,7 @@ export const DigitalMarketingabout = () => {
                 </div>
 
                 {current.btn && (
-                  <button className="bm-about-learn-btn-branding">
+                  <button className="bm-about-learn-btn-branding" onClick={() => router.push('/contact')}>
                     <div className="bm-btn-icon-branding">
                       <ArrowRight size={18} />
                     </div>

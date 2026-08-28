@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/fade-in";
 import "../../../style/branding/FrameworkSection.css";
 import { useDevelopmentContext } from "./DevelopmentContext";
+import { useRouter } from 'next/navigation';
 
 const frameworkData = [
   {
@@ -130,6 +131,7 @@ const frameworkData = [
 ];
 
 export const DevelopmentFramework = () => {
+  const router = useRouter();
   const { activeDevelopmentTab } = useDevelopmentContext();
   const currentContent = frameworkData[activeDevelopmentTab] || frameworkData[0];
 
@@ -167,7 +169,7 @@ export const DevelopmentFramework = () => {
             <button className="bm-btn-strategy">
               Get Custom Strategy
             </button>
-            <button className="bm-btn-meeting">
+            <button className="bm-btn-meeting" onClick={() => router.push('/contact')}>
               Book a Meeting
             </button>
           </div>

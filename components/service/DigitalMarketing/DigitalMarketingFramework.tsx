@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/fade-in";
 import "../../../style/branding/FrameworkSection.css";
 import { useDigitalMarketingContext } from './DigitalMarketingContext';
+import { useRouter } from 'next/navigation';
 
 const seoFramework = {
   title: "Our Proven 6-Step SEO Strategy",
@@ -193,6 +194,7 @@ const youtubeFramework = {
 };
 
 export const DigitalMarketingFramework = () => {
+  const router = useRouter();
   const { activeDigitalMarketingTab } = useDigitalMarketingContext();
 
   const getActiveFramework = () => {
@@ -244,7 +246,7 @@ export const DigitalMarketingFramework = () => {
             <button className="bm-btn-strategy">
               Get Custom Strategy
             </button>
-            <button className="bm-btn-meeting">
+            <button className="bm-btn-meeting" onClick={() => router.push('/contact')}>
               Book a Meeting
             </button>
           </div>

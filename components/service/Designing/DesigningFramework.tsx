@@ -4,9 +4,11 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/fade-in";
 import "../../../style/branding/FrameworkSection.css";
+import { useRouter } from 'next/navigation';
 
 export const DesigningFramework = ({ data }: { data: any }) => {
   const steps = data?.steps || [];
+  const router = useRouter();
 
   return (
     <section className="bm-framework-section">
@@ -42,7 +44,7 @@ export const DesigningFramework = ({ data }: { data: any }) => {
             <button className="bm-btn-strategy">
               Get Custom Strategy
             </button>
-            <button className="bm-btn-meeting">
+            <button className="bm-btn-meeting" onClick={() => router.push('/contact')}>
               Book a Meeting
             </button>
           </div>

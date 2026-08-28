@@ -5,8 +5,10 @@ import "../../../style/branding/BrandingAbout.css";
 import Image from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from 'next/navigation';
 
 export const Ecommerceabout = ({ data }: { data: any }) => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState(1);
 
   useEffect(() => {
@@ -97,7 +99,7 @@ export const Ecommerceabout = ({ data }: { data: any }) => {
 
                 {current.btn && (
                  
-                      <button className="bm-about-learn-btn-branding">
+                      <button className="bm-about-learn-btn-branding" onClick={() => router.push('/contact')}>
                                                                                            <div className="bm-btn-icon-branding">
                                                                                              <ArrowRight size={18} />
                                                                                            </div>

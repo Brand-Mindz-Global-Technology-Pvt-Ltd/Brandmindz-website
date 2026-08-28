@@ -199,7 +199,7 @@ export const CompanyBranding = () => {
                     </div>
                     <FadeIn delay={0.5}>
                         <div className="bm-hero-action">
-                            <button className="bm-hero-btn-bl">
+                            <button className="bm-hero-btn-bl" onClick={() => router.push('/contact')}>
                                 <div className="bm-hero-btn__icon-bl">
                                     <FiChevronRight />
                                 </div>

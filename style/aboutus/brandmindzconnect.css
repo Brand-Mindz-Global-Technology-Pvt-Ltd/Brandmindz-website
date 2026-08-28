@@ -38,7 +38,7 @@
             url("../../assets/HomeSection/Whychoose/group4.webp")
             center / 78% auto no-repeat;
         }
-        .connect-dark { background:#191919; color:#fff; }
+        .connect-dark { background:#2a2a2a; color:#fff; }
         .connect-eyebrow { display:block; margin-bottom:10px; color:#939393; font-size:15px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; }
         .connect-dark .connect-eyebrow { color:#ffdb00; }
         .connect-heading { margin:0; color:#1a1a1a; font-size:clamp(34px,4vw,52px); font-weight:700; line-height:1.1; letter-spacing:-1px; }
@@ -115,14 +115,13 @@
 
         .connect-shared {
           padding:100px 0;
-          background:
-            linear-gradient(rgba(20,20,20,.93),rgba(20,20,20,.93)),
+          background:rgba(241, 241, 241, 1)
             url("../../assets/contact/group3.webp") center / cover no-repeat;
           color:#fff;
         }
         .connect-shared-grid { display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:70px; }
-        .connect-shared .connect-eyebrow { color:#ffdb00; }
-        .connect-shared .connect-heading { color:#fff; }
+        .connect-shared .connect-eyebrow { color:#010101; }
+        .connect-shared .connect-heading { color:#050505; }
         .connect-question {
           margin:30px 0 0;
           padding:30px;
@@ -130,20 +129,20 @@
           border-left:6px solid #ffdb00;
           border-radius:0 16px 16px 0;
           background:rgba(255,219,0,.12);
-          color:#fff;
+          color:#000000;
           font-size:clamp(23px,2.5vw,34px);
           font-weight:700;
           line-height:1.35;
         }
         .connect-shared-copy {
           padding:34px;
-          border:1px solid rgba(255,255,255,.12);
+          border:1px solid rgba(8, 8, 8, 0.12);
           border-radius:18px;
-          background:rgba(255,255,255,.06);
+          background:rgba(0, 0, 0, 0.06);
           backdrop-filter:blur(5px);
         }
-        .connect-shared-copy p { margin:0 0 18px; color:#c8c8c8; font-size:18px; line-height:1.65; }
-        .connect-shared-copy strong { color:#fff; }
+        .connect-shared-copy p { margin:0 0 18px; color:#000000; font-size:18px; line-height:1.65; }
+        .connect-shared-copy strong { color:#000000; }
         .connect-closing { margin-top:25px; font-size:22px !important; font-weight:700; }
 
         .connect-cta { padding:88px 20px; background:#fff; text-align:center; }

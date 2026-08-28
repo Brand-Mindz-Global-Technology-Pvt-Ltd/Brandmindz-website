@@ -131,7 +131,7 @@
           line-height:1.55;
         }
 
-        .pw-application { padding:90px 0; background:#191919; color:#fff; }
+        .pw-application { padding:90px 0; background: #2a2a2a; color:#fff; }
         .pw-application-grid { display:grid; grid-template-columns:.65fr 1.35fr; align-items:start; gap:60px; }
         .pw-application-copy { position:sticky; top:110px; }
         .pw-application-copy .pw-heading { color:#fff; }

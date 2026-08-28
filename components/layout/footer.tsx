@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import {
   FaFacebookF, FaTwitter, FaLinkedinIn,
   FaYoutube, FaInstagram, FaGooglePlusG,
   FaPinterestP, FaBehance, FaDribbble,
-  FaMapMarkerAlt, FaChevronDown, FaChevronUp
+  FaMapMarkerAlt, FaChevronDown, FaChevronUp, FaArrowUp
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -22,6 +22,36 @@ import back from '../../assets/HomeSection/banner/group1.webp'
 
 const Footer = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isTirunelveliOpen, setIsTirunelveliOpen] = useState(false);
+
+ useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const documentHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const progress =
+        documentHeight > 0 ? (scrollTop / documentHeight) * 100 : 0;
+
+      setScrollProgress(Math.min(100, Math.max(0, progress)));
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const footerLinks = [
     { name: "Home", path: "/" },
@@ -205,19 +235,94 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-             <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
-                <FaMapMarkerAlt className="text-black hidden md:block " style={{ marginTop: '10px' }} />
-                <div>
-                  <Link href="/digital-marketing-agency-in-tirunelveli">
-                    <h4 className="font-bold text-[20px] mb-1">Tirunelveli Office</h4>
-                  </Link>
-                  <p className="text-[19px] text-gray-500 leading-snug">
-                    Startup TN, Tirunelveli Municipal<br />
-                    Corporation Incubation Centre,<br />
-                    SN Highway, Tirunelveli 627002.
-                  </p>
-                </div>
-              </div>
+
+
+
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
+  <FaMapMarkerAlt
+    className="text-black hidden md:block"
+    style={{ marginTop: "10px" }}
+  />
+
+  <div>
+    {/* Office title */}
+    <div className="relative">
+      <div className="flex items-center gap-3">
+        <h4 className="font-bold text-[20px] mb-1">
+          Tirunelveli Office
+        </h4>
+
+        <button
+          type="button"
+          onClick={() =>
+            setIsTirunelveliOpen(!isTirunelveliOpen)
+          }
+          className="mb-1 text-black"
+          aria-label="Toggle Tirunelveli Office"
+        >
+          {isTirunelveliOpen ? (
+            <FaChevronUp className="text-[18px]" />
+          ) : (
+            <FaChevronDown className="text-[18px]" />
+          )}
+        </button>
+      </div>
+
+      {/* DROPDOWN OVERLAY */}
+      {isTirunelveliOpen && (
+  <div
+    className="
+      absolute
+      left-0
+      top-full
+      mt-4
+      z-[999]
+      rounded-[24px]
+      bg-white
+      shadow-[0_15px_40px_rgba(0,0,0,0.15)]
+    "
+    style={{
+      width: "300px",
+      padding: "7px 40px",
+    }}
+  >
+    <Link
+      href="/digital-marketing-agency-in-tirunelveli"
+      className="block text-[20px] text-gray-700 hover:text-black transition-colors"
+      style={{
+        padding: 0,
+        margin: 0,
+      }}
+    >
+      Digital Marketing Agency
+    </Link>
+    <Link
+      href="/app-development-tirunelveli"
+      className="block text-[20px] text-gray-700 hover:text-black transition-colors"
+      style={{
+        padding: 0,
+        margin: 0,
+      }}
+    >
+      App Development
+    </Link>
+  </div>
+)}
+    </div>
+
+    {/* Address */}
+    <p className="text-[19px] text-gray-500 leading-snug mt-2">
+      Startup TN, Tirunelveli Municipal
+      <br />
+      Corporation Incubation Centre,
+      <br />
+      SN Highway, Tirunelveli 627002.
+    </p>
+  </div>
+</div>
+
+
+
             </div>
           </div>
 
@@ -265,6 +370,41 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+  <div className={styles.backToTopWrapper}>
+  <button
+    type="button"
+    onClick={scrollToTop}
+    className={styles.backToTop}
+    aria-label="Back to top"
+    title="Back to top"
+  >
+    <svg
+      className={styles.progressCircle}
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+    >
+      <circle
+        className={styles.progressCircleBackground}
+        cx="50"
+        cy="50"
+        r="46"
+      />
+
+      <circle
+        className={styles.progressCircleProgress}
+        cx="50"
+        cy="50"
+        r="46"
+        style={{
+          strokeDashoffset: 289 - (289 * scrollProgress) / 100,
+        }}
+      />
+    </svg>
+
+    <FaArrowUp className={styles.arrowIcon} />
+  </button>
+</div>
     </footer>
   );
 };

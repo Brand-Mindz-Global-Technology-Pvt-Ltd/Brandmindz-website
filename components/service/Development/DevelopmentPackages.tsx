@@ -299,7 +299,7 @@ export const DevelopmentPackages = () => {
                   ))}
                 </ul>
 
-                <button className="bm-pkg-btn">
+                <button className="bm-pkg-btn" onClick={() => router.push("/contact")}>
                   Get a Proposal
                 </button>
               </div>
