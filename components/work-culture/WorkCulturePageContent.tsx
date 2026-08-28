@@ -12,7 +12,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import founderImage from "@/assets/HomeSection/about/210446c72e34182875e9edee3773a3ddc673e220.webp";
+import founderImage from "@/assets/about/frame2147226233.webp";
 import heroPattern from "@/assets/HomeSection/banner/group1.webp";
 import womenStoryImage from "@/assets/about/women.webp";
 import globalExposureImage from "@/assets/branding/authority.webp";
@@ -355,17 +355,33 @@ Culture is our operating system.
 
         <section className="wc-section wc-potential-section">
           <div className="wc-container">
-            <SectionIntro
-              eyebrow="Potential over privilege"
-              title="If you're a first-generation graduate, we see you."
-              text="Many of our team members are first-generation graduates. We understand the pressure, the responsibility, and the hunger to grow. Joining Brand Mindz is more than filling a role. It is an opportunity to build competence that can compete globally—from Tamil Nadu."
-            />
+            <div className="wc-section-intro">
+  <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#ffdb00]">
+    Potential over privilege
+  </p>
+
+  <h2 className="wc-section-intro-title text-[clamp(2.35rem,4vw,3.75rem)] font-extrabold leading-[1.12] tracking-[-0.045em]">
+    <span className="text-white">
+      If you're a first-generation graduate,{" "}
+    </span>
+    <span className="text-[#ffdb00]">
+      we see you.
+    </span>
+  </h2>
+
+  <p className="wc-section-intro-text text-[clamp(1.12rem,1.45vw,1.5rem)] leading-[1.65] text-white">
+    Many of our team members are first-generation graduates. We understand the
+    pressure, the responsibility, and the hunger to grow. Joining Brand Mindz
+    is more than filling a role. It is an opportunity to build competence that
+    can compete globally—from Tamil Nadu.
+  </p>
+</div>
             <div className="text-3xl font-bold text-white">
   We Do Not Hire
 </div>
             <PointGrid items={["Based on accent", "Based on city background", "Based on privilege"]} />
             <br></br>
-            <div className="text-3xl font-bold">
+            <div className="text-3xl font-bold text-white">
   We Hire Based Only on Potential and Ownership
 </div>
           </div>

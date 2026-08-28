@@ -442,3 +442,51 @@ background-color: #F3F3F3;
     font-size: 15px;
   }
 }
+
+.reachMediaKitLinkRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.mediaKitIcon {
+  flex: 0 0 auto;
+  color: #111;
+  font-size: 18px;
+}
+
+.mediaKitLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #111;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.mediaKitLink:hover {
+  color: #c99f00;
+  transform: translateY(-2px);
+}
+
+.mediaKitTheme .progressCircleProgress {
+  stroke: #ffd21f;
+}
+
+.mediaKitTheme .arrowIcon {
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .reachMediaKitLinkRow {
+    justify-content: center;
+  }
+
+  .mediaKitIcon {
+    display: none;
+  }
+}

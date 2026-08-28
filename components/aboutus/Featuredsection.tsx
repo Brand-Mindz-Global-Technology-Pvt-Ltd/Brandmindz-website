@@ -23,7 +23,7 @@ import platform6Color from '../../assets/about/sunnews12.webp';
 
 export const FeaturedSection = () => {
   
-  const [hoveredId, setHoveredId] = useState(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const channelLogos = [
     { id: 1, bw: platform5BW, color: platform5Color, alt: "News 18 Tamil" },

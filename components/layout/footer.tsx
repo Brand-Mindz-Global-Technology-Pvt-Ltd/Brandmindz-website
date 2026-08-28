@@ -6,7 +6,7 @@ import {
   FaFacebookF, FaTwitter, FaLinkedinIn,
   FaYoutube, FaInstagram, FaGooglePlusG,
   FaPinterestP, FaBehance, FaDribbble,
-  FaMapMarkerAlt, FaChevronDown, FaChevronUp, FaArrowUp
+  FaMapMarkerAlt, FaChevronDown, FaChevronUp, FaArrowUp, FaImages
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -20,7 +20,11 @@ import Image1 from '../../assets/Footer/a07119e2e776b18257a77e888622077bb8f4f6c1
 import Image2 from '../../assets/Footer/e11c902dd32153b2abe7a4d93637a06c7597b932.webp'
 import back from '../../assets/HomeSection/banner/group1.webp'
 
-const Footer = () => {
+interface FooterProps {
+  theme?: "default" | "mediaKit";
+}
+
+const Footer = ({ theme = "default" }: FooterProps) => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isTirunelveliOpen, setIsTirunelveliOpen] = useState(false);
@@ -67,7 +71,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className={styles.footerContainer}>
+    <footer className={`${styles.footerContainer} ${theme === "mediaKit" ? styles.mediaKitTheme : ""}`}>
       {/* Background City Image */}
       <div
         className={styles.backgroundOverlay}
@@ -135,14 +139,53 @@ const Footer = () => {
               </div>
 
               <div className="">
-                <p className="text-[22px] text-gray-400 mb-5  tracking-widest">Proud  <span className={styles.widest}>Members of</span></p>
-                <div className="flex  items-center gap-6" style={{ marginTop: "20px" }}>
-                  <Image src={Image2} alt="BNI" className="h-8 w-auto" />
-                  <Image src={Image0} alt="JCI" className="h-9 w-auto" />
-                  <Image src={Image1} alt="YES" className="h-14 w-auto" />
-                </div>
+  <p className="text-[22px] text-gray-400 mb-5 tracking-widest">
+    Proud <span className={styles.widest}>Members of</span>
+  </p>
 
-              </div>
+  <div className="flex items-center gap-6" style={{ marginTop: "20px" }}>
+
+    {/* JCI */}
+    <a
+      href="https://jci.cc/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Image
+        src={Image2}
+        alt="JCI"
+        className="h-9 w-auto cursor-pointer"
+      />
+    </a>
+
+    {/* BNI */}
+    <a
+      href="https://www.bni.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Image
+        src={Image0}
+        alt="BNI"
+        className="h-8 w-auto cursor-pointer"
+      />
+    </a>
+
+    {/* YES */}
+    <a
+      href="https://yesconnect.in/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Image
+        src={Image1}
+        alt="YES"
+        className="h-14 w-auto cursor-pointer"
+      />
+    </a>
+
+  </div>
+</div>
             </div>
           </div>
 
@@ -276,8 +319,8 @@ const Footer = () => {
       left-0
       top-full
       mt-4
-      z-[999]
-      rounded-[24px]
+      z-999
+      rounded-3xl
       bg-white
       shadow-[0_15px_40px_rgba(0,0,0,0.15)]
     "
@@ -323,6 +366,13 @@ const Footer = () => {
 
 
 
+            </div>
+
+            <div className={styles.reachMediaKitLinkRow}>
+              <FaImages className={styles.mediaKitIcon} aria-hidden="true" />
+              <Link href="/media-kit" className={styles.mediaKitLink}>
+                Media Kit <span aria-hidden="true">↗</span>
+              </Link>
             </div>
           </div>
 

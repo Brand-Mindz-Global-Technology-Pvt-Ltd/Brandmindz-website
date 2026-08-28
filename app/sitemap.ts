@@ -16,6 +16,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    // Media Kit
+    {
+      url: 'https://www.brandmindz.com/media-kit',
+      lastModified: new Date('2026-08-28'),
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    },
     // Services
     {
       url: 'https://www.brandmindz.com/services/branding',

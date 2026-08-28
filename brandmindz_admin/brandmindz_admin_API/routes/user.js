@@ -80,8 +80,8 @@ router.post('/login', (req, res) => {
 
   db.query(sql, [user_name, pass_word], (err, result) => {
     if (err) {
+      console.error(`[Login] Database query failed (${err.code || 'UNKNOWN'}): ${err.message}`);
       return res.status(500).send({
-        data: err,
         msg: "Server error during login"
       });
     }
