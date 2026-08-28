@@ -142,6 +142,7 @@ const Header = () => {
       name: 'Resources',
       hasDropdown: true,
       dropdownItems: [
+        { label: 'Blog', path: '/blog' },
         { label: 'Glossary', path: '/resources' }
       ],
       path: "/resources"
