@@ -44,36 +44,26 @@ export const Trusted = () => {
     { id: 8, img: Bioneemtec, alt: "Bioneemtec" },
     { id: 9, img: naturals, alt: "Naturals" },
     { id: 10, img: resonance, alt: "Resonance" },
-    { id: 1, img: Cheranacademy, alt: "Cheran Academy" },
-    { id: 2, img: Shortfundly, alt: "Shortfundly" },
-    { id: 3, img: SevenStarLogo, alt: "Seven Star" },
-    { id: 4, img: nailsandbeyonds, alt: "Nails and Beyonds" },
-    { id: 5, img: TEDx, alt: "TEDx" },
-    { id: 6, img: tancoir, alt: "Tancoir" },
-    { id: 7, img: swotle, alt: "Swotle" },
-    { id: 8, img: Bioneemtec, alt: "Bioneemtec" },
-    { id: 9, img: naturals, alt: "Naturals" },
-    { id: 10, img: resonance, alt: "Resonance" },
-    // { id: 11, img: spacemanCraft, alt: "Spaceman Craft" },
-    // { id: 12, img: tukaBaby, alt: "Tuka Baby" },
-    // { id: 13, img: tymerz, alt: "Tymerz" },
-    // { id: 14, img: faggro, alt: "Faggro" },
-    // { id: 15, img: marketCloud, alt: "Market Cloud" },
-    // { id: 16, img: logo01, alt: "Client brand" },
-    // { id: 17, img: aasi, alt: "Aasi" },
-    // { id: 18, img: annamDental, alt: "Annam Dental Hospital" },
-    // { id: 19, img: dicTenkasi, alt: "DIC Tenkasi" },
-    // { id: 20, img: ettik, alt: "Ettik" },
-    // { id: 21, img: hrLogo, alt: "HR" },
-    // { id: 22, img: jcom, alt: "JCOM" },
-    // { id: 23, img: magic20, alt: "Magic 20" },
-    // { id: 24, img: nellaiTours, alt: "Nellai Tours" },
-    // { id: 25, img: ourStudios, alt: "Our Studios" },
-    // { id: 26, img: protonImages, alt: "Proton Images" },
-    // { id: 27, img: sheTheSakthi, alt: "She The Sakthi" },
-    // { id: 28, img: surprisorStories, alt: "Surprisor Stories" },
-    // { id: 29, img: bridalArtisans, alt: "The Bridal Artisans" },
-    // { id: 30, img: truckTaxi, alt: "Truck Taxi" },
+    { id: 11, img: spacemanCraft, alt: "Spaceman Craft" },
+    { id: 12, img: tukaBaby, alt: "Tuka Baby" },
+    { id: 13, img: tymerz, alt: "Tymerz" },
+    { id: 14, img: faggro, alt: "Faggro" },
+    { id: 15, img: marketCloud, alt: "Market Cloud" },
+    { id: 16, img: logo01, alt: "Client brand" },
+    { id: 17, img: aasi, alt: "Aasi" },
+    { id: 18, img: annamDental, alt: "Annam Dental Hospital" },
+    { id: 19, img: dicTenkasi, alt: "DIC Tenkasi" },
+    { id: 20, img: ettik, alt: "Ettik" },
+    { id: 21, img: hrLogo, alt: "HR" },
+    { id: 22, img: jcom, alt: "JCOM" },
+    { id: 23, img: magic20, alt: "Magic 20" },
+    { id: 24, img: nellaiTours, alt: "Nellai Tours" },
+    { id: 25, img: ourStudios, alt: "Our Studios" },
+    { id: 26, img: protonImages, alt: "Proton Images" },
+    { id: 27, img: sheTheSakthi, alt: "She The Sakthi" },
+    { id: 28, img: surprisorStories, alt: "Surprisor Stories" },
+    { id: 29, img: bridalArtisans, alt: "The Bridal Artisans" },
+    { id: 30, img: truckTaxi, alt: "Truck Taxi" },
   ];
   const [count, setCount] = useState(0);
   const target = 300;
@@ -118,14 +108,16 @@ export const Trusted = () => {
           ))}
         </div> */}
         <div className="bm-trusted-logos-scroll">
-          <div className="bm-trusted-logos-track">
+          <div
+            className="bm-trusted-logos-track"
+            style={{ "--bm-logo-count": brandLogos.length } as React.CSSProperties}
+          >
             {[...brandLogos, ...brandLogos].map((item, index) => (
               <div className="bm-trusted-logo-item" key={index}>
                  <Image
                 src={item.img}
                 alt={item.alt}
-                height={60} 
-                style={{ width: 'auto', height: 'auto' }} // Keeps aspect ratio
+                height={60}
                 priority
               />
               </div>

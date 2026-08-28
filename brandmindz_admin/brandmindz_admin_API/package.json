@@ -4,7 +4,8 @@
      "description": "Project Management Tool.",
      "main": "app.js",
      "scripts": {
-          "start": "nodemon app.js"
+          "start": "nodemon app.js",
+          "test": "node --test test/*.test.js"
      },
      "keywords": [],
      "author": "",

@@ -26,7 +26,7 @@ const Header = () => {
   // Check if mobile
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     };
 
     checkMobile();
@@ -37,7 +37,7 @@ const Header = () => {
 
   // Close menu on desktop resize
   useEffect(() => {
-    if (window.innerWidth > 768 && isMobileMenuOpen) {
+    if (window.innerWidth > 1024 && isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
   }, [isMobileMenuOpen]);

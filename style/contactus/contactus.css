@@ -1424,6 +1424,108 @@
   }
 }
 
+/* Tablet landscape: preserve the two-column form without squeezing content */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .bm-getstarted-section {
+    padding: 2rem 0;
+  }
+
+  .bm-getstarted-container-fluid {
+    max-width: 94%;
+  }
+
+  .bm-getstarted-grid {
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.5fr);
+    gap: 1rem;
+  }
+
+  .bm-left-column,
+  .bm-right-column,
+  .bm-right-content {
+    min-width: 0;
+  }
+
+  .bm-right-content {
+    padding: 1.25rem;
+  }
+
+  .bm-form-fields {
+    gap: 0.75rem;
+  }
+
+  .bm-form-row {
+    gap: 0.75rem;
+  }
+
+  .bm-form-input,
+  .bm-form-input-Phone {
+    min-width: 0;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  .bm-services-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .bm-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.75rem;
+  }
+
+  .bm-service-item-rounded {
+    min-width: 0;
+    gap: 0.5rem;
+    padding: 0.35rem 0;
+  }
+
+  .bm-service-checkbox-rounded {
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
+  }
+
+  .bm-service-label-rounded {
+    min-width: 0;
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+  }
+
+  .bm-google-rating-card-inside {
+    width: 82%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.15rem;
+    padding: 0.5rem 0.75rem !important;
+    text-align: center;
+  }
+
+  .bm-star {
+    font-size: 22px;
+  }
+
+  .bm-rating-text {
+    font-size: 17px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .bm-buttons-row-center {
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .bm-s2-prev-btn,
+  .bm-s2-next-btn {
+    min-width: 0;
+    padding: 0.45rem 0.85rem;
+    font-size: 16px;
+    line-height: 1.25;
+    justify-content: center;
+  }
+}
+
 @media (max-width:500px) {
   .bm-getstarted-grid {
     grid-template-rows: 500px 1fr;
