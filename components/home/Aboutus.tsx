@@ -444,7 +444,8 @@ Our climate action efforts focus on reducing unnecessary paper and printing, usi
       quote: "Promise what you deliver, and deliver what you promised.",
     },
     {
-      id: 9, label: "Awards & Accolades",
+      id: 9, 
+      label: "Awards & Accolades",
       type: "awards",
       subtitle: "Awards & Accolades",
       title: "Celebrating Milestones of Excellence",

@@ -351,13 +351,11 @@
   }
   
   .bm-offering-tabs {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     margin-bottom: 40px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 5px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
+    padding-bottom: 0;
     border-bottom: none;
   }
   
@@ -366,8 +364,11 @@
   }
   
   .bm-offering-tab-btn {
-    font-size: 24px;
-    padding: 10px 30px;
+    min-width: 0;
+    font-size: clamp(15px, 2vw, 20px);
+    line-height: 1.2;
+    white-space: normal;
+    padding: 10px 8px;
   }
   
   .bm-offering-grid {
@@ -381,6 +382,10 @@
     max-width: 500px;
     height: 450px;
     margin: 0 auto;
+  }
+
+  .bm-offering-promo-img {
+    transform: none;
   }
   
   .bm-offering-services-list {

@@ -508,7 +508,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .bm-header__menu li.has-mega-menu .menu-item-wrapper::after {
     display: none;
   }
@@ -643,12 +643,11 @@
 
   /* Show dropdown when the 'show' class is present */
   .dropdown-content.show {
-    max-height: 300px;
-    /* Adjust based on your content */
+    max-height: 520px;
   }
 
   .has-dropdown.active .dropdown-content {
-    max-height: 300px;
+    max-height: 520px;
   }
 
   .dropdown-item {
@@ -758,11 +757,11 @@
 /* Tablet specific adjustments */
 @media (min-width: 769px) and (max-width: 1024px) {
   .bm-header__menu {
-    gap: 12px;
+    gap: 0;
   }
 
   .bm-header__menu li {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .bm-header__btn {

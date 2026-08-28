@@ -1,15 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 const db = require('../config/Database.js');
 const userMiddleware = require('../middleware/UserModel.js');
-var md5 = require('md5');
-const fileUpload = require('express-fileupload');
-const _ = require('lodash');
-const mime = require('mime-types')
-var bodyParser = require('body-parser');
-var cors = require('cors');
 
 // CONTACT CRUD APIs
 
@@ -64,7 +56,8 @@ router.get('/getUser', (req, res) => {
 
 // LOGIN API
 router.post('/login', (req, res) => {
-  const { user_name, pass_word } = req.body;
+  const user_name = typeof req.body.user_name === 'string' ? req.body.user_name.trim() : '';
+  const pass_word = typeof req.body.pass_word === 'string' ? req.body.pass_word : '';
   
   if (!user_name || !pass_word) {
     return res.status(400).send({
@@ -73,9 +66,10 @@ router.post('/login', (req, res) => {
   }
 
   const sql = `
-    SELECT * 
-    FROM user
+    SELECT user_id, name, user_name
+    FROM \`user\`
     WHERE user_name = ? AND pass_word = ?
+    LIMIT 1
   `;
 
   db.query(sql, [user_name, pass_word], (err, result) => {
@@ -87,13 +81,8 @@ router.post('/login', (req, res) => {
     }
 
     if (result.length > 0) {
-      // Login successful
-      const user = result[0];
-      // Exclude password from the response
-      delete user.pass_word;
-      
       return res.status(200).send({
-        data: user,
+        data: result[0],
         msg: "Success"
       });
     } else {

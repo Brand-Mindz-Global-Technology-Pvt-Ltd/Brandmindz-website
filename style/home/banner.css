@@ -1,5 +1,15 @@
 .bm-hero-btn-trusted {
   padding-top: 110px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.bm-hero-btn-trusted > * {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .bm-hero-badge {
@@ -289,6 +299,13 @@
 } */
 
 @media (max-width:768px) {
+  .bm-hero-section {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+  }
+
   .bm-hero-badge__text {
     font-size: 18px;
   }
@@ -300,6 +317,17 @@
 
   .bm-hero-title {
     font-size: 28px !important;
+    width: 100%;
+    max-width: 720px;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    overflow-wrap: anywhere;
+  }
+
+  .line-1,
+  .line-2,
+  .line-3 {
+    text-align: center;
   }
 
   .bm-abount-hero-title {
@@ -307,6 +335,8 @@
   }
 
   .bm-hero-description {
+    width: 100%;
+    max-width: 680px;
     font-size: 16px;
     line-height: 1.7;
   }
@@ -318,6 +348,34 @@
   .animatetext {
 
     margin-bottom: 0px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bm-hero-section {
+    min-height: auto;
+    padding: 60px 24px 40px;
+  }
+
+  .bm-hero-badge__text {
+    font-size: 22px;
+  }
+
+  .bm-hero-title {
+    max-width: 900px;
+    font-size: clamp(42px, 5.5vw, 56px);
+    line-height: 1.15;
+    letter-spacing: 1px;
+  }
+
+  .bm-hero-description {
+    max-width: 760px;
+    font-size: 21px;
+    line-height: 1.5;
+  }
+
+  .bm-hero-btn-trusted {
+    padding-top: 50px;
   }
 }
 

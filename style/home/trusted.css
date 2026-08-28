@@ -10,10 +10,11 @@ body{
 }
 
 .bm-trusted-logos-track {
+  --bm-logo-gap: 40px;
   display: flex;
-  gap: 100px;
+  gap: var(--bm-logo-gap);
   width: max-content;
-  animation: scrollLogos 10s linear infinite;
+  animation: scrollLogos calc(var(--bm-logo-count) * 2.2s) linear infinite;
 }
 
 .bm-trusted-logo-item img {
@@ -33,7 +34,7 @@ body{
     
   }
   100% {
-    transform: translateX(-10%);
+    transform: translateX(calc(-50% - (var(--bm-logo-gap) / 2)));
   }
 }
 
@@ -42,10 +43,15 @@ body{
   padding: 100px 20px ;
   padding-bottom: 0px;
   width:100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .bm-trusted-container {
   /* max-width: 1200px; */
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   margin: 0 auto;
   text-align: center;
 }
@@ -90,7 +96,8 @@ body{
 }
 
 .bm-trusted-logo-item {
-  width: 100%;
+  flex: 0 0 160px;
+  width: 160px;
   height: 60px;
   display: flex;
   align-items: center;
@@ -113,12 +120,20 @@ body{
 /* --- Responsive Adjustments --- */
 
 @media (max-width: 1024px) {
+  .bm-trusted-section {
+    padding: 50px 20px 0;
+  }
+
   .bm-trusted-logos {
     gap: 30px;
   }
 }
 
 @media (max-width: 768px) {
+  .bm-trusted-logos-track {
+    --bm-logo-gap: 24px;
+  }
+
   .bm-trusted-header {
     flex-direction: column;
     gap: 5px;
@@ -154,7 +169,11 @@ body{
     grid-template-columns: repeat(2, 1fr); /* 2 logos per row on mobile */
   }
   .bm-trusted-logos-track{
-    gap: 10px;
+    --bm-logo-gap: 18px;
+  }
+  .bm-trusted-logo-item {
+    flex-basis: 120px;
+    width: 120px;
   }
   .bm-trusted-section {
     padding: 0px 15px;
