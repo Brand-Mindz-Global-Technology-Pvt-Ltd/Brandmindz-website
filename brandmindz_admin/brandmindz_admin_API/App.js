@@ -9,7 +9,10 @@ const fileUpload = require("express-fileupload");
 
 var httpServer = http.createServer(app);
 // var httpsServer = https.createServer(credentials, app);
-httpServer.listen(3007);
+const port = Number(process.env.PORT || 3007);
+httpServer.listen(port, "0.0.0.0", () => {
+  console.log(`BrandMindz admin API listening on port ${port}.`);
+});
 // httpsServer.listen(3008);
 
 var bodyParser = require("body-parser");
@@ -47,6 +50,16 @@ const user = require("./routes/user.js");
 app.use("/blog", blog);
 app.use("/contact", contact);
 app.use("/user", user);
+
+app.get("/health", (req, res) => {
+  db.query("SELECT 1 AS ok", (err) => {
+    if (err) {
+      console.error(`[Health] Database unavailable (${err.code || "UNKNOWN"}): ${err.message}`);
+      return res.status(503).send({ status: "unhealthy", database: "unavailable", code: err.code || "DATABASE_ERROR" });
+    }
+    return res.status(200).send({ status: "healthy", database: "connected" });
+  });
+});
 
 // Serve uploaded files as static assets
 app.use("/storage", express.static(path.join(__dirname, "storage")));
