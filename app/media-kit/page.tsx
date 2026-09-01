@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Image, { type StaticImageData } from "next/image";
-import { Download } from "lucide-react";
+import { Download, ExternalLink, FileText } from "lucide-react";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import whiteLogoPreview from "../../assets/Footer/media kit/previews/white-logo-preview.png";
 import blackLogoPreview from "../../assets/Footer/media kit/previews/black-logo-preview.png";
+import founderFormal from "../../assets/media-kit/founder/founder-formal.webp";
+import founderOffice from "../../assets/media-kit/founder/founder-office.webp";
+import founderSpeaking from "../../assets/about/foundern-2.webp";
+import founderPodium from "../../assets/about/foundern-3.webp";
+import mediaKitHero from "../../assets/media-kit/media-kit-hero.jpg";
 import styles from "./media-kit.module.css";
 
 export const metadata: Metadata = {
@@ -74,12 +79,28 @@ const logoAssets: LogoAsset[] = [
   },
 ];
 
+const founderImages = [
+  { image: founderFormal, alt: "R. Vasanth Kumar formal founder portrait", slug: "founder-formal" },
+  { image: founderOffice, alt: "R. Vasanth Kumar office portrait", slug: "founder-office" },
+  { image: founderSpeaking, alt: "R. Vasanth Kumar speaking at a business meeting", slug: "founder-speaking" },
+  { image: founderPodium, alt: "R. Vasanth Kumar delivering a keynote address", slug: "founder-podium" },
+];
+
 export default function MediaKitPage() {
   return (
     <>
       <Header />
       <main className={styles.page}>
         <section className={styles.hero}>
+          <Image
+            src={mediaKitHero}
+            alt="Creative workspace with a laptop and design tools"
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroImage}
+          />
+          <div className={styles.heroOverlay} aria-hidden="true" />
           <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}>Brand resources</p>
@@ -106,6 +127,19 @@ export default function MediaKitPage() {
           <div className={styles.assetList}>
             {logoAssets.map((asset) => (
               <article className={styles.assetRow} key={asset.title}>
+                <div
+                  className={`${styles.assetPreview} ${
+                    asset.background === "dark" ? styles.darkPreview : styles.lightPreview
+                  }`}
+                >
+                  <Image
+                    src={asset.image}
+                    alt={`${asset.title} preview`}
+                    sizes="(max-width: 600px) 100vw, 50vw"
+                    className={styles.logoImage}
+                  />
+                </div>
+
                 <div className={styles.assetContent}>
                   <p className={styles.assetLabel}>Official logo asset</p>
                   <h3>{asset.title}</h3>
@@ -131,26 +165,102 @@ export default function MediaKitPage() {
                     Download logo
                   </a>
                 </div>
-
-                <div
-                  className={`${styles.assetPreview} ${
-                    asset.background === "dark" ? styles.darkPreview : styles.lightPreview
-                  }`}
-                >
-                  <Image
-                    src={asset.image}
-                    alt={`${asset.title} preview`}
-                    sizes="(max-width: 768px) 90vw, 42vw"
-                    className={styles.logoImage}
-                  />
-                </div>
               </article>
             ))}
           </div>
         </section>
 
+        <section className={styles.founderSection} aria-labelledby="founder-heading">
+          <div className={styles.sectionIntro}>
+            <p className={styles.sectionNumber}>02</p>
+            <div>
+              <h2 id="founder-heading">Founder Profile</h2>
+              <p>
+                Approved biography, press-ready facts, and official photographs of
+                R. Vasanth Kumar, Founder &amp; CEO of Brand Mindz Global Technology Pvt Ltd.
+              </p>
+            </div>
+          </div>
+
+          <article className={styles.founderProfileCard}>
+            <div className={styles.founderProfileCopy}>
+              <p className={styles.assetLabel}>Official press resource</p>
+              <FileText className={styles.pdfIcon} size={42} aria-hidden="true" />
+              <h3>R. Vasanth Kumar</h3>
+              <p className={styles.founderRole}>Founder &amp; CEO</p>
+              <p className={styles.assetDescription}>
+                A three-page PDF containing the approved founder biography, leadership
+                profile, key facts, short bio, and media-ready positioning.
+              </p>
+              <div className={styles.assetMeta}>
+                <div><span>File format</span><strong>PDF</strong></div>
+                <div><span>Pages</span><strong>3 pages</strong></div>
+              </div>
+              <a
+                className={styles.downloadButton}
+                href="/api/media-kit/founder-profile"
+                download="Brand-Mindz-Founder-Profile.pdf"
+              >
+                <Download size={18} aria-hidden="true" />
+                Download founder profile
+              </a>
+            </div>
+
+            <div className={styles.founderFeatureImage}>
+              <Image
+                src={founderFormal}
+                alt="R. Vasanth Kumar, Founder and CEO of Brand Mindz Global"
+                fill
+                sizes="(max-width: 900px) 100vw, 45vw"
+              />
+            </div>
+          </article>
+
+          <div className={styles.founderGalleryHeader}>
+            <div>
+              <p className={styles.assetLabel}>Approved photography</p>
+              <h3>Founder images</h3>
+            </div>
+            <p>Download and use without cropping, filters, or visual alterations.</p>
+          </div>
+
+          <div className={styles.founderGallery}>
+            {founderImages.map((item, index) => (
+              <article className={styles.founderImageCard} key={item.slug}>
+                <div className={styles.founderImageFrame}>
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 25vw"
+                  />
+                </div>
+                <div className={styles.founderImageFooter}>
+                  <span>Image {String(index + 1).padStart(2, "0")}</span>
+                  <a href={`/api/media-kit/${item.slug}`} download>
+                    <Download size={16} aria-hidden="true" />
+                    Download
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className={styles.seeMoreFounderImages}>
+            <p>Browse the complete collection of approved founder photographs.</p>
+            <a
+              href="https://drive.google.com/drive/folders/1JupNZNe2c4UzxCWqjdO8Qz7MpnPlZDeH"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See more founder images
+              <ExternalLink size={17} aria-hidden="true" />
+            </a>
+          </div>
+        </section>
+
         <section className={styles.usageNote}>
-          <p className={styles.sectionNumber}>02</p>
+          <p className={styles.sectionNumber}>03</p>
           <div>
             <h2>Using our brand assets</h2>
             <p>

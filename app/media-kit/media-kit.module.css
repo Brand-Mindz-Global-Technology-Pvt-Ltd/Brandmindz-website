@@ -10,7 +10,21 @@
   min-height: 72vh;
   padding: 150px max(6vw, 32px) 72px;
   overflow: hidden;
-  background: linear-gradient(145deg, #050505 0%, #111 58%, #000 100%);
+  background: #080808;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.68) 48%, rgba(0, 0, 0, 0.38) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.48), transparent 55%);
 }
 
 .hero::after {
@@ -29,12 +43,13 @@
   right: 4%;
   width: 48vw;
   height: 48vw;
-  background: radial-gradient(circle, rgba(255, 210, 31, 0.34), transparent 68%);
+  z-index: 1;
+  background: radial-gradient(circle, rgba(255, 210, 31, 0.2), transparent 68%);
 }
 
 .heroContent {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 920px;
 }
 
@@ -65,10 +80,199 @@
 }
 
 .assetsSection,
+.founderSection,
 .usageNote {
   max-width: 1440px;
   margin: 0 auto;
   padding: 90px max(5vw, 28px);
+}
+
+.founderSection {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px max(5vw, 28px) 90px;
+}
+
+.founderProfileCard {
+  display: grid;
+  grid-template-columns: minmax(0, 52%) minmax(0, 48%);
+  min-height: 560px;
+  margin-top: 56px;
+  overflow: hidden;
+  color: #fff;
+  background: #111;
+  border-radius: 20px;
+}
+
+.founderProfileCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(36px, 5vw, 72px);
+}
+
+.founderProfileCopy .assetLabel,
+.founderProfileCopy .assetDescription,
+.founderProfileCopy .assetMeta span {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.founderProfileCopy h3 {
+  margin: 16px 0 0;
+  font-size: clamp(38px, 4vw, 62px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.pdfIcon {
+  color: #ffd21f;
+}
+
+.founderRole {
+  margin: 12px 0 0;
+  color: #ffd21f;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.founderProfileCopy .downloadButton {
+  color: #111;
+  background: #ffd21f;
+}
+
+.founderProfileCopy .downloadButton:hover {
+  color: #111;
+  background: #fff;
+}
+
+.founderFeatureImage {
+  position: relative;
+  min-height: 560px;
+}
+
+.founderFeatureImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(17, 17, 17, 0.22), transparent 38%);
+}
+
+.founderFeatureImage img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.founderGalleryHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 72px 0 28px;
+}
+
+.founderGalleryHeader h3 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.founderGalleryHeader > p {
+  max-width: 430px;
+  margin: 0;
+  color: #707070;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.founderGallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.founderImageCard {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dedede;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.founderImageFrame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #eceae4;
+}
+
+.founderImageFrame img {
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.35s ease;
+}
+
+.founderImageCard:hover .founderImageFrame img {
+  transform: scale(1.025);
+}
+
+.founderImageFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  color: #777;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.founderImageFooter a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #111;
+  text-decoration: none;
+}
+
+.seeMoreFounderImages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 28px;
+  padding: 22px 24px;
+  background: #f4f3ef;
+  border-radius: 14px;
+}
+
+.seeMoreFounderImages p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.seeMoreFounderImages a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 9px;
+  padding: 12px 20px;
+  color: #111;
+  background: #ffd21f;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.seeMoreFounderImages a:hover {
+  background: #fff;
+  transform: translateY(-2px);
 }
 
 .sectionIntro,
@@ -110,24 +314,35 @@
 }
 
 .assetList {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  padding-top: 48px;
 }
 
 .assetRow {
   display: grid;
-  grid-template-columns: minmax(0, 55%) minmax(0, 45%);
-  min-height: 390px;
-  padding: 46px 0;
-  border-bottom: 1px solid #dcdcdc;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.045);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.assetRow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.09);
 }
 
 .assetContent {
   display: flex;
+  grid-row: 2;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  padding: 10px 8vw 10px 0;
+  padding: clamp(26px, 3vw, 40px);
 }
 
 .assetLabel {
@@ -153,6 +368,10 @@
   color: #737373;
   font-size: 17px;
   line-height: 1.55;
+}
+
+.assetContent .downloadButton {
+  margin-top: auto;
 }
 
 .assetMeta {
@@ -201,12 +420,15 @@
 
 .assetPreview {
   display: flex;
+  grid-row: 1;
   align-items: center;
   justify-content: center;
+  width: 100%;
   min-height: 300px;
-  padding: clamp(28px, 5vw, 70px);
+  aspect-ratio: 16 / 9;
+  padding: clamp(32px, 5vw, 68px);
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 0;
 }
 
 .darkPreview {
@@ -257,17 +479,24 @@
     min-height: 62vh;
   }
 
-  .assetRow {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .assetContent {
-    padding-right: 0;
+  .assetList {
+    gap: 20px;
   }
 
   .assetPreview {
     min-height: 280px;
+  }
+
+  .founderProfileCard {
+    grid-template-columns: 1fr;
+  }
+
+  .founderFeatureImage {
+    min-height: 520px;
+  }
+
+  .founderGallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -277,7 +506,16 @@
     padding: 130px 22px 54px;
   }
 
+  .heroImage {
+    object-position: 58% center;
+  }
+
+  .heroOverlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.52));
+  }
+
   .assetsSection,
+  .founderSection,
   .usageNote {
     padding-left: 20px;
     padding-right: 20px;
@@ -294,7 +532,16 @@
   }
 
   .assetRow {
-    padding: 34px 0;
+    border-radius: 14px;
+  }
+
+  .assetList {
+    grid-template-columns: 1fr;
+    padding-top: 32px;
+  }
+
+  .assetContent {
+    padding: 26px 22px 28px;
   }
 
   .assetMeta {
@@ -302,8 +549,47 @@
   }
 
   .assetPreview {
-    min-height: 220px;
-    padding: 32px;
-    border-radius: 12px;
+    min-height: 210px;
+    padding: 30px;
+  }
+
+  .founderSection {
+    padding-top: 0;
+    padding-bottom: 64px;
+  }
+
+  .founderProfileCard {
+    min-height: 0;
+    margin-top: 34px;
+    border-radius: 14px;
+  }
+
+  .founderProfileCopy {
+    padding: 34px 24px 38px;
+  }
+
+  .founderFeatureImage {
+    min-height: 420px;
+    order: -1;
+  }
+
+  .founderGalleryHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 52px;
+  }
+
+  .founderGallery {
+    grid-template-columns: 1fr;
+  }
+
+  .seeMoreFounderImages {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .seeMoreFounderImages a {
+    width: 100%;
   }
 }

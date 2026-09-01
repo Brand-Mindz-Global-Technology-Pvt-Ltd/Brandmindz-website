@@ -31,6 +31,8 @@
 
 
 .bm-blog-all-btn {
+    display: inline-block;
+    text-decoration: none;
     font-weight: 500;
     font-style: normal;
     font-size: 17px;
@@ -62,6 +64,7 @@
 
 /* Featured Card (Left) */
 .bm-featured-card {
+    display: block;
     position: relative;
     height: 680px;
     border-radius: 20px;
@@ -855,3 +858,9 @@
         margin-bottom: 20px;
     }
 }
+
+.bm-blog-image-placeholder { position: absolute; inset: 0; background: linear-gradient(135deg, #181818, #626262); }
+.bm-blog-list-link { display: flex; align-items: center; gap: 20px; width: 100%; color: inherit; text-decoration: none; }
+.bm-blog-list-image { width: 100px; height: 80px; flex: 0 0 100px; position: relative; overflow: hidden; border-radius: 10px; }
+.bm-blog-list-image img { width: 100%; height: 100%; }
+.bm-mini-card > a { display: block; height: 100%; color: inherit; text-decoration: none; }

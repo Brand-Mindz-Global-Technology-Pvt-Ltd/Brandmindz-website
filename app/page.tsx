@@ -10,6 +10,7 @@ import Faq from "@/components/home/Faq"
 import Various from "@/components/home/Various"
 import Footer from "@/components/layout/footer"
 import ProvenGrowthPage from "@/components/home/Salesstatistics"
+import { blogHref, blogImageUrl, formatBlogDate, getBlogs } from "@/lib/blogs"
 
 export const metadata = {
   title: {
@@ -37,7 +38,16 @@ export const metadata = {
   },
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const latestBlogs = (await getBlogs()).slice(0, 6).map((post) => ({
+    id: post.blog_id,
+    title: post.title,
+    description: post.short_description || "",
+    category: post.category || "Insights",
+    date: formatBlogDate(post),
+    image: blogImageUrl(post),
+    href: blogHref(post),
+  }))
   return (
     <>
       <meta name="google-site-verification" content="a55gBWr0MHNf8959SEre1QJYxhdr0roTW4B6zPfJMtY" />
@@ -62,7 +72,7 @@ export default function HomePage() {
         <Ouroffering />
         <WhyChooseUs />
         <ProvenGrowthPage/>
-        <OurBlog />
+        <OurBlog posts={latestBlogs} />
         <Various/>
         <Faq />
      
