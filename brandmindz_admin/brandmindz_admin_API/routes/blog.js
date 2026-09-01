@@ -5,12 +5,29 @@ const userMiddleware = require('../middleware/UserModel.js');
 const path = require('path');
 const fs = require('fs');
 
+const databaseError = (res, err, action) => {
+  console.error(`[Blog] ${action} failed (${err.code || 'UNKNOWN'}): ${err.message}`);
+  const unavailable = err.fatal || [
+    'PROTOCOL_CONNECTION_LOST',
+    'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+    'ECONNREFUSED',
+    'ECONNRESET',
+    'ETIMEDOUT'
+  ].includes(err.code);
+
+  return res.status(unavailable ? 503 : 400).send({
+    msg: unavailable
+      ? 'Database is temporarily unavailable. Please try again.'
+      : `Unable to ${action}.`,
+    code: err.code || 'DATABASE_ERROR'
+  });
+};
+
 router.get('/getBlog', (req, res, next) => {
   db.query(`SELECT * FROM blogs ORDER BY blog_id DESC`,
     (err, result) => {
       if (err) {
-        console.log('error: ', err);
-        return res.status(400).send({ data: err, msg: 'failed' });
+        return databaseError(res, err, 'load blogs');
       } else {
         return res.status(200).send({ data: result, msg: 'Success' });
       }
@@ -22,8 +39,7 @@ router.post('/getBlogById', (req, res, next) => {
   db.query(`SELECT * FROM blogs WHERE blog_id=${db.escape(req.body.blog_id)}`,
     (err, result) => {
       if (err) {
-        console.log('error: ', err);
-        return res.status(400).send({ data: err, msg: 'failed' });
+        return databaseError(res, err, 'load the blog');
       } else {
         return res.status(200).send({ data: result, msg: 'Success' });
       }
@@ -47,8 +63,7 @@ router.post('/editBlogs', (req, res, next) => {
             WHERE blog_id=${db.escape(req.body.blog_id)}`,
     (err, result) => {
       if (err) {
-        console.log('error: ', err);
-        return res.status(400).send({ data: err, msg: 'failed' });
+        return databaseError(res, err, 'update the blog');
       } else {
         return res.status(200).send({ data: result, msg: 'Success' });
       }
@@ -73,8 +88,7 @@ router.post('/insertBlog', (req, res, next) => {
   let sql = "INSERT INTO blogs SET ?";
   db.query(sql, data, (err, result) => {
     if (err) {
-      console.log('error: ', err);
-      return res.status(400).send({ data: err, msg: 'failed' });
+      return databaseError(res, err, 'save the blog');
     } else {
       return res.status(200).send({ data: result, msg: 'Success' });
     }
@@ -114,8 +128,7 @@ router.post('/deleteBlog', (req, res, next) => {
   let sql = `DELETE FROM blogs WHERE blog_id=${db.escape(req.body.blog_id)}`;
   db.query(sql, (err, result) => {
     if (err) {
-      console.log('error: ', err);
-      return res.status(400).send({ data: err, msg: 'failed' });
+      return databaseError(res, err, 'delete the blog');
     } else {
       return res.status(200).send({ data: result, msg: 'Success' });
     }

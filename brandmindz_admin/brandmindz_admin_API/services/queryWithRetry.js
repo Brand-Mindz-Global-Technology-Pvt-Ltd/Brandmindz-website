@@ -1,9 +1,12 @@
 const TRANSIENT_CONNECTION_ERRORS = new Set([
   'PROTOCOL_CONNECTION_LOST',
   'PROTOCOL_ENQUEUE_AFTER_FATAL_ERROR',
+  'PROTOCOL_PACKETS_OUT_OF_ORDER',
+  'ECONNREFUSED',
   'ECONNRESET',
   'ETIMEDOUT',
-  'EPIPE'
+  'EPIPE',
+  'ER_CON_COUNT_ERROR'
 ]);
 
 function queryWithRetry(execute, queryArgs, callback, options = {}) {
