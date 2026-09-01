@@ -164,7 +164,7 @@
 /* Alphabet Scroll / Filter Navigation */
 .alphabet-navigation-container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 10px;
   overflow-x: auto;
@@ -182,7 +182,9 @@
   justify-content: flex-start;
   gap: 8px;
   padding: 10px 5px;
-  min-width: max-content;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 0;
 }
 
 .alphabet-letter {
@@ -570,6 +572,13 @@
 }
 
 @media (max-width: 768px) {
+  .alphabet-navigation {
+    width: max-content;
+    min-width: max-content;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
   .bm-hero-section-resources {
     padding: 65px 15px 35px 15px;
   }

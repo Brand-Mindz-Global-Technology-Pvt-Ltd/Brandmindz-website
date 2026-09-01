@@ -270,13 +270,6 @@ export const GetStartedSection = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  const handleNext = (nextStep: number) => {
-    if (validateStep(nextStep)) {
-      setActiveStep(nextStep + 1);
-    }
-  };
-
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -301,21 +294,54 @@ export const GetStartedSection = () => {
   }, []);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [enquiryId, setEnquiryId] = useState<number | null>(null);
+  const API_BASE_URL = (process.env.NEXT_PUBLIC_ADMIN_API_BASE_URL ||
+    (process.env.NODE_ENV === "production" ? "https://www.brandmindz.com/admin-api" : "http://localhost:3007"))
+    .replace(/\/$/, "")
+    .replace(/\/blog$/, "");
 
-  const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbylboHU_WyOf0fvqmnnYLRF54rloqhojNcUxq7R_GIjQtUPIa5VT-cMulNGnrbvKN9K/exec";
-
-  const submitLead = async (leadData: Record<string, string>) => {
-    const response = await fetch(SCRIPT_URL, {
+  const saveProgress = async (stage: number) => {
+    const payload = {
+      stage,
+      enquiryId,
+      name: formData.name,
+      companyName: formData.companyName,
+      designation: formData.designation,
+      phone: `${selectedCountry.code} ${formData.phone}`,
+      email: formData.email,
+      location: formData.location,
+      serviceRequired: formData.help,
+      industry: formData.industry,
+      detailedRequirement: formData.requirement,
+      preferredConnection: formData.connectionDate,
+      projectStart: formData.timeline,
+      contactMode: formData.contactMode.join(", ")
+    };
+    const response = await fetch(`${API_BASE_URL}/contact/save-progress`, {
       method: "POST",
-      headers: {
-        "Content-Type": "text/plain;charset=utf-8",
-      },
-      body: JSON.stringify(leadData),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
-
-    return await response.json();
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.msg || "Unable to save enquiry");
+    if (result.data?.enq_id) setEnquiryId(result.data.enq_id);
+    return result;
   };
+
+  const handleNext = async (currentStep: number) => {
+    if (!validateStep(currentStep)) return;
+    setIsSubmitting(true);
+    try {
+      await saveProgress(currentStep);
+      setActiveStep(currentStep + 1);
+    } catch (error) {
+      console.error(error);
+      alert("We couldn't save your details. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleSubmitLead = async () => {
     // Validate Step 3
     if (!validateStep(3)) return;
@@ -323,30 +349,8 @@ export const GetStartedSection = () => {
     setIsSubmitting(true);
 
     try {
-      const payload = {
-
-        name: formData.name,
-        companyName: formData.companyName,
-        designation: formData.designation,
-        phone: `${selectedCountry.code} ${formData.phone}`,
-        email: formData.email,
-        location: formData.location,
-        serviceRequired: formData.help,
-        industry: formData.industry,
-        detailedRequirement: formData.requirement,
-        preferredConnection: formData.connectionDate,
-        projectStart: formData.timeline,
-        contactMode: formData.contactMode.join(", ")
-      };
-
-
-      const response = await submitLead(payload);
-
-      if (response.success) {
-        setActiveStep(4); // Success page
-      } else {
-        alert(response.message || "Something went wrong");
-      }
+      await saveProgress(3);
+      setActiveStep(4); // Success page
     } catch (error) {
       console.error(error);
       alert("Failed to submit. Please try again.");
@@ -631,6 +635,7 @@ export const GetStartedSection = () => {
                                 className="bm-s2-next-btn"
                                 type="button"
                                 onClick={() => handleNext(1)}
+                                disabled={isSubmitting}
                               >
                                 <span className="bm-btn-icon">
                                   <Image src={arrowIcon} alt="next" width={18} height={18} />
@@ -778,6 +783,7 @@ export const GetStartedSection = () => {
                             <button
                               className="bm-s2-next-btn"
                               onClick={() => handleNext(2)}
+                              disabled={isSubmitting}
                             >
                               <span className="bm-btn-icon">
                                 <Image

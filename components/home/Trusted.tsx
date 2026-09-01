@@ -112,14 +112,27 @@ export const Trusted = () => {
             className="bm-trusted-logos-track"
             style={{ "--bm-logo-count": brandLogos.length } as React.CSSProperties}
           >
-            {[...brandLogos, ...brandLogos].map((item, index) => (
-              <div className="bm-trusted-logo-item" key={index}>
-                 <Image
-                src={item.img}
-                alt={item.alt}
-                height={60}
-                priority
-              />
+            {[0, 1].map((groupIndex) => (
+              <div
+                className="bm-trusted-logos-group"
+                aria-hidden={groupIndex === 1 ? "true" : undefined}
+                key={groupIndex}
+              >
+                {brandLogos.map((item) => (
+                  <div
+                    className={`bm-trusted-logo-item ${
+                      item.id === 25 ? "bm-trusted-logo-item--dark" : ""
+                    } ${item.id === 4 || item.id === 5 ? "bm-trusted-logo-item--compact" : ""}`}
+                    key={`${groupIndex}-${item.id}`}
+                  >
+                    <Image
+                      src={item.img}
+                      alt={groupIndex === 0 ? item.alt : ""}
+                      height={60}
+                      priority
+                    />
+                  </div>
+                ))}
               </div>
             ))}
           </div>

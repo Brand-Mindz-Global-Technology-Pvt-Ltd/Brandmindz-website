@@ -66,7 +66,7 @@ const FlipLetter = ({ letter }: { letter: string }) => {
       animate={{ y: 0, opacity: 1 }}    // center
       exit={{ y: -40, opacity: 0 }}     // top
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="inline-block font-[Afacad] text-[25px] font-semibold text-yellow sm:text-[32px] md:text-[32px] lg:text-[70px] xl:text-[75px]"
+      className="bm-hero-rotating-letter inline-block font-[Afacad] font-semibold text-yellow"
     >
       {isSpace ? "\u00A0" : letter}
     </motion.span>
@@ -100,9 +100,9 @@ export const Banner = () => {
             <span className="text-grey">Full-Stack Marketing Agency</span>
             <span className="text-black"> built by practitioners who understand 
 
-              <span className="inline-flex items-center" style={{marginLeft:"10px"}}>
+              <span className="bm-hero-rotating-word inline-flex items-center">
                 <AnimatePresence mode="wait">
-                  <motion.div key={words[index]}>
+                  <motion.div className="bm-hero-rotating-text" key={words[index]}>
                     {words[index].split("").map((letter, i) => (
                       <FlipLetter key={`${words[index]}-${i}`} letter={letter} />
                     ))}

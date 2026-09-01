@@ -36,6 +36,11 @@ const EnquiryList = () => {
     });
   };
 
+  const getProgress = (message = '') => {
+    const match = message.match(/Form progress: Step (\d) of 3/i);
+    return match ? `Step ${match[1]} of 3` : 'Legacy enquiry';
+  };
+
   return (
     <div className="enquiry-list">
       <div className="page-header">
@@ -51,15 +56,16 @@ const EnquiryList = () => {
               <th>Email</th>
               <th>Phone</th>
               <th>Location</th>
+              <th>Progress</th>
               <th>Date</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {loading ? (
-              <tr><td colSpan="7" style={{textAlign: 'center'}}>Loading...</td></tr>
+              <tr><td colSpan="8" style={{textAlign: 'center'}}>Loading...</td></tr>
             ) : enquiries.length === 0 ? (
-              <tr><td colSpan="7" style={{textAlign: 'center'}}>No enquiries found</td></tr>
+              <tr><td colSpan="8" style={{textAlign: 'center'}}>No enquiries found</td></tr>
             ) : (
               enquiries.map((enquiry) => (
                 <tr key={enquiry.enq_id}>
@@ -68,6 +74,7 @@ const EnquiryList = () => {
                   <td>{enquiry.email}</td>
                   <td>{enquiry.phone}</td>
                   <td>{enquiry.location}</td>
+                  <td>{getProgress(enquiry.message)}</td>
                   <td>{formatDate(enquiry.created_at)}</td>
                   <td>
                     <Link to={`/enquiries/${enquiry.enq_id}`} className="icon-btn-small" title="View Details">
