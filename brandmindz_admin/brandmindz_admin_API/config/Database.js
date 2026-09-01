@@ -9,7 +9,10 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME || 'brandmindz',
     waitForConnections: true,
     connectionLimit: Number(process.env.DB_CONNECTION_LIMIT || 10),
+    maxIdle: Number(process.env.DB_MAX_IDLE || 5),
+    idleTimeout: Number(process.env.DB_IDLE_TIMEOUT_MS || 60000),
     queueLimit: 0,
+    connectTimeout: Number(process.env.DB_CONNECT_TIMEOUT_MS || 10000),
     enableKeepAlive: true,
     keepAliveInitialDelay: 10000
 });
@@ -45,7 +48,10 @@ function query(sql, values, callback) {
         pool.query.bind(pool),
         queryArgs,
         queryCallback,
-        { maxRetries: 2, retryDelayMs: 150 }
+        // A DB restart or a stale Docker-to-host connection can take more than
+        // a few hundred milliseconds to recover. Each retry acquires a fresh
+        // pooled connection.
+        { maxRetries: 5, retryDelayMs: 300 }
     );
 }
 

@@ -121,7 +121,7 @@ const BlogForm = () => {
         alert(`Blog successfully ${isEditMode ? 'updated' : 'created'}!`);
         navigate('/blogs');
       } else {
-        alert('Failed to save blog');
+        alert(result.msg || 'Failed to save blog');
       }
     } catch (error) {
       console.error('Error saving blog:', error);
