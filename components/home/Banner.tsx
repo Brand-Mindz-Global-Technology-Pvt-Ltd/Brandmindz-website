@@ -1,14 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "../../style/home/banner.css";
-import { HeroBoltIcon } from "@/components/ui/HeroBoltIcon";
+import { FaBolt } from "react-icons/fa6";
 import { FiChevronRight } from "react-icons/fi";
 import { Trusted } from "./Trusted";
 import { FadeIn } from "@/components/animations/fade-in";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
-
-
 
 
 // const FlipLetter = ({ letter }) => {
@@ -66,7 +63,15 @@ const FlipLetter = ({ letter }: { letter: string }) => {
       animate={{ y: 0, opacity: 1 }}    // center
       exit={{ y: -40, opacity: 0 }}     // top
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="bm-hero-rotating-letter inline-block font-[Afacad] font-semibold text-yellow"
+      className="inline-block 
+      font-[Afacad] 
+       text-yellow
+        font-semibold 
+            text-[25px] 
+             sm:text-[32px] 
+             md:text-[32px] 
+             lg:text-[70px] 
+             xl:text-[75px] "
     >
       {isSpace ? "\u00A0" : letter}
     </motion.span>
@@ -76,6 +81,7 @@ const FlipLetter = ({ letter }: { letter: string }) => {
 export const Banner = () => {
   const words = ["Business", "Growth", "Scale"];
   const [index, setIndex] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % words.length);
@@ -83,48 +89,43 @@ export const Banner = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const router = useRouter();
   return (
     <section className="bm-hero-section">
       <FadeIn delay={0.1}>
         <div className="bm-hero-badge">
-          <HeroBoltIcon />
+          <span className="bm-hero-badge__icon">
+            <FaBolt className="w-3 h-3 md:w-5 md:h-5" color="black" />
+          </span>
           <p className="bm-hero-badge__text">India's Leading Marketing Agency</p>
         </div>
       </FadeIn>
 
       <FadeIn delay={0.2}>
         <h1 className="bm-hero-title">
-          <div className="line-1">
-            <span className="text-black">A </span>
-            <span className="text-grey">Full-Stack Marketing Agency</span>
-            <span className="text-black"> built by practitioners who understand 
+          <span className="text-black">A </span>
+          <span className="text-grey">Full-Stack Marketing Agency</span>
+          <span className="text-black"> built by practitioners who understand </span>
 
-              <span className="bm-hero-rotating-word inline-flex items-center">
-                <AnimatePresence mode="wait">
-                  <motion.div className="bm-hero-rotating-text" key={words[index]}>
-                    {words[index].split("").map((letter, i) => (
-                      <FlipLetter key={`${words[index]}-${i}`} letter={letter} />
-                    ))}
-                  </motion.div>
-                </AnimatePresence>
+          <span className="inline-flex items-center">
+            <AnimatePresence mode="wait">
+              <motion.div key={words[index]}>
+                {words[index].split("").map((letter, i) => (
+                  <FlipLetter key={`${words[index]}-${i}`} letter={letter} />
+                ))}
+              </motion.div>
+            </AnimatePresence>
+            <motion.span
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ repeat: Infinity, duration: 0.8 }}
+              className="ml-1 w-0.5 md:w-1 h-7.5 md:h-15 bg-yellow"
+            />
+            <span className="text-black">,</span>
 
-                <motion.span
-                  animate={{ opacity: [0, 1, 0] }}
-                  transition={{ repeat: Infinity, duration: 0.8 }}
-                  className="ml-1 h-7.5 w-0.5 bg-yellow md:h-15 md:w-1"
-                />
-              </span>
-
-              <span>,</span>
-            </span>
-          </div>
-
-          <div className="line-3">
-            <span className="text-black">not just </span>
-            <span className="text-grey">Marketing</span>
-            <span>.</span>
-          </div>
+          </span>
+          <br />
+          <span className="text-black">not just </span>
+          <span className="text-grey">Marketing</span>
+          <span className="text-black">.</span>
         </h1>
       </FadeIn>
 
@@ -137,9 +138,7 @@ export const Banner = () => {
 
       <FadeIn delay={0.5}>
         <div className="bm-hero-action">
-          <button className="bm-hero-btn" onClick={() => {
-            router.push('/contact');
-          }}>
+          <button className="bm-hero-btn">
             <div className="bm-hero-btn__icon"><FiChevronRight /></div>
             <span className="bm-hero-btn__text">Talk to a <strong>Growth Specialist</strong></span>
           </button>
