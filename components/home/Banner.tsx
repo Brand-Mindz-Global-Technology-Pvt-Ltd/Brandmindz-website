@@ -106,21 +106,20 @@ export const Banner = () => {
           <span className="text-grey">Full-Stack Marketing Agency</span>
           <span className="text-black"> built by practitioners who understand </span>
 
-          <span className="inline-flex items-center">
+          <span className="bm-hero-rotating-word inline-flex items-center">
             <AnimatePresence mode="wait">
-              <motion.div key={words[index]}>
+              <motion.span className="bm-hero-rotating-text" key={words[index]}>
                 {words[index].split("").map((letter, i) => (
                   <FlipLetter key={`${words[index]}-${i}`} letter={letter} />
                 ))}
-              </motion.div>
+                <span className="text-yellow">,</span>
+              </motion.span>
             </AnimatePresence>
             <motion.span
               animate={{ opacity: [0, 1, 0] }}
               transition={{ repeat: Infinity, duration: 0.8 }}
               className="ml-1 w-0.5 md:w-1 h-7.5 md:h-15 bg-yellow"
             />
-            <span className="text-black">,</span>
-
           </span>
           <br />
           <span className="text-black">not just </span>

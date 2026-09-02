@@ -4,13 +4,13 @@
   width: 100%;
   overflow: hidden;
   color: black;
-  padding: 60px 0 30px 0;
+  padding: var(--section-space-compact) 0 clamp(1.5rem, 3vw, 2.5rem);
 background-color: #F3F3F3;
   background-image: url("../../assets/HomeSection/banner/group1.webp"); /* public folder */
   background-size:100%;
  background-position: center 0px;
   background-repeat: no-repeat;
-  margin-top: 50px;
+  margin-top: var(--section-space-compact);
 
 }
 
@@ -29,9 +29,10 @@ background-color: #F3F3F3;
 .contentWrapper {
   position: relative;
   z-index: 10;
-  max-width: 1440px;
+  width: min(calc(100% - (2 * var(--site-gutter))), var(--site-container));
+  max-width: var(--site-container);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0;
 }
 
 .brandColumn {
@@ -78,7 +79,7 @@ background-color: #F3F3F3;
   gap: 12px;
   border: 1px solid black;
   border-radius:10px;
-  padding: 9px 50px;
+  padding: 9px clamp(1rem, 3vw, 3rem);
   width: fit-content;
   background:white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);

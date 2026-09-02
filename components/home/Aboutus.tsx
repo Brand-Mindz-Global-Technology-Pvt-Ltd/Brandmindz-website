@@ -536,7 +536,7 @@ Our climate action efforts focus on reducing unnecessary paper and printing, usi
           <div className="bm-vision-layout">
             <div className="bm-vision-header">
               <p className="bm-about-subtitle">{current.subtitle}</p>
-              <h2 className="bm-about-main-title" style={{ width: '80%' }}>{current.title}</h2>
+              <h2 className="bm-about-main-title">{current.title}</h2>
             </div>
 
             <div className="bm-vision-grid-container">
@@ -618,7 +618,7 @@ Our climate action efforts focus on reducing unnecessary paper and printing, usi
           <div className="bm-sdg-container">
             <div className="bm-vision-header">
               <p className="bm-about-subtitle">{current.subtitle}</p>
-              <h2 className="bm-about-main-title" style={{ width: '50%', letterSpacing: 0.5, marginTop: '10px' }}>{current.title}</h2>
+              <h2 className="bm-about-main-title bm-about-main-title--compact">{current.title}</h2>
             </div>
 
             <div className="bm-sdg-grid">
