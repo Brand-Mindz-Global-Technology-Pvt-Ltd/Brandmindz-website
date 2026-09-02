@@ -229,7 +229,7 @@
   object-fit: cover;
 }
 
-.bm-about-quote-overlay-branding {
+.bm-about-section-branding .bm-about-quote-overlay-branding {
   position: absolute;
   bottom: 0px;
   left: 50%;
@@ -291,7 +291,7 @@
   .bm-about-section-branding {
     padding: 20px 0;
   }
-  .bm-about-quote-overlay-branding {
+  .bm-about-section-branding .bm-about-quote-overlay-branding {
     font-size: 15px;
   }
 

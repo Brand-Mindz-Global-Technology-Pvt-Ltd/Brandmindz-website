@@ -2,7 +2,8 @@
 
 import { FadeIn } from "@/components/animations/fade-in";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import "../../style/aboutus/aboutus.css";
 import eesahImage from "../../assets/about/eesah2.webp";
 import eesah2Image from "../../assets/about/eesah.webp";
@@ -15,13 +16,13 @@ export const VideoSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % slides.length);
-    }, 5000);
+  const showPreviousSlide = () => {
+    setActiveSlide((current) => (current - 1 + slides.length) % slides.length);
+  };
 
-    return () => window.clearInterval(interval);
-  }, [slides.length]);
+  const showNextSlide = () => {
+    setActiveSlide((current) => (current + 1) % slides.length);
+  };
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     touchStartX.current = event.touches[0].clientX;
@@ -63,17 +64,13 @@ export const VideoSection = () => {
                 />
               ))}
 
-              <div className="bm-video-slider-dots" aria-label="Choose image">
-                {slides.map((_, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    className={`bm-video-slider-dot ${activeSlide === index ? "active" : ""}`}
-                    onClick={() => setActiveSlide(index)}
-                    aria-label={`Show image ${index + 1}`}
-                    aria-current={activeSlide === index ? "true" : undefined}
-                  />
-                ))}
+              <div className="bm-video-slider-arrows" aria-label="Image navigation">
+                <button type="button" onClick={showPreviousSlide} aria-label="Previous image">
+                  <FiChevronLeft aria-hidden="true" />
+                </button>
+                <button type="button" onClick={showNextSlide} aria-label="Next image">
+                  <FiChevronRight aria-hidden="true" />
+                </button>
               </div>
             </div>
           </div>
