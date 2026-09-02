@@ -1,12 +1,33 @@
 const mysql = require('mysql2');
 const { queryWithRetry } = require('../services/queryWithRetry.js');
 
-const pool = mysql.createPool({
+const isProduction = process.env.NODE_ENV === 'production';
+const requiredProductionVariables = ['DB_HOST', 'DB_USER', 'DB_NAME'];
+const missingProductionVariables = requiredProductionVariables.filter((name) => !process.env[name]);
+const hasProductionPasswordVariable = Object.prototype.hasOwnProperty.call(process.env, 'DB_PASSWORD');
+
+if (isProduction && (missingProductionVariables.length || !hasProductionPasswordVariable)) {
+    const missingVariables = [
+        ...missingProductionVariables,
+        ...(!hasProductionPasswordVariable ? ['DB_PASSWORD'] : [])
+    ];
+    throw new Error(
+        `Missing required production database variables: ${missingVariables.join(', ')}`
+    );
+}
+
+// Local defaults are intentionally available only for development. Production
+// must receive the live database configuration from the deployment environment.
+const databaseConfig = {
     host: process.env.DB_HOST || 'localhost',
     port: Number(process.env.DB_PORT || 3306),
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'brandmindz',
+    database: process.env.DB_NAME || 'brandmindz'
+};
+
+const pool = mysql.createPool({
+    ...databaseConfig,
     waitForConnections: true,
     connectionLimit: Number(process.env.DB_CONNECTION_LIMIT || 10),
     maxIdle: Number(process.env.DB_MAX_IDLE || 5),
