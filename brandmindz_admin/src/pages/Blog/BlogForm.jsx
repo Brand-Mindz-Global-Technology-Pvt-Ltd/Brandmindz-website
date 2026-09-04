@@ -29,6 +29,7 @@ const BlogForm = () => {
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState('');
   const [loading, setLoading] = useState(isEditMode);
+  const [saving, setSaving] = useState(false);
 
   useEffect(() => {
     if (isEditMode) {
@@ -86,7 +87,10 @@ const BlogForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (saving) return;
+
     const endpoint = isEditMode ? '/editBlogs' : '/insertBlog';
+    setSaving(true);
 
     try {
       let imageName = formData.image;
@@ -103,7 +107,7 @@ const BlogForm = () => {
         if (uploadResult.msg === 'Success') {
           imageName = uploadResult.fileName;
         } else {
-          alert('Image upload failed. Please try again.');
+          alert(uploadResult.msg || 'Image upload failed. Please try again.');
           return;
         }
       }
@@ -126,6 +130,8 @@ const BlogForm = () => {
     } catch (error) {
       console.error('Error saving blog:', error);
       alert('An error occurred while saving.');
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -144,9 +150,9 @@ const BlogForm = () => {
             {isEditMode ? 'Edit Blog' : 'Create New Blog'}
           </h1>
         </div>
-        <button type="submit" form="blog-form" className="btn btn-primary">
+        <button type="submit" form="blog-form" className="btn btn-primary" disabled={saving}>
           <Save size={18} />
-          <span>{isEditMode ? 'Update Blog' : 'Publish Blog'}</span>
+          <span>{saving ? 'Saving...' : isEditMode ? 'Update Blog' : 'Publish Blog'}</span>
         </button>
       </div>
 

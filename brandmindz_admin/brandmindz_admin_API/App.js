@@ -6,13 +6,11 @@ var fs = require("fs");
 var http = require("http");
 var https = require("https");
 const fileUpload = require("express-fileupload");
+const { ensureBlogSchema } = require("./services/ensureBlogSchema.js");
 
 var httpServer = http.createServer(app);
 // var httpsServer = https.createServer(credentials, app);
 const port = Number(process.env.PORT || 3007);
-httpServer.listen(port, "0.0.0.0", () => {
-  console.log(`BrandMindz admin API listening on port ${port}.`);
-});
 // httpsServer.listen(3008);
 
 var bodyParser = require("body-parser");
@@ -64,4 +62,26 @@ app.get("/health", (req, res) => {
 // Serve uploaded files as static assets
 app.use("/storage", express.static(path.join(__dirname, "storage")));
 
+async function startServer() {
+  try {
+    await ensureBlogSchema(db);
+    console.log("Blog database schema is ready.");
+  } catch (err) {
+    console.error(
+      `[MySQL] Blog schema migration failed (${err.code || "UNKNOWN"}): ${err.message}`
+    );
+    process.exitCode = 1;
+    return;
+  }
+
+  httpServer.listen(port, "0.0.0.0", () => {
+    console.log(`BrandMindz admin API listening on port ${port}.`);
+  });
+}
+
+if (require.main === module) {
+  startServer();
+}
+
 module.exports = app;
+module.exports.startServer = startServer;

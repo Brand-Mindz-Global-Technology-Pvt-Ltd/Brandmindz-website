@@ -15,10 +15,16 @@ const databaseError = (res, err, action) => {
     'ETIMEDOUT'
   ].includes(err.code);
 
-  return res.status(unavailable ? 503 : 400).send({
+  const clientErrors = {
+    ER_DATA_TOO_LONG: 'One of the blog fields is too long. Redeploy the API so the blog schema migration can run.',
+    ER_DUP_ENTRY: 'This blog slug already exists. Please use a different slug.',
+    ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: 'The blog contains a value or character that the database cannot store.'
+  };
+
+  return res.status(unavailable ? 503 : err.code === 'ER_DUP_ENTRY' ? 409 : 400).send({
     msg: unavailable
       ? 'Database is temporarily unavailable. Please try again.'
-      : `Unable to ${action}.`,
+      : clientErrors[err.code] || `Unable to ${action}.`,
     code: err.code || 'DATABASE_ERROR'
   });
 };
