@@ -4,6 +4,44 @@ const db = require('../config/Database.js');
 const userMiddleware = require('../middleware/UserModel.js');
 const path = require('path');
 const fs = require('fs');
+const MAX_IMAGE_SIZE = 5 * 1024 * 1024;
+
+const BLOG_FIELD_LIMITS = {
+  title: 200,
+  slug: 200,
+  short_description: 500,
+  meta_title: 60,
+  meta_description: 160,
+  category: 100,
+  tags: 500,
+  image: 500,
+  content: 100000
+};
+
+const validateBlog = (req, res, next) => {
+  for (const [field, limit] of Object.entries(BLOG_FIELD_LIMITS)) {
+    const value = req.body[field];
+    if (value != null && typeof value !== 'string') {
+      return res.status(400).send({
+        msg: `${field.replaceAll('_', ' ')} must be text.`,
+        code: 'INVALID_BLOG_FIELD',
+        field
+      });
+    }
+
+    if (value && value.length > limit) {
+      return res.status(400).send({
+        msg: `${field.replaceAll('_', ' ')} must not exceed ${limit} characters.`,
+        code: 'BLOG_FIELD_TOO_LONG',
+        field,
+        limit,
+        length: value.length
+      });
+    }
+  }
+
+  next();
+};
 
 const databaseError = (res, err, action) => {
   console.error(`[Blog] ${action} failed (${err.code || 'UNKNOWN'}): ${err.message}`);
@@ -53,7 +91,7 @@ router.post('/getBlogById', (req, res, next) => {
   );
 });
 
-router.post('/editBlogs', (req, res, next) => {
+router.post('/editBlogs', validateBlog, (req, res, next) => {
   db.query(`UPDATE blogs
             SET title=${db.escape(req.body.title)}
             ,short_description=${db.escape(req.body.short_description)}
@@ -77,7 +115,7 @@ router.post('/editBlogs', (req, res, next) => {
   );
 });
 
-router.post('/insertBlog', (req, res, next) => {
+router.post('/insertBlog', validateBlog, (req, res, next) => {
   let data = {
     title: req.body.title,
     short_description: req.body.short_description,
@@ -107,6 +145,14 @@ router.post('/uploadBlogImage', (req, res, next) => {
   }
 
   const imageFile = req.files.image;
+  if (imageFile.size > MAX_IMAGE_SIZE) {
+    return res.status(400).send({
+      msg: 'Featured image must be 5 MB or smaller.',
+      code: 'BLOG_IMAGE_TOO_LARGE',
+      limit: MAX_IMAGE_SIZE
+    });
+  }
+
   const fileExt = path.extname(imageFile.name);
   const fileName = `blog_${Date.now()}${fileExt}`;
   const uploadDir = path.join(__dirname, '../storage/uploads/blog');

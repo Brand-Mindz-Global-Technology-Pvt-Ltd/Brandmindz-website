@@ -3,16 +3,20 @@ const assert = require('node:assert/strict');
 const { ensureBlogSchema } = require('../services/ensureBlogSchema.js');
 
 const currentColumns = [
-  ['title', 'text'],
-  ['short_description', 'text'],
-  ['meta_title', 'text'],
-  ['meta_description', 'text'],
-  ['content', 'longtext'],
-  ['tags', 'text']
-].map(([COLUMN_NAME, DATA_TYPE]) => ({
+  ['title', 'text', 'utf8mb4'],
+  ['short_description', 'text', 'utf8mb4'],
+  ['meta_title', 'text', 'utf8mb4'],
+  ['meta_description', 'text', 'utf8mb4'],
+  ['content', 'longtext', 'utf8mb4'],
+  ['category', 'varchar', 'utf8mb4', 100],
+  ['tags', 'text', 'utf8mb4'],
+  ['slug', 'varchar', 'ascii', 255],
+  ['image', 'varchar', 'utf8mb4', 500]
+].map(([COLUMN_NAME, DATA_TYPE, CHARACTER_SET_NAME, CHARACTER_MAXIMUM_LENGTH]) => ({
   COLUMN_NAME,
   DATA_TYPE,
-  CHARACTER_SET_NAME: 'utf8mb4'
+  CHARACTER_SET_NAME,
+  CHARACTER_MAXIMUM_LENGTH
 }));
 
 test('does not alter an up-to-date blogs table', async () => {

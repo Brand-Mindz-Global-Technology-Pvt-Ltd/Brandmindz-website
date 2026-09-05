@@ -5,6 +5,23 @@ import './BlogForm.css';
 
 const BASE_ENV = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3007';
 const API_BASE_URL = BASE_ENV.endsWith('/blog') ? BASE_ENV : `${BASE_ENV}/blog`;
+const FIELD_LIMITS = {
+  title: 200,
+  slug: 200,
+  short_description: 500,
+  meta_title: 60,
+  meta_description: 160,
+  tags: 500,
+  content: 100000,
+};
+const MAX_IMAGE_SIZE = 5 * 1024 * 1024;
+
+const FieldLabel = ({ children, name, value }) => (
+  <div className="form-label-row">
+    <label className="form-label" htmlFor={name}>{children}</label>
+    <span className="character-count">{value.length}/{FIELD_LIMITS[name]}</span>
+  </div>
+);
 
 const BlogForm = () => {
   const navigate = useNavigate();
@@ -80,6 +97,11 @@ const BlogForm = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      if (file.size > MAX_IMAGE_SIZE) {
+        e.target.value = '';
+        alert('Featured image must be 5 MB or smaller.');
+        return;
+      }
       setImageFile(file);
       setImagePreview(URL.createObjectURL(file));
     }
@@ -159,22 +181,24 @@ const BlogForm = () => {
       <div className="card form-card">
         <form id="blog-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">Blog Title</label>
+            <FieldLabel name="title" value={formData.title}>Blog Title</FieldLabel>
             <input 
+              id="title"
               type="text" 
               name="title"
               value={formData.title}
               onChange={handleChange}
               className="form-input" 
               placeholder="Enter blog title" 
+              maxLength={FIELD_LIMITS.title}
               required
             />
           </div>
 
           <div className="form-row">
             <div className="form-group flex-1">
-              <label className="form-label">Category</label>
-              <select name="category" value={formData.category} onChange={handleChange} className="form-input">
+              <label className="form-label" htmlFor="category">Category</label>
+              <select id="category" name="category" value={formData.category} onChange={handleChange} className="form-input">
                 <option value="">Select Category</option>
                 <option value="seo">SEO</option>
                 <option value="marketing">Marketing</option>
@@ -182,19 +206,23 @@ const BlogForm = () => {
               </select>
             </div>
             <div className="form-group flex-1">
-              <label className="form-label">Slug</label>
-              <input type="text" name="slug" value={formData.slug} onChange={handleChange} className="form-input" placeholder="blog-url-slug" />
+              <FieldLabel name="slug" value={formData.slug}>Slug</FieldLabel>
+              <input id="slug" type="text" name="slug" value={formData.slug} onChange={handleChange} maxLength={FIELD_LIMITS.slug} className="form-input" placeholder="blog-url-slug" />
             </div>
           </div>
 
           <div className="form-row">
             <div className="form-group flex-1">
-              <label className="form-label">Short Description</label>
-              <input type="text" name="short_description" value={formData.short_description} onChange={handleChange} className="form-input" placeholder="Short description" />
+              <FieldLabel name="short_description" value={formData.short_description}>Short Description</FieldLabel>
+              <input id="short_description" type="text" name="short_description" value={formData.short_description} onChange={handleChange} maxLength={FIELD_LIMITS.short_description} className="form-input" placeholder="Short description" />
             </div>
             <div className="form-group flex-1">
-              <label className="form-label">Featured Image</label>
+              <div className="form-label-row">
+                <label className="form-label" htmlFor="featured-image">Featured Image</label>
+                <span className="character-count">Max 5 MB</span>
+              </div>
               <input 
+                id="featured-image"
                 type="file" 
                 accept="image/*"
                 onChange={handleImageChange} 
@@ -210,28 +238,30 @@ const BlogForm = () => {
           
           <div className="form-row">
             <div className="form-group flex-1">
-              <label className="form-label">Meta Title</label>
-              <input type="text" name="meta_title" value={formData.meta_title} onChange={handleChange} className="form-input" placeholder="Meta title" />
+              <FieldLabel name="meta_title" value={formData.meta_title}>Meta Title</FieldLabel>
+              <input id="meta_title" type="text" name="meta_title" value={formData.meta_title} onChange={handleChange} maxLength={FIELD_LIMITS.meta_title} className="form-input" placeholder="Meta title" />
             </div>
             <div className="form-group flex-1">
-              <label className="form-label">Meta Description</label>
-              <input type="text" name="meta_description" value={formData.meta_description} onChange={handleChange} className="form-input" placeholder="Meta description" />
+              <FieldLabel name="meta_description" value={formData.meta_description}>Meta Description</FieldLabel>
+              <input id="meta_description" type="text" name="meta_description" value={formData.meta_description} onChange={handleChange} maxLength={FIELD_LIMITS.meta_description} className="form-input" placeholder="Meta description" />
             </div>
           </div>
           
           <div className="form-group">
-            <label className="form-label">Tags</label>
-            <input type="text" name="tags" value={formData.tags} onChange={handleChange} className="form-input" placeholder="comma, separated, tags" />
+            <FieldLabel name="tags" value={formData.tags}>Tags</FieldLabel>
+            <input id="tags" type="text" name="tags" value={formData.tags} onChange={handleChange} maxLength={FIELD_LIMITS.tags} className="form-input" placeholder="comma, separated, tags" />
           </div>
 
           <div className="form-group">
-            <label className="form-label">Content</label>
+            <FieldLabel name="content" value={formData.content}>Content</FieldLabel>
             <textarea 
+              id="content"
               name="content"
               value={formData.content}
               onChange={handleChange}
               className="form-input editor" 
               placeholder="Write your blog content here..."
+              maxLength={FIELD_LIMITS.content}
               required
             ></textarea>
           </div>

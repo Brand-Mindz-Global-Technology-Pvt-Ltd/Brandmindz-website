@@ -7,6 +7,19 @@
   max-width: 800px;
 }
 
+.form-label-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.character-count {
+  color: #7a7a7a;
+  flex: 0 0 auto;
+  font-size: 12px;
+}
+
 .form-row {
   display: flex;
   gap: 20px;
