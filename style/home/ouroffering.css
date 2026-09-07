@@ -463,6 +463,8 @@
 /* ===== MOBILE LARGE 580px ===== */
 @media (max-width: 580px) {
   .bm-offering-section {
+    box-sizing: border-box;
+    max-width: 100%;
     padding: 40px 15px;
   }
   
@@ -476,16 +478,22 @@
   }
   
   .bm-offering-tabs {
-    justify-content: flex-start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+    width: 100%;
     margin-bottom: 30px;
   }
-  
+
   .bm-offering-tab-btn {
+    width: 100%;
+    min-width: 0;
     font-size: 18px;
-    padding: 8px 18px;
-    white-space: nowrap;
+    padding: 8px 6px;
+    line-height: 1.2;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
-  
+
   .bm-offering-tab-btn.active::after {
     height: 2.5px;
     bottom: -2.5px;

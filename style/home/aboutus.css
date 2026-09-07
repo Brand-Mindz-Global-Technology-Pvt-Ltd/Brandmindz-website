@@ -1011,7 +1011,24 @@
   }
 
   .bm-about-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
     padding: 0px;
+  }
+
+  .bm-about-content-wrapper,
+  .bm-standard-layout,
+  .bm-about-text-side {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .bm-about-main-title,
+  .bm-about-description,
+  .bm-about-description p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .bm-certificate-grid {

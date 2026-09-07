@@ -43,13 +43,41 @@
 }
 
 .bm-hero-title {
-  font-size: 77px;
+  width: min(calc(100% - 48px), 1300px);
+  font-size: clamp(56px, 5.35vw, 77px);
   line-height: 1.2;
-  max-width: 1300px;
-  /* max-width: 88%; */
   margin: 0 auto 24px auto;
   font-weight: 700;
   letter-spacing: 2.5px;
+}
+
+.bm-hero-title-line {
+  display: block;
+}
+
+.bm-hero-title-line--secondary {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.13em;
+}
+
+.bm-hero-title-line--secondary > .text-black,
+.bm-hero-title-line--secondary > .bm-hero-rotating-word {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+@media (min-width: 1181px) {
+  .bm-hero-title-line {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .bm-hero-title-line--secondary {
+    flex-wrap: wrap;
+  }
 }
 
 .bm-abount-hero-title {
@@ -83,24 +111,24 @@
 }
 
 .bm-hero-rotating-word {
-  margin-left: 0.13em;
-  white-space: nowrap;
-  font-size: inherit;
-  line-height: inherit;
-  vertical-align: baseline;
-}
-
-.bm-hero-rotating-text {
   display: inline-flex;
+  width: auto;
+  min-height: 1.2em;
+  margin-left: 0;
   align-items: baseline;
   white-space: nowrap;
   font-size: inherit;
   line-height: inherit;
 }
 
-.bm-hero-rotating-letter {
+.bm-hero-rotating-text {
+  display: inline-block;
+  white-space: nowrap;
   font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
   line-height: inherit;
+  color: #ffcc00;
 }
 
 .bm-hero-description {
@@ -408,6 +436,14 @@
 
   .bm-hero-btn-trusted {
     padding-top: 50px;
+  }
+}
+
+/* Portrait tablets are tall viewports; let the hero follow its content instead of
+   stretching to the full screen height and leaving a large empty area. */
+@media (min-width: 769px) and (max-width: 1180px) and (orientation: portrait) {
+  .bm-hero-section {
+    min-height: 0;
   }
 }
 
