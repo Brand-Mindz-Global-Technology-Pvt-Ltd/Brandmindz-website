@@ -5,7 +5,6 @@ import { FaBolt } from "react-icons/fa6";
 import { FiChevronRight } from "react-icons/fi";
 import { Trusted } from "./Trusted";
 import { FadeIn } from "@/components/animations/fade-in";
-import { motion, AnimatePresence } from "framer-motion";
 
 
 // const FlipLetter = ({ letter }) => {
@@ -54,30 +53,6 @@ import { motion, AnimatePresence } from "framer-motion";
 //     </span>
 //   );
 // };
-const FlipLetter = ({ letter }: { letter: string }) => {
-  const isSpace = letter === " ";
-
-  return (
-    <motion.span
-      initial={{ y: 0, opacity: 0 }}   // bottom
-      animate={{ y: 0, opacity: 1 }}    // center
-      exit={{ y: -40, opacity: 0 }}     // top
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="inline-block 
-      font-[Afacad] 
-       text-yellow
-        font-semibold 
-            text-[25px] 
-             sm:text-[32px] 
-             md:text-[32px] 
-             lg:text-[70px] 
-             xl:text-[75px] "
-    >
-      {isSpace ? "\u00A0" : letter}
-    </motion.span>
-  );
-};
-
 export const Banner = () => {
   const words = ["Business", "Growth", "Scale"];
   const [index, setIndex] = useState(0);
@@ -102,29 +77,22 @@ export const Banner = () => {
 
       <FadeIn delay={0.2}>
         <h1 className="bm-hero-title">
-          <span className="text-black">A </span>
-          <span className="text-grey">Full-Stack Marketing Agency</span>
-          <span className="text-black"> built by practitioners who understand </span>
-
-          <span className="bm-hero-rotating-word inline-flex items-center">
-            <AnimatePresence mode="wait">
-              <motion.span className="bm-hero-rotating-text" key={words[index]}>
-                {words[index].split("").map((letter, i) => (
-                  <FlipLetter key={`${words[index]}-${i}`} letter={letter} />
-                ))}
-                <span className="text-yellow">,</span>
-              </motion.span>
-            </AnimatePresence>
-            <motion.span
-              animate={{ opacity: [0, 1, 0] }}
-              transition={{ repeat: Infinity, duration: 0.8 }}
-              className="ml-1 w-0.5 md:w-1 h-7.5 md:h-15 bg-yellow"
-            />
+          <span className="bm-hero-title-line bm-hero-title-line--primary">
+            <span className="text-black">A </span>
+            <span className="text-grey">Full-Stack Marketing Agency</span>
+            <span className="text-black"> built</span>
           </span>
-          <br />
-          <span className="text-black">not just </span>
-          <span className="text-grey">Marketing</span>
-          <span className="text-black">.</span>
+          <span className="bm-hero-title-line bm-hero-title-line--secondary">
+            <span className="text-black">by practitioners who understand </span>
+            <span className="bm-hero-rotating-word">
+              <span className="bm-hero-rotating-text">{words[index]},</span>
+            </span>
+          </span>
+          <span className="bm-hero-title-line bm-hero-title-line--conclusion">
+            <span className="text-black">not just </span>
+            <span className="text-grey">Marketing</span>
+            <span className="text-black">.</span>
+          </span>
         </h1>
       </FadeIn>
 

@@ -176,7 +176,7 @@ body{
   }
 
   .bm-trusted-logo-item img {
-    height: 25px;
+    height: 42px;
     margin: 0 auto;
   }
 }
@@ -189,8 +189,9 @@ body{
     --bm-logo-gap: 12px;
   }
   .bm-trusted-logo-item {
-    flex-basis: 110px;
-    width: 110px;
+    flex-basis: 130px;
+    width: 130px;
+    height: 70px;
   }
   .bm-trusted-section {
     padding: 0px 15px;
