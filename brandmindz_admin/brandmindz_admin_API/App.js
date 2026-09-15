@@ -1,3 +1,4 @@
+require("dotenv").config();
 var express = require("express");
 const sgMail = require("@sendgrid/mail");
 const db = require("./config/Database.js");
