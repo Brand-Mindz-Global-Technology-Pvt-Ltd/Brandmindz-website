@@ -152,6 +152,76 @@ background-color: #F3F3F3;
   text-decoration: underline;
 }
 
+.footerMenuOpen {
+  overflow: visible;
+}
+
+.tirunelveliOffice {
+  width: 100%;
+  max-width: 390px;
+}
+
+.tirunelveliOfficeHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  width: fit-content;
+}
+
+.tirunelveliServicesToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0 .25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #171717;
+  cursor: pointer;
+}
+
+.tirunelveliServicesToggle svg {
+  font-size: 1rem;
+}
+
+.tirunelveliServices {
+  position: absolute;
+  top: calc(100% + .45rem);
+  left: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .35rem;
+  width: min(390px, calc(100vw - 2rem));
+  padding: .65rem;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, .98);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .14);
+}
+
+.tirunelveliServices a {
+  display: flex;
+  align-items: center;
+  min-height: 2.35rem;
+  padding: .5rem .65rem;
+  border-radius: .7rem;
+  color: #3c465b;
+  font-size: .88rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.tirunelveliServices a:hover {
+  background: #f0f0f0;
+  color: #171717;
+}
+
 .bottomBar {
   margin-top: 10px;
   padding-top: 20px;
@@ -263,6 +333,18 @@ background-color: #F3F3F3;
     display: block;
   }
 
+  .tirunelveliOffice {
+    text-align: center;
+  }
+
+  .tirunelveliOfficeHeader {
+    margin-inline: auto;
+  }
+
+  .tirunelveliServices {
+    text-align: left;
+  }
+
   /* Bottom bar */
   .bottomBar {
     flex-direction: column;
@@ -283,11 +365,16 @@ background-color: #F3F3F3;
 }
 
 @media (max-width: 500px) {
- .statusBadge {
+  .statusBadge {
   
   padding: 9px 20px;
   
 }
+
+  .tirunelveliServices {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 .dropdownToggleBtn {
