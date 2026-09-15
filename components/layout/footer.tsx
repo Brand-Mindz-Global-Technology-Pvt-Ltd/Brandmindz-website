@@ -71,7 +71,7 @@ const Footer = ({ theme = "default" }: FooterProps) => {
   ];
 
   return (
-    <footer className={`${styles.footerContainer} ${theme === "mediaKit" ? styles.mediaKitTheme : ""}`}>
+    <footer className={`${styles.footerContainer} ${theme === "mediaKit" ? styles.mediaKitTheme : ""} ${isTirunelveliOpen ? styles.footerMenuOpen : ""}`}>
       {/* Background City Image */}
       <div
         className={styles.backgroundOverlay}
@@ -282,87 +282,46 @@ const Footer = ({ theme = "default" }: FooterProps) => {
 
 
             <div className="flex flex-col md:flex-row items-center md:items-start gap-3">
-  <FaMapMarkerAlt
-    className="text-black hidden md:block"
-    style={{ marginTop: "10px" }}
-  />
+              <FaMapMarkerAlt
+                className="text-black hidden md:block"
+                style={{ marginTop: "10px" }}
+              />
 
-  <div>
-    {/* Office title */}
-    <div className="relative">
-      <div className="flex items-center gap-3">
-        <h4 className="font-bold text-[20px] mb-1">
-          Tirunelveli Office
-        </h4>
+              <div className={styles.tirunelveliOffice}>
+                <div className={styles.tirunelveliOfficeHeader}>
+                  <h4 className="font-bold text-[20px] mb-1">Tirunelveli Office</h4>
+                  <button
+                    type="button"
+                    onClick={() => setIsTirunelveliOpen((isOpen) => !isOpen)}
+                    className={styles.tirunelveliServicesToggle}
+                    aria-expanded={isTirunelveliOpen}
+                    aria-controls="tirunelveli-services"
+                    aria-label="Show Tirunelveli services"
+                  >
+                    {isTirunelveliOpen ? <FaChevronUp /> : <FaChevronDown />}
+                  </button>
 
-        <button
-          type="button"
-          onClick={() =>
-            setIsTirunelveliOpen(!isTirunelveliOpen)
-          }
-          className="mb-1 text-black"
-          aria-label="Toggle Tirunelveli Office"
-        >
-          {isTirunelveliOpen ? (
-            <FaChevronUp className="text-[18px]" />
-          ) : (
-            <FaChevronDown className="text-[18px]" />
-          )}
-        </button>
-      </div>
-
-      {/* DROPDOWN OVERLAY */}
-      {isTirunelveliOpen && (
-  <div
-    className="
-      absolute
-      left-0
-      top-full
-      mt-4
-      z-999
-      rounded-3xl
-      bg-white
-      shadow-[0_15px_40px_rgba(0,0,0,0.15)]
-    "
-    style={{
-      width: "300px",
-      padding: "7px 40px",
-    }}
-  >
-    <Link
-      href="/digital-marketing-agency-in-tirunelveli"
-      className="block text-[20px] text-gray-700 hover:text-black transition-colors"
-      style={{
-        padding: 0,
-        margin: 0,
-      }}
-    >
-      Digital Marketing Agency
-    </Link>
-    <Link
-      href="/app-development-tirunelveli"
-      className="block text-[20px] text-gray-700 hover:text-black transition-colors"
-      style={{
-        padding: 0,
-        margin: 0,
-      }}
-    >
-      App Development
-    </Link>
-  </div>
-)}
-    </div>
-
-    {/* Address */}
-    <p className="text-[19px] text-gray-500 leading-snug mt-2">
-      Startup TN, Tirunelveli Municipal
-      <br />
-      Corporation Incubation Centre,
-      <br />
-      SN Highway, Tirunelveli 627002.
-    </p>
-  </div>
-</div>
+                  {isTirunelveliOpen && (
+                    <div className={styles.tirunelveliServices} id="tirunelveli-services">
+                      <Link href="/digital-marketing-agency-in-tirunelveli">Digital Marketing</Link>
+                      <Link href="/app-development-tirunelveli">App Development</Link>
+                      <Link href="/web-development-company-in-tirunelveli">Web Development</Link>
+                      <Link href="/seo-company-in-tirunelveli">SEO</Link>
+                      <Link href="/branding-agency-in-tirunelveli">Branding</Link>
+                      <Link href="/performance-marketing-company-in-tirunelveli">Performance Marketing</Link>
+                      <Link href="/social-media-management-company-in-tirunelveli">Social Media</Link>
+                    </div>
+                  )}
+                </div>
+                <p className="text-[19px] text-gray-500 leading-snug mt-2">
+                  Startup TN, Tirunelveli Municipal
+                  <br />
+                  Corporation Incubation Centre,
+                  <br />
+                  SN Highway, Tirunelveli 627002.
+                </p>
+              </div>
+            </div>
 
 
 
