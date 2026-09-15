@@ -54,6 +54,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    // Tirunelveli service pages
+    {
+      url: 'https://www.brandmindz.com/web-development-company-in-tirunelveli',
+      lastModified: new Date('2026-09-15'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.brandmindz.com/seo-company-in-tirunelveli',
+      lastModified: new Date('2026-09-15'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.brandmindz.com/branding-agency-in-tirunelveli',
+      lastModified: new Date('2026-09-15'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.brandmindz.com/performance-marketing-company-in-tirunelveli',
+      lastModified: new Date('2026-09-15'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.brandmindz.com/social-media-management-company-in-tirunelveli',
+      lastModified: new Date('2026-09-15'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     // Industries
     {
       url: 'https://www.brandmindz.com/industries',

@@ -139,13 +139,14 @@
 }
 
 .bm-tvl-intro-content .bm-tvl-title {
-  max-width: 1350px;
-  margin-bottom: 34px;
-  font-size: clamp(46px, 5.3vw, 82px);
+  max-width: 1080px;
+  margin: 0 auto 24px;
+  font-size: clamp(42px, 4.4vw, 70px);
   line-height: 1.15;
   letter-spacing: -0.035em;
   color: #979797;
   font-weight: 600;
+  text-align: center;
 }
 
 .bm-tvl-intro-content .bm-tvl-title strong {
@@ -154,10 +155,13 @@
 }
 
 .bm-tvl-intro-content .bm-tvl-desc {
-  max-width: 1280px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
   font-size: clamp(18px, 1.35vw, 22px);
-  line-height: 1.75;
+  line-height: 1.65;
   color: #4f4f4f;
+  text-align: center;
 }
 
 /* ── About section ── */
