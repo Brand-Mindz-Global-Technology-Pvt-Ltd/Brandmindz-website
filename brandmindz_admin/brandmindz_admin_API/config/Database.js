@@ -3,8 +3,13 @@ const { queryWithRetry } = require('../services/queryWithRetry.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const requiredProductionVariables = ['DB_HOST', 'DB_USER', 'DB_NAME'];
-const missingProductionVariables = requiredProductionVariables.filter((name) => !process.env[name]);
-const hasProductionPasswordVariable = Object.prototype.hasOwnProperty.call(process.env, 'DB_PASSWORD');
+const missingProductionVariables = requiredProductionVariables.filter(
+    (name) => !String(process.env[name] || '').trim()
+);
+const hasProductionPasswordVariable = Boolean(
+    Object.prototype.hasOwnProperty.call(process.env, 'DB_PASSWORD')
+    && String(process.env.DB_PASSWORD).length > 0
+);
 
 if (isProduction && (missingProductionVariables.length || !hasProductionPasswordVariable)) {
     const missingVariables = [
@@ -19,11 +24,11 @@ if (isProduction && (missingProductionVariables.length || !hasProductionPassword
 // Local defaults are intentionally available only for development. Production
 // must receive the live database configuration from the deployment environment.
 const databaseConfig = {
-    host: process.env.DB_HOST || 'localhost',
+    host: String(process.env.DB_HOST || 'localhost').trim(),
     port: Number(process.env.DB_PORT || 3306),
-    user: process.env.DB_USER || 'root',
+    user: String(process.env.DB_USER || 'root').trim(),
     password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'brandmindz',
+    database: String(process.env.DB_NAME || 'brandmindz').trim(),
     ...(process.env.DB_SSL === 'true' ? { ssl: { rejectUnauthorized: true } } : {})
 };
 
@@ -38,6 +43,11 @@ const pool = mysql.createPool({
     enableKeepAlive: true,
     keepAliveInitialDelay: 10000
 });
+
+console.log(
+    `[MySQL] Configured host=${databaseConfig.host}:${databaseConfig.port} `
+    + `user=${databaseConfig.user} database=${databaseConfig.database}`
+);
 
 // Check configuration at startup without leaving the application tied to one
 // connection. Pool queries can acquire a fresh connection after a DB restart.

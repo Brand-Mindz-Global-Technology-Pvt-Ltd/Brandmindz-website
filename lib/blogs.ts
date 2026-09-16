@@ -20,7 +20,7 @@ const serverApiBase = () =>
     process.env.NEXT_PUBLIC_BLOG_API_BASE_URL ||
     process.env.NEXT_PUBLIC_ADMIN_API_BASE_URL ||
     (process.env.NODE_ENV === "production"
-      ? "https://www.brandmindz.com/admin-api"
+      ? "https://api.brandmindz.com"
       : "http://localhost:3007"))
     .replace(/\/$/, "")
     .replace(/\/blog$/, "");

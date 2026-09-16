@@ -1,11 +1,8 @@
 require("dotenv").config();
 var express = require("express");
-const sgMail = require("@sendgrid/mail");
 const db = require("./config/Database.js");
 var app = express();
-var fs = require("fs");
 var http = require("http");
-var https = require("https");
 const fileUpload = require("express-fileupload");
 const { ensureBlogSchema } = require("./services/ensureBlogSchema.js");
 
@@ -16,8 +13,6 @@ const port = Number(process.env.PORT || 3007);
 
 var bodyParser = require("body-parser");
 var cors = require("cors");
-const _ = require("lodash");
-const mime = require("mime-types");
 
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use((err, req, res, next) => {
@@ -27,7 +22,18 @@ app.use((err, req, res, next) => {
   }
   next();
 });
-app.use(cors());
+const allowedOrigins = new Set([
+  "https://brandmindz.com",
+  "https://www.brandmindz.com",
+  "https://admin.brandmindz.com",
+]);
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.has(origin)) return callback(null, true);
+    return callback(new Error("CORS origin not allowed"));
+  },
+  credentials: true,
+}));
 app.use(
   bodyParser.urlencoded({
     extended: true, limit: "50mb", parameterLimit: 50000
@@ -60,23 +66,30 @@ app.get("/health", (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({ service: "brandmindz-admin-api", status: "running" });
+});
+
 // Serve uploaded files as static assets
 app.use("/storage", express.static(path.join(__dirname, "storage")));
 
-async function startServer() {
-  try {
-    await ensureBlogSchema(db);
-    console.log("Blog database schema is ready.");
-  } catch (err) {
-    console.error(
-      `[MySQL] Blog schema migration failed (${err.code || "UNKNOWN"}): ${err.message}`
-    );
-    process.exitCode = 1;
-    return;
-  }
+// Keep unknown API requests explicit and easy to diagnose in production.
+app.use((req, res) => {
+  res.status(404).json({ msg: "API route not found", path: req.originalUrl });
+});
 
-  httpServer.listen(port, "0.0.0.0", () => {
+async function startServer() {
+  httpServer.listen(port, "0.0.0.0", async () => {
     console.log(`BrandMindz admin API listening on port ${port}.`);
+
+    try {
+      await ensureBlogSchema(db);
+      console.log("Blog database schema is ready.");
+    } catch (err) {
+      console.error(
+        `[MySQL] Blog schema migration failed (${err.code || "UNKNOWN"}): ${err.message}`
+      );
+    }
   });
 }
 

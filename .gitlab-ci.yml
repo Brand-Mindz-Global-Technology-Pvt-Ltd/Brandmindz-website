@@ -22,7 +22,7 @@ build:
     - docker push $WEBSITE_IMAGE
     
     # 2. Build & Push Admin Frontend
-    - docker build --pull --build-arg VITE_API_BASE_URL="${VITE_API_BASE_URL:-https://www.brandmindz.com/admin-api}" -t $ADMIN_FRONTEND_IMAGE -f brandmindz_admin/Dockerfile.frontend brandmindz_admin/
+    - docker build --pull --build-arg VITE_API_BASE_URL="${VITE_API_BASE_URL:-https://api.brandmindz.com}" -t $ADMIN_FRONTEND_IMAGE -f brandmindz_admin/Dockerfile.frontend brandmindz_admin/
     - docker push $ADMIN_FRONTEND_IMAGE
     
     # 3. Build & Push Admin API

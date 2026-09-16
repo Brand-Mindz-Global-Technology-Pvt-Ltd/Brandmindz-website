@@ -1,6 +1,56 @@
 # BrandMindz Production Deployment Guide
 
-This guide details how to set up the **AWS EC2** instance, configure a secure reverse proxy with **Nginx** and **SSL (Let's Encrypt)**, and configure **GitLab CI/CD variables** to enable automated, zero-downtime, source-code-free deployments.
+This guide describes deployment from the GitHub repository to Hostinger Node.js applications.
+
+The repository is:
+`https://github.com/Brand-Mindz-Global-Technology-Pvt-Ltd/Brandmindz-website`
+
+Do not use the legacy `.gitlab-ci.yml` EC2/Docker deployment for Hostinger.
+
+## Hostinger setup
+
+Create the Node.js application in hPanel from this GitHub repository. For the
+admin API application use:
+
+- Application root: `brandmindz_admin/brandmindz_admin_API`
+- Entry/start command: `node App.js`
+- Node.js: 20 or later
+- Application port: use the port supplied by Hostinger, or set `PORT` to the
+  value configured by the panel
+
+Add these server-side environment variables in hPanel (Environment variables):
+
+```env
+NODE_ENV=production
+DB_HOST=srv1516.hstgr.io
+DB_PORT=3306
+DB_USER=<Hostinger MySQL username>
+DB_PASSWORD=<Hostinger MySQL password>
+DB_NAME=<Hostinger MySQL database name>
+DB_CONNECTION_LIMIT=10
+DB_CONNECT_TIMEOUT_MS=10000
+```
+
+The Hostinger MySQL user must be assigned to the database in hPanel. Copy the
+username, database name, and password from the existing database entry; do not
+create a second user unless it is also assigned to the database.
+
+For the admin frontend, create a separate static/Vite application from the
+same GitHub repository with root `brandmindz_admin`, build command `npm run
+build`, and publish directory `dist`. Set the build variable:
+
+```env
+VITE_API_BASE_URL=https://api.brandmindz.com
+```
+
+Map `api.brandmindz.com` directly to the API application. After deployment,
+verify:
+
+```text
+https://api.brandmindz.com/health
+```
+
+It must return `database: "connected"` before testing the dashboard.
 
 ---
 
@@ -86,6 +136,18 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Admin API: remove /admin-api before forwarding to Express.
+    # Example: /admin-api/blog/getBlog -> http://127.0.0.1:3007/blog/getBlog
+    location /admin-api/ {
+        proxy_pass http://127.0.0.1:3007/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        client_max_body_size 50m;
     }
 }
 ```
