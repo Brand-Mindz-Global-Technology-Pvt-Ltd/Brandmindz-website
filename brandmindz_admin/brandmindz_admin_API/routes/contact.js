@@ -5,11 +5,6 @@ const jwt = require('jsonwebtoken');
 const db = require('../config/Database.js');
 const userMiddleware = require('../middleware/UserModel.js');
 var md5 = require('md5');
-const fileUpload = require('express-fileupload');
-const _ = require('lodash');
-const mime = require('mime-types')
-var bodyParser = require('body-parser');
-var cors = require('cors');
 const { sendEnquiryMail } = require('../services/enquiryMailer.js');
 
 const allowedStages = new Set([1, 2, 3]);

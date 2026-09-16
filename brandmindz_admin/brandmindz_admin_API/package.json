@@ -2,10 +2,10 @@
      "name": "pmsbm_tool",
      "version": "1.0.0",
      "description": "Project Management Tool.",
-     "main": "app.js",
+     "main": "App.js",
      "scripts": {
-          "build": "node --check app.js && node --check config/Database.js",
-          "start": "node app.js",
+          "build": "node --check server.js && node --check App.js && node --check config/Database.js",
+          "start": "node App.js",
           "test": "node --test test/*.test.js"
      },
      "engines": {
