@@ -484,7 +484,7 @@ background-color: #F3F3F3;
 /* Progress circle */
 .progressCircleProgress {
   fill: none;
-  stroke: #400040;
+  stroke: #000000;
   stroke-width: 4;
   stroke-linecap: round;
   stroke-dasharray: 289;
@@ -497,7 +497,7 @@ background-color: #F3F3F3;
   position: relative;
   z-index: 2;
   font-size: 18px;
-  color: #400040;
+  color: #000000;
   transition: transform 0.3s ease;
 }
 
@@ -562,7 +562,7 @@ background-color: #F3F3F3;
 }
 
 .mediaKitTheme .progressCircleProgress {
-  stroke: #ffd21f;
+  stroke: #000000;
 }
 
 .mediaKitTheme .arrowIcon {

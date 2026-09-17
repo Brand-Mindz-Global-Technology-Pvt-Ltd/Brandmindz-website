@@ -80,10 +80,30 @@ const logoAssets: LogoAsset[] = [
 ];
 
 const founderImages = [
-  { image: founderFormal, alt: "R. Vasanth Kumar formal founder portrait", slug: "founder-formal" },
-  { image: founderOffice, alt: "R. Vasanth Kumar office portrait", slug: "founder-office" },
-  { image: founderSpeaking, alt: "R. Vasanth Kumar speaking at a business meeting", slug: "founder-speaking" },
-  { image: founderPodium, alt: "R. Vasanth Kumar delivering a keynote address", slug: "founder-podium" },
+  {
+    image: founderFormal,
+    alt: "R. Vasanth Kumar formal founder portrait",
+    label: "Executive Portrait",
+    slug: "founder-formal",
+  },
+  {
+    image: founderOffice,
+    alt: "R. Vasanth Kumar office portrait",
+    label: "Leadership Portrait",
+    slug: "founder-office",
+  },
+  {
+    image: founderSpeaking,
+    alt: "R. Vasanth Kumar speaking at a business meeting",
+    label: "Speaking Engagement",
+    slug: "founder-speaking",
+  },
+  {
+    image: founderPodium,
+    alt: "R. Vasanth Kumar delivering a keynote address",
+    label: "Keynote Address",
+    slug: "founder-podium",
+  },
 ];
 
 export default function MediaKitPage() {
@@ -113,60 +133,65 @@ export default function MediaKitPage() {
         </section>
 
         <section className={styles.assetsSection} aria-labelledby="logos-heading">
-          <div className={styles.sectionIntro}>
-            <p className={styles.sectionNumber}>01</p>
-            <div>
-              <h2 id="logos-heading">Logos</h2>
+          <div className={styles.assetsLayout}>
+            <div className={styles.assetsIntro}>
+              <p className={styles.sectionNumber}>01 / Brand identity</p>
+              <h2 id="logos-heading">About Brand Mindz</h2>
               <p>
-                Choose the version that provides the clearest contrast for your
-                background. Please do not stretch, recolor, crop, or modify the logo.
+                Brand Mindz Global is a full-service marketing agency built to help
+                ambitious brands grow with clarity, creativity, and measurable results.
+              </p>
+              <p>
+                Use these official logo files for press, partnerships, presentations,
+                and approved brand communication. Please do not stretch, recolor, crop,
+                or modify the logo.
               </p>
             </div>
-          </div>
 
-          <div className={styles.assetList}>
-            {logoAssets.map((asset) => (
-              <article className={styles.assetRow} key={asset.title}>
-                <div
-                  className={`${styles.assetPreview} ${
-                    asset.background === "dark" ? styles.darkPreview : styles.lightPreview
-                  }`}
-                >
-                  <Image
-                    src={asset.image}
-                    alt={`${asset.title} preview`}
-                    sizes="(max-width: 600px) 100vw, 50vw"
-                    className={styles.logoImage}
-                  />
-                </div>
-
-                <div className={styles.assetContent}>
-                  <p className={styles.assetLabel}>Official logo asset</p>
-                  <h3>{asset.title}</h3>
-                  <p className={styles.assetDescription}>{asset.description}</p>
-
-                  <div className={styles.assetMeta}>
-                    <div>
-                      <span>File format</span>
-                      <strong>{asset.fileType}</strong>
-                    </div>
-                    <div>
-                      <span>Background</span>
-                      <strong>{asset.transparent ? "Transparent" : "Included"}</strong>
-                    </div>
+            <div className={styles.assetList}>
+              {logoAssets.map((asset) => (
+                <article className={styles.assetRow} key={asset.title}>
+                  <div
+                    className={`${styles.assetPreview} ${
+                      asset.background === "dark" ? styles.darkPreview : styles.lightPreview
+                    }`}
+                  >
+                    <Image
+                      src={asset.image}
+                      alt={`${asset.title} preview`}
+                      sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 32vw"
+                      className={styles.logoImage}
+                    />
                   </div>
 
-                  <a
-                    className={styles.downloadButton}
-                    href={`/api/media-kit/${asset.downloadSlug}`}
-                    download={asset.fileName}
-                  >
-                    <Download size={18} aria-hidden="true" />
-                    Download logo
-                  </a>
-                </div>
-              </article>
-            ))}
+                  <div className={styles.assetContent}>
+                    <p className={styles.assetLabel}>Official logo asset</p>
+                    <h3>{asset.title}</h3>
+                    <p className={styles.assetDescription}>{asset.description}</p>
+
+                    <div className={styles.assetMeta}>
+                      <div>
+                        <span>Format</span>
+                        <strong>{asset.fileType}</strong>
+                      </div>
+                      <div>
+                        <span>Background</span>
+                        <strong>{asset.transparent ? "Transparent" : "Included"}</strong>
+                      </div>
+                    </div>
+
+                    <a
+                      className={styles.downloadButton}
+                      href={`/api/media-kit/${asset.downloadSlug}`}
+                      download={asset.fileName}
+                    >
+                      <Download size={16} aria-hidden="true" />
+                      Download
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -225,7 +250,7 @@ export default function MediaKitPage() {
           </div>
 
           <div className={styles.founderGallery}>
-            {founderImages.map((item, index) => (
+            {founderImages.map((item) => (
               <article className={styles.founderImageCard} key={item.slug}>
                 <div className={styles.founderImageFrame}>
                   <Image
@@ -236,7 +261,7 @@ export default function MediaKitPage() {
                   />
                 </div>
                 <div className={styles.founderImageFooter}>
-                  <span>Image {String(index + 1).padStart(2, "0")}</span>
+                  <span>{item.label}</span>
                   <a href={`/api/media-kit/${item.slug}`} download>
                     <Download size={16} aria-hidden="true" />
                     Download
