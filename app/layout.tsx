@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import FloatingContactCTA from "@/components/layout/FloatingContactCTA";
 import Script from 'next/script'
+import favicon from '@/assets/favicon/favicon.png'
 import './globals.css'
 
 const GA_MEASUREMENT_ID = 'G-C223CLWYFR'
@@ -63,8 +64,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: favicon.src,
+    apple: favicon.src,
   },
   generator: 'v0.app'
 }
