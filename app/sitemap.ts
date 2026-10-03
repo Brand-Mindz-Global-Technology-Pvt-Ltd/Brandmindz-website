@@ -85,6 +85,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: 'https://www.brandmindz.com/chatgpt-ads-services-in-tirunelveli',
+      lastModified: new Date('2026-09-30'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     // Industries
     {
       url: 'https://www.brandmindz.com/industries',

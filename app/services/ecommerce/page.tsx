@@ -11,10 +11,21 @@ import { EcommerceCaseStudies } from '@/components/service/Ecommerce/EcommerceCa
 import { WhyChooseEcommerce } from "@/components/service/Ecommerce/WhyChooseEcommerce";
 import Faq from "@/components/home/Faq";
 import { ecommerceData } from "@/data/ecommerceData";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function ServiceEcommerce() {
     const [activeTabKey, setActiveTabKey] = useState<keyof typeof ecommerceData>("flipkartListing");
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const requestedService = searchParams.get("service");
+        setActiveTabKey(
+            requestedService && requestedService in ecommerceData
+                ? requestedService as keyof typeof ecommerceData
+                : "flipkartListing"
+        );
+    }, [searchParams]);
     const data = ecommerceData[activeTabKey];
     const faq = "faq" in data ? data.faq : undefined;
 

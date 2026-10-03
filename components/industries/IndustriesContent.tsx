@@ -274,7 +274,7 @@ const IndustriesContentInner = () => {
       </div>
 
       {/* Main Details Panel */}
-      <section className="bm-industry-details-section">
+      <section id="industry-details" className="bm-industry-details-section">
         <div className="bm-industry-container">
           <AnimatePresence mode="wait">
             <motion.div

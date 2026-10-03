@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { VideoSection } from "@/components/aboutus/Videosection";
 import Various from "@/components/home/Various";
 import Footer from "@/components/layout/footer";
@@ -18,13 +19,16 @@ import Faq from "@/components/home/Faq";
 
 export default function ServiceBranding() {
     const [activeTabKey, setActiveTabKey] = useState<keyof typeof brandingData>("personalBranding");
+    const searchParams = useSearchParams();
 
     useEffect(() => {
-        const requestedService = new URLSearchParams(window.location.search).get("service");
-        if (requestedService && requestedService in brandingData) {
-            setActiveTabKey(requestedService as keyof typeof brandingData);
-        }
-    }, []);
+        const requestedService = searchParams.get("service");
+        setActiveTabKey(
+            requestedService && requestedService in brandingData
+                ? requestedService as keyof typeof brandingData
+                : "personalBranding"
+        );
+    }, [searchParams]);
 
     const data = brandingData[activeTabKey];
     const faq = "faq" in data ? data.faq : undefined;

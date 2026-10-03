@@ -310,6 +310,7 @@ const Footer = ({ theme = "default" }: FooterProps) => {
                       <Link href="/branding-agency-in-tirunelveli">Branding</Link>
                       <Link href="/performance-marketing-company-in-tirunelveli">Performance Marketing</Link>
                       <Link href="/social-media-management-company-in-tirunelveli">Social Media</Link>
+                      <Link href="/chatgpt-ads-services-in-tirunelveli">ChatGPT Ads</Link>
                     </div>
                   )}
                 </div>

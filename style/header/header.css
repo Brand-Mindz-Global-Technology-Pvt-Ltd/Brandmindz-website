@@ -267,8 +267,7 @@
   z-index: 1200;
 }
 
-.has-mega-menu:hover .bm-mega-menu,
-.has-mega-menu:focus-within .bm-mega-menu {
+.has-mega-menu.mega-menu-open:not(.mega-menu-dismissed) .bm-mega-menu {
   display: grid;
 }
 

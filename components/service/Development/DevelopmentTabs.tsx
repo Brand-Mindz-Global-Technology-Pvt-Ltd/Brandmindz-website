@@ -32,7 +32,7 @@ export const DevelopmentTabs = () => {
   console.log(tabsData[activeTab].name, 'activeTab')
 
   return (
-    <section className="bl-main-section">
+    <section id="service-details" className="bl-main-section">
       <div className="bl-background-watermark">Development</div>
       <div className="bl-container">
         <div className="bl-tab-wrapper">
