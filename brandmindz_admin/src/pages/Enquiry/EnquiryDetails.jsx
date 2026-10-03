@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Mail, Phone, Calendar, Save, Edit2 } from 'lucide-react';
 import './EnquiryDetails.css';
 
-const BASE_ENV = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3007';
+const BASE_ENV = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' ? 'https://api.brandmindz.com' : 'http://localhost:3007');
 const API_BASE_URL = BASE_ENV.replace(/\/blog$/, '') + '/contact';
 
 const EnquiryDetails = () => {

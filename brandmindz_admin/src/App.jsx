@@ -29,6 +29,7 @@ function App() {
           <Route path="enquiries" element={<EnquiryList />} />
           <Route path="enquiries/:id" element={<EnquiryDetails />} />
         </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

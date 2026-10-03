@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { User, Lock, LogIn, Eye, EyeOff } from 'lucide-react';
 import './Login.css';
 
-const BASE_ENV = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3007';
+const BASE_ENV = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' ? 'https://api.brandmindz.com' : 'http://localhost:3007');
 const API_BASE_URL = BASE_ENV.replace(/\/blog$/, '') + '/user';
 
 const Login = () => {

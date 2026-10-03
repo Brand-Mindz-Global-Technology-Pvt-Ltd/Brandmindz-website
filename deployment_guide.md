@@ -43,13 +43,31 @@ create a second user unless it is also assigned to the database.
 
 For the admin frontend, create a separate static/Vite application from the
 same GitHub repository with root `brandmindz_admin`, build command `npm run
-build`, and publish directory `dist`. Because the Vite app is built with
-`base: '/admin/'`, publish it at the `/admin/` path on the main website (or
-use a separate domain configured to serve that directory). Set the build variable:
+build`, and publish directory `dist`. It must be mounted at `/admin/` on the
+main website (`brandmindz.com`), not assigned to a separate admin subdomain.
+The Vite app is intentionally configured with `base: '/admin/'` and React
+Router `basename="/admin"`. Set the build variable:
 
 ```env
 VITE_API_BASE_URL=https://api.brandmindz.com
 ```
+
+For local development, use the root command below. It starts the main website,
+the admin frontend, and the API from their correct application directories.
+The Next.js development server proxies `/admin` to Vite:
+
+```text
+API:      http://localhost:3007
+Admin UI: http://localhost:3000/admin/
+Direct:   http://localhost:5173/admin/
+Login:    http://localhost:3000/admin/login
+```
+
+Run `npm run dev` from the repository root. If an old Node/Vite process is
+holding a required port, stop it before restarting. Production `/admin/` must reverse
+proxy to the admin frontend's static server or copy its `dist` output into the
+main site's `/admin/` directory. A separate Hostinger application does not
+automatically add a route to the main Next.js application.
 
 Map `api.brandmindz.com` directly to the API application. After deployment,
 verify:

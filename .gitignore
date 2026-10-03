@@ -12,6 +12,8 @@
 
 # debug
 npm-debug.log*
+admin-vite.*.log
+dev-check.*.log
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*

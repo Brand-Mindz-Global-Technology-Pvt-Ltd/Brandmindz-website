@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
+    "build": "npm run build:admin && next build",
+    "build:admin": "npm --prefix brandmindz_admin run build && node scripts/copy-admin-dist.mjs",
+    "dev": "node scripts/dev.mjs",
+    "dev:site": "next dev -p 3000",
+    "dev:admin": "npm --prefix brandmindz_admin run dev",
+    "dev:api": "node scripts/run-api.mjs",
     "lint": "eslint .",
     "start": "next start"
   },
