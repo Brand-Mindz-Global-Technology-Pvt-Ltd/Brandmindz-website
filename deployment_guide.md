@@ -9,14 +9,15 @@ Do not use the legacy `.gitlab-ci.yml` EC2/Docker deployment for Hostinger.
 
 ## Hostinger setup
 
-Create the Node.js application in hPanel from this GitHub repository. For the
-admin API application use:
+Create the Node.js application in hPanel from this GitHub repository. Use
+`api.brandmindz.com` for the API application:
 
 - Application root: `brandmindz_admin/brandmindz_admin_API`
 - Entry/start command: `node App.js`
 - Node.js: 20 or later
-- Application port: use the port supplied by Hostinger, or set `PORT` to the
-  value configured by the panel
+- Domain: `api.brandmindz.com`
+- Application port: use the port supplied by Hostinger. Do not hard-code a
+  public port; the application reads Hostinger's `PORT` value.
 
 Add these server-side environment variables in hPanel (Environment variables):
 
@@ -29,7 +30,12 @@ DB_PASSWORD=<Hostinger MySQL password>
 DB_NAME=<Hostinger MySQL database name>
 DB_CONNECTION_LIMIT=10
 DB_CONNECT_TIMEOUT_MS=10000
+DB_SSL=false
 ```
+
+Do not upload `.env` or commit database credentials. Hostinger's environment
+variables are the production source of truth. The MySQL user must be assigned
+to the database and allowed to connect from the Hostinger application.
 
 The Hostinger MySQL user must be assigned to the database in hPanel. Copy the
 username, database name, and password from the existing database entry; do not
@@ -37,7 +43,9 @@ create a second user unless it is also assigned to the database.
 
 For the admin frontend, create a separate static/Vite application from the
 same GitHub repository with root `brandmindz_admin`, build command `npm run
-build`, and publish directory `dist`. Set the build variable:
+build`, and publish directory `dist`. Because the Vite app is built with
+`base: '/admin/'`, publish it at the `/admin/` path on the main website (or
+use a separate domain configured to serve that directory). Set the build variable:
 
 ```env
 VITE_API_BASE_URL=https://api.brandmindz.com

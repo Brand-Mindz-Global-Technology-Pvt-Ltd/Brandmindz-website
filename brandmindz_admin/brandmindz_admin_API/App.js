@@ -26,6 +26,7 @@ const allowedOrigins = new Set([
   "https://brandmindz.com",
   "https://www.brandmindz.com",
   "https://admin.brandmindz.com",
+  "https://api.brandmindz.com",
 ]);
 app.use(cors({
   origin(origin, callback) {
@@ -99,4 +100,3 @@ if (require.main === module) {
 
 module.exports = app;
 module.exports.startServer = startServer;
-
