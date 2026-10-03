@@ -313,11 +313,45 @@
   line-height: 1.55;
 }
 
+.assetsLayout {
+  display: grid;
+  grid-template-columns: minmax(240px, .8fr) minmax(0, 1.7fr);
+  align-items: start;
+  gap: clamp(36px, 6vw, 96px);
+}
+
+.assetsIntro {
+  position: sticky;
+  top: 126px;
+  padding: 8px 0 8px clamp(20px, 2vw, 32px);
+  border-left: 2px solid #ffd21f;
+}
+
+.assetsIntro h2 {
+  max-width: 430px;
+  margin: 18px 0 22px;
+  font-size: clamp(42px, 4.6vw, 68px);
+  font-weight: 600;
+  line-height: .95;
+  letter-spacing: -0.055em;
+}
+
+.assetsIntro > p:not(.sectionNumber) {
+  max-width: 400px;
+  margin: 0;
+  color: #686868;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.assetsIntro > p:not(.sectionNumber) + p:not(.sectionNumber) {
+  margin-top: 18px;
+}
+
 .assetList {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-  padding-top: 48px;
+  gap: clamp(14px, 2vw, 24px);
 }
 
 .assetRow {
@@ -342,7 +376,7 @@
   grid-row: 2;
   flex-direction: column;
   align-items: flex-start;
-  padding: clamp(26px, 3vw, 40px);
+  padding: clamp(18px, 2vw, 26px);
 }
 
 .assetLabel {
@@ -356,9 +390,9 @@
 
 .assetContent h3 {
   margin: 0;
-  font-size: clamp(30px, 3.3vw, 48px);
+  font-size: clamp(21px, 1.8vw, 29px);
   font-weight: 600;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.035em;
 }
 
@@ -372,6 +406,19 @@
 
 .assetContent .downloadButton {
   margin-top: auto;
+  padding: 11px 18px;
+  font-size: 14px;
+}
+
+.assetContent .assetDescription {
+  display: -webkit-box;
+  max-width: none;
+  margin: 12px 0 18px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .assetMeta {
@@ -396,6 +443,15 @@
 .assetMeta strong {
   font-size: 15px;
   font-weight: 600;
+}
+
+.assetContent .assetMeta {
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.assetContent .assetMeta strong {
+  font-size: 13px;
 }
 
 .downloadButton {
@@ -424,9 +480,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 300px;
-  aspect-ratio: 16 / 9;
-  padding: clamp(32px, 5vw, 68px);
+  min-height: 0;
+  aspect-ratio: 16 / 8;
+  padding: clamp(22px, 3vw, 42px);
   overflow: hidden;
   border-radius: 0;
 }
@@ -449,7 +505,7 @@
 .logoImage {
   width: 100%;
   height: auto;
-  max-height: 220px;
+  max-height: 112px;
   object-fit: contain;
 }
 
@@ -474,18 +530,27 @@
   text-underline-offset: 4px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .hero {
     min-height: 62vh;
+  }
+
+  .assetsLayout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .assetsIntro {
+    position: static;
+    max-width: 680px;
   }
 
   .assetList {
     gap: 20px;
   }
+}
 
-  .assetPreview {
-    min-height: 280px;
-  }
+@media (max-width: 900px) {
 
   .founderProfileCard {
     grid-template-columns: 1fr;
@@ -533,6 +598,10 @@
 
   .assetRow {
     border-radius: 14px;
+  }
+
+  .assetsIntro {
+    padding-left: 18px;
   }
 
   .assetList {

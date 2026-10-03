@@ -218,6 +218,12 @@
   overflow: hidden;
 }
 
+.bm-cs-card__image {
+  /* Keep every edge of the artwork visible while using the entire visual frame. */
+  object-fit: fill;
+  object-position: center;
+}
+
 .bm-cs-card__gradient-overlay {
   position: absolute;
   inset: 0;
@@ -386,10 +392,62 @@
 .bm-cs-featured__container {
   position: relative;
   z-index: 2;
+}
+
+.bm-cs-featured__content {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 60px;
   align-items: center;
+}
+
+.bm-cs-featured__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.bm-cs-featured__navigation span {
+  min-width: 180px;
+  color: #d7d7d7;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bm-cs-featured__navigation button {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  padding: 0;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.bm-cs-featured__navigation button:hover {
+  color: #111;
+  background: #ffcc00;
+  border-color: #ffcc00;
+}
+
+.bm-cs-featured__navigation svg {
+  width: 20px;
+  height: 20px;
+}
+
+.bm-cs-featured__empty {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 720px;
 }
 
 .bm-cs-featured__badge {
@@ -813,7 +871,7 @@
 
 /* ===== DESKTOP 1200px ===== */
 @media (max-width: 1200px) {
-  .bm-cs-featured__container {
+  .bm-cs-featured__content {
     gap: 40px;
   }
   .bm-cs-featured__title {
@@ -852,7 +910,7 @@
   .bm-cs-card__title {
     font-size: 24px;
   }
-  .bm-cs-featured__container {
+  .bm-cs-featured__content {
     grid-template-columns: 1fr;
     gap: 50px;
   }

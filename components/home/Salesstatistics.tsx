@@ -7,45 +7,68 @@ import { FaCheckCircle } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 import Link from "next/link";
 
+const LEAD_TARGET = 587;
+const LEAD_ANIMATION_DURATION = 2000;
+
 export default function ProvenGrowthSection() {
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
-
-  const targetNumber = 587;
-  const duration = 2000; // Animation duration in milliseconds (2 seconds)
+  const hasAnimatedRef = useRef(false);
+  const animationFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
+    const startCountAnimation = () => {
+      if (hasAnimatedRef.current) return;
+      hasAnimatedRef.current = true;
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setCount(LEAD_TARGET);
+        return;
+      }
+
+      let startTimestamp: number | null = null;
+      const step = (timestamp: number) => {
+        if (startTimestamp === null) startTimestamp = timestamp;
+        const elapsed = timestamp - startTimestamp;
+        const progress = Math.min(elapsed / LEAD_ANIMATION_DURATION, 1);
+
+        setCount(Math.floor(progress * LEAD_TARGET));
+
+        if (progress < 1) {
+          animationFrameRef.current = window.requestAnimationFrame(step);
+        } else {
+          setCount(LEAD_TARGET);
+        }
+      };
+
+      animationFrameRef.current = window.requestAnimationFrame(step);
+    };
+
+    if (!sectionRef.current) return;
+
+    if (!("IntersectionObserver" in window)) {
+      startCountAnimation();
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
+        if (entry.isIntersecting) {
           startCountAnimation();
-          setHasAnimated(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.7 } // Triggers when 30% of the section is visible
+      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, [hasAnimated]);
-
-  const startCountAnimation = () => {
-    let startTimestamp: number | null = null;
-    const step = (timestamp: number) => {
-      if (startTimestamp === null) startTimestamp = timestamp;
-      const elapsed = timestamp - startTimestamp;
-      const progress = Math.min(elapsed / duration, 1);
-
-      const currentCount = Math.floor(progress * targetNumber);
-      setCount(currentCount);
-
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
+    observer.observe(sectionRef.current);
+    return () => {
+      observer.disconnect();
+      if (animationFrameRef.current !== null) {
+        window.cancelAnimationFrame(animationFrameRef.current);
       }
     };
-    window.requestAnimationFrame(step);
-  };
+  }, []);
 
   return (
     <section className={styles.section} ref={sectionRef}>

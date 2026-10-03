@@ -1,0 +1,67 @@
+Performance Marketing Case Study
+Arasan SuperMarket, Tirunelveli, Tamil Nadu
+
+Turning Every Rupee Into a Customer Action
+
+How Brand Mindz helped Arasan SuperMarket grow its Android app from 100+ users to 1,000+ in 30 days through a focused Meta app-install campaign.
+
+Project at a Glance
+Campaign period: 13 August 2026 – 13 September 2026
+Platform: Meta
+Objective: Android app installs
+Market: Tirunelveli, Tamil Nadu
+Duration: 30 days
+Ad spend: ₹6,783.17
+Reported cost per install: ₹6.57
+App adoption: 100+ → 1,000+
+Impressions: 310,130
+Reach: 86,108
+Link clicks: 2,068
+CTR: 0.85%
+CPC: ₹3.28
+CPM: ₹21.88
+
+The Challenge
+
+Arasan SuperMarket already had a local customer base. The challenge was to help customers take the next step: install the supermarket's Android app.
+
+For a regional retailer, that meant competing for attention in a geographically concentrated Tier-2 market where every advertising rupee had to work harder. The campaign needed to reach relevant local shoppers, communicate the value of the app quickly, generate measurable install actions, control acquisition costs, and build a direct digital connection between the supermarket and its customers.
+
+The goal was not vanity metrics. The goal was app adoption.
+
+The Strategy
+
+Brand Mindz structured the campaign around one principle: do not optimise for people who only see the ad; optimise for people who take action.
+
+1. Requirement and goal definition
+The broad app-promotion requirement was translated into a measurable acquisition goal. Cost per install (CPI) became the primary KPI, creating a clear way to assess how efficiently advertising spend turned into app adoption.
+
+2. Local audience planning
+The campaign was designed for Tirunelveli's local market rather than unnecessary national-scale reach. Geography was treated as an advantage, focusing on people with a genuine reason to engage with a local supermarket brand.
+
+3. Positioning the app
+The communication created a simple path: see the brand, understand the value, take action, install the app. The installation needed to feel like a natural next step, not another marketing request.
+
+4. Creative and communication
+Mobile-first creative was developed specifically for an app-install objective. It used clear communication, fast visual understanding, strong brand recognition, and direct action-oriented messaging.
+
+5. Campaign execution and optimisation
+The Meta campaign was monitored against reach, impressions, link clicks, CTR, CPC, CPM, and CPI throughout the 30-day period, allowing the team to evaluate performance while the campaign was active.
+
+The Results
+
+Within 30 days, reported app adoption increased from a base of 100+ users to more than 1,000 users. The campaign recorded a reported CPI of ₹6.57 while generating 310,130 impressions, reaching 86,108 people, and driving 2,068 link clicks.
+
+The efficiency story
+
+The ₹6.57 reported CPI is specific to this campaign. The case study references a May 2026 India app-install benchmark of ₹35–₹70 for quick-commerce and instant-grocery apps as external industry context only. It is not a promise or universal expected CPI; campaign performance can vary with geography, audience, creative, competition, seasonality, offer strength, attribution methodology, and measurement setup.
+
+Why this campaign matters
+
+A supermarket's relationship can move beyond Store → Purchase → Leave. A mobile app creates another potential path: Advertisement → Install → App Open → Offer Discovery → Purchase → Repeat Purchase.
+
+The campaign established a foundation for efficient paid app acquisition. The next phase is to connect acquisition data with app opens, first purchase, repeat purchase, customer acquisition cost, lifetime value, and retention.
+
+The Bigger Lesson
+
+Tier-2 markets do not need Tier-2 ambitions. A regional business can begin building a meaningful digital customer base with a clearly defined objective, local targeting, relevant positioning, purpose-built creative, and performance optimisation.

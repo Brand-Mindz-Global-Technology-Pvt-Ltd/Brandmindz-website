@@ -108,9 +108,10 @@
 
 /* ── Intro section ── */
 .bm-tvl-intro-section {
-  padding-top: 3px;
+  /* Keep the introductory content below the client-logo ticker. */
+  padding-top: 56px;
   padding-bottom: 30px;
-  margin-top: -90px;
+  margin-top: 0;
 }
 
 .bm-tvl-intro-card {
@@ -799,7 +800,8 @@
   }
 
   .bm-tvl-intro-section {
-    margin-top: -20px;
+    margin-top: 0;
+    padding-top: 42px;
   }
 
   .bm-tvl-section--grey .bm-tvl-inner,

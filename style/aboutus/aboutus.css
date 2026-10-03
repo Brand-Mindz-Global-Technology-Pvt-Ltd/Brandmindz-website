@@ -264,6 +264,95 @@
   /* 50px */
 }
 
+/* Brand-logo ticker: every logo uses the same visual slot. Source files have
+   different aspect ratios and transparent padding, so the slot—not the image
+   dimensions—controls the spacing between brands. */
+.brand-logo-ticker {
+  width: 100%;
+  overflow: hidden;
+}
+
+.brand-logo-ticker__row {
+  overflow: hidden;
+}
+
+.brand-logo-ticker__row + .brand-logo-ticker__row {
+  margin-top: 1rem;
+}
+
+.brand-logo-ticker__track {
+  display: flex;
+  width: max-content;
+  gap: clamp(1rem, 2vw, 2rem);
+  will-change: transform;
+}
+
+.brand-logo-ticker__track--reverse {
+  margin-left: clamp(1.5rem, 4vw, 4rem);
+}
+
+.brand-logo-ticker__item {
+  display: grid;
+  flex: 0 0 clamp(8.75rem, 11vw, 11rem);
+  width: clamp(8.75rem, 11vw, 11rem);
+  height: clamp(4.5rem, 6vw, 5.5rem);
+  place-items: center;
+  padding: .625rem .875rem;
+  box-sizing: border-box;
+  background: #f7f7f8;
+  border: 1px solid #ededee;
+  border-radius: clamp(.75rem, 1.25vw, 1rem);
+  overflow: hidden;
+}
+
+.brand-logo-ticker__image-box {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+}
+
+.brand-logo-ticker__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter .25s ease, transform .25s ease;
+}
+
+.brand-logo-ticker__item:hover .brand-logo-ticker__image {
+  filter: grayscale(0%);
+  transform: scale(1.04);
+}
+
+.brand-logo-ticker__item:hover {
+  border-color: #d8d8da;
+}
+
+.brand-logo-ticker__row:hover .brand-logo-ticker__track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+  .brand-logo-ticker__row + .brand-logo-ticker__row {
+    margin-top: .75rem;
+  }
+
+  .brand-logo-ticker__track {
+    gap: .9rem;
+  }
+
+  .brand-logo-ticker__item {
+    flex-basis: 7.5rem;
+    width: 7.5rem;
+    height: 4rem;
+    padding: .6rem .75rem;
+  }
+}
+
 /* Ensure smooth scrolling */
 .logo-track {
   will-change: transform;
