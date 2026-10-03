@@ -1,6 +1,7 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 type DigitalMarketingContextType = {
   activeDigitalMarketingTab: number;
@@ -11,6 +12,21 @@ const DigitalMarketingContext = createContext<DigitalMarketingContextType | unde
 
 export const DigitalMarketingProvider = ({ children }: { children: React.ReactNode }) => {
   const [activeDigitalMarketingTab, setActiveDigitalMarketingTab] = useState(0);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const requestedService = searchParams.get("service");
+    const serviceIndexes: Record<string, number> = {
+      seo: 0,
+      metaAds: 1,
+      googleAds: 2,
+      linkedinMarketing: 3,
+      whatsappMarketing: 4,
+      youtubeMarketing: 5,
+      socialMediaManagement: 6,
+    };
+    setActiveDigitalMarketingTab(serviceIndexes[requestedService ?? ""] ?? 0);
+  }, [searchParams]);
 
   return (
     <DigitalMarketingContext.Provider value={{ activeDigitalMarketingTab, setActiveDigitalMarketingTab }}>

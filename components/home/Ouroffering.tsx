@@ -111,6 +111,24 @@ Turn your Ad Spend Into Predictable Revenue`},
 Build credibility with the right audience.
 Turn LinkedIn Into A Lead Generation Engine.`}
         ],
+        "ChatGPT Ads": [
+            {
+                icon: icon3, title: "AI Ad Strategy", hover: BrandStrategy,
+                desc: "We plan AI advertising around your goals, audience, and what customers are looking for—creating a clear strategy that helps your brand get discovered through AI."
+            },
+            {
+                icon: icon2, title: "ChatGPT Advertising", hover: PersonalBranding,
+                desc: "Prepare your offers, messaging, and campaigns for ChatGPT and other AI-driven platforms, reaching people already looking for relevant products or services."
+            },
+            {
+                icon: icon1, title: "AI Search Visibility", hover: CompanyBranding,
+                desc: "Stay visible as people use AI tools to find answers, products, and businesses through useful content, search intent, and smart digital marketing."
+            },
+            {
+                icon: icon4, title: "AI Campaign Optimization", hover: BrandConsulting,
+                desc: "We review campaign response and regularly improve messaging, audiences, and strategy to keep strengthening your results."
+            }
+        ],
         "E-Commerce listing": [
             {
                 icon: icon2, title: "Flipkart Listing", hover: PersonalBranding, desc: `Build your Flipkart listing with strategy
@@ -151,19 +169,18 @@ listings into conversion-driven fashion storefronts.
 
             </div>
 
-            {/* 2. Tabs with Stagger Animation */}
-            <StaggerChildren className="bm-offering-tabs" staggerDelay={0.05}>
+            {/* Keep category controls immediately visible; their content still animates below. */}
+            <div className="bm-offering-tabs">
                 {tabs.map(tab => (
-                    <StaggerItem key={tab}>
-                        <button
-                            className={`bm-offering-tab-btn ${activeTab === tab ? "active" : ""}`}
-                            onClick={() => setActiveTab(tab)}
-                        >
-                            {tab}
-                        </button>
-                    </StaggerItem>
+                    <button
+                        key={tab}
+                        className={`bm-offering-tab-btn ${activeTab === tab ? "active" : ""}`}
+                        onClick={() => setActiveTab(tab)}
+                    >
+                        {tab}
+                    </button>
                 ))}
-            </StaggerChildren>
+            </div>
 
             {/* 3. Grid Content */}
             <div className="bm-offering-grid">

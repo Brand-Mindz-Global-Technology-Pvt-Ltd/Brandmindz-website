@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Various from "@/components/home/Various";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
@@ -15,13 +16,16 @@ import Faq from "@/components/home/Faq";
 
 export default function ServiceDesigning() {
     const [activeTabKey, setActiveTabKey] = useState<keyof typeof designingData>("uiuxDesign");
+    const searchParams = useSearchParams();
 
     useEffect(() => {
-        const requestedService = new URLSearchParams(window.location.search).get("service");
-        if (requestedService && requestedService in designingData) {
-            setActiveTabKey(requestedService as keyof typeof designingData);
-        }
-    }, []);
+        const requestedService = searchParams.get("service");
+        setActiveTabKey(
+            requestedService && requestedService in designingData
+                ? requestedService as keyof typeof designingData
+                : "uiuxDesign"
+        );
+    }, [searchParams]);
 
     const data = designingData[activeTabKey];
     const faq = "faq" in data ? data.faq : undefined;

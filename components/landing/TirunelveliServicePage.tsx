@@ -54,7 +54,7 @@ function parseContent(markdown: string): ContentBlock[] {
 }
 
 function isPrimarySection(title: string) {
-  return /^(our .*services|why |what |ready |frequently asked|build a brand|social media management vs|who can |how long )/i.test(title);
+  return /^(our .*services|our .*process|why |what |ready |frequently asked|build a brand|social media management vs|who can |how long |is ai advertising|ai advertising for)/i.test(title);
 }
 
 function getSections(blocks: ContentBlock[]): ContentSection[] {

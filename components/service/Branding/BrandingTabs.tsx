@@ -13,7 +13,7 @@ export const BrandingTabs = ({ activeTabKey, setActiveTabKey }: { activeTabKey: 
   ];
 
   return (
-    <section className="bl-main-section">
+    <section id="service-details" className="bl-main-section">
       <div className="bl-background-watermark">Branding</div>
       <div className="bl-container">
         <div className="bl-tab-wrapper">

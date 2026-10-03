@@ -47,6 +47,15 @@ export const tirunelveliServicePages = {
     heroSuffix: "Company in",
     file: "social-media-management.md",
   },
+  chatgptAds: {
+    slug: "chatgpt-ads-services-in-tirunelveli",
+    label: "ChatGPT Ads Services in Tirunelveli",
+    title: "ChatGPT Ads Services in Tirunelveli | Brand Mindz Global",
+    description: "AI-powered advertising, ChatGPT advertising research and campaign strategy for businesses in Tirunelveli.",
+    heroTitle: "ChatGPT Ads",
+    heroSuffix: "Services in",
+    file: "chatgpt-ads.md",
+  },
 } as const;
 
 export type TirunelveliServiceKey = keyof typeof tirunelveliServicePages;
