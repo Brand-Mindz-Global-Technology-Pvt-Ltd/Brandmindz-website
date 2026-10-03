@@ -1,6 +1,5 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import FloatingContactCTA from "@/components/layout/FloatingContactCTA";
 import Script from 'next/script'
@@ -8,12 +7,6 @@ import favicon from '@/assets/favicon/favicon.png'
 import './globals.css'
 
 const GA_MEASUREMENT_ID = 'G-C223CLWYFR'
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-inter',
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.brandmindz.com'),
@@ -79,21 +72,13 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
 }
-import { Afacad } from "next/font/google";
-
-const afacad = Afacad({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en">
       <body className="font-sans antialiased">
         {/* Google Analytics - loads after page is interactive to avoid blocking render */}
         <Script
