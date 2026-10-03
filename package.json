@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "npm run build:admin && next build",
+    "build": "npm run install:admin && npm run build:admin && next build",
+    "install:admin": "npm ci --prefix brandmindz_admin",
     "build:admin": "npm --prefix brandmindz_admin run build && node scripts/copy-admin-dist.mjs",
     "dev": "node scripts/dev.mjs",
     "dev:site": "next dev -p 3000",
