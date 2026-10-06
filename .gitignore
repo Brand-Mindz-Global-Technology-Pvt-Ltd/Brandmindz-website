@@ -21,7 +21,6 @@ yarn-error.log*
 
 # env files
 .env*
-!brandmindz_admin/brandmindz_admin_API/.env.example
 
 # vercel
 .vercel

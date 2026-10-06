@@ -4,7 +4,6 @@ stages:
 
 variables:
   WEBSITE_IMAGE: $CI_REGISTRY_IMAGE/website:latest
-  ADMIN_FRONTEND_IMAGE: $CI_REGISTRY_IMAGE/admin-frontend:latest
   ADMIN_API_IMAGE: $CI_REGISTRY_IMAGE/admin-api:latest
 
 build:
@@ -21,12 +20,8 @@ build:
     - docker build --pull -t $WEBSITE_IMAGE .
     - docker push $WEBSITE_IMAGE
     
-    # 2. Build & Push Admin Frontend
-    - docker build --pull --build-arg VITE_API_BASE_URL="${VITE_API_BASE_URL:-https://api.brandmindz.com}" -t $ADMIN_FRONTEND_IMAGE -f brandmindz_admin/Dockerfile.frontend brandmindz_admin/
-    - docker push $ADMIN_FRONTEND_IMAGE
-    
-    # 3. Build & Push Admin API
-    - docker build --pull -t $ADMIN_API_IMAGE -f brandmindz_admin/brandmindz_admin_API/Dockerfile.api brandmindz_admin/brandmindz_admin_API/
+    # 2. Build & Push Admin API
+    - docker build --pull -t $ADMIN_API_IMAGE -f ../brandmindz_admin_API/Dockerfile.api ../brandmindz_admin_API/
     - docker push $ADMIN_API_IMAGE
 
 deploy:
@@ -44,4 +39,4 @@ deploy:
   script:
     # MySQL credentials are protected GitLab CI/CD variables for Hostinger.
     - test -n "$DB_HOST" && test -n "$DB_USER" && test -n "$DB_PASSWORD" && test -n "$DB_NAME"
-    - ssh $EC2_USER@$EC2_IP "docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY && docker pull $WEBSITE_IMAGE && docker pull $ADMIN_FRONTEND_IMAGE && docker pull $ADMIN_API_IMAGE && docker stop brandmindz-app || true && docker rm brandmindz-app || true && docker stop brandmindz-admin-frontend || true && docker rm brandmindz-admin-frontend || true && docker stop brandmindz-admin-api || true && docker rm brandmindz-admin-api || true && docker run -d --name brandmindz-admin-api --restart always --network host -v brandmindz-blog-storage:/app/storage -e NODE_ENV=production -e DB_HOST=\"$DB_HOST\" -e DB_PORT=\"${DB_PORT:-3306}\" -e DB_USER=\"$DB_USER\" -e DB_PASSWORD=\"$DB_PASSWORD\" -e DB_NAME=\"$DB_NAME\" -e PORT=3007 -e ENQUIRY_TO_EMAIL=business@brandmindz.com -e MAIL_FROM=\"$MAIL_FROM\" -e SENDGRID_API_KEY=\"$SENDGRID_API_KEY\" -e SMTP_HOST=\"$SMTP_HOST\" -e SMTP_PORT=\"$SMTP_PORT\" -e SMTP_SECURE=\"$SMTP_SECURE\" -e SMTP_USER=\"$SMTP_USER\" -e SMTP_PASS=\"$SMTP_PASS\" $ADMIN_API_IMAGE && docker run -d --name brandmindz-app --restart always -p 3000:3000 $WEBSITE_IMAGE && docker run -d --name brandmindz-admin-frontend --restart always -p 3001:80 $ADMIN_FRONTEND_IMAGE && docker image prune -af"
+    - ssh $EC2_USER@$EC2_IP "docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY && docker pull $WEBSITE_IMAGE && docker pull $ADMIN_API_IMAGE && docker stop brandmindz-app || true && docker rm brandmindz-app || true && docker stop brandmindz-admin-api || true && docker rm brandmindz-admin-api || true && docker run -d --name brandmindz-admin-api --restart always --network host -v brandmindz-blog-storage:/app/storage -e NODE_ENV=production -e DB_HOST=\"$DB_HOST\" -e DB_PORT=\"${DB_PORT:-3306}\" -e DB_USER=\"$DB_USER\" -e DB_PASSWORD=\"$DB_PASSWORD\" -e DB_NAME=\"$DB_NAME\" -e PORT=3007 -e ENQUIRY_TO_EMAIL=business@brandmindz.com -e MAIL_FROM=\"$MAIL_FROM\" -e SENDGRID_API_KEY=\"$SENDGRID_API_KEY\" -e SMTP_HOST=\"$SMTP_HOST\" -e SMTP_PORT=\"$SMTP_PORT\" -e SMTP_SECURE=\"$SMTP_SECURE\" -e SMTP_USER=\"$SMTP_USER\" -e SMTP_PASS=\"$SMTP_PASS\" $ADMIN_API_IMAGE && docker run -d --name brandmindz-app --restart always -p 3000:3000 $WEBSITE_IMAGE && docker image prune -af"

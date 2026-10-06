@@ -296,7 +296,7 @@ export const GetStartedSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [enquiryId, setEnquiryId] = useState<number | null>(null);
   const API_BASE_URL = (process.env.NEXT_PUBLIC_ADMIN_API_BASE_URL ||
-    (process.env.NODE_ENV === "production" ? "https://api.brandmindz.com" : "http://localhost:3007"))
+    "https://api.brandmindz.com")
     .replace(/\/$/, "")
     .replace(/\/blog$/, "");
 

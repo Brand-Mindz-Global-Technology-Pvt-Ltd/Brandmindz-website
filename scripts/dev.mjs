@@ -17,7 +17,6 @@ const runNpm = (script) => spawn(
 
 const processes = [
   runNpm('dev:site'),
-  runNpm('dev:admin'),
   runNpm('dev:api'),
 ]
 

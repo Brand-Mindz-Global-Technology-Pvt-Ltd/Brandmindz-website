@@ -7,9 +7,8 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const candidates = [
-  path.resolve(__dirname, '../brandmindz_admin/brandmindz_admin_API'),
-  path.resolve(__dirname, '../../brandmindz_admin_API'),
   path.resolve(__dirname, '../brandmindz_admin_API'),
+  path.resolve(__dirname, '../../brandmindz_admin_API'),
 ]
 
 let apiDir = candidates.find((dir) => fs.existsSync(path.join(dir, 'App.js')) || fs.existsSync(path.join(dir, 'package.json')))

@@ -78,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="font-sans antialiased">
         {/* Google Analytics - loads after page is interactive to avoid blocking render */}
         <Script
