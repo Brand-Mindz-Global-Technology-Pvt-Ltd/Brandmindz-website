@@ -49,6 +49,18 @@ const assets = {
   },
 } as const;
 
+const assetFiles = {
+  "white-logo": path.join(/*turbopackIgnore: true*/ process.cwd(), "assets", "Footer", "media kit", "b1.webp"),
+  "white-logo-transparent": path.join(/*turbopackIgnore: true*/ process.cwd(), "assets", "Footer", "media kit", "b2.png"),
+  "black-logo": path.join(/*turbopackIgnore: true*/ process.cwd(), "assets", "Footer", "media kit", "b3.webp"),
+  "black-logo-transparent": path.join(/*turbopackIgnore: true*/ process.cwd(), "assets", "Footer", "media kit", "b4.png"),
+  "founder-profile": path.join(/*turbopackIgnore: true*/ process.cwd(), "output", "pdf", "Brand-Mindz-Founder-Profile.pdf"),
+  "founder-formal": path.join(/*turbopackIgnore: true*/ process.cwd(), "assets", "media-kit", "founder", "founder-formal.webp"),
+  "founder-office": path.join(/*turbopackIgnore: true*/ process.cwd(), "assets", "media-kit", "founder", "founder-office.webp"),
+  "founder-speaking": path.join(/*turbopackIgnore: true*/ process.cwd(), "assets", "media-kit", "founder", "founder-speaking.webp"),
+  "founder-podium": path.join(/*turbopackIgnore: true*/ process.cwd(), "assets", "media-kit", "founder", "founder-podium.webp"),
+} as const;
+
 type AssetKey = keyof typeof assets;
 
 export async function GET(
@@ -62,8 +74,7 @@ export async function GET(
   }
 
   const selectedAsset = assets[asset as AssetKey];
-  const filePath = path.join(process.cwd(), ...selectedAsset.source);
-  const file = await readFile(filePath);
+  const file = await readFile(assetFiles[asset as AssetKey]);
 
   return new Response(file, {
     headers: {
