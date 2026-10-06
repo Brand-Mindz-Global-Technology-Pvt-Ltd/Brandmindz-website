@@ -5,8 +5,8 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import whiteLogoPreview from "../../assets/Footer/media kit/previews/white-logo-preview.png";
 import blackLogoPreview from "../../assets/Footer/media kit/previews/black-logo-preview.png";
-import founderFormal from "../../assets/media-kit/founder/founder-formal.webp";
-import founderOffice from "../../assets/media-kit/founder/founder-office.webp";
+const founderFormal = "/media-kit/founder/R-Vasanth-Kumar-Formal-Portrait.webp";
+const founderOffice = "/media-kit/founder/R-Vasanth-Kumar-Office-Portrait.webp";
 import founderSpeaking from "../../assets/about/foundern-2.webp";
 import founderPodium from "../../assets/about/foundern-3.webp";
 import mediaKitHero from "../../assets/media-kit/media-kit-hero.jpg";
@@ -26,6 +26,7 @@ interface LogoAsset {
   description: string;
   image: StaticImageData;
   downloadSlug: string;
+  downloadUrl: string;
   fileName: string;
   fileType: "WEBP" | "PNG";
   background: "dark" | "light";
@@ -39,6 +40,7 @@ const logoAssets: LogoAsset[] = [
       "Use this version on dark backgrounds where the complete Brand Mindz logo needs maximum contrast.",
     image: whiteLogoPreview,
     downloadSlug: "white-logo",
+    downloadUrl: "/media-kit/logos/Brand-Mindz-White-Logo.webp",
     fileName: "Brand-Mindz-White-Logo.webp",
     fileType: "WEBP",
     background: "dark",
@@ -50,6 +52,7 @@ const logoAssets: LogoAsset[] = [
       "A background-free white logo for dark photography, videos, presentations, and digital artwork.",
     image: whiteLogoPreview,
     downloadSlug: "white-logo-transparent",
+    downloadUrl: "/media-kit/logos/Brand-Mindz-White-Logo-Transparent.png",
     fileName: "Brand-Mindz-White-Logo-Transparent.png",
     fileType: "PNG",
     background: "dark",
@@ -61,6 +64,7 @@ const logoAssets: LogoAsset[] = [
       "Use this primary dark version on white or light backgrounds for print and digital communication.",
     image: blackLogoPreview,
     downloadSlug: "black-logo",
+    downloadUrl: "/media-kit/logos/Brand-Mindz-Black-Logo.webp",
     fileName: "Brand-Mindz-Black-Logo.webp",
     fileType: "WEBP",
     background: "light",
@@ -72,6 +76,7 @@ const logoAssets: LogoAsset[] = [
       "A background-free black logo designed for placement on clean, light-colored surfaces.",
     image: blackLogoPreview,
     downloadSlug: "black-logo-transparent",
+    downloadUrl: "/media-kit/logos/Brand-Mindz-Black-Logo-Transparent.png",
     fileName: "Brand-Mindz-Black-Logo-Transparent.png",
     fileType: "PNG",
     background: "light",
@@ -85,24 +90,28 @@ const founderImages = [
     alt: "R. Vasanth Kumar formal founder portrait",
     label: "Executive Portrait",
     slug: "founder-formal",
+    downloadUrl: "/media-kit/founder/R-Vasanth-Kumar-Formal-Portrait.webp",
   },
   {
     image: founderOffice,
     alt: "R. Vasanth Kumar office portrait",
     label: "Leadership Portrait",
     slug: "founder-office",
+    downloadUrl: "/media-kit/founder/R-Vasanth-Kumar-Office-Portrait.webp",
   },
   {
     image: founderSpeaking,
     alt: "R. Vasanth Kumar speaking at a business meeting",
     label: "Speaking Engagement",
     slug: "founder-speaking",
+    downloadUrl: "/media-kit/founder/R-Vasanth-Kumar-Speaking.webp",
   },
   {
     image: founderPodium,
     alt: "R. Vasanth Kumar delivering a keynote address",
     label: "Keynote Address",
     slug: "founder-podium",
+    downloadUrl: "/media-kit/founder/R-Vasanth-Kumar-Keynote.webp",
   },
 ];
 
@@ -182,7 +191,7 @@ export default function MediaKitPage() {
 
                     <a
                       className={styles.downloadButton}
-                      href={`/api/media-kit/${asset.downloadSlug}`}
+                      href={asset.downloadUrl}
                       download={asset.fileName}
                     >
                       <Download size={16} aria-hidden="true" />
@@ -223,7 +232,7 @@ export default function MediaKitPage() {
               </div>
               <a
                 className={styles.downloadButton}
-                href="/api/media-kit/founder-profile"
+                href="/media-kit/founder/Brand-Mindz-Founder-Profile.pdf"
                 download="Brand-Mindz-Founder-Profile.pdf"
               >
                 <Download size={18} aria-hidden="true" />
@@ -262,7 +271,7 @@ export default function MediaKitPage() {
                 </div>
                 <div className={styles.founderImageFooter}>
                   <span>{item.label}</span>
-                  <a href={`/api/media-kit/${item.slug}`} download>
+                  <a href={item.downloadUrl} download>
                     <Download size={16} aria-hidden="true" />
                     Download
                   </a>
