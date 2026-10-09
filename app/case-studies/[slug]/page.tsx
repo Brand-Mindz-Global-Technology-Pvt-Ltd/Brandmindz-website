@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import CaseStudyPopup from "@/components/casestudies/CaseStudyPopup";
 import truckTaxiImage from "@/assets/case-studies/trucktaxi.webp";
 import arasanImage from "@/assets/case-studies/arasan.webp";
 import spacemanImage from "@/assets/case-studies/spaceman.webp";
@@ -62,5 +63,5 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     <section className={styles.highlights} aria-label="Case study highlights"><div className={styles.container}>{presentation.highlights.map((item) => <div className={styles.highlight} key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}</div></section>
     <article className={styles.article}><div className={styles.articleIntro}><p>Case study</p><h2>The story behind the results</h2></div><div className={styles.prose}>{formatContent(content, presentation)}</div></article>
     <section className={styles.cta}><div><p>Ready to grow?</p><h2>Let’s create your next success story.</h2></div><Link href="/contact" className={styles.ctaLink}>Talk to a growth specialist <ArrowUpRight size={19} /></Link></section>
-  </main><Footer /></>;
+  </main><Footer /><CaseStudyPopup /></>;
 }

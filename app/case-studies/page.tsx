@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { CaseStudiesClient } from "@/components/casestudies/CaseStudiesClient";
+import CaseStudyPopup from "@/components/casestudies/CaseStudyPopup";
 import Various from "@/components/home/Various";
 import "../../style/casestudies/casestudies.css";
 
@@ -35,6 +36,7 @@ export default function CaseStudiesPage() {
         <Various />
       </main>
       <Footer />
+      <CaseStudyPopup />
     </>
   );
 }
