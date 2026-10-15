@@ -1,10 +1,17 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
+import { Afacad } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import FloatingContactCTA from "@/components/layout/FloatingContactCTA";
 import Script from 'next/script'
 import favicon from '@/assets/favicon/favicon.png'
 import './globals.css'
+
+const afacad = Afacad({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-afacad',
+})
 
 const GA_MEASUREMENT_ID = 'G-C223CLWYFR'
 
@@ -78,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" className={afacad.variable} data-scroll-behavior="smooth">
       <body className="font-sans antialiased">
         {/* Google Analytics - loads after page is interactive to avoid blocking render */}
         <Script

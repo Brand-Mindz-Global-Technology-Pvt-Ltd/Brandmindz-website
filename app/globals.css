@@ -83,7 +83,7 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-sans: var(--font-afacad), sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -239,4 +239,5 @@
 }
 
 body {
-  font-family: "Afacad", sans-serif;}
+  font-family: var(--font-afacad), sans-serif;
+}

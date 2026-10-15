@@ -15,10 +15,7 @@ const runNpm = (script) => spawn(
   { stdio: 'inherit', shell: false },
 )
 
-const processes = [
-  runNpm('dev:site'),
-  runNpm('dev:api'),
-]
+const processes = [runNpm('dev:site')]
 
 let shuttingDown = false
 const shutdown = (code = 0) => {
