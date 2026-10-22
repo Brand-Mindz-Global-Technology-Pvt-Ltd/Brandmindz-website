@@ -4,4 +4,4 @@ import { getTirunelveliServiceContent, tirunelveliServicePages } from "@/lib/tir
 
 const service = tirunelveliServicePages.socialMediaManagement;
 export const metadata: Metadata = { title: service.title, description: service.description, alternates: { canonical: `https://www.brandmindz.com/${service.slug}` } };
-export default async function Page() { return <TirunelveliServicePage heroTitle={service.heroTitle} heroSuffix={service.heroSuffix} content={await getTirunelveliServiceContent("socialMediaManagement")} />; }
+export default async function Page() { return <TirunelveliServicePage heroTitle={service.heroTitle} heroSuffix={service.heroSuffix} heroTagline={{ beforeHighlight: "Turn Followers Into", highlight: "Customers." }} content={await getTirunelveliServiceContent("socialMediaManagement")} />; }

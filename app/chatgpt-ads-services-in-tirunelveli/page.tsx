@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  return <TirunelveliServicePage heroTitle={service.heroTitle} heroSuffix={service.heroSuffix} content={await getTirunelveliServiceContent("chatgptAds")} />;
+  return <TirunelveliServicePage heroTitle={service.heroTitle} heroSuffix={service.heroSuffix} heroTagline={{ beforeHighlight: "Speak the Language of", highlight: "Results" }} content={await getTirunelveliServiceContent("chatgptAds")} />;
 }

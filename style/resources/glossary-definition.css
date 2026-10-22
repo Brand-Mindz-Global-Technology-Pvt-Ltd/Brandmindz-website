@@ -1,156 +1,1017 @@
-.glossary-definition-main {
-    background-color: #fff;
+/* Scoped styles for the Marketing Glossary Definition Page */
+
+.marketing-glossary-page {
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  color: #000000;
+  font-family: inherit;
 }
 
-.glossary-definition-header {
-    max-width: 88%;
-    margin: 0 auto;
-    padding: 40px 0 0;
-    text-align: center;
+.marketing-glossary-inner {
+  width: min(calc(100% - 3rem), 1320px);
+  margin: 0 auto;
+  padding-top: 1.5rem;
 }
 
-.glossary-definition-container {
-    max-width: 88%;
-    margin: 0 auto;
-    padding: 40px 0 80px;
-    display: flex;
-    gap: 80px;
+/* 1. Breadcrumb */
+.marketing-glossary-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #4B5563;
+  margin-bottom: 1.25rem;
 }
 
-.glossary-definition-sidebar {
-    flex: 0 0 320px;
-    position: sticky;
-    top: 150px;
-    height: fit-content;
-    max-height: calc(100vh - 180px);
-    overflow-y: auto;
-    padding-right: 15px;
+.marketing-glossary-breadcrumb-home {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  transition: opacity 0.2s;
 }
 
-.glossary-definition-sidebar::-webkit-scrollbar {
-    width: 4px;
+.marketing-glossary-breadcrumb-home:hover {
+  opacity: 0.7;
 }
 
-.glossary-definition-sidebar::-webkit-scrollbar-track {
-    background: transparent;
+.marketing-glossary-breadcrumb-sep,
+.marketing-glossary-breadcrumb-slash {
+  color: #9CA3AF;
+  font-weight: 400;
+  user-select: none;
 }
 
-.glossary-definition-sidebar::-webkit-scrollbar-thumb {
-    background: #eee;
-    border-radius: 10px;
+.marketing-glossary-breadcrumb-link {
+  color: #4B5563;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-.glossary-definition-sidebar:hover::-webkit-scrollbar-thumb {
-    background: #ccc;
+.marketing-glossary-breadcrumb-link:hover {
+  color: #000000;
 }
 
-.glossary-definition-body {
-    flex: 1;
+.marketing-glossary-breadcrumb-current {
+  color: #FFCC00;
+  font-weight: 700;
 }
 
-.glossary-definition-title {
-    font-size: 64px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #000;
+/* 2. Header and Introduction */
+.marketing-glossary-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  padding: 0.75rem 0 2rem;
 }
 
-.glossary-definition-title span {
-    font-weight: 300;
-    color: #888;
+.marketing-glossary-header-bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 480px;
+  max-width: 45%;
+  background: url("../../assets/HomeSection/banner/group1.webp") no-repeat right center / contain;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.glossary-definition-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.marketing-glossary-header-left {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
 }
 
-.glossary-definition-nav-link {
-    font-size: 19px;
-    color: #000;
-    text-decoration: none;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    line-height: 1.4;
-    width: fit-content;
+.marketing-glossary-header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-.glossary-definition-nav-link:hover {
-    color: #777;
+.marketing-glossary-book-icon {
+  width: 52px;
+  height: 52px;
+  background-color: #FFCC00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-size: 24px;
+  flex-shrink: 0;
 }
 
-.glossary-definition-nav-link.active {
-    color: #000;
-    border-bottom-color: #ffb7b7;
-    font-weight: 650;
+.marketing-glossary-title {
+  font-size: clamp(2.2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: #000000;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
-.glossary-definition-section {
-    margin-bottom: 60px;
-    scroll-margin-top: 180px;
+.marketing-glossary-subtitle {
+  color: #4B5563;
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0.65rem 0 0;
+  max-width: 560px;
 }
 
-.glossary-definition-heading {
-    font-size: 38px;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 25px;
+.marketing-glossary-header-right {
+  position: relative;
+  z-index: 2;
+  width: 380px;
+  max-width: 100%;
+  flex-shrink: 0;
 }
 
-.glossary-definition-text {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #888;
-    margin-bottom: 20px;
+.marketing-glossary-search-box {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 0 16px;
+  height: 48px;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.glossary-definition-text p {
-    margin-bottom: 15px;
+.marketing-glossary-search-box:focus-within {
+  border-color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.glossary-subsection-heading {
-    font-size: 26px;
-    font-weight: 700;
-    color: #000;
-    margin: 30px 0 15px;
+.marketing-glossary-search-icon {
+  color: #6B7280;
+  font-size: 18px;
+  flex-shrink: 0;
 }
 
-.glossary-definition-cta {
-    color: #000;
-    font-weight: 650;
-    padding: 18px 20px;
-    border-left: 3px solid #ffb7b7;
-    background: #fafafa;
+.marketing-glossary-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 0.95rem;
+  color: #000000;
 }
 
+.marketing-glossary-search-input::placeholder {
+  color: #9CA3AF;
+}
+
+.marketing-glossary-search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+.marketing-glossary-search-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.92rem;
+  color: #000000;
+  transition: background 0.15s;
+}
+
+.marketing-glossary-search-result-item:hover {
+  background: #F9FAFB;
+}
+
+.marketing-glossary-search-result-term {
+  font-weight: 600;
+}
+
+.marketing-glossary-search-result-badge {
+  background: #FFCC00;
+  color: #000000;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+/* 3. Alphabet Navigation A–Z */
+.marketing-glossary-alphabets {
+  margin: 1.25rem 0 2rem;
+  width: 100%;
+}
+
+.marketing-glossary-alphabets-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.marketing-glossary-alphabets-row::-webkit-scrollbar {
+  height: 4px;
+}
+
+.marketing-glossary-alphabets-row::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 4px;
+}
+
+.marketing-glossary-alpha-btn {
+  flex: 1;
+  min-width: 40px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.marketing-glossary-alpha-btn.active {
+  background-color: #FFCC00 !important;
+  color: #000000 !important;
+  border-color: #FFCC00 !important;
+  font-weight: 800;
+}
+
+.marketing-glossary-alpha-btn:hover:not(.active):not(.disabled) {
+  border-color: #000000;
+}
+
+.marketing-glossary-alpha-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: #E5E7EB;
+}
+
+/* 4. Main Two-Column Layout */
+.marketing-glossary-main-grid {
+  display: grid;
+  grid-template-columns: 28% calc(72% - 24px);
+  gap: 24px;
+  align-items: start;
+}
+
+/* 5. Left Glossary Sidebar */
+.marketing-glossary-sidebar {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 24px 20px;
+  position: sticky;
+  top: 120px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.marketing-glossary-sidebar-header {
+  margin-bottom: 16px;
+}
+
+.marketing-glossary-sidebar-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.marketing-glossary-sidebar-line {
+  width: 40px;
+  height: 3px;
+  background-color: #FFCC00;
+  border-radius: 999px;
+  margin-top: 6px;
+}
+
+.marketing-glossary-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 560px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.marketing-glossary-sidebar-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.marketing-glossary-sidebar-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.marketing-glossary-sidebar-list::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 999px;
+}
+
+.marketing-glossary-sidebar-list:hover::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+}
+
+.marketing-glossary-sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border: none;
+  background: transparent;
+  border-left: 3px solid transparent;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all 0.15s ease;
+}
+
+.marketing-glossary-sidebar-item:hover {
+  background: #F9FAFB;
+  color: #000000;
+}
+
+/* Active item: pure white background, black text, and thin #FFCC00 left border */
+.marketing-glossary-sidebar-item.selected {
+  background: #FFFFFF !important;
+  color: #000000 !important;
+  font-weight: 700;
+  border-left: 3px solid #FFCC00 !important;
+  border-radius: 0 8px 8px 0;
+}
+
+.marketing-glossary-sidebar-term-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 8px;
+}
+
+.marketing-glossary-sidebar-chevron {
+  font-size: 14px;
+  color: #9CA3AF;
+  flex-shrink: 0;
+}
+
+.marketing-glossary-sidebar-item.selected .marketing-glossary-sidebar-chevron {
+  color: #000000;
+}
+
+/* 6. Right Content Card */
+.marketing-glossary-content-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  padding: clamp(24px, 3.5vw, 40px);
+  min-width: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.marketing-glossary-badge {
+  display: inline-block;
+  background-color: #FFCC00;
+  color: #000000;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.marketing-glossary-term-heading {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: #000000;
+  margin: 0 0 16px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.marketing-glossary-definition-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #374151;
+  margin: 0 0 24px;
+}
+
+/* Light Neutral-Gray Panels */
+.marketing-glossary-panel {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* "Why it matters" Panel */
+.marketing-glossary-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.marketing-glossary-lightbulb-icon {
+  width: 44px;
+  height: 44px;
+  background-color: #FFCC00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.marketing-glossary-panel-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #000000;
+  margin: 0;
+}
+
+.marketing-glossary-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.marketing-glossary-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marketing-glossary-check-circle {
+  width: 18px;
+  height: 18px;
+  background-color: #FFCC00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-size: 11px;
+  flex-shrink: 0;
+  font-weight: 900;
+}
+
+.marketing-glossary-check-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1F2937;
+  line-height: 1.5;
+}
+
+/* Example Comparison Panel */
+.marketing-glossary-example-panel {
+  padding: 24px;
+}
+
+.marketing-glossary-example-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.marketing-glossary-example-info {
+  padding-right: 12px;
+}
+
+.marketing-glossary-example-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.marketing-glossary-example-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #4B5563;
+  margin: 0;
+}
+
+.marketing-glossary-version-card {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.marketing-glossary-version-header {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 8px;
+}
+
+.marketing-glossary-preview-box {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 10px 12px;
+  height: 58px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.marketing-glossary-preview-line {
+  border-radius: 2px;
+}
+
+.marketing-glossary-preview-line.line-header {
+  height: 4px;
+  width: 45%;
+  background: #E5E7EB;
+}
+
+.marketing-glossary-preview-line.line-sub {
+  height: 3px;
+  width: 65%;
+  background: #F3F4F6;
+}
+
+.marketing-glossary-preview-line.line-short {
+  height: 3px;
+  width: 45%;
+  background: #F3F4F6;
+}
+
+.marketing-glossary-preview-btn {
+  height: 8px;
+  width: 32px;
+  background: #FFCC00;
+  border-radius: 2px;
+}
+
+.marketing-glossary-preview-box.preview-version-b {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.marketing-glossary-preview-hero-block {
+  width: 30px;
+  height: 34px;
+  background: #000000;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.marketing-glossary-preview-hero-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.marketing-glossary-conversion-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.marketing-glossary-conversion-label {
+  font-size: 0.72rem;
+  color: #6B7280;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.marketing-glossary-progress-track {
+  height: 6px;
+  background: #E5E7EB;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.marketing-glossary-progress-fill {
+  height: 100%;
+  background-color: #FFCC00;
+  border-radius: 999px;
+}
+
+.marketing-glossary-conversion-value {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #000000;
+}
+
+/* Single Example (for terms other than A/B Testing) */
+.marketing-glossary-example-single {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Formula Panel */
+.marketing-glossary-formula-panel {
+  border-left: 4px solid #FFCC00;
+}
+
+.marketing-glossary-formula-box {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-top: 10px;
+}
+
+.marketing-glossary-formula-code {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000000;
+  display: block;
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+/* Steps to Implement Panel */
+.marketing-glossary-steps-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.marketing-glossary-step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marketing-glossary-step-number {
+  width: 24px;
+  height: 24px;
+  background-color: #FFCC00;
+  color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.marketing-glossary-step-text {
+  font-size: 0.95rem;
+  color: #1F2937;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Common Mistakes Panel */
+.marketing-glossary-mistakes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.marketing-glossary-mistake-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marketing-glossary-mistake-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.marketing-glossary-mistake-text {
+  font-size: 0.95rem;
+  color: #374151;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Related Terms Section */
+.marketing-glossary-related-section {
+  margin-bottom: 24px;
+  padding-top: 4px;
+}
+
+.marketing-glossary-related-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 0 12px;
+}
+
+.marketing-glossary-related-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.marketing-glossary-related-tag {
+  display: inline-flex;
+  align-items: center;
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1F2937;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.marketing-glossary-related-tag:hover {
+  background: #FFCC00;
+  border-color: #FFCC00;
+  color: #000000;
+}
+
+/* Call to Action Box */
+.marketing-glossary-cta-box {
+  background: #000000;
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  color: #FFFFFF;
+}
+
+.marketing-glossary-cta-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.marketing-glossary-cta-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+  min-width: 240px;
+}
+
+.marketing-glossary-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFCC00;
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.marketing-glossary-cta-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+/* Frequently Asked Questions (Mini Q&A) Panel */
+.marketing-glossary-qa-panel {
+  padding: 24px;
+}
+
+.marketing-glossary-qa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.marketing-glossary-qa-item {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.marketing-glossary-qa-question {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.marketing-glossary-qa-qbadge {
+  width: 20px;
+  height: 20px;
+  background-color: #FFCC00;
+  color: #000000;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.marketing-glossary-qa-answer {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #4B5563;
+  margin: 0;
+  padding-left: 30px;
+}
+
+/* 7. Bottom Term Navigation */
+.marketing-glossary-bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #E5E7EB;
+  padding-top: 24px;
+  margin-top: 12px;
+}
+
+.marketing-glossary-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.marketing-glossary-nav-btn:hover {
+  opacity: 0.75;
+}
+
+.marketing-glossary-nav-arrow {
+  color: #FFCC00;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.marketing-glossary-nav-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.marketing-glossary-nav-btn.nav-next .marketing-glossary-nav-meta {
+  text-align: right;
+}
+
+.marketing-glossary-nav-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.marketing-glossary-nav-title {
+  font-size: 0.88rem;
+  color: #4B5563;
+  font-weight: 500;
+}
+
+/* Floating Elements Controls for this page */
+body:has(.marketing-glossary-page) .floating-contact-cta,
+.marketing-glossary-page ~ * .floating-contact-cta {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+body:has(.marketing-glossary-page) [class*="backToTop"],
+.marketing-glossary-page ~ * [class*="backToTop"] {
+  background: #FFCC00 !important;
+  color: #000000 !important;
+}
+
+body:has(.marketing-glossary-page) [class*="backToTop"] svg,
+.marketing-glossary-page ~ * [class*="backToTop"] svg {
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* Responsive Behavior */
 @media (max-width: 992px) {
-    .glossary-definition-header {
-        padding-top: 40px;
-    }
+  .marketing-glossary-main-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
-    .glossary-definition-container {
-        flex-direction: column;
-        padding-top: 20px;
-        gap: 30px;
-    }
+  .marketing-glossary-sidebar {
+    position: static;
+  }
 
-    .glossary-definition-sidebar {
-        position: relative;
-        top: 0;
-        flex: none;
-        width: 100%;
-        padding-right: 0;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 20px;
-        margin-bottom: 10px;
-        max-height: 300px;
-        overflow-y: auto;
-    }
+  .marketing-glossary-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
 
-    .glossary-definition-title {
-        font-size: 42px;
-    }
+  .marketing-glossary-header-right {
+    width: 100%;
+  }
+
+  .marketing-glossary-header-bg {
+    display: none;
+  }
+
+  .marketing-glossary-example-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .marketing-glossary-inner {
+    width: calc(100% - 2rem);
+    padding-top: 1rem;
+  }
+
+  .marketing-glossary-title {
+    font-size: 1.85rem;
+  }
+
+  .marketing-glossary-book-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .marketing-glossary-content-card {
+    padding: 20px 16px;
+  }
+
+  .marketing-glossary-bottom-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .marketing-glossary-nav-btn.nav-next .marketing-glossary-nav-meta {
+    text-align: left;
+  }
 }

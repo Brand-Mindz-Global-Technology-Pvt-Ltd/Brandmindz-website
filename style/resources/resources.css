@@ -251,24 +251,36 @@
 
 .glossary-directory-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
   position: relative;
+  align-items: stretch;
 }
 
-.glossary-column {
+.glossary-column.glossary-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px 24px 22px 24px;
   min-width: 0;
   text-align: left;
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+.glossary-column.glossary-card:hover {
+  border-color: #cbd5e1;
 }
 
 .glossary-column-header {
-  font-size: 38px;
+  font-size: 32px;
   font-weight: 700;
   color: #000000;
-  margin-bottom: 25px;
+  margin: 0 0 20px 0;
+  line-height: 1;
   font-family: 'Afacad', sans-serif;
   letter-spacing: 0.5px;
 }
@@ -276,46 +288,69 @@
 .glossary-column-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0;
   width: 100%;
-  margin-bottom: 12px;
+  margin: 0;
   list-style: none;
   padding: 0;
+  flex-grow: 1;
 }
 
 .glossary-term-item {
-  font-size: 16.5px;
-  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 13px 0;
+  font-size: 15.5px;
+  color: #334155;
   line-height: 1.45;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
-  word-wrap: break-word;
+  border-bottom: 1px solid #f1f5f9;
+  transition: color 0.15s ease, padding-left 0.15s ease;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.glossary-term-item:last-child {
+  border-bottom: 1px solid #f1f5f9;
 }
 
 .glossary-term-item:hover {
   color: #ffcc00;
-  transform: translateX(3px);
+  padding-left: 3px;
 }
 
+.glossary-term-text {
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* Show All / Show Less Button matching Screenshot 1 */
 .glossary-show-all {
-  font-size: 15px;
-  font-weight: 700;
-  color: #000000;
-  background: none;
-  border: none;
-  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  background-color: #f8fafc;
+  border: 1px solid #edf2f7;
+  border-radius: 8px;
+  padding: 11px 16px;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-top: 8px;
-  display: inline-flex;
+  margin-top: 16px;
+  display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
 }
 
 .glossary-show-all:hover {
-  color: #ffcc00;
-  text-decoration: underline;
+  background-color: #f1f5f9;
+  color: #000000;
+  border-color: #e2e8f0;
 }
 
 /* Empty search result states */
@@ -554,15 +589,18 @@
 @media (max-width: 1300px) {
   .glossary-directory-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .glossary-directory-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
 
 @media (max-width: 992px) {
-  .glossary-directory-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-  }
   .bm-resources-hero-title {
     font-size: 56px;
   }
@@ -603,21 +641,27 @@
   }
   
   .glossary-directory-section {
-    padding: 30px 15px 60px 15px;
+    padding: 20px 15px 50px 15px;
   }
   
   .glossary-directory-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 16px;
+  }
+
+  .glossary-column.glossary-card {
+    padding: 18px 16px 14px 16px;
+    border-radius: 14px;
   }
   
   .glossary-column-header {
-    font-size: 32px;
-    margin-bottom: 15px;
+    font-size: 26px;
+    margin-bottom: 14px;
   }
   
   .glossary-term-item {
-    font-size: 15.5px;
+    font-size: 15px;
+    padding: 11px 0;
   }
 
   .additional-resources-section {
@@ -696,13 +740,15 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .glossary-directory-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 16px;
+  }
+  .glossary-column.glossary-card {
+    padding: 18px 14px 14px 14px;
   }
   .glossary-column-header {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 22px;
   }
 }
