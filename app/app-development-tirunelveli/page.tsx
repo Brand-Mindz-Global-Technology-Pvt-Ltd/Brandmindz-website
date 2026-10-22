@@ -85,11 +85,11 @@ export default function TirunelveliAppDevelopmentPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     {
       name: "Home",
-      url: "https://brandmindz.com",
+      url: "https://www.brandmindz.com",
     },
     {
       name: "App Development Company in Tirunelveli",
-      url: meta.url,
+      url: "https://www.brandmindz.com/app-development-tirunelveli",
     },
   ]);
 

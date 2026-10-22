@@ -76,7 +76,7 @@ function generateLocalBusinessSchema() {
 
 export default function TirunelveliLandingPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "https://brandmindz.com" },
+    { name: "Home", url: "https://www.brandmindz.com" },
     {
       name: "Digital Marketing Agency in Tirunelveli",
       url: meta.url,
