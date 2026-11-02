@@ -1,77 +1,15 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import styles from "../../style/home/ProvenGrowthSection.module.css";
 import { TrendingUp, AlertCircle, Layers } from 'lucide-react';
 import { FaCheckCircle } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 import Link from "next/link";
 
-const LEAD_TARGET = 587;
-const LEAD_ANIMATION_DURATION = 2000;
-
 export default function ProvenGrowthSection() {
-  const [count, setCount] = useState(0);
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const hasAnimatedRef = useRef(false);
-  const animationFrameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const startCountAnimation = () => {
-      if (hasAnimatedRef.current) return;
-      hasAnimatedRef.current = true;
-
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        setCount(LEAD_TARGET);
-        return;
-      }
-
-      let startTimestamp: number | null = null;
-      const step = (timestamp: number) => {
-        if (startTimestamp === null) startTimestamp = timestamp;
-        const elapsed = timestamp - startTimestamp;
-        const progress = Math.min(elapsed / LEAD_ANIMATION_DURATION, 1);
-
-        setCount(Math.floor(progress * LEAD_TARGET));
-
-        if (progress < 1) {
-          animationFrameRef.current = window.requestAnimationFrame(step);
-        } else {
-          setCount(LEAD_TARGET);
-        }
-      };
-
-      animationFrameRef.current = window.requestAnimationFrame(step);
-    };
-
-    if (!sectionRef.current) return;
-
-    if (!("IntersectionObserver" in window)) {
-      startCountAnimation();
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          startCountAnimation();
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
-    );
-
-    observer.observe(sectionRef.current);
-    return () => {
-      observer.disconnect();
-      if (animationFrameRef.current !== null) {
-        window.cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <section className={styles.section}>
       <div className={`${styles.headingWrapper} `} >
         <h2 className={styles.heading}>
           Proven Growth Frameworks<br />
@@ -107,7 +45,7 @@ export default function ProvenGrowthSection() {
                 <div>
                   <p className={styles.statLabel}>Generated Leads</p>
                  <p className={styles.bigNumberGreen}>
-  <span className={styles.blackNumber}>{count}</span> + Leads Generated
+  <span className={styles.blackNumber}>587</span> + Leads Generated
 </p>
 
                 </div>

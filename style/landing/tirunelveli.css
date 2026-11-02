@@ -1818,20 +1818,31 @@
 }
 
 /* Hero Section - Tirunelveli DMA page */
+/*
+ * Strategy:
+ * - Each .bm-hero-title-line span is display:block (stacks exactly 3 rows).
+ * - white-space:nowrap on each line span forces each to stay on one visual row.
+ * - Font size is vw-scaled so all three lines scale proportionally with viewport.
+ * - overflow-x:hidden on the section clips any per-line right-edge overflow
+ *   without creating a horizontal scrollbar.
+ */
+
+/* Prevent horizontal scrollbar when line 2 reaches the viewport edge */
+.bm-hero-section-contact {
+  overflow-x: hidden;
+}
+
 .bm-tvl-hero-title {
-  width: min(calc(100% - 48px), 900px);
+  width: 100%;
   max-width: 100%;
   margin: 0 auto 24px auto;
   font-family: var(--font-afacad), sans-serif;
-  font-size: clamp(44px, calc(4.6vw - 4px), 64px);
+  font-size: clamp(32px, 4vw, 65px);
   font-weight: 700;
   line-height: 1.22;
   letter-spacing: normal;
   text-align: center;
   box-sizing: border-box;
-  white-space: normal;
-  overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 .bm-tvl-hero-title .text-black {
@@ -1846,25 +1857,11 @@
   color: #ffcc00;
 }
 
-@media (min-width: 1025px) {
+/* Desktop (>=769px): enforce exactly 3 lines via nowrap + block display */
+@media (min-width: 769px) {
   .bm-tvl-hero-title .bm-hero-title-line {
     display: block;
-    white-space: normal;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .bm-tvl-hero-title {
-    width: 100%;
-    max-width: 1060px;
-    font-size: clamp(34px, calc(5vw - 8px), 48px);
-    line-height: 1.18;
-    letter-spacing: 0.5px;
-  }
-
-  .bm-tvl-hero-title .bm-hero-title-line {
-    display: block;
-    white-space: normal;
+    white-space: nowrap;
   }
 }
 
