@@ -1816,3 +1816,214 @@
   background: #ffffff !important;
   color: #111111 !important;
 }
+
+/* Hero Section - Tirunelveli DMA page */
+.bm-tvl-hero-title {
+  width: min(calc(100% - 48px), 900px);
+  max-width: 100%;
+  margin: 0 auto 24px auto;
+  font-family: var(--font-afacad), sans-serif;
+  font-size: clamp(44px, calc(4.6vw - 4px), 64px);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: normal;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.bm-tvl-hero-title .text-black {
+  color: #000000;
+}
+
+.bm-tvl-hero-title .text-grey {
+  color: #888888;
+}
+
+.bm-tvl-hero-title .text-yellow {
+  color: #ffcc00;
+}
+
+@media (min-width: 1025px) {
+  .bm-tvl-hero-title .bm-hero-title-line {
+    display: block;
+    white-space: normal;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bm-tvl-hero-title {
+    width: 100%;
+    max-width: 1060px;
+    font-size: clamp(34px, calc(5vw - 8px), 48px);
+    line-height: 1.18;
+    letter-spacing: 0.5px;
+  }
+
+  .bm-tvl-hero-title .bm-hero-title-line {
+    display: block;
+    white-space: normal;
+  }
+}
+
+.bm-tvl-hero-action {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bm-tvl-hero-logos {
+  width: 100%;
+  margin-top: clamp(40px, 5vw, 75px);
+}
+
+@media (max-width: 768px) {
+  .bm-tvl-hero-title {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.5px !important;
+    width: 100% !important;
+    max-width: 720px !important;
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+
+  .bm-tvl-hero-title .bm-hero-title-line {
+    display: inline;
+    white-space: normal;
+  }
+
+  /* Mobile compact whitespace between client logos and next intro section */
+  .bm-hero-section-contact {
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  .bm-tvl-hero-logos {
+    margin-top: 24px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .bm-tvl-intro-section {
+    padding-top: 20px !important;
+    padding-bottom: 24px !important;
+    margin-top: 0 !important;
+  }
+
+  .bm-tvl-intro-card {
+    padding-top: 0 !important;
+    padding-bottom: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .bm-tvl-hero-title {
+    letter-spacing: 0px !important;
+  }
+
+  .bm-hero-section-contact {
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  .bm-tvl-hero-logos {
+    margin-top: 20px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .bm-tvl-intro-section {
+    padding-top: 16px !important;
+    padding-bottom: 20px !important;
+    margin-top: 0 !important;
+  }
+
+  .bm-tvl-intro-card {
+    padding-top: 0 !important;
+  }
+}
+
+/* Section gap: Specialized Services -> Why Choose */
+.bm-tvl-expert-slider-section {
+  padding-bottom: 40px;
+}
+
+.bm-tvl-section--grey {
+  padding-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .bm-tvl-expert-slider-section {
+    padding-bottom: 28px !important;
+  }
+
+  .bm-tvl-section--grey {
+    padding-top: 28px !important;
+  }
+}
+
+/* Why Choose Brand Mindz - 3 + 2 Grid Layout */
+.bm-tvl-why-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.bm-tvl-why-grid > * {
+  grid-column: span 2;
+  height: 100%;
+  display: flex;
+}
+
+.bm-tvl-why-grid > * > .bm-tvl-why-card {
+  width: 100%;
+  height: 100%;
+}
+
+.bm-tvl-why-grid > *:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.bm-tvl-why-grid > *:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+@media (max-width: 1024px) {
+  .bm-tvl-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bm-tvl-why-grid > * {
+    grid-column: span 1 !important;
+  }
+
+  .bm-tvl-why-grid > *:nth-child(4) {
+    grid-column: span 1 !important;
+  }
+
+  .bm-tvl-why-grid > *:nth-child(5) {
+    grid-column: 1 / -1 !important;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .bm-tvl-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bm-tvl-why-grid > * {
+    grid-column: span 1 !important;
+    max-width: 100% !important;
+  }
+
+  .bm-tvl-why-grid > *:nth-child(5) {
+    grid-column: span 1 !important;
+    max-width: 100% !important;
+  }
+}

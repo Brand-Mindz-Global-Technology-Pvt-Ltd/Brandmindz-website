@@ -10,7 +10,7 @@ import Faq from "@/components/home/Faq"
 import Various from "@/components/home/Various"
 import Footer from "@/components/layout/footer"
 import ProvenGrowthPage from "@/components/home/Salesstatistics"
-import { blogHref, blogImageUrl, formatBlogDate, getBlogs } from "@/lib/blogs"
+import { blogFallbackImage, blogHref, blogImageUrl, formatBlogDate, getBlogs } from "@/lib/blogs"
 
 export const metadata = {
   title: {
@@ -45,7 +45,7 @@ export default async function HomePage() {
     description: post.short_description || "",
     category: post.category || "Insights",
     date: formatBlogDate(post),
-    image: blogImageUrl(post),
+    image: blogImageUrl(post) ?? blogFallbackImage(post),
     href: blogHref(post),
   }))
   return (

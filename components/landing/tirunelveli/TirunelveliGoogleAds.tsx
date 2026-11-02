@@ -1,23 +1,25 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGoogle, FaLaptopCode, FaSearch, FaPaintBrush } from "react-icons/fa";
+import { FaGoogle, FaLaptopCode, FaSearch, FaPaintBrush, FaRobot } from "react-icons/fa";
 import { FadeIn } from "@/components/animations/fade-in";
 import { tirunelveliLandingData } from "@/lib/tirunelveli-landing-data";
 import googleAdsImage from "../../../assets/tirunelveli/google-ads.webp";
 import developmentImage from "../../../assets/tirunelveli/web-and-app.webp";
 import seoImage from "../../../assets/tirunelveli/seo.webp";
 import brandingImage from "../../../public/case-studies/founder.png";
+import aeoGeoImage from "../../../assets/tirunelveli/aeo_geo_visibility.webp";
 import "../../../style/landing/tirunelveli.css";
 
-const sectionIcons = [FaGoogle, FaLaptopCode, FaSearch, FaPaintBrush];
+const sectionIcons = [FaGoogle, FaLaptopCode, FaSearch, FaPaintBrush, FaRobot];
 const sectionImages = [
   googleAdsImage,
   developmentImage,
   seoImage,
   brandingImage,
+  aeoGeoImage,
 ];
 
 const shortLabels = [
@@ -25,12 +27,25 @@ const shortLabels = [
   "Web & App Dev",
   "SEO Solutions",
   "Branding",
+  "AEO / GEO",
 ];
 
 export const TirunelveliGoogleAds = () => {
   const { expertSections } = tirunelveliLandingData;
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+
+  const allSections = useMemo(() => {
+    if (expertSections.length >= 5) return expertSections;
+    return [
+      ...expertSections,
+      {
+        title: "AEO / GEO Visibility Service in Tirunelveli",
+        description:
+          "We help businesses get noticed where people are searching today \u2013 not just on Google, but also across AI-powered platforms. With our AEO and GEO strategies, we make it easier for your brand to appear in relevant answers and AI-generated search results on platforms like ChatGPT and Google AI Overviews. From improving your website content to building your brand's online presence, we focus on helping more people discover your business and trust what you offer.",
+      },
+    ];
+  }, [expertSections]);
 
   const goTo = useCallback(
     (index: number) => {
@@ -40,9 +55,9 @@ export const TirunelveliGoogleAds = () => {
     [activeIndex]
   );
 
-  const active = expertSections[activeIndex];
-  const ActiveIcon = sectionIcons[activeIndex];
-  const activeImage = sectionImages[activeIndex];
+  const active = allSections[activeIndex];
+  const ActiveIcon = sectionIcons[activeIndex] || FaRobot;
+  const activeImage = sectionImages[activeIndex] || aeoGeoImage;
 
   return (
     <section className="bm-tvl-expert-slider-section">
@@ -60,8 +75,8 @@ export const TirunelveliGoogleAds = () => {
         <div className="bm-tvl-expert-slider-layout">
           {/* Left — tab navigation */}
           <div className="bm-tvl-expert-tabs">
-            {expertSections.map((section, index) => {
-              const Icon = sectionIcons[index];
+            {allSections.map((section, index) => {
+              const Icon = sectionIcons[index] || FaRobot;
               const isActive = index === activeIndex;
               return (
                 <button
@@ -111,7 +126,7 @@ export const TirunelveliGoogleAds = () => {
                   </span>
                   <span className="bm-tvl-expert-slide-count">
                     {String(activeIndex + 1).padStart(2, "0")} /{" "}
-                    {String(expertSections.length).padStart(2, "0")}
+                    {String(allSections.length).padStart(2, "0")}
                   </span>
                 </div>
 

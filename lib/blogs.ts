@@ -32,6 +32,36 @@ export const blogImageUrl = (post: BlogPost) => {
     : `${serverApiBase()}/storage/uploads/blog/${cleanImage}`;
 };
 
+/** Static fallback images (served from /public/blog-covers/) for posts whose
+ *  API `image` field is empty. Keyed by slug substring → public path. */
+const SLUG_FALLBACKS: Array<{ test: RegExp; src: string }> = [
+  { test: /chatgpt/i,          src: "/blog-covers/chatgpt-ads.webp" },
+  { test: /web.?dev|web.?site|web.?development/i, src: "/blog-covers/web-and-app.webp" },
+  { test: /app.?dev/i,         src: "/blog-covers/web-and-app.webp" },
+];
+
+const CATEGORY_FALLBACKS: Array<{ test: RegExp; src: string }> = [
+  { test: /chatgpt/i,           src: "/blog-covers/chatgpt-ads.webp" },
+  { test: /web.?dev/i,          src: "/blog-covers/web-and-app.webp" },
+  { test: /app.?dev/i,          src: "/blog-covers/web-and-app.webp" },
+];
+
+/**
+ * Returns a fallback image path for a post when the API has no image.
+ * Returns null if no fallback is mapped for the post.
+ */
+export const blogFallbackImage = (post: BlogPost): string | null => {
+  const slug = post.slug?.trim() ?? "";
+  const category = post.category ?? "";
+  for (const { test, src } of SLUG_FALLBACKS) {
+    if (test.test(slug)) return src;
+  }
+  for (const { test, src } of CATEGORY_FALLBACKS) {
+    if (test.test(category)) return src;
+  }
+  return null;
+};
+
 export const blogHref = (post: BlogPost) =>
   `/blog/${encodeURIComponent(post.slug?.trim() || String(post.blog_id))}`;
 

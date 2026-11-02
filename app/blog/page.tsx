@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
-import { blogHref, blogImageUrl, formatBlogDate, getBlogs } from "@/lib/blogs";
+import { blogFallbackImage, blogHref, blogImageUrl, formatBlogDate, getBlogs } from "@/lib/blogs";
 import "../../style/blog.css";
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default async function BlogPage() {
           {posts.length ? (
             <div className="public-blog-grid">
               {posts.map((post) => {
-                const image = blogImageUrl(post);
+                const image = blogImageUrl(post) ?? blogFallbackImage(post);
                 return (
                   <article className="public-blog-card" key={post.blog_id}>
                     <Link href={blogHref(post)} className="public-blog-image">

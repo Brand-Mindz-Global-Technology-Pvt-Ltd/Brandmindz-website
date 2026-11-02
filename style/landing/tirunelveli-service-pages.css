@@ -212,6 +212,7 @@
   color: rgba(255, 255, 255, .78);
   font-size: clamp(1rem, 1.2vw, 1.13rem);
   line-height: 1.75;
+  text-align: justify;
 }
 
 .tn-service-intro__copy p:last-child {
@@ -661,6 +662,23 @@
   }
 }
 
+/* Branding Agency Hero Intro Layout */
+.tn-service-intro--branding .tn-service-intro__panel {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.75rem, 2.5vw, 2.25rem);
+}
+
+.tn-service-intro--branding .tn-service-intro__copy {
+  max-width: 62ch;
+}
+
+@media (max-width: 900px) {
+  .tn-service-intro--branding .tn-service-intro__panel {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
 /* Performance Marketing Hero Intro Layout */
 .tn-service-intro--performance .tn-service-intro__panel {
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
@@ -822,6 +840,7 @@
   line-height: 1.58;
   margin-bottom: 0.5rem;
   color: #555;
+  text-align: justify;
 }
 
 .tn-service-offerings-grid .bm-tvl-service-desc:last-child {
@@ -837,6 +856,10 @@
   min-height: 2.85rem;
   display: flex;
   align-items: flex-start;
+}
+
+.tn-service-why-grid .bm-tvl-why-card p {
+  text-align: justify;
 }
 
 .tn-service-why-grid .bm-tvl-why-card p:last-child {
@@ -876,13 +899,15 @@
   position: relative;
   min-width: 0;
   padding-top: .35rem;
+  align-self: start;
 }
 
 @media (min-width: 901px) {
   .tn-service-editorial--with-image,
   .tn-service-editorial:has(.tn-service-editorial__media) {
-    grid-template-columns: minmax(0, 295px) minmax(0, 1fr);
-    gap: clamp(1.5rem, 2.5vw, 2.25rem);
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+    gap: clamp(1.25rem, 2vw, 1.75rem);
+    align-items: start;
   }
 
   .tn-service-editorial--with-image:has(.tn-service-editorial__media--performance),
@@ -985,16 +1010,17 @@
 
 .tn-service-editorial__body {
   min-width: 0;
-  padding-top: .2rem;
+  padding-top: .35rem;
+  align-self: start;
 }
 
 .tn-service-editorial__body .bm-tvl-desc {
-  max-width: 66ch;
+  max-width: 100%;
   margin: 0 0 1.15rem;
   color: #505050;
   font-size: clamp(1rem, 1.18vw, 1.125rem);
   line-height: 1.8;
-  text-align: left;
+  text-align: justify;
 }
 
 .tn-service-editorial__body .bm-tvl-desc:last-child {
@@ -1025,6 +1051,7 @@
 /* Full-width paragraphs — no 66ch cap in vertical layout */
 .tn-service-editorial--rankings .tn-service-editorial__body .bm-tvl-desc {
   max-width: 100%;
+  text-align: justify;
 }
 
 /* Card 3: Upper/Lower Balanced Layout */
@@ -1068,6 +1095,7 @@
   color: #444;
   margin-bottom: 0;
   max-width: 100%;
+  text-align: justify;
 }
 
 /* Lower area */
@@ -1213,6 +1241,7 @@
   color: #505050;
   margin-bottom: 0;
   max-width: 100%;
+  text-align: justify;
 }
 
 .tn-service-editorial--two-zone .tn-service-editorial__lower {
@@ -1241,6 +1270,7 @@
   color: #505050;
   margin-bottom: 0;
   max-width: 100%;
+  text-align: justify;
 }
 
 .tn-service-editorial > .tn-service-detail-grid {
@@ -1328,7 +1358,7 @@
   color: #505050;
   font-size: clamp(1rem, 1.18vw, 1.125rem);
   line-height: 1.8;
-  text-align: left;
+  text-align: justify;
 }
 
 .tn-service-editorial__heading-copy .bm-tvl-desc:last-child {
@@ -1371,6 +1401,7 @@
   line-height: 1.8;
   color: #505050;
   font-size: clamp(1rem, 1.18vw, 1.125rem);
+  text-align: justify;
 }
 
 @media (max-width: 768px) {
@@ -1391,6 +1422,7 @@
   color: #6f6f6f;
   font-size: clamp(.98rem, 1.35vw, 1.08rem);
   line-height: 1.65;
+  text-align: justify;
 }
 
 .tn-service-detail-card p + p {
@@ -1620,4 +1652,14 @@
     flex: 0 0 calc((100% - 1.5rem) / 2);
     max-width: calc((100% - 1.5rem) / 2);
   }
+}
+
+
+/* Scoped paragraph justification for Tirunelveli service pages */
+.tn-service-page .bm-faq-a-box p {
+  text-align: justify;
+}
+
+.tn-service-page .bm-tvl-desc:not(.tn-service-centered-desc) {
+  text-align: justify;
 }

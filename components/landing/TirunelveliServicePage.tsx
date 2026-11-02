@@ -237,7 +237,7 @@ export function TirunelveliServicePage({
         <div className="bm-tvl-hero-logos"><LogoNewsTicker /></div>
       </section>
 
-      <section className={`tn-service-intro${isSmmPage ? " tn-service-intro--smm" : ""}${isSeoPage ? " tn-service-intro--seo" : ""}${isPerformancePage ? " tn-service-intro--performance" : ""}${isChatgptPage ? " tn-service-intro--chatgpt" : ""}`}>
+      <section className={`tn-service-intro${isBrandingPage ? " tn-service-intro--branding" : ""}${isSmmPage ? " tn-service-intro--smm" : ""}${isSeoPage ? " tn-service-intro--seo" : ""}${isPerformancePage ? " tn-service-intro--performance" : ""}${isChatgptPage ? " tn-service-intro--chatgpt" : ""}`}>
         <FadeIn direction="up">
           <div className="tn-service-intro__panel">
             <div className="tn-service-intro__headline">
