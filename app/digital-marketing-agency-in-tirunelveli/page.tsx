@@ -7,6 +7,7 @@ import { TirunelveliAbout } from "@/components/landing/tirunelveli/TirunelveliAb
 import { TirunelveliServices } from "@/components/landing/tirunelveli/TirunelveliServices";
 import { TirunelveliGoogleAds } from "@/components/landing/tirunelveli/TirunelveliGoogleAds";
 import { TirunelveliWhyChoose } from "@/components/landing/tirunelveli/TirunelveliWhyChoose";
+import { TirunelveliCaseStudies } from "@/components/landing/tirunelveli/TirunelveliCaseStudies";
 import { TirunelveliTrustedClients } from "@/components/landing/tirunelveli/TirunelveliTrustedClients";
 import { tirunelveliLandingData } from "@/lib/tirunelveli-landing-data";
 import { generateBreadcrumbSchema } from "@/lib/seo";
@@ -106,6 +107,7 @@ export default function TirunelveliLandingPage() {
         <TirunelveliServices />
         <TirunelveliGoogleAds />
         <TirunelveliWhyChoose />
+        <TirunelveliCaseStudies />
         <TirunelveliTrustedClients />
       </main>
       <Footer />
