@@ -867,8 +867,12 @@
 }
 
 .tn-service-why-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   align-items: stretch;
+}
+
+.tn-service-why-grid > * {
+  grid-column: span 1 !important;
 }
 
 .tn-service-detail-grid {
