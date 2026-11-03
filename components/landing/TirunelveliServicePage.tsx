@@ -229,13 +229,38 @@ export function TirunelveliServicePage({
   return <>
     <Header />
     <main className="tn-service-page">
-      <section className="bm-hero-section-contact tn-service-hero">
-        <FadeIn delay={0.1}><div className="bm-hero-badge"><span className="bm-hero-badge__icon"><FaBolt size={19} color="black" /></span><p className="bm-hero-badge__text">Brand Mindz — Tirunelveli</p></div></FadeIn>
-        <FadeIn delay={0.2}><h1 className={`bm-hero-title tn-service-hero-title${heroTagline ? " tn-service-hero-title--with-tagline" : ""}`}><span className="tn-service-hero-title__service text-black">{mainServiceTitle}</span><span className="tn-service-hero-title__location"><span className="text-grey">{locationPrefix}</span>{" "}<span className="text-yellow">Tirunelveli</span></span></h1></FadeIn>
-        {heroTagline && <FadeIn delay={0.28}><p className="tn-service-hero-tagline"><span className="text-grey">{heroTagline.beforeHighlight}</span>{" "}<span className="text-yellow">{heroTagline.highlight}</span></p></FadeIn>}
-        <FadeIn delay={0.35}><div className="bm-hero-action bm-tvl-hero-action"><Link href="/contact" className="bm-hero-btn"><span className="bm-hero-btn__icon"><FiChevronRight /></span><span className="bm-hero-btn__text">Talk to a <strong>{heroTitle} Specialist</strong></span></Link></div></FadeIn>
-        <div className="bm-tvl-hero-logos"><LogoNewsTicker /></div>
-      </section>
+      {isChatgptPage ? (
+        <section className="bm-hero-section-contact tn-service-hero">
+          <FadeIn delay={0.1}><div className="bm-hero-badge"><span className="bm-hero-badge__icon"><FaBolt size={19} color="black" /></span><p className="bm-hero-badge__text">Brand Mindz — Tirunelveli</p></div></FadeIn>
+          <FadeIn delay={0.2}>
+            <h1 className="bm-hero-title bm-tvl-hero-title">
+              <span className="bm-hero-title-line">
+                <span className="text-black">The Future of Advertising Is</span>
+                <span className="text-grey">AI-Powered.</span>
+              </span>
+              <span className="bm-hero-title-line">
+                <span className="text-black">Is Your</span>
+                <span className="text-yellow">Brand Ready?</span>
+              </span>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <p className="bm-hero-description">
+              We help businesses explore emerging AI advertising opportunities, conversational discovery and strategies for building visibility in the next generation of digital experiences.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.38}><div className="bm-hero-action bm-tvl-hero-action"><Link href="/contact" className="bm-hero-btn"><span className="bm-hero-btn__icon"><FiChevronRight /></span><span className="bm-hero-btn__text">Talk to a <strong>Growth Specialist</strong></span></Link></div></FadeIn>
+          <div className="bm-tvl-hero-logos"><LogoNewsTicker /></div>
+        </section>
+      ) : (
+        <section className="bm-hero-section-contact tn-service-hero">
+          <FadeIn delay={0.1}><div className="bm-hero-badge"><span className="bm-hero-badge__icon"><FaBolt size={19} color="black" /></span><p className="bm-hero-badge__text">Brand Mindz — Tirunelveli</p></div></FadeIn>
+          <FadeIn delay={0.2}><h1 className={`bm-hero-title tn-service-hero-title${heroTagline ? " tn-service-hero-title--with-tagline" : ""}`}><span className="tn-service-hero-title__service text-black">{mainServiceTitle}</span><span className="tn-service-hero-title__location"><span className="text-grey">{locationPrefix}</span>{" "}<span className="text-yellow">Tirunelveli</span></span></h1></FadeIn>
+          {heroTagline && <FadeIn delay={0.28}><p className="tn-service-hero-tagline"><span className="text-grey">{heroTagline.beforeHighlight}</span>{" "}<span className="text-yellow">{heroTagline.highlight}</span></p></FadeIn>}
+          <FadeIn delay={0.35}><div className="bm-hero-action bm-tvl-hero-action"><Link href="/contact" className="bm-hero-btn"><span className="bm-hero-btn__icon"><FiChevronRight /></span><span className="bm-hero-btn__text">Talk to a <strong>{heroTitle} Specialist</strong></span></Link></div></FadeIn>
+          <div className="bm-tvl-hero-logos"><LogoNewsTicker /></div>
+        </section>
+      )}
 
       <section className={`tn-service-intro${isBrandingPage ? " tn-service-intro--branding" : ""}${isSmmPage ? " tn-service-intro--smm" : ""}${isSeoPage ? " tn-service-intro--seo" : ""}${isPerformancePage ? " tn-service-intro--performance" : ""}${isChatgptPage ? " tn-service-intro--chatgpt" : ""}`}>
         <FadeIn direction="up">
