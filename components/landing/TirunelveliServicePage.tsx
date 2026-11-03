@@ -236,7 +236,7 @@ export function TirunelveliServicePage({
             <h1 className="bm-hero-title bm-tvl-hero-title">
               <span className="bm-hero-title-line">
                 <span className="text-black">The Future of Advertising Is</span>
-                <span className="text-grey">AI-Powered.</span>
+                <span className="text-grey"> AI-Powered.</span>
               </span>
               <span className="bm-hero-title-line">
                 <span className="text-black">Is Your</span>
