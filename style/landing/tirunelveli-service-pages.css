@@ -763,8 +763,10 @@
 }
 
 .tn-service-intro--chatgpt .tn-service-intro__cta {
-  margin-top: auto;
+  margin-top: 100px;
   align-self: flex-start;
+  margin-left: clamp(3.5rem, 35vw, 18rem);
+
 }
 
 @media (max-width: 900px) {
@@ -779,6 +781,7 @@
 
   .tn-service-intro--chatgpt .tn-service-intro__cta {
     margin-top: clamp(1.25rem, 3vw, 2rem);
+    margin-left: 0;
   }
 
   .tn-service-intro--chatgpt .tn-service-intro__signals {
