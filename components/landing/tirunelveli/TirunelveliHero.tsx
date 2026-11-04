@@ -22,28 +22,21 @@ export const TirunelveliHero = () => {
         </div>
       </FadeIn>
 
-      {/* Main Heading — Exactly 3 balanced lines matching the homepage typography */}
       <FadeIn delay={0.2}>
-        <h1 className="bm-hero-title bm-tvl-hero-title">
-          <span className="bm-hero-title-line">
-            <span className="text-black">We combine </span>
-            <span className="text-grey">strategy, creativity and technology</span>
-          </span>
-          <span className="bm-hero-title-line">
-            <span className="text-black">to help businesses </span>
-            <span className="text-grey">attract customers, generate leads</span>
-          </span>
-          <span className="bm-hero-title-line">
-            <span className="text-black">and grow faster in the </span>
-            <span className="text-yellow">digital world.</span>
-          </span>
+        <h1 className="bm-hero-title">
+          <span className="text-black">A </span>
+          <span className="text-grey">Digital Marketing Agency</span>
+          <span className="text-black"> That Turns </span>
+          <span className="text-yellow">Attention</span>
+          <span className="text-black"> Into </span>
+          <span className="text-grey">Growth.</span>
         </h1>
       </FadeIn>
 
-      {/* Description — exact homepage hero description typography */}
       <FadeIn delay={0.3}>
         <p className="bm-hero-description">
-          A Digital Marketing Agency in Tirunelveli That Turns Attention Into Growth.
+          We combine strategy, creativity and technology to help businesses attract customers,
+          generate leads and grow faster in the digital world.
         </p>
       </FadeIn>
 
