@@ -14,7 +14,53 @@
 }
 
 /* ChatGPT Ads Services hero - match homepage typography exactly */
-.tn-service-hero .bm-tvl-hero-title {
+.tn-service-hero--chatgpt .bm-tvl-hero-title {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 24px auto;
+  font-family: var(--font-afacad), sans-serif;
+  font-size: clamp(32px, 4vw, 65px);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: normal;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.tn-service-hero--chatgpt .bm-tvl-hero-title .text-black {
+  color: #000000;
+}
+
+.tn-service-hero--chatgpt .bm-tvl-hero-title .text-grey {
+  color: #888888;
+}
+
+.tn-service-hero--chatgpt .bm-tvl-hero-title .text-yellow {
+  color: #ffcc00;
+}
+
+@media (min-width: 769px) {
+  .tn-service-hero--chatgpt .bm-tvl-hero-title .bm-hero-title-line {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .tn-service-hero--chatgpt .bm-tvl-hero-title {
+    width: 100% !important;
+    max-width: 720px !important;
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+
+  .tn-service-hero--chatgpt .bm-tvl-hero-title .bm-hero-title-line {
+    display: inline;
+    white-space: normal;
+  }
+}
+
+.tn-service-hero--chatgpt .bm-tvl-hero-title {
   font-size: clamp(56px, 5.35vw, 77px) !important;
   line-height: 1.2 !important;
   letter-spacing: 2.5px !important;
@@ -24,6 +70,51 @@
 .tn-service-hero .bm-hero-description {
   font-size: 30px !important;
   line-height: 45px !important;
+}
+
+.tn-service-hero--homepage-type .bm-hero-title {
+  max-width: 1300px;
+}
+
+.tn-service-hero--homepage-type .bm-hero-description {
+  font-size: 30px !important;
+  line-height: 45px !important;
+}
+
+.tn-service-hero-description--smm {
+  max-width: 1300px;
+}
+
+.tn-service-hero-description--performance {
+  max-width: 1300px;
+}
+
+@media (min-width: 769px) {
+  .tn-service-hero--homepage-type .tn-service-hero-title--web-development {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1180px) {
+  .tn-service-hero--homepage-type .bm-hero-title {
+    max-width: 1060px;
+  }
+
+  .tn-service-hero--homepage-type .bm-hero-description {
+    font-size: clamp(18px, 2vw, 21px) !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .tn-service-hero--homepage-type .bm-hero-title {
+    max-width: 720px;
+  }
+
+  .tn-service-hero--homepage-type .bm-hero-description {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
 }
 
 .tn-service-hero-title {
@@ -1618,13 +1709,13 @@
 @media (max-width: 767px) {
 
   /* ChatGPT Ads Services hero mobile - match homepage typography */
-  .tn-service-hero .bm-tvl-hero-title {
+  .tn-service-hero--chatgpt .bm-tvl-hero-title {
     font-size: 28px !important;
     line-height: 1.25 !important;
     letter-spacing: 0.5px !important;
   }
 
-  .tn-service-hero .bm-hero-description {
+  .tn-service-hero--chatgpt .bm-hero-description {
     font-size: 16px !important;
     line-height: 1.7 !important;
   }
@@ -1777,7 +1868,7 @@
 @media (max-width: 480px) {
 
   /* ChatGPT Ads Services hero small mobile - match homepage typography */
-  .tn-service-hero .bm-tvl-hero-title {
+  .tn-service-hero--chatgpt .bm-tvl-hero-title {
     letter-spacing: 0px !important;
   }
 }
@@ -1785,13 +1876,13 @@
 @media (min-width: 768px) and (max-width: 1100px) {
 
   /* ChatGPT Ads Services hero tablet - match homepage typography */
-  .tn-service-hero .bm-tvl-hero-title {
+  .tn-service-hero--chatgpt .bm-tvl-hero-title {
     font-size: clamp(42px, 5vw, 56px) !important;
     line-height: 1.15 !important;
     letter-spacing: 0.5px !important;
   }
 
-  .tn-service-hero .bm-hero-description {
+  .tn-service-hero--chatgpt .bm-hero-description {
     font-size: clamp(18px, 2vw, 21px) !important;
     line-height: 1.5 !important;
   }

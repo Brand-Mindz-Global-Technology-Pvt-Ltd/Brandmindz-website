@@ -179,11 +179,15 @@ export function TirunelveliServicePage({
   heroTitle,
   heroSuffix,
   heroTagline,
+  heroHeading,
+  heroDescription,
 }: {
   content: string;
   heroTitle: string;
   heroSuffix: string;
   heroTagline?: { beforeHighlight: string; highlight: string };
+  heroHeading?: { black: string; grey: string; yellow: string };
+  heroDescription?: string;
 }) {
   const blocks = parseContent(content);
   const heroIndex = blocks.findIndex((block) => block.level === 1);
@@ -205,6 +209,7 @@ export function TirunelveliServicePage({
   const isBrandingPage = /branding/i.test(heroTitle);
   const isPerformancePage = /performance/i.test(heroTitle);
   const isSmmPage = /social media/i.test(heroTitle);
+  const isWebDevelopmentPage = /web development/i.test(heroTitle);
   const isChatgptPage = /chatgpt/i.test(heroTitle);
   const featuredImage = isSeoPage
     ? seoImage
@@ -230,7 +235,7 @@ export function TirunelveliServicePage({
     <Header />
     <main className="tn-service-page">
       {isChatgptPage ? (
-        <section className="bm-hero-section-contact tn-service-hero">
+        <section className="bm-hero-section-contact tn-service-hero tn-service-hero--chatgpt">
           <FadeIn delay={0.1}><div className="bm-hero-badge"><span className="bm-hero-badge__icon"><FaBolt size={19} color="black" /></span><p className="bm-hero-badge__text">Brand Mindz — Tirunelveli</p></div></FadeIn>
           <FadeIn delay={0.2}>
             <h1 className="bm-hero-title bm-tvl-hero-title">
@@ -253,10 +258,24 @@ export function TirunelveliServicePage({
           <div className="bm-tvl-hero-logos"><LogoNewsTicker /></div>
         </section>
       ) : (
-        <section className="bm-hero-section-contact tn-service-hero">
+        <section className={`bm-hero-section-contact tn-service-hero${heroHeading ? " tn-service-hero--homepage-type" : ""}`}>
           <FadeIn delay={0.1}><div className="bm-hero-badge"><span className="bm-hero-badge__icon"><FaBolt size={19} color="black" /></span><p className="bm-hero-badge__text">Brand Mindz — Tirunelveli</p></div></FadeIn>
-          <FadeIn delay={0.2}><h1 className={`bm-hero-title tn-service-hero-title${heroTagline ? " tn-service-hero-title--with-tagline" : ""}`}><span className="tn-service-hero-title__service text-black">{mainServiceTitle}</span><span className="tn-service-hero-title__location"><span className="text-grey">{locationPrefix}</span>{" "}<span className="text-yellow">Tirunelveli</span></span></h1></FadeIn>
-          {heroTagline && <FadeIn delay={0.28}><p className="tn-service-hero-tagline"><span className="text-grey">{heroTagline.beforeHighlight}</span>{" "}<span className="text-yellow">{heroTagline.highlight}</span></p></FadeIn>}
+          <FadeIn delay={0.2}>
+            {heroHeading ? (
+              <h1 className={`bm-hero-title tn-service-hero-title${isWebDevelopmentPage ? " tn-service-hero-title--web-development" : ""}`}>
+                <span className="text-black">{heroHeading.black}</span>
+                <span className="text-grey">{heroHeading.grey}</span>
+                <span className="text-yellow">{heroHeading.yellow}</span>
+              </h1>
+            ) : (
+              <h1 className={`bm-hero-title tn-service-hero-title${heroTagline ? " tn-service-hero-title--with-tagline" : ""}`}><span className="tn-service-hero-title__service text-black">{mainServiceTitle}</span><span className="tn-service-hero-title__location"><span className="text-grey">{locationPrefix}</span>{" "}<span className="text-yellow">Tirunelveli</span></span></h1>
+            )}
+          </FadeIn>
+          {heroDescription ? (
+            <FadeIn delay={0.3}><p className={`bm-hero-description${isSmmPage ? " tn-service-hero-description--smm" : ""}${isPerformancePage ? " tn-service-hero-description--performance" : ""}`}>{heroDescription}</p></FadeIn>
+          ) : heroTagline ? (
+            <FadeIn delay={0.28}><p className="tn-service-hero-tagline"><span className="text-grey">{heroTagline.beforeHighlight}</span>{" "}<span className="text-yellow">{heroTagline.highlight}</span></p></FadeIn>
+          ) : null}
           <FadeIn delay={0.35}><div className="bm-hero-action bm-tvl-hero-action"><Link href="/contact" className="bm-hero-btn"><span className="bm-hero-btn__icon"><FiChevronRight /></span><span className="bm-hero-btn__text">Talk to a <strong>{heroTitle} Specialist</strong></span></Link></div></FadeIn>
           <div className="bm-tvl-hero-logos"><LogoNewsTicker /></div>
         </section>

@@ -29,10 +29,10 @@ export default async function Page() {
       <TirunelveliServicePage
         heroTitle={service.heroTitle}
         heroSuffix={service.heroSuffix}
-        heroTagline={{ beforeHighlight: "Makes Brands Impossible to", highlight: "Ignore" }}
+        heroHeading={{ black: "We Create Brands ", grey: "That Stand Out, Connect ", yellow: "and Last." }}
+        heroDescription="From brand identity to strategic positioning, we help businesses build distinctive brands that capture attention, earn trust and stay unforgettable."
         content={await getTirunelveliServiceContent("branding")}
       />
     </>
   );
 }
-

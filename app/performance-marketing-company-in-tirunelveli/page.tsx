@@ -29,10 +29,10 @@ export default async function Page() {
       <TirunelveliServicePage
         heroTitle={service.heroTitle}
         heroSuffix={service.heroSuffix}
-        heroTagline={{ beforeHighlight: "Obsessed with", highlight: "ROI" }}
+        heroHeading={{ black: "We Turn Every Marketing ", grey: "Investment Into Measurable ", yellow: "Growth." }}
+        heroDescription="We combine intelligent targeting, creative advertising and performance analytics to generate quality leads, improve campaign efficiency and maximise marketing returns."
         content={await getTirunelveliServiceContent("performanceMarketing")}
       />
     </>
   );
 }
-

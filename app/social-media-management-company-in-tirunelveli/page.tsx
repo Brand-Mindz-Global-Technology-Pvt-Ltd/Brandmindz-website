@@ -29,10 +29,10 @@ export default async function Page() {
       <TirunelveliServicePage
         heroTitle={service.heroTitle}
         heroSuffix={service.heroSuffix}
-        heroTagline={{ beforeHighlight: "Turn Followers Into", highlight: "Customers." }}
+        heroHeading={{ black: "We Turn Social Media ", grey: "Attention Into ", yellow: "Business Opportunities." }}
+        heroDescription="We create engaging content, meaningful conversations and strategic social campaigns that build communities, strengthen brands and attract potential customers."
         content={await getTirunelveliServiceContent("socialMediaManagement")}
       />
     </>
   );
 }
-

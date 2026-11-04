@@ -29,10 +29,10 @@ export default async function Page() {
       <TirunelveliServicePage
         heroTitle={service.heroTitle}
         heroSuffix={service.heroSuffix}
-        heroTagline={{ beforeHighlight: "That Builds Websites", highlight: "People Remember" }}
+        heroHeading={{ black: "We Build Websites ", grey: "That Turn Visitors ", yellow: "Into Customers." }}
+        heroDescription="We create high-performing, visually engaging and conversion-focused websites that make your business stand out and turn digital experiences into real opportunities."
         content={await getTirunelveliServiceContent("webDevelopment")}
       />
     </>
   );
 }
-
