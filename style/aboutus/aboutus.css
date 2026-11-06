@@ -1555,14 +1555,15 @@
   transition: all 0.3s ease;
 }
 
-/* Optional: Add grayscale filter as backup */
+/* Channel Image - grayscale by default, instant full color on hover */
 .bm-channel-image {
   filter: grayscale(100%);
-  transition: filter 1s ease;
+  transition: filter 0.15s ease, transform 0.3s ease;
 }
 
-.bm-channel-item:hover .bm-channel-image {
-  filter: grayscale(0%);
+.bm-channel-item:hover .bm-channel-image,
+.bm-channel-item--hovered .bm-channel-image {
+  filter: grayscale(0%) !important;
 }
 
 
@@ -1683,4 +1684,102 @@
 .bm-scroll-line {
   transition: color 0.5s ease-in-out;
   display: inline;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ABOUT PAGE — MOBILE-ONLY IMAGE FIXES
+   Scope: /about page only. Desktop/tablet layouts (≥1024px) are unchanged.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Founder carousel: fix vertically-stretched images on mobile ─────────
+   On mobile the carousel sits in a single-column layout with no fixed-height
+   parent. The bare `height: 100%` on the img propagates incorrectly and
+   causes Next.js <Image> to stretch vertically.
+   We reset the container chain to auto-height and let each image render at
+   its natural aspect ratio.
+─────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .bm-about-founder-media .bm-founder-carousel-container,
+  .bm-about-founder-media .bm-founder-slider,
+  .bm-about-founder-media .bm-slide,
+  .bm-about-founder-media .bm-about-image-container {
+    height: auto;
+  }
+
+  /* Full-width, natural height — no forced stretching */
+  .bm-about-founder-media .bm-about-image-container img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 420px;    /* prevents oversized images on larger phones/tablets */
+    object-fit: contain !important;
+    display: block;
+  }
+}
+
+/* ── World map: restore natural aspect ratio on mobile ───────────────────
+   .bm-global-presence-wrapper forces `height: 100vh` and
+   .bm-global-map-image forces `height: 80vh`, both of which vertically
+   stretch the map on narrow screens. Remove the fixed heights on mobile so
+   the map renders at its natural proportions. Country markers use percentage
+   top/left so they remain correctly positioned relative to the image.
+─────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .bm-global-presence-wrapper {
+    height: auto;        /* remove forced 100vh */
+    overflow: visible;
+  }
+
+  .bm-global-map-container {
+    margin-bottom: 0;
+  }
+
+  .bm-global-map-image {
+    width: 100%;
+    height: auto;        /* natural aspect ratio */
+    object-fit: contain;
+  }
+}
+
+/* Cancel the ≤480px override that re-applies object-fit:unset + height:89vh */
+@media (max-width: 480px) {
+  .bm-global-map-image {
+    object-fit: contain !important;
+    height: auto !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FEATURED SECTION — Mobile tap-toggle colour fix
+   Scope: /about page "Featured Across Leading Platforms" section only.
+   Desktop hover (onMouseEnter/Leave) behaviour is unchanged.
+   ═══════════════════════════════════════════════════════════════════════════
+
+   Problem: .bm-channel-image carries `filter: grayscale(100%)` which also
+   greyscales the colour image that is swapped in via React state on tap.
+   The CSS :hover selector cannot respond to touch on mobile, so the existing
+   hover-filter rule never fires.
+
+   Fix: When the item has the .bm-channel-item--active modifier class (set by
+   React when a logo is tapped), remove the grayscale filter on the image so
+   the colour version is fully visible. Also remove the :active press lift so
+   it does not stay "pressed" after the finger lifts.
+─────────────────────────────────────────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  /* Tapped / active state: show colour image with no greyscale */
+  .bm-channel-item--active .bm-channel-image {
+    filter: grayscale(0%) !important;
+    transform: none;         /* don't keep the scale/lift from :hover */
+  }
+
+  /* Inactive logos: keep fully black (grayscale), no scale on press */
+  .bm-channel-item:not(.bm-channel-item--active) .bm-channel-image {
+    filter: grayscale(100%);
+    transform: none;
+  }
+
+  /* Remove the translateY lift that otherwise sticks after touch on mobile */
+  .bm-channel-item--active {
+    transform: none !important;
+  }
 }
