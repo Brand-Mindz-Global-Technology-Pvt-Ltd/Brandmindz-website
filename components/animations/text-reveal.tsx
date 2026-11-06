@@ -10,6 +10,22 @@ interface TextRevealProps {
   as?: "h1" | "h2" | "h3" | "h4" | "p" | "span"
 }
 
+// Function to extract text from React element
+function extractTextFromElement(element: React.ReactNode): string {
+  if (typeof element === 'string') return element;
+  if (React.isValidElement(element)) {
+    const children = (element.props as any)?.children;
+    if (typeof children === 'string') return children;
+    if (Array.isArray(children)) {
+      return children.map(child => extractTextFromElement(child)).join('');
+    }
+    if (React.isValidElement(children)) {
+      return extractTextFromElement(children);
+    }
+  }
+  return '';
+}
+
 export function TextReveal({
   text,
   className,
@@ -22,19 +38,6 @@ export function TextReveal({
   // Get text content for screen readers
   const textContent = isString ? text : 
     React.isValidElement(text) ? extractTextFromElement(text) : '';
-
-  // Function to extract text from React element
-  function extractTextFromElement(element: React.ReactNode): string {
-    if (typeof element === 'string') return element;
-    if (React.isValidElement(element)) {
-      const children = element.props.children;
-      if (typeof children === 'string') return children;
-      if (Array.isArray(children)) {
-        return children.map(child => extractTextFromElement(child)).join('');
-      }
-    }
-    return '';
-  }
 
   // Render string text with animation
   const renderAnimatedText = (text: string) => {
@@ -120,14 +123,7 @@ export function TextRevealSimple({
   if (React.isValidElement(text)) {
     return (
       <Component className={className}>
-        <span className="sr-only">
-          {React.isValidElement(text) ? 
-            (text.props.children || '').toString() : 
-            text.toString()
-          }
-        </span>
         <motion.div
-          aria-hidden
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}

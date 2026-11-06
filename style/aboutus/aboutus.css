@@ -23,7 +23,7 @@
   margin: auto !important;
   background-color: #F6F6F6;
   border-radius: 10px;
-  
+
   margin-top: 20px !important;
 }
 
@@ -32,6 +32,7 @@
   display: flex;
 
 }
+
 .about-founder-section {
   z-index: 10;
   /* background-color: #f9f9f9;  */
@@ -51,6 +52,7 @@
   font-size: 30px;
   font-weight: 400;
 }
+
 .about-us-description .text-black {
 
   font-weight: 600 !important;
@@ -61,15 +63,18 @@
     font-size: 20px;
 
   }
+
   .bm-about-heading {
     font-size: 1.5rem !important;
     margin-bottom: 2rem;
   }
+
   .bm-about-content-section {
     margin: auto;
     max-width: 1300px;
     background: white !important;
   }
+
   .bm-section-bg {
     background-color: #f9fafb;
     /* light gray background */
@@ -78,12 +83,14 @@
     padding: 1rem 0.5rem;
     /* light space inside */
   }
-  .sticky-wrapper{
+
+  .sticky-wrapper {
     position: relative;
   }
-.bm-about-grid {
-  gap:1rem !important;
-}
+
+  .bm-about-grid {
+    gap: 1rem !important;
+  }
 
 }
 
@@ -100,7 +107,7 @@
   transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease;
   width: 100%;
   height: 100%;
-    object-fit: contain;
+  object-fit: contain;
 }
 
 .logo-image-container:hover img {
@@ -276,7 +283,7 @@
   overflow: hidden;
 }
 
-.brand-logo-ticker__row + .brand-logo-ticker__row {
+.brand-logo-ticker__row+.brand-logo-ticker__row {
   margin-top: 1rem;
 }
 
@@ -292,12 +299,13 @@
 }
 
 .brand-logo-ticker__item {
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 clamp(8.75rem, 11vw, 11rem);
   width: clamp(8.75rem, 11vw, 11rem);
   height: clamp(4.5rem, 6vw, 5.5rem);
-  place-items: center;
-  padding: .625rem .875rem;
+  padding: .5rem .875rem;
   box-sizing: border-box;
   background: #f7f7f8;
   border: 1px solid #ededee;
@@ -306,19 +314,24 @@
 }
 
 .brand-logo-ticker__image-box {
-  display: grid;
-  width: 100%;
-  height: 100%;
-  place-items: center;
-}
-
-.brand-logo-ticker__image {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
+  box-sizing: border-box;
+}
+
+.brand-logo-ticker__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
+  object-position: center;
   filter: grayscale(100%);
   transition: filter .25s ease, transform .25s ease;
 }
@@ -337,7 +350,7 @@
 }
 
 @media (max-width: 767px) {
-  .brand-logo-ticker__row + .brand-logo-ticker__row {
+  .brand-logo-ticker__row+.brand-logo-ticker__row {
     margin-top: .75rem;
   }
 
@@ -348,9 +361,52 @@
   .brand-logo-ticker__item {
     flex-basis: 7.5rem;
     width: 7.5rem;
-    height: 4rem;
-    padding: .6rem .75rem;
+    height: 4.25rem;
+    padding: .45rem .65rem;
   }
+
+  .brand-logo-ticker__image {
+    max-width: 95%;
+    max-height: 95%;
+  }
+}
+
+/* ── Individual logo size boosts ────────────────────────────────────────────
+   These logos have large transparent canvas margins so the visible content
+   is much smaller than the card slot. We scale the image up so it matches
+   the visual weight of other logos while still using object-fit:contain and
+   staying within the card boundaries.
+   Scale values are calibrated to fill ~70-80% of the card slot.
+   The parent .brand-logo-ticker__item has overflow:hidden, so no cropping
+   can occur even on the most aggressive scale factor.
+─────────────────────────────────────────────────────────────────────────── */
+
+/* ~1.2× – logos whose content covers ≈45–60% of canvas (Ettik, Proton) */
+.brand-logo-ticker__image--boost-md {
+  transform: scale(1.2);
+}
+
+/* ~1.45× – logos whose content covers ≈22–28% of canvas (Bridal, HR, Surprises) */
+.brand-logo-ticker__image--boost-xl {
+  transform: scale(1.45);
+}
+
+/* ~1.7× – logos whose content covers ≈20% of canvas (She The Sakthi) */
+.brand-logo-ticker__image--boost-xxl {
+  transform: scale(1.7);
+}
+
+/* Keep hover transform additive — combine base boost with hover scale */
+.brand-logo-ticker__item:hover .brand-logo-ticker__image--boost-md {
+  transform: scale(calc(1.2 * 1.04));
+}
+
+.brand-logo-ticker__item:hover .brand-logo-ticker__image--boost-xl {
+  transform: scale(calc(1.45 * 1.04));
+}
+
+.brand-logo-ticker__item:hover .brand-logo-ticker__image--boost-xxl {
+  transform: scale(calc(1.7 * 1.04));
 }
 
 /* Ensure smooth scrolling */
@@ -461,6 +517,7 @@
   .bm-about-paragraph {
     font-size: 1.125rem;
   }
+
   .bm-about-paragraph-founder {
     font-size: 1.125rem;
 
@@ -475,6 +532,7 @@
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
+
 .bm-about-image-container img {
   height: 100%;
 }
@@ -495,6 +553,7 @@
   justify-content: center;
   padding: 10px 15px;
 }
+
 .bm-featured-section {
   padding: 1.5rem 0;
   padding-bottom: 10px;
@@ -508,6 +567,7 @@
     gap: 2rem;
   }
 }
+
 .about-founder-section {
   margin-top: 26px;
 }
@@ -630,6 +690,7 @@
   align-items: center;
   justify-content: center;
 }
+
 /* */
 
 @media (min-width: 640px) {
@@ -639,6 +700,7 @@
     gap: 2rem;
   }
 }
+
 /* Channel Grid - 3 columns on desktop, 2 on mobile */
 .bm-channel-grid-recognised {
   display: grid;
@@ -647,6 +709,7 @@
   align-items: center;
   justify-content: center;
 }
+
 /* bm-channel-grid-recognised */
 
 @media (min-width: 640px) {
@@ -662,6 +725,7 @@
     gap: 2.5rem;
   }
 }
+
 @media (min-width: 1024px) {
   .bm-channel-grid-recognised {
     gap: 2.5rem;
@@ -699,6 +763,7 @@
   filter: grayscale(0%);
   opacity: 0.9;
 }
+
 .bm-channel-item:hover .bm-channel-image {
   transform: scale(1.15);
   /* Adjust zoom level here */
@@ -706,27 +771,33 @@
 
 /* Mobile Specific - Text first, then 3 logos per row? Wait, you said 3 logos on mobile? */
 @media (max-width: 639px) {
+
   .bm-featured-grid,
   .bm-recongnined-grid {
     display: flex;
     flex-direction: column;
     padding-left: 0px;
-  margin-bottom: 0px;
-  padding-top: 20px;
+    margin-bottom: 0px;
+    padding-top: 20px;
 
   }
-  .bm-about-paragraph{
+
+  .bm-about-paragraph {
     font-size: 1rem !important;
   }
-  .bm-about-paragraph-founder{
+
+  .bm-about-paragraph-founder {
     font-size: 1rem !important;
   }
-  .bm-about-content-section{
+
+  .bm-about-content-section {
     margin-top: 10px !important;
   }
-  .logo-ticker-container{
-      padding-top: 20px;
+
+  .logo-ticker-container {
+    padding-top: 20px;
   }
+
   .bm-featured-section {
     padding: 0rem;
   }
@@ -741,6 +812,7 @@
     /* 3 logos per row on mobile as requested */
     gap: 1rem;
   }
+
   .bm-channel-grid-recognised {
     grid-template-columns: repeat(2, 1fr);
     /* 3 logos per row on mobile as requested */
@@ -759,6 +831,7 @@
     /* Still 3 logos */
     gap: 0.75rem;
   }
+
   .bm-channel-grid-recognised {
     grid-template-columns: repeat(2, 1fr);
     /* Still 3 logos */
@@ -773,6 +846,7 @@
     font-size: 1.5rem;
   }
 }
+
 /* Global Presence Section - Exact Match */
 .bm-global-presence-wrapper {
   width: 100%;
@@ -1251,9 +1325,10 @@
     max-width: 120px;
   }
 }
+
 /* Video Section */
 .bm-video-section {
-  padding:1.5rem 0 !important;
+  padding: 1.5rem 0 !important;
   padding-bottom: 0.5rem;
   background-color: #ffffff;
   width: 100%;
@@ -1408,7 +1483,7 @@
 
 @media (max-width: 480px) {
   .bm-video-section {
-    padding:0px !important;
+    padding: 0px !important;
   }
 
   .bm-video-container {
@@ -1426,10 +1501,11 @@
   }
 
   .bm-global-map-image {
-  object-fit:unset;
-  height: 89vh;
+    object-fit: unset;
+    height: 89vh;
+  }
 }
-}
+
 /* Channel Grid for Recognised Section */
 .bm-channel-grid-recognised {
   display: grid;
@@ -1515,26 +1591,32 @@
 
 /* Auto-sliding animation - 5 slides */
 @keyframes slideAnimation {
+
   0%,
   15% {
     transform: translateX(0);
   }
+
   20%,
   35% {
     transform: translateX(-100%);
   }
+
   40%,
   55% {
     transform: translateX(-200%);
   }
+
   60%,
   75% {
     transform: translateX(-300%);
   }
+
   80%,
   95% {
     transform: translateX(-400%);
   }
+
   100% {
     transform: translateX(0);
   }

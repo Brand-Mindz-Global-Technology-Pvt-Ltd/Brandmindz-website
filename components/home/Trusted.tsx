@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../style/home/trusted.css";
 import Image from "next/image";
 import Bioneemtec from "../../assets/HomeSection/brand/bioneemtec.webp";
@@ -65,25 +65,6 @@ export const Trusted = () => {
     { id: 29, img: bridalArtisans, alt: "The Bridal Artisans" },
     { id: 30, img: truckTaxi, alt: "Truck Taxi" },
   ];
-  const [count, setCount] = useState(0);
-  const target = 300;
-  useEffect(() => {
-    let start = 0;
-    const duration = 3000; // 2 seconds
-    const increment = target / (duration / 16); // 60fps
-
-    const counter = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(counter);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-
-    return () => clearInterval(counter);
-  }, []);
 
   return (
     <section className="bm-trusted-section">
@@ -91,7 +72,7 @@ export const Trusted = () => {
 
         <div className="bm-trusted-header">
           <span className="bm-trusted-label">Trusted by</span>
-          <h2 className="bm-trusted-title">{count}+ Global Clients</h2>
+          <h2 className="bm-trusted-title">300+ Global Clients</h2>
         </div>
 
         {/* <div className="bm-trusted-logos">

@@ -54,6 +54,24 @@ import truck from '../../assets/about/Scroll_logos/normalized/truck-taxi-logo-e1
 import tuka from '../../assets/about/Scroll_logos/normalized/tukababy.webp';
 import tymerz from '../../assets/about/Scroll_logos/normalized/tymerz-2048x933.webp';
 
+// Logos that need individual visual size boosts due to large transparent canvas padding.
+// Keys are matched against logo.src at runtime; values are BEM modifier class names.
+const BOOSTED_LOGO_CLASSES: Record<string, string> = {
+  [bridal.src]:    'brand-logo-ticker__image--boost-xl',   // content ~27% of canvas width
+  [sakthi.src]:    'brand-logo-ticker__image--boost-xxl',  // content ~20% of canvas width
+  [HRLogo.src]:    'brand-logo-ticker__image--boost-xl',   // content ~22% of canvas width
+  [surprisor.src]: 'brand-logo-ticker__image--boost-xl',   // content ~26% of canvas width
+  [Ettik.src]:     'brand-logo-ticker__image--boost-md',   // content ~47% of canvas width
+  [proton.src]:    'brand-logo-ticker__image--boost-md',   // content ~58% of canvas width
+};
+
+function getImageClass(logoSrc: string): string {
+  const boost = BOOSTED_LOGO_CLASSES[logoSrc];
+  return boost
+    ? `brand-logo-ticker__image ${boost}`
+    : 'brand-logo-ticker__image';
+}
+
 export const LogoNewsTicker = () => {
   // Create array with all your actual logo imports
  const companyLogos = [
@@ -91,113 +109,65 @@ export const LogoNewsTicker = () => {
   tymerz
 ];
 
+  const half = Math.ceil(companyLogos.length / 2);
+  const firstRowLogos = companyLogos.slice(0, half);
+  const secondRowLogos = companyLogos.slice(half);
+
   return (
- <div className="brand-logo-ticker">
-  {/* First Row - First 7 logos */}
-  <div className="brand-logo-ticker__row">
-    <motion.div
-      className="brand-logo-ticker__track"
-      animate={{ x: ["0%", "-50%"] }}
-      transition={{
-        repeat: Infinity,
-        duration: 40,
-        ease: "linear",
-      }}
-    >
-      {[...companyLogos.slice(0, 7), ...companyLogos.slice(0, 7)].map(
-        (logo, idx) => (
-          <div key={`first-${idx}`} className="brand-logo-ticker__item">
-            <div className="brand-logo-ticker__image-box">
-              <img
-                src={logo.src}
-                alt={`Company ${idx % 7 + 1}`}
-                loading="lazy"
-                decoding="async"
-                className="brand-logo-ticker__image"
-              />
+    <div className="brand-logo-ticker">
+      {/* First Row */}
+      <div className="brand-logo-ticker__row">
+        <motion.div
+          className="brand-logo-ticker__track"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 40,
+            ease: "linear",
+          }}
+        >
+          {[...firstRowLogos, ...firstRowLogos].map((logo, idx) => (
+            <div key={`first-${idx}`} className="brand-logo-ticker__item">
+              <div className="brand-logo-ticker__image-box">
+                <img
+                  src={logo.src}
+                  alt={`Client Logo ${(idx % firstRowLogos.length) + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className={getImageClass(logo.src)}
+                />
+              </div>
             </div>
-          </div>
-        )
-      )}
-    </motion.div>
-  </div>
+          ))}
+        </motion.div>
+      </div>
 
-  {/* Second Row - Last 7 logos */}
-  <div className="brand-logo-ticker__row brand-logo-ticker__row--second">
-    <motion.div
-      className="brand-logo-ticker__track brand-logo-ticker__track--reverse"
-      animate={{ x: ["-50%", "0%"] }}
-      transition={{
-        repeat: Infinity,
-        duration: 40,
-        ease: "linear",
-      }}
-    >
-      {[...companyLogos.slice(7), ...companyLogos.slice(7)].map(
-        (logo, idx) => (
-          <div key={`second-${idx}`} className="brand-logo-ticker__item">
-            <div className="brand-logo-ticker__image-box">
-              <img
-                src={logo.src}
-                alt={`Company ${idx % 7 + 8}`}
-                loading="lazy"
-                decoding="async"
-                className="brand-logo-ticker__image"
-              />
+      {/* Second Row */}
+      <div className="brand-logo-ticker__row brand-logo-ticker__row--second">
+        <motion.div
+          className="brand-logo-ticker__track brand-logo-ticker__track--reverse"
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 40,
+            ease: "linear",
+          }}
+        >
+          {[...secondRowLogos, ...secondRowLogos].map((logo, idx) => (
+            <div key={`second-${idx}`} className="brand-logo-ticker__item">
+              <div className="brand-logo-ticker__image-box">
+                <img
+                  src={logo.src}
+                  alt={`Client Logo ${(idx % secondRowLogos.length) + half + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className={getImageClass(logo.src)}
+                />
+              </div>
             </div>
-          </div>
-        )
-      )}
-    </motion.div>
-  </div>
-</div>
-
-//  <div className="logo-ticker-container">
-//   <div className="ticker-row">
-//     <motion.div
-//       className="logo-track"
-//       animate={{ x: ["0%", "-50%"] }}
-//       transition={{
-//         repeat: Infinity,
-//         duration: 30, 
-//         ease: "linear",
-//       }}
-//     >
-//       {[...companyLogos, ...companyLogos].map((logo, idx) => (
-//         <div key={`row1-${idx}`} className="logo-item">
-//           <div className="logo-image-container">
-//             <img 
-//               src={logo.src || logo} 
-//               alt="Company Logo" 
-//             />
-//           </div>
-//         </div>
-//       ))}
-//     </motion.div>
-//   </div>
-
-//   <div className="ticker-row mt-10">
-//     <motion.div
-//       className="logo-track"
-//       animate={{ x: ["-50%", "0%"] }}
-//       transition={{
-//         repeat: Infinity,
-//         duration: 30,
-//         ease: "linear",
-//       }}
-//     >
-//       {[...companyLogos, ...companyLogos].map((logo, idx) => (
-//         <div key={`row2-${idx}`} className="logo-item">
-//           <div className="logo-image-container">
-//             <img 
-//               src={logo.src || logo} 
-//               alt="Company Logo" 
-//             />
-//           </div>
-//         </div>
-//       ))}
-//     </motion.div>
-//   </div>
-// </div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
   );
 };

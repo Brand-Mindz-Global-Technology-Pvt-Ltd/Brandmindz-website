@@ -11,7 +11,6 @@ import {
   StaggerChildren,
   StaggerItem,
 } from "../animations";
-import { TextRevealSimple } from '../animations/text-reveal';
 import { FaArrowLeft } from "react-icons/fa";
 import '../../style/home/whychoose.css';
 import worldMap from '../../assets/HomeSection/Whychoose/Group (3).webp';
@@ -37,7 +36,7 @@ const WhyChooseUs = () => {
   const features = [
     {
       icon: <FaChartLine />,
-      title: (<><span>Measurable</span>Business Results</>),
+      title: (<><span>Measurable</span> Business Results</>),
       desc: "We focus on leads, conversions, and revenue not vanity metrics. Every action is tied to real business growth."
     },
     {
@@ -52,7 +51,7 @@ const WhyChooseUs = () => {
     },
     {
       icon: <FaLightbulb />,
-      title: (<><span className="highlight-red"> Systems</span> for Growth</>),
+      title: (<><span className="highlight-red">Systems</span> for Growth</>),
       desc: "We build scalable systems that generate steady leads and support long-term business growth."
     }
   ];
@@ -95,12 +94,11 @@ const WhyChooseUs = () => {
                 <p className="bm-why-subtitle">Why Choose us ?</p>
               </FadeIn>
 
-              <TextRevealSimple
-                as="h2"
-                className="bm-why-main-title"
-                text={<span>Brand Mindz 360° <span className='bm-why-main-Sub-title'>Proven Growth Framework</span></span>}
-                delay={0.2}
-              />
+              <FadeIn direction="up" delay={0.2}>
+                <h2 className="bm-why-main-title">
+                  Brand Mindz 360° <span className="bm-why-main-Sub-title">Proven Growth Framework</span>
+                </h2>
+              </FadeIn>
 
               <StaggerChildren className="bm-why-grid " staggerDelay={0.1} initialDelay={0.3}>
                 {features.map((f, i) => (
