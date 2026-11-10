@@ -89,7 +89,7 @@ export function TextReveal({
       return renderAnimatedText(element);
     }
     
-    if (React.isValidElement(element)) {
+    if (React.isValidElement<{ children?: React.ReactNode }>(element)) {
       // Clone the element with animated children
       const newChildren = React.Children.map(element.props.children, (child) => {
         if (typeof child === 'string') {
@@ -190,4 +190,60 @@ export function TextRevealSimple({
       </motion.span>
     </Component>
   )
+}
+
+export function CharReveal({
+  text,
+  className,
+  delay = 0,
+  as: Component = "h1",
+}: TextRevealProps) {
+  const isString = typeof text === 'string';
+  const textContent = isString
+    ? text
+    : React.isValidElement(text)
+    ? extractTextFromElement(text)
+    : '';
+  const characters = Array.from(isString ? text : textContent);
+
+  return (
+    <Component className={className}>
+      <span className="sr-only">{textContent}</span>
+      <motion.span
+        aria-hidden
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.02,
+              delayChildren: delay,
+            },
+          },
+        }}
+      >
+        {characters.map((char, i) => (
+          <motion.span
+            key={i}
+            className="inline-block"
+            variants={{
+              hidden: { opacity: 0, y: "50%" },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.3,
+                  ease: [0.25, 0.1, 0.25, 1],
+                },
+              },
+            }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </motion.span>
+        ))}
+      </motion.span>
+    </Component>
+  );
 }

@@ -11,6 +11,9 @@ import {
   Sparkles,
   Users,
   Zap,
+  Trophy,
+  Scale,
+  Handshake,
 } from "lucide-react";
 import founderImage from "@/assets/about/frame2147226233.webp";
 import heroPattern from "@/assets/HomeSection/banner/group1.webp";
@@ -282,72 +285,99 @@ Culture is our operating system.
           </div>
         </section>
 
-        <section className="wc-section bg-white">
-          <div className="wc-container">
-            <div className="mx-auto grid items-stretch gap-8 overflow-hidden rounded-[44px] bg-[#2a2a2a] p-5 text-white shadow-[0_30px_90px_rgba(0,0,0,.18)] lg:grid-cols-2 lg:p-7"
-            style={{ maxWidth: "1360px" }}>
-              <div
-  className="wc-founder-copy flex flex-col items-center justify-center rounded-[36px] text-center"
-  style={{ minHeight: "540px" }}
->
-                <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#fcfcfc]/70">Our hiring philosophy</p>
-                <h2 className="wc-founder-title font-extrabold tracking-[-0.045em]">
-                  We built the company we wish existed.
+        <section className="wc-founder-full-section">
+          <div className="wc-founder-full-container">
+            <div className="wc-founder-main-card">
+              {/* Left Column: Dark Content Panel */}
+              <div className="wc-founder-content-panel">
+                {/* Eyebrow with yellow accent line */}
+                <div className="wc-founder-eyebrow-row">
+                  <span className="wc-founder-eyebrow-text">OUR HIRING PHILOSOPHY</span>
+                  <span className="wc-founder-eyebrow-line" aria-hidden="true" />
+                </div>
+
+                {/* Main Heading */}
+                <h2 className="wc-founder-heading">
+                  We built the company we <br className="hidden sm:inline" />
+                  <span className="text-[#ffc400]">wish existed.</span>
                 </h2>
-                <div className="wc-founder-body  text-zinc-300 text-lg! md:text-xl!">
-  <p>
-    Brand Mindz was not started in a metro city. It was built in Tirunelveli.
-  </p>
 
-  <p>
-    Our founder, R. Vasanth Kumar, grew up in a Tier 2 town. He moved to corporate
-    environments and experienced what many talented people from smaller cities go
-    through — leaving family, adjusting to unfamiliar culture, competing with metro
-    exposure, and constantly proving capability.
-  </p>
+                {/* Paragraph 1 */}
+                <div className="wc-founder-text-block">
+                  <p>
+                    Brand Mindz was not started in a metro city. It was built in Tirunelveli.
+                    Our founder, R. Vasanth Kumar, grew up in a Tier 2 town. He moved to corporate
+                    environments and experienced what many talented people from smaller cities go
+                    through — leaving family, adjusting to unfamiliar culture, competing with metro
+                    exposure, and constantly proving capability.
+                  </p>
+                  <p className="mt-3">
+                    He understood something deeply:
+                  </p>
+                </div>
 
-  <p>
-    He understood something deeply:
-  </p>
-</div>
-                <blockquote className="wc-founder-quote rounded-[28px] border border-[#808080] bg-[#808080]/10 font-bold text-[#ffffff]">
-                  Talent is not limited by geography.
-                <br />
-                  Opportunity is.
-                </blockquote>
-                <p className="wc-founder-body text-zinc-300 text-lg! md:text-xl!">
-                  So instead of asking talented people to migrate, he decided to build a global-standard company from Tamil Nadu itself.
-                  That is how Brand Mindz was born.
-                  <span className="mt-2 block">
+                {/* Highlighted Quote Box with Trophy and Divider */}
+                <div className="wc-founder-quote-box">
+                  <div className="wc-founder-quote-icon-circle">
+                    <Trophy size={22} className="text-white" strokeWidth={2.4} />
+                  </div>
+                  <div className="wc-founder-quote-divider" aria-hidden="true" />
+                  <div className="wc-founder-quote-text">
+                    <span className="wc-founder-quote-line-1">
+                      Talent is not limited by geography.
+                    </span>
+                    <span className="wc-founder-quote-line-2">
+                      Opportunity is.
+                    </span>
+                  </div>
+                </div>
+
+                {/* Paragraph 2 */}
+                <div className="wc-founder-text-block">
+                  <p>
+                    So instead of asking talented people to migrate, he decided to build a global-standard
+                    company from Tamil Nadu itself. That is how Brand Mindz was born.
+                  </p>
+                  <p className="mt-2">
                     Not just as a digital marketing agency — but as an opportunity platform.
-                  </span>
+                  </p>
+                </div>
 
-                </p>
-               <Link
-  href="/contact"
-  className="wc-founder-cta gap-3 px-8 py-4 text-lg font-semibold transition hover:scale-[1.03] md:px-10 md:py-5 md:text-xl">
-  Meet Brand Mindz <ArrowRight size={24} />
-</Link>
+                {/* CTA Button Wrapper (Shifted slightly towards right on desktop, centered on mobile) */}
+                <div className="wc-founder-cta-wrap">
+                  <Link
+                    href="/contact"
+                    className="wc-founder-cta-btn"
+                  >
+                    <span>Meet Brand Mindz</span>
+                    <ArrowRight size={18} strokeWidth={2.5} />
+                  </Link>
+                </div>
               </div>
 
-              <div className="relative min-h-105 overflow-hidden rounded-[36px] lg:min-h-155">
+              {/* Right Column: Founder Image Panel */}
+              <div className="wc-founder-image-panel">
                 <Image
                   src={founderImage}
                   alt="Brand Mindz founder R. Vasanth Kumar"
                   fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="wc-founder-image-img"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
                   priority
                 />
-                <div className="absolute inset-x-6 bottom-6 flex min-h-25 flex-col items-center justify-center rounded-[26px] bg-white/92 px-8 py-8 text-center text-zinc-950 shadow-2xl backdrop-blur md:inset-x-auto md:left-8 md:right-8">
-  <strong className="block text-2xl font-extrabold">
-    R. Vasanth Kumar
-  </strong>
-
-  <span className="mt-2 block text-base font-medium text-zinc-600">
-    Founder of Brand Mindz
-  </span>
-</div>
+                <div className="wc-founder-nameplate">
+                  <span className="wc-founder-nameplate-bar" aria-hidden="true" />
+                  <div className="wc-founder-nameplate-info">
+                    <strong className="wc-founder-nameplate-name">R. Vasanth Kumar</strong>
+                    <span className="wc-founder-nameplate-role">Founder of Brand Mindz</span>
+                  </div>
+                  <div className="wc-founder-nameplate-dots" aria-hidden="true">
+                    <span /><span /><span />
+                    <span /><span /><span />
+                    <span /><span /><span />
+                    <span /><span /><span />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -513,35 +543,126 @@ Culture is our operating system.
           </div>
         </section>
 
-        <section className="wc-section wc-performance-section">
-          <div className="wc-container">
-            <SectionIntro
-              eyebrow="We Believe Culture is a performance engine"
-              title="High support. High standards."
-              text="We are not a relaxed agency where “anything goes”. We are structured. We define KPIs, measure performance, focus on revenue impact, and expect ownership. But we fight with problems—not with people."
-            />
+        <section className="wc-performance-section">
+          <div className="wc-performance-container">
+            <div className="wc-performance-header">
+              <div className="wc-performance-eyebrow-row">
+                <span className="wc-performance-eyebrow-text">
+                  WE BELIEVE CULTURE IS A PERFORMANCE ENGINE
+                </span>
+                <span className="wc-performance-eyebrow-line" aria-hidden="true" />
+              </div>
+              <h2 className="wc-performance-title">
+                High support. <span className="wc-performance-title-highlight">High standards.</span>
+              </h2>
+              <p className="wc-performance-desc">
+                We are not a relaxed agency where “anything goes”. We are structured. We define KPIs, measure performance, focus on revenue impact, and expect ownership. But we fight with problems—not with people.
+              </p>
+            </div>
 
-          
+            <div className="wc-performance-grid">
+              {/* Left Column: Dark Charcoal Card */}
+              <div className="wc-performance-left-card">
+                <div className="wc-performance-row">
+                  <div className="wc-performance-icon-wrap" aria-hidden="true">
+                    <Users size={24} className="text-[#ffc400]" strokeWidth={2.2} />
+                  </div>
+                  <div className="wc-performance-row-divider" aria-hidden="true" />
+                  <p className="wc-performance-row-text">
+                    We do not believe in <span className="wc-performance-highlight">blame games.</span>
+                  </p>
+                </div>
 
-            <div className="wc-merit-statement">
-              <p className="wc-merit-beliefs">
-                We do not believe in blame games.<br />
-                We do not believe in favoritism.<br />
-                We do not believe in seniority politics.<br />
-                We do not tolerate bias — of any kind.
-              </p>
-              <p className="wc-merit-bias">
-                Not gender.<br />
-                Not caste.<br />
-                Not religion.<br />
-                Not language.<br />
-                Not background.
-              </p>
-              <p className="wc-merit-outcome">
-                Merit decides growth.<br />
-                If you perform, you grow.<br />
-                Simple.
-              </p>
+                <div className="wc-performance-row">
+                  <div className="wc-performance-icon-wrap" aria-hidden="true">
+                    <Scale size={24} className="text-[#ffc400]" strokeWidth={2.2} />
+                  </div>
+                  <div className="wc-performance-row-divider" aria-hidden="true" />
+                  <p className="wc-performance-row-text">
+                    We do not believe in <span className="wc-performance-highlight">favoritism.</span>
+                  </p>
+                </div>
+
+                <div className="wc-performance-row">
+                  <div className="wc-performance-icon-wrap" aria-hidden="true">
+                    <Trophy size={24} className="text-[#ffc400]" strokeWidth={2.2} />
+                  </div>
+                  <div className="wc-performance-row-divider" aria-hidden="true" />
+                  <p className="wc-performance-row-text">
+                    We do not believe in <span className="wc-performance-highlight">seniority politics.</span>
+                  </p>
+                </div>
+
+                <div className="wc-performance-row">
+                  <div className="wc-performance-icon-wrap" aria-hidden="true">
+                    <Handshake size={24} className="text-[#ffc400]" strokeWidth={2.2} />
+                  </div>
+                  <div className="wc-performance-row-divider" aria-hidden="true" />
+                  <p className="wc-performance-row-text">
+                    We do not tolerate <span className="wc-performance-highlight">bias</span> — of any kind.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column: Top White Card + Bottom Dark Card */}
+              <div className="wc-performance-right-col">
+                {/* Right Top White Card */}
+                <div className="wc-performance-white-card">
+                  <div className="wc-performance-accent-bar" aria-hidden="true" />
+                  <div className="wc-performance-scales-wrap" aria-hidden="true">
+                    <svg width="92" height="92" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 55H42M32 14V55" stroke="#181818" strokeWidth="3" strokeLinecap="round" />
+                      <path d="M26 55C26 51.5 38 51.5 38 55" fill="#181818" />
+                      <circle cx="32" cy="14" r="3.2" fill="#181818" />
+                      <path d="M12 21L32 17.5L52 21" stroke="#181818" strokeWidth="3" strokeLinecap="round" />
+                      <path d="M12 21L7 35M12 21L17 35" stroke="#181818" strokeWidth="1.5" />
+                      <path d="M5 35C5 42 19 42 19 35Z" fill="#ffc400" stroke="#181818" strokeWidth="1.6" />
+                      <path d="M52 21L47 35M52 21L57 35" stroke="#181818" strokeWidth="1.5" />
+                      <path d="M45 35C45 42 59 42 59 35Z" fill="#ffc400" stroke="#181818" strokeWidth="1.6" />
+                    </svg>
+                  </div>
+                  <div className="wc-performance-not-list">
+                    <div className="wc-performance-not-item">
+                      <span className="wc-performance-chevron" aria-hidden="true">›</span>
+                      <span className="wc-performance-not-text">Not gender.</span>
+                    </div>
+                    <div className="wc-performance-not-item">
+                      <span className="wc-performance-chevron" aria-hidden="true">›</span>
+                      <span className="wc-performance-not-text">Not caste.</span>
+                    </div>
+                    <div className="wc-performance-not-item">
+                      <span className="wc-performance-chevron" aria-hidden="true">›</span>
+                      <span className="wc-performance-not-text">Not religion.</span>
+                    </div>
+                    <div className="wc-performance-not-item">
+                      <span className="wc-performance-chevron" aria-hidden="true">›</span>
+                      <span className="wc-performance-not-text">Not language.</span>
+                    </div>
+                    <div className="wc-performance-not-item">
+                      <span className="wc-performance-chevron" aria-hidden="true">›</span>
+                      <span className="wc-performance-not-text">Not background.</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Bottom Dark Card */}
+                <div className="wc-performance-bottom-card">
+                  <div className="wc-performance-growth-icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="6" y="24" width="4" height="8" rx="1" fill="#ffc400" />
+                      <rect x="14" y="18" width="4" height="14" rx="1" fill="#ffc400" />
+                      <rect x="22" y="12" width="4" height="20" rx="1" fill="#ffc400" />
+                      <path d="M7 18L15 11L21 15L29 7M29 7H23M29 7V13" stroke="#ffc400" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="wc-performance-growth-divider" aria-hidden="true" />
+                  <div className="wc-performance-growth-text">
+                    <p className="wc-performance-growth-title">Merit decides growth.</p>
+                    <p className="wc-performance-growth-sub">If you perform, you grow.</p>
+                    <p className="wc-performance-growth-simple">Simple.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

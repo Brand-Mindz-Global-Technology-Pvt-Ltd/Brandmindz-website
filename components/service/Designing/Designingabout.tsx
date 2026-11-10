@@ -25,9 +25,9 @@ export const Designingabout = ({ data }: { data: any }) => {
 
   if (!data || !current) return null;
 
-  const ScrollLine = ({ content }) => {
+  const ScrollLine = ({ content }: { content: string }) => {
     const [isPassed, setIsPassed] = useState(false);
-    const ref = useRef(null);
+    const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
       const handleScroll = () => {
@@ -52,11 +52,11 @@ export const Designingabout = ({ data }: { data: any }) => {
     );
   };
 
-  const ScrollParagraph = ({ text }) => {
+  const ScrollParagraph = ({ text }: { text: string }) => {
     const lines = text.split(/(?<=\. )/g);
     return (
       <p className="bm-about-paragraph-branding">
-        {lines.map((line, idx) => (
+        {lines.map((line: string, idx: number) => (
           <ScrollLine key={idx} content={line} />
         ))}
       </p>

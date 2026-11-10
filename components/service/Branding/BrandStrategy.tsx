@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FiChevronRight } from "react-icons/fi";
 import { Phone, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import {
     FadeIn,
@@ -21,7 +22,7 @@ import Vector2 from '../../../assets/branding/group5.webp'
 import Vector3 from '../../../assets/branding/vector3.webp'
 
 // --- SCROLL HIGHLIGHT LOGIC ---
-const ScrollLine = ({ content }) => {
+const ScrollLine = ({ content }: { content: string }) => {
     const [isHighlighted, setIsHighlighted] = useState(false);
     const ref = useRef(null);
 
@@ -52,7 +53,7 @@ const ScrollLine = ({ content }) => {
     );
 };
 
-const ScrollSpan = ({ children }) => {
+const ScrollSpan = ({ children }: { children: React.ReactNode }) => {
     if (typeof children !== 'string') return <span>{children}</span>;
     const sentences = children.split(/(?<=\. )/g);
     return (

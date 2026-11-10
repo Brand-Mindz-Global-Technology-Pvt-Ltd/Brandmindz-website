@@ -1,108 +1,117 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { FadeIn } from "@/components/animations/fade-in";
 import Image from "next/image";
 import "../../style/aboutus/aboutus.css";
 
-// Import your black & white logos
-import news18BW from '../../assets/about/frame21472262391.webp';
-import dinamalar3BW from '../../assets/about/sunnews13.webp';
-import platform5BW from '../../assets/about/news18tamil11.webp';
-import platform6BW from '../../assets/about/dinamalar13.webp';
-import platform7BW from '../../assets/about/MSME_Logo.svg';
+// Import black & white logos
+import patentsBW from "../../assets/about/news18tamil11.webp"; // Controller General of Patents
+import startupIndiaBW from "../../assets/about/sunnews13.webp"; // DPIIT #startupindia
+import msmeBW from "../../assets/about/MSME_Logo.svg"; // MSME Logo
+import tnSealBW from "../../assets/about/dinamalar13.webp"; // Government of Tamil Nadu seal
+import startupTnBW from "../../assets/about/frame21472262391.webp"; // StartupTN
 
-
-// Import your COLOR logos (replace these with your actual color image imports)
-import news18Color from '../../assets/about/vikatan1.webp';
-import dinamalar3Color from '../../assets/about/sunnews13.webp';
-import platform5Color from '../../assets/about/news18tamil11.webp';
-import platform6Color from '../../assets/about/dinamalar16.webp';
+// Import color logos
+import patentsColor from "../../assets/about/news18tamil11.webp";
+import startupIndiaColor from "../../assets/about/sunnews13.webp";
+import msmeColor from "../../assets/about/MSME_Logo.svg";
+import tnSealColor from "../../assets/about/dinamalar16.webp";
+// vikatan1.webp is the color version of the StartupTN logo (teal icon + full color text)
+import startupTnColor from "../../assets/about/vikatan1.webp";
 
 export const RecognisedSection = () => {
-  
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [tappedId, setTappedId] = useState<number | null>(null);
+
   const channelLogos = [
-    { 
-      id: 1, 
-      bw: platform5BW, 
-      color: platform5Color, 
-      alt: "Dinamalar" 
+    {
+      id: 1,
+      bw: patentsBW,
+      color: patentsColor,
+      alt: "Controller General of Patents, Designs & Trade Marks",
     },
-    { 
-      id: 2, 
-      bw: dinamalar3BW, 
-      color: dinamalar3Color, 
-      alt: "Dinamalar" 
+    {
+      id: 2,
+      bw: startupIndiaBW,
+      color: startupIndiaColor,
+      alt: "DPIIT #startupindia",
     },
-    { 
-      id: 5, 
-      bw: platform7BW, 
-      color: platform7BW, 
-      alt: "MSME Logo" 
+    {
+      id: 3,
+      bw: msmeBW,
+      color: msmeColor,
+      alt: "MSME - Micro, Small & Medium Enterprises",
     },
-    { 
-      id: 3, 
-      bw: platform6BW, 
-      color: platform6Color, 
-      alt: "Dinamalar" 
+    {
+      id: 4,
+      bw: tnSealBW,
+      color: tnSealColor,
+      alt: "Government of Tamil Nadu",
     },
-    { 
-      id: 4, 
-      bw: news18BW, 
-      color: news18Color, 
-      alt: "News 18 Tamil" 
+    {
+      id: 5,
+      bw: startupTnBW,
+      color: startupTnColor,
+      alt: "StartupTN",
     },
   ];
 
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const handleTap = useCallback((id: number, e: React.TouchEvent) => {
+    e.preventDefault();
+    setTappedId((prev) => (prev === id ? null : id));
+  }, []);
+
+  // Preload colour images so hover appears immediately
+  useEffect(() => {
+    channelLogos.forEach((logo) => {
+      if (typeof window !== "undefined" && logo.color?.src) {
+        const img = new window.Image();
+        img.src = logo.color.src;
+      }
+    });
+  }, []);
 
   return (
-    <section className="bm-featured-section">
-      <div className="bm-featured-container">
-        
-        {/* Grid Layout - col-4 text, col-8 logos */}
-        <div className="bm-recongnined-grid" >
-          
-          {/* Left Column - Text (col-4) */}
-          <div className="bm-featured-text-col">
-            <FadeIn delay={0.1}>
-              <h2 className="bm-featured-title">
-                <span className="bm-text-gray">Recognized &</span>
-                <br />
-                <span className="bm-text-black">Supported By</span>
-              </h2>
-            </FadeIn>
+    <section className="bm-trust-section">
+      <div className="bm-trust-container">
+        <FadeIn delay={0.1}>
+          <div className="bm-trust-header">
+            <span className="bm-trust-divider" aria-hidden="true" />
+            <h2 className="bm-trust-heading">Recognized & Supported By</h2>
+            <span className="bm-trust-divider" aria-hidden="true" />
           </div>
+        </FadeIn>
 
-          {/* Right Column - Logos (col-8) */}
-          <div className="bm-featured-logos-col">
-            <FadeIn delay={0.2}>
-              {/* Channel logos with hover effect */}
-              <div className="bm-channel-grid-recognised">
-                {channelLogos.map((logo) => (
-                  <div 
-                    key={logo.id} 
-                    className="bm-channel-item"
-                    onMouseEnter={() => setHoveredId(logo.id)}
-                    onMouseLeave={() => setHoveredId(null)}
-                  >
-                    <div className="bm-channel-wrapper">
-                      <Image 
-                        src={hoveredId === logo.id ? logo.color : logo.bw}
-                        alt={logo.alt}
-                        width={148}
-                        height={82}
-                        className="bm-channel-image bm-channel-hover"
-                      />
-                    </div>
+        <FadeIn delay={0.2}>
+          <div className="bm-trust-cards-row">
+            {channelLogos.map((logo) => {
+              const isHovered = hoveredId === logo.id;
+              const isTapped = tappedId === logo.id;
+              const isActive = isHovered || isTapped;
+
+              return (
+                <div
+                  key={logo.id}
+                  className={`bm-trust-card${isActive ? " bm-trust-card--active" : ""}`}
+                  onMouseEnter={() => setHoveredId(logo.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  onTouchEnd={(e) => handleTap(logo.id, e)}
+                >
+                  <div className="bm-trust-logo-box">
+                    <Image
+                      src={isActive ? logo.color : logo.bw}
+                      alt={logo.alt}
+                      width={140}
+                      height={60}
+                      className={`bm-trust-logo-img${isActive ? " bm-trust-logo-img--active" : ""}`}
+                    />
                   </div>
-                ))}
-              </div>
-            </FadeIn>
+                </div>
+              );
+            })}
           </div>
-
-        </div>
-
+        </FadeIn>
       </div>
     </section>
   );

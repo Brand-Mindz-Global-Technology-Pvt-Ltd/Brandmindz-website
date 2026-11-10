@@ -89,56 +89,458 @@
           border-radius: 50%;
         }
 
-        .wc-founder-copy {
-          min-width: 0;
-          padding: clamp(40px, 4vw, 64px) clamp(28px, 3.5vw, 56px);
+        /* ==========================================================================
+           Full-Width Hiring Philosophy / Work Culture Section
+           ========================================================================== */
+        .wc-founder-full-section {
+          position: relative;
+          width: 100vw;
+          max-width: 100vw;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+          padding: 0 !important;
+          overflow: hidden;
+          background-color: #161616;
+          box-sizing: border-box;
         }
 
-        .wc-founder-title {
-          max-width: 650px;
-          margin: 24px auto 0;
-          font-size: clamp(2.25rem, 3.25vw, 3.45rem);
-          line-height: 1.08;
-          overflow-wrap: anywhere;
-        }
-
-        .wc-founder-body {
-          max-width: 630px;
-          margin: 26px auto 0;
-          font-size: clamp(1rem, 1.12vw, 1.2rem);
-          line-height: 1.65;
-        }
-
-        .wc-founder-quote {
+        .wc-founder-full-container {
           width: 100%;
-          max-width: 630px;
-          margin: 28px auto 0;
-          padding: 20px clamp(18px, 2vw, 28px);
-          font-size: clamp(1.3rem, 1.75vw, 1.85rem);
-          line-height: 1.28;
-          overflow-wrap: anywhere;
+          max-width: 100%;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          z-index: 2;
         }
 
-        .wc-founder-cta {
+        .wc-founder-main-card {
+          position: relative;
+          width: 100%;
+          border-radius: 0;
+          background: linear-gradient(145deg, #161616 0%, #1f1f1f 45%, #181818 100%);
+          color: #ffffff;
+          overflow: hidden;
+          box-shadow: none;
+          display: grid;
+          grid-template-columns: 1.18fr 0.82fr;
+          align-items: stretch;
+          min-height: 640px;
+        }
+
+        /* Left Column: Dark Content Panel */
+        .wc-founder-content-panel {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          text-align: left;
+          padding: clamp(48px, 5vw, 76px) clamp(36px, 5.5vw, 84px);
+          position: relative;
+          z-index: 3;
+        }
+
+        /* Eyebrow */
+        .wc-founder-eyebrow-row {
           display: inline-flex;
-          min-height: 54px;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 20px;
+        }
+
+        .wc-founder-eyebrow-text {
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.75);
+        }
+
+        .wc-founder-eyebrow-line {
+          display: inline-block;
+          width: 48px;
+          height: 3px;
+          background-color: #ffc400;
+          border-radius: 9999px;
+          flex-shrink: 0;
+        }
+
+        /* Main Heading */
+        .wc-founder-heading {
+          font-size: clamp(2.25rem, 3.1vw, 3.5rem);
+          font-weight: 800;
+          line-height: 1.18;
+          letter-spacing: -0.035em;
+          color: #ffffff;
+          margin: 0 0 26px 0;
+          text-align: left;
+        }
+
+        /* Paragraph Blocks */
+        .wc-founder-text-block {
+          font-size: clamp(15.5px, 1.15vw, 17.5px);
+          line-height: 1.76;
+          color: #e5e7eb;
+          text-align: left;
+          max-width: 660px;
+          margin-bottom: 26px;
+        }
+
+        /* Highlighted Quote Box */
+        .wc-founder-quote-box {
+          display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 12px;
-          margin-top: 32px;
-          padding: 14px 28px;
-          border-radius: 999px;
-          background: #ffdb00;
-          color: #000;
-          font-size: 1rem;
+          gap: 20px;
+          width: fit-content;
+          max-width: 100%;
+          margin-left: clamp(16px, 2.5vw, 40px);
+          padding: 16px 28px;
+          margin-bottom: 26px;
+          border-radius: 18px;
+          border: 1.5px solid #ffc400;
+          background: rgba(255, 255, 255, 0.04);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+          box-sizing: border-box;
+        }
+
+        .wc-founder-quote-icon-circle {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          background: #ffc400;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          color: #ffffff;
+        }
+
+        .wc-founder-quote-divider {
+          width: 1.5px;
+          height: 42px;
+          background: #ffc400;
+          flex-shrink: 0;
+          border-radius: 1px;
+        }
+
+        .wc-founder-quote-text {
+          text-align: left;
+        }
+
+        .wc-founder-quote-line-1 {
+          display: block;
+          color: #ffffff;
           font-weight: 800;
+          font-size: clamp(17px, 1.25vw, 19px);
+          line-height: 1.25;
+          letter-spacing: -0.01em;
+        }
+
+        .wc-founder-quote-line-2 {
+          display: block;
+          color: #ffc400;
+          font-weight: 800;
+          font-size: clamp(17px, 1.25vw, 19px);
+          line-height: 1.25;
+          margin-top: 3px;
+          letter-spacing: -0.01em;
+        }
+
+        /* CTA Button wrapper: Centered horizontally in the left dark content panel */
+        .wc-founder-cta-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 660px;
+          margin-top: 14px;
+        }
+
+        .wc-founder-cta-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 14px 32px;
+          border-radius: 9999px;
+          background-color: #ffc400;
+          color: #000000;
+          font-size: 15.5px;
+          font-weight: 700;
           line-height: 1;
           text-decoration: none;
           white-space: nowrap;
+          box-shadow: 0 8px 24px rgba(255, 196, 0, 0.25);
+          transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
         }
 
-        .wc-founder-cta svg {
-          flex: none;
+        .wc-founder-cta-btn:hover {
+          transform: translateY(-2px) scale(1.02);
+          background-color: #ffd233;
+          box-shadow: 0 12px 28px rgba(255, 196, 0, 0.35);
+        }
+
+        /* Right Column: Founder Image Panel */
+        .wc-founder-image-panel {
+          position: relative;
+          width: 100%;
+          min-height: 580px;
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .wc-founder-image-img {
+          object-fit: cover;
+          object-position: center 15%;
+        }
+
+        /* Floating Nameplate */
+        .wc-founder-nameplate {
+          position: absolute;
+          bottom: 32px;
+          right: 36px;
+          display: inline-flex;
+          align-items: center;
+          gap: 14px;
+          padding: 14px 24px;
+          border-radius: 20px;
+          background: #ffffff;
+          color: #0a0a0a;
+          box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+          z-index: 4;
+        }
+
+        .wc-founder-nameplate-bar {
+          width: 3.5px;
+          height: 34px;
+          background: #ffc400;
+          border-radius: 9999px;
+          flex-shrink: 0;
+        }
+
+        .wc-founder-nameplate-info {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+
+        .wc-founder-nameplate-name {
+          font-size: 16.5px;
+          font-weight: 800;
+          color: #0a0a0a;
+          line-height: 1.2;
+        }
+
+        .wc-founder-nameplate-role {
+          font-size: 13px;
+          font-weight: 500;
+          color: #6b7280;
+          margin-top: 3px;
+        }
+
+        /* Dotted Matrix Icon */
+        .wc-founder-nameplate-dots {
+          display: grid;
+          grid-template-columns: repeat(3, 4px);
+          grid-gap: 5px;
+          margin-left: 14px;
+          flex-shrink: 0;
+        }
+
+        .wc-founder-nameplate-dots span {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: #9ca3af;
+          opacity: 0.8;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+          .wc-founder-full-section {
+            width: 100%;
+            max-width: 100%;
+            left: 0;
+            right: 0;
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          .wc-founder-main-card {
+            grid-template-columns: 1fr;
+            min-height: auto;
+          }
+
+          .wc-founder-content-panel {
+            padding: clamp(40px, 6vw, 56px) clamp(24px, 4vw, 36px);
+          }
+
+          .wc-founder-quote-box {
+            margin-left: 0;
+          }
+
+          .wc-founder-image-panel {
+            min-height: 520px;
+          }
+
+          .wc-founder-nameplate {
+            bottom: 24px;
+            right: 24px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .wc-founder-full-section {
+            width: 100%;
+            max-width: 100%;
+            left: 0;
+            right: 0;
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          .wc-founder-main-card {
+            grid-template-columns: 1fr;
+            min-height: auto;
+          }
+
+          .wc-founder-content-panel {
+            padding: 40px 20px 48px;
+            text-align: left;
+            align-items: flex-start;
+          }
+
+          .wc-founder-eyebrow-row {
+            margin-bottom: 16px;
+          }
+
+          .wc-founder-heading {
+            font-size: clamp(1.85rem, 6.2vw, 2.35rem);
+            line-height: 1.2;
+            margin-bottom: 20px;
+          }
+
+          .wc-founder-text-block {
+            font-size: 15px;
+            line-height: 1.68;
+            margin-bottom: 20px;
+            max-width: 100%;
+          }
+
+          .wc-founder-quote-box {
+            display: flex;
+            width: 100%;
+            max-width: 100%;
+            margin-left: 0;
+            padding: 14px 18px;
+            gap: 14px;
+            margin-bottom: 22px;
+            justify-content: center;
+            border-radius: 16px;
+          }
+
+          .wc-founder-quote-icon-circle {
+            width: 42px;
+            height: 42px;
+          }
+
+          .wc-founder-quote-divider {
+            height: 38px;
+          }
+
+          .wc-founder-quote-line-1,
+          .wc-founder-quote-line-2 {
+            font-size: 15px;
+            line-height: 1.25;
+          }
+
+          .wc-founder-cta-wrap {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 14px;
+          }
+
+          .wc-founder-cta-btn {
+            padding: 13px 28px;
+            font-size: 15px;
+          }
+
+          .wc-founder-image-panel {
+            min-height: 440px;
+            height: 460px;
+          }
+
+          .wc-founder-nameplate {
+            bottom: 16px;
+            right: 16px;
+            left: 16px;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 16px;
+          }
+
+          .wc-founder-nameplate-name {
+            font-size: 15px;
+          }
+
+          .wc-founder-nameplate-role {
+            font-size: 12px;
+          }
+        }
+
+        @media (max-width: 390px) {
+          .wc-founder-content-panel {
+            padding: 36px 16px 44px;
+          }
+
+          .wc-founder-heading {
+            font-size: 1.72rem;
+          }
+
+          .wc-founder-text-block {
+            font-size: 14.5px;
+            line-height: 1.62;
+          }
+
+          .wc-founder-quote-box {
+            padding: 12px 14px;
+            gap: 10px;
+          }
+
+          .wc-founder-quote-icon-circle {
+            width: 36px;
+            height: 36px;
+          }
+
+          .wc-founder-quote-divider {
+            height: 34px;
+          }
+
+          .wc-founder-quote-line-1,
+          .wc-founder-quote-line-2 {
+            font-size: 13.5px;
+          }
+
+          .wc-founder-cta-btn {
+            width: 100%;
+            padding: 13px 20px;
+            font-size: 14.5px;
+          }
+
+          .wc-founder-image-panel {
+            min-height: 380px;
+            height: 400px;
+          }
+
+          .wc-founder-nameplate {
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            padding: 10px 14px;
+          }
         }
 
         .wc-section-intro {
@@ -501,93 +903,273 @@
           line-height: 1.55;
         }
 
+        /* ========================================================
+           Work Culture: "High support. High standards." Section
+           ======================================================== */
         .wc-performance-section {
-          background: #f3f3f3;
-          color: #111;
+          background-color: #F5F5F5;
+          color: #111111;
+          padding: clamp(64px, 7vw, 104px) 0;
+          position: relative;
         }
 
-        .wc-meritocracy {
-          width: 100%;
-          max-width: 1180px;
-          margin: 0 auto 48px;
-          padding: 30px clamp(28px, 4vw, 52px);
-          border: 1px solid #a3a3a3;
-          border-radius: 20px;
-          background: #fff;
-          text-align: left;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, .05);
-        }
-
-        .wc-meritocracy-title {
-          margin: 0;
-          font-size: clamp(1.8rem, 2.6vw, 2.75rem);
-          line-height: 1.15;
-          text-align: left;
-        }
-
-        .wc-meritocracy-text {
-          max-width: 960px;
-          margin: 18px 0 0;
-          font-size: clamp(1rem, 1.25vw, 1.2rem);
-          line-height: 1.65;
-          text-align: left;
-        }
-
-        .wc-merit-statement {
-          display: grid;
-          width: 100%;
-          max-width: 1180px;
+        .wc-performance-container {
+          width: 90%;
+          max-width: 1220px;
           margin: 0 auto;
-          grid-template-columns: minmax(0, 1.45fr) minmax(320px, .8fr);
-          gap: 18px;
-          padding: 18px;
-          border: 1px solid #d4d4d8;
-          border-radius: 32px;
-          background: #e4e4e7;
-          box-shadow: 0 24px 60px rgba(0, 0, 0, .09);
         }
 
-        .wc-merit-statement p {
-          margin: 0;
+        .wc-performance-header {
+          max-width: 960px;
+          margin: 0 auto clamp(40px, 4.5vw, 56px);
+          text-align: center;
         }
 
-        .wc-merit-beliefs {
-          grid-row: 1 / 3;
-          padding: clamp(36px, 5vw, 68px);
-          border-radius: 22px;
-          background: linear-gradient(145deg, #111 0%, #303030 100%);
-          color: #fff;
-          font-size: clamp(1.35rem, 2.1vw, 2rem);
+        .wc-performance-eyebrow-row {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          margin-bottom: 18px;
+        }
+
+        .wc-performance-eyebrow-text {
+          font-size: 13px;
           font-weight: 700;
-          line-height: 1.85;
-          text-align: left;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: #111111;
         }
 
-        .wc-merit-beliefs span {
-          color: #888888;
+        .wc-performance-eyebrow-line {
+          display: inline-block;
+          width: 44px;
+          height: 3px;
+          background-color: #ffc400;
+          border-radius: 9999px;
+          flex-shrink: 0;
         }
 
-        .wc-merit-bias {
-          padding: clamp(30px, 4vw, 48px);
-          border: 1px solid #a1a1aa;
-          border-radius: 22px;
-          background: #fff;
+        .wc-performance-title {
+          font-size: clamp(2.35rem, 3.2vw, 48px);
+          font-weight: 800;
+          line-height: 1.15;
+          letter-spacing: -0.04em;
+          color: #111111;
+          margin: 0 0 20px;
+          text-align: center;
+        }
+
+        .wc-performance-title-highlight {
+          color: #ffc400;
+        }
+
+        .wc-performance-desc {
+          font-size: clamp(16.5px, 1.15vw, 18px);
+          line-height: 1.7;
           color: #3f3f46;
-          font-size: clamp(1.18rem, 1.55vw, 1.5rem);
-          font-weight: 700;
-          line-height: 1.75;
+          max-width: 880px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        /* 2-Column Grid (approx. 60% / 40%) */
+        .wc-performance-grid {
+          display: grid;
+          grid-template-columns: 1.4fr 1fr;
+          gap: 24px;
+          align-items: stretch;
+          width: 100%;
+        }
+
+        /* Left Column: Dark Charcoal Card – Core Values */
+        .wc-performance-left-card {
+          background-color: #181818;
+          border-radius: 24px;
+          padding: clamp(28px, 3.2vw, 44px) clamp(24px, 3.2vw, 40px);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .wc-performance-row {
+          display: flex;
+          align-items: center;
+          gap: 22px;
+          padding: 22px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          flex: 1;
+        }
+
+        .wc-performance-row:first-child {
+          padding-top: 4px;
+        }
+
+        .wc-performance-row:last-child {
+          border-bottom: none;
+          padding-bottom: 4px;
+        }
+
+        .wc-performance-icon-wrap {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.06);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .wc-performance-row-divider {
+          width: 2px;
+          height: 36px;
+          background-color: #ffc400;
+          border-radius: 9999px;
+          flex-shrink: 0;
+        }
+
+        .wc-performance-row-text {
+          margin: 0;
+          font-size: clamp(18px, 1.35vw, 21px);
+          font-weight: 600;
+          line-height: 1.4;
+          color: #ffffff;
           text-align: left;
         }
 
-        .wc-merit-outcome {
-          padding: clamp(30px, 4vw, 48px);
-          border-radius: 22px;
-          background: #888888;
-          color: #111;
-          font-size: clamp(1.35rem, 1.9vw, 1.8rem);
-          font-weight: 850;
-          line-height: 1.65;
+        .wc-performance-highlight {
+          color: #ffc400;
+          font-weight: 700;
+        }
+
+        /* Right Column */
+        .wc-performance-right-col {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        /* Right Top White Card – Equality */
+        .wc-performance-white-card {
+          background-color: #ffffff;
+          border-radius: 24px;
+          border: 1px solid #e5e7eb;
+          box-shadow: 0 10px 32px rgba(0, 0, 0, 0.05);
+          padding: clamp(28px, 3vw, 40px) clamp(22px, 2.8vw, 36px);
+          display: flex;
+          align-items: center;
+          gap: clamp(20px, 2.5vw, 32px);
+          flex: 1.45;
+          position: relative;
+        }
+
+        .wc-performance-accent-bar {
+          width: 3.5px;
+          height: 80%;
+          min-height: 130px;
+          background-color: #ffc400;
+          border-radius: 9999px;
+          flex-shrink: 0;
+        }
+
+        .wc-performance-scales-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .wc-performance-not-list {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
           text-align: left;
+        }
+
+        .wc-performance-not-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .wc-performance-chevron {
+          color: #ffc400;
+          font-size: 22px;
+          font-weight: 800;
+          line-height: 1;
+          flex-shrink: 0;
+        }
+
+        .wc-performance-not-text {
+          font-size: clamp(17px, 1.25vw, 20px);
+          font-weight: 600;
+          color: #181818;
+          line-height: 1.3;
+        }
+
+        /* Right Bottom Dark Card – Merit */
+        .wc-performance-bottom-card {
+          background-color: #181818;
+          border-radius: 24px;
+          padding: clamp(24px, 2.8vw, 32px) clamp(24px, 2.8vw, 32px);
+          display: flex;
+          align-items: center;
+          gap: 22px;
+          flex: 1;
+          min-height: 130px;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .wc-performance-growth-icon {
+          width: 52px;
+          height: 52px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .wc-performance-growth-divider {
+          width: 2px;
+          height: 58px;
+          background-color: #ffc400;
+          border-radius: 9999px;
+          flex-shrink: 0;
+        }
+
+        .wc-performance-growth-text {
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+        }
+
+        .wc-performance-growth-title {
+          margin: 0;
+          font-size: clamp(19px, 1.45vw, 23px);
+          font-weight: 800;
+          color: #ffffff;
+          line-height: 1.2;
+        }
+
+        .wc-performance-growth-sub {
+          margin: 0;
+          font-size: clamp(15px, 1.1vw, 16.5px);
+          font-weight: 400;
+          color: #e5e7eb;
+          line-height: 1.35;
+        }
+
+        .wc-performance-growth-simple {
+          margin: 0;
+          font-size: clamp(16.5px, 1.2vw, 18.5px);
+          font-weight: 800;
+          color: #ffc400;
+          line-height: 1.25;
         }
 
         .wc-dual-grid {
@@ -961,14 +1543,68 @@
         }
 
         @media (max-width: 900px) {
-          .wc-merit-statement {
+          .wc-performance-grid {
             grid-template-columns: 1fr;
-            padding: 14px;
-            border-radius: 24px;
+            gap: 20px;
           }
 
-          .wc-merit-beliefs {
-            grid-row: auto;
+          .wc-performance-left-card {
+            padding: 26px 20px;
+          }
+
+          .wc-performance-row {
+            gap: 18px;
+            padding: 18px 0;
+          }
+
+          .wc-performance-icon-wrap {
+            width: 48px;
+            height: 48px;
+          }
+
+          .wc-performance-row-divider {
+            height: 32px;
+          }
+
+          .wc-performance-row-text {
+            font-size: 17.5px;
+          }
+
+          .wc-performance-right-col {
+            gap: 20px;
+          }
+
+          .wc-performance-white-card {
+            padding: 26px 20px;
+            gap: 20px;
+          }
+
+          .wc-performance-accent-bar {
+            height: 110px;
+            min-height: auto;
+          }
+
+          .wc-performance-scales-wrap svg {
+            width: 72px;
+            height: 72px;
+          }
+
+          .wc-performance-not-text {
+            font-size: 16.5px;
+          }
+
+          .wc-performance-bottom-card {
+            padding: 22px 22px;
+            gap: 18px;
+            min-height: auto;
+          }
+
+          .wc-performance-growth-divider {
+            height: 50px;
+          }
+
+          .wc-performance-growth-title {
+            font-size: 19px;
           }
 
           .wc-women-story {
@@ -1086,5 +1722,72 @@
             width: 42px;
             height: 42px;
             border-width: 2px;
+          }
+
+          .wc-performance-left-card {
+            padding: 20px 16px;
+          }
+
+          .wc-performance-row {
+            gap: 14px;
+            padding: 16px 0;
+          }
+
+          .wc-performance-icon-wrap {
+            width: 44px;
+            height: 44px;
+          }
+
+          .wc-performance-row-divider {
+            height: 28px;
+          }
+
+          .wc-performance-row-text {
+            font-size: 16px;
+          }
+
+          .wc-performance-white-card {
+            padding: 20px 16px;
+            gap: 14px;
+          }
+
+          .wc-performance-accent-bar {
+            width: 3px;
+            height: 95px;
+          }
+
+          .wc-performance-scales-wrap svg {
+            width: 60px;
+            height: 60px;
+          }
+
+          .wc-performance-not-text {
+            font-size: 15.5px;
+          }
+
+          .wc-performance-bottom-card {
+            padding: 18px 16px;
+            gap: 14px;
+          }
+
+          .wc-performance-growth-icon {
+            width: 44px;
+            height: 44px;
+          }
+
+          .wc-performance-growth-divider {
+            height: 44px;
+          }
+
+          .wc-performance-growth-title {
+            font-size: 17.5px;
+          }
+
+          .wc-performance-growth-sub {
+            font-size: 13.5px;
+          }
+
+          .wc-performance-growth-simple {
+            font-size: 15px;
           }
         }

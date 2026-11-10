@@ -31,8 +31,10 @@ import BrandStrategy from '../../assets/HomeSection/OurOfferings/brandstrategy.w
 import CompanyBranding from '../../assets/HomeSection/OurOfferings/companybranding.webp'
 import { useRouter } from "next/navigation";
 
+type OfferingTab = "Branding" | "Designing" | "Development" | "Digital Marketing" | "ChatGPT Ads" | "E-Commerce listing";
+
 const Ouroffering = () => {
-    const [activeTab, setActiveTab] = useState("Branding");
+    const [activeTab, setActiveTab] = useState<OfferingTab>("Branding");
 
     const router = useRouter();
     const offeringsData = {
@@ -151,7 +153,7 @@ listings into conversion-driven fashion storefronts.
         ]
     };
 
-    const tabs = Object.keys(offeringsData);
+    const tabs = Object.keys(offeringsData) as OfferingTab[];
     return (
         <section className="bm-offering-section container">
             {/* 1. Header with Text Reveal Animation */}
@@ -229,7 +231,7 @@ listings into conversion-driven fashion storefronts.
                                 className="bm-service-item"
                                 style={{
                                     '--hover-bg': `url(${item.hover?.src || item.hover})`
-                                }}
+                                } as React.CSSProperties}
                             >
                                 <div className="bm-service-header">
                                     <Image

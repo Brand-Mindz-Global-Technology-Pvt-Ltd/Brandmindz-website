@@ -84,7 +84,7 @@ const testimonialsData = [
 
 export const TestimonialsSection = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const speed = useRef(0.5); // Scroll speed - adjust as needed
   

@@ -18,6 +18,7 @@ import logo from '../../assets/logo/logo.webp'
 import Image0 from '../../assets/Footer/5a3c8c71acdddaa4740210c8170c51773e0e0543.webp'
 import Image1 from '../../assets/Footer/a07119e2e776b18257a77e888622077bb8f4f6c1.webp'
 import Image2 from '../../assets/Footer/e11c902dd32153b2abe7a4d93637a06c7597b932.webp'
+import TamilpreneurLogo from '../../assets/Footer/Tamil.png'
 import back from '../../assets/HomeSection/banner/group1.webp'
 
 interface FooterProps {
@@ -143,7 +144,7 @@ const Footer = ({ theme = "default" }: FooterProps) => {
     Proud <span className={styles.widest}>Members of</span>
   </p>
 
-  <div className="flex items-center gap-6" style={{ marginTop: "20px" }}>
+  <div className="flex items-center gap-4 sm:gap-5 md:gap-6 flex-wrap" style={{ marginTop: "20px" }}>
 
     {/* JCI */}
     <a
@@ -181,6 +182,19 @@ const Footer = ({ theme = "default" }: FooterProps) => {
         src={Image1}
         alt="YES"
         className="h-14 w-auto cursor-pointer"
+      />
+    </a>
+
+    {/* Tamilpreneur */}
+    <a
+      href="https://tamilpreneur.in/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Image
+        src={TamilpreneurLogo}
+        alt="Tamilpreneur"
+        className="h-14 w-auto cursor-pointer object-contain"
       />
     </a>
 

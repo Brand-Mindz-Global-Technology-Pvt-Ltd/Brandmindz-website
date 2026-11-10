@@ -425,7 +425,7 @@ export const Developmentabout = () => {
   const menuItems = getActiveMenuItems();
   const current = menuItems.find(item => item.id === activeTab) || menuItems[0];
 
-  const ScrollLine = ({ content }) => {
+  const ScrollLine = ({ content }: { content: string }) => {
     const [isPassed, setIsPassed] = useState(false);
     const ref = useRef<HTMLSpanElement>(null);
 

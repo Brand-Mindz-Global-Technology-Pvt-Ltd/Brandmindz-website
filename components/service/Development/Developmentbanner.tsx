@@ -8,7 +8,11 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { LogoNewsTicker } from "../../aboutus/LogoNewsTicker";
 import { DevelopmentTabs } from "./DevelopmentTabs";
 
-export const DevelopmentService = () => {
+interface DevelopmentServiceProps {
+  activeDevelopmentTab?: number;
+}
+
+export const DevelopmentService: React.FC<DevelopmentServiceProps> = () => {
   return (
     <section className="bm-hero-section-contact ">
       <FadeIn delay={0.1}>

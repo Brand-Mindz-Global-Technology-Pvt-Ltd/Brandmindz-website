@@ -61,12 +61,19 @@ export const ServiceTabContent = ({ data }: { data: any }) => {
     const router = useRouter();
     const [index, setIndex] = useState(0);
 
-    const statsData = data.statsData || [
+    interface StatItem {
+        number: string;
+        label: string;
+    }
+
+    const defaultStats: StatItem[] = [
         { number: "130+", label: "Global Countries" },
         { number: "500+", label: "Clients Worldwide" },
         { number: "1200+", label: "Completed" },
         { number: "50+", label: "Awards Won" },
     ];
+
+    const statsData: StatItem[] = data.statsData || defaultStats;
 
     useEffect(() => {
         const interval = setInterval(() => {
