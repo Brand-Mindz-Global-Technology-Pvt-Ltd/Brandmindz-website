@@ -1,3 +1,6 @@
+import type { StaticImageData } from "next/image";
+import brandingConceptImage from "@/assets/tirunelveli/branding-concept.webp";
+
 export type BlogPost = {
   blog_id: number;
   title: string;
@@ -32,18 +35,20 @@ export const blogImageUrl = (post: BlogPost) => {
     : `${serverApiBase()}/storage/uploads/blog/${cleanImage}`;
 };
 
-/** Static fallback images (served from /public/blog-covers/) for posts whose
- *  API `image` field is empty. Keyed by slug substring → public path. */
+/** Static fallback images for posts whose
+ *  API `image` field is empty. Keyed by slug/category substring. */
 const SLUG_FALLBACKS: Array<{ test: RegExp; src: string }> = [
-  { test: /chatgpt/i,          src: "/blog-covers/chatgpt-ads.webp" },
-  { test: /web.?dev|web.?site|web.?development/i, src: "/blog-covers/web-and-app.webp" },
-  { test: /app.?dev/i,         src: "/blog-covers/web-and-app.webp" },
+  { test: /branding/i,                             src: brandingConceptImage.src },
+  { test: /chatgpt/i,                              src: "/blog-covers/chatgpt-ads.webp" },
+  { test: /(app|application).?dev|mobile.?app/i,    src: "/blog-covers/web-and-app.webp" },
+  { test: /web.?dev|web.?site|web.?development/i,  src: "/blog-covers/web-and-app.webp" },
 ];
 
 const CATEGORY_FALLBACKS: Array<{ test: RegExp; src: string }> = [
-  { test: /chatgpt/i,           src: "/blog-covers/chatgpt-ads.webp" },
-  { test: /web.?dev/i,          src: "/blog-covers/web-and-app.webp" },
-  { test: /app.?dev/i,          src: "/blog-covers/web-and-app.webp" },
+  { test: /branding/i,                             src: brandingConceptImage.src },
+  { test: /chatgpt/i,                              src: "/blog-covers/chatgpt-ads.webp" },
+  { test: /(app|application).?dev|mobile.?app/i,    src: "/blog-covers/web-and-app.webp" },
+  { test: /web.?dev/i,                             src: "/blog-covers/web-and-app.webp" },
 ];
 
 /**
@@ -52,12 +57,13 @@ const CATEGORY_FALLBACKS: Array<{ test: RegExp; src: string }> = [
  */
 export const blogFallbackImage = (post: BlogPost): string | null => {
   const slug = post.slug?.trim() ?? "";
+  const title = post.title?.trim() ?? "";
   const category = post.category ?? "";
   for (const { test, src } of SLUG_FALLBACKS) {
-    if (test.test(slug)) return src;
+    if (test.test(slug) || test.test(title)) return src;
   }
   for (const { test, src } of CATEGORY_FALLBACKS) {
-    if (test.test(category)) return src;
+    if (test.test(category) || test.test(title)) return src;
   }
   return null;
 };

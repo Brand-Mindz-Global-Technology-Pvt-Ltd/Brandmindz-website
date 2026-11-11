@@ -14,6 +14,13 @@ import {
   Trophy,
   Scale,
   Handshake,
+  TrendingUp,
+  MessageSquare,
+  Route,
+  ShieldCheck,
+  Timer,
+  MessagesSquare,
+  FileText,
 } from "lucide-react";
 import founderImage from "@/assets/about/frame2147226233.webp";
 import heroPattern from "@/assets/HomeSection/banner/group1.webp";
@@ -213,11 +220,10 @@ const PointGrid = ({
     {items.map((item) => (
       <div
         key={item}
-        className={`wc-point-item flex min-h-22.5 min-w-0 items-center justify-center gap-4 rounded-2xl px-6 py-5 text-center text-base font-bold leading-6 shadow-sm sm:text-lg ${
-          dark
+        className={`wc-point-item flex min-h-22.5 min-w-0 items-center justify-center gap-4 rounded-2xl px-6 py-5 text-center text-base font-bold leading-6 shadow-sm sm:text-lg ${dark
             ? "border border-white/10 bg-white/[.07] text-white"
             : "border border-zinc-200 bg-white text-zinc-950"
-        }`}
+          }`}
       >
         <span className="wc-point-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#ffdb00] text-black">
           <Check size={19} strokeWidth={3} />
@@ -234,18 +240,18 @@ const PointGrid = ({
 export default function WorkCulturePageContent() {
   return (
     <>
-      
+
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <main className="work-culture-page overflow-hidden bg-white text-center text-zinc-950">
         <section className="wc-hero relative isolate flex items-start overflow-hidden bg-white pb-0 sm:pb-0 lg:pb-0">
-         <Image src={heroPattern} alt="" aria-hidden className="pointer-events-none absolute inset-x-0 -top-5 -z-20 h-auto w-full object-contain" priority />
-         <div className="absolute inset-x-0 bottom-0 -z-10 h-[48%] bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(245,245,243,.92)_100%)]" />
+          <Image src={heroPattern} alt="" aria-hidden className="pointer-events-none absolute inset-x-0 -top-5 -z-20 h-auto w-full object-contain" priority />
+          <div className="absolute inset-x-0 bottom-0 -z-10 h-[48%] bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(245,245,243,.92)_100%)]" />
 
           <div className="wc-container">
             <div className="flex w-full justify-center px-4 text-center">
               <div className="inline-flex flex-wrap items-center justify-center gap-3 text-center text-[18px] font-medium leading-normal tracking-normal md:text-[40px] md:leading-7.5"
-              style={{ maxWidth: "1100px" }}
+                style={{ maxWidth: "1100px" }}
               >
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#ffdb00] text-black sm:h-10 sm:w-10">
                   <Zap size={18} fill="currentColor" />
@@ -254,7 +260,7 @@ export default function WorkCulturePageContent() {
               </div>
             </div>
             <h1 className="wc-hero-title mx-auto mt-8 text-center text-[clamp(4rem,6.35vw,6rem)] font-bold leading-[1.36] tracking-[-0.035em] text-black"
-            style={{ maxWidth: "1300px" }}>
+              style={{ maxWidth: "1300px" }}>
               <span>Building the Best</span>{" "}
               <span className="text-zinc-500">Work Culture</span>
               <br />
@@ -264,12 +270,12 @@ export default function WorkCulturePageContent() {
 
             <div className="wc-hero-description text-center">
               <p className="relative left-1/2 mt-6 -translate-x-1/2 text-center text-[clamp(1.25rem,2.0vw,2.13rem)] font-normal leading-[1.4] text-zinc-900"
-              style={{ maxWidth: "1200px" }}>
+                style={{ maxWidth: "1200px" }}>
                 At Brand Mindz Global Technology Pvt Ltd, we believe businesses are built by people and people are the greatest asset of any organization.
-Our mission is not just to become India’s Largest Digital Distribution Agency.
-Our mission is to build the most performance-driven and inclusive work culture in Tamil Nadu’s digital industry.
-Because culture is not a statement.
-Culture is our operating system.
+                Our mission is not just to become India’s Largest Digital Distribution Agency.
+                Our mission is to build the most performance-driven and inclusive work culture in Tamil Nadu’s digital industry.
+                Because culture is not a statement.
+                Culture is our operating system.
 
               </p>
             </div>
@@ -280,7 +286,7 @@ Culture is our operating system.
               </span>
               <span>Talk to a Growth Specialist</span>
             </Link>
-              
+
 
           </div>
         </section>
@@ -386,34 +392,34 @@ Culture is our operating system.
         <section className="wc-section wc-potential-section">
           <div className="wc-container">
             <div className="wc-section-intro">
-  <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#ffdb00]">
-    Potential over privilege
-  </p>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#ffdb00]">
+                Potential over privilege
+              </p>
 
-  <h2 className="wc-section-intro-title text-[clamp(2.35rem,4vw,3.75rem)] font-extrabold leading-[1.12] tracking-[-0.045em]">
-    <span className="text-white">
-      If you're a first-generation graduate,{" "}
-    </span>
-    <span className="text-[#ffdb00]">
-      we see you.
-    </span>
-  </h2>
+              <h2 className="wc-section-intro-title text-[clamp(2.35rem,4vw,3.75rem)] font-extrabold leading-[1.12] tracking-[-0.045em]">
+                <span className="text-white">
+                  If you're a first-generation graduate,{" "}
+                </span>
+                <span className="text-[#ffdb00]">
+                  we see you.
+                </span>
+              </h2>
 
-  <p className="wc-section-intro-text text-[clamp(1.12rem,1.45vw,1.5rem)] leading-[1.65] text-white">
-    Many of our team members are first-generation graduates. We understand the
-    pressure, the responsibility, and the hunger to grow. Joining Brand Mindz
-    is more than filling a role. It is an opportunity to build competence that
-    can compete globally—from Tamil Nadu.
-  </p>
-</div>
+              <p className="wc-section-intro-text text-[clamp(1.12rem,1.45vw,1.5rem)] leading-[1.65] text-white">
+                Many of our team members are first-generation graduates. We understand the
+                pressure, the responsibility, and the hunger to grow. Joining Brand Mindz
+                is more than filling a role. It is an opportunity to build competence that
+                can compete globally—from Tamil Nadu.
+              </p>
+            </div>
             <div className="text-3xl font-bold text-white">
-  We Do Not Hire
-</div>
+              We Do Not Hire
+            </div>
             <PointGrid items={["Based on accent", "Based on city background", "Based on privilege"]} />
             <br></br>
             <div className="text-3xl font-bold text-white">
-  We Hire Based Only on Potential and Ownership
-</div>
+              We Hire Based Only on Potential and Ownership
+            </div>
           </div>
         </section>
 
@@ -667,34 +673,108 @@ Culture is our operating system.
           </div>
         </section>
 
-        <section className="wc-section bg-white">
+        <section className="wc-new-dual-section">
           <div className="wc-container">
-            <div className="wc-dual-grid grid gap-8 lg:grid-cols-2">
-              <article className="wc-dual-card rounded-[42px] bg-[#888888]">
-                <p className="wc-dual-eyebrow text-sm font-bold uppercase tracking-[0.22em] text-[#ffffff]">Structured development</p>
-                <h2 className="wc-dual-title font-extrabold tracking-[-0.045em]">
-                  Brand Mindz Growth Accelerator Program
+            <div className="wc-new-dual-grid">
+
+              {/* Left Card – White: Structured Development */}
+              <article className="wc-new-dual-card wc-new-dual-card-white">
+                {/* Eyebrow Row */}
+                <div className="wc-new-dual-eyebrow-row">
+                  <span className="wc-new-dual-eyebrow-bar" aria-hidden="true" />
+                  <span className="wc-new-dual-eyebrow-bar" aria-hidden="true" />
+                  <span className="wc-new-dual-eyebrow-text">STRUCTURED DEVELOPMENT</span>
+                </div>
+
+                {/* Heading */}
+                <h2 className="wc-new-dual-heading wc-new-dual-heading-dark">
+                  Brand Mindz Growth<br />Accelerator Program
                 </h2>
-                <p className="wc-dual-body text-white">
+
+                {/* Yellow curved underline */}
+                <div className="wc-new-dual-heading-underline" aria-hidden="true">
+                  <svg viewBox="0 0 180 12" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M2 9C40 2 80 2 178 9" stroke="#ffc400" strokeWidth="3.5" strokeLinecap="round" />
+                  </svg>
+                </div>
+
+                {/* Body */}
+                <p className="wc-new-dual-body wc-new-dual-body-dark">
                   No one is left to “figure it out.” Every team member learns what is expected, how quality is defined, how performance is measured, and how to operate at global standards. We do not believe in chaotic creativity. We believe culture is a performance engine.
                 </p>
-                <div className="wc-dual-points">
-                  <PointGrid items={growthPoints} />
+
+                {/* 2x2 Feature Grid */}
+                <div className="wc-new-dual-feature-grid">
+                  <div className="wc-new-dual-feature-item">
+                    <span className="wc-new-dual-feature-icon"><TrendingUp size={20} strokeWidth={2.4} /></span>
+                    <span className="wc-new-dual-feature-divider" aria-hidden="true" />
+                    <span className="wc-new-dual-feature-text">Role clarity and defined KPIs</span>
+                  </div>
+                  <div className="wc-new-dual-feature-item">
+                    <span className="wc-new-dual-feature-icon"><MessageSquare size={20} strokeWidth={2.4} /></span>
+                    <span className="wc-new-dual-feature-divider" aria-hidden="true" />
+                    <span className="wc-new-dual-feature-text">Structured client communication</span>
+                  </div>
+                  <div className="wc-new-dual-feature-item">
+                    <span className="wc-new-dual-feature-icon"><Trophy size={20} strokeWidth={2.4} /></span>
+                    <span className="wc-new-dual-feature-divider" aria-hidden="true" />
+                    <span className="wc-new-dual-feature-text">Performance benchmarks</span>
+                  </div>
+                  <div className="wc-new-dual-feature-item">
+                    <span className="wc-new-dual-feature-icon"><Route size={20} strokeWidth={2.4} /></span>
+                    <span className="wc-new-dual-feature-divider" aria-hidden="true" />
+                    <span className="wc-new-dual-feature-text">Skill progression roadmap</span>
+                  </div>
                 </div>
               </article>
 
-              <article className="wc-dual-card rounded-[42px] bg-[#2a2a2a]">
-                <p className="wc-dual-eyebrow text-sm font-bold uppercase tracking-[0.22em] text-white">Respect in practice</p>
-                <h2 className="wc-dual-title font-extrabold text-white tracking-[-0.045em]">
-                  Every belief, background, and practice matters.
+              {/* Right Card – Dark: Respect in Practice */}
+              <article className="wc-new-dual-card wc-new-dual-card-dark">
+                {/* Yellow diagonal corner accent */}
+                <span className="wc-new-dual-corner-accent" aria-hidden="true">
+                  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0 L120 0 L0 120 Z" fill="#ffc400" />
+                  </svg>
+                </span>
+
+                {/* Eyebrow Row */}
+                <div className="wc-new-dual-eyebrow-row">
+                  <span className="wc-new-dual-eyebrow-bar" aria-hidden="true" />
+                  <span className="wc-new-dual-eyebrow-bar" aria-hidden="true" />
+                  <span className="wc-new-dual-eyebrow-text wc-new-dual-eyebrow-text-light">RESPECT IN PRACTICE</span>
+                </div>
+
+                {/* Heading */}
+                <h2 className="wc-new-dual-heading wc-new-dual-heading-light">
+                  Every belief, background,<br />and practice{" "}
+                  <span style={{ color: "#ffc400" }}>matters.</span>
                 </h2>
-                <p className="wc-dual-body text-white">
+
+                {/* Short yellow underline */}
+                <div className="wc-new-dual-heading-underline wc-new-dual-heading-underline-sm" aria-hidden="true">
+                  <svg viewBox="0 0 80 8" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M2 6C20 2 50 2 78 6" stroke="#ffc400" strokeWidth="3" strokeLinecap="round" />
+                  </svg>
+                </div>
+
+                {/* Body */}
+                <p className="wc-new-dual-body wc-new-dual-body-light">
                   We respect all religions, beliefs, languages, and cultural practices. Our team includes people from different faiths and backgrounds. We provide a dedicated private prayer space to those who require regular prayer time—quietly, without spotlight.
                 </p>
-                <blockquote className="wc-dual-quote font-extrabold text-black">
-                  Respect does not need publicity. It needs practice.
-                </blockquote>
+
+                {/* Callout Box */}
+                <div className="wc-new-dual-callout">
+                  <span className="wc-new-dual-callout-icon" aria-hidden="true">
+                    <Handshake size={24} strokeWidth={2.2} />
+                  </span>
+                  <span className="wc-new-dual-callout-divider" aria-hidden="true" />
+                  <p className="wc-new-dual-callout-text">
+                    Respect does not need publicity. It needs{" "}
+                    <span style={{ color: "#ffc400" }}>practice.</span>
+                  </p>
+                </div>
               </article>
+
             </div>
           </div>
         </section>
@@ -730,21 +810,163 @@ Not words.
           </div>
         </section>
 
-        <section className="wc-section bg-white">
-          <div className="wc-container">
-            <div className="wc-stay-card rounded-[44px] bg-[#2a2a2a] text-white shadow-[0_30px_80px_rgba(0,0,0,.16)]">
-              <p className="wc-stay-eyebrow text-sm font-bold uppercase tracking-[0.22em] text-[#ffdb00]">Why people stay</p>
-              <h2 className="wc-stay-title font-extrabold tracking-[-0.05em]">
-                Respected. Heard. Growing.
-              </h2>
-              <p className="wc-stay-body text-zinc-300">
-                People stay because they are not reduced to job titles and their background does not define their ceiling. People build businesses. At Brand Mindz, people are the business.
-              </p>
-              <h3 className="wc-stay-subtitle font-extrabold tracking-[-0.04em]">
-                Why our culture builds client trust
-              </h3>
-              <div className="wc-trust-points">
-                <PointGrid items={trustPoints} dark />
+        <section className="wc-culture-people-section">
+          {/* Top-Left Diagonal Yellow Corner Streaks */}
+          <div className="wc-culture-corner-tl" aria-hidden="true">
+            <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="-30" y1="120" x2="200" y2="-110" stroke="url(#streakTL1)" strokeWidth="3" />
+              <line x1="-15" y1="210" x2="310" y2="-115" stroke="url(#streakTL2)" strokeWidth="6" strokeLinecap="round" />
+              <defs>
+                <linearGradient id="streakTL1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#ffd400" stopOpacity="0.85" />
+                  <stop offset="60%" stopColor="#ffd400" stopOpacity="0.25" />
+                  <stop offset="100%" stopColor="#ffd400" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="streakTL2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#ffd400" stopOpacity="0.95" />
+                  <stop offset="50%" stopColor="#ffd400" stopOpacity="0.35" />
+                  <stop offset="100%" stopColor="#ffd400" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          {/* Bottom-Right Diagonal Yellow Corner Streaks */}
+          <div className="wc-culture-corner-br" aria-hidden="true">
+            <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="310" y1="160" x2="80" y2="390" stroke="url(#streakBR1)" strokeWidth="3" />
+              <line x1="295" y1="70" x2="-30" y2="395" stroke="url(#streakBR2)" strokeWidth="6" strokeLinecap="round" />
+              <defs>
+                <linearGradient id="streakBR1" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#ffd400" stopOpacity="0.85" />
+                  <stop offset="60%" stopColor="#ffd400" stopOpacity="0.25" />
+                  <stop offset="100%" stopColor="#ffd400" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="streakBR2" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#ffd400" stopOpacity="0.95" />
+                  <stop offset="50%" stopColor="#ffd400" stopOpacity="0.35" />
+                  <stop offset="100%" stopColor="#ffd400" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div className="wc-culture-people-container">
+            {/* Pill Badge with Flanking Lines */}
+            <div className="wc-culture-badge-row">
+              <span className="wc-culture-badge-line wc-culture-badge-line-left" aria-hidden="true" />
+              <div className="wc-culture-badge">
+                <Users size={15} className="text-[#ffd400] shrink-0" strokeWidth={2.4} />
+                <span className="wc-culture-badge-text">Why people stay</span>
+              </div>
+              <span className="wc-culture-badge-line wc-culture-badge-line-right" aria-hidden="true" />
+            </div>
+
+            {/* Main Heading */}
+            <h2 className="wc-culture-title">
+              Respected. Heard.{" "}
+              <span className="wc-culture-title-growing">
+                Growing.
+                <svg
+                  className="wc-culture-title-underline"
+                  viewBox="0 0 170 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path d="M3 10C40 3 115 2 167 9" stroke="#ffd400" strokeWidth="3.6" strokeLinecap="round" />
+                </svg>
+              </span>
+            </h2>
+
+            {/* Introductory Paragraph */}
+            <p className="wc-culture-intro">
+              People stay because they are not reduced to job titles and their background does not define their ceiling. People build businesses. At Brand Mindz, people are the business.
+            </p>
+
+            {/* Subheading */}
+            <div className="wc-culture-subheading-wrap">
+              <h3 className="wc-culture-subheading">Why our culture builds client trust</h3>
+              <span className="wc-culture-subheading-bar" aria-hidden="true" />
+            </div>
+
+            {/* Feature Cards Grid (Desktop 3 + 2 layout) */}
+            <div className="wc-culture-cards-container">
+              {/* Row 1: 3 Cards */}
+              <div className="wc-culture-cards-row wc-culture-cards-row-3">
+                {/* Card 1: Predictable execution */}
+                <div className="wc-culture-card wc-culture-card-glow-tl">
+                  <div className="wc-culture-card-left">
+                    <span className="wc-culture-card-icon-circle">
+                      <TrendingUp size={22} strokeWidth={2.4} />
+                    </span>
+                    <span className="wc-culture-card-divider" aria-hidden="true" />
+                    <span className="wc-culture-card-title">Predictable execution</span>
+                  </div>
+                  <span className="wc-culture-card-arrow" aria-hidden="true">
+                    <ArrowRight size={14} strokeWidth={2.4} />
+                  </span>
+                </div>
+
+                {/* Card 2: Clear accountability */}
+                <div className="wc-culture-card wc-culture-card-glow-bl">
+                  <div className="wc-culture-card-left">
+                    <span className="wc-culture-card-icon-circle">
+                      <ShieldCheck size={22} strokeWidth={2.4} />
+                    </span>
+                    <span className="wc-culture-card-divider" aria-hidden="true" />
+                    <span className="wc-culture-card-title">Clear accountability</span>
+                  </div>
+                  <span className="wc-culture-card-arrow" aria-hidden="true">
+                    <ArrowRight size={14} strokeWidth={2.4} />
+                  </span>
+                </div>
+
+                {/* Card 3: Faster turnaround */}
+                <div className="wc-culture-card">
+                  <div className="wc-culture-card-left">
+                    <span className="wc-culture-card-icon-circle">
+                      <Timer size={22} strokeWidth={2.4} />
+                    </span>
+                    <span className="wc-culture-card-divider" aria-hidden="true" />
+                    <span className="wc-culture-card-title">Faster turnaround</span>
+                  </div>
+                  <span className="wc-culture-card-arrow" aria-hidden="true">
+                    <ArrowRight size={14} strokeWidth={2.4} />
+                  </span>
+                </div>
+              </div>
+
+              {/* Row 2: 2 Cards Centered */}
+              <div className="wc-culture-cards-row wc-culture-cards-row-2">
+                {/* Card 4: Structured communication */}
+                <div className="wc-culture-card wc-culture-card-glow-tl">
+                  <div className="wc-culture-card-left">
+                    <span className="wc-culture-card-icon-circle">
+                      <MessagesSquare size={22} strokeWidth={2.4} />
+                    </span>
+                    <span className="wc-culture-card-divider" aria-hidden="true" />
+                    <span className="wc-culture-card-title">Structured communication</span>
+                  </div>
+                  <span className="wc-culture-card-arrow" aria-hidden="true">
+                    <ArrowRight size={14} strokeWidth={2.4} />
+                  </span>
+                </div>
+
+                {/* Card 5: Transparent reporting */}
+                <div className="wc-culture-card wc-culture-card-glow-b">
+                  <div className="wc-culture-card-left">
+                    <span className="wc-culture-card-icon-circle">
+                      <FileText size={22} strokeWidth={2.4} />
+                    </span>
+                    <span className="wc-culture-card-divider" aria-hidden="true" />
+                    <span className="wc-culture-card-title">Transparent reporting</span>
+                  </div>
+                  <span className="wc-culture-card-arrow" aria-hidden="true">
+                    <ArrowRight size={14} strokeWidth={2.4} />
+                  </span>
+                </div>
               </div>
             </div>
           </div>

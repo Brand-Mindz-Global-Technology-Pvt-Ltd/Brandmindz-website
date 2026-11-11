@@ -21,6 +21,8 @@ const OurBlog = ({ posts }: { posts: HomeBlogPost[] }) => {
   const featured = posts[0];
   const sidePosts = posts.slice(1, 4);
   const newBlogs = posts.slice(1);
+  const featuredImage = newBlogs[0]?.image || "/blog-covers/web-and-app.webp";
+  const featuredPost: HomeBlogPost = { ...featured, image: featuredImage };
   const meta = (post: HomeBlogPost) => [post.date, post.category].filter(Boolean).join(" | ");
 
   return <section className="bm-blog-section">
@@ -31,9 +33,13 @@ const OurBlog = ({ posts }: { posts: HomeBlogPost[] }) => {
     <div className="bm-blog-container">
       <FadeIn direction="left" delay={0.4} className="bm-blog-featured">
         <Link href={featured.href} className="bm-featured-card">
-          <BlogImage post={featured} sizes="(max-width: 1024px) 100vw, 40vw" />
-          <div className="bm-featured-overlay absolute bottom-0 left-0 right-0 p-[30px] bg-black/30 backdrop-blur-[12px] border-t border-white/20 text-white text-start">
-            <span className="bm-post-meta">{meta(featured)}</span><h3>{featured.title}</h3>{featured.description && <p>{featured.description}</p>}
+          <div className="bm-featured-image-wrap">
+            <BlogImage post={featuredPost} sizes="(max-width: 1024px) 100vw, 40vw" />
+          </div>
+          <div className="bm-featured-content">
+            <span className="bm-post-meta">{meta(featured)}</span>
+            <h3>{featured.title}</h3>
+            {featured.description && <p>{featured.description}</p>}
           </div>
         </Link>
       </FadeIn>
